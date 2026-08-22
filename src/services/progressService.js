@@ -1,12 +1,11 @@
 // src/services/progressService.js
 //
-// Persistence for this MVP uses Claude's window.storage key-value API
-// (see "18. DATABASE / PERSISTENCE" in the architecture brief for why —
-// short version: there is no backend/server in this environment, and a
-// real relational database is unnecessary complexity for a single-child
-// prototype with no auth. The record shapes below are deliberately
-// relational-shaped (child_id / lesson_id / question_id foreign keys)
-// so migrating to Postgres later is a schema translation, not a redesign.
+// Persistence for this MVP uses the browser's localStorage.
+// There is no backend/server in this environment, and a real relational
+// database is unnecessary complexity for a single-child prototype with
+// no auth. The record shapes below are deliberately relational-shaped
+// (child_id / lesson_id / question_id foreign keys) so migrating to
+// Postgres later is a schema translation, not a redesign.
 
 const STORAGE_KEY = "spelling-code-state-v2";
 
@@ -14,8 +13,8 @@ export const DEFAULT_STATE = { profile: null, progress: {}, errorLog: [], badges
 
 export async function loadState() {
   try {
-    const res = await window.storage.get(STORAGE_KEY, false);
-    if (res && res.value) return JSON.parse(res.value);
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
   } catch (e) {
     // Key doesn't exist yet (first run) — fall through to default.
   }
@@ -24,7 +23,7 @@ export async function loadState() {
 
 export async function saveState(state) {
   try {
-    await window.storage.set(STORAGE_KEY, JSON.stringify(state), false);
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch (e) {
     console.error("progressService.saveState failed", e);
   }
