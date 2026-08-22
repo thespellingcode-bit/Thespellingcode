@@ -1,0 +1,7 @@
+[
+  { "remediation_id": "REM-01", "error_tag": "SOUND_ID_CONFUSION", "skill": "auditory_discrimination", "trigger": "Child scores below mastery threshold on sound identification.", "strategy": "Replay with only two choices, use familiar sounds, and remove visual distractors. Then try 3 new items." },
+  { "remediation_id": "REM-02", "error_tag": "SAME_DIFFERENT_CONFUSION", "skill": "auditory_discrimination", "trigger": "Child confuses same/different.", "strategy": "Start with identical sounds versus very different sounds, then increase similarity." },
+  { "remediation_id": "REM-03", "error_tag": "LOUD_SOFT_CONFUSION", "skill": "auditory_discrimination", "trigger": "Child confuses loud/soft.", "strategy": "Use clearly contrasted recordings and a simple loud/soft visual scale, keeping volume safe." },
+  { "remediation_id": "REM-04", "error_tag": "FAST_SLOW_CONFUSION", "skill": "auditory_discrimination", "trigger": "Child confuses speed.", "strategy": "Use exaggerated fast/slow patterns with an equal number of sounds." },
+  { "remediation_id": "REM-05", "error_tag": "SEQUENCE_MEMORY_CONFUSION", "skill": "auditory_memory", "trigger": "Child cannot remember 3-sound sequences.", "strategy": "Return to 2-sound sequences, then increase to 3 only after success." }
+]

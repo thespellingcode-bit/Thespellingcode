@@ -1,0 +1,548 @@
+[
+  {
+    "assessment_id": "AS-M01-01-1",
+    "lesson_id": "L1-M01-01",
+    "order": 1,
+    "type": "listen_choose",
+    "question": "What sound did you hear?",
+    "options": [
+      "Car",
+      "Rain",
+      "Bell"
+    ],
+    "correct_answer": "Car",
+    "audio_asset": "car",
+    "skill": "auditory_discrimination",
+    "error_tag": "SOUND_ID_CONFUSION",
+    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+  },
+  {
+    "assessment_id": "AS-M01-01-2",
+    "lesson_id": "L1-M01-01",
+    "order": 2,
+    "type": "listen_choose",
+    "question": "What sound did you hear?",
+    "options": [
+      "Rain",
+      "Bell",
+      "Car"
+    ],
+    "correct_answer": "Rain",
+    "audio_asset": "rain",
+    "skill": "auditory_discrimination",
+    "error_tag": "SOUND_ID_CONFUSION",
+    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+  },
+  {
+    "assessment_id": "AS-M01-01-3",
+    "lesson_id": "L1-M01-01",
+    "order": 3,
+    "type": "listen_choose",
+    "question": "What sound did you hear?",
+    "options": [
+      "Bell",
+      "Car",
+      "Rain"
+    ],
+    "correct_answer": "Bell",
+    "audio_asset": "bell",
+    "skill": "auditory_discrimination",
+    "error_tag": "SOUND_ID_CONFUSION",
+    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+  },
+  {
+    "assessment_id": "AS-M01-01-4",
+    "lesson_id": "L1-M01-01",
+    "order": 4,
+    "type": "listen_choose",
+    "question": "What sound did you hear?",
+    "options": [
+      "Clock",
+      "Car",
+      "Rain"
+    ],
+    "correct_answer": "Clock",
+    "audio_asset": "clock",
+    "skill": "auditory_discrimination",
+    "error_tag": "SOUND_ID_CONFUSION",
+    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+  },
+  {
+    "assessment_id": "AS-M01-01-5",
+    "lesson_id": "L1-M01-01",
+    "order": 5,
+    "type": "listen_choose",
+    "question": "Which picture matches the sound?",
+    "options": [
+      "Car",
+      "Bell",
+      "Rain"
+    ],
+    "correct_answer": "Car",
+    "audio_asset": "car",
+    "skill": "auditory_discrimination",
+    "error_tag": "SOUND_ID_CONFUSION",
+    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+  },
+  {
+    "assessment_id": "AS-M01-02-1",
+    "lesson_id": "L1-M01-02",
+    "order": 1,
+    "type": "same_different",
+    "question": "Are the sounds the same or different?",
+    "options": [
+      "Same",
+      "Different"
+    ],
+    "correct_answer": "Same",
+    "audio_asset": "finger_finger",
+    "skill": "auditory_discrimination",
+    "error_tag": "SAME_DIFFERENT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-02-2",
+    "lesson_id": "L1-M01-02",
+    "order": 2,
+    "type": "same_different",
+    "question": "Are the sounds the same or different?",
+    "options": [
+      "Same",
+      "Different"
+    ],
+    "correct_answer": "Different",
+    "audio_asset": "clap_finger",
+    "skill": "auditory_discrimination",
+    "error_tag": "SAME_DIFFERENT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-02-3",
+    "lesson_id": "L1-M01-02",
+    "order": 3,
+    "type": "same_different",
+    "question": "Are the sounds the same or different?",
+    "options": [
+      "Same",
+      "Different"
+    ],
+    "correct_answer": "Same",
+    "audio_asset": "tap_tap",
+    "skill": "auditory_discrimination",
+    "error_tag": "SAME_DIFFERENT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-02-4",
+    "lesson_id": "L1-M01-02",
+    "order": 4,
+    "type": "same_different",
+    "question": "Are the sounds the same or different?",
+    "options": [
+      "Same",
+      "Different"
+    ],
+    "correct_answer": "Different",
+    "audio_asset": "clock_tap",
+    "skill": "auditory_discrimination",
+    "error_tag": "SAME_DIFFERENT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-02-5",
+    "lesson_id": "L1-M01-02",
+    "order": 5,
+    "type": "same_different",
+    "question": "Are the sounds the same or different?",
+    "options": [
+      "Same",
+      "Different"
+    ],
+    "correct_answer": "Different",
+    "audio_asset": "bell_finger",
+    "skill": "auditory_discrimination",
+    "error_tag": "SAME_DIFFERENT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-03-1",
+    "lesson_id": "L1-M01-03",
+    "order": 1,
+    "type": "loud_soft",
+    "question": "Was the sound loud or soft?",
+    "options": [
+      "Loud",
+      "Soft"
+    ],
+    "correct_answer": "Soft",
+    "audio_asset": "whisper",
+    "skill": "auditory_discrimination",
+    "error_tag": "LOUD_SOFT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-03-2",
+    "lesson_id": "L1-M01-03",
+    "order": 2,
+    "type": "loud_soft",
+    "question": "Was the sound loud or soft?",
+    "options": [
+      "Loud",
+      "Soft"
+    ],
+    "correct_answer": "Loud",
+    "audio_asset": "car",
+    "skill": "auditory_discrimination",
+    "error_tag": "LOUD_SOFT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-03-3",
+    "lesson_id": "L1-M01-03",
+    "order": 3,
+    "type": "loud_soft",
+    "question": "Was the sound loud or soft?",
+    "options": [
+      "Loud",
+      "Soft"
+    ],
+    "correct_answer": "Loud",
+    "audio_asset": "bell",
+    "skill": "auditory_discrimination",
+    "error_tag": "LOUD_SOFT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-03-4",
+    "lesson_id": "L1-M01-03",
+    "order": 4,
+    "type": "loud_soft",
+    "question": "Was the sound loud or soft?",
+    "options": [
+      "Loud",
+      "Soft"
+    ],
+    "correct_answer": "Soft",
+    "audio_asset": "rain",
+    "skill": "auditory_discrimination",
+    "error_tag": "LOUD_SOFT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-03-5",
+    "lesson_id": "L1-M01-03",
+    "order": 5,
+    "type": "loud_soft",
+    "question": "Was the sound loud or soft?",
+    "options": [
+      "Loud",
+      "Soft"
+    ],
+    "correct_answer": "Soft",
+    "audio_asset": "clock",
+    "skill": "auditory_discrimination",
+    "error_tag": "LOUD_SOFT_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-04-1",
+    "lesson_id": "L1-M01-04",
+    "order": 1,
+    "type": "fast_slow",
+    "question": "Was the pattern fast or slow?",
+    "options": [
+      "Fast",
+      "Slow"
+    ],
+    "correct_answer": "Fast",
+    "audio_asset": "finger_fast",
+    "skill": "auditory_discrimination",
+    "error_tag": "FAST_SLOW_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-04-2",
+    "lesson_id": "L1-M01-04",
+    "order": 2,
+    "type": "fast_slow",
+    "question": "Was the pattern fast or slow?",
+    "options": [
+      "Fast",
+      "Slow"
+    ],
+    "correct_answer": "Slow",
+    "audio_asset": "finger_slow",
+    "skill": "auditory_discrimination",
+    "error_tag": "FAST_SLOW_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-04-3",
+    "lesson_id": "L1-M01-04",
+    "order": 3,
+    "type": "fast_slow",
+    "question": "Was the pattern fast or slow?",
+    "options": [
+      "Fast",
+      "Slow"
+    ],
+    "correct_answer": "Fast",
+    "audio_asset": "drum_fast",
+    "skill": "auditory_discrimination",
+    "error_tag": "FAST_SLOW_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-04-4",
+    "lesson_id": "L1-M01-04",
+    "order": 4,
+    "type": "fast_slow",
+    "question": "Was the pattern fast or slow?",
+    "options": [
+      "Fast",
+      "Slow"
+    ],
+    "correct_answer": "Slow",
+    "audio_asset": "drum_slow",
+    "skill": "auditory_discrimination",
+    "error_tag": "FAST_SLOW_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-04-5",
+    "lesson_id": "L1-M01-04",
+    "order": 5,
+    "type": "fast_slow",
+    "question": "Which pattern is faster?",
+    "options": [
+      "Pattern A",
+      "Pattern B"
+    ],
+    "correct_answer": "Pattern A",
+    "audio_asset": "fast_compare",
+    "skill": "auditory_discrimination",
+    "error_tag": "FAST_SLOW_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-05-1",
+    "lesson_id": "L1-M01-05",
+    "order": 1,
+    "type": "sound_memory",
+    "question": "Which pattern did you hear?",
+    "options": [
+      "Finger-Tap",
+      "Tap-Finger"
+    ],
+    "correct_answer": "Finger-Tap",
+    "audio_asset": "finger_tap_seq",
+    "skill": "auditory_memory",
+    "error_tag": "SEQUENCE_MEMORY_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-05-2",
+    "lesson_id": "L1-M01-05",
+    "order": 2,
+    "type": "sound_memory",
+    "question": "Which pattern did you hear?",
+    "options": [
+      "Tap-Finger",
+      "Finger-Tap"
+    ],
+    "correct_answer": "Tap-Finger",
+    "audio_asset": "tap_finger_seq",
+    "skill": "auditory_memory",
+    "error_tag": "SEQUENCE_MEMORY_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-05-3",
+    "lesson_id": "L1-M01-05",
+    "order": 3,
+    "type": "sound_memory",
+    "question": "Which pattern did you hear?",
+    "options": [
+      "Clap-Finger-Clap",
+      "Finger-Clap-Finger"
+    ],
+    "correct_answer": "Clap-Finger-Clap",
+    "audio_asset": "clap_finger_clap",
+    "skill": "auditory_memory",
+    "error_tag": "SEQUENCE_MEMORY_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-05-4",
+    "lesson_id": "L1-M01-05",
+    "order": 4,
+    "type": "sound_memory",
+    "question": "Which pattern did you hear?",
+    "options": [
+      "Finger-Clap-Tap",
+      "Tap-Clap-Finger"
+    ],
+    "correct_answer": "Finger-Clap-Tap",
+    "audio_asset": "finger_clap_tap",
+    "skill": "auditory_memory",
+    "error_tag": "SEQUENCE_MEMORY_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M01-05-5",
+    "lesson_id": "L1-M01-05",
+    "order": 5,
+    "type": "sound_memory",
+    "question": "Which pattern did you hear?",
+    "options": [
+      "Tap-Clap-Tap",
+      "Clap-Tap-Clap"
+    ],
+    "correct_answer": "Tap-Clap-Tap",
+    "audio_asset": "tap_clap_tap",
+    "skill": "auditory_memory",
+    "error_tag": "SEQUENCE_MEMORY_CONFUSION"
+  },
+  {
+    "assessment_id": "A-M01-06-1",
+    "lesson_id": "L1-M01-06",
+    "order": 1,
+    "type": "listen_choose",
+    "question": "What sound did you hear?",
+    "options": [
+      "Bell",
+      "Clock",
+      "Rain"
+    ],
+    "correct_answer": "Bell",
+    "audio_asset": "bell",
+    "skill": "auditory_discrimination",
+    "error_tag": "SOUND_ID_CONFUSION",
+    "review_flag": "Near-duplicate of practice item Q-M01-01 (same correct answer/audio, one distractor changed). Recommend a genuinely new example."
+  },
+  {
+    "assessment_id": "A-M01-06-2",
+    "lesson_id": "L1-M01-06",
+    "order": 2,
+    "type": "same_different",
+    "question": "Are the two sounds the same or different?",
+    "options": [
+      "Same",
+      "Different"
+    ],
+    "correct_answer": "Different",
+    "audio_asset": "clap_tap",
+    "skill": "auditory_discrimination",
+    "error_tag": "SAME_DIFFERENT_CONFUSION",
+    "review_flag": "Identical audio pair to practice item Q-M01-07. Recommend a new pair."
+  },
+  {
+    "assessment_id": "A-M01-06-3",
+    "lesson_id": "L1-M01-06",
+    "order": 3,
+    "type": "loud_soft",
+    "question": "Was the sound loud or soft?",
+    "options": [
+      "Loud",
+      "Soft"
+    ],
+    "correct_answer": "Soft",
+    "audio_asset": "tap_soft",
+    "skill": "auditory_discrimination",
+    "error_tag": "LOUD_SOFT_CONFUSION",
+    "review_flag": "Identical audio to practice item Q-M01-12. Recommend a new example."
+  },
+  {
+    "assessment_id": "A-M01-06-4",
+    "lesson_id": "L1-M01-06",
+    "order": 4,
+    "type": "fast_slow",
+    "question": "Was the pattern fast or slow?",
+    "options": [
+      "Fast",
+      "Slow"
+    ],
+    "correct_answer": "Slow",
+    "audio_asset": "clap_slow",
+    "skill": "auditory_discrimination",
+    "error_tag": "FAST_SLOW_CONFUSION",
+    "review_flag": "Identical audio to practice item Q-M01-17. Recommend a new example."
+  },
+  {
+    "assessment_id": "A-M01-06-5",
+    "lesson_id": "L1-M01-06",
+    "order": 5,
+    "type": "listen_choose",
+    "question": "What sound did you hear?",
+    "options": [
+      "Clock",
+      "Car",
+      "Bell"
+    ],
+    "correct_answer": "Clock",
+    "audio_asset": "clock",
+    "skill": "auditory_discrimination",
+    "error_tag": "SOUND_ID_CONFUSION",
+    "review_flag": "Near-duplicate of practice item Q-M01-02. Recommend a genuinely new example."
+  },
+  {
+    "assessment_id": "A-M01-06-6",
+    "lesson_id": "L1-M01-06",
+    "order": 6,
+    "type": "same_different",
+    "question": "Are the two sounds the same or different?",
+    "options": [
+      "Same",
+      "Different"
+    ],
+    "correct_answer": "Same",
+    "audio_asset": "bell_bell",
+    "skill": "auditory_discrimination",
+    "error_tag": "SAME_DIFFERENT_CONFUSION",
+    "review_flag": "Identical audio pair to practice item Q-M01-08. Recommend a new pair."
+  },
+  {
+    "assessment_id": "A-M01-06-7",
+    "lesson_id": "L1-M01-06",
+    "order": 7,
+    "type": "loud_soft",
+    "question": "Which sound is louder?",
+    "options": [
+      "Whisper",
+      "Drum"
+    ],
+    "correct_answer": "Drum",
+    "audio_asset": "drum_compare",
+    "skill": "auditory_discrimination",
+    "error_tag": "LOUD_SOFT_CONFUSION"
+  },
+  {
+    "assessment_id": "A-M01-06-8",
+    "lesson_id": "L1-M01-06",
+    "order": 8,
+    "type": "fast_slow",
+    "question": "Which pattern is faster?",
+    "options": [
+      "Pattern A",
+      "Pattern B"
+    ],
+    "correct_answer": "Pattern A",
+    "audio_asset": "fast_compare",
+    "skill": "auditory_discrimination",
+    "error_tag": "FAST_SLOW_CONFUSION",
+    "review_flag": "Also reused as AS-M01-04-5 in Lesson 4's own assessment. Recommend a distinct final-assessment example."
+  },
+  {
+    "assessment_id": "A-M01-06-9",
+    "lesson_id": "L1-M01-06",
+    "order": 9,
+    "type": "sound_memory",
+    "question": "Which pattern did you hear?",
+    "options": [
+      "Tap-Clap",
+      "Clap-Tap"
+    ],
+    "correct_answer": "Tap-Clap",
+    "audio_asset": "tap_clap",
+    "skill": "auditory_memory",
+    "error_tag": "SEQUENCE_MEMORY_CONFUSION",
+    "review_flag": "Identical audio pattern to practice item Q-M01-22. Recommend a new example."
+  },
+  {
+    "assessment_id": "A-M01-06-10",
+    "lesson_id": "L1-M01-06",
+    "order": 10,
+    "type": "sound_memory",
+    "question": "Which pattern did you hear?",
+    "options": [
+      "Clap-Tap-Clap",
+      "Tap-Clap-Tap"
+    ],
+    "correct_answer": "Clap-Tap-Clap",
+    "audio_asset": "clap_tap_clap",
+    "skill": "auditory_memory",
+    "error_tag": "SEQUENCE_MEMORY_CONFUSION",
+    "review_flag": "Identical audio pattern to practice items Q-M01-23/25. Recommend a new example."
+  }
+]

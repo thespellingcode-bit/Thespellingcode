@@ -1,0 +1,7 @@
+[
+  { "practice_id": "PP-M01-01", "module_id": 1, "title": "Sound hunt", "instructions": "Ask your child to find five safe everyday sounds at home and name what made each one.", "time": "5 minutes", "note": "No screen required" },
+  { "practice_id": "PP-M01-02", "module_id": 1, "title": "Same or different", "instructions": "Make two simple sounds, such as clap/tap. Ask whether they are the same or different.", "time": "3 minutes", "note": "Use gentle volume" },
+  { "practice_id": "PP-M01-03", "module_id": 1, "title": "Loud or soft", "instructions": "Make a soft tap and a normal clap. Ask which is louder.", "time": "3 minutes", "note": "Do not make startling or loud noises" },
+  { "practice_id": "PP-M01-04", "module_id": 1, "title": "Fast or slow", "instructions": "Clap three times quickly, then slowly. Ask your child to identify each.", "time": "3 minutes", "note": "Keep patterns simple" },
+  { "practice_id": "PP-M01-05", "module_id": 1, "title": "Sound memory", "instructions": "Make a two-sound pattern and ask your child to copy it.", "time": "5 minutes", "note": "Increase to three sounds only if easy" }
+]

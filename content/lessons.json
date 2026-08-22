@@ -1,0 +1,109 @@
+[
+  {
+    "lesson_id": "L1-M01-01",
+    "module_id": 1,
+    "number": 1,
+    "title": "What Is a Sound?",
+    "skill": "auditory_discrimination",
+    "objective": "Identify and match familiar environmental sounds.",
+    "activity_type": "listen_choose",
+    "estimated_time": "3\u20134 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome, Sound Detective! Put on your listening ears.",
+      "teach": "A sound is something we can hear. We hear sounds all around us.",
+      "model": "Listen. What do you hear?",
+      "transition": "Now you try! Listen first, then choose.",
+      "close": "Fantastic listening! You are becoming a Sound Detective."
+    }
+  },
+  {
+    "lesson_id": "L1-M01-02",
+    "module_id": 1,
+    "number": 2,
+    "title": "Same or Different?",
+    "skill": "auditory_discrimination",
+    "objective": "Determine whether two sounds are the same or different.",
+    "activity_type": "same_different",
+    "estimated_time": "4\u20135 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today we are going to compare sounds.",
+      "teach": "If two sounds match, they are the same. If they do not match, they are different.",
+      "model": "Listen to these two sounds. Same or different?",
+      "close": "Great comparing! Your ears noticed the difference."
+    }
+  },
+  {
+    "lesson_id": "L1-M01-03",
+    "module_id": 1,
+    "number": 3,
+    "title": "Loud and Soft",
+    "skill": "auditory_discrimination",
+    "objective": "Distinguish loud and soft sounds.",
+    "activity_type": "sort",
+    "estimated_time": "4\u20135 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today we are listening for loud and soft sounds.",
+      "teach": "A loud sound is strong and easy to hear. A soft sound is gentle and quiet.",
+      "model": "Listen to this sound. Was it loud or soft?",
+      "close": "Excellent! You listened for volume."
+    }
+  },
+  {
+    "lesson_id": "L1-M01-04",
+    "module_id": 1,
+    "number": 4,
+    "title": "Fast and Slow",
+    "skill": "auditory_discrimination",
+    "objective": "Distinguish fast and slow sound patterns.",
+    "activity_type": "sort",
+    "estimated_time": "4\u20135 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today we are listening for speed.",
+      "teach": "A fast pattern happens quickly. A slow pattern takes more time.",
+      "model": "Listen to the pattern. Fast or slow?",
+      "close": "You caught the speed!"
+    }
+  },
+  {
+    "lesson_id": "L1-M01-05",
+    "module_id": 1,
+    "number": 5,
+    "title": "Sound Memory",
+    "skill": "auditory_memory",
+    "objective": "Remember and identify short sound sequences.",
+    "activity_type": "sound_memory",
+    "estimated_time": "4\u20136 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today we are going to use our sound memory.",
+      "teach": "Listen to the whole pattern. Keep it in your mind. Then choose what you heard.",
+      "close": "Amazing memory!"
+    }
+  },
+  {
+    "lesson_id": "L1-M01-06",
+    "module_id": 1,
+    "number": 6,
+    "title": "Listening Detective Assessment",
+    "skill": "auditory_discrimination",
+    "objective": "Demonstrate independent mastery of Module 1 listening skills.",
+    "activity_type": "assessment",
+    "estimated_time": "6\u20138 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Listening Detective Challenge.",
+      "instruction": "Listen carefully. Take your time. Choose your answer when you are ready.",
+      "close": "Challenge complete! Your results are ready."
+    }
+  }
+]

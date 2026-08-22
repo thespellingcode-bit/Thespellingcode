@@ -1,0 +1,11 @@
+[
+  { "badge_id": "BADGE-01", "name": "Sound Starter", "criteria": "Complete Module 1", "type": "module", "module_id": 1, "active": true },
+  { "badge_id": "BADGE-02", "name": "Rhyme Ranger", "criteria": "Complete Module 2", "type": "module", "module_id": 2, "active": false },
+  { "badge_id": "BADGE-03", "name": "Sound Detective", "criteria": "Complete Modules 3\u20134", "type": "milestone", "module_id": null, "active": false },
+  { "badge_id": "BADGE-04", "name": "Vowel Explorer", "criteria": "Master Module 5", "type": "module", "module_id": 5, "active": false },
+  { "badge_id": "BADGE-05", "name": "Word Builder", "criteria": "Master Modules 6\u20139", "type": "milestone", "module_id": null, "active": false },
+  { "badge_id": "BADGE-06", "name": "Reading Star", "criteria": "Master Module 10", "type": "module", "module_id": 10, "active": false },
+  { "badge_id": "BADGE-07", "name": "Spelling Star", "criteria": "Master Module 11", "type": "module", "module_id": 11, "active": false },
+  { "badge_id": "BADGE-08", "name": "Sentence Star", "criteria": "Master Module 12", "type": "module", "module_id": 12, "active": false },
+  { "badge_id": "BADGE-09", "name": "Level 1 Sound Explorer", "criteria": "Pass Level 1 Master Assessment", "type": "level", "module_id": null, "active": false }
+]
