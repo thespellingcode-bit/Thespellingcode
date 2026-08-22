@@ -9,10 +9,11 @@ import { ResultScreen } from "./ResultScreen";
 import { getPracticeActivities, getAssessmentQuestions } from "../services/contentService";
 import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
+import { shuffled } from "../services/shuffle";
 
 const STAGE_LABELS = {
   welcome: "Welcome", teach: "Teach", model: "Watch", transition: "Get ready",
-  instruction: "Instructions", guided: "Guided practice", independent: "Your turn",
+  instruction: "Instructions", guided: "Warm-up round", independent: "Solo mission",
   assessment: "Challenge", result: "Result", remediation: "Practice more", complete: "Done",
 };
 
@@ -30,13 +31,25 @@ function stagesFor(lesson) {
   return s;
 }
 
-function shuffled(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
+// Shows once the child has gotten 2+ questions right in a row on the
+// first try (a retry breaks the streak — this rewards clean answers,
+// not eventual ones). Purely a session-local fun signal, not persisted.
+function StreakBadge({ streak }) {
+  if (streak < 2) return null;
+  return (
+    <div
+      key={streak}
+      style={{
+        display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+        margin: "0 auto 10px", width: "fit-content", padding: "4px 14px", borderRadius: 999,
+        background: "#FFF4D6", border: `1.5px solid ${T.gold}`,
+        fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 13, color: T.goldDeep,
+        animation: "scd-pop 0.35s ease",
+      }}
+    >
+      <Icon name="star" size={16} color={T.gold} /> {streak} in a row!
+    </div>
+  );
 }
 
 // onFinish receives { lessonId, mastery, ratio, attemptNumber, responses }
@@ -56,8 +69,12 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
   // guarantee rather than a content-authoring convention to remember.
   const assessmentQuestions = getAssessmentQuestions(lesson.lesson_id);
 
-  const guidedQs = practiceQuestions.slice(0, 2);
-  const independentQs = practiceQuestions.slice(2);
+  // Shuffled once per lesson mount (i.e. every time a lesson is opened —
+  // Lesson/LessonPlayer fully remounts on open) so replaying a lesson
+  // doesn't drill the exact same question order every time.
+  const [practiceSeq] = useState(() => shuffled(practiceQuestions));
+  const guidedQs = practiceSeq.slice(0, 2);
+  const independentQs = practiceSeq.slice(2);
 
   const [guidedIdx, setGuidedIdx] = useState(0);
   const [indepIdx, setIndepIdx] = useState(0);
@@ -65,6 +82,7 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
   const [assessIdx, setAssessIdx] = useState(0);
   const [responses, setResponses] = useState([]); // [{questionId, skill, errorTag, correct}]
   const [attemptNumber, setAttemptNumber] = useState(1);
+  const [streak, setStreak] = useState(0);
 
   const restartAssessment = useCallback(() => {
     setAssessSeq(shuffled(assessmentQuestions));
@@ -122,26 +140,34 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
         {stage === "guided" && guidedQs.length > 0 && (
           <div style={{ width: "100%" }}>
             <p style={{ textAlign: "center", fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, marginBottom: 4 }}>
-              Guided practice · {guidedIdx + 1} of {guidedQs.length}
+              Warm-up round · {guidedIdx + 1} of {guidedQs.length}
             </p>
+            <StreakBadge streak={streak} />
             <QuestionCard
               key={guidedQs[guidedIdx].activity_id}
               question={guidedQs[guidedIdx]}
               mode="practice"
-              onResult={() => (guidedIdx + 1 < guidedQs.length ? setGuidedIdx((i) => i + 1) : next())}
+              onResult={(r) => {
+                setStreak((s) => (r.attempts === 1 ? s + 1 : 0));
+                guidedIdx + 1 < guidedQs.length ? setGuidedIdx((i) => i + 1) : next();
+              }}
             />
           </div>
         )}
         {stage === "independent" && independentQs.length > 0 && (
           <div style={{ width: "100%" }}>
             <p style={{ textAlign: "center", fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, marginBottom: 4 }}>
-              Independent practice · {indepIdx + 1} of {independentQs.length}
+              Solo mission · {indepIdx + 1} of {independentQs.length}
             </p>
+            <StreakBadge streak={streak} />
             <QuestionCard
               key={independentQs[indepIdx].activity_id}
               question={independentQs[indepIdx]}
               mode="practice"
-              onResult={() => (indepIdx + 1 < independentQs.length ? setIndepIdx((i) => i + 1) : next())}
+              onResult={(r) => {
+                setStreak((s) => (r.attempts === 1 ? s + 1 : 0));
+                indepIdx + 1 < independentQs.length ? setIndepIdx((i) => i + 1) : next();
+              }}
             />
           </div>
         )}

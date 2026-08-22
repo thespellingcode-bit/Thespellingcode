@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useState, useEffect, useCallback } from "react";
-import { theme as T, useFonts } from "./theme";
+import { theme as T, useFonts, useGlobalAnimations } from "./theme";
 import { Onboarding } from "./components/Onboarding";
 import { TopBar } from "./components/TopBar";
 import { ChildHome } from "./pages/ChildHome";
@@ -10,6 +10,7 @@ import { loadState, saveState, DEFAULT_STATE, recordLessonAttempt } from "./serv
 
 export default function App() {
   useFonts();
+  useGlobalAnimations();
   const [loading, setLoading] = useState(true);
   const [state, setState] = useState(DEFAULT_STATE);
   const [view, setView] = useState("child");

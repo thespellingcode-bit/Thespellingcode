@@ -23,3 +23,30 @@ export function useFonts() {
   link.href = "https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap";
   document.head.appendChild(link);
 }
+
+// Small shared keyframes for fun-factor micro-interactions (streak badge
+// pop, correct-answer bounce, celebration burst). Injected once globally
+// since this project has no CSS file — everything else is inline styles.
+const STYLE_TAG_ID = "scd-anim-styles";
+export function useGlobalAnimations() {
+  if (typeof document === "undefined" || document.getElementById(STYLE_TAG_ID)) return;
+  const style = document.createElement("style");
+  style.id = STYLE_TAG_ID;
+  style.textContent = `
+    @keyframes scd-pop {
+      0% { transform: scale(0.7); opacity: 0; }
+      60% { transform: scale(1.08); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    @keyframes scd-bounce {
+      0%, 100% { transform: scale(1); }
+      35% { transform: scale(1.14); }
+      60% { transform: scale(0.96); }
+    }
+    @keyframes scd-confetti-fall {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(var(--dx), 160px) rotate(var(--rot)); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+}

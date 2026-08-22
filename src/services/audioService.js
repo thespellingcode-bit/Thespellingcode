@@ -185,3 +185,24 @@ export const ASSET_DURATION_MS = {
 export function assetDurationMs(assetName) {
   return ASSET_DURATION_MS[assetName] || 700;
 }
+
+// UI feedback sounds (correct/incorrect/celebrate) — separate from the
+// question-content sounds above. Built from the same synthesis
+// primitives so no new audio files are needed.
+const SFX = {
+  correct: (ctx, t0) => [0, 0.09, 0.18].forEach((d, i) => tone(ctx, t0 + d, [880, 1108, 1318][i], 0.16, "sine", 0.14)),
+  incorrect: (ctx, t0) => { tone(ctx, t0, 330, 0.16, "sine", 0.08); tone(ctx, t0 + 0.1, 262, 0.18, "sine", 0.07); },
+  celebrate: (ctx, t0) =>
+    [0, 0.1, 0.2, 0.32].forEach((d, i) => tone(ctx, t0 + d, [660, 880, 1108, 1318][i], 0.28, "triangle", 0.16)),
+};
+
+export function playSfx(kind) {
+  try {
+    const ctx = getCtx();
+    if (ctx.state === "suspended") ctx.resume();
+    const fn = SFX[kind];
+    if (fn) fn(ctx, ctx.currentTime + 0.01);
+  } catch (e) {
+    // Web Audio unavailable — fail silently, app still works without sound.
+  }
+}

@@ -35,7 +35,7 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId = 1 }) {
       </div>
 
       <Btn variant="gold" size="lg" style={{ marginBottom: 30 }} onClick={() => onOpenLesson(nextLesson.lesson_id)}>
-        {masteredCount === 0 ? "Start learning" : moduleComplete ? "Review a lesson" : "Continue learning"}
+        {masteredCount === 0 ? "Start your first mission!" : moduleComplete ? "Replay a mission" : "Continue your mission"}
       </Btn>
 
       <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 18, color: T.ink, marginBottom: 14 }}>{module.module_name} path</h2>
@@ -66,6 +66,9 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId = 1 }) {
                     <span style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, color: T.ink }}>{l.number}</span>}
               </div>
               <div style={{ flex: 1 }}>
+                <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: 0.4, color: T.goldDeep, textTransform: "uppercase" }}>
+                  Mission {l.number}
+                </div>
                 <div style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 600, fontSize: 16, color: T.ink }}>{l.title}</div>
                 <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute }}>
                   {l.estimated_time} · {status === "mastered" ? "Mastered" : status === "in_progress" ? "In progress" : locked ? "Locked" : "Not started"}

@@ -10,11 +10,17 @@ import { theme as T } from "../theme";
 import { Icon, labelToIcon } from "../components/Icon";
 import { AudioPlayer } from "../components/AudioPlayer";
 import { Feedback } from "../components/Feedback";
+import { playSfx } from "../services/audioService";
+import { shuffled } from "../services/shuffle";
 
 export function MultipleChoice({ question, onResult, allowRetry = true }) {
   const [selected, setSelected] = useState(null);
   const [status, setStatus] = useState("idle"); // idle | wrong | correct
   const [attempts, setAttempts] = useState(0);
+  // Shuffled once per question instance (the `key` on QuestionCard/
+  // Assessment already forces a fresh mount per question) so the
+  // correct answer isn't always in the same visual slot.
+  const [options] = useState(() => shuffled(question.options));
 
   const correctAnswer = question.correct_answer ?? question.correct;
   const audioAsset = question.audio_asset ?? question.audio;
@@ -26,9 +32,11 @@ export function MultipleChoice({ question, onResult, allowRetry = true }) {
     setAttempts((a) => a + 1);
     if (isCorrect) {
       setStatus("correct");
+      playSfx("correct");
       setTimeout(() => onResult({ correct: true, attempts: attempts + 1 }), 850);
     } else {
       setStatus("wrong");
+      playSfx("incorrect");
       if (!allowRetry) setTimeout(() => onResult({ correct: false, attempts: attempts + 1 }), 950);
     }
   };
@@ -40,7 +48,7 @@ export function MultipleChoice({ question, onResult, allowRetry = true }) {
       </p>
       {audioAsset && <AudioPlayer asset={audioAsset} />}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", maxWidth: 420 }}>
-        {question.options.map((opt) => {
+        {options.map((opt) => {
           const isSelected = selected === opt;
           const isCorrectOpt = opt === correctAnswer;
           let bg = "#fff", border = T.line, color = T.ink;
@@ -58,6 +66,7 @@ export function MultipleChoice({ question, onResult, allowRetry = true }) {
                 fontFamily: "'Baloo 2', sans-serif", fontWeight: 600, fontSize: 16.5,
                 border: `2px solid ${border}`, background: bg, color,
                 display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
+                animation: isSelected && status === "correct" ? "scd-bounce 0.4s ease" : "none",
               }}
             >
               {optIcon && <Icon name={optIcon} size={40} color={color} />}
