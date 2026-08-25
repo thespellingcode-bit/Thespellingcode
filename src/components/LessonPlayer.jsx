@@ -6,6 +6,7 @@ import { Btn } from "./Btn";
 import { QuestionCard } from "./QuestionCard";
 import { NarrationScreen } from "./NarrationScreen";
 import { ResultScreen } from "./ResultScreen";
+import { AudioPlayer } from "./AudioPlayer";
 import { getPracticeActivities, getAssessmentQuestions } from "../services/contentService";
 import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
@@ -134,6 +135,7 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
         {stage === "model" && (
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18, textAlign: "center" }}>
             <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{lesson.narration.model}</p>
+            {practiceQuestions[0] && <AudioPlayer asset={practiceQuestions[0].audio_asset} />}
             <Btn variant="gold" size="lg" onClick={next}>{lesson.narration.transition || "Now you try!"}</Btn>
           </div>
         )}

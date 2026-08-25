@@ -51,10 +51,10 @@ export function MultipleChoice({ question, onResult, allowRetry = true }) {
         {options.map((opt) => {
           const isSelected = selected === opt;
           const isCorrectOpt = opt === correctAnswer;
-          let bg = "#fff", border = T.line, color = T.ink;
-          if (isSelected && status === "correct") { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; }
-          else if (isSelected && status === "wrong") { bg = "#FDEDEB"; border = T.coral; color = T.coralDeep; }
-          else if (status === "wrong" && !allowRetry && isCorrectOpt) { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; }
+          let bg = "#fff", border = T.line, color = T.ink, iconBg = T.mist;
+          if (isSelected && status === "correct") { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; iconBg = "#D5EEDB"; }
+          else if (isSelected && status === "wrong") { bg = "#FDEDEB"; border = T.coral; color = T.coralDeep; iconBg = "#FBD9D2"; }
+          else if (status === "wrong" && !allowRetry && isCorrectOpt) { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; iconBg = "#D5EEDB"; }
           const optIcon = labelToIcon(opt);
           return (
             <button
@@ -69,7 +69,11 @@ export function MultipleChoice({ question, onResult, allowRetry = true }) {
                 animation: isSelected && status === "correct" ? "scd-bounce 0.4s ease" : "none",
               }}
             >
-              {optIcon && <Icon name={optIcon} size={40} color={color} />}
+              {optIcon && (
+                <div style={{ width: 48, height: 48, borderRadius: "50%", background: iconBg, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Icon name={optIcon} size={28} color={color} />
+                </div>
+              )}
               {opt}
             </button>
           );

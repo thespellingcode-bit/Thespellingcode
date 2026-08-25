@@ -1,7 +1,8 @@
 // src/components/AudioPlayer.jsx
 import React, { useState } from "react";
 import { theme as T } from "../theme";
-import { Icon } from "./Icon";
+import { Icon, iconForAsset } from "./Icon";
+import { Illustration } from "./Illustration";
 import { playAsset, assetDurationMs } from "../services/audioService";
 
 // A note on scope: this plays the placeholder synthesized sounds today.
@@ -20,6 +21,7 @@ export function AudioPlayer({ asset, label = "Play sound" }) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+      <Illustration name={iconForAsset(asset)} size={84} />
       <button
         onClick={handlePlay}
         disabled={playing}
@@ -49,7 +51,7 @@ export function AudioPlayer({ asset, label = "Play sound" }) {
         ))}
       </div>
       <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12, color: T.textMute }}>
-        Tap to listen{"  \u00b7  "}<em style={{ fontStyle: "italic" }}>placeholder audio</em>
+        Tap to listen
       </span>
     </div>
   );

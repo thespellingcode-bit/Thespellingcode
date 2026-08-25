@@ -56,7 +56,7 @@ export function Icon({ name, size = 40, color = T.ink }) {
 // Maps a media asset_id (from content/media.json) to an icon key.
 export function iconForAsset(assetId = "") {
   const n = assetId.toLowerCase();
-  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow"]) {
+  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier"]) {
     if (n.includes(key)) return key;
   }
   return "pattern";
