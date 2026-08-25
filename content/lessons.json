@@ -105,5 +105,117 @@
       "instruction": "Listen carefully. Take your time. Choose your answer when you are ready.",
       "close": "Challenge complete! Your results are ready."
     }
+  },
+  {
+    "lesson_id": "L1-M02-01",
+    "module_id": 2,
+    "number": 1,
+    "title": "Meet Rhyme",
+    "skill": "rhyming",
+    "objective": "Recognise that rhyming words end with the same sound.",
+    "activity_type": "rhyme_match",
+    "estimated_time": "3–4 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Hello, Rhyme Detective! Today we listen for words that sound alike at the end.",
+      "teach": "A rhyme is when two words end with the same sound, like cat and hat.",
+      "model": "Listen. Cat... hat. Do you hear how they end the same way?",
+      "transition": "Now you try! Listen, then choose the word that rhymes.",
+      "close": "Great listening! You found your first rhymes."
+    }
+  },
+  {
+    "lesson_id": "L1-M02-02",
+    "module_id": 2,
+    "number": 2,
+    "title": "Find the Rhyme",
+    "skill": "rhyming",
+    "objective": "Choose the word that rhymes with a spoken word.",
+    "activity_type": "rhyme_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's find more rhymes today!",
+      "teach": "Listen carefully to the ending sound, then find its rhyming partner.",
+      "model": "Listen. Can... man. They rhyme!",
+      "transition": "Now you try! Find the rhyme.",
+      "close": "Wonderful! You found the rhymes."
+    }
+  },
+  {
+    "lesson_id": "L1-M02-03",
+    "module_id": 2,
+    "number": 3,
+    "title": "Odd One Out",
+    "skill": "rhyming",
+    "objective": "Identify the word that does not rhyme with the others.",
+    "activity_type": "rhyme_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today one word will be a trickster — it won't rhyme!",
+      "teach": "Listen to three words. Two of them rhyme. One does not belong.",
+      "model": "Listen. Cat... hat... dog. Which one does not rhyme?",
+      "transition": "Now you try! Find the word that does not rhyme.",
+      "close": "You caught the odd one out every time!"
+    }
+  },
+  {
+    "lesson_id": "L1-M02-04",
+    "module_id": 2,
+    "number": 4,
+    "title": "Finish My Rhyme",
+    "skill": "rhyming",
+    "objective": "Complete a rhyming pair with the matching word.",
+    "activity_type": "rhyme_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's finish some rhymes together!",
+      "teach": "I'll say a word. You find the word that finishes the rhyme.",
+      "model": "Dog... and? Listen for the matching sound: log!",
+      "transition": "Now you try! Finish the rhyme.",
+      "close": "You finished every rhyme!"
+    }
+  },
+  {
+    "lesson_id": "L1-M02-05",
+    "module_id": 2,
+    "number": 5,
+    "title": "Make a Rhyme",
+    "skill": "rhyming",
+    "objective": "Choose a word that could rhyme with a given word.",
+    "activity_type": "rhyme_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today you get to make your own rhymes!",
+      "teach": "Think of a word that ends the same way, then choose it.",
+      "model": "Cap... what could rhyme with cap? Listen for map!",
+      "transition": "Now you try! Make a rhyme.",
+      "close": "You are a rhyming champion!"
+    }
+  },
+  {
+    "lesson_id": "L1-M02-06",
+    "module_id": 2,
+    "number": 6,
+    "title": "Rhyme Challenge",
+    "skill": "rhyming",
+    "objective": "Demonstrate independent mastery of Module 2 rhyming skills.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Rhyme Challenge.",
+      "instruction": "Listen carefully. Take your time. Choose your answer when you are ready.",
+      "close": "Challenge complete! Your results are ready."
+    }
   }
 ]

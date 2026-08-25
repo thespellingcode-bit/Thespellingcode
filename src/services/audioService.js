@@ -160,7 +160,33 @@ function playGenericSequence(ctx, t0, key) {
   return true;
 }
 
+// Spoken-word audio for Module 2 (rhyming) and beyond — the oscillator/
+// noise synthesis above can make environmental sounds convincingly but
+// can't say a real word. Content marks a spoken-word asset with a
+// "say:" prefix (e.g. "say:cat"); this routes to the browser's built-in
+// Web Speech API instead of synthesis. Same placeholder-quality caveat
+// as the rest of the audio here — real recordings should replace this
+// before public launch — but it actually says the word, unlike any
+// oscillator trick.
+function speakWord(word) {
+  if (typeof window === "undefined" || !window.speechSynthesis) return false;
+  window.speechSynthesis.cancel(); // avoid overlapping utterances on rapid re-taps
+  const utter = new SpeechSynthesisUtterance(word);
+  utter.rate = 0.85; // slower, clearer for early readers
+  utter.pitch = 1.15; // slightly higher/friendlier
+  window.speechSynthesis.speak(utter);
+  return true;
+}
+
 export function playAsset(name) {
+  if (name.startsWith("say:")) {
+    try {
+      speakWord(name.slice(4));
+    } catch (e) {
+      // Web Speech unavailable — fail silently, app still works without sound.
+    }
+    return;
+  }
   try {
     const ctx = getCtx();
     if (ctx.state === "suspended") ctx.resume();
@@ -183,6 +209,13 @@ export const ASSET_DURATION_MS = {
   finger_slow: 1350, fast_compare: 2650, slow_compare: 2650, drum_compare: 950,
 };
 export function assetDurationMs(assetName) {
+  if (assetName.startsWith("say:")) {
+    // Scales with word count so multi-word "odd one out" phrases
+    // (e.g. "say:cat, hat, dog") keep the play button's playing/disabled
+    // state visible for as long as the phrase actually takes to speak.
+    const wordCount = assetName.slice(4).split(",").length;
+    return 900 + (wordCount - 1) * 750;
+  }
   return ASSET_DURATION_MS[assetName] || 700;
 }
 

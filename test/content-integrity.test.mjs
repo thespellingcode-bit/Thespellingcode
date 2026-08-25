@@ -78,14 +78,12 @@ test("REQUIREMENT: assessment questions do not reuse practice audio_asset+correc
   assert.deepEqual(violations, [], violations.join("\n"));
 });
 
-test("exactly one active module (Module 1) — scope guard for this MVP", () => {
-  const active = modules.filter((m) => m.active);
-  assert.equal(active.length, 1);
-  assert.equal(active[0].module_id, 1);
+test("exactly Modules 1-2 active — scope guard for this build (Modules 3+ still out of scope)", () => {
+  const active = modules.filter((m) => m.active).map((m) => m.module_id).sort();
+  assert.deepEqual(active, [1, 2]);
 });
 
-test("exactly one active badge (Sound Starter) — scope guard for this MVP", () => {
-  const active = badges.filter((b) => b.active);
-  assert.equal(active.length, 1);
-  assert.equal(active[0].badge_id, "BADGE-01");
+test("exactly Sound Starter and Rhyme Ranger badges active — scope guard for this build", () => {
+  const active = badges.filter((b) => b.active).map((b) => b.badge_id).sort();
+  assert.deepEqual(active, ["BADGE-01", "BADGE-02"]);
 });

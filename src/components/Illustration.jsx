@@ -15,7 +15,7 @@ const BG = {
   slow: "#E1F3E6", magnifier: "#FDE9D2", cat: "#FFE9D6", hat: "#FDE0E8",
   mat: "#E4EFFB", bat: "#EAE2F7", can: "#DCEBFF", man: "#FDE9D2",
   fan: "#E1F3E6", pan: "#F1E3D3", dog: "#F1E3D3", log: "#EAE2D3",
-  hen: "#FDE9D2", pen: "#DCEBFF", cap: "#FFE7E0", map: "#E1F3E6", tap_map: "#FFE7E0",
+  hen: "#FDE9D2", pen: "#DCEBFF", cap: "#FFE7E0", map: "#E1F3E6", nap: "#E8E6F7",
   pattern: "#F2EFE6",
 };
 
@@ -243,6 +243,12 @@ const PICTURES = {
       <path d="M32 34l20 8 20-8 20 8v46l-20-8-20 8-20-8z" fill="#F2EAD0" stroke="#A6733E" strokeWidth="2.4" strokeLinejoin="round" />
       <path d="M52 42v46M72 34v46" stroke="#A6733E" strokeWidth="1.6" strokeDasharray="3 3" opacity="0.6" />
       <circle cx="62" cy="58" r="4" fill="#FF6F59" />
+    </>
+  ),
+  nap: (
+    <>
+      <path d="M72 32a24 24 0 1014 30 18 18 0 01-14-30z" fill="#8B7FD1" stroke="#5A4C9E" strokeWidth="2.4" strokeLinejoin="round" />
+      <text x="52" y="86" fontSize="20" fontFamily="'Baloo 2', sans-serif" fill="#5A4C9E" fontWeight="700">Zzz</text>
     </>
   ),
   pattern: (

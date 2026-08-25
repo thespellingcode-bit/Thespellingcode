@@ -1,7 +1,7 @@
 // src/pages/ParentDashboard.jsx
 import React from "react";
 import { theme as T } from "../theme";
-import { getLessonsByModule, getModule, getParentPractice, getRemediationByErrorTag } from "../services/contentService";
+import { getLessonsByModule, getActiveModules, getParentPractice, getRemediationByErrorTag } from "../services/contentService";
 import { statusOfLesson, errorTagCounts } from "../services/progressService";
 
 function pct(n) {
@@ -30,11 +30,11 @@ function skillStatuses(lessons, state) {
   }));
 }
 
-const SKILL_LABELS = { auditory_discrimination: "Listening", auditory_memory: "Sound memory" };
+const SKILL_LABELS = { auditory_discrimination: "Listening", auditory_memory: "Sound memory", rhyming: "Rhyming" };
 
 export function ParentDashboard({ profile, state }) {
-  const module = getModule(1);
-  const lessons = getLessonsByModule(1);
+  const activeModules = [...getActiveModules()].sort((a, b) => a.module_id - b.module_id);
+  const lessons = activeModules.flatMap((m) => getLessonsByModule(m.module_id));
   const completedCount = lessons.filter((l) => state.progress[l.lesson_id]?.completed).length;
   const masteredCount = lessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
 
@@ -48,18 +48,20 @@ export function ParentDashboard({ profile, state }) {
   const errorCounts = errorTagCounts(state);
   const weakestTag = Object.entries(errorCounts).sort((a, b) => b[1] - a[1])[0]?.[0];
   const weakestRemediation = weakestTag ? getRemediationByErrorTag(weakestTag) : null;
-  const homePractice = getParentPractice(1)[0];
+  // Recommend practice from whichever module the child is currently working through.
+  const currentModule = activeModules.find((m) => getLessonsByModule(m.module_id).some((l) => !state.progress[l.lesson_id]?.mastery)) || activeModules[activeModules.length - 1];
+  const homePractice = getParentPractice(currentModule.module_id)[0];
 
   return (
     <div style={{ padding: "28px 20px 60px", maxWidth: 640, margin: "0 auto" }}>
       <h1 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 22, color: T.ink, margin: "0 0 4px" }}>{profile.name}'s progress</h1>
       <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: "0 0 22px" }}>
-        Level 1 — Sound Explorer · Module {module.module_id} — {module.module_name}
+        Level 1 — Sound Explorer · {activeModules.map((m) => m.module_name).join(" + ")}
       </p>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, marginBottom: 22 }}>
         <Card><div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute }}>Lessons completed</div><div style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 22, fontWeight: 700, color: T.ink }}>{completedCount} / {lessons.length}</div></Card>
-        <Card><div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute }}>Module progress</div><div style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 22, fontWeight: 700, color: T.ink }}>{pct(masteredCount / lessons.length)}</div></Card>
+        <Card><div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute }}>Overall progress</div><div style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 22, fontWeight: 700, color: T.ink }}>{pct(masteredCount / lessons.length)}</div></Card>
       </div>
 
       <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 15, color: T.ink, marginBottom: 8 }}>Skills</h2>

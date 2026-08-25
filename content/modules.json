@@ -1,6 +1,6 @@
 [
   { "module_id": 1, "level_id": 1, "module_name": "Listening Detective", "module_goal": "Build careful listening and auditory discrimination.", "units": 6, "active": true },
-  { "module_id": 2, "level_id": 1, "module_name": "Rhyme Detective", "module_goal": "Recognise and produce simple rhymes.", "units": 6, "active": false },
+  { "module_id": 2, "level_id": 1, "module_name": "Rhyme Detective", "module_goal": "Recognise and produce simple rhymes.", "units": 6, "active": true },
   { "module_id": 3, "level_id": 1, "module_name": "Beginning Sound Detective", "module_goal": "Identify first sounds in spoken words.", "units": 6, "active": false },
   { "module_id": 4, "level_id": 1, "module_name": "Ending Sound Detective", "module_goal": "Identify final sounds in spoken words.", "units": 6, "active": false },
   { "module_id": 5, "level_id": 1, "module_name": "Short Vowel Explorer", "module_goal": "Hear and distinguish short vowel sounds.", "units": 8, "active": false },

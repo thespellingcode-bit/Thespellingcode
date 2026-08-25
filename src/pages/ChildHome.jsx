@@ -1,38 +1,83 @@
 // src/pages/ChildHome.jsx
-import React from "react";
+import React, { useState } from "react";
 import { theme as T } from "../theme";
 import { Icon } from "../components/Icon";
 import { Btn } from "../components/Btn";
 import { Badge } from "../components/Badge";
 import { ProgressBar } from "../components/ProgressBar";
-import { getLessonsByModule, getModule, getActiveBadges, getBadges } from "../services/contentService";
+import { getLessonsByModule, getActiveModules, getActiveBadges, getBadges } from "../services/contentService";
 import { statusOfLesson } from "../services/progressService";
 
-export function ChildHome({ profile, state, onOpenLesson, moduleId = 1 }) {
-  const module = getModule(moduleId);
+function isModuleComplete(state, moduleId) {
   const lessons = getLessonsByModule(moduleId);
+  return lessons.length > 0 && lessons.every((l) => state.progress[l.lesson_id]?.mastery);
+}
+
+// moduleId is an optional override (e.g. a future deep link) — when
+// omitted, the child lands on their first not-yet-complete module so
+// returning users don't have to re-navigate past what they've finished.
+export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
+  const activeModules = [...getActiveModules()].sort((a, b) => a.module_id - b.module_id);
+  const firstIncomplete = activeModules.find((m) => !isModuleComplete(state, m.module_id));
+  const defaultModuleId = (firstIncomplete || activeModules[activeModules.length - 1]).module_id;
+  const [selectedModuleId, setSelectedModuleId] = useState(moduleId || defaultModuleId);
+
+  const moduleUnlocked = (idx) => idx === 0 || isModuleComplete(state, activeModules[idx - 1].module_id);
+  const selectedIdx = activeModules.findIndex((m) => m.module_id === selectedModuleId);
+  const module = activeModules[selectedIdx] || activeModules[0];
+
+  const lessons = getLessonsByModule(module.module_id);
   const masteredCount = lessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
   const moduleComplete = masteredCount === lessons.length;
   const nextLesson = lessons.find((l) => statusOfLesson(state, l.lesson_id) !== "mastered") || lessons[lessons.length - 1];
+
+  const totalMastered = activeModules.reduce((sum, m) => sum + getLessonsByModule(m.module_id).filter((l) => state.progress[l.lesson_id]?.mastery).length, 0);
+  const totalLessons = activeModules.reduce((sum, m) => sum + getLessonsByModule(m.module_id).length, 0);
+
   const activeBadges = getActiveBadges();
   const lockedBadges = getBadges().filter((b) => !b.active).slice(0, 3);
 
   return (
     <div style={{ padding: "28px 20px 60px", maxWidth: 760, margin: "0 auto" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 26 }}>
-        <ProgressBar value={masteredCount / lessons.length} size={82}>
+      <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 22 }}>
+        <ProgressBar value={totalLessons ? totalMastered / totalLessons : 0} size={82}>
           <span style={{ fontSize: 34 }}>{profile.avatar}</span>
         </ProgressBar>
         <div>
           <h1 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 25, color: T.ink, margin: 0 }}>Hi {profile.name}!</h1>
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: "4px 0 0" }}>
-            Level 1 · Sound Explorer — Module {module.module_id}: {module.module_name}
+            Level 1 · Sound Explorer
           </p>
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 13, color: T.goldDeep, fontWeight: 600, margin: "4px 0 0" }}>
-            {masteredCount} of {lessons.length} lessons mastered
+            {totalMastered} of {totalLessons} lessons mastered
           </p>
         </div>
       </div>
+
+      {activeModules.length > 1 && (
+        <div style={{ display: "flex", gap: 10, marginBottom: 22, flexWrap: "wrap" }}>
+          {activeModules.map((m, idx) => {
+            const unlocked = moduleUnlocked(idx);
+            const selected = m.module_id === module.module_id;
+            return (
+              <button
+                key={m.module_id}
+                disabled={!unlocked}
+                onClick={() => setSelectedModuleId(m.module_id)}
+                style={{
+                  display: "flex", alignItems: "center", gap: 8, padding: "10px 16px", borderRadius: 999, cursor: unlocked ? "pointer" : "not-allowed",
+                  border: `1.5px solid ${selected ? T.gold : T.line}`, background: selected ? "#FFFBEF" : "#fff",
+                  fontFamily: "'Baloo 2', sans-serif", fontWeight: 600, fontSize: 13.5, color: unlocked ? T.ink : T.textMute,
+                  opacity: unlocked ? 1 : 0.6,
+                }}
+              >
+                {!unlocked && <Icon name="lock" size={14} color={T.textMute} />}
+                Module {m.module_id}: {m.module_name}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       <Btn variant="gold" size="lg" style={{ marginBottom: 30 }} onClick={() => onOpenLesson(nextLesson.lesson_id)}>
         {masteredCount === 0 ? "Start your first mission!" : moduleComplete ? "Replay a mission" : "Continue your mission"}
@@ -81,7 +126,7 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId = 1 }) {
 
       <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 18, color: T.ink, marginBottom: 14 }}>Badges</h2>
       <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-        {activeBadges.map((b) => <Badge key={b.badge_id} name={b.name} earned={moduleComplete} />)}
+        {activeBadges.map((b) => <Badge key={b.badge_id} name={b.name} earned={isModuleComplete(state, b.module_id)} />)}
         {lockedBadges.map((b) => <Badge key={b.badge_id} name={b.name} locked />)}
       </div>
     </div>

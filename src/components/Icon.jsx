@@ -53,10 +53,18 @@ export function Icon({ name, size = 40, color = T.ink }) {
   }
 }
 
-// Maps a media asset_id (from content/media.json) to an icon key.
+// Module 2 (rhyming) word-picture keys — kept separate from the Module 1
+// sound keys above so a shared substring can't accidentally match the
+// wrong module's icon (e.g. "tap" already means the Module 1 percussive
+// sound, so Module 2's -ap rhyme family deliberately uses cap/map/nap
+// instead of tap).
+const WORD_KEYS = ["cat", "hat", "mat", "bat", "can", "man", "fan", "pan", "dog", "log", "hen", "pen", "cap", "map", "nap"];
+
+// Maps a media asset_id (from content/media.json) to an icon key. Strips
+// the "say:" TTS prefix (see audioService.playAsset) before matching.
 export function iconForAsset(assetId = "") {
-  const n = assetId.toLowerCase();
-  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier"]) {
+  const n = assetId.replace(/^say:/, "").toLowerCase();
+  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier", ...WORD_KEYS]) {
     if (n.includes(key)) return key;
   }
   return "pattern";
@@ -69,5 +77,6 @@ export function labelToIcon(label = "") {
   const n = label.toLowerCase();
   const direct = { bell: "bell", clock: "clock", car: "car", rain: "rain", drum: "drum", whisper: "whisper", clap: "clap", tap: "tap", finger: "finger", same: "same", different: "different", fast: "fast", slow: "slow", loud: "loud", soft: "soft" };
   for (const key in direct) if (n.includes(key)) return direct[key];
+  for (const key of WORD_KEYS) if (n.includes(key)) return key;
   return null;
 }
