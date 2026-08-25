@@ -64,7 +64,7 @@ const WORD_KEYS = ["cat", "hat", "mat", "bat", "can", "man", "fan", "pan", "dog"
 // the "say:" TTS prefix (see audioService.playAsset) before matching.
 export function iconForAsset(assetId = "") {
   const n = assetId.replace(/^say:/, "").toLowerCase();
-  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier", ...WORD_KEYS]) {
+  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier", "phone", "wind", ...WORD_KEYS]) {
     if (n.includes(key)) return key;
   }
   return "pattern";
@@ -75,7 +75,7 @@ export function iconForAsset(assetId = "") {
 // picture makes sense (multi-sound sequence labels like "Clap-Tap-Clap").
 export function labelToIcon(label = "") {
   const n = label.toLowerCase();
-  const direct = { bell: "bell", clock: "clock", car: "car", rain: "rain", drum: "drum", whisper: "whisper", clap: "clap", tap: "tap", finger: "finger", same: "same", different: "different", fast: "fast", slow: "slow", loud: "loud", soft: "soft" };
+  const direct = { bell: "bell", clock: "clock", car: "car", rain: "rain", drum: "drum", whisper: "whisper", clap: "clap", tap: "tap", finger: "finger", same: "same", different: "different", fast: "fast", slow: "slow", loud: "loud", soft: "soft", phone: "phone", wind: "wind" };
   for (const key in direct) if (n.includes(key)) return direct[key];
   for (const key of WORD_KEYS) if (n.includes(key)) return key;
   return null;

@@ -14,6 +14,44 @@ function getCtx() {
   return audioCtx;
 }
 
+// Every synthesized sound routes through this single master gain node
+// instead of ctx.destination directly. Repeated/rapid play taps — across
+// the same button or across question transitions — previously left old
+// oscillators/noise buffers scheduled to keep running after a new sound
+// started, so several overlapping "generations" of sound could stack up
+// on the same output at once. Enough of that piling up made everything
+// progressively quieter (the browser's own limiter squashing the combined
+// signal) and eventually inaudible. stopAllSounds() cuts every previous
+// generation's connection to the speakers the instant a new sound starts,
+// so at most one generation is ever actually audible — the orphaned nodes
+// keep running silently in memory and get garbage-collected once their
+// already-scheduled stop() time arrives.
+let masterGain = null;
+function getMasterGain(ctx) {
+  if (!masterGain) {
+    masterGain = ctx.createGain();
+    masterGain.gain.value = 1;
+    masterGain.connect(ctx.destination);
+  }
+  return masterGain;
+}
+function stopAllSounds() {
+  if (!audioCtx || !masterGain) return;
+  const now = audioCtx.currentTime;
+  const oldGain = masterGain;
+  try {
+    oldGain.gain.cancelScheduledValues(now);
+    oldGain.gain.setValueAtTime(oldGain.gain.value, now);
+    oldGain.gain.linearRampToValueAtTime(0.0001, now + 0.02); // avoid an audible click on cutoff
+  } catch (e) {
+    // ignore — worst case the old generation is silenced by disconnect() below instead
+  }
+  masterGain = null; // next getMasterGain() call builds a fresh one for the new sound
+  setTimeout(() => {
+    try { oldGain.disconnect(); } catch (e) {}
+  }, 50);
+}
+
 function tone(ctx, t0, freq, dur, type = "sine", gain = 0.18) {
   const osc = ctx.createOscillator();
   const g = ctx.createGain();
@@ -22,7 +60,7 @@ function tone(ctx, t0, freq, dur, type = "sine", gain = 0.18) {
   g.gain.setValueAtTime(0.0001, t0);
   g.gain.exponentialRampToValueAtTime(gain, t0 + 0.01);
   g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-  osc.connect(g).connect(ctx.destination);
+  osc.connect(g).connect(getMasterGain(ctx));
   osc.start(t0);
   osc.stop(t0 + dur + 0.02);
 }
@@ -42,7 +80,7 @@ function filteredNoise(ctx, t0, dur, { type = "bandpass", freq = 2000, Q = 1, ga
   g.gain.setValueAtTime(0.0001, t0);
   g.gain.exponentialRampToValueAtTime(Math.max(gain, 0.0002), t0 + attack);
   g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-  src.connect(filter).connect(g).connect(ctx.destination);
+  src.connect(filter).connect(g).connect(getMasterGain(ctx));
   src.start(t0);
   src.stop(t0 + dur + 0.02);
 }
@@ -60,7 +98,7 @@ function sweepTone(ctx, t0, { from = 300, to = 140, dur = 0.14, type = "sawtooth
   g.gain.setValueAtTime(0.0001, t0);
   g.gain.exponentialRampToValueAtTime(gain, t0 + 0.008);
   g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-  osc.connect(filter).connect(g).connect(ctx.destination);
+  osc.connect(filter).connect(g).connect(getMasterGain(ctx));
   osc.start(t0);
   osc.stop(t0 + dur + 0.02);
 }
@@ -74,7 +112,7 @@ function engineRumble(ctx, t0, dur = 0.9, baseFreq = 95) {
   const filter = ctx.createBiquadFilter();
   filter.type = "lowpass";
   filter.frequency.value = 500;
-  filter.connect(g).connect(ctx.destination);
+  filter.connect(g).connect(getMasterGain(ctx));
   [baseFreq, baseFreq * 1.01, baseFreq * 0.5].forEach((f, i) => {
     const osc = ctx.createOscillator();
     osc.type = "sawtooth";
@@ -122,6 +160,12 @@ const BASE_SOUND = {
   drum: (ctx, t0) => { sweepTone(ctx, t0, { from: 150, to: 55, dur: 0.3, type: "sine", gain: 0.32, filterFrom: 600, filterTo: 150 }); filteredNoise(ctx, t0, 0.04, { type: "lowpass", freq: 400, Q: 1, gain: 0.08, attack: 0.002 }); },
   whisper: (ctx, t0) => filteredNoise(ctx, t0, 0.5, { type: "bandpass", freq: 1800, Q: 0.7, gain: 0.045, attack: 0.05 }),
   finger: (ctx, t0) => filteredNoise(ctx, t0, 0.03, { type: "highpass", freq: 4000, Q: 1, gain: 0.06, attack: 0.001 }),
+  // Added to widen Lesson 1's vocabulary beyond bell/clock/car/rain — see
+  // content/word-library.md §4. Both are mechanical/ambient sounds
+  // (same reasoning as the dog→clock swap in Round 1: those synthesize
+  // convincingly, animal/voice sounds don't).
+  phone: (ctx, t0) => [0, 0.6].forEach((d) => { tone(ctx, t0 + d, 480, 0.35, "sine", 0.13); tone(ctx, t0 + d, 620, 0.35, "sine", 0.09); }),
+  wind: (ctx, t0) => filteredNoise(ctx, t0, 1.4, { type: "lowpass", freq: 700, Q: 0.5, gain: 0.12, attack: 0.15 }),
 };
 
 // Fixed multi-part sequences that need explicit timing (repeated hits,
@@ -179,6 +223,7 @@ function speakWord(word) {
 }
 
 export function playAsset(name) {
+  stopAllSounds(); // silence whatever's still tailing off from a previous play, first
   if (name.startsWith("say:")) {
     try {
       speakWord(name.slice(4));
@@ -207,6 +252,7 @@ export function playAsset(name) {
 export const ASSET_DURATION_MS = {
   clock: 1450, rain: 1350, car: 950, drum_slow: 1450, clap_slow: 1350, tap_slow: 1350,
   finger_slow: 1350, fast_compare: 2650, slow_compare: 2650, drum_compare: 950,
+  phone: 1000, wind: 1450,
 };
 export function assetDurationMs(assetName) {
   if (assetName.startsWith("say:")) {
@@ -230,6 +276,7 @@ const SFX = {
 };
 
 export function playSfx(kind) {
+  stopAllSounds();
   try {
     const ctx = getCtx();
     if (ctx.state === "suspended") ctx.resume();

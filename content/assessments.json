@@ -7,14 +7,14 @@
     "question": "What sound did you hear?",
     "options": [
       "Car",
-      "Rain",
-      "Bell"
+      "Phone",
+      "Wind"
     ],
     "correct_answer": "Car",
     "audio_asset": "car",
     "skill": "auditory_discrimination",
     "error_tag": "SOUND_ID_CONFUSION",
-    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+    "review_flag": "Vocabulary widened to 6 sounds (bell/clock/car/rain/phone/wind — see content/word-library.md §4), which fixes distractor variety, but a 'name this sound' item still can't test a truly novel (sound, answer) pair once practice has already established every sound's own correct identity - that's inherent to an identity-matching format, not a vocabulary-size problem. An 'odd one out' style item (compare 3 sounds, pick the different one, as used in Module 2 Lesson 3) would give genuine transfer here."
   },
   {
     "assessment_id": "AS-M01-01-2",
@@ -24,14 +24,14 @@
     "question": "What sound did you hear?",
     "options": [
       "Rain",
-      "Bell",
-      "Car"
+      "Wind",
+      "Phone"
     ],
     "correct_answer": "Rain",
     "audio_asset": "rain",
     "skill": "auditory_discrimination",
     "error_tag": "SOUND_ID_CONFUSION",
-    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+    "review_flag": "Vocabulary widened to 6 sounds (bell/clock/car/rain/phone/wind — see content/word-library.md §4), which fixes distractor variety, but a 'name this sound' item still can't test a truly novel (sound, answer) pair once practice has already established every sound's own correct identity - that's inherent to an identity-matching format, not a vocabulary-size problem. An 'odd one out' style item (compare 3 sounds, pick the different one, as used in Module 2 Lesson 3) would give genuine transfer here."
   },
   {
     "assessment_id": "AS-M01-01-3",
@@ -41,14 +41,14 @@
     "question": "What sound did you hear?",
     "options": [
       "Bell",
-      "Car",
-      "Rain"
+      "Wind",
+      "Phone"
     ],
     "correct_answer": "Bell",
     "audio_asset": "bell",
     "skill": "auditory_discrimination",
     "error_tag": "SOUND_ID_CONFUSION",
-    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+    "review_flag": "Vocabulary widened to 6 sounds (bell/clock/car/rain/phone/wind — see content/word-library.md §4), which fixes distractor variety, but a 'name this sound' item still can't test a truly novel (sound, answer) pair once practice has already established every sound's own correct identity - that's inherent to an identity-matching format, not a vocabulary-size problem. An 'odd one out' style item (compare 3 sounds, pick the different one, as used in Module 2 Lesson 3) would give genuine transfer here."
   },
   {
     "assessment_id": "AS-M01-01-4",
@@ -58,14 +58,14 @@
     "question": "What sound did you hear?",
     "options": [
       "Clock",
-      "Car",
-      "Rain"
+      "Phone",
+      "Wind"
     ],
     "correct_answer": "Clock",
     "audio_asset": "clock",
     "skill": "auditory_discrimination",
     "error_tag": "SOUND_ID_CONFUSION",
-    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+    "review_flag": "Vocabulary widened to 6 sounds (bell/clock/car/rain/phone/wind — see content/word-library.md §4), which fixes distractor variety, but a 'name this sound' item still can't test a truly novel (sound, answer) pair once practice has already established every sound's own correct identity - that's inherent to an identity-matching format, not a vocabulary-size problem. An 'odd one out' style item (compare 3 sounds, pick the different one, as used in Module 2 Lesson 3) would give genuine transfer here."
   },
   {
     "assessment_id": "AS-M01-01-5",
@@ -76,13 +76,13 @@
     "options": [
       "Car",
       "Bell",
-      "Rain"
+      "Wind"
     ],
     "correct_answer": "Car",
     "audio_asset": "car",
     "skill": "auditory_discrimination",
     "error_tag": "SOUND_ID_CONFUSION",
-    "review_flag": "Module 1's listen_choose vocabulary has only 4 sounds (bell/clock/car/rain), so a true novel audio+answer pair isn't possible without adding a 5th sound (new curriculum content). This item tests the same sound as its practice counterpart with a different distractor set — weaker transfer than the other lessons' assessment items. Recommend the curriculum team consider a 5th environmental sound for Module 1 to enable genuine novel examples here."
+    "review_flag": "Vocabulary widened to 6 sounds (bell/clock/car/rain/phone/wind — see content/word-library.md §4), which fixes distractor variety, but a 'name this sound' item still can't test a truly novel (sound, answer) pair once practice has already established every sound's own correct identity - that's inherent to an identity-matching format, not a vocabulary-size problem. An 'odd one out' style item (compare 3 sounds, pick the different one, as used in Module 2 Lesson 3) would give genuine transfer here."
   },
   {
     "assessment_id": "AS-M01-02-1",

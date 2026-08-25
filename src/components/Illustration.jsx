@@ -16,6 +16,7 @@ const BG = {
   mat: "#E4EFFB", bat: "#EAE2F7", can: "#DCEBFF", man: "#FDE9D2",
   fan: "#E1F3E6", pan: "#F1E3D3", dog: "#F1E3D3", log: "#EAE2D3",
   hen: "#FDE9D2", pen: "#DCEBFF", cap: "#FFE7E0", map: "#E1F3E6", nap: "#E8E6F7",
+  phone: "#E8E6F7", wind: "#DCEEF6",
   pattern: "#F2EFE6",
 };
 
@@ -249,6 +250,22 @@ const PICTURES = {
     <>
       <path d="M72 32a24 24 0 1014 30 18 18 0 01-14-30z" fill="#8B7FD1" stroke="#5A4C9E" strokeWidth="2.4" strokeLinejoin="round" />
       <text x="52" y="86" fontSize="20" fontFamily="'Baloo 2', sans-serif" fill="#5A4C9E" fontWeight="700">Zzz</text>
+    </>
+  ),
+  phone: (
+    <>
+      <rect x="42" y="26" width="36" height="64" rx="10" fill="#8B7FD1" stroke="#5A4C9E" strokeWidth="2.4" />
+      <rect x="48" y="34" width="24" height="40" rx="3" fill="#E3DEFB" />
+      <circle cx="60" cy="82" r="2.6" fill="#E3DEFB" />
+      <path d="M84 42a18 18 0 010 18" fill="none" stroke="#F2B705" strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M92 34a30 30 0 010 34" fill="none" stroke="#F2B705" strokeWidth="2.6" strokeLinecap="round" opacity="0.7" />
+    </>
+  ),
+  wind: (
+    <>
+      <path d="M22 46h48a10 10 0 10-8-16" fill="none" stroke="#5D8FA6" strokeWidth="4.2" strokeLinecap="round" />
+      <path d="M22 62h58a10 10 0 11-8 16" fill="none" stroke="#5D8FA6" strokeWidth="4.2" strokeLinecap="round" />
+      <path d="M22 78h36a8 8 0 106-13" fill="none" stroke="#5D8FA6" strokeWidth="4.2" strokeLinecap="round" />
     </>
   ),
   pattern: (
