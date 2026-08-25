@@ -166,6 +166,22 @@ const BASE_SOUND = {
   // convincingly, animal/voice sounds don't).
   phone: (ctx, t0) => [0, 0.6].forEach((d) => { tone(ctx, t0 + d, 480, 0.35, "sine", 0.13); tone(ctx, t0 + d, 620, 0.35, "sine", 0.09); }),
   wind: (ctx, t0) => filteredNoise(ctx, t0, 1.4, { type: "lowpass", freq: 700, Q: 0.5, gain: 0.12, attack: 0.15 }),
+  siren: (ctx, t0) => {
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(500, t0);
+    osc.frequency.linearRampToValueAtTime(900, t0 + 0.5);
+    osc.frequency.linearRampToValueAtTime(500, t0 + 1.0);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(0.15, t0 + 0.05);
+    g.gain.setValueAtTime(0.15, t0 + 0.95);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.0);
+    osc.connect(g).connect(getMasterGain(ctx));
+    osc.start(t0);
+    osc.stop(t0 + 1.05);
+  },
+  thunder: (ctx, t0) => { filteredNoise(ctx, t0, 0.15, { type: "lowpass", freq: 300, Q: 1, gain: 0.28, attack: 0.005 }); engineRumble(ctx, t0 + 0.05, 1.2, 55); },
 };
 
 // Fixed multi-part sequences that need explicit timing (repeated hits,
@@ -252,7 +268,7 @@ export function playAsset(name) {
 export const ASSET_DURATION_MS = {
   clock: 1450, rain: 1350, car: 950, drum_slow: 1450, clap_slow: 1350, tap_slow: 1350,
   finger_slow: 1350, fast_compare: 2650, slow_compare: 2650, drum_compare: 950,
-  phone: 1000, wind: 1450,
+  phone: 1000, wind: 1450, siren: 1050, thunder: 1250,
 };
 export function assetDurationMs(assetName) {
   if (assetName.startsWith("say:")) {

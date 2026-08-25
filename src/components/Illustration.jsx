@@ -16,7 +16,10 @@ const BG = {
   mat: "#E4EFFB", bat: "#EAE2F7", can: "#DCEBFF", man: "#FDE9D2",
   fan: "#E1F3E6", pan: "#F1E3D3", dog: "#F1E3D3", log: "#EAE2D3",
   hen: "#FDE9D2", pen: "#DCEBFF", cap: "#FFE7E0", map: "#E1F3E6", nap: "#E8E6F7",
-  phone: "#E8E6F7", wind: "#DCEEF6",
+  phone: "#E8E6F7", wind: "#DCEEF6", siren: "#FDEBE4", thunder: "#E4E1EA",
+  bag: "#DCEBFF", tag: "#FDE9D2", rag: "#E1F3E6", net: "#DCEEF6", jet: "#DCEBFF",
+  vet: "#E1F3E6", fig: "#EAE2F7", wig: "#F1E3D3", mop: "#DCEEF6", pop: "#FDEBE4",
+  top: "#FFF3D6",
   pattern: "#F2EFE6",
 };
 
@@ -266,6 +269,96 @@ const PICTURES = {
       <path d="M22 46h48a10 10 0 10-8-16" fill="none" stroke="#5D8FA6" strokeWidth="4.2" strokeLinecap="round" />
       <path d="M22 62h58a10 10 0 11-8 16" fill="none" stroke="#5D8FA6" strokeWidth="4.2" strokeLinecap="round" />
       <path d="M22 78h36a8 8 0 106-13" fill="none" stroke="#5D8FA6" strokeWidth="4.2" strokeLinecap="round" />
+    </>
+  ),
+  siren: (
+    <>
+      <rect x="40" y="52" width="40" height="24" rx="6" fill="#FF6F59" stroke="#CC4A37" strokeWidth="2.4" />
+      <path d="M46 52a14 10 0 0128 0z" fill="#4C8DFF" stroke="#2B5FCC" strokeWidth="2.2" />
+      <circle cx="60" cy="46" r="4" fill="#FFF3D6" />
+      <path d="M28 38l7 7M92 38l-7 7M60 24v9" stroke="#F2B705" strokeWidth="3" strokeLinecap="round" />
+    </>
+  ),
+  thunder: (
+    <>
+      <path d="M32 52a16 16 0 0116-16 18 18 0 0117.6 14A14 14 0 0164 78H33a14 14 0 01-1-27.9z" fill="#8B8FA3" stroke="#585C70" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M62 58l-10 18h8l-6 14 16-20h-8z" fill="#F2B705" stroke="#C99400" strokeWidth="2" strokeLinejoin="round" />
+    </>
+  ),
+  bag: (
+    <>
+      <path d="M34 48h52l-4 38a6 6 0 01-6 5H44a6 6 0 01-6-5z" fill="#6FA4FF" stroke="#2B5FCC" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M44 48v-8a16 16 0 0132 0v8" fill="none" stroke="#2B5FCC" strokeWidth="3" strokeLinecap="round" />
+    </>
+  ),
+  tag: (
+    <>
+      <path d="M34 34l30 0 22 22-30 30-22-22z" fill="#F2B705" stroke="#C99400" strokeWidth="2.4" strokeLinejoin="round" />
+      <circle cx="46" cy="46" r="4" fill="#FFF9EE" />
+    </>
+  ),
+  rag: (
+    <>
+      <path d="M30 40q30-10 60 0v14q-30-10-60 0z" fill="#8FC4B6" stroke="#2F7A6C" strokeWidth="2.2" strokeLinejoin="round" />
+      <path d="M30 54q30-10 60 0v14q-30-10-60 0z" fill="#A7D2C6" stroke="#2F7A6C" strokeWidth="2.2" strokeLinejoin="round" />
+      <path d="M30 68q30-10 60 0v10q-30-10-60 0z" fill="#8FC4B6" stroke="#2F7A6C" strokeWidth="2.2" strokeLinejoin="round" />
+    </>
+  ),
+  net: (
+    <>
+      <circle cx="52" cy="46" r="22" fill="none" stroke="#4C8DFF" strokeWidth="2.6" />
+      <path d="M34 34l36 24M70 34l-36 24M52 24v44M36 40h32M36 52h32" stroke="#8FB6FF" strokeWidth="1.3" opacity="0.85" />
+      <path d="M70 66l16 18" stroke="#7A5230" strokeWidth="4" strokeLinecap="round" />
+    </>
+  ),
+  jet: (
+    <>
+      <path d="M24 62l64-14-10 8-40 12z" fill="#B9BFCB" stroke="#6E7488" strokeWidth="2.2" strokeLinejoin="round" />
+      <path d="M60 54l24-18 8 4-20 20z" fill="#DADFE6" stroke="#6E7488" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M46 58l-6 16 10-4 6-10z" fill="#DADFE6" stroke="#6E7488" strokeWidth="2" strokeLinejoin="round" />
+    </>
+  ),
+  vet: (
+    <>
+      <path d="M40 30v20a12 12 0 0024 0V30" fill="none" stroke="#8FC4B6" strokeWidth="3.4" strokeLinecap="round" />
+      <path d="M40 30a4 4 0 100-8 4 4 0 000 8zM64 30a4 4 0 100-8 4 4 0 000 8z" fill="#8FC4B6" />
+      <path d="M52 50v14a10 10 0 1010-10" fill="none" stroke="#2F7A6C" strokeWidth="3.4" strokeLinecap="round" />
+      <circle cx="62" cy="54" r="5" fill="none" stroke="#2F7A6C" strokeWidth="3" />
+    </>
+  ),
+  fig: (
+    <>
+      <path d="M60 34c-16 0-24 16-24 30a24 24 0 0048 0c0-14-8-30-24-30z" fill="#8B7FD1" stroke="#5A4C9E" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M60 34v-8M54 28l6-2 6 2" stroke="#5A4C9E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+    </>
+  ),
+  wig: (
+    <>
+      <path d="M34 66a26 22 0 0152 0v6H34z" fill="#C98A4E" stroke="#A6733E" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M32 58a6 8 0 1112 0M76 58a6 8 0 10-12 0" fill="#C98A4E" stroke="#A6733E" strokeWidth="2.2" />
+      <path d="M42 46q4-10 18-10t18 10" fill="none" stroke="#A6733E" strokeWidth="1.6" opacity="0.6" />
+    </>
+  ),
+  mop: (
+    <>
+      <rect x="56" y="24" width="8" height="38" rx="3" fill="#C98A4E" stroke="#8B5E30" strokeWidth="2" />
+      {[42, 50, 58, 66, 78].map((x, i) => (
+        <path key={x} d={`M60 60L${x} 88`} stroke="#F2EAD0" strokeWidth="4" strokeLinecap="round" />
+      ))}
+    </>
+  ),
+  pop: (
+    <>
+      <path d="M46 40h28l-3 44a4 4 0 01-4 4H53a4 4 0 01-4-4z" fill="#FF6F59" stroke="#CC4A37" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M50 40l3-8h14l3 8" fill="none" stroke="#CC4A37" strokeWidth="2.2" strokeLinejoin="round" />
+      <circle cx="54" cy="56" r="2.4" fill="#FFD9CF" /><circle cx="64" cy="50" r="2" fill="#FFD9CF" /><circle cx="58" cy="68" r="2.2" fill="#FFD9CF" />
+    </>
+  ),
+  top: (
+    <>
+      <path d="M40 34h40l-6 14H46z" fill="#F2B705" stroke="#C99400" strokeWidth="2.2" strokeLinejoin="round" />
+      <path d="M46 48h28l-14 34z" fill="#FFD65C" stroke="#C99400" strokeWidth="2.2" strokeLinejoin="round" />
+      <path d="M30 40q10-4 10 4M90 40q-10-4-10 4" stroke="#C99400" strokeWidth="1.6" fill="none" opacity="0.6" />
     </>
   ),
   pattern: (

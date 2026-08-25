@@ -7,7 +7,7 @@
     "skill": "auditory_discrimination",
     "objective": "Identify and match familiar environmental sounds.",
     "activity_type": "listen_choose",
-    "estimated_time": "3\u20134 min",
+    "estimated_time": "4\u20136 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -133,7 +133,7 @@
     "skill": "rhyming",
     "objective": "Choose the word that rhymes with a spoken word.",
     "activity_type": "rhyme_match",
-    "estimated_time": "4–5 min",
+    "estimated_time": "5–6 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -152,7 +152,7 @@
     "skill": "rhyming",
     "objective": "Identify the word that does not rhyme with the others.",
     "activity_type": "rhyme_match",
-    "estimated_time": "4–5 min",
+    "estimated_time": "5–6 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -171,7 +171,7 @@
     "skill": "rhyming",
     "objective": "Complete a rhyming pair with the matching word.",
     "activity_type": "rhyme_match",
-    "estimated_time": "4–5 min",
+    "estimated_time": "5–6 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -190,7 +190,7 @@
     "skill": "rhyming",
     "objective": "Choose a word that could rhyme with a given word.",
     "activity_type": "rhyme_match",
-    "estimated_time": "4–5 min",
+    "estimated_time": "5–6 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -209,7 +209,7 @@
     "skill": "rhyming",
     "objective": "Demonstrate independent mastery of Module 2 rhyming skills.",
     "activity_type": "assessment",
-    "estimated_time": "6–8 min",
+    "estimated_time": "8–10 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {

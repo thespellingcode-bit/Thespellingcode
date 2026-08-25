@@ -58,13 +58,16 @@ export function Icon({ name, size = 40, color = T.ink }) {
 // wrong module's icon (e.g. "tap" already means the Module 1 percussive
 // sound, so Module 2's -ap rhyme family deliberately uses cap/map/nap
 // instead of tap).
-const WORD_KEYS = ["cat", "hat", "mat", "bat", "can", "man", "fan", "pan", "dog", "log", "hen", "pen", "cap", "map", "nap"];
+const WORD_KEYS = [
+  "cat", "hat", "mat", "bat", "can", "man", "fan", "pan", "dog", "log", "hen", "pen", "cap", "map", "nap",
+  "bag", "tag", "rag", "net", "jet", "vet", "fig", "wig", "mop", "pop", "top",
+];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
 // the "say:" TTS prefix (see audioService.playAsset) before matching.
 export function iconForAsset(assetId = "") {
   const n = assetId.replace(/^say:/, "").toLowerCase();
-  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier", "phone", "wind", ...WORD_KEYS]) {
+  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier", "phone", "wind", "siren", "thunder", ...WORD_KEYS]) {
     if (n.includes(key)) return key;
   }
   return "pattern";
@@ -75,7 +78,7 @@ export function iconForAsset(assetId = "") {
 // picture makes sense (multi-sound sequence labels like "Clap-Tap-Clap").
 export function labelToIcon(label = "") {
   const n = label.toLowerCase();
-  const direct = { bell: "bell", clock: "clock", car: "car", rain: "rain", drum: "drum", whisper: "whisper", clap: "clap", tap: "tap", finger: "finger", same: "same", different: "different", fast: "fast", slow: "slow", loud: "loud", soft: "soft", phone: "phone", wind: "wind" };
+  const direct = { bell: "bell", clock: "clock", car: "car", rain: "rain", drum: "drum", whisper: "whisper", clap: "clap", tap: "tap", finger: "finger", same: "same", different: "different", fast: "fast", slow: "slow", loud: "loud", soft: "soft", phone: "phone", wind: "wind", siren: "siren", thunder: "thunder" };
   for (const key in direct) if (n.includes(key)) return direct[key];
   for (const key of WORD_KEYS) if (n.includes(key)) return key;
   return null;

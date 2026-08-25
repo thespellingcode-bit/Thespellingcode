@@ -7,7 +7,7 @@
     "question": "What sound did you hear?",
     "options": [
       "Car",
-      "Phone",
+      "Siren",
       "Wind"
     ],
     "correct_answer": "Car",
@@ -41,7 +41,7 @@
     "question": "What sound did you hear?",
     "options": [
       "Bell",
-      "Wind",
+      "Thunder",
       "Phone"
     ],
     "correct_answer": "Bell",
@@ -76,7 +76,7 @@
     "options": [
       "Car",
       "Bell",
-      "Wind"
+      "Thunder"
     ],
     "correct_answer": "Car",
     "audio_asset": "car",
@@ -585,5 +585,24 @@
   { "assessment_id": "AS-M02-06-7", "lesson_id": "L1-M02-06", "order": 7, "type": "rhyme_match", "question": "Which word rhymes with pan?", "options": ["man", "dog", "hat"], "correct_answer": "man", "audio_asset": "say:pan", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
   { "assessment_id": "AS-M02-06-8", "lesson_id": "L1-M02-06", "order": 8, "type": "rhyme_match", "question": "Which word rhymes with nap?", "options": ["cap", "pen", "cat"], "correct_answer": "cap", "audio_asset": "say:nap", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
   { "assessment_id": "AS-M02-06-9", "lesson_id": "L1-M02-06", "order": 9, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["hen", "pen", "dog"], "correct_answer": "dog", "audio_asset": "say:hen, pen, dog", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
-  { "assessment_id": "AS-M02-06-10", "lesson_id": "L1-M02-06", "order": 10, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["cat", "hat", "fan"], "correct_answer": "fan", "audio_asset": "say:cat, hat, fan", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" }
+  { "assessment_id": "AS-M02-06-10", "lesson_id": "L1-M02-06", "order": 10, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["cat", "hat", "fan"], "correct_answer": "fan", "audio_asset": "say:cat, hat, fan", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+
+  { "assessment_id": "AS-M02-02-6", "lesson_id": "L1-M02-02", "order": 6, "type": "rhyme_match", "question": "Which word rhymes with rag?", "options": ["bag", "dog", "hen"], "correct_answer": "bag", "audio_asset": "say:rag", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-02-7", "lesson_id": "L1-M02-02", "order": 7, "type": "rhyme_match", "question": "Which word rhymes with bag?", "options": ["rag", "cat", "pan"], "correct_answer": "rag", "audio_asset": "say:bag", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+
+  { "assessment_id": "AS-M02-03-6", "lesson_id": "L1-M02-03", "order": 6, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["mop", "pop", "dog"], "correct_answer": "dog", "audio_asset": "say:mop, pop, dog", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-03-7", "lesson_id": "L1-M02-03", "order": 7, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["bag", "rag", "pen"], "correct_answer": "pen", "audio_asset": "say:bag, rag, pen", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-03-8", "lesson_id": "L1-M02-03", "order": 8, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["vet", "jet", "cat"], "correct_answer": "cat", "audio_asset": "say:vet, jet, cat", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+
+  { "assessment_id": "AS-M02-04-6", "lesson_id": "L1-M02-04", "order": 6, "type": "rhyme_match", "question": "Which word finishes the rhyme with vet?", "options": ["net", "cat", "hen"], "correct_answer": "net", "audio_asset": "say:vet", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-04-7", "lesson_id": "L1-M02-04", "order": 7, "type": "rhyme_match", "question": "Which word finishes the rhyme with jet?", "options": ["net", "dog", "pan"], "correct_answer": "net", "audio_asset": "say:jet", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-04-8", "lesson_id": "L1-M02-04", "order": 8, "type": "rhyme_match", "question": "Which word finishes the rhyme with wig?", "options": ["fig", "cat", "pen"], "correct_answer": "fig", "audio_asset": "say:wig", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+
+  { "assessment_id": "AS-M02-05-6", "lesson_id": "L1-M02-05", "order": 6, "type": "rhyme_match", "question": "Which word rhymes with top?", "options": ["mop", "cat", "pen"], "correct_answer": "mop", "audio_asset": "say:top", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-05-7", "lesson_id": "L1-M02-05", "order": 7, "type": "rhyme_match", "question": "Which word rhymes with pop?", "options": ["mop", "dog", "can"], "correct_answer": "mop", "audio_asset": "say:pop", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+
+  { "assessment_id": "AS-M02-06-11", "lesson_id": "L1-M02-06", "order": 11, "type": "rhyme_match", "question": "Which word rhymes with bag?", "options": ["tag", "dog", "pen"], "correct_answer": "tag", "audio_asset": "say:bag", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-06-12", "lesson_id": "L1-M02-06", "order": 12, "type": "rhyme_match", "question": "Which word rhymes with net?", "options": ["jet", "cat", "fan"], "correct_answer": "jet", "audio_asset": "say:net", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-06-13", "lesson_id": "L1-M02-06", "order": 13, "type": "rhyme_match", "question": "Which word rhymes with fig?", "options": ["wig", "dog", "pan"], "correct_answer": "wig", "audio_asset": "say:fig", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+  { "assessment_id": "AS-M02-06-14", "lesson_id": "L1-M02-06", "order": 14, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["mop", "pop", "cat"], "correct_answer": "cat", "audio_asset": "say:mop, pop, cat", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" }
 ]
