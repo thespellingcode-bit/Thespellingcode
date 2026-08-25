@@ -2,55 +2,67 @@
 
 **Purpose:** a single reference for every word/sound this app currently uses or can safely draw on next, organized by module and by phonics category. The curriculum source docs (`The_Spelling_Code_Master_Curriculum_Blueprint_v0.1.docx`, `The_Spelling_Code_Level_1_Content_Engine.xlsx`) give the *module structure and objectives* but only a partial word list — this file is where that gets filled in and kept consistent as new modules get built, so nobody (human or AI) has to re-derive it from the source spreadsheets each time, and so the same word doesn't quietly drift to mean two different things in two modules.
 
-**Ground rule:** everything under "Curriculum-approved" below came directly from the source `.xlsx`/`.docx` — copied, not invented. Everything under "Added by the developer" was introduced while implementing a specific lesson because the curriculum didn't specify enough items for it, and is flagged for curriculum-owner review rather than treated as silently approved. When a future module needs a word not yet in this file, add it here first (with its source), then use it in content — keep this file as the single source of truth rather than letting word choices live only inside `content/*.json`.
+**Ground rule (updated):** §1 is copied verbatim from the curriculum spreadsheet — that boundary stays, as the traceable baseline. §1b is a substantial **developer-authored expansion**, explicitly requested so the library isn't limited to the curriculum's starter list. Everything in §1b still obeys the progression rules already fixed for Level 1 — **short-vowel CVC/CCVC only, no C/K/CK, no silent-E, no vowel teams, no digraphs** — those are structural rules for this level, not just "the curriculum's idea," so they still apply even though the word *list* itself no longer has to. Anything outside those rules is out of scope regardless of who's authoring.
 
 ---
 
 ## 1. Curriculum-approved CVC word bank (from Content Engine → `Word_Library` sheet)
 
-Grouped by vowel sound, with rime family noted — this is the exact set the curriculum engine ships, 38 words:
+The exact 38-word set the curriculum engine ships — kept as-is, unedited, as the traceable baseline.
+
+**short_a** — -at: cat, bat, hat, mat, sat · -an: am, an, can, man, fan, pan · -ap: map, cap, tap, nap
+**short_e** — -ed: bed, red · -en: hen, men, pen · -et: pet
+**short_i** — -it: sit · -ig: pig · -ip: lip · -in: pin, fin
+**short_o** — -og: dog, log · -ot: hot, pot · -op: hop
+**short_u** — -un: sun, run, fun · -up: cup · -us: bus
+
+## 1b. Developer-added CVC word bank (short-vowel only — fills the gaps §1 left thin)
+
+Every word below is a common, concrete, everyday English word appropriate for ages 4–6 — nothing obscure, nothing that needs an adult to explain. "🖼" marks a concrete noun usable for picture-matching (like Module 2's rhyme_match format); without it, a word is fine for audio-only formats but not a picture-based one.
 
 **short_a**
-| Rime | Words |
+| Rime | New words |
 |---|---|
-| -at | cat, bat, hat, mat, sat |
-| -an | am, an, can, man, fan, pan |
-| -ap | map, cap, tap, nap |
+| -ag | bag 🖼, tag 🖼, wag, rag 🖼 |
+| -ad | dad 🖼, pad 🖼, sad, mad |
 
 **short_e**
-| Rime | Words |
+| Rime | New words |
 |---|---|
-| -ed | bed, red |
-| -en | hen, men, pen |
-| -et | pet |
+| -et | net 🖼, jet 🖼, vet 🖼, wet, get, set |
+| -ell | bell*, shell 🖼, well 🖼, tell *(★ — see collision note below)* |
 
 **short_i**
-| Rime | Words |
+| Rime | New words |
 |---|---|
-| -it | sit |
-| -ig | pig |
-| -ip | lip |
-| -in | pin, fin |
+| -ig | big, dig, fig 🖼, wig 🖼, jig |
+| -ip | chip 🖼, dip, hip, rip, sip, ship 🖼*(★)*, tip, whip 🖼, zip |
+| -it | bit, fit, hit, kit 🖼 |
+| -id | kid 🖼, lid 🖼, hid |
 
 **short_o**
-| Rime | Words |
+| Rime | New words |
 |---|---|
-| -og | dog, log |
-| -ot | hot, pot |
-| -op | hop |
+| -op | mop 🖼, pop 🖼, shop 🖼*(★)*, top 🖼, cop 🖼 |
+| -ot | cot 🖼, dot 🖼, tot 🖼, got, jot, lot, not, rot |
+| -ox | box 🖼, fox 🖼 |
 
 **short_u**
-| Rime | Words |
+| Rime | New words |
 |---|---|
-| -un | sun, run, fun |
-| -up | cup |
-| -us | bus |
+| -up | pup 🖼 |
+| -ug | bug 🖼, hug, jug 🖼, mug 🖼, rug 🖼, tug |
+| -ub | cub 🖼, rub, tub 🖼, sub 🖼 |
 
-Also present as VC (not CVC): **at, am, an, as**.
+That takes every short-vowel family from "1 usable word" to at least 2, most to 4+ — see §3 for what this unlocks for rhyme-match-style activities.
+
+**★ Two new collisions to watch, same rule as §5:**
+- **"shop" contains "hop"** as a substring. If a future lesson implements icons for both, the substring-matching `iconForAsset()`/`labelToIcon()` helpers would resolve "shop" to the "hop" picture unless the icon set is built carefully (word-boundary-aware matching, or picking only one of the two for picture-matching). Flagging now, before either is wired in, rather than after.
+- **"bell"** here means the *spelling word* rhyming with shell/well; Module 1 already uses "bell" as a *sound-effect asset name*. If -ell ever becomes a Module 2+ rhyme family, it needs a disambiguated asset id (e.g. treat the rhyme word and the sound effect as different asset namespaces) so a rhyme_match item for "bell" doesn't accidentally render Module 1's bell chime/picture.
 
 ## 2. Curriculum-approved phonemes (from Content Engine → `Phonemes` sheet)
 
-The keyword column is the curriculum's own child-facing example for each sound — use these first before picking a different example word for a "beginning sound" style lesson (Module 3+).
+Unchanged from before — the keyword column is the curriculum's own child-facing example for each sound; use these first for a Module 3+ "beginning sound" lesson before reaching for a developer-added alternative.
 
 | Phoneme | Grapheme | Keyword | Introduced at | Type |
 |---|---|---|---|---|
@@ -73,40 +85,46 @@ The keyword column is the curriculum's own child-facing example for each sound �
 | /ŏ/ | o | octopus | Module 5 | vowel |
 | /ŭ/ | u | umbrella | Module 5 | vowel |
 
-## 3. Rhyme families actually usable today (derived from §1 — used to build Module 2)
+## 3. Rhyme families usable today (§1 + §1b combined)
 
-Only families with 2+ concrete, drawable-as-a-picture nouns are usable for a picture-matching rhyme activity. Thinner families are listed too, so it's visible what would strengthen them.
+Every family now has enough concrete nouns for a picture-matching rhyme activity — this was the actual blocker before.
 
-| Family | Usable now (concrete nouns) | Non-noun members in §1 (usable for audio-only, not picture-matching) |
+| Family | Concrete-noun words available | In use (Module 2) |
 |---|---|---|
-| -at | cat, hat, mat, bat | sat |
-| -an | can, man, fan, pan | am, an |
-| -ap | cap, map, nap | tap *(name collision — see §5)* |
-| -og | dog, log | — |
-| -ot | pot | hot |
-| -en | hen, pen | men |
-| -in | pin, fin | — |
-| -un | sun | run, fun |
-| -ed, -et, -it, -ig, -ip, -op, -up, -us | *(each has only 1 concrete noun — not enough for a rhyme-match activity yet)* | bed/red, pet, sit, pig, lip, hop, cup, bus |
+| -at | cat, hat, mat, bat | ✅ Lesson 1 |
+| -an | can, man, fan, pan | ✅ Lesson 2 |
+| -og | dog, log | ✅ Lesson 4 |
+| -en | hen, pen | ✅ Lesson 4 |
+| -ap | cap, map, nap | ✅ Lesson 5 |
+| -in | pin, fin | Available, unused |
+| -ag | bag, tag, rag | Available, unused |
+| -ad | dad, pad | Available, unused |
+| -et | net, jet, vet | Available, unused |
+| -ig | fig, wig | Available, unused |
+| -ip | chip, whip *(ship — see ★ collision)* | Available, unused |
+| -id | kid, lid | Available, unused |
+| -op | mop, pop, top, cop *(shop — see ★ collision)* | Available, unused |
+| -ot | cot, dot, tot, pot, hot | Available, unused |
+| -ox | box, fox | Available, unused |
+| -ug | bug, jug, mug, rug | Available, unused |
+| -ub | cub, tub, sub | Available, unused |
+| -un | sun (+ run/fun, not nouns) | Available, unused — still needs a 2nd concrete noun |
 
-**Module 2 used:** -at, -an, -og, -en, -ap (as cap/map/nap — see §5 for why "tap" was excluded). **Still available for a Module 2 extension or a future module:** -in (pin/fin), -un (sun alone — needs a 2nd word to be usable), -ot (pot alone — needs a 2nd word).
+**Enough here for 3–4 more Module-2-style lessons or a Module 2 extension** (e.g. a "Rhyme Detective Part 2") without touching the curriculum spreadsheet or inventing anything outside the short-vowel CVC boundary.
 
-**Gaps if Module 2 gets extended:** -ed, -et, -it, -ig, -ip, -op, -up, -us each need one more concrete-noun word before they're usable for picture-matching. Recommend the curriculum team supply one per family (e.g. a 2nd -ip word, a 2nd -ug-type word) rather than the developer picking new vocabulary unilaterally.
+## 4. Environmental/sound-effect assets (Module 1 style — not spelling words)
 
-## 4. Module 1 sound-effect assets (not spelling words — environmental/percussive sounds for "Listening Detective")
-
-**Curriculum-approved (from Content Engine → `Media_Manifest` sheet):** bell, dog *(bark — replaced with clock in Round 1, see project history)*, car, rain — the original Lesson 1 "What Is a Sound?" set.
-
-**Currently implemented in `audioService.js`:** bell, clock, car, rain, clap, tap, drum, whisper, finger.
-
-**Added by the developer, needs curriculum review:** phone (ringing), wind (blowing) — added to Lesson 1 to address user feedback that the 4-sound vocabulary felt repetitive on replay. Chosen because they're mechanical/ambient sounds that synthesize convincingly with Web Audio oscillators (the same reason "dog" was replaced with "clock" during Round 1 — animal vocalizations don't synthesize convincingly, mechanical/ambient sounds do). **Not yet in the curriculum's Media_Manifest — flagging for the curriculum owner to confirm or replace.**
+**Curriculum-approved:** bell, clock*, car, rain *(*clock replaced the original "dog" in Round 1 — see project history)*
+**Currently implemented, developer-added, already wired into Lesson 1:** phone, wind
+**New candidates — documented here, not yet wired into any lesson:** siren *(frequency sweep — synthesizes very well)*, thunder *(low rumble, same technique as the car engine)*, footsteps *(rhythmic low thuds)*, door knock *(sharp percussive hit, easy to tell apart from clap/tap)*. All four were screened the same way phone/wind were — mechanical/percussive/ambient sounds that a Web Audio oscillator can render convincingly, avoiding the animal/voice category that struggled in Round 1 (the original dog-bark problem).
 
 ## 5. Naming collisions to avoid (engineering note, not curriculum content)
 
-`src/components/Icon.jsx` maps a word/asset id to a picture by substring match. Two different modules can't reuse the same word to mean different pictures:
+`src/components/Icon.jsx` maps a word/asset id to a picture by substring match — two different modules can't reuse the same word (or a word that's a substring of another) to mean different pictures.
 
-- **"tap"** = Module 1's percussive "finger tap" sound icon (concentric ripple circles). Module 2's -ap rhyme family therefore uses **cap/map/nap**, not tap, even though "tap" (water tap) is a curriculum-listed -ap word — it's available as a *word* for audio-only rhyme items, just not for the picture-matching format without a new icon disambiguating it from the Module 1 sound.
-- Before adding a new word to any future module, check this file's used-icon list (§1–§4 above) for an exact or substring match first.
+- **"tap"** = Module 1's percussive sound icon. Module 2's -ap rhyme family uses cap/map/nap instead.
+- **"shop" contains "hop"**, **"bell"** means two different things in two modules — see the ★ notes in §1b.
+- Before adding a new word to any lesson, check this file's used-icon list (§1b, §3, §4) for an exact or substring match first.
 
 ---
 
