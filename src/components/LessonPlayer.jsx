@@ -188,28 +188,33 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
         {stage === "instruction" && (
           <NarrationScreen text={lesson.narration.instruction} illustrationAsset="magnifier" buttonLabel="I'm ready" onNext={next} />
         )}
-        {stage === "model" && exampleItems.length > 0 && (
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
-            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, margin: 0 }}>
-              Example {modelIdx + 1} of {exampleItems.length}
-            </p>
-            <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{lesson.narration.model}</p>
-            <AudioPlayer
-              key={exampleItems[modelIdx].activity_id}
-              asset={modelAudioFor(exampleItems[modelIdx])}
-              showPicture={!COMPARE_TYPES.includes(lesson.activity_type)}
-            />
-            <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 17, color: T.goldDeep, margin: 0 }}>
-              {modelCaptionFor(exampleItems[modelIdx])}
-            </p>
-            <Btn
-              variant="gold" size="lg"
-              onClick={() => (modelIdx + 1 < exampleItems.length ? setModelIdx((i) => i + 1) : next())}
-            >
-              {modelIdx + 1 < exampleItems.length ? "Next example" : (lesson.narration.transition || "Now you try!")}
-            </Btn>
-          </div>
-        )}
+        {stage === "model" && exampleItems.length > 0 && (() => {
+          const currentIdx = Math.min(modelIdx, exampleItems.length - 1);
+          const currentExample = exampleItems[currentIdx];
+          const isLast = currentIdx + 1 >= exampleItems.length;
+          return (
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
+              <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, margin: 0 }}>
+                Example {currentIdx + 1} of {exampleItems.length}
+              </p>
+              <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{lesson.narration.model}</p>
+              <AudioPlayer
+                key={currentExample.activity_id}
+                asset={modelAudioFor(currentExample)}
+                showPicture={!COMPARE_TYPES.includes(lesson.activity_type)}
+              />
+              <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 17, color: T.goldDeep, margin: 0 }}>
+                {modelCaptionFor(currentExample)}
+              </p>
+              <Btn
+                variant="gold" size="lg"
+                onClick={() => (isLast ? next() : setModelIdx((i) => Math.min(i + 1, exampleItems.length - 1)))}
+              >
+                {isLast ? (lesson.narration.transition || "Now you try!") : "Next example"}
+              </Btn>
+            </div>
+          );
+        })()}
         {stage === "guided" && guidedQs.length > 0 && (
           <div style={{ width: "100%" }}>
             <p style={{ textAlign: "center", fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, marginBottom: 4 }}>
