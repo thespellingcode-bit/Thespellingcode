@@ -45,9 +45,25 @@ test("every assessment question references a lesson that exists", () => {
   for (const a of assessments) assert.ok(lessonIds.has(a.lesson_id), `${a.assessment_id} references missing lesson ${a.lesson_id}`);
 });
 
-test("every activity/assessment correct_answer is one of its own options", () => {
+// rhyme_select items (multi-answer — "tap every word that rhymes") use
+// correct_answers (array) instead of correct_answer (string). This
+// derives one comparable string key either way, used by both the
+// "answer is in options" check and the practice/assessment-overlap
+// check below, so multi-answer items don't need separate test logic.
+function answerKeyFor(item) {
+  return item.type === "rhyme_select" ? [...item.correct_answers].sort().join("+") : item.correct_answer;
+}
+
+test("every activity/assessment correct_answer(s) are among its own options", () => {
   for (const a of [...activities, ...assessments]) {
-    assert.ok(a.options.includes(a.correct_answer), `${a.activity_id || a.assessment_id} correct_answer not in options`);
+    if (a.type === "rhyme_select") {
+      assert.ok(Array.isArray(a.correct_answers) && a.correct_answers.length > 0, `${a.activity_id || a.assessment_id} missing correct_answers`);
+      for (const ca of a.correct_answers) {
+        assert.ok(a.options.includes(ca), `${a.activity_id || a.assessment_id} correct_answers entry "${ca}" not in options`);
+      }
+    } else {
+      assert.ok(a.options.includes(a.correct_answer), `${a.activity_id || a.assessment_id} correct_answer not in options`);
+    }
   }
 });
 
@@ -61,12 +77,12 @@ test("every activity/assessment error_tag has a matching remediation entry", () 
 test("REQUIREMENT: assessment questions do not reuse practice audio_asset+correct_answer pairs within the same lesson (transfer-to-new-example check)", () => {
   const byLesson = {};
   for (const a of activities) {
-    (byLesson[a.lesson_id] ||= new Set()).add(`${a.audio_asset}::${a.correct_answer}`);
+    (byLesson[a.lesson_id] ||= new Set()).add(`${a.audio_asset}::${answerKeyFor(a)}`);
   }
   const violations = [];
   for (const a of assessments) {
     const practiceKeys = byLesson[a.lesson_id] || new Set();
-    const key = `${a.audio_asset}::${a.correct_answer}`;
+    const key = `${a.audio_asset}::${answerKeyFor(a)}`;
     if (practiceKeys.has(key) && !a.review_flag) {
       violations.push(`${a.assessment_id} exactly reuses practice audio+answer "${key}" without a review_flag`);
     }

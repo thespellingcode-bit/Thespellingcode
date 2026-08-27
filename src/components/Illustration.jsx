@@ -252,7 +252,7 @@ const PICTURES = {
   nap: (
     <>
       <path d="M72 32a24 24 0 1014 30 18 18 0 01-14-30z" fill="#8B7FD1" stroke="#5A4C9E" strokeWidth="2.4" strokeLinejoin="round" />
-      <text x="52" y="86" fontSize="20" fontFamily="'Baloo 2', sans-serif" fill="#5A4C9E" fontWeight="700">Zzz</text>
+      <text x="52" y="86" fontSize="20" fontFamily="'Baloo 2', sans-serif" fill="#5A4C9E" fontWeight="700" aria-hidden="true">Zzz</text>
     </>
   ),
   phone: (

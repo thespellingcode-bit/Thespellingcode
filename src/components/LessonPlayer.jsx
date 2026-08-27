@@ -42,18 +42,26 @@ function modelCaptionFor(item) {
       const anchor = item.audio_asset?.replace(/^say:/, "").split(",")[0]?.trim();
       return anchor ? `${anchor} and ${answer} rhyme!` : `Listen — that's ${answer}!`;
     }
+    case "rhyme_select": {
+      const anchor = item.audio_asset?.replace(/^say:/, "").split(",")[0]?.trim();
+      const answers = item.correct_answers.join(" and ");
+      return anchor ? `${answers} both rhyme with ${anchor}!` : `Listen — ${answers} rhyme!`;
+    }
     case "listen_choose":
     default:
       return `Listen — that's the ${answer.toLowerCase()} sound!`;
   }
 }
 
-// rhyme_match example items whose audio is a single spoken word should
-// play BOTH the anchor and the correct answer on the example screen —
-// previously the narration text promised both ("Cat... hat") but the
-// audio only ever played the anchor.
+// rhyme_match/rhyme_select example items whose audio is a single spoken
+// word should play the anchor AND every correct answer on the example
+// screen — previously the narration text promised both ("Cat... hat")
+// but the audio only ever played the anchor.
 function modelAudioFor(item) {
   const asset = item.audio_asset;
+  if (item.type === "rhyme_select" && asset?.startsWith("say:")) {
+    return `${asset}, ${item.correct_answers.join(", ")}`;
+  }
   if (item.type === "rhyme_match" && asset?.startsWith("say:") && !asset.includes(",")) {
     return `${asset}, ${item.correct_answer}`;
   }
