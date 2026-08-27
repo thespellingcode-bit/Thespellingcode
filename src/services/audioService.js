@@ -103,15 +103,18 @@ function sweepTone(ctx, t0, { from = 300, to = 140, dur = 0.14, type = "sawtooth
   osc.stop(t0 + dur + 0.02);
 }
 
+// Car-only now (thunder used to reuse this, which was the actual bug
+// behind "car and thunder sound too similar" — thunder now has its own
+// texture below instead of borrowing this one).
 function engineRumble(ctx, t0, dur = 0.9, baseFreq = 95) {
   const g = ctx.createGain();
   g.gain.setValueAtTime(0.0001, t0);
-  g.gain.exponentialRampToValueAtTime(0.16, t0 + 0.08);
-  g.gain.exponentialRampToValueAtTime(0.12, t0 + dur * 0.7);
+  g.gain.exponentialRampToValueAtTime(0.18, t0 + 0.06);
+  g.gain.exponentialRampToValueAtTime(0.13, t0 + dur * 0.7);
   g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
   const filter = ctx.createBiquadFilter();
   filter.type = "lowpass";
-  filter.frequency.value = 500;
+  filter.frequency.value = 450; // slightly darker/warmer than before
   filter.connect(g).connect(getMasterGain(ctx));
   [baseFreq, baseFreq * 1.01, baseFreq * 0.5].forEach((f, i) => {
     const osc = ctx.createOscillator();
@@ -128,7 +131,35 @@ function engineRumble(ctx, t0, dur = 0.9, baseFreq = 95) {
     osc.start(t0);
     osc.stop(t0 + dur + 0.02);
   });
+  // Sub-bass sine underneath for body/warmth — softens the sawtooth
+  // layer's buzziness so it reads as "engine" rather than "kazoo."
+  const sub = ctx.createOscillator();
+  const subGain = ctx.createGain();
+  sub.type = "sine";
+  sub.frequency.value = baseFreq * 0.5;
+  subGain.gain.setValueAtTime(0.0001, t0);
+  subGain.gain.exponentialRampToValueAtTime(0.1, t0 + 0.08);
+  subGain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+  sub.connect(subGain).connect(getMasterGain(ctx));
+  sub.start(t0);
+  sub.stop(t0 + dur + 0.02);
   filteredNoise(ctx, t0, dur, { type: "bandpass", freq: 800, Q: 0.6, gain: 0.03, attack: 0.05 });
+}
+
+// Thunder's own texture: a sharp crack followed by several irregular,
+// randomly-timed low-frequency noise bursts — deliberately chaotic
+// rather than the steady oscillator wobble engineRumble uses for car,
+// so the two no longer share the same underlying DNA.
+function thunderRumble(ctx, t0, dur = 1.1) {
+  const hits = 5 + Math.floor(Math.random() * 3);
+  for (let i = 0; i < hits; i++) {
+    const dt = (i / hits) * dur + Math.random() * 0.08;
+    const hitDur = 0.15 + Math.random() * 0.15;
+    filteredNoise(ctx, t0 + dt, hitDur, {
+      type: "lowpass", freq: 120 + Math.random() * 80, Q: 0.8,
+      gain: 0.14 + Math.random() * 0.08, attack: 0.02,
+    });
+  }
 }
 
 function rainPatter(ctx, t0, dur = 1.3) {
@@ -181,7 +212,7 @@ const BASE_SOUND = {
     osc.start(t0);
     osc.stop(t0 + 1.05);
   },
-  thunder: (ctx, t0) => { filteredNoise(ctx, t0, 0.15, { type: "lowpass", freq: 300, Q: 1, gain: 0.28, attack: 0.005 }); engineRumble(ctx, t0 + 0.05, 1.2, 55); },
+  thunder: (ctx, t0) => { filteredNoise(ctx, t0, 0.12, { type: "lowpass", freq: 250, Q: 1.2, gain: 0.3, attack: 0.003 }); thunderRumble(ctx, t0 + 0.08, 1.1); },
 };
 
 // Fixed multi-part sequences that need explicit timing (repeated hits,
@@ -230,11 +261,28 @@ function playGenericSequence(ctx, t0, key) {
 // oscillator trick.
 function speakWord(word) {
   if (typeof window === "undefined" || !window.speechSynthesis) return false;
-  window.speechSynthesis.cancel(); // avoid overlapping utterances on rapid re-taps
-  const utter = new SpeechSynthesisUtterance(word);
-  utter.rate = 0.85; // slower, clearer for early readers
-  utter.pitch = 1.15; // slightly higher/friendlier
-  window.speechSynthesis.speak(utter);
+  const synth = window.speechSynthesis;
+  const doSpeak = () => {
+    const utter = new SpeechSynthesisUtterance(word);
+    utter.rate = 0.85; // slower, clearer for early readers
+    utter.pitch = 1.15; // slightly higher/friendlier
+    synth.speak(utter);
+  };
+  // Chrome has a well-known bug where calling cancel() immediately
+  // followed by speak() in the same tick can silently drop the new
+  // utterance — the previous version did this unconditionally on every
+  // tap, which is the likely cause of rhyme-word audio sometimes not
+  // playing at all. Only cancel when something is actually in-flight,
+  // and give the cancel a tick to actually settle before speaking again.
+  // Also defensively resume() in case the queue is stuck paused from a
+  // previous navigation/tab-switch (another known Chrome quirk).
+  synth.resume();
+  if (synth.speaking || synth.pending) {
+    synth.cancel();
+    setTimeout(doSpeak, 50);
+  } else {
+    doSpeak();
+  }
   return true;
 }
 
@@ -250,13 +298,22 @@ export function playAsset(name) {
   }
   try {
     const ctx = getCtx();
-    if (ctx.state === "suspended") ctx.resume();
-    const key = name.replace(/\.mp3$/, "");
-    const t0 = ctx.currentTime + 0.02;
-    if (NAMED_SEQUENCES[key]) return NAMED_SEQUENCES[key](ctx, t0);
-    if (playGenericSequence(ctx, t0, key)) return;
-    if (BASE_SOUND[key]) return BASE_SOUND[key](ctx, t0);
-    tone(ctx, t0, 440, 0.2); // unknown asset — audible fallback rather than silence
+    const playNow = () => {
+      const key = name.replace(/\.mp3$/, "");
+      const t0 = ctx.currentTime + 0.02;
+      if (NAMED_SEQUENCES[key]) return NAMED_SEQUENCES[key](ctx, t0);
+      if (playGenericSequence(ctx, t0, key)) return;
+      if (BASE_SOUND[key]) return BASE_SOUND[key](ctx, t0);
+      tone(ctx, t0, 440, 0.2); // unknown asset — audible fallback rather than silence
+    };
+    // resume() is async — scheduling sound before it actually finishes
+    // (previously fire-and-forget) could clip or silence the very first
+    // play on a fresh page load. Wait for it before scheduling anything.
+    if (ctx.state === "suspended") {
+      ctx.resume().then(playNow).catch(() => {});
+    } else {
+      playNow();
+    }
   } catch (e) {
     // Web Audio unavailable — fail silently, app still works without sound.
   }
