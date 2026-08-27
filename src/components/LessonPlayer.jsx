@@ -11,12 +11,54 @@ import { getPracticeActivities, getAssessmentQuestions } from "../services/conte
 import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
 import { shuffled } from "../services/shuffle";
+import { COMPARE_TYPES } from "../services/questionTypes";
 
 const STAGE_LABELS = {
   welcome: "Welcome", teach: "Teach", model: "Watch", transition: "Get ready",
   instruction: "Instructions", guided: "Warm-up round", independent: "Solo mission",
   assessment: "Challenge", result: "Result", remediation: "Practice more", complete: "Done",
 };
+
+// Generates a caption that STATES the answer, derived from the exact
+// same fields already driving the practice question — so the example
+// screen actually teaches instead of repeating the same unanswered
+// question practice will ask. No new narration content needed per
+// example, and it can't drift out of sync with the content.
+function modelCaptionFor(item) {
+  const answer = item.correct_answer;
+  switch (item.type) {
+    case "same_different":
+    case "loud_soft":
+    case "fast_slow":
+      // Only lowercase single-word answers (Fast/Slow/Loud/...) — a
+      // multi-word answer like "Pattern B" reads oddly lowercased.
+      return `Listen — that was ${answer.includes(" ") ? answer : answer.toLowerCase()}!`;
+    case "sound_memory":
+      return `Listen — you'd hear: ${answer}!`;
+    case "rhyme_match": {
+      if ((item.prompt || item.question || "").toLowerCase().includes("not rhyme")) {
+        return `${answer} doesn't rhyme with the others!`;
+      }
+      const anchor = item.audio_asset?.replace(/^say:/, "").split(",")[0]?.trim();
+      return anchor ? `${anchor} and ${answer} rhyme!` : `Listen — that's ${answer}!`;
+    }
+    case "listen_choose":
+    default:
+      return `Listen — that's the ${answer.toLowerCase()} sound!`;
+  }
+}
+
+// rhyme_match example items whose audio is a single spoken word should
+// play BOTH the anchor and the correct answer on the example screen —
+// previously the narration text promised both ("Cat... hat") but the
+// audio only ever played the anchor.
+function modelAudioFor(item) {
+  const asset = item.audio_asset;
+  if (item.type === "rhyme_match" && asset?.startsWith("say:") && !asset.includes(",")) {
+    return `${asset}, ${item.correct_answer}`;
+  }
+  return asset;
+}
 
 // Which stages this lesson runs, driven entirely by which narration
 // scenes actually exist in this lesson's content — NOT a fixed template.
@@ -77,6 +119,12 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
   const guidedQs = practiceSeq.slice(0, 2);
   const independentQs = practiceSeq.slice(2);
 
+  // Up to 5 worked examples on the Model/"Watch" stage, drawn from the
+  // lesson's own unshuffled practice items so every example is content
+  // that's already authored — no separate example bank needed.
+  const exampleItems = practiceQuestions.slice(0, Math.min(5, practiceQuestions.length));
+  const [modelIdx, setModelIdx] = useState(0);
+
   const [guidedIdx, setGuidedIdx] = useState(0);
   const [indepIdx, setIndepIdx] = useState(0);
   const [assessSeq, setAssessSeq] = useState(() => shuffled(assessmentQuestions));
@@ -132,11 +180,26 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
         {stage === "instruction" && (
           <NarrationScreen text={lesson.narration.instruction} illustrationAsset="magnifier" buttonLabel="I'm ready" onNext={next} />
         )}
-        {stage === "model" && (
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18, textAlign: "center" }}>
+        {stage === "model" && exampleItems.length > 0 && (
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
+            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, margin: 0 }}>
+              Example {modelIdx + 1} of {exampleItems.length}
+            </p>
             <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{lesson.narration.model}</p>
-            {practiceQuestions[0] && <AudioPlayer asset={practiceQuestions[0].audio_asset} />}
-            <Btn variant="gold" size="lg" onClick={next}>{lesson.narration.transition || "Now you try!"}</Btn>
+            <AudioPlayer
+              key={exampleItems[modelIdx].activity_id}
+              asset={modelAudioFor(exampleItems[modelIdx])}
+              showPicture={!COMPARE_TYPES.includes(lesson.activity_type)}
+            />
+            <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 17, color: T.goldDeep, margin: 0 }}>
+              {modelCaptionFor(exampleItems[modelIdx])}
+            </p>
+            <Btn
+              variant="gold" size="lg"
+              onClick={() => (modelIdx + 1 < exampleItems.length ? setModelIdx((i) => i + 1) : next())}
+            >
+              {modelIdx + 1 < exampleItems.length ? "Next example" : (lesson.narration.transition || "Now you try!")}
+            </Btn>
           </div>
         )}
         {stage === "guided" && guidedQs.length > 0 && (

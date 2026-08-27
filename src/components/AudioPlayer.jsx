@@ -9,7 +9,7 @@ import { playAsset, assetDurationMs } from "../services/audioService";
 // When real audio files exist, this component's job stays the same
 // (play / replay / clear visual feedback / disabled-while-playing) —
 // only playAsset() in audioService needs to change to play real files.
-export function AudioPlayer({ asset, label = "Play sound" }) {
+export function AudioPlayer({ asset, label = "Play sound", showPicture = true }) {
   const [playing, setPlaying] = useState(false);
 
   const handlePlay = () => {
@@ -21,7 +21,7 @@ export function AudioPlayer({ asset, label = "Play sound" }) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-      <Illustration name={iconForAsset(asset)} size={84} />
+      {showPicture && <Illustration name={iconForAsset(asset)} size={84} />}
       <button
         onClick={handlePlay}
         disabled={playing}

@@ -212,10 +212,18 @@ const BASE_SOUND = {
   car: (ctx, t0) => carEngine(ctx, t0, 1.0),
   rain: (ctx, t0) => rainPatter(ctx, t0, 1.3),
   clap: (ctx, t0) => filteredNoise(ctx, t0, 0.09, { type: "bandpass", freq: 2200, Q: 1.2, gain: 0.28, attack: 0.002 }),
-  tap: (ctx, t0) => { tone(ctx, t0, 750, 0.06, "triangle", 0.14); filteredNoise(ctx, t0, 0.02, { type: "highpass", freq: 3000, Q: 1, gain: 0.05, attack: 0.001 }); },
-  drum: (ctx, t0) => { sweepTone(ctx, t0, { from: 150, to: 55, dur: 0.3, type: "sine", gain: 0.32, filterFrom: 600, filterTo: 150 }); filteredNoise(ctx, t0, 0.04, { type: "lowpass", freq: 400, Q: 1, gain: 0.08, attack: 0.002 }); },
+  // More gain/body than before — user feedback called this out as
+  // "vague, almost inaudible" alongside finger below.
+  tap: (ctx, t0) => { tone(ctx, t0, 800, 0.09, "triangle", 0.22); filteredNoise(ctx, t0, 0.035, { type: "highpass", freq: 2800, Q: 1, gain: 0.11, attack: 0.001 }); },
+  // Added a sharp noise "click" right at onset for a punchy attack — the
+  // sweepTone body was fine but the soft attack made it read as vague.
+  drum: (ctx, t0) => { filteredNoise(ctx, t0, 0.02, { type: "lowpass", freq: 900, Q: 1, gain: 0.2, attack: 0.001 }); sweepTone(ctx, t0, { from: 160, to: 50, dur: 0.35, type: "sine", gain: 0.36, filterFrom: 700, filterTo: 150 }); filteredNoise(ctx, t0, 0.05, { type: "lowpass", freq: 400, Q: 1, gain: 0.1, attack: 0.002 }); },
   whisper: (ctx, t0) => filteredNoise(ctx, t0, 0.5, { type: "bandpass", freq: 1800, Q: 0.7, gain: 0.045, attack: 0.05 }),
-  finger: (ctx, t0) => filteredNoise(ctx, t0, 0.03, { type: "highpass", freq: 4000, Q: 1, gain: 0.06, attack: 0.001 }),
+  // The weakest sound in the whole set before this — 30ms at gain 0.06
+  // is nearly silent by construction. More than doubled the gain, added
+  // a soft high tick tone alongside the noise so there's an actual pitch
+  // to latch onto, not just a faint hiss.
+  finger: (ctx, t0) => { tone(ctx, t0, 2200, 0.05, "sine", 0.1); filteredNoise(ctx, t0, 0.05, { type: "highpass", freq: 3500, Q: 1, gain: 0.14, attack: 0.001 }); },
   // Added to widen Lesson 1's vocabulary beyond bell/clock/car/rain — see
   // content/word-library.md §4. Both are mechanical/ambient sounds
   // (same reasoning as the dog→clock swap in Round 1: those synthesize
@@ -372,6 +380,25 @@ export function assetDurationMs(assetName) {
     return 900 + (wordCount - 1) * 750;
   }
   return ASSET_DURATION_MS[assetName] || 700;
+}
+
+// What sound (if any) an answer OPTION itself should play when tapped —
+// distinct from the central prompt audio. Only meaningful for options
+// that name a real sound/word: rhyme words (say the word), Module 1's
+// environmental/percussive sound names (play the identity sound), and
+// Sound Memory's "Clap-Tap"-style sequence labels (play that sequence).
+// Comparison judgments ("Same," "Loud," "Fast") have no sound of their
+// own to play — callers should skip this for those question types
+// (see src/services/questionTypes.js).
+const IDENTITY_SOUND_WORDS = new Set([
+  "bell", "clock", "car", "rain", "phone", "wind", "siren", "thunder", "drum", "whisper", "clap", "tap", "finger",
+]);
+export function soundForOption(question, opt) {
+  const key = opt.toLowerCase();
+  if (question.type === "rhyme_match") return `say:${key}`;
+  if (IDENTITY_SOUND_WORDS.has(key)) return key;
+  if (question.type === "sound_memory") return key.replace(/-/g, "_");
+  return null;
 }
 
 // UI feedback sounds (correct/incorrect/celebrate) — separate from the

@@ -170,8 +170,8 @@ const PICTURES = {
   ),
   bat: (
     <>
-      <rect x="52" y="26" width="10" height="52" rx="4" fill="#C98A4E" stroke="#8B5E30" strokeWidth="2.2" />
-      <path d="M52 30a26 20 0 000 44z" fill="#8B7FD1" stroke="#5A4C9E" strokeWidth="2.2" strokeLinejoin="round" />
+      <path d="M58 88 L58 70 C58 55 50 50 48 38 C46 26 52 18 60 18 C68 18 74 26 72 38 C70 50 62 55 62 70 L62 88 Z" fill="#C98A4E" stroke="#8B5E30" strokeWidth="2.2" strokeLinejoin="round" />
+      <path d="M57 88h6M56 82h8M57 76h6" stroke="#6B4522" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
     </>
   ),
   can: (
