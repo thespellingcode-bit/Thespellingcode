@@ -103,62 +103,87 @@ function sweepTone(ctx, t0, { from = 300, to = 140, dur = 0.14, type = "sawtooth
   osc.stop(t0 + dur + 0.02);
 }
 
-// Car-only now (thunder used to reuse this, which was the actual bug
-// behind "car and thunder sound too similar" — thunder now has its own
-// texture below instead of borrowing this one).
-function engineRumble(ctx, t0, dur = 0.9, baseFreq = 95) {
-  const g = ctx.createGain();
-  g.gain.setValueAtTime(0.0001, t0);
-  g.gain.exponentialRampToValueAtTime(0.18, t0 + 0.06);
-  g.gain.exponentialRampToValueAtTime(0.13, t0 + dur * 0.7);
-  g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+// Car engine — rebuilt from scratch (the previous version read as a
+// generic buzzy drone, not a car). Real engine character comes from
+// three things this now has: a quick rev-up at onset (idle → gunned →
+// settle, not a static tone), a fast amplitude "putter" (cylinder-firing
+// rate) riding on top of the tone instead of just a slow pitch wobble,
+// and a genuinely broadband noise layer for road/exhaust grit.
+function carEngine(ctx, t0, dur = 1.0) {
+  const master = getMasterGain(ctx);
   const filter = ctx.createBiquadFilter();
   filter.type = "lowpass";
-  filter.frequency.value = 450; // slightly darker/warmer than before
-  filter.connect(g).connect(getMasterGain(ctx));
-  [baseFreq, baseFreq * 1.01, baseFreq * 0.5].forEach((f, i) => {
+  filter.frequency.value = 750;
+  filter.Q.value = 2.5; // resonant — gives a "growl" instead of a flat hum
+
+  // Amplitude putter: a fast oscillator modulating a gain node's level
+  // via its own output (through a small gain), summed with a steady
+  // DC-ish offset from a very slow second "hold" gain ramp — this is
+  // what makes a sustained tone read as an idling engine instead of a
+  // held note.
+  const putterRate = ctx.createOscillator();
+  const putterDepth = ctx.createGain();
+  putterRate.frequency.value = 24;
+  putterDepth.gain.value = 0.06;
+
+  const envelope = ctx.createGain();
+  envelope.gain.setValueAtTime(0.0001, t0);
+  envelope.gain.exponentialRampToValueAtTime(0.22, t0 + 0.07);
+  envelope.gain.exponentialRampToValueAtTime(0.15, t0 + dur * 0.6);
+  envelope.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+  putterRate.connect(putterDepth).connect(envelope.gain);
+  putterRate.start(t0);
+  putterRate.stop(t0 + dur + 0.02);
+
+  filter.connect(envelope).connect(master);
+
+  // Two detuned sawtooths with a shared "vroom" pitch rev — quick rise
+  // then settle, rather than a static frequency.
+  [1, 1.014].forEach((detune) => {
     const osc = ctx.createOscillator();
     osc.type = "sawtooth";
-    osc.frequency.value = f;
-    const lfo = ctx.createOscillator();
-    lfo.frequency.value = 3.2 + i;
-    const lfoGain = ctx.createGain();
-    lfoGain.gain.value = 3;
-    lfo.connect(lfoGain).connect(osc.frequency);
-    lfo.start(t0);
-    lfo.stop(t0 + dur + 0.02);
+    osc.frequency.setValueAtTime(55 * detune, t0);
+    osc.frequency.exponentialRampToValueAtTime(125 * detune, t0 + 0.12);
+    osc.frequency.exponentialRampToValueAtTime(82 * detune, t0 + dur);
     osc.connect(filter);
     osc.start(t0);
     osc.stop(t0 + dur + 0.02);
   });
-  // Sub-bass sine underneath for body/warmth — softens the sawtooth
-  // layer's buzziness so it reads as "engine" rather than "kazoo."
-  const sub = ctx.createOscillator();
-  const subGain = ctx.createGain();
-  sub.type = "sine";
-  sub.frequency.value = baseFreq * 0.5;
-  subGain.gain.setValueAtTime(0.0001, t0);
-  subGain.gain.exponentialRampToValueAtTime(0.1, t0 + 0.08);
-  subGain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-  sub.connect(subGain).connect(getMasterGain(ctx));
-  sub.start(t0);
-  sub.stop(t0 + dur + 0.02);
-  filteredNoise(ctx, t0, dur, { type: "bandpass", freq: 800, Q: 0.6, gain: 0.03, attack: 0.05 });
+
+  // Road/exhaust texture — broader and louder than the old single thin
+  // noise layer, so the engine has some grit under the tone.
+  filteredNoise(ctx, t0, dur, { type: "bandpass", freq: 450, Q: 0.5, gain: 0.06, attack: 0.03 });
+  filteredNoise(ctx, t0, Math.min(0.35, dur), { type: "highpass", freq: 2200, Q: 0.7, gain: 0.025, attack: 0.01 });
 }
 
-// Thunder's own texture: a sharp crack followed by several irregular,
-// randomly-timed low-frequency noise bursts — deliberately chaotic
-// rather than the steady oscillator wobble engineRumble uses for car,
-// so the two no longer share the same underlying DNA.
+// Thunder's own texture. The first version used heavily-lowpassed noise
+// for the rumble, which was the actual audibility bug: a lowpass filter
+// at 120-250Hz on white noise discards almost all of the signal's energy
+// (white noise spreads its energy across the whole spectrum, so cutting
+// everything above ~150Hz throws most of it away) — it wasn't quiet, it
+// was structurally near-silent. Real low-frequency energy needs an
+// oscillator, not filtered noise. This uses low sine oscillators with a
+// falling pitch per hit (the actual "boom" shape) for the audible body,
+// plus a touch of noise for grit — irregular random timing keeps it
+// distinct from car's steady, continuous idle.
 function thunderRumble(ctx, t0, dur = 1.1) {
-  const hits = 5 + Math.floor(Math.random() * 3);
+  const hits = 4 + Math.floor(Math.random() * 3);
   for (let i = 0; i < hits; i++) {
-    const dt = (i / hits) * dur + Math.random() * 0.08;
-    const hitDur = 0.15 + Math.random() * 0.15;
-    filteredNoise(ctx, t0 + dt, hitDur, {
-      type: "lowpass", freq: 120 + Math.random() * 80, Q: 0.8,
-      gain: 0.14 + Math.random() * 0.08, attack: 0.02,
-    });
+    const dt = (i / hits) * dur + Math.random() * 0.1;
+    const hitDur = 0.28 + Math.random() * 0.25;
+    const freq = 42 + Math.random() * 26;
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(freq, t0 + dt);
+    osc.frequency.exponentialRampToValueAtTime(Math.max(freq * 0.55, 20), t0 + dt + hitDur);
+    g.gain.setValueAtTime(0.0001, t0 + dt);
+    g.gain.exponentialRampToValueAtTime(0.24 + Math.random() * 0.08, t0 + dt + 0.05);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dt + hitDur);
+    osc.connect(g).connect(getMasterGain(ctx));
+    osc.start(t0 + dt);
+    osc.stop(t0 + dt + hitDur + 0.03);
+    filteredNoise(ctx, t0 + dt, hitDur, { type: "bandpass", freq: 180, Q: 0.7, gain: 0.06, attack: 0.02 });
   }
 }
 
@@ -184,7 +209,7 @@ function clockTick(ctx, t0, high) {
 const BASE_SOUND = {
   bell: (ctx, t0) => { tone(ctx, t0, 1046, 0.9, "sine", 0.16); tone(ctx, t0, 1046 * 2.4, 0.5, "sine", 0.05); },
   clock: (ctx, t0) => [0, 0.42, 0.84, 1.26].forEach((d, i) => clockTick(ctx, t0 + d, i % 2 === 0)),
-  car: (ctx, t0) => engineRumble(ctx, t0, 0.9, 95),
+  car: (ctx, t0) => carEngine(ctx, t0, 1.0),
   rain: (ctx, t0) => rainPatter(ctx, t0, 1.3),
   clap: (ctx, t0) => filteredNoise(ctx, t0, 0.09, { type: "bandpass", freq: 2200, Q: 1.2, gain: 0.28, attack: 0.002 }),
   tap: (ctx, t0) => { tone(ctx, t0, 750, 0.06, "triangle", 0.14); filteredNoise(ctx, t0, 0.02, { type: "highpass", freq: 3000, Q: 1, gain: 0.05, attack: 0.001 }); },
@@ -195,7 +220,18 @@ const BASE_SOUND = {
   // content/word-library.md §4. Both are mechanical/ambient sounds
   // (same reasoning as the dog→clock swap in Round 1: those synthesize
   // convincingly, animal/voice sounds don't).
-  phone: (ctx, t0) => [0, 0.6].forEach((d) => { tone(ctx, t0 + d, 480, 0.35, "sine", 0.13); tone(ctx, t0 + d, 620, 0.35, "sine", 0.09); }),
+  // Rebuilt: two sustained sine tones read as a plain beep, not a
+  // ring. Real electronic phone rings warble — 4 quick square-wave
+  // pulses per ring (square gives harmonics a sine can't, closer to an
+  // actual ringer) gives that "brrring" texture instead of a flat tone.
+  phone: (ctx, t0) => {
+    [0, 0.55].forEach((ringStart) => {
+      [0, 0.1, 0.2, 0.3].forEach((pulse) => {
+        tone(ctx, t0 + ringStart + pulse, 1000, 0.09, "square", 0.09);
+        tone(ctx, t0 + ringStart + pulse, 1480, 0.09, "square", 0.05);
+      });
+    });
+  },
   wind: (ctx, t0) => filteredNoise(ctx, t0, 1.4, { type: "lowpass", freq: 700, Q: 0.5, gain: 0.12, attack: 0.15 }),
   siren: (ctx, t0) => {
     const osc = ctx.createOscillator();
@@ -323,7 +359,7 @@ export function playAsset(name) {
 // (and its disabled-while-playing lock, to prevent overlapping restarts)
 // matches reality instead of a fixed guess.
 export const ASSET_DURATION_MS = {
-  clock: 1450, rain: 1350, car: 950, drum_slow: 1450, clap_slow: 1350, tap_slow: 1350,
+  clock: 1450, rain: 1350, car: 1050, drum_slow: 1450, clap_slow: 1350, tap_slow: 1350,
   finger_slow: 1350, fast_compare: 2650, slow_compare: 2650, drum_compare: 950,
   phone: 1000, wind: 1450, siren: 1050, thunder: 1250,
 };
