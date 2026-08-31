@@ -1,11 +1,13 @@
 // src/services/audioService.js
 //
-// Placeholder audio engine. No real recordings are wired in yet (see
-// content/media.json — every audio asset is flagged placeholder: true).
-// This synthesizes short, distinguishable tones/noise textures in-browser
-// so the app is fully usable before real audio production happens.
-// Swapping to real files later means changing playAsset() to look up
-// content/media.json filenames and play <audio> elements instead —
+// Mostly a placeholder audio engine — this synthesizes short,
+// distinguishable tones/noise textures in-browser so the app is fully
+// usable before real audio production happens. car, thunder, and wind are
+// the first exceptions: real user-supplied recordings (see
+// REAL_AUDIO_FILES below), with synthesis kept as an automatic fallback if
+// a recording fails to play on some browser/codec combination. Everything
+// else in content/media.json is still flagged placeholder: true. Adding
+// more real recordings later means adding entries to REAL_AUDIO_FILES —
 // nothing calling playAsset(name) needs to change.
 
 let audioCtx = null;
@@ -55,6 +57,7 @@ function getMasterGain(ctx) {
   return masterGain;
 }
 function stopAllSounds() {
+  stopRealAudio();
   if (!audioCtx || !masterGain) return;
   const now = audioCtx.currentTime;
   const oldGain = masterGain;
@@ -389,16 +392,39 @@ export function speak(text) {
   }
 }
 
-export function playAsset(name) {
-  stopAllSounds(); // silence whatever's still tailing off from a previous play, first
-  if (name.startsWith("say:")) {
-    try {
-      speakWord(name.slice(4));
-    } catch (e) {
-      // Web Speech unavailable — fail silently, app still works without sound.
-    }
-    return;
+// Real recordings — supplied by the user (car, thunder, wind) — replace
+// the synthesized placeholder for just these three sounds. Served from
+// public/audio/ (Vite serves public/ at the site root). Everything else
+// still uses synthesis until more recordings exist.
+const REAL_AUDIO_FILES = {
+  car: "/audio/car.aac",
+  thunder: "/audio/thunder.aac",
+  wind: "/audio/wind.aac",
+};
+const realAudioCache = {};
+function getRealAudio(key) {
+  if (!realAudioCache[key]) {
+    const el = new Audio(REAL_AUDIO_FILES[key]);
+    el.preload = "auto";
+    // Some browsers fire a media error instead of rejecting play() when the
+    // codec isn't supported — catch that path too, only if this is still
+    // the sound actually being played (not a stale earlier attempt).
+    el.addEventListener("error", () => {
+      if (activeRealAudio === el) playSynthesized(key);
+    });
+    realAudioCache[key] = el;
   }
+  return realAudioCache[key];
+}
+let activeRealAudio = null;
+function stopRealAudio() {
+  if (activeRealAudio) {
+    try { activeRealAudio.pause(); activeRealAudio.currentTime = 0; } catch (e) {}
+    activeRealAudio = null;
+  }
+}
+
+function playSynthesized(name) {
   try {
     const ctx = getCtx();
     const playNow = () => {
@@ -420,6 +446,33 @@ export function playAsset(name) {
   } catch (e) {
     // Web Audio unavailable — fail silently, app still works without sound.
   }
+}
+
+export function playAsset(name) {
+  stopAllSounds(); // silence whatever's still tailing off from a previous play, first
+  if (name.startsWith("say:")) {
+    try {
+      speakWord(name.slice(4));
+    } catch (e) {
+      // Web Speech unavailable — fail silently, app still works without sound.
+    }
+    return;
+  }
+  const key = name.replace(/\.mp3$/, "");
+  if (REAL_AUDIO_FILES[key]) {
+    const el = getRealAudio(key);
+    el.currentTime = 0;
+    activeRealAudio = el;
+    const playPromise = el.play();
+    // A real file can fail to play on some browser/codec combination even
+    // though it loaded fine elsewhere — fall back to the synthesized
+    // version rather than going silent.
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => playSynthesized(key));
+    }
+    return;
+  }
+  playSynthesized(name);
 }
 
 // How long each asset's audio actually takes, so a play button's UI state
