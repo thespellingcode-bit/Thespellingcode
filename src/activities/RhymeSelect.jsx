@@ -16,20 +16,31 @@ import { Feedback } from "../components/Feedback";
 import { Btn } from "../components/Btn";
 import { playSfx, playAsset, assetDurationMs } from "../services/audioService";
 import { shuffled } from "../services/shuffle";
+import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
-export function RhymeSelect({ question, onResult, allowRetry = true }) {
+export function RhymeSelect({ question, onResult, allowRetry = true, ttsEnabled = true }) {
   const [options] = useState(() => shuffled(question.options));
   const [picked, setPicked] = useState(() => new Set());
   const [status, setStatus] = useState("idle"); // idle | wrong | correct
   const [attempts, setAttempts] = useState(0);
   const correctSet = new Set(question.correct_answers);
 
+  useAutoSpeak(question.prompt ?? question.question, ttsEnabled);
+
+  // Tapping ON plays that word's sound — the child can preview each
+  // candidate individually before confirming, same reasoning as
+  // MultipleChoice's rhyme_match preview flow. Tapping off (deselecting)
+  // doesn't need a sound.
   const toggle = (opt) => {
     if (status !== "idle") return;
     setPicked((prev) => {
       const next = new Set(prev);
-      if (next.has(opt)) next.delete(opt);
-      else next.add(opt);
+      if (next.has(opt)) {
+        next.delete(opt);
+      } else {
+        next.add(opt);
+        playAsset(`say:${opt.toLowerCase()}`);
+      }
       return next;
     });
   };
@@ -64,7 +75,7 @@ export function RhymeSelect({ question, onResult, allowRetry = true }) {
         {question.prompt ?? question.question}
       </p>
       {(question.audio_asset ?? question.audio) && (
-        <AudioPlayer asset={question.audio_asset ?? question.audio} showPicture={allowRetry} />
+        <AudioPlayer asset={question.audio_asset ?? question.audio} />
       )}
       <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, margin: 0 }}>
         Tap every word that rhymes — there may be more than one!

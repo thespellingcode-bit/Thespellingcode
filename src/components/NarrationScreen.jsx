@@ -4,8 +4,10 @@ import { theme as T } from "../theme";
 import { iconForAsset } from "./Icon";
 import { Illustration } from "./Illustration";
 import { Btn } from "./Btn";
+import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
-export function NarrationScreen({ text, illustrationAsset = "magnifier", buttonLabel = "Continue", onNext }) {
+export function NarrationScreen({ text, illustrationAsset = "magnifier", buttonLabel = "Continue", onNext, ttsEnabled = true }) {
+  useAutoSpeak(text, ttsEnabled);
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22, textAlign: "center", padding: "20px 10px" }}>
       <Illustration name={iconForAsset(illustrationAsset)} size={104} />

@@ -7,11 +7,15 @@ import { QuestionCard } from "./QuestionCard";
 import { NarrationScreen } from "./NarrationScreen";
 import { ResultScreen } from "./ResultScreen";
 import { AudioPlayer } from "./AudioPlayer";
+import { WordSoundRow } from "./WordSoundRow";
 import { getPracticeActivities, getAssessmentQuestions } from "../services/contentService";
 import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
 import { shuffled } from "../services/shuffle";
-import { COMPARE_TYPES } from "../services/questionTypes";
+import { isTtsEnabled, setTtsEnabled as persistTtsEnabled } from "../services/ttsPreference";
+import { useAutoSpeak } from "../hooks/useAutoSpeak";
+
+const RHYME_LESSON_TYPES = ["rhyme_match", "rhyme_select"];
 
 const STAGE_LABELS = {
   welcome: "Welcome", teach: "Teach", model: "Watch", transition: "Get ready",
@@ -53,19 +57,63 @@ function modelCaptionFor(item) {
   }
 }
 
-// rhyme_match/rhyme_select example items whose audio is a single spoken
-// word should play the anchor AND every correct answer on the example
-// screen — previously the narration text promised both ("Cat... hat")
-// but the audio only ever played the anchor.
-function modelAudioFor(item) {
-  const asset = item.audio_asset;
-  if (item.type === "rhyme_select" && asset?.startsWith("say:")) {
-    return `${asset}, ${item.correct_answers.join(", ")}`;
+// Which words a rhyme model example should show as individual, separately
+// tappable cards (WordSoundRow) — replaces the old single merged-phrase
+// AudioPlayer. Odd One Out's audio_asset already lists all 3 comparison
+// words ("say:cat, hat, dog"); everything else is anchor + correct
+// answer(s), so the child hears the anchor AND every rhyme, not just the
+// anchor (the previous gap: narration promised "Cat... hat" but only "cat"
+// ever played).
+function modelWordsFor(item) {
+  const raw = (item.audio_asset || "").replace(/^say:/, "");
+  if (raw.includes(",")) return raw.split(",").map((w) => w.trim()).filter(Boolean);
+  const anchor = raw.trim();
+  const answers = item.type === "rhyme_select" ? item.correct_answers : [item.correct_answer];
+  return [anchor, ...(answers || [])].filter(Boolean);
+}
+
+// The model-stage heading text. For rhyme lessons this is the practice
+// item's own `prompt`, which already varies per item (confirmed in
+// content/activities.json — e.g. "Which word rhymes with can?" / "...man?"
+// / "...fan?") — fixes the heading reading identically on every example
+// card. Other lesson types keep the lesson's static narration.model line,
+// which wasn't reported as a problem.
+function modelHeadingFor(lesson, item) {
+  if (RHYME_LESSON_TYPES.includes(lesson.activity_type) && item.prompt) return item.prompt;
+  return lesson.narration.model;
+}
+
+// A normalized signature for "is this example meaningfully the same rhyme
+// family as one we've already shown" — used to dedupe the model carousel.
+// Finish My Rhyme surfaced only 2 families across 5 cards because the first
+// 5 unshuffled items were dog->log, log->dog, hen->pen, pen->hen, and a
+// literal content duplicate of dog->log — this signature treats a
+// reversed pair (or an exact repeat) as the same family so distinct
+// families further down the item list get pulled in instead.
+function exampleSignature(item) {
+  if (item.type === "rhyme_match" || item.type === "rhyme_select") {
+    const anchor = (item.audio_asset || "").replace(/^say:/, "");
+    const answers = item.type === "rhyme_select" ? item.correct_answers : [item.correct_answer];
+    return [anchor, ...(answers || [])].map((w) => w.trim().toLowerCase()).sort().join("|");
   }
-  if (item.type === "rhyme_match" && asset?.startsWith("say:") && !asset.includes(",")) {
-    return `${asset}, ${item.correct_answer}`;
+  return `${item.audio_asset}__${item.correct_answer}`;
+}
+
+// Picks up to `max` examples with distinct signatures, scanning the FULL
+// item list (not just the first few in file order) so a lesson with
+// several genuinely different families further down the list isn't
+// crowded out by near-duplicates that happen to come first.
+function pickDistinctExamples(items, max = 5) {
+  const seen = new Set();
+  const picked = [];
+  for (const item of items) {
+    const sig = exampleSignature(item);
+    if (seen.has(sig)) continue;
+    seen.add(sig);
+    picked.push(item);
+    if (picked.length >= max) break;
   }
-  return asset;
+  return picked;
 }
 
 // Which stages this lesson runs, driven entirely by which narration
@@ -103,6 +151,43 @@ function StreakBadge({ streak }) {
   );
 }
 
+// The Model/"Watch" stage: a carousel of worked examples. Its own
+// component (rather than inline in LessonPlayer) so its auto-speak hook
+// call is unconditional within ITS render — LessonPlayer only mounts this
+// while stage === "model", so the hook's own lifecycle is always valid.
+function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnabled }) {
+  const currentIdx = Math.min(modelIdx, exampleItems.length - 1);
+  const currentExample = exampleItems[currentIdx];
+  const isLast = currentIdx + 1 >= exampleItems.length;
+  const isRhymeLesson = RHYME_LESSON_TYPES.includes(lesson.activity_type);
+  const heading = modelHeadingFor(lesson, currentExample);
+
+  useAutoSpeak(heading, ttsEnabled);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
+      <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, margin: 0 }}>
+        Example {currentIdx + 1} of {exampleItems.length}
+      </p>
+      <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{heading}</p>
+      {isRhymeLesson ? (
+        <WordSoundRow key={currentExample.activity_id} words={modelWordsFor(currentExample)} />
+      ) : (
+        <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
+      )}
+      <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 17, color: T.goldDeep, margin: 0 }}>
+        {modelCaptionFor(currentExample)}
+      </p>
+      <Btn
+        variant="gold" size="lg"
+        onClick={() => (isLast ? next() : setModelIdx((i) => Math.min(i + 1, exampleItems.length - 1)))}
+      >
+        {isLast ? (lesson.narration.transition || "Now you try!") : "Next example"}
+      </Btn>
+    </div>
+  );
+}
+
 // onFinish receives { lessonId, mastery, ratio, attemptNumber, responses }
 // — the caller (LessonPage) is responsible for persisting progress via
 // progressService. LessonPlayer itself has no storage dependency.
@@ -129,8 +214,10 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
 
   // Up to 5 worked examples on the Model/"Watch" stage, drawn from the
   // lesson's own unshuffled practice items so every example is content
-  // that's already authored — no separate example bank needed.
-  const exampleItems = practiceQuestions.slice(0, Math.min(5, practiceQuestions.length));
+  // that's already authored — no separate example bank needed. Deduped by
+  // rhyme family (see pickDistinctExamples) so a lesson whose first few
+  // items happen to repeat a family still surfaces its full variety.
+  const exampleItems = pickDistinctExamples(practiceQuestions, 5);
   const [modelIdx, setModelIdx] = useState(0);
 
   const [guidedIdx, setGuidedIdx] = useState(0);
@@ -140,6 +227,14 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
   const [responses, setResponses] = useState([]); // [{questionId, skill, errorTag, correct}]
   const [attemptNumber, setAttemptNumber] = useState(1);
   const [streak, setStreak] = useState(0);
+  const [ttsEnabled, setTtsEnabledState] = useState(() => isTtsEnabled());
+  const toggleTts = () => {
+    setTtsEnabledState((v) => {
+      const nextValue = !v;
+      persistTtsEnabled(nextValue);
+      return nextValue;
+    });
+  };
 
   const restartAssessment = useCallback(() => {
     setAssessSeq(shuffled(assessmentQuestions));
@@ -173,48 +268,40 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
         <button onClick={onExit} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Manrope', sans-serif", fontSize: 13, color: T.textMute }}>
           ← Back to path
         </button>
-        <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, fontWeight: 600 }}>
-          {STAGE_LABELS[stage]}
-        </span>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, fontWeight: 600 }}>
+            {STAGE_LABELS[stage]}
+          </span>
+          <button
+            onClick={toggleTts}
+            aria-label={ttsEnabled ? "Turn off reading aloud" : "Turn on reading aloud"}
+            style={{ background: "none", border: "none", cursor: "pointer", display: "flex", padding: 2 }}
+          >
+            <Icon name={ttsEnabled ? "speaker" : "speaker-mute"} size={18} color={T.textMute} />
+          </button>
+        </div>
       </div>
 
       <div style={{ background: T.panel, borderRadius: 22, border: `1px solid ${T.line}`, padding: "32px 26px", minHeight: 360, display: "flex", alignItems: "center", justifyContent: "center" }}>
         {stage === "welcome" && (
-          <NarrationScreen text={lesson.narration.welcome} illustrationAsset="magnifier" onNext={next} />
+          <NarrationScreen text={lesson.narration.welcome} illustrationAsset="magnifier" onNext={next} ttsEnabled={ttsEnabled} />
         )}
         {stage === "teach" && (
-          <NarrationScreen text={lesson.narration.teach} illustrationAsset={lesson.activity_type} onNext={next} />
+          <NarrationScreen text={lesson.narration.teach} illustrationAsset={lesson.activity_type} onNext={next} ttsEnabled={ttsEnabled} />
         )}
         {stage === "instruction" && (
-          <NarrationScreen text={lesson.narration.instruction} illustrationAsset="magnifier" buttonLabel="I'm ready" onNext={next} />
+          <NarrationScreen text={lesson.narration.instruction} illustrationAsset="magnifier" buttonLabel="I'm ready" onNext={next} ttsEnabled={ttsEnabled} />
         )}
-        {stage === "model" && exampleItems.length > 0 && (() => {
-          const currentIdx = Math.min(modelIdx, exampleItems.length - 1);
-          const currentExample = exampleItems[currentIdx];
-          const isLast = currentIdx + 1 >= exampleItems.length;
-          return (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
-              <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, margin: 0 }}>
-                Example {currentIdx + 1} of {exampleItems.length}
-              </p>
-              <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{lesson.narration.model}</p>
-              <AudioPlayer
-                key={currentExample.activity_id}
-                asset={modelAudioFor(currentExample)}
-                showPicture={!COMPARE_TYPES.includes(lesson.activity_type)}
-              />
-              <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 17, color: T.goldDeep, margin: 0 }}>
-                {modelCaptionFor(currentExample)}
-              </p>
-              <Btn
-                variant="gold" size="lg"
-                onClick={() => (isLast ? next() : setModelIdx((i) => Math.min(i + 1, exampleItems.length - 1)))}
-              >
-                {isLast ? (lesson.narration.transition || "Now you try!") : "Next example"}
-              </Btn>
-            </div>
-          );
-        })()}
+        {stage === "model" && exampleItems.length > 0 && (
+          <ModelStage
+            lesson={lesson}
+            exampleItems={exampleItems}
+            modelIdx={modelIdx}
+            setModelIdx={setModelIdx}
+            next={next}
+            ttsEnabled={ttsEnabled}
+          />
+        )}
         {stage === "guided" && guidedQs.length > 0 && (
           <div style={{ width: "100%" }}>
             <p style={{ textAlign: "center", fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, marginBottom: 4 }}>
@@ -225,6 +312,7 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
               key={guidedQs[guidedIdx].activity_id}
               question={guidedQs[guidedIdx]}
               mode="practice"
+              ttsEnabled={ttsEnabled}
               onResult={(r) => {
                 setStreak((s) => (r.attempts === 1 ? s + 1 : 0));
                 guidedIdx + 1 < guidedQs.length ? setGuidedIdx((i) => i + 1) : next();
@@ -242,6 +330,7 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
               key={independentQs[indepIdx].activity_id}
               question={independentQs[indepIdx]}
               mode="practice"
+              ttsEnabled={ttsEnabled}
               onResult={(r) => {
                 setStreak((s) => (r.attempts === 1 ? s + 1 : 0));
                 indepIdx + 1 < independentQs.length ? setIndepIdx((i) => i + 1) : next();
@@ -258,6 +347,7 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
               key={assessSeq[assessIdx].assessment_id + attemptNumber}
               question={assessSeq[assessIdx]}
               mode="assessment"
+              ttsEnabled={ttsEnabled}
               onResult={(r) => {
                 recordResponse(assessSeq[assessIdx], r);
                 setAssessIdx((i) => i + 1);
@@ -276,6 +366,7 @@ export function LessonPlayer({ lesson, onExit, onFinish }) {
             total={totalQuestions}
             onFinish={() => goTo("complete")}
             onSeeRemediation={() => goTo("remediation")}
+            ttsEnabled={ttsEnabled}
           />
         )}
         {stage === "remediation" && (

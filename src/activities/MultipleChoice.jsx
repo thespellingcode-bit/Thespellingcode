@@ -11,11 +11,13 @@ import { Icon, labelToIcon } from "../components/Icon";
 import { Illustration } from "../components/Illustration";
 import { AudioPlayer } from "../components/AudioPlayer";
 import { Feedback } from "../components/Feedback";
+import { Btn } from "../components/Btn";
 import { playSfx, playAsset, assetDurationMs, soundForOption } from "../services/audioService";
 import { shuffled } from "../services/shuffle";
 import { COMPARE_TYPES } from "../services/questionTypes";
+import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
-export function MultipleChoice({ question, onResult, allowRetry = true }) {
+export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabled = true }) {
   const [selected, setSelected] = useState(null);
   const [status, setStatus] = useState("idle"); // idle | wrong | correct
   const [attempts, setAttempts] = useState(0);
@@ -27,44 +29,74 @@ export function MultipleChoice({ question, onResult, allowRetry = true }) {
   const correctAnswer = question.correct_answer ?? question.correct;
   const audioAsset = question.audio_asset ?? question.audio;
   const isCompareType = COMPARE_TYPES.includes(question.type);
+  // rhyme_match questions whose audio_asset lists several comma-joined
+  // words (Odd One Out, e.g. "say:cat, hat, dog") — the central prompt
+  // used to speak all of them as one run-on phrase. Individual per-option
+  // preview below replaces that entirely, so the merged prompt is skipped.
+  const isOddOneOut = question.type === "rhyme_match" && (audioAsset || "").includes(",");
+  // rhyme_match gets a two-step "preview, then confirm" flow (like
+  // RhymeSelect) so a child can hear each option before committing — every
+  // other type keeps the original tap-to-commit-immediately behavior,
+  // which wasn't reported as a problem and stays as-is.
+  const isRhymeMatch = question.type === "rhyme_match";
+
+  useAutoSpeak(question.prompt ?? question.question, ttsEnabled);
+
+  const resolve = (opt) => {
+    const isCorrect = opt === correctAnswer;
+    if (isCorrect) {
+      setStatus("correct");
+      playSfx("correct");
+      setTimeout(() => onResult({ correct: true, attempts: attempts + 1 }), 850);
+    } else {
+      setStatus("wrong");
+      playSfx("incorrect");
+      if (!allowRetry) setTimeout(() => onResult({ correct: false, attempts: attempts + 1 }), 950);
+    }
+  };
 
   const choose = (opt) => {
     if (status === "correct") return;
     setSelected(opt);
-    const isCorrect = opt === correctAnswer;
     setAttempts((a) => a + 1);
-
-    const resolve = () => {
-      if (isCorrect) {
-        setStatus("correct");
-        playSfx("correct");
-        setTimeout(() => onResult({ correct: true, attempts: attempts + 1 }), 850);
-      } else {
-        setStatus("wrong");
-        playSfx("incorrect");
-        if (!allowRetry) setTimeout(() => onResult({ correct: false, attempts: attempts + 1 }), 950);
-      }
-    };
 
     // Play the option's own sound first (so a pre-reader actually hears
     // what they picked) and delay the correct/wrong resolution until
     // that clip has finished, rather than the feedback chime cutting it
     // off immediately.
-    const optSound = !isCompareType ? soundForOption(question, opt) : null;
+    const optSound = soundForOption(question, opt);
     if (optSound) {
       playAsset(optSound);
-      setTimeout(resolve, assetDurationMs(optSound) + 150);
+      setTimeout(() => resolve(opt), assetDurationMs(optSound) + 150);
     } else {
-      resolve();
+      resolve(opt);
     }
   };
+
+  // Tapping an option previews its sound and marks it picked, without
+  // scoring — "Check my answer" below is the actual commit.
+  const preview = (opt) => {
+    if (status === "correct") return;
+    setSelected(opt);
+    if (status === "wrong") setStatus("idle");
+    const optSound = soundForOption(question, opt);
+    if (optSound) playAsset(optSound);
+  };
+
+  const confirmRhyme = () => {
+    if (!selected || status !== "idle") return;
+    setAttempts((a) => a + 1);
+    resolve(selected);
+  };
+
+  const handleTap = isRhymeMatch ? preview : choose;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
       <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, textAlign: "center", margin: 0 }}>
         {question.prompt ?? question.question}
       </p>
-      {audioAsset && <AudioPlayer asset={audioAsset} showPicture={!isCompareType && allowRetry} />}
+      {audioAsset && !isOddOneOut && <AudioPlayer asset={audioAsset} />}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", maxWidth: 420 }}>
         {options.map((opt) => {
           const isSelected = selected === opt;
@@ -73,12 +105,13 @@ export function MultipleChoice({ question, onResult, allowRetry = true }) {
           if (isSelected && status === "correct") { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; iconBg = "#D5EEDB"; }
           else if (isSelected && status === "wrong") { bg = "#FDEDEB"; border = T.coral; color = T.coralDeep; iconBg = "#FBD9D2"; }
           else if (status === "wrong" && !allowRetry && isCorrectOpt) { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; iconBg = "#D5EEDB"; }
+          else if (isSelected && isRhymeMatch && status === "idle") { bg = T.mist; border = T.gold; color = T.ink; iconBg = "#FFF4D6"; }
           const optIcon = labelToIcon(opt);
           const bigPicture = !isCompareType && optIcon;
           return (
             <button
               key={opt}
-              onClick={() => choose(opt)}
+              onClick={() => handleTap(opt)}
               disabled={status === "correct"}
               style={{
                 minWidth: bigPicture ? 108 : 120,
@@ -102,6 +135,11 @@ export function MultipleChoice({ question, onResult, allowRetry = true }) {
           );
         })}
       </div>
+      {isRhymeMatch && status === "idle" && (
+        <Btn variant="gold" size="md" onClick={confirmRhyme} disabled={!selected}>
+          Check my answer
+        </Btn>
+      )}
       <Feedback
         status={status}
         correctText={question.feedback}

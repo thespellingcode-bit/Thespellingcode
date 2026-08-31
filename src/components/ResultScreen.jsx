@@ -5,16 +5,18 @@ import { ProgressBar } from "./ProgressBar";
 import { Btn } from "./Btn";
 import { Celebration } from "./Celebration";
 import { playSfx } from "../services/audioService";
+import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
 function pct(n) {
   return `${Math.round(n * 100)}%`;
 }
 
-export function ResultScreen({ ratio, masteryThreshold, mastered, closeText, score, total, onFinish, onSeeRemediation }) {
+export function ResultScreen({ ratio, masteryThreshold, mastered, closeText, score, total, onFinish, onSeeRemediation, ttsEnabled = true }) {
   useEffect(() => {
     if (mastered) playSfx("celebrate");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useAutoSpeak(mastered ? (closeText || "Great job!") : "Good try! Let's practise a bit more.", ttsEnabled);
 
   return (
     <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>

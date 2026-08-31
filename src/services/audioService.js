@@ -26,12 +26,31 @@ function getCtx() {
 // so at most one generation is ever actually audible — the orphaned nodes
 // keep running silently in memory and get garbage-collected once their
 // already-scheduled stop() time arrives.
+// A compressor sits between the master gain and the speakers so gains
+// throughout this file can be pushed higher (fixing several "too quiet"
+// reports) without the summed signal clipping/distorting — it gently
+// squashes peaks instead of letting them clip. One persistent node, shared
+// by every generation of masterGain.
+let compressor = null;
+function getCompressor(ctx) {
+  if (!compressor) {
+    compressor = ctx.createDynamicsCompressor();
+    compressor.threshold.setValueAtTime(-16, ctx.currentTime);
+    compressor.knee.setValueAtTime(22, ctx.currentTime);
+    compressor.ratio.setValueAtTime(10, ctx.currentTime);
+    compressor.attack.setValueAtTime(0.003, ctx.currentTime);
+    compressor.release.setValueAtTime(0.18, ctx.currentTime);
+    compressor.connect(ctx.destination);
+  }
+  return compressor;
+}
+
 let masterGain = null;
 function getMasterGain(ctx) {
   if (!masterGain) {
     masterGain = ctx.createGain();
     masterGain.gain.value = 1;
-    masterGain.connect(ctx.destination);
+    masterGain.connect(getCompressor(ctx));
   }
   return masterGain;
 }
@@ -178,12 +197,12 @@ function thunderRumble(ctx, t0, dur = 1.1) {
     osc.frequency.setValueAtTime(freq, t0 + dt);
     osc.frequency.exponentialRampToValueAtTime(Math.max(freq * 0.55, 20), t0 + dt + hitDur);
     g.gain.setValueAtTime(0.0001, t0 + dt);
-    g.gain.exponentialRampToValueAtTime(0.24 + Math.random() * 0.08, t0 + dt + 0.05);
+    g.gain.exponentialRampToValueAtTime(0.36 + Math.random() * 0.1, t0 + dt + 0.05);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + dt + hitDur);
     osc.connect(g).connect(getMasterGain(ctx));
     osc.start(t0 + dt);
     osc.stop(t0 + dt + hitDur + 0.03);
-    filteredNoise(ctx, t0 + dt, hitDur, { type: "bandpass", freq: 180, Q: 0.7, gain: 0.06, attack: 0.02 });
+    filteredNoise(ctx, t0 + dt, hitDur, { type: "bandpass", freq: 180, Q: 0.7, gain: 0.09, attack: 0.02 });
   }
 }
 
@@ -206,24 +225,30 @@ function clockTick(ctx, t0, high) {
   }
 }
 
+// Gain pass: raised across the board (roughly +30-40%) now that the
+// compressor above makes headroom safe — user feedback said "some sounds
+// are not audible at all... make sure volume is up to the mark on the
+// highest note of my phone." whisper is the one exception left quieter on
+// purpose (it's used specifically as the "soft" half of loud/soft
+// comparisons) but still raised off the near-silent floor.
 const BASE_SOUND = {
-  bell: (ctx, t0) => { tone(ctx, t0, 1046, 0.9, "sine", 0.16); tone(ctx, t0, 1046 * 2.4, 0.5, "sine", 0.05); },
+  bell: (ctx, t0) => { tone(ctx, t0, 1046, 0.9, "sine", 0.22); tone(ctx, t0, 1046 * 2.4, 0.5, "sine", 0.07); },
   clock: (ctx, t0) => [0, 0.42, 0.84, 1.26].forEach((d, i) => clockTick(ctx, t0 + d, i % 2 === 0)),
   car: (ctx, t0) => carEngine(ctx, t0, 1.0),
   rain: (ctx, t0) => rainPatter(ctx, t0, 1.3),
-  clap: (ctx, t0) => filteredNoise(ctx, t0, 0.09, { type: "bandpass", freq: 2200, Q: 1.2, gain: 0.28, attack: 0.002 }),
+  clap: (ctx, t0) => filteredNoise(ctx, t0, 0.09, { type: "bandpass", freq: 2200, Q: 1.2, gain: 0.34, attack: 0.002 }),
   // More gain/body than before — user feedback called this out as
   // "vague, almost inaudible" alongside finger below.
-  tap: (ctx, t0) => { tone(ctx, t0, 800, 0.09, "triangle", 0.22); filteredNoise(ctx, t0, 0.035, { type: "highpass", freq: 2800, Q: 1, gain: 0.11, attack: 0.001 }); },
+  tap: (ctx, t0) => { tone(ctx, t0, 800, 0.09, "triangle", 0.27); filteredNoise(ctx, t0, 0.035, { type: "highpass", freq: 2800, Q: 1, gain: 0.14, attack: 0.001 }); },
   // Added a sharp noise "click" right at onset for a punchy attack — the
   // sweepTone body was fine but the soft attack made it read as vague.
-  drum: (ctx, t0) => { filteredNoise(ctx, t0, 0.02, { type: "lowpass", freq: 900, Q: 1, gain: 0.2, attack: 0.001 }); sweepTone(ctx, t0, { from: 160, to: 50, dur: 0.35, type: "sine", gain: 0.36, filterFrom: 700, filterTo: 150 }); filteredNoise(ctx, t0, 0.05, { type: "lowpass", freq: 400, Q: 1, gain: 0.1, attack: 0.002 }); },
-  whisper: (ctx, t0) => filteredNoise(ctx, t0, 0.5, { type: "bandpass", freq: 1800, Q: 0.7, gain: 0.045, attack: 0.05 }),
+  drum: (ctx, t0) => { filteredNoise(ctx, t0, 0.02, { type: "lowpass", freq: 900, Q: 1, gain: 0.24, attack: 0.001 }); sweepTone(ctx, t0, { from: 160, to: 50, dur: 0.35, type: "sine", gain: 0.42, filterFrom: 700, filterTo: 150 }); filteredNoise(ctx, t0, 0.05, { type: "lowpass", freq: 400, Q: 1, gain: 0.13, attack: 0.002 }); },
+  whisper: (ctx, t0) => filteredNoise(ctx, t0, 0.5, { type: "bandpass", freq: 1800, Q: 0.7, gain: 0.075, attack: 0.05 }),
   // The weakest sound in the whole set before this — 30ms at gain 0.06
   // is nearly silent by construction. More than doubled the gain, added
   // a soft high tick tone alongside the noise so there's an actual pitch
   // to latch onto, not just a faint hiss.
-  finger: (ctx, t0) => { tone(ctx, t0, 2200, 0.05, "sine", 0.1); filteredNoise(ctx, t0, 0.05, { type: "highpass", freq: 3500, Q: 1, gain: 0.14, attack: 0.001 }); },
+  finger: (ctx, t0) => { tone(ctx, t0, 2200, 0.05, "sine", 0.14); filteredNoise(ctx, t0, 0.05, { type: "highpass", freq: 3500, Q: 1, gain: 0.19, attack: 0.001 }); },
   // Added to widen Lesson 1's vocabulary beyond bell/clock/car/rain — see
   // content/word-library.md §4. Both are mechanical/ambient sounds
   // (same reasoning as the dog→clock swap in Round 1: those synthesize
@@ -235,12 +260,34 @@ const BASE_SOUND = {
   phone: (ctx, t0) => {
     [0, 0.55].forEach((ringStart) => {
       [0, 0.1, 0.2, 0.3].forEach((pulse) => {
-        tone(ctx, t0 + ringStart + pulse, 1000, 0.09, "square", 0.09);
-        tone(ctx, t0 + ringStart + pulse, 1480, 0.09, "square", 0.05);
+        tone(ctx, t0 + ringStart + pulse, 1000, 0.09, "square", 0.13);
+        tone(ctx, t0 + ringStart + pulse, 1480, 0.09, "square", 0.08);
       });
     });
   },
-  wind: (ctx, t0) => filteredNoise(ctx, t0, 1.4, { type: "lowpass", freq: 700, Q: 0.5, gain: 0.12, attack: 0.15 }),
+  // Rebuilt: the old version was pure lowpassed noise with a slow 150ms
+  // attack and gain 0.12 — the same structural bug thunder had (quiet by
+  // construction, no defined texture to latch onto). A real oscillator
+  // "howl" underneath the noise gives wind a pitch to hear, not just a
+  // faint hiss, and gains are much higher throughout.
+  wind: (ctx, t0) => {
+    const dur = 1.4;
+    const howl = ctx.createOscillator();
+    const howlGain = ctx.createGain();
+    howl.type = "sine";
+    howl.frequency.setValueAtTime(480, t0);
+    howl.frequency.linearRampToValueAtTime(720, t0 + dur * 0.4);
+    howl.frequency.linearRampToValueAtTime(420, t0 + dur);
+    howlGain.gain.setValueAtTime(0.0001, t0);
+    howlGain.gain.exponentialRampToValueAtTime(0.2, t0 + dur * 0.3);
+    howlGain.gain.exponentialRampToValueAtTime(0.08, t0 + dur * 0.7);
+    howlGain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    howl.connect(howlGain).connect(getMasterGain(ctx));
+    howl.start(t0);
+    howl.stop(t0 + dur + 0.02);
+    filteredNoise(ctx, t0, dur, { type: "lowpass", freq: 900, Q: 0.6, gain: 0.28, attack: 0.06 });
+    filteredNoise(ctx, t0 + dur * 0.15, dur * 0.6, { type: "bandpass", freq: 1500, Q: 0.8, gain: 0.11, attack: 0.05 });
+  },
   siren: (ctx, t0) => {
     const osc = ctx.createOscillator();
     const g = ctx.createGain();
@@ -249,14 +296,14 @@ const BASE_SOUND = {
     osc.frequency.linearRampToValueAtTime(900, t0 + 0.5);
     osc.frequency.linearRampToValueAtTime(500, t0 + 1.0);
     g.gain.setValueAtTime(0.0001, t0);
-    g.gain.exponentialRampToValueAtTime(0.15, t0 + 0.05);
-    g.gain.setValueAtTime(0.15, t0 + 0.95);
+    g.gain.exponentialRampToValueAtTime(0.21, t0 + 0.05);
+    g.gain.setValueAtTime(0.21, t0 + 0.95);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.0);
     osc.connect(g).connect(getMasterGain(ctx));
     osc.start(t0);
     osc.stop(t0 + 1.05);
   },
-  thunder: (ctx, t0) => { filteredNoise(ctx, t0, 0.12, { type: "lowpass", freq: 250, Q: 1.2, gain: 0.3, attack: 0.003 }); thunderRumble(ctx, t0 + 0.08, 1.1); },
+  thunder: (ctx, t0) => { filteredNoise(ctx, t0, 0.12, { type: "lowpass", freq: 250, Q: 1.2, gain: 0.4, attack: 0.003 }); thunderRumble(ctx, t0 + 0.08, 1.1); },
 };
 
 // Fixed multi-part sequences that need explicit timing (repeated hits,
@@ -330,6 +377,18 @@ function speakWord(word) {
   return true;
 }
 
+// Public entry point for reading arbitrary text aloud (narration sentences,
+// question prompts) — not just single content words. Reuses speakWord's
+// same Chrome-race and resume() handling; the name only ever mattered for
+// callers, the implementation already worked for full sentences.
+export function speak(text) {
+  try {
+    return speakWord(text);
+  } catch (e) {
+    return false;
+  }
+}
+
 export function playAsset(name) {
   stopAllSounds(); // silence whatever's still tailing off from a previous play, first
   if (name.startsWith("say:")) {
@@ -382,14 +441,14 @@ export function assetDurationMs(assetName) {
   return ASSET_DURATION_MS[assetName] || 700;
 }
 
-// What sound (if any) an answer OPTION itself should play when tapped —
-// distinct from the central prompt audio. Only meaningful for options
-// that name a real sound/word: rhyme words (say the word), Module 1's
-// environmental/percussive sound names (play the identity sound), and
-// Sound Memory's "Clap-Tap"-style sequence labels (play that sequence).
-// Comparison judgments ("Same," "Loud," "Fast") have no sound of their
-// own to play — callers should skip this for those question types
-// (see src/services/questionTypes.js).
+// What sound an answer OPTION itself should play when tapped — distinct
+// from the central prompt audio. Rhyme words say the word, Module 1's
+// environmental/percussive sound names play the identity sound, Sound
+// Memory's "Clap-Tap"-style labels play that sequence. Everything else
+// (comparison judgments like "Same"/"Loud"/"Fast", or any future label
+// without a content sound) falls back to speaking the label itself — a
+// pre-reader can't read the text, so every option needs to produce some
+// audio when tapped, never silence.
 const IDENTITY_SOUND_WORDS = new Set([
   "bell", "clock", "car", "rain", "phone", "wind", "siren", "thunder", "drum", "whisper", "clap", "tap", "finger",
 ]);
@@ -398,7 +457,10 @@ export function soundForOption(question, opt) {
   if (question.type === "rhyme_match") return `say:${key}`;
   if (IDENTITY_SOUND_WORDS.has(key)) return key;
   if (question.type === "sound_memory") return key.replace(/-/g, "_");
-  return null;
+  // Comparison judgments (Same/Loud/Fast...) have no content sound of their
+  // own, but a pre-reader still can't read the label — speak it instead of
+  // leaving the tap silent.
+  return `say:${key}`;
 }
 
 // UI feedback sounds (correct/incorrect/celebrate) — separate from the

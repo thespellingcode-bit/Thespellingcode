@@ -1,15 +1,19 @@
 // src/components/AudioPlayer.jsx
 import React, { useState } from "react";
 import { theme as T } from "../theme";
-import { Icon, iconForAsset } from "./Icon";
-import { Illustration } from "./Illustration";
+import { Icon } from "./Icon";
 import { playAsset, assetDurationMs } from "../services/audioService";
 
 // A note on scope: this plays the placeholder synthesized sounds today.
 // When real audio files exist, this component's job stays the same
 // (play / replay / clear visual feedback / disabled-while-playing) —
 // only playAsset() in audioService needs to change to play real files.
-export function AudioPlayer({ asset, label = "Play sound", showPicture = true }) {
+//
+// No picture over the play button, by design: a single central
+// illustration can't represent multi-word/comparison prompts honestly, and
+// individual words/options already get their own pictures elsewhere
+// (WordSoundRow, MultipleChoice's option grid).
+export function AudioPlayer({ asset, label = "Play sound" }) {
   const [playing, setPlaying] = useState(false);
 
   const handlePlay = () => {
@@ -21,7 +25,6 @@ export function AudioPlayer({ asset, label = "Play sound", showPicture = true })
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-      {showPicture && <Illustration name={iconForAsset(asset)} size={84} />}
       <button
         onClick={handlePlay}
         disabled={playing}

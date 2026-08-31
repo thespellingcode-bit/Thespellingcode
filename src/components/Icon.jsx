@@ -48,6 +48,10 @@ export function Icon({ name, size = 40, color = T.ink }) {
       return <svg viewBox="0 0 48 48" style={s}><rect x="12" y="21" width="24" height="17" rx="3" fill="none" stroke={stroke} strokeWidth="2.4"/><path d="M17 21v-5a7 7 0 0114 0v5" fill="none" stroke={stroke} strokeWidth="2.4"/></svg>;
     case "play":
       return <svg viewBox="0 0 48 48" style={s}><circle cx="24" cy="24" r="21" fill="none" stroke={stroke} strokeWidth="2"/><path d="M20 16l14 8-14 8z" fill={stroke}/></svg>;
+    case "speaker":
+      return <svg viewBox="0 0 48 48" style={s}><path d="M6 18v12h8l10 8V10L14 18z" fill={stroke} stroke="none"/><path d="M30 16a10 10 0 010 16M35 10a18 18 0 010 28" fill="none" stroke={stroke} strokeWidth="2.4" strokeLinecap="round"/></svg>;
+    case "speaker-mute":
+      return <svg viewBox="0 0 48 48" style={s}><path d="M6 18v12h8l10 8V10L14 18z" fill={stroke} stroke="none"/><path d="M30 18l10 12M40 18L30 30" stroke={stroke} strokeWidth="2.4" strokeLinecap="round"/></svg>;
     default:
       return <svg viewBox="0 0 48 48" style={s}><path d="M8 24c4-10 8-10 8 0s4 10 8 0 8-10 8 0 4 10 8 0" fill="none" stroke={stroke} strokeWidth="2.4" strokeLinecap="round"/></svg>;
   }
