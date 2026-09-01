@@ -217,5 +217,117 @@
       "instruction": "Listen carefully. Take your time. Choose your answer when you are ready.",
       "close": "Challenge complete! Your results are ready."
     }
+  },
+  {
+    "lesson_id": "L1-M03-01",
+    "module_id": 3,
+    "number": 1,
+    "title": "What Comes First?",
+    "skill": "beginning_sounds",
+    "objective": "Notice that every word starts with a sound.",
+    "activity_type": "beginning_sound_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Hello, Beginning Sound Detective! Every word starts with a sound — let's go find it.",
+      "teach": "Some words start the same way. Man and mop both start with the same first sound.",
+      "model": "Listen. Man... mop. Do you hear how they start the same way?",
+      "transition": "Now you try! Listen, then find the word that starts the same way.",
+      "close": "Great listening! You found the first sound every time."
+    }
+  },
+  {
+    "lesson_id": "L1-M03-02",
+    "module_id": 3,
+    "number": 2,
+    "title": "Meet /m/",
+    "skill": "beginning_sounds",
+    "objective": "Identify words that start with the /m/ sound.",
+    "activity_type": "beginning_sound_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today we meet a new sound: /m/.",
+      "teach": "/m/ says mmm, like at the start of map.",
+      "model": "Listen. Map... mat. Both start with /m/!",
+      "transition": "Now you try! Find the word that starts with /m/.",
+      "close": "You are an /m/ expert now!"
+    }
+  },
+  {
+    "lesson_id": "L1-M03-03",
+    "module_id": 3,
+    "number": 3,
+    "title": "Meet /s/",
+    "skill": "beginning_sounds",
+    "objective": "Identify words that start with the /s/ sound.",
+    "activity_type": "beginning_sound_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today we meet a new sound: /s/.",
+      "teach": "/s/ says sss, like at the start of sun.",
+      "model": "Listen. Sun... sit. Both start with /s/!",
+      "transition": "Now you try! Find the word that starts with /s/.",
+      "close": "You are an /s/ expert now!"
+    }
+  },
+  {
+    "lesson_id": "L1-M03-04",
+    "module_id": 3,
+    "number": 4,
+    "title": "Meet /f/ and /n/",
+    "skill": "beginning_sounds",
+    "objective": "Tell the /f/ sound and the /n/ sound apart.",
+    "activity_type": "beginning_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Today we meet two sounds: /f/ and /n/.",
+      "teach": "/f/ says fff, like fan. /n/ says nnn, like net. Listen closely — they sound different!",
+      "model": "Listen. Fan... fig. Both start with /f/! Net... nap. Both start with /n/!",
+      "transition": "Now you try! Listen carefully for /f/ or /n/.",
+      "close": "You told /f/ and /n/ apart every time!"
+    }
+  },
+  {
+    "lesson_id": "L1-M03-05",
+    "module_id": 3,
+    "number": 5,
+    "title": "Beginning Sound Mix",
+    "skill": "beginning_sounds",
+    "objective": "Identify beginning sounds across /m/, /s/, /f/, and /n/ together.",
+    "activity_type": "beginning_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's mix up everything you've learned!",
+      "teach": "You know /m/, /s/, /f/, and /n/ now. Listen carefully — any of them could show up.",
+      "model": "Listen. Sun... sad. Both start with /s/, out of a bigger mix of choices!",
+      "transition": "Now you try! Any sound could show up — listen closely.",
+      "close": "You mixed and matched every beginning sound!"
+    }
+  },
+  {
+    "lesson_id": "L1-M03-06",
+    "module_id": 3,
+    "number": 6,
+    "title": "Beginning Sound Challenge",
+    "skill": "beginning_sounds",
+    "objective": "Demonstrate independent mastery of Module 3 beginning-sound skills.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Beginning Sound Challenge.",
+      "instruction": "Listen carefully. Take your time. Choose your answer when you are ready.",
+      "close": "Challenge complete! Your results are ready."
+    }
   }
 ]

@@ -169,8 +169,8 @@
       "Loud",
       "Soft"
     ],
-    "correct_answer": "Soft",
-    "audio_asset": "whisper",
+    "correct_answer": "Loud",
+    "audio_asset": "finger_loud",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -184,8 +184,8 @@
       "Loud",
       "Soft"
     ],
-    "correct_answer": "Loud",
-    "audio_asset": "car",
+    "correct_answer": "Soft",
+    "audio_asset": "bell_soft",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -199,8 +199,8 @@
       "Loud",
       "Soft"
     ],
-    "correct_answer": "Loud",
-    "audio_asset": "bell",
+    "correct_answer": "Soft",
+    "audio_asset": "finger_soft",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -214,8 +214,8 @@
       "Loud",
       "Soft"
     ],
-    "correct_answer": "Soft",
-    "audio_asset": "rain",
+    "correct_answer": "Loud",
+    "audio_asset": "bell_loud",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -230,7 +230,7 @@
       "Soft"
     ],
     "correct_answer": "Soft",
-    "audio_asset": "clock",
+    "audio_asset": "clap_soft",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -602,5 +602,14 @@
   { "assessment_id": "AS-M02-06-11", "lesson_id": "L1-M02-06", "order": 11, "type": "rhyme_match", "question": "Which word rhymes with bag?", "options": ["tag", "dog", "pen"], "correct_answer": "tag", "audio_asset": "say:bag", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
   { "assessment_id": "AS-M02-06-12", "lesson_id": "L1-M02-06", "order": 12, "type": "rhyme_match", "question": "Which word rhymes with net?", "options": ["jet", "cat", "fan"], "correct_answer": "jet", "audio_asset": "say:net", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
   { "assessment_id": "AS-M02-06-13", "lesson_id": "L1-M02-06", "order": 13, "type": "rhyme_match", "question": "Which word rhymes with fig?", "options": ["wig", "dog", "pan"], "correct_answer": "wig", "audio_asset": "say:fig", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
-  { "assessment_id": "AS-M02-06-14", "lesson_id": "L1-M02-06", "order": 14, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["mop", "pop", "cat"], "correct_answer": "cat", "audio_asset": "say:mop, pop, cat", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" }
+  { "assessment_id": "AS-M02-06-14", "lesson_id": "L1-M02-06", "order": 14, "type": "rhyme_match", "question": "Which word does not rhyme?", "options": ["mop", "pop", "cat"], "correct_answer": "cat", "audio_asset": "say:mop, pop, cat", "skill": "rhyming", "error_tag": "RHYME_CONFUSION" },
+
+  { "assessment_id": "AS-M03-06-1", "lesson_id": "L1-M03-06", "order": 1, "type": "beginning_sound_match", "question": "Which word starts with the same sound as mat?", "options": ["map", "dog", "hen"], "correct_answer": "map", "audio_asset": "say:mat", "skill": "beginning_sounds", "error_tag": "BEGINNING_SOUND_CONFUSION" },
+  { "assessment_id": "AS-M03-06-2", "lesson_id": "L1-M03-06", "order": 2, "type": "beginning_sound_match", "question": "Which word starts with the same sound as mop?", "options": ["man", "cap", "jet"], "correct_answer": "man", "audio_asset": "say:mop", "skill": "beginning_sounds", "error_tag": "BEGINNING_SOUND_CONFUSION" },
+  { "assessment_id": "AS-M03-06-3", "lesson_id": "L1-M03-06", "order": 3, "type": "beginning_sound_match", "question": "Which word starts with the same sound as sit?", "options": ["sun", "bag", "pen"], "correct_answer": "sun", "audio_asset": "say:sit", "skill": "beginning_sounds", "error_tag": "BEGINNING_SOUND_CONFUSION" },
+  { "assessment_id": "AS-M03-06-4", "lesson_id": "L1-M03-06", "order": 4, "type": "beginning_sound_match", "question": "Which word starts with the same sound as map?", "options": ["mop", "wig", "top"], "correct_answer": "mop", "audio_asset": "say:map", "skill": "beginning_sounds", "error_tag": "BEGINNING_SOUND_CONFUSION" },
+  { "assessment_id": "AS-M03-06-5", "lesson_id": "L1-M03-06", "order": 5, "type": "beginning_sound_match", "question": "Which word starts with the same sound as man?", "options": ["mat", "jet", "vet"], "correct_answer": "mat", "audio_asset": "say:man", "skill": "beginning_sounds", "error_tag": "BEGINNING_SOUND_CONFUSION" },
+  { "assessment_id": "AS-M03-06-6", "lesson_id": "L1-M03-06", "order": 6, "type": "beginning_sound_match", "question": "Which word starts with the same sound as fan?", "options": ["fig", "net"], "correct_answer": "fig", "audio_asset": "say:fan", "skill": "beginning_sounds", "error_tag": "BEGINNING_SOUND_CONFUSION", "review_flag": "Identical audio+answer pair to practice item Q-M03-16 — the /f/ word pool (fan, fig) is only 2 words, so a fresh pair isn't available. Recommend adding a 3rd /f/-initial CVC word." },
+  { "assessment_id": "AS-M03-06-7", "lesson_id": "L1-M03-06", "order": 7, "type": "beginning_sound_match", "question": "Which word starts with the same sound as nap?", "options": ["net", "fan"], "correct_answer": "net", "audio_asset": "say:nap", "skill": "beginning_sounds", "error_tag": "BEGINNING_SOUND_CONFUSION", "review_flag": "Identical audio+answer pair to practice item Q-M03-19 — the /n/ word pool (net, nap) is only 2 words, so a fresh pair isn't available. Recommend adding a 3rd /n/-initial CVC word." },
+  { "assessment_id": "AS-M03-06-8", "lesson_id": "L1-M03-06", "order": 8, "type": "beginning_sound_match", "question": "Which word starts with the same sound as sad?", "options": ["sun", "cap", "pop"], "correct_answer": "sun", "audio_asset": "say:sad", "skill": "beginning_sounds", "error_tag": "BEGINNING_SOUND_CONFUSION", "review_flag": "Identical audio+answer pair to practice item Q-M03-13 — all 6 directed pairs across the 3-word /s/ pool (sun, sit, sad) are already used in Lesson 3's practice bank. Recommend adding a 4th /s/-initial CVC word." }
 ]

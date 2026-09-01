@@ -10,6 +10,7 @@ import { Sort } from "./Sort";
 import { SoundMemory } from "./SoundMemory";
 import { RhymeMatch } from "./RhymeMatch";
 import { RhymeSelect } from "./RhymeSelect";
+import { BeginningSoundMatch } from "./BeginningSoundMatch";
 
 export const ACTIVITY_REGISTRY = {
   listen_choose: ListenChoose,
@@ -19,6 +20,7 @@ export const ACTIVITY_REGISTRY = {
   sound_memory: SoundMemory,
   rhyme_match: RhymeMatch,
   rhyme_select: RhymeSelect,
+  beginning_sound_match: BeginningSoundMatch,
 };
 
 export function componentForType(type) {

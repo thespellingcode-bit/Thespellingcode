@@ -62,7 +62,7 @@ That takes every short-vowel family from "1 usable word" to at least 2, most to 
 
 ## 2. Curriculum-approved phonemes (from Content Engine → `Phonemes` sheet)
 
-Unchanged from before — the keyword column is the curriculum's own child-facing example for each sound; use these first for a Module 3+ "beginning sound" lesson before reaching for a developer-added alternative.
+Unchanged from before — the keyword column is the curriculum's own child-facing example for each sound. **Module 3 ships with different words than these keywords** (moon/fish/snake/nose are all outside Level 1's short-vowel CVC scope) — see §5 for the actual substitutions and why.
 
 | Phoneme | Grapheme | Keyword | Introduced at | Type |
 |---|---|---|---|---|
@@ -118,7 +118,43 @@ Every family now has enough concrete nouns for a picture-matching rhyme activity
 **Currently implemented, developer-added, already wired into Lesson 1:** phone, wind
 **New candidates — documented here, not yet wired into any lesson:** siren *(frequency sweep — synthesizes very well)*, thunder *(low rumble, same technique as the car engine)*, footsteps *(rhythmic low thuds)*, door knock *(sharp percussive hit, easy to tell apart from clap/tap)*. All four were screened the same way phone/wind were — mechanical/percussive/ambient sounds that a Web Audio oscillator can render convincingly, avoiding the animal/voice category that struggled in Round 1 (the original dog-bark problem).
 
-## 5. Naming collisions to avoid (engineering note, not curriculum content)
+## 5. Module 3 (Beginning Sound Detective) word choices
+
+Curriculum's own example words for this module (`Level_1_Program_Complete.docx`)
+— moon, fish, snake, nose — all violate Level 1's own short-vowel CVC/CCVC
+scope from the ground rule above: "moon" is a vowel team, "fish"/"snake"
+use a digraph/silent-E, "nose" is silent-E. Substituted with clean CVC
+words that still start with the target phoneme, reusing the existing §1b
+bank wherever possible:
+
+| Phoneme | Curriculum's word (out of scope) | Words actually used | Source |
+|---|---|---|---|
+| /m/ | moon | mat, map, man, mop | §1/§1b (all already illustrated from Modules 1–2) |
+| /s/ | sun, sock, snake | sun, sit, sad | sun from §1 (`short_u`); **sit, sad are new** — first Module 2/3 use of an /s/-initial word |
+| /f/ | fish | fan, fig | §1b (already illustrated) |
+| /n/ | nose, net | net, nap | §1b/§3 (already illustrated) |
+
+**Thin pools, honestly disclosed rather than papered over:** /f/ and /n/
+each have only 2 usable CVC words in the current bank (fan/fig, net/nap),
+and /s/ has only 3 (sun/sit/sad) — every directed pair among them gets
+used at least once across Lesson 3/4's practice bank, so 3 of Lesson 6's
+8 assessment items necessarily repeat a practice (word, answer) pair.
+Each is marked with `review_flag` in `content/assessments.json` rather
+than hidden. **Adding a 3rd /f/-word, a 3rd /n/-word, and a 4th /s/-word
+would resolve this** — worth prioritizing before Module 3 gets revisited,
+listed here so it's not lost.
+
+**Isolated phoneme audio — deliberately not attempted.** Browser
+text-to-speech reads a bare letter like "m" as its *name* ("em"), not its
+*sound* ("mmm") — for a phonics module whose entire point is sound-not-
+letter-name, that would actively teach the wrong thing. Module 3 teaches
+beginning sounds entirely through whole real words (TTS handles those
+correctly) with captions that state the phoneme in text, never audio. If
+real recordings of an adult voice saying "mmm/sss/fff/nnn" become
+available later (the same path used for the car/thunder/wind recordings
+in `public/audio/`), they'd slot in as an enhancement.
+
+## 6. Naming collisions to avoid (engineering note, not curriculum content)
 
 `src/components/Icon.jsx` maps a word/asset id to a picture by substring match — two different modules can't reuse the same word (or a word that's a substring of another) to mean different pictures.
 

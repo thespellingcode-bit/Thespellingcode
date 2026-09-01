@@ -4,5 +4,6 @@
   { "remediation_id": "REM-03", "error_tag": "LOUD_SOFT_CONFUSION", "skill": "auditory_discrimination", "trigger": "Child confuses loud/soft.", "strategy": "Use clearly contrasted recordings and a simple loud/soft visual scale, keeping volume safe." },
   { "remediation_id": "REM-04", "error_tag": "FAST_SLOW_CONFUSION", "skill": "auditory_discrimination", "trigger": "Child confuses speed.", "strategy": "Use exaggerated fast/slow patterns with an equal number of sounds." },
   { "remediation_id": "REM-05", "error_tag": "SEQUENCE_MEMORY_CONFUSION", "skill": "auditory_memory", "trigger": "Child cannot remember 3-sound sequences.", "strategy": "Return to 2-sound sequences, then increase to 3 only after success." },
-  { "remediation_id": "REM-06", "error_tag": "RHYME_CONFUSION", "skill": "rhyming", "trigger": "Child does not attend to the ending sound when comparing words.", "strategy": "Use picture pairs with very obvious rhymes." }
+  { "remediation_id": "REM-06", "error_tag": "RHYME_CONFUSION", "skill": "rhyming", "trigger": "Child does not attend to the ending sound when comparing words.", "strategy": "Use picture pairs with very obvious rhymes." },
+  { "remediation_id": "REM-07", "error_tag": "BEGINNING_SOUND_CONFUSION", "skill": "beginning_sounds", "trigger": "Child does not attend to the first sound when comparing words.", "strategy": "Isolate and exaggerate the first sound before the whole word, use just two very different starting sounds, then reintroduce a wider set." }
 ]

@@ -20,6 +20,7 @@ const BG = {
   bag: "#DCEBFF", tag: "#FDE9D2", rag: "#E1F3E6", net: "#DCEEF6", jet: "#DCEBFF",
   vet: "#E1F3E6", fig: "#EAE2F7", wig: "#F1E3D3", mop: "#DCEEF6", pop: "#FDEBE4",
   top: "#FFF3D6",
+  sun: "#FFF3D6", sit: "#F1E3D3", sad: "#DCEEF6",
   pattern: "#F2EFE6",
 };
 
@@ -359,6 +360,35 @@ const PICTURES = {
       <path d="M40 34h40l-6 14H46z" fill="#F2B705" stroke="#C99400" strokeWidth="2.2" strokeLinejoin="round" />
       <path d="M46 48h28l-14 34z" fill="#FFD65C" stroke="#C99400" strokeWidth="2.2" strokeLinejoin="round" />
       <path d="M30 40q10-4 10 4M90 40q-10-4-10 4" stroke="#C99400" strokeWidth="1.6" fill="none" opacity="0.6" />
+    </>
+  ),
+  sun: (
+    <>
+      <circle cx="60" cy="60" r="20" fill="#F2B705" stroke="#C99400" strokeWidth="2.4" />
+      {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+        <line key={deg} x1="60" y1="28" x2="60" y2="18" stroke="#C99400" strokeWidth="3.4" strokeLinecap="round" transform={`rotate(${deg} 60 60)`} />
+      ))}
+    </>
+  ),
+  // "Sit" is an action, not an object — a simple seated figure on a bench
+  // reads clearly at this size, matching how "man"/"vet" already use small
+  // figures rather than abstract symbols.
+  sit: (
+    <>
+      <circle cx="60" cy="38" r="12" fill="#FFC9A8" stroke="#C97B4E" strokeWidth="2.4" />
+      <path d="M46 56a14 10 0 0128 0v14H46z" fill="#4C8DFF" stroke="#2B5FCC" strokeWidth="2.4" strokeLinejoin="round" />
+      <rect x="40" y="70" width="40" height="8" rx="3" fill="#A6733E" stroke="#7A5230" strokeWidth="2" />
+      <path d="M40 78v8M80 78v8" stroke="#7A5230" strokeWidth="3" strokeLinecap="round" />
+    </>
+  ),
+  sad: (
+    <>
+      <circle cx="60" cy="60" r="26" fill="#8FB6E8" stroke="#3E6FA8" strokeWidth="2.4" />
+      <circle cx="50" cy="54" r="3" fill="#1F2246" />
+      <circle cx="70" cy="54" r="3" fill="#1F2246" />
+      <path d="M44 46q4-4 10-2M76 46q-4-4-10-2" stroke="#1F2246" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+      <path d="M48 74q12-10 24 0" fill="none" stroke="#1F2246" strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M50 60q-2 6-5 9" stroke="#4C8DFF" strokeWidth="2.4" strokeLinecap="round" fill="none" />
     </>
   ),
   pattern: (

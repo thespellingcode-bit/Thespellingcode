@@ -47,11 +47,17 @@ function getCompressor(ctx) {
   return compressor;
 }
 
+// Read once per playback generation when the first node connects — lets a
+// single call scale everything it schedules without touching each
+// BASE_SOUND function's own internal gain values. Used by playAttenuated()
+// below for the Loud/Soft lesson's genuinely-scaled sound variants.
+let gainMultiplier = 1;
+
 let masterGain = null;
 function getMasterGain(ctx) {
   if (!masterGain) {
     masterGain = ctx.createGain();
-    masterGain.gain.value = 1;
+    masterGain.gain.value = gainMultiplier;
     masterGain.connect(getCompressor(ctx));
   }
   return masterGain;
@@ -311,10 +317,32 @@ const BASE_SOUND = {
 
 // Fixed multi-part sequences that need explicit timing (repeated hits,
 // comparisons) rather than the generic "_"-joined single-hit sequencer below.
+// Genuinely scaled Loud/Soft variants — the "_loud"/"_soft" suffix used to
+// be a same-volume alias (tap_soft played identically to plain tap), which
+// was the real root cause of "hard to tell loud from soft": the judgment
+// relied entirely on each raw sound's own tuned gain (tuned for general
+// audibility elsewhere, not for preserving this contrast), and that gap
+// only got narrower as sounds got louder overall in an earlier pass.
+// gainMultiplier is read once when the first node for this sound connects
+// to the master gain (see getMasterGain above), so this reliably scales
+// the WHOLE sound regardless of its own internal gain values.
+function playAttenuated(ctx, t0, fn, multiplier) {
+  gainMultiplier = multiplier;
+  fn(ctx, t0);
+  gainMultiplier = 1;
+}
+
 const NAMED_SEQUENCES = {
-  clap_loud: (ctx, t0) => BASE_SOUND.clap(ctx, t0),
-  tap_soft: (ctx, t0) => BASE_SOUND.tap(ctx, t0),
-  drum_loud: (ctx, t0) => BASE_SOUND.drum(ctx, t0),
+  clap_loud: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.clap, 1.3),
+  clap_soft: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.clap, 0.35),
+  tap_loud: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.tap, 1.3),
+  tap_soft: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.tap, 0.35),
+  drum_loud: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.drum, 1.3),
+  drum_soft: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.drum, 0.35),
+  finger_loud: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.finger, 1.3),
+  finger_soft: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.finger, 0.35),
+  bell_loud: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.bell, 1.3),
+  bell_soft: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.bell, 0.35),
   drum_compare: (ctx, t0) => { BASE_SOUND.whisper(ctx, t0); BASE_SOUND.drum(ctx, t0 + 0.6); },
   clap_fast: (ctx, t0) => [0, 0.15, 0.3].forEach((d) => BASE_SOUND.clap(ctx, t0 + d)),
   clap_slow: (ctx, t0) => [0, 0.55, 1.1].forEach((d) => BASE_SOUND.clap(ctx, t0 + d)),
@@ -482,6 +510,7 @@ export const ASSET_DURATION_MS = {
   clock: 1450, rain: 1350, car: 1050, drum_slow: 1450, clap_slow: 1350, tap_slow: 1350,
   finger_slow: 1350, fast_compare: 2650, slow_compare: 2650, drum_compare: 950,
   phone: 1000, wind: 1450, siren: 1050, thunder: 1250,
+  bell_loud: 950, bell_soft: 950,
 };
 export function assetDurationMs(assetName) {
   if (assetName.startsWith("say:")) {

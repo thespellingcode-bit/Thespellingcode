@@ -14,7 +14,7 @@ import { Feedback } from "../components/Feedback";
 import { Btn } from "../components/Btn";
 import { playSfx, playAsset, assetDurationMs, soundForOption } from "../services/audioService";
 import { shuffled } from "../services/shuffle";
-import { COMPARE_TYPES } from "../services/questionTypes";
+import { COMPARE_TYPES, PREVIEW_CONFIRM_TYPES } from "../services/questionTypes";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
 export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabled = true }) {
@@ -34,11 +34,12 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
   // used to speak all of them as one run-on phrase. Individual per-option
   // preview below replaces that entirely, so the merged prompt is skipped.
   const isOddOneOut = question.type === "rhyme_match" && (audioAsset || "").includes(",");
-  // rhyme_match gets a two-step "preview, then confirm" flow (like
-  // RhymeSelect) so a child can hear each option before committing — every
-  // other type keeps the original tap-to-commit-immediately behavior,
-  // which wasn't reported as a problem and stays as-is.
-  const isRhymeMatch = question.type === "rhyme_match";
+  // Word-comparison types (rhyme_match, beginning_sound_match) get a
+  // two-step "preview, then confirm" flow (like RhymeSelect) so a child
+  // can hear each option before committing — every other type keeps the
+  // original tap-to-commit-immediately behavior, which wasn't reported as
+  // a problem and stays as-is.
+  const isPreviewConfirm = PREVIEW_CONFIRM_TYPES.includes(question.type);
 
   useAutoSpeak(question.prompt ?? question.question, ttsEnabled);
 
@@ -83,13 +84,13 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
     if (optSound) playAsset(optSound);
   };
 
-  const confirmRhyme = () => {
+  const confirmChoice = () => {
     if (!selected || status !== "idle") return;
     setAttempts((a) => a + 1);
     resolve(selected);
   };
 
-  const handleTap = isRhymeMatch ? preview : choose;
+  const handleTap = isPreviewConfirm ? preview : choose;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
@@ -105,7 +106,7 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
           if (isSelected && status === "correct") { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; iconBg = "#D5EEDB"; }
           else if (isSelected && status === "wrong") { bg = "#FDEDEB"; border = T.coral; color = T.coralDeep; iconBg = "#FBD9D2"; }
           else if (status === "wrong" && !allowRetry && isCorrectOpt) { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; iconBg = "#D5EEDB"; }
-          else if (isSelected && isRhymeMatch && status === "idle") { bg = T.mist; border = T.gold; color = T.ink; iconBg = "#FFF4D6"; }
+          else if (isSelected && isPreviewConfirm && status === "idle") { bg = T.mist; border = T.gold; color = T.ink; iconBg = "#FFF4D6"; }
           const optIcon = labelToIcon(opt);
           const bigPicture = !isCompareType && optIcon;
           return (
@@ -135,8 +136,8 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
           );
         })}
       </div>
-      {isRhymeMatch && status === "idle" && (
-        <Btn variant="gold" size="md" onClick={confirmRhyme} disabled={!selected}>
+      {isPreviewConfirm && status === "idle" && (
+        <Btn variant="gold" size="md" onClick={confirmChoice} disabled={!selected}>
           Check my answer
         </Btn>
       )}

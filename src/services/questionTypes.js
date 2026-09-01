@@ -8,3 +8,14 @@
 // between LessonPlayer (example-stage picture) and MultipleChoice
 // (option pictures/sound) so the rule lives in exactly one place.
 export const COMPARE_TYPES = ["same_different", "loud_soft", "fast_slow"];
+
+// Question types where tapping an option should PREVIEW it (play its
+// sound, mark it picked) rather than immediately committing an answer —
+// a separate "Check my answer" confirms. Lets a child listen to each
+// option before deciding, which matters for types built entirely around
+// comparing spoken words (rhyming, beginning sounds) the same way it
+// already did for rhyme_match. Shared between MultipleChoice (the
+// preview/confirm gate) and LessonPlayer (model-stage word cards, dynamic
+// per-example heading, example dedup) so new word-comparison types only
+// need to be added here once.
+export const PREVIEW_CONFIRM_TYPES = ["rhyme_match", "beginning_sound_match"];

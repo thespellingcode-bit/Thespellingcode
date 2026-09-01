@@ -65,6 +65,9 @@ export function Icon({ name, size = 40, color = T.ink }) {
 const WORD_KEYS = [
   "cat", "hat", "mat", "bat", "can", "man", "fan", "pan", "dog", "log", "hen", "pen", "cap", "map", "nap",
   "bag", "tag", "rag", "net", "jet", "vet", "fig", "wig", "mop", "pop", "top",
+  // Module 3 (Beginning Sound Detective) — the only genuinely new words;
+  // /m/, /f/, /n/ all reuse Module 1/2's existing word bank above.
+  "sun", "sit", "sad",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
