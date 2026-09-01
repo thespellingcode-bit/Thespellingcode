@@ -162,6 +162,40 @@ in `public/audio/`), they'd slot in as an enhancement.
 - **"shop" contains "hop"**, **"bell"** means two different things in two modules — see the ★ notes in §1b.
 - Before adding a new word to any lesson, check this file's used-icon list (§1b, §3, §4) for an exact or substring match first.
 
+## 7. Modules 4-7 word/mechanic choices
+
+- **Module 4 (Ending Sound Detective)** — curriculum's own lesson 4.3 is
+  "Final /m/ and /n/," but the app has zero /m/-ending CVC words illustrated.
+  Substituted **/g/ and /n/** instead (bag/tag/rag/fig/wig vs.
+  can/man/fan/pan/hen/pen/sun — both already well-stocked), teaching the
+  identical skill (distinguish two final consonant sounds) without needing
+  new art.
+- **Module 5 (Short Vowel Explorer)** — curriculum's vowel keyword pictures
+  (apple, igloo, octopus, umbrella) are all multisyllabic, same class of
+  issue as Module 3's moon/fish/snake. Substituted genuine CVC words per
+  vowel, drawn mostly from the existing bank. Short /u/ had only one usable
+  word (sun) — not enough to form a same-vowel pair at all — so **cup** and
+  **bus** were added (new illustrations) to bring it to 3, matching short
+  /i/'s pool size (sit, fig, wig). Both pools are thin enough that some
+  assessment items necessarily repeat a practice pair — `review_flag`'d
+  rather than hidden, same convention as Module 3's /s/.
+- **Module 6 (Sound Blending)** — same "don't isolate a bare phoneme via
+  TTS" reasoning as Module 3 applies doubly here, since blending by
+  definition needs separate sounds. Built as whole-word listen-and-choose
+  (reusing `listen_choose` exactly, zero new code) rather than attempting
+  real phoneme-by-phoneme audio — the "Continuous Blending" lesson frames
+  this as a slow/stretched version of the same word, not literally isolated
+  sounds.
+- **Module 7 (Sound Segmenting)** — the app's whole CVC word bank is
+  uniformly 3 phonemes (no 2-phoneme VC words like "at"/"up" are
+  illustrated), so a true "count 2 vs. 3 sounds" discrimination task isn't
+  achievable without new short vocabulary. Built as "how many sounds — 2, 3,
+  or 4?" instead, always correctly answered "3" — a legitimate, simpler
+  phonological-awareness task (can the child correctly count a word's
+  sounds at all), not a discrimination task between word lengths. Flagging
+  here in case 2-phoneme words get added later and this should be revisited
+  to a genuine 2-vs-3 comparison.
+
 ---
 
 *Maintained alongside the content JSON in `content/`. Update this file whenever a module adds new vocabulary — treat it as the first stop before writing new lesson content, not an afterthought.*

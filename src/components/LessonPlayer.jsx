@@ -15,6 +15,13 @@ import { shuffled } from "../services/shuffle";
 import { isTtsEnabled, setTtsEnabled as persistTtsEnabled } from "../services/ttsPreference";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
+// Question types shaped like "does word X share [some phonetic property]
+// with word Y" — single correct_answer, audio_asset is the anchor word.
+// Grows every time a new comparison type ships (beginning/ending/vowel
+// sound so far) so the two lists below don't need editing per type beyond
+// this one place.
+const WORD_MATCH_TYPES = ["rhyme_match", "beginning_sound_match", "ending_sound_match", "vowel_match"];
+
 // Lesson types whose model-stage examples are fundamentally about
 // comparing individual spoken words — these get WordSoundRow's individual
 // word cards (instead of a single AudioPlayer) and a per-example dynamic
@@ -22,7 +29,7 @@ import { useAutoSpeak } from "../hooks/useAutoSpeak";
 // one only covers MultipleChoice's tap-to-preview gate, while rhyme_select
 // has its own separate multi-select component but still belongs here for
 // the model-stage treatment.
-const WORD_CARD_LESSON_TYPES = ["rhyme_match", "rhyme_select", "beginning_sound_match"];
+const WORD_CARD_LESSON_TYPES = [...WORD_MATCH_TYPES, "rhyme_select"];
 
 const STAGE_LABELS = {
   welcome: "Welcome", teach: "Teach", model: "Watch", transition: "Get ready",
@@ -62,6 +69,16 @@ function modelCaptionFor(item) {
       const anchor = item.audio_asset?.replace(/^say:/, "").split(",")[0]?.trim();
       return anchor ? `${anchor} and ${answer} start with the same sound!` : `Listen — that's ${answer}!`;
     }
+    case "ending_sound_match": {
+      const anchor = item.audio_asset?.replace(/^say:/, "").split(",")[0]?.trim();
+      return anchor ? `${anchor} and ${answer} end with the same sound!` : `Listen — that's ${answer}!`;
+    }
+    case "vowel_match": {
+      const anchor = item.audio_asset?.replace(/^say:/, "").split(",")[0]?.trim();
+      return anchor ? `${anchor} and ${answer} have the same middle sound!` : `Listen — that's ${answer}!`;
+    }
+    case "segment_count":
+      return `Listen — that word has ${answer} sounds!`;
     case "listen_choose":
     default:
       return `Listen — that's the ${answer.toLowerCase()} sound!`;
@@ -102,7 +119,7 @@ function modelHeadingFor(lesson, item) {
 // reversed pair (or an exact repeat) as the same family so distinct
 // families further down the item list get pulled in instead.
 function exampleSignature(item) {
-  if (item.type === "rhyme_match" || item.type === "rhyme_select" || item.type === "beginning_sound_match") {
+  if (WORD_MATCH_TYPES.includes(item.type) || item.type === "rhyme_select") {
     const anchor = (item.audio_asset || "").replace(/^say:/, "");
     const answers = item.type === "rhyme_select" ? item.correct_answers : [item.correct_answer];
     return [anchor, ...(answers || [])].map((w) => w.trim().toLowerCase()).sort().join("|");

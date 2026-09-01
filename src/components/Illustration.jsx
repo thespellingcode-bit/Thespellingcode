@@ -21,6 +21,7 @@ const BG = {
   vet: "#E1F3E6", fig: "#EAE2F7", wig: "#F1E3D3", mop: "#DCEEF6", pop: "#FDEBE4",
   top: "#FFF3D6",
   sun: "#FFF3D6", sit: "#F1E3D3", sad: "#DCEEF6",
+  cup: "#E1F3E6", bus: "#FDE9D2",
   pattern: "#F2EFE6",
 };
 
@@ -389,6 +390,25 @@ const PICTURES = {
       <path d="M44 46q4-4 10-2M76 46q-4-4-10-2" stroke="#1F2246" strokeWidth="2.2" strokeLinecap="round" fill="none" />
       <path d="M48 74q12-10 24 0" fill="none" stroke="#1F2246" strokeWidth="2.6" strokeLinecap="round" />
       <path d="M50 60q-2 6-5 9" stroke="#4C8DFF" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+    </>
+  ),
+  cup: (
+    <>
+      <path d="M38 40h34v30a10 10 0 01-10 10H48a10 10 0 01-10-10z" fill="#5CB86B" stroke="#2C7A3C" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M72 48h6a8 8 0 010 16h-6" fill="none" stroke="#2C7A3C" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M44 40q3-8 8-8M56 40q3-8 8-8" fill="none" stroke="#2C7A3C" strokeWidth="1.8" opacity="0.5" strokeLinecap="round" />
+    </>
+  ),
+  bus: (
+    <>
+      <rect x="22" y="42" width="76" height="32" rx="8" fill="#F2B705" stroke="#C99400" strokeWidth="2.4" />
+      <rect x="30" y="48" width="14" height="12" rx="2" fill="#DCEEF6" />
+      <rect x="48" y="48" width="14" height="12" rx="2" fill="#DCEEF6" />
+      <rect x="66" y="48" width="14" height="12" rx="2" fill="#DCEEF6" />
+      <circle cx="38" cy="78" r="7" fill="#2C2E4A" />
+      <circle cx="38" cy="78" r="2.6" fill="#C7CBE8" />
+      <circle cx="82" cy="78" r="7" fill="#2C2E4A" />
+      <circle cx="82" cy="78" r="2.6" fill="#C7CBE8" />
     </>
   ),
   pattern: (

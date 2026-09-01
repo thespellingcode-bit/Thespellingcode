@@ -68,6 +68,10 @@ const WORD_KEYS = [
   // Module 3 (Beginning Sound Detective) — the only genuinely new words;
   // /m/, /f/, /n/ all reuse Module 1/2's existing word bank above.
   "sun", "sit", "sad",
+  // Module 5 (Short Vowel Explorer) — short /u/ was down to a single
+  // usable word (sun) in the existing bank, which can't form a same-vowel
+  // pair on its own. cup/bus fill it out to 3, matching /i/'s pool size.
+  "cup", "bus",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
