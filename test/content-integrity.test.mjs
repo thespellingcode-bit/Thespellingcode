@@ -28,6 +28,22 @@ test("every lesson references a module that exists", () => {
   for (const l of lessons) assert.ok(moduleIds.has(l.module_id), `${l.lesson_id} references missing module ${l.module_id}`);
 });
 
+// A lesson with zero assessment items doesn't just have empty content — it
+// breaks the app: LessonPlayer's assessment stage only renders while
+// assessIdx < totalQuestions, and totalQuestions is the assessment bank's
+// length. With zero items that's never true, so the stage renders nothing,
+// onResult() is never called, and the app can never advance to the
+// "result" stage — the score dashboard silently never appears. Caught
+// live when Module 3's Lessons 1-5 shipped without their own assessment
+// banks (only the module's final Lesson 6 bank existed).
+test("every active lesson has at least one assessment item", () => {
+  const assessmentLessonIds = new Set(assessments.map((a) => a.lesson_id));
+  for (const l of lessons) {
+    if (l.status !== "active") continue;
+    assert.ok(assessmentLessonIds.has(l.lesson_id), `${l.lesson_id} (${l.title}) has zero assessment items — the score dashboard can never appear for it`);
+  }
+});
+
 test("every lesson declares masteryThreshold as data (not assumed 0.8 elsewhere)", () => {
   for (const l of lessons) {
     assert.equal(typeof l.masteryThreshold, "number", `${l.lesson_id} missing masteryThreshold`);
