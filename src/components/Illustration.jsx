@@ -22,6 +22,7 @@ const BG = {
   top: "#FFF3D6",
   sun: "#FFF3D6", sit: "#F1E3D3", sad: "#DCEEF6",
   cup: "#E1F3E6", bus: "#FDE9D2",
+  kid: "#FDEBE4", run: "#E1F3E6", lip: "#FFE7E0", dad: "#DCEBFF", gum: "#E8E6F7",
   pattern: "#F2EFE6",
 };
 
@@ -390,6 +391,43 @@ const PICTURES = {
       <path d="M44 46q4-4 10-2M76 46q-4-4-10-2" stroke="#1F2246" strokeWidth="2.2" strokeLinecap="round" fill="none" />
       <path d="M48 74q12-10 24 0" fill="none" stroke="#1F2246" strokeWidth="2.6" strokeLinecap="round" />
       <path d="M50 60q-2 6-5 9" stroke="#4C8DFF" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+    </>
+  ),
+  kid: (
+    <>
+      <circle cx="60" cy="38" r="15" fill="#FFC9A8" stroke="#C97B4E" strokeWidth="2.4" />
+      <path d="M42 88c0-15 8-24 18-24s18 9 18 24z" fill="#FF6F59" stroke="#CC4A37" strokeWidth="2.4" strokeLinejoin="round" />
+      <circle cx="54" cy="36" r="2" fill="#1F2246" /><circle cx="66" cy="36" r="2" fill="#1F2246" />
+      <path d="M54 42q6 4 12 0" fill="none" stroke="#1F2246" strokeWidth="2" strokeLinecap="round" />
+    </>
+  ),
+  run: (
+    <>
+      <circle cx="66" cy="30" r="10" fill="#FFC9A8" stroke="#C97B4E" strokeWidth="2.2" />
+      <path d="M62 40l-6 20 14 6-4 22M56 60l-16 10M70 66l14 14" fill="none" stroke="#4C8DFF" strokeWidth="4.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M40 46l14-4" fill="none" stroke="#4C8DFF" strokeWidth="4.2" strokeLinecap="round" />
+      <path d="M22 40l6 4M22 60l6-4" stroke="#8FB6E8" strokeWidth="2.4" strokeLinecap="round" opacity="0.7" />
+    </>
+  ),
+  lip: (
+    <>
+      <path d="M28 58q16-14 32-14t32 14q-16 16-32 16t-32-16z" fill="#FF6F59" stroke="#CC4A37" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M28 58q16 6 32 6t32-6" fill="none" stroke="#CC4A37" strokeWidth="2" opacity="0.6" />
+    </>
+  ),
+  dad: (
+    <>
+      <circle cx="60" cy="40" r="14" fill="#E0AD70" stroke="#A6733E" strokeWidth="2.4" />
+      <path d="M40 90c0-16 9-26 20-26s20 10 20 26z" fill="#2C2E4A" stroke="#1F2246" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M52 46q8 4 16 0" fill="none" stroke="#7A5230" strokeWidth="2.4" strokeLinecap="round" />
+      <rect x="56" y="64" width="8" height="16" fill="#FF6F59" />
+    </>
+  ),
+  gum: (
+    <>
+      <circle cx="70" cy="46" r="22" fill="#FF8FB6" stroke="#CC4A80" strokeWidth="2.4" />
+      <circle cx="63" cy="38" r="5" fill="#FFC3D9" opacity="0.8" />
+      <rect x="30" y="70" width="30" height="14" rx="4" fill="#8B7FD1" stroke="#5A4C9E" strokeWidth="2.2" transform="rotate(-8 45 77)" />
     </>
   ),
   cup: (

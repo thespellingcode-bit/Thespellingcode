@@ -536,6 +536,13 @@ const IDENTITY_SOUND_WORDS = new Set([
 ]);
 export function soundForOption(question, opt) {
   const key = opt.toLowerCase();
+  // A bare single letter (Module 8's letter-tile options) has no sound we
+  // can correctly produce in isolation — browser TTS would speak its
+  // NAME ("em"), not its SOUND ("mmm"), which is exactly the mistake this
+  // app avoids everywhere else (see word-library.md §5). Silence on tap is
+  // more honest than a wrong sound; the letter is meant to be recognized
+  // visually here, not by ear.
+  if (key.length === 1) return null;
   if (question.type === "rhyme_match") return `say:${key}`;
   if (IDENTITY_SOUND_WORDS.has(key)) return key;
   if (question.type === "sound_memory") return key.replace(/-/g, "_");

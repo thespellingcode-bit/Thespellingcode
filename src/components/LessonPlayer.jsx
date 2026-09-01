@@ -8,6 +8,7 @@ import { NarrationScreen } from "./NarrationScreen";
 import { ResultScreen } from "./ResultScreen";
 import { AudioPlayer } from "./AudioPlayer";
 import { WordSoundRow } from "./WordSoundRow";
+import { LetterTile } from "./LetterTile";
 import { getPracticeActivities, getAssessmentQuestions } from "../services/contentService";
 import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
@@ -79,6 +80,11 @@ function modelCaptionFor(item) {
     }
     case "segment_count":
       return `Listen — that word has ${answer} sounds!`;
+    case "letter_sound_match": {
+      if (item.letter_prompt) return `${item.letter_prompt} makes the sound at the start of ${answer}!`;
+      const word = item.audio_asset?.replace(/^say:/, "");
+      return word ? `${word} starts with the letter ${answer}!` : `That's the letter ${answer}!`;
+    }
     case "listen_choose":
     default:
       return `Listen — that's the ${answer.toLowerCase()} sound!`;
@@ -198,7 +204,9 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
         Example {currentIdx + 1} of {exampleItems.length}
       </p>
       <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{heading}</p>
-      {isWordCardLesson ? (
+      {currentExample.letter_prompt ? (
+        <LetterTile key={currentExample.activity_id} letter={currentExample.letter_prompt} size={96} />
+      ) : isWordCardLesson ? (
         <WordSoundRow key={currentExample.activity_id} words={modelWordsFor(currentExample)} />
       ) : (
         <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />

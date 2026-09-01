@@ -72,6 +72,11 @@ const WORD_KEYS = [
   // usable word (sun) in the existing bank, which can't form a same-vowel
   // pair on its own. cup/bus fill it out to 3, matching /i/'s pool size.
   "cup", "bus",
+  // Module 8 (Letter-Sound Connections) — teaches k, b, h, r, l, d, g as
+  // new letters. b/h already had starting words (bat/bag/bus, hat/hen);
+  // k/r/l/d/g had none — every existing word using those letters uses them
+  // as an ENDING sound (fig, log, dog, bag), not a starting one.
+  "kid", "run", "lip", "dad", "gum",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

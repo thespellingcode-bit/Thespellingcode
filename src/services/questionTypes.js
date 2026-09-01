@@ -18,4 +18,4 @@ export const COMPARE_TYPES = ["same_different", "loud_soft", "fast_slow", "segme
 // preview/confirm gate) and LessonPlayer (model-stage word cards, dynamic
 // per-example heading, example dedup) so new word-comparison types only
 // need to be added here once.
-export const PREVIEW_CONFIRM_TYPES = ["rhyme_match", "beginning_sound_match", "ending_sound_match", "vowel_match"];
+export const PREVIEW_CONFIRM_TYPES = ["rhyme_match", "beginning_sound_match", "ending_sound_match", "vowel_match", "letter_sound_match"];

@@ -10,6 +10,7 @@ import { theme as T } from "../theme";
 import { Icon, labelToIcon } from "../components/Icon";
 import { Illustration } from "../components/Illustration";
 import { AudioPlayer } from "../components/AudioPlayer";
+import { LetterTile } from "../components/LetterTile";
 import { Feedback } from "../components/Feedback";
 import { Btn } from "../components/Btn";
 import { playSfx, playAsset, assetDurationMs, soundForOption } from "../services/audioService";
@@ -97,7 +98,11 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
       <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, textAlign: "center", margin: 0 }}>
         {question.prompt ?? question.question}
       </p>
-      {audioAsset && !isOddOneOut && <AudioPlayer asset={audioAsset} />}
+      {question.letter_prompt ? (
+        <LetterTile letter={question.letter_prompt} size={88} />
+      ) : (
+        audioAsset && !isOddOneOut && <AudioPlayer asset={audioAsset} />
+      )}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", maxWidth: 420 }}>
         {options.map((opt) => {
           const isSelected = selected === opt;
@@ -107,8 +112,30 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
           else if (isSelected && status === "wrong") { bg = "#FDEDEB"; border = T.coral; color = T.coralDeep; iconBg = "#FBD9D2"; }
           else if (status === "wrong" && !allowRetry && isCorrectOpt) { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; iconBg = "#D5EEDB"; }
           else if (isSelected && isPreviewConfirm && status === "idle") { bg = T.mist; border = T.gold; color = T.ink; iconBg = "#FFF4D6"; }
-          const optIcon = labelToIcon(opt);
+          const isLetterOption = opt.length === 1;
+          const optIcon = !isLetterOption && labelToIcon(opt);
           const bigPicture = !isCompareType && optIcon;
+          // A letter tile already IS the answer, visually — showing the
+          // same character again as a text label underneath would be
+          // redundant (unlike a word option, where the label reinforces a
+          // pre-reader's picture with print).
+          if (isLetterOption) {
+            let letterState = "idle";
+            if (isSelected && status === "correct") letterState = "correct";
+            else if (isSelected && status === "wrong") letterState = "wrong";
+            else if (status === "wrong" && !allowRetry && isCorrectOpt) letterState = "correct";
+            else if (isSelected && isPreviewConfirm && status === "idle") letterState = "picked";
+            return (
+              <LetterTile
+                key={opt}
+                letter={opt}
+                size={64}
+                state={letterState}
+                disabled={status === "correct"}
+                onClick={() => handleTap(opt)}
+              />
+            );
+          }
           return (
             <button
               key={opt}
