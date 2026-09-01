@@ -77,6 +77,16 @@ test("every activity/assessment correct_answer(s) are among its own options", ()
       for (const ca of a.correct_answers) {
         assert.ok(a.options.includes(ca), `${a.activity_id || a.assessment_id} correct_answers entry "${ca}" not in options`);
       }
+    } else if (a.type === "word_build") {
+      // No "options" list here — the selectable materials are the letter
+      // tiles. The meaningful integrity check is that the tile bank is
+      // exactly the target word's letters (matching WordBuilder.jsx's
+      // mechanic, which offers no distractor tiles): same multiset, same
+      // count, nothing extra and nothing missing.
+      assert.ok(Array.isArray(a.letters) && a.letters.length > 0, `${a.activity_id || a.assessment_id} missing letters`);
+      const bankSorted = [...a.letters].sort().join("");
+      const targetSorted = a.correct_answer.split("").sort().join("");
+      assert.equal(bankSorted, targetSorted, `${a.activity_id || a.assessment_id} letter bank "${a.letters.join("")}" doesn't exactly spell "${a.correct_answer}"`);
     } else {
       assert.ok(a.options.includes(a.correct_answer), `${a.activity_id || a.assessment_id} correct_answer not in options`);
     }
@@ -110,9 +120,9 @@ test("REQUIREMENT: assessment questions do not reuse practice audio_asset+correc
   assert.deepEqual(violations, [], violations.join("\n"));
 });
 
-test("exactly Modules 1-8 active — scope guard for this build (Modules 9+ still out of scope)", () => {
+test("exactly Modules 1-9 active — scope guard for this build (Modules 10+ still out of scope)", () => {
   const active = modules.filter((m) => m.active).map((m) => m.module_id).sort();
-  assert.deepEqual(active, [1, 2, 3, 4, 5, 6, 7, 8]);
+  assert.deepEqual(active, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
 });
 
 test("exactly Sound Starter and Rhyme Ranger badges active — scope guard for this build", () => {

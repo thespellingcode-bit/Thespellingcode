@@ -85,6 +85,8 @@ function modelCaptionFor(item) {
       const word = item.audio_asset?.replace(/^say:/, "");
       return word ? `${word} starts with the letter ${answer}!` : `That's the letter ${answer}!`;
     }
+    case "word_build":
+      return `That word is spelled ${answer.split("").join("-")}: ${answer}!`;
     case "listen_choose":
     default:
       return `Listen — that's the ${answer.toLowerCase()} sound!`;

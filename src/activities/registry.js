@@ -13,6 +13,8 @@ import { RhymeSelect } from "./RhymeSelect";
 import { BeginningSoundMatch } from "./BeginningSoundMatch";
 import { EndingSoundMatch } from "./EndingSoundMatch";
 import { VowelMatch } from "./VowelMatch";
+import { LetterSoundMatch } from "./LetterSoundMatch";
+import { WordBuilder } from "./WordBuilder";
 
 export const ACTIVITY_REGISTRY = {
   listen_choose: ListenChoose,
@@ -26,6 +28,8 @@ export const ACTIVITY_REGISTRY = {
   beginning_sound_match: BeginningSoundMatch,
   ending_sound_match: EndingSoundMatch,
   vowel_match: VowelMatch,
+  letter_sound_match: LetterSoundMatch,
+  word_build: WordBuilder,
 };
 
 export function componentForType(type) {
