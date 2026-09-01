@@ -87,6 +87,8 @@ function modelCaptionFor(item) {
     }
     case "word_build":
       return `That word is spelled ${answer.split("").join("-")}: ${answer}!`;
+    case "read_word":
+      return `You read it! That word is ${answer}.`;
     case "listen_choose":
     default:
       return `Listen — that's the ${answer.toLowerCase()} sound!`;
@@ -206,7 +208,11 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
         Example {currentIdx + 1} of {exampleItems.length}
       </p>
       <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{heading}</p>
-      {currentExample.letter_prompt ? (
+      {currentExample.written_word ? (
+        <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, margin: 0, letterSpacing: 1 }}>
+          {currentExample.written_word}
+        </p>
+      ) : currentExample.letter_prompt ? (
         <LetterTile key={currentExample.activity_id} letter={currentExample.letter_prompt} size={96} />
       ) : isWordCardLesson ? (
         <WordSoundRow key={currentExample.activity_id} words={modelWordsFor(currentExample)} />

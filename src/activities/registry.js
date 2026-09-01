@@ -15,6 +15,7 @@ import { EndingSoundMatch } from "./EndingSoundMatch";
 import { VowelMatch } from "./VowelMatch";
 import { LetterSoundMatch } from "./LetterSoundMatch";
 import { WordBuilder } from "./WordBuilder";
+import { ReadWord } from "./ReadWord";
 
 export const ACTIVITY_REGISTRY = {
   listen_choose: ListenChoose,
@@ -30,6 +31,7 @@ export const ACTIVITY_REGISTRY = {
   vowel_match: VowelMatch,
   letter_sound_match: LetterSoundMatch,
   word_build: WordBuilder,
+  read_word: ReadWord,
 };
 
 export function componentForType(type) {

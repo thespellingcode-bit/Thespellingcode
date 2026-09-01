@@ -8,7 +8,7 @@
   { "module_id": 7, "level_id": 1, "module_name": "Sound Segmenting", "module_goal": "Break CVC words into individual sounds.", "units": 6, "active": true },
   { "module_id": 8, "level_id": 1, "module_name": "Letter\u2013Sound Connections", "module_goal": "Connect phonemes with letters.", "units": 6, "active": true },
   { "module_id": 9, "level_id": 1, "module_name": "Build Your First Words", "module_goal": "Build and manipulate CVC words.", "units": 6, "active": true },
-  { "module_id": 10, "level_id": 1, "module_name": "Read CVC Words", "module_goal": "Read simple decodable CVC words.", "units": 8, "active": false },
+  { "module_id": 10, "level_id": 1, "module_name": "Read CVC Words", "module_goal": "Read simple decodable CVC words.", "units": 8, "active": true },
   { "module_id": 11, "level_id": 1, "module_name": "Spell Your First Words", "module_goal": "Spell CVC words from dictation.", "units": 7, "active": false },
   { "module_id": 12, "level_id": 1, "module_name": "My First Sentences", "module_goal": "Apply reading and spelling in simple sentences.", "units": 7, "active": false },
   { "module_id": 13, "level_id": 1, "module_name": "Tricky Words", "module_goal": "Introduce a small controlled set of early high-frequency words.", "units": 6, "active": false },

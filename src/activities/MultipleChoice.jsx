@@ -98,7 +98,11 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
       <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, textAlign: "center", margin: 0 }}>
         {question.prompt ?? question.question}
       </p>
-      {question.letter_prompt ? (
+      {question.written_word ? (
+        <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, margin: 0, letterSpacing: 1 }}>
+          {question.written_word}
+        </p>
+      ) : question.letter_prompt ? (
         <LetterTile letter={question.letter_prompt} size={88} />
       ) : (
         audioAsset && !isOddOneOut && <AudioPlayer asset={audioAsset} />
