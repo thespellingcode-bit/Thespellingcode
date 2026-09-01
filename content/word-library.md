@@ -196,6 +196,47 @@ in `public/audio/`), they'd slot in as an enhancement.
   here in case 2-phoneme words get added later and this should be revisited
   to a genuine 2-vs-3 comparison.
 
+## 8. Modules 8-11 word/mechanic choices
+
+- **Module 8 (Letter–Sound Connections)** — the C/K conflict: curriculum
+  example words for Modules 4/5/7/9/10/11 constantly use cat/cap/can/cup,
+  but the Phonemes sheet only ever teaches "k" as the grapheme for /k/, and
+  Program_Complete.docx's own "Level 1 Boundaries" explicitly excludes
+  "Hard C / soft C and C/K/CK spelling choices." Resolved by judgment: the
+  boundary protects against asking a child to *choose* between c/k/ck when
+  *encoding* an unfamiliar word (that's Level 4 material) — it says nothing
+  about *reading* a C-spelled word, or about a dictation item that always
+  has exactly one correct spelling already baked into its content. So
+  Module 8 teaches **"c" as a second grapheme for /k/ alongside "k"**
+  (both receptive only), and no lesson in this app (Module 8 through 11)
+  ever constructs a task where the child must decide which of c/k/ck is
+  correct for the same sound — every relevant word's spelling is simply
+  given. This keeps the natural, common word pool (cat/cap/can/cup) instead
+  of the few available "k"-only words.
+- **Module 9 (Build Your First Words) and Module 11 (Spell Your First
+  Words)** — `word_build` items need **no illustration at all** (the UI is
+  letter tiles, not pictures), unlike every audio/picture-matching type
+  before it. This freed word choice from the illustrated-word constraint
+  that shaped Modules 1-7 and Module 10 — any real, phonetically regular
+  CVC word can be used. Module 9 clusters words into rime families (-at,
+  -an, -ap) with an exact letter bank (only the target word's own letters,
+  scrambled). Module 11 reuses the identical `word_build` mechanic but adds
+  1-2 **decoy letters** to the tray (present in the shuffled bank, never
+  used in the target word) — turning the task from letter *sequencing*
+  (Module 9) into genuine letter *recall/selection* (Module 11), which is
+  what actually distinguishes "building" from "spelling." Decoy letters are
+  chosen to never include "k" alongside a word using "c" (or vice versa),
+  so the C/K boundary above is never accidentally reintroduced through a
+  decoy tile.
+- **Module 10 (Read CVC Words)** — the reverse of Module 9: the central
+  prompt is the written word itself (a new `written_word` content field,
+  rendered as large styled text) instead of audio, and the child picks the
+  matching picture — so it's constrained by the same illustrated-word list
+  as Modules 1-7 (unlike Module 9/11's `word_build`). Lesson 7 ("CVC in
+  Sentences") extends `written_word` to hold a full short sentence (e.g.
+  "The cat sat.") rather than a single word, with `correct_answer` set to
+  the sentence's illustrated subject.
+
 ---
 
 *Maintained alongside the content JSON in `content/`. Update this file whenever a module adds new vocabulary — treat it as the first stop before writing new lesson content, not an afterthought.*

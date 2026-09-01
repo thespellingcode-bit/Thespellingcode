@@ -79,14 +79,18 @@ test("every activity/assessment correct_answer(s) are among its own options", ()
       }
     } else if (a.type === "word_build") {
       // No "options" list here — the selectable materials are the letter
-      // tiles. The meaningful integrity check is that the tile bank is
-      // exactly the target word's letters (matching WordBuilder.jsx's
-      // mechanic, which offers no distractor tiles): same multiset, same
-      // count, nothing extra and nothing missing.
+      // tiles. The meaningful integrity check is that the tile bank
+      // contains at least the target word's letters (as a multiset) —
+      // WordBuilder.jsx only checks the assembled word against
+      // correct_answer, so extra decoy tiles (Module 11's mechanic) are
+      // fine as long as every needed letter, and enough of it, is present.
       assert.ok(Array.isArray(a.letters) && a.letters.length > 0, `${a.activity_id || a.assessment_id} missing letters`);
-      const bankSorted = [...a.letters].sort().join("");
-      const targetSorted = a.correct_answer.split("").sort().join("");
-      assert.equal(bankSorted, targetSorted, `${a.activity_id || a.assessment_id} letter bank "${a.letters.join("")}" doesn't exactly spell "${a.correct_answer}"`);
+      const bankCounts = {};
+      for (const l of a.letters) bankCounts[l] = (bankCounts[l] || 0) + 1;
+      for (const l of a.correct_answer) {
+        bankCounts[l] = (bankCounts[l] || 0) - 1;
+        assert.ok(bankCounts[l] >= 0, `${a.activity_id || a.assessment_id} letter bank "${a.letters.join("")}" is missing a letter needed to spell "${a.correct_answer}"`);
+      }
     } else {
       assert.ok(a.options.includes(a.correct_answer), `${a.activity_id || a.assessment_id} correct_answer not in options`);
     }
@@ -120,9 +124,9 @@ test("REQUIREMENT: assessment questions do not reuse practice audio_asset+correc
   assert.deepEqual(violations, [], violations.join("\n"));
 });
 
-test("exactly Modules 1-10 active — scope guard for this build (Modules 11+ still out of scope)", () => {
+test("exactly Modules 1-11 active — scope guard for this build (Modules 12+ still out of scope)", () => {
   const active = modules.filter((m) => m.active).map((m) => m.module_id).sort((a, b) => a - b);
-  assert.deepEqual(active, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  assert.deepEqual(active, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
 });
 
 test("exactly Sound Starter and Rhyme Ranger badges active — scope guard for this build", () => {
