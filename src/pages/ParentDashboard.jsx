@@ -32,7 +32,7 @@ function skillStatuses(lessons, state) {
 
 const SKILL_LABELS = { auditory_discrimination: "Listening", auditory_memory: "Sound memory", rhyming: "Rhyming" };
 
-export function ParentDashboard({ profile, state }) {
+export function ParentDashboard({ profile, state, onToggleUnlockAll }) {
   const activeModules = [...getActiveModules()].sort((a, b) => a.module_id - b.module_id);
   const lessons = activeModules.flatMap((m) => getLessonsByModule(m.module_id));
   const completedCount = lessons.filter((l) => state.progress[l.lesson_id]?.completed).length;
@@ -101,6 +101,24 @@ export function ParentDashboard({ profile, state }) {
         ) : (
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: 0 }}>Nothing to recommend yet — start Lesson 1.</p>
         )}
+      </Card>
+
+      <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 15, color: T.ink, margin: "22px 0 8px" }}>Testing</h2>
+      <Card>
+        <label style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, cursor: "pointer" }}>
+          <span>
+            <span style={{ display: "block", fontFamily: "'Manrope', sans-serif", fontSize: 14, fontWeight: 700, color: T.ink }}>Unlock every module and mission</span>
+            <span style={{ display: "block", fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, marginTop: 2 }}>
+              Bypasses normal progress gating so you can jump straight to any lesson. Turn this back off before real practice.
+            </span>
+          </span>
+          <input
+            type="checkbox"
+            checked={!!state.settings?.unlockAll}
+            onChange={(e) => onToggleUnlockAll(e.target.checked)}
+            style={{ width: 20, height: 20, flexShrink: 0, accentColor: T.gold }}
+          />
+        </label>
       </Card>
     </div>
   );

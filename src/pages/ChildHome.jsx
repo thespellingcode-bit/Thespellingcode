@@ -22,7 +22,7 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
   const defaultModuleId = (firstIncomplete || activeModules[activeModules.length - 1]).module_id;
   const [selectedModuleId, setSelectedModuleId] = useState(moduleId || defaultModuleId);
 
-  const moduleUnlocked = (idx) => idx === 0 || isModuleComplete(state, activeModules[idx - 1].module_id);
+  const moduleUnlocked = (idx) => !!state.settings?.unlockAll || idx === 0 || isModuleComplete(state, activeModules[idx - 1].module_id);
   const selectedIdx = activeModules.findIndex((m) => m.module_id === selectedModuleId);
   const module = activeModules[selectedIdx] || activeModules[0];
 
@@ -88,7 +88,7 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
         {lessons.map((l, idx) => {
           const status = statusOfLesson(state, l.lesson_id);
           const prevMastered = idx === 0 || state.progress[lessons[idx - 1].lesson_id]?.mastery;
-          const locked = !prevMastered && status === "not_started";
+          const locked = !state.settings?.unlockAll && !prevMastered && status === "not_started";
           return (
             <button
               key={l.lesson_id}

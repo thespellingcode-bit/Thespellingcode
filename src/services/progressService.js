@@ -9,7 +9,7 @@
 
 const STORAGE_KEY = "spelling-code-state-v2";
 
-export const DEFAULT_STATE = { profile: null, progress: {}, errorLog: [], badges: [] };
+export const DEFAULT_STATE = { profile: null, progress: {}, errorLog: [], badges: [], settings: { unlockAll: false } };
 
 export async function loadState() {
   try {

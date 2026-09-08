@@ -33,6 +33,8 @@ export default function App() {
 
   const handleCreateProfile = (profile) => persist((prev) => ({ ...prev, profile }));
 
+  const handleToggleUnlockAll = (unlockAll) => persist((prev) => ({ ...prev, settings: { ...prev.settings, unlockAll } }));
+
   const handleFinishLesson = ({ lessonId, mastery, ratio, attemptNumber, responses }) => {
     persist((prev) =>
       recordLessonAttempt(prev, {
@@ -69,7 +71,7 @@ export default function App() {
       ) : view === "child" ? (
         <ChildHome profile={state.profile} state={state} onOpenLesson={setActiveLessonId} />
       ) : (
-        <ParentDashboard profile={state.profile} state={state} />
+        <ParentDashboard profile={state.profile} state={state} onToggleUnlockAll={handleToggleUnlockAll} />
       )}
     </div>
   );
