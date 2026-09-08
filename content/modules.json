@@ -1,17 +1,13 @@
 [
   { "module_id": 1, "level_id": 1, "module_name": "Listening Detective", "module_goal": "Build careful listening and auditory discrimination.", "units": 6, "active": true },
   { "module_id": 2, "level_id": 1, "module_name": "Rhyme Detective", "module_goal": "Recognise and produce simple rhymes.", "units": 6, "active": true },
-  { "module_id": 3, "level_id": 1, "module_name": "Beginning Sound Detective", "module_goal": "Identify first sounds in spoken words.", "units": 6, "active": true },
-  { "module_id": 4, "level_id": 1, "module_name": "Ending Sound Detective", "module_goal": "Identify final sounds in spoken words.", "units": 6, "active": true },
-  { "module_id": 5, "level_id": 1, "module_name": "Short Vowel Explorer", "module_goal": "Hear and distinguish short vowel sounds.", "units": 8, "active": true },
-  { "module_id": 6, "level_id": 1, "module_name": "Sound Blending", "module_goal": "Blend individual phonemes into words.", "units": 7, "active": true },
-  { "module_id": 7, "level_id": 1, "module_name": "Sound Segmenting", "module_goal": "Break CVC words into individual sounds.", "units": 6, "active": true },
-  { "module_id": 8, "level_id": 1, "module_name": "Letter\u2013Sound Connections", "module_goal": "Connect phonemes with letters.", "units": 6, "active": true },
-  { "module_id": 9, "level_id": 1, "module_name": "Build Your First Words", "module_goal": "Build and manipulate CVC words.", "units": 6, "active": true },
-  { "module_id": 10, "level_id": 1, "module_name": "Read CVC Words", "module_goal": "Read simple decodable CVC words.", "units": 8, "active": true },
-  { "module_id": 11, "level_id": 1, "module_name": "Spell Your First Words", "module_goal": "Spell CVC words from dictation.", "units": 6, "active": true },
-  { "module_id": 12, "level_id": 1, "module_name": "My First Sentences", "module_goal": "Apply reading and spelling in simple sentences.", "units": 7, "active": false },
-  { "module_id": 13, "level_id": 1, "module_name": "Tricky Words", "module_goal": "Introduce a small controlled set of early high-frequency words.", "units": 6, "active": false },
-  { "module_id": 14, "level_id": 1, "module_name": "Spelling Detective Review", "module_goal": "Spiral and strengthen all Level 1 skills.", "units": 6, "active": false },
-  { "module_id": 15, "level_id": 1, "module_name": "Level 1 Master Assessment", "module_goal": "Demonstrate independent Level 1 mastery.", "units": 8, "active": false }
+  { "module_id": 3, "level_id": 1, "module_name": "Letter Cluster 1: s a t p i n", "module_goal": "Learn s, a, t, p, i, n and use them together to build, read, and spell real words.", "units": 5, "active": true },
+  { "module_id": 4, "level_id": 1, "module_name": "Letter Cluster 2: m d g o c", "module_goal": "Learn m, d, g, o, c and use every letter known so far to build, read, and spell more words.", "units": 5, "active": false },
+  { "module_id": 5, "level_id": 1, "module_name": "Letter Cluster 3: k b h r e", "module_goal": "Learn k, b, h, r, e and use every letter known so far to build, read, and spell more words.", "units": 5, "active": false },
+  { "module_id": 6, "level_id": 1, "module_name": "Letter Cluster 4: l f u", "module_goal": "Learn l, f, u — the last Level 1 letters — and use the full letter set to build, read, and spell words.", "units": 5, "active": false },
+  { "module_id": 7, "level_id": 1, "module_name": "Level 1 Review", "module_goal": "Cumulative mixed practice and challenge across every Level 1 letter and word learned.", "units": 5, "active": false },
+  { "module_id": 8, "level_id": 1, "module_name": "My First Sentences", "module_goal": "Apply reading and spelling in simple sentences.", "units": 7, "active": false },
+  { "module_id": 9, "level_id": 1, "module_name": "Tricky Words", "module_goal": "Introduce a small controlled set of early high-frequency words.", "units": 6, "active": false },
+  { "module_id": 10, "level_id": 1, "module_name": "Spelling Detective Review", "module_goal": "Spiral and strengthen all Level 1 skills.", "units": 6, "active": false },
+  { "module_id": 11, "level_id": 1, "module_name": "Level 1 Master Assessment", "module_goal": "Demonstrate independent Level 1 mastery.", "units": 8, "active": false }
 ]

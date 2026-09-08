@@ -23,6 +23,7 @@ const BG = {
   sun: "#FFF3D6", sit: "#F1E3D3", sad: "#DCEEF6",
   cup: "#E1F3E6", bus: "#FDE9D2",
   kid: "#FDEBE4", run: "#E1F3E6", lip: "#FFE7E0", dad: "#DCEBFF", gum: "#E8E6F7",
+  sip: "#DCEBFF", pin: "#FDE9D2",
   pattern: "#F2EFE6",
 };
 
@@ -447,6 +448,20 @@ const PICTURES = {
       <circle cx="38" cy="78" r="2.6" fill="#C7CBE8" />
       <circle cx="82" cy="78" r="7" fill="#2C2E4A" />
       <circle cx="82" cy="78" r="2.6" fill="#C7CBE8" />
+    </>
+  ),
+  sip: (
+    <>
+      <path d="M42 46h30v26a10 10 0 01-10 10h-10a10 10 0 01-10-10z" fill="#4C8DFF" stroke="#2B5FCC" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M60 46V30q0-8 8-8" fill="none" stroke="#2B5FCC" strokeWidth="3.2" strokeLinecap="round" />
+      <path d="M48 54h18" stroke="#CFE4FF" strokeWidth="1.8" opacity="0.6" />
+    </>
+  ),
+  pin: (
+    <>
+      <circle cx="42" cy="42" r="10" fill="#FF6F59" stroke="#CC4A37" strokeWidth="2.4" />
+      <path d="M48 48l28 28" stroke="#B9BFCB" strokeWidth="4" strokeLinecap="round" />
+      <path d="M76 76l6 10-10-6z" fill="#8B8FA3" />
     </>
   ),
   pattern: (

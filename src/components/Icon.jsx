@@ -77,6 +77,10 @@ const WORD_KEYS = [
   // k/r/l/d/g had none — every existing word using those letters uses them
   // as an ENDING sound (fig, log, dog, bag), not a starting one.
   "kid", "run", "lip", "dad", "gum",
+  // Letter Cluster 1 (s, a, t, p, i, n) — "sit", "nap", "pan" already have
+  // icons above; "sip" and "pin" are new so this cluster's Read lesson has
+  // enough illustrated words to draw from beyond the 4 that pre-existed.
+  "sip", "pin",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
