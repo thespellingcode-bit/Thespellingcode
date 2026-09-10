@@ -4,6 +4,7 @@ import { theme as T } from "../theme";
 import { ProgressBar } from "./ProgressBar";
 import { Btn } from "./Btn";
 import { Celebration } from "./Celebration";
+import { Mascot } from "./Mascot";
 import { playSfx } from "../services/audioService";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
@@ -21,8 +22,9 @@ export function ResultScreen({ ratio, masteryThreshold, mastered, closeText, sco
   return (
     <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
       {mastered && <Celebration />}
-      <ProgressBar value={ratio} size={110}>
-        <span style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 24, fontWeight: 700, color: T.ink }}>{pct(ratio)}</span>
+      <Mascot pose={mastered ? "celebrate" : "encourage"} size={92} />
+      <ProgressBar value={ratio} size={84}>
+        <span style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 18, fontWeight: 700, color: T.ink }}>{pct(ratio)}</span>
       </ProgressBar>
       <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, margin: 0 }}>
         {mastered ? (closeText || "Great job!") : "Good try! Let's practise a bit more."}
