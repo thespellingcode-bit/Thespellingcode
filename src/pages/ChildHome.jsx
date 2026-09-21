@@ -6,25 +6,58 @@ import { Btn } from "../components/Btn";
 import { Badge } from "../components/Badge";
 import { ProgressBar } from "../components/ProgressBar";
 import { getLessonsByModule, getActiveModules, getActiveBadges, getBadges } from "../services/contentService";
-import { statusOfLesson } from "../services/progressService";
+import { statusOfLesson, MODULE_UNLOCK_THRESHOLD } from "../services/progressService";
+
+function pct(n) {
+  return `${Math.round(n * 100)}%`;
+}
 
 function isModuleComplete(state, moduleId) {
   const lessons = getLessonsByModule(moduleId);
   return lessons.length > 0 && lessons.every((l) => state.progress[l.lesson_id]?.mastery);
 }
 
+// A module's score is its own final Challenge/Assessment lesson's best
+// score — null if that module doesn't end in one (shouldn't happen for
+// any module built so far, but keeps this honest rather than assuming).
+function moduleScore(state, moduleId) {
+  const lessons = getLessonsByModule(moduleId);
+  const final = lessons[lessons.length - 1];
+  if (!final || final.activity_type !== "assessment") return null;
+  return state.progress[final.lesson_id]?.bestScore ?? null;
+}
+
 // moduleId is an optional override (e.g. a future deep link) — when
-// omitted, the child lands on their first not-yet-complete module so
-// returning users don't have to re-navigate past what they've finished.
+// omitted, the child lands on their first not-yet-complete UNLOCKED
+// module so returning users don't have to re-navigate past what they've
+// finished, and never default onto a module they can't actually open yet.
 export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
   const activeModules = [...getActiveModules()].sort((a, b) => a.module_id - b.module_id);
-  const firstIncomplete = activeModules.find((m) => !isModuleComplete(state, m.module_id));
-  const defaultModuleId = (firstIncomplete || activeModules[activeModules.length - 1]).module_id;
+
+  // A module unlocks once the PREVIOUS module's own final Challenge score
+  // clears MODULE_UNLOCK_THRESHOLD — separate from (and a higher bar than)
+  // each individual lesson's own mastery threshold.
+  const moduleUnlocked = (idx) => {
+    if (state.settings?.unlockAll || idx === 0) return true;
+    const score = moduleScore(state, activeModules[idx - 1].module_id);
+    return score !== null && score >= MODULE_UNLOCK_THRESHOLD;
+  };
+
+  const unlockedModules = activeModules.filter((m, idx) => moduleUnlocked(idx));
+  const firstIncomplete = unlockedModules.find((m) => !isModuleComplete(state, m.module_id));
+  const defaultModuleId = (firstIncomplete || unlockedModules[unlockedModules.length - 1] || activeModules[0]).module_id;
   const [selectedModuleId, setSelectedModuleId] = useState(moduleId || defaultModuleId);
 
-  const moduleUnlocked = (idx) => !!state.settings?.unlockAll || idx === 0 || isModuleComplete(state, activeModules[idx - 1].module_id);
   const selectedIdx = activeModules.findIndex((m) => m.module_id === selectedModuleId);
   const module = activeModules[selectedIdx] || activeModules[0];
+
+  // The next locked module after the child's current unlock frontier —
+  // shown as a standing goal card so the 85% target is visible the whole
+  // way through the prior module, not sprung on them only at the end.
+  const nextLockedIdx = activeModules.findIndex((m, idx) => !moduleUnlocked(idx));
+  const nextLockedModule = nextLockedIdx > 0 ? activeModules[nextLockedIdx] : null;
+  const gatingModule = nextLockedModule ? activeModules[nextLockedIdx - 1] : null;
+  const gatingScore = gatingModule ? moduleScore(state, gatingModule.module_id) || 0 : 0;
 
   const lessons = getLessonsByModule(module.module_id);
   const masteredCount = lessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
@@ -76,6 +109,23 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
               </button>
             );
           })}
+        </div>
+      )}
+
+      {nextLockedModule && (
+        <div style={{ border: `1.5px dashed ${T.line}`, background: "#fff", borderRadius: 16, padding: "14px 16px", marginBottom: 22 }}>
+          <div style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 600, fontSize: 13.5, color: T.textMute, marginBottom: 8 }}>
+            🔒 Module {nextLockedModule.module_id} — {nextLockedModule.module_name}
+          </div>
+          <div style={{ height: 8, borderRadius: 999, background: T.mist, overflow: "hidden", marginBottom: 6 }}>
+            <div style={{
+              height: "100%", width: `${Math.min(100, Math.round((gatingScore / MODULE_UNLOCK_THRESHOLD) * 100))}%`,
+              background: `linear-gradient(90deg, ${T.goldDeep}, ${T.gold})`, borderRadius: 999,
+            }} />
+          </div>
+          <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11.5, color: T.textMute }}>
+            Your Module {gatingModule.module_id} score: <b style={{ color: T.ink }}>{pct(gatingScore)}</b> · Module {nextLockedModule.module_id} unlocks free at <b style={{ color: T.ink }}>{pct(MODULE_UNLOCK_THRESHOLD)}</b>
+          </div>
         </div>
       )}
 

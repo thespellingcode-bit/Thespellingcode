@@ -9,6 +9,13 @@
 
 const STORAGE_KEY = "spelling-code-state-v2";
 
+// A module's own final "Challenge"/"Assessment" lesson score gates the
+// NEXT module's unlock — hitting this bar unlocks it for free, below it
+// only that one lesson needs a retry (not the whole module). Shared here
+// so ChildHome (the gate check) and Lesson (the in-lesson messaging)
+// can't drift out of sync on the number.
+export const MODULE_UNLOCK_THRESHOLD = 0.85;
+
 export const DEFAULT_STATE = { profile: null, progress: {}, errorLog: [], badges: [], settings: { unlockAll: false } };
 
 export async function loadState() {
