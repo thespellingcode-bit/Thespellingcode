@@ -32,6 +32,35 @@ function skillStatuses(lessons, state) {
 
 const SKILL_LABELS = { auditory_discrimination: "Listening", auditory_memory: "Sound memory", rhyming: "Rhyming" };
 
+// The pilot has no backend at all — nothing about a family's usage ever
+// leaves their own device. These two buttons are the deliberately
+// lightweight stand-in for that: the PARENT chooses to send a WhatsApp
+// message (to the app owner's number below), so visibility only ever
+// happens with explicit action, never silent collection.
+const OWNER_WHATSAPP = "918800740664";
+
+function waLink(text) {
+  return `https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(text)}`;
+}
+
+function buildProgressMessage(profile, state, activeModules) {
+  const rows = activeModules.map((m) => {
+    const lessons = getLessonsByModule(m.module_id);
+    const mastered = lessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
+    return { name: m.module_name, id: m.module_id, mastered, total: lessons.length };
+  });
+  const totalMastered = rows.reduce((sum, r) => sum + r.mastered, 0);
+  const totalLessons = rows.reduce((sum, r) => sum + r.total, 0);
+  const lines = [
+    `📊 ${profile.name}'s progress on The Spelling Code ${profile.avatar}`,
+    "",
+    `Level 1 · Sound Explorer — ${totalMastered} of ${totalLessons} lessons mastered`,
+    "",
+    ...rows.map((r) => `Module ${r.id} (${r.name}): ${r.mastered}/${r.total} mastered`),
+  ];
+  return lines.join("\n");
+}
+
 export function ParentDashboard({ profile, state, onToggleUnlockAll }) {
   const activeModules = [...getActiveModules()].sort((a, b) => a.module_id - b.module_id);
   const lessons = activeModules.flatMap((m) => getLessonsByModule(m.module_id));
@@ -101,6 +130,37 @@ export function ParentDashboard({ profile, state, onToggleUnlockAll }) {
         ) : (
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: 0 }}>Nothing to recommend yet — start Lesson 1.</p>
         )}
+      </Card>
+
+      <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 15, color: T.ink, margin: "22px 0 8px" }}>Feedback &amp; progress</h2>
+      <Card style={{ marginBottom: 22 }}>
+        <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 13, color: T.textMute, margin: "0 0 14px" }}>
+          Nothing here is collected automatically — tap a button below only if you want to send it.
+        </p>
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          <a
+            href={waLink(buildProgressMessage(profile, state, activeModules))}
+            target="_blank" rel="noreferrer"
+            style={{
+              fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 13.5, color: T.ink,
+              background: T.gold, borderRadius: 999, padding: "10px 18px", textDecoration: "none",
+              display: "inline-flex", alignItems: "center", gap: 6,
+            }}
+          >
+            📤 Share my progress
+          </a>
+          <a
+            href={waLink(`Hi! I'm testing The Spelling Code with ${profile.name} ${profile.avatar}. Feedback: `)}
+            target="_blank" rel="noreferrer"
+            style={{
+              fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 13.5, color: T.ink,
+              background: "#fff", border: `1.5px solid ${T.line}`, borderRadius: 999, padding: "10px 18px", textDecoration: "none",
+              display: "inline-flex", alignItems: "center", gap: 6,
+            }}
+          >
+            💬 Send feedback
+          </a>
+        </div>
       </Card>
 
       <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 15, color: T.ink, margin: "22px 0 8px" }}>Testing</h2>
