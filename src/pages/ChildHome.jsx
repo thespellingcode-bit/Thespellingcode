@@ -27,7 +27,6 @@ function moduleScore(state, moduleId) {
   return state.progress[final.lesson_id]?.bestScore ?? null;
 }
 
-
 // moduleId is an optional override (e.g. a future deep link) — when
 // omitted, the child lands on their first not-yet-complete UNLOCKED
 // module so returning users don't have to re-navigate past what they've
@@ -54,17 +53,20 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
   const unlockedModules = activeModules.filter((m, idx) => moduleUnlocked(idx));
   const firstIncomplete = unlockedModules.find((m) => !isModuleComplete(state, m.module_id));
   const defaultModuleId = (firstIncomplete || unlockedModules[unlockedModules.length - 1] || activeModules[0]).module_id;
-  const [selectedModuleId, setSelectedModuleId] = useState(moduleId || defaultModuleId);
 
-  const selectedIdx = activeModules.findIndex((m) => m.module_id === selectedModuleId);
-  const module = activeModules[selectedIdx] || activeModules[0];
+  // Which module's lesson list is expanded inline below it — an
+  // accordion, not a separate tab/section, so the lessons a parent or
+  // child taps a module to see show up immediately under that same
+  // module rather than requiring a second look elsewhere on the screen.
+  // Only one open at a time; tapping the open one again closes it.
+  const [expandedModuleId, setExpandedModuleId] = useState(moduleId || defaultModuleId);
+  const module = activeModules.find((m) => m.module_id === expandedModuleId) || activeModules[0];
 
   // The next locked module after the child's current unlock frontier —
-  // shown as a standing goal card ONLY for the Module 1 → 2 free-unlock
+  // shown with a standing goal card ONLY for the Module 1 → 2 free-unlock
   // boundary, since that's the only transition with a score target to
-  // show progress toward. Every other locked module just shows its plain
-  // lock icon in the chips row above, same as before this mechanic
-  // existed.
+  // show progress toward. Every other locked module just shows a plain
+  // lock, same as before this mechanic existed.
   const nextLockedIdx = activeModules.findIndex((m, idx) => !moduleUnlocked(idx));
   const nextLockedModuleRaw = nextLockedIdx > 0 ? activeModules[nextLockedIdx] : null;
   const gatingModule = nextLockedModuleRaw ? activeModules[nextLockedIdx - 1] : null;
@@ -99,89 +101,110 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
         </div>
       </div>
 
-      {activeModules.length > 1 && (
-        <div style={{ display: "flex", gap: 10, marginBottom: 22, flexWrap: "wrap" }}>
-          {activeModules.map((m, idx) => {
-            const unlocked = moduleUnlocked(idx);
-            const selected = m.module_id === module.module_id;
-            return (
-              <button
-                key={m.module_id}
-                disabled={!unlocked}
-                onClick={() => setSelectedModuleId(m.module_id)}
-                style={{
-                  display: "flex", alignItems: "center", gap: 8, padding: "10px 16px", borderRadius: 999, cursor: unlocked ? "pointer" : "not-allowed",
-                  border: `1.5px solid ${selected ? T.gold : T.line}`, background: selected ? "#FFFBEF" : "#fff",
-                  fontFamily: "'Baloo 2', sans-serif", fontWeight: 600, fontSize: 13.5, color: unlocked ? T.ink : T.textMute,
-                  opacity: unlocked ? 1 : 0.6,
-                }}
-              >
-                {!unlocked && <Icon name="lock" size={14} color={T.textMute} />}
-                Module {m.module_id}: {m.module_name}
-              </button>
-            );
-          })}
-        </div>
-      )}
-
-      {nextLockedModule && (
-        <div style={{ border: `1.5px dashed ${T.line}`, background: "#fff", borderRadius: 16, padding: "14px 16px", marginBottom: 22 }}>
-          <div style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 600, fontSize: 13.5, color: T.textMute, marginBottom: 8 }}>
-            🔒 Module {nextLockedModule.module_id} — {nextLockedModule.module_name}
-          </div>
-          <div style={{ height: 8, borderRadius: 999, background: T.mist, overflow: "hidden", marginBottom: 6 }}>
-            <div style={{
-              height: "100%", width: `${Math.min(100, Math.round((gatingScore / MODULE_UNLOCK_THRESHOLD) * 100))}%`,
-              background: `linear-gradient(90deg, ${T.goldDeep}, ${T.gold})`, borderRadius: 999,
-            }} />
-          </div>
-          <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11.5, color: T.textMute }}>
-            Your Module {gatingModule.module_id} score: <b style={{ color: T.ink }}>{pct(gatingScore)}</b> · Module {nextLockedModule.module_id} unlocks free at <b style={{ color: T.ink }}>{pct(MODULE_UNLOCK_THRESHOLD)}</b>
-          </div>
-        </div>
-      )}
-
-      <Btn variant="gold" size="lg" style={{ marginBottom: 30 }} onClick={() => onOpenLesson(nextLesson.lesson_id)}>
+      <Btn variant="gold" size="lg" style={{ marginBottom: 24 }} onClick={() => onOpenLesson(nextLesson.lesson_id)}>
         {masteredCount === 0 ? "Start your first mission!" : moduleComplete ? "Replay a mission" : "Continue your mission"}
       </Btn>
 
-      <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 18, color: T.ink, marginBottom: 14 }}>{module.module_name} path</h2>
-      <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 34 }}>
-        {lessons.map((l, idx) => {
-          const status = statusOfLesson(state, l.lesson_id);
-          const prevMastered = idx === 0 || state.progress[lessons[idx - 1].lesson_id]?.mastery;
-          const locked = !state.settings?.unlockAll && !prevMastered && status === "not_started";
+      <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 18, color: T.ink, marginBottom: 14 }}>Level 1 · Sound Explorer</h2>
+      <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 34 }}>
+        {activeModules.map((m, idx) => {
+          const unlocked = moduleUnlocked(idx);
+          const expanded = unlocked && m.module_id === expandedModuleId;
+          const isGoalCardModule = !unlocked && m.module_id === nextLockedModule?.module_id;
+          const moduleLessons = getLessonsByModule(m.module_id);
+          const moduleMasteredCount = moduleLessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
+
           return (
-            <button
-              key={l.lesson_id}
-              disabled={locked}
-              onClick={() => onOpenLesson(l.lesson_id)}
+            <div
+              key={m.module_id}
               style={{
-                display: "flex", alignItems: "center", gap: 16, textAlign: "left",
-                padding: "14px 18px", borderRadius: 18, cursor: locked ? "not-allowed" : "pointer",
-                border: `1.5px solid ${status === "mastered" ? T.gold : T.line}`,
-                background: status === "mastered" ? "#FFFBEF" : "#fff",
-                opacity: locked ? 0.55 : 1,
+                border: `1.5px solid ${expanded ? T.gold : T.line}`, borderRadius: 18, overflow: "hidden",
+                background: "#fff",
               }}
             >
-              <div style={{
-                width: 44, height: 44, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                background: status === "mastered" ? T.gold : status === "not_started" ? T.mist : T.mistDeep,
-              }}>
-                {locked ? <Icon name="lock" size={20} color={T.textMute} /> :
-                  status === "mastered" ? <Icon name="check" size={22} color="#fff" /> :
-                    <span style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, color: T.ink }}>{l.number}</span>}
-              </div>
-              <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: 0.4, color: T.goldDeep, textTransform: "uppercase" }}>
-                  Mission {l.number}
+              <button
+                disabled={!unlocked}
+                onClick={() => unlocked && setExpandedModuleId((cur) => (cur === m.module_id ? null : m.module_id))}
+                style={{
+                  width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10,
+                  padding: "14px 18px", border: "none", cursor: unlocked ? "pointer" : "not-allowed",
+                  background: expanded ? "#FFFBEF" : "#fff",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  {!unlocked && <Icon name="lock" size={16} color={T.textMute} />}
+                  <div style={{ textAlign: "left" }}>
+                    <div style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 15, color: unlocked ? T.ink : T.textMute }}>
+                      Module {m.module_id}: {m.module_name}
+                    </div>
+                    {unlocked && (
+                      <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12, color: T.textMute, marginTop: 1 }}>
+                        {moduleMasteredCount} of {moduleLessons.length} mastered
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 600, fontSize: 16, color: T.ink }}>{l.title}</div>
-                <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute }}>
-                  {l.estimated_time} · {status === "mastered" ? "Mastered" : status === "in_progress" ? "In progress" : locked ? "Locked" : "Not started"}
+                {unlocked && (
+                  <span style={{ fontSize: 14, color: T.textMute, flexShrink: 0 }}>{expanded ? "▾" : "▸"}</span>
+                )}
+              </button>
+
+              {expanded && (
+                <div style={{ display: "flex", flexDirection: "column", gap: 10, padding: "0 14px 14px" }}>
+                  {moduleLessons.map((l, lidx) => {
+                    const status = statusOfLesson(state, l.lesson_id);
+                    const prevMastered = lidx === 0 || state.progress[moduleLessons[lidx - 1].lesson_id]?.mastery;
+                    const locked = !state.settings?.unlockAll && !prevMastered && status === "not_started";
+                    return (
+                      <button
+                        key={l.lesson_id}
+                        disabled={locked}
+                        onClick={() => onOpenLesson(l.lesson_id)}
+                        style={{
+                          display: "flex", alignItems: "center", gap: 14, textAlign: "left",
+                          padding: "12px 14px", borderRadius: 14, cursor: locked ? "not-allowed" : "pointer",
+                          border: `1.5px solid ${status === "mastered" ? T.gold : T.line}`,
+                          background: status === "mastered" ? "#FFFBEF" : "#fff",
+                          opacity: locked ? 0.55 : 1,
+                        }}
+                      >
+                        <div style={{
+                          width: 38, height: 38, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                          background: status === "mastered" ? T.gold : status === "not_started" ? T.mist : T.mistDeep,
+                        }}>
+                          {locked ? <Icon name="lock" size={17} color={T.textMute} /> :
+                            status === "mastered" ? <Icon name="check" size={19} color="#fff" /> :
+                              <span style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 13.5, color: T.ink }}>{l.number}</span>}
+                        </div>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: 10.5, letterSpacing: 0.4, color: T.goldDeep, textTransform: "uppercase" }}>
+                            Mission {l.number}
+                          </div>
+                          <div style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 600, fontSize: 15, color: T.ink }}>{l.title}</div>
+                          <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12, color: T.textMute }}>
+                            {l.estimated_time} · {status === "mastered" ? "Mastered" : status === "in_progress" ? "In progress" : locked ? "Locked" : "Not started"}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
-              </div>
-            </button>
+              )}
+
+              {isGoalCardModule && (
+                <div style={{ padding: "0 16px 14px" }}>
+                  <div style={{ height: 8, borderRadius: 999, background: T.mist, overflow: "hidden", marginBottom: 6 }}>
+                    <div style={{
+                      height: "100%", width: `${Math.min(100, Math.round((gatingScore / MODULE_UNLOCK_THRESHOLD) * 100))}%`,
+                      background: `linear-gradient(90deg, ${T.goldDeep}, ${T.gold})`, borderRadius: 999,
+                    }} />
+                  </div>
+                  <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11.5, color: T.textMute }}>
+                    Your Module {gatingModule.module_id} score: <b style={{ color: T.ink }}>{pct(gatingScore)}</b> · unlocks free at <b style={{ color: T.ink }}>{pct(MODULE_UNLOCK_THRESHOLD)}</b>
+                  </div>
+                </div>
+              )}
+            </div>
           );
         })}
       </div>
