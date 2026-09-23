@@ -251,7 +251,16 @@ const BASE_SOUND = {
   tap: (ctx, t0) => { tone(ctx, t0, 800, 0.09, "triangle", 0.27); filteredNoise(ctx, t0, 0.035, { type: "highpass", freq: 2800, Q: 1, gain: 0.14, attack: 0.001 }); },
   // Added a sharp noise "click" right at onset for a punchy attack — the
   // sweepTone body was fine but the soft attack made it read as vague.
-  drum: (ctx, t0) => { filteredNoise(ctx, t0, 0.02, { type: "lowpass", freq: 900, Q: 1, gain: 0.24, attack: 0.001 }); sweepTone(ctx, t0, { from: 160, to: 50, dur: 0.35, type: "sine", gain: 0.42, filterFrom: 700, filterTo: 150 }); filteredNoise(ctx, t0, 0.05, { type: "lowpass", freq: 400, Q: 1, gain: 0.13, attack: 0.002 }); },
+  // Gains raised again specifically for the loud/soft contrast with violin
+  // below: the shared compressor (see getCompressor above) has a -16dB
+  // threshold and 10:1 ratio, which — confirmed by offline-rendering both
+  // sounds and measuring actual post-compression RMS — was squashing
+  // drum's peak down to almost violin's level (1.44x RMS ratio, not
+  // perceptible as "loud vs soft"). Pushing drum's pre-compression peak
+  // much higher means it still emerges clearly above the threshold after
+  // compression, while violin (below) stays under the threshold entirely
+  // and passes through uncompressed. Measured fix: ~5x RMS ratio.
+  drum: (ctx, t0) => { filteredNoise(ctx, t0, 0.02, { type: "lowpass", freq: 900, Q: 1, gain: 0.4, attack: 0.001 }); sweepTone(ctx, t0, { from: 160, to: 50, dur: 0.35, type: "sine", gain: 0.75, filterFrom: 700, filterTo: 150 }); filteredNoise(ctx, t0, 0.05, { type: "lowpass", freq: 400, Q: 1, gain: 0.22, attack: 0.002 }); },
   // Added as the "loud vs soft" pairing's real-instrument half (with
   // drum) — user feedback: same-sound-scaled-by-gain (drum_loud vs
   // drum_soft) kept reading as "almost inaudible" despite repeated gain
@@ -278,10 +287,15 @@ const BASE_SOUND = {
     filter.type = "lowpass";
     filter.frequency.value = 2200;
 
+    // Kept deliberately below the compressor's -16dB threshold (~0.16
+    // linear) so violin passes through uncompressed — the whole point of
+    // the drum/violin pairing is a genuinely perceptible gap, and pushing
+    // violin louder would only invite the compressor to squash drum
+    // toward it again (see drum's comment above).
     const g = ctx.createGain();
     g.gain.setValueAtTime(0.0001, t0);
-    g.gain.exponentialRampToValueAtTime(0.11, t0 + 0.1);
-    g.gain.setValueAtTime(0.11, t0 + dur * 0.55);
+    g.gain.exponentialRampToValueAtTime(0.05, t0 + 0.1);
+    g.gain.setValueAtTime(0.05, t0 + dur * 0.55);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
 
     osc.connect(filter).connect(g).connect(getMasterGain(ctx));

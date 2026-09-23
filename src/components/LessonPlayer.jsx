@@ -51,6 +51,13 @@ function modelCaptionFor(item) {
     case "same_different":
     case "loud_soft":
     case "fast_slow":
+      // A "_compare" item plays TWO sounds (e.g. violin then drum) and
+      // asks which one wins a comparison — "Listen — that was drum!"
+      // doesn't match what was actually heard (both sounds), it only
+      // makes sense for a single-sound identity judgment. Comparison
+      // items get their own caption naming the answer as the pick, not
+      // as "the" sound just played.
+      if ((item.audio_asset || "").includes("compare")) return `${answer} was the answer!`;
       // Only lowercase single-word answers (Fast/Slow/Loud/...) — a
       // multi-word answer like "Pattern B" reads oddly lowercased.
       return `Listen — that was ${answer.includes(" ") ? answer : answer.toLowerCase()}!`;
