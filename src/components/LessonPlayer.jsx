@@ -9,6 +9,8 @@ import { ResultScreen } from "./ResultScreen";
 import { AudioPlayer } from "./AudioPlayer";
 import { WordSoundRow } from "./WordSoundRow";
 import { LetterTile } from "./LetterTile";
+import { Illustration } from "./Illustration";
+import { labelToIcon } from "./Icon";
 import { getPracticeActivities, getAssessmentQuestions } from "../services/contentService";
 import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
@@ -110,14 +112,50 @@ function modelWordsFor(item) {
   return [anchor, ...(answers || [])].filter(Boolean);
 }
 
-// The model-stage heading text. For rhyme lessons this is the practice
-// item's own `prompt`, which already varies per item (confirmed in
-// content/activities.json — e.g. "Which word rhymes with can?" / "...man?"
-// / "...fan?") — fixes the heading reading identically on every example
-// card. Other lesson types keep the lesson's static narration.model line,
-// which wasn't reported as a problem.
+// Multiset difference: which letters in a word_build item's tray don't
+// end up used in the target word — i.e. the decoy tile(s) the model
+// stage should visibly call out, since the child never otherwise SEES
+// that concept (the demo previously only played audio and showed text,
+// never the actual tray — reported directly: "no extra letter" shown).
+function decoyLettersFor(item) {
+  const counts = {};
+  for (const l of item.letters || []) counts[l] = (counts[l] || 0) + 1;
+  for (const l of item.correct_answer || "") counts[l] = (counts[l] || 0) - 1;
+  const decoys = [];
+  for (const [l, c] of Object.entries(counts)) for (let i = 0; i < c; i++) decoys.push(l);
+  return decoys;
+}
+
+function capitalize(s) {
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+}
+
+// The model-stage heading text. Every lesson type here needs its own
+// PER-EXAMPLE heading, not the lesson's static narration.model line —
+// that line is only ever written once in content, so leaving it as the
+// heading meant every example in a lesson showed the exact same "Sun
+// starts with the letter s." text even as the word/letter/sound actually
+// being demonstrated changed underneath it (reported directly: Module 3's
+// example screens all read identically). Falls back to the static line
+// only when an item genuinely doesn't have enough of its own fields to
+// build a real per-example sentence (e.g. Module 8-style letter_prompt
+// items with no audio anchor).
 function modelHeadingFor(lesson, item) {
   if (WORD_CARD_LESSON_TYPES.includes(lesson.activity_type) && item.prompt) return item.prompt;
+  if (item.type === "letter_sound_match") {
+    const word = item.audio_asset?.replace(/^say:/, "");
+    return word ? `Listen. ${capitalize(word)} starts with the letter ${item.correct_answer}.` : lesson.narration.model;
+  }
+  if (item.type === "word_build") {
+    const word = capitalize(item.audio_asset?.replace(/^say:/, "") || item.correct_answer);
+    const decoyCount = (item.letters?.length || 0) - item.correct_answer.length;
+    return decoyCount > 0
+      ? `Listen. ${word}. Pick ${item.correct_answer.split("").join(", ")} — and leave the extra letter${decoyCount > 1 ? "s" : ""} behind!`
+      : `Listen. ${word}. Tap ${item.correct_answer.split("").join(", then ")} to build it!`;
+  }
+  if (item.type === "read_word" && item.written_word) {
+    return `Read. ${capitalize(item.written_word.replace(/\.$/, ""))}. Find the picture that matches!`;
+  }
   return lesson.narration.model;
 }
 
@@ -209,13 +247,38 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
       </p>
       <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{heading}</p>
       {currentExample.written_word ? (
-        <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, margin: 0, letterSpacing: 1 }}>
-          {currentExample.written_word}
-        </p>
+        <>
+          <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, margin: 0, letterSpacing: 1 }}>
+            {currentExample.written_word}
+          </p>
+          {labelToIcon(currentExample.correct_answer) && <Illustration name={labelToIcon(currentExample.correct_answer)} size={88} />}
+        </>
       ) : currentExample.letter_prompt ? (
         <LetterTile key={currentExample.activity_id} letter={currentExample.letter_prompt} size={96} />
       ) : isWordCardLesson ? (
         <WordSoundRow key={currentExample.activity_id} words={modelWordsFor(currentExample)} />
+      ) : currentExample.type === "word_build" ? (
+        <>
+          <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
+          <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", justifyContent: "center" }}>
+            {currentExample.correct_answer.split("").map((letter, i) => (
+              <LetterTile key={`correct-${i}`} letter={letter} size={44} state="correct" />
+            ))}
+            {decoyLettersFor(currentExample).length > 0 && (
+              <>
+                <span style={{ color: T.textMute, fontSize: 18, fontFamily: "'Baloo 2', sans-serif" }}>+</span>
+                {decoyLettersFor(currentExample).map((letter, i) => (
+                  <LetterTile key={`decoy-${i}`} letter={letter} size={44} state="wrong" disabled />
+                ))}
+              </>
+            )}
+          </div>
+          {decoyLettersFor(currentExample).length > 0 && (
+            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12, color: T.coralDeep, margin: 0 }}>
+              That extra letter doesn't belong in this word — leave it out!
+            </p>
+          )}
+        </>
       ) : (
         <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
       )}

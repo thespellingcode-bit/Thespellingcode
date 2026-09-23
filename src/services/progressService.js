@@ -16,6 +16,12 @@ const STORAGE_KEY = "spelling-code-state-v2";
 // can't drift out of sync on the number.
 export const MODULE_UNLOCK_THRESHOLD = 0.85;
 
+// The score-gated free unlock is a one-time promotional mechanic scoped
+// to exactly one boundary — Module 1's Challenge unlocking Module 2 —
+// not a general "any module's score unlocks the next one" rule. Every
+// other module boundary uses the plain "every lesson mastered" gate.
+export const FREE_UNLOCK_FROM_MODULE_ID = 1;
+
 export const DEFAULT_STATE = { profile: null, progress: {}, errorLog: [], badges: [], settings: { unlockAll: false } };
 
 export async function loadState() {

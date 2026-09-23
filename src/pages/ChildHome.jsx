@@ -6,7 +6,7 @@ import { Btn } from "../components/Btn";
 import { Badge } from "../components/Badge";
 import { ProgressBar } from "../components/ProgressBar";
 import { getLessonsByModule, getActiveModules, getActiveBadges, getBadges } from "../services/contentService";
-import { statusOfLesson, MODULE_UNLOCK_THRESHOLD } from "../services/progressService";
+import { statusOfLesson, MODULE_UNLOCK_THRESHOLD, FREE_UNLOCK_FROM_MODULE_ID } from "../services/progressService";
 
 function pct(n) {
   return `${Math.round(n * 100)}%`;
@@ -27,6 +27,7 @@ function moduleScore(state, moduleId) {
   return state.progress[final.lesson_id]?.bestScore ?? null;
 }
 
+
 // moduleId is an optional override (e.g. a future deep link) — when
 // omitted, the child lands on their first not-yet-complete UNLOCKED
 // module so returning users don't have to re-navigate past what they've
@@ -34,13 +35,20 @@ function moduleScore(state, moduleId) {
 export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
   const activeModules = [...getActiveModules()].sort((a, b) => a.module_id - b.module_id);
 
-  // A module unlocks once the PREVIOUS module's own final Challenge score
-  // clears MODULE_UNLOCK_THRESHOLD — separate from (and a higher bar than)
-  // each individual lesson's own mastery threshold.
+  // A module unlocks either by the previous module being fully mastered
+  // (the normal rule, every boundary), OR — only immediately after
+  // Module 1 specifically — by clearing the score-gated free-unlock
+  // threshold instead. Scoring well on Module 2's, 3's, ... own Challenge
+  // never grants a free unlock; only finishing every lesson does.
   const moduleUnlocked = (idx) => {
     if (state.settings?.unlockAll || idx === 0) return true;
-    const score = moduleScore(state, activeModules[idx - 1].module_id);
-    return score !== null && score >= MODULE_UNLOCK_THRESHOLD;
+    const prevModule = activeModules[idx - 1];
+    if (isModuleComplete(state, prevModule.module_id)) return true;
+    if (prevModule.module_id === FREE_UNLOCK_FROM_MODULE_ID) {
+      const score = moduleScore(state, prevModule.module_id);
+      return score !== null && score >= MODULE_UNLOCK_THRESHOLD;
+    }
+    return false;
   };
 
   const unlockedModules = activeModules.filter((m, idx) => moduleUnlocked(idx));
@@ -52,12 +60,16 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
   const module = activeModules[selectedIdx] || activeModules[0];
 
   // The next locked module after the child's current unlock frontier —
-  // shown as a standing goal card so the 85% target is visible the whole
-  // way through the prior module, not sprung on them only at the end.
+  // shown as a standing goal card ONLY for the Module 1 → 2 free-unlock
+  // boundary, since that's the only transition with a score target to
+  // show progress toward. Every other locked module just shows its plain
+  // lock icon in the chips row above, same as before this mechanic
+  // existed.
   const nextLockedIdx = activeModules.findIndex((m, idx) => !moduleUnlocked(idx));
-  const nextLockedModule = nextLockedIdx > 0 ? activeModules[nextLockedIdx] : null;
-  const gatingModule = nextLockedModule ? activeModules[nextLockedIdx - 1] : null;
-  const gatingScore = gatingModule ? moduleScore(state, gatingModule.module_id) || 0 : 0;
+  const nextLockedModuleRaw = nextLockedIdx > 0 ? activeModules[nextLockedIdx] : null;
+  const gatingModule = nextLockedModuleRaw ? activeModules[nextLockedIdx - 1] : null;
+  const nextLockedModule = gatingModule?.module_id === FREE_UNLOCK_FROM_MODULE_ID ? nextLockedModuleRaw : null;
+  const gatingScore = nextLockedModule ? moduleScore(state, gatingModule.module_id) || 0 : 0;
 
   const lessons = getLessonsByModule(module.module_id);
   const masteredCount = lessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
