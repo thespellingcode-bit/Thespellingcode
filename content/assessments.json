@@ -164,45 +164,48 @@
     "lesson_id": "L1-M01-03",
     "order": 1,
     "type": "loud_soft",
-    "question": "Which sound is softer — the drum or the violin?",
+    "question": "Was the sound loud or soft?",
     "options": [
-      "Drum",
-      "Violin"
+      "Loud",
+      "Soft"
     ],
-    "correct_answer": "Violin",
-    "audio_asset": "violin_drum_compare",
+    "correct_answer": "Soft",
+    "audio_asset": "wind",
     "skill": "auditory_discrimination",
-    "error_tag": "LOUD_SOFT_CONFUSION"
+    "error_tag": "LOUD_SOFT_CONFUSION",
+    "review_flag": "Identical audio+answer pair to practice item Q-M01-12. Only 4 reliable real/established loud-or-soft anchor sounds exist right now (thunder, clap for loud; wind, bell for soft, matching the user-supplied loud/soft reference chart), so this lesson's small assessment bank necessarily reuses them. Recommend real recordings for more chart examples (e.g. a bang or scream for loud; bird chirping or dripping water for soft) to widen this pool."
   },
   {
     "assessment_id": "AS-M01-03-2",
     "lesson_id": "L1-M01-03",
     "order": 2,
     "type": "loud_soft",
-    "question": "Which sound is louder — the whisper or the drum?",
+    "question": "Was the sound loud or soft?",
     "options": [
-      "Whisper",
-      "Drum"
+      "Loud",
+      "Soft"
     ],
-    "correct_answer": "Drum",
-    "audio_asset": "drum_compare",
+    "correct_answer": "Loud",
+    "audio_asset": "thunder",
     "skill": "auditory_discrimination",
-    "error_tag": "LOUD_SOFT_CONFUSION"
+    "error_tag": "LOUD_SOFT_CONFUSION",
+    "review_flag": "Identical audio+answer pair to practice item Q-M01-11. Same thin real-anchor pool as AS-M01-03-1."
   },
   {
     "assessment_id": "AS-M01-03-3",
     "lesson_id": "L1-M01-03",
     "order": 3,
     "type": "loud_soft",
-    "question": "Which sound is softer — the whisper or the drum?",
+    "question": "Was the sound loud or soft?",
     "options": [
-      "Whisper",
-      "Drum"
+      "Loud",
+      "Soft"
     ],
-    "correct_answer": "Whisper",
-    "audio_asset": "drum_compare",
+    "correct_answer": "Soft",
+    "audio_asset": "bell",
     "skill": "auditory_discrimination",
-    "error_tag": "LOUD_SOFT_CONFUSION"
+    "error_tag": "LOUD_SOFT_CONFUSION",
+    "review_flag": "Identical audio+answer pair to practice item Q-M01-14. Same thin real-anchor pool as AS-M01-03-1."
   },
   {
     "assessment_id": "AS-M01-03-4",
@@ -214,26 +217,11 @@
       "Loud",
       "Soft"
     ],
-    "correct_answer": "Soft",
-    "audio_asset": "whisper",
-    "skill": "auditory_discrimination",
-    "error_tag": "LOUD_SOFT_CONFUSION"
-  },
-  {
-    "assessment_id": "AS-M01-03-5",
-    "lesson_id": "L1-M01-03",
-    "order": 5,
-    "type": "loud_soft",
-    "question": "Was the sound loud or soft?",
-    "options": [
-      "Loud",
-      "Soft"
-    ],
     "correct_answer": "Loud",
-    "audio_asset": "drum",
+    "audio_asset": "clap",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION",
-    "review_flag": "Identical audio+answer pair to practice item Q-M01-11/Q-M01-13 — of the sounds synthesized so far, only the drum reliably reads as a real, distinct 'loud' anchor (the old gain-scaled X_loud variants were the actual audibility problem this redesign replaced). Recommend a second genuinely loud synthesized sound (e.g. a trumpet/horn) to give this slot a fresh option."
+    "review_flag": "Identical audio+answer pair to practice item Q-M01-13. Same thin real-anchor pool as AS-M01-03-1."
   },
   {
     "assessment_id": "AS-M01-04-1",
@@ -441,7 +429,7 @@
       "Soft"
     ],
     "correct_answer": "Soft",
-    "audio_asset": "violin",
+    "audio_asset": "bell",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -456,7 +444,7 @@
       "Soft"
     ],
     "correct_answer": "Loud",
-    "audio_asset": "drum",
+    "audio_asset": "clap",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
