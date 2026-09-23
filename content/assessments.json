@@ -164,13 +164,13 @@
     "lesson_id": "L1-M01-03",
     "order": 1,
     "type": "loud_soft",
-    "question": "Was the sound loud or soft?",
+    "question": "Which sound is softer — the drum or the violin?",
     "options": [
-      "Loud",
-      "Soft"
+      "Drum",
+      "Violin"
     ],
-    "correct_answer": "Loud",
-    "audio_asset": "finger_loud",
+    "correct_answer": "Violin",
+    "audio_asset": "violin_drum_compare",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -179,13 +179,13 @@
     "lesson_id": "L1-M01-03",
     "order": 2,
     "type": "loud_soft",
-    "question": "Was the sound loud or soft?",
+    "question": "Which sound is louder — the whisper or the drum?",
     "options": [
-      "Loud",
-      "Soft"
+      "Whisper",
+      "Drum"
     ],
-    "correct_answer": "Soft",
-    "audio_asset": "bell_soft",
+    "correct_answer": "Drum",
+    "audio_asset": "drum_compare",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -194,13 +194,13 @@
     "lesson_id": "L1-M01-03",
     "order": 3,
     "type": "loud_soft",
-    "question": "Was the sound loud or soft?",
+    "question": "Which sound is softer — the whisper or the drum?",
     "options": [
-      "Loud",
-      "Soft"
+      "Whisper",
+      "Drum"
     ],
-    "correct_answer": "Soft",
-    "audio_asset": "finger_soft",
+    "correct_answer": "Whisper",
+    "audio_asset": "drum_compare",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -214,8 +214,8 @@
       "Loud",
       "Soft"
     ],
-    "correct_answer": "Loud",
-    "audio_asset": "bell_loud",
+    "correct_answer": "Soft",
+    "audio_asset": "whisper",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -229,10 +229,11 @@
       "Loud",
       "Soft"
     ],
-    "correct_answer": "Soft",
-    "audio_asset": "clap_soft",
+    "correct_answer": "Loud",
+    "audio_asset": "drum",
     "skill": "auditory_discrimination",
-    "error_tag": "LOUD_SOFT_CONFUSION"
+    "error_tag": "LOUD_SOFT_CONFUSION",
+    "review_flag": "Identical audio+answer pair to practice item Q-M01-11/Q-M01-13 — of the sounds synthesized so far, only the drum reliably reads as a real, distinct 'loud' anchor (the old gain-scaled X_loud variants were the actual audibility problem this redesign replaced). Recommend a second genuinely loud synthesized sound (e.g. a trumpet/horn) to give this slot a fresh option."
   },
   {
     "assessment_id": "AS-M01-04-1",
@@ -440,7 +441,7 @@
       "Soft"
     ],
     "correct_answer": "Soft",
-    "audio_asset": "clap_soft",
+    "audio_asset": "violin",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },
@@ -455,7 +456,7 @@
       "Soft"
     ],
     "correct_answer": "Loud",
-    "audio_asset": "finger_loud",
+    "audio_asset": "drum",
     "skill": "auditory_discrimination",
     "error_tag": "LOUD_SOFT_CONFUSION"
   },

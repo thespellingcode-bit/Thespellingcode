@@ -252,6 +252,42 @@ const BASE_SOUND = {
   // Added a sharp noise "click" right at onset for a punchy attack — the
   // sweepTone body was fine but the soft attack made it read as vague.
   drum: (ctx, t0) => { filteredNoise(ctx, t0, 0.02, { type: "lowpass", freq: 900, Q: 1, gain: 0.24, attack: 0.001 }); sweepTone(ctx, t0, { from: 160, to: 50, dur: 0.35, type: "sine", gain: 0.42, filterFrom: 700, filterTo: 150 }); filteredNoise(ctx, t0, 0.05, { type: "lowpass", freq: 400, Q: 1, gain: 0.13, attack: 0.002 }); },
+  // Added as the "loud vs soft" pairing's real-instrument half (with
+  // drum) — user feedback: same-sound-scaled-by-gain (drum_loud vs
+  // drum_soft) kept reading as "almost inaudible" despite repeated gain
+  // passes, because a synthesized quiet copy of a loud sound is just a
+  // quiet, thin-sounding synth tone. A genuinely different, gently
+  // sustained tone (soft bowed-string character: sawtooth + vibrato +
+  // lowpass, slow attack/release, no percussive click) reads as
+  // "soft" by its own nature rather than by being turned down.
+  violin: (ctx, t0) => {
+    const dur = 0.7;
+    const osc = ctx.createOscillator();
+    const vibrato = ctx.createOscillator();
+    const vibratoGain = ctx.createGain();
+    osc.type = "sawtooth";
+    osc.frequency.setValueAtTime(440, t0);
+    vibrato.type = "sine";
+    vibrato.frequency.value = 5.5;
+    vibratoGain.gain.value = 6;
+    vibrato.connect(vibratoGain).connect(osc.frequency);
+    vibrato.start(t0);
+    vibrato.stop(t0 + dur + 0.02);
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.value = 2200;
+
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(0.11, t0 + 0.1);
+    g.gain.setValueAtTime(0.11, t0 + dur * 0.55);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+
+    osc.connect(filter).connect(g).connect(getMasterGain(ctx));
+    osc.start(t0);
+    osc.stop(t0 + dur + 0.02);
+  },
   whisper: (ctx, t0) => filteredNoise(ctx, t0, 0.5, { type: "bandpass", freq: 1800, Q: 0.7, gain: 0.075, attack: 0.05 }),
   // The weakest sound in the whole set before this — 30ms at gain 0.06
   // is nearly silent by construction. More than doubled the gain, added
@@ -344,6 +380,7 @@ const NAMED_SEQUENCES = {
   bell_loud: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.bell, 1.3),
   bell_soft: (ctx, t0) => playAttenuated(ctx, t0, BASE_SOUND.bell, 0.35),
   drum_compare: (ctx, t0) => { BASE_SOUND.whisper(ctx, t0); BASE_SOUND.drum(ctx, t0 + 0.6); },
+  violin_drum_compare: (ctx, t0) => { BASE_SOUND.violin(ctx, t0); BASE_SOUND.drum(ctx, t0 + 0.85); },
   clap_fast: (ctx, t0) => [0, 0.15, 0.3].forEach((d) => BASE_SOUND.clap(ctx, t0 + d)),
   clap_slow: (ctx, t0) => [0, 0.55, 1.1].forEach((d) => BASE_SOUND.clap(ctx, t0 + d)),
   tap_fast: (ctx, t0) => [0, 0.15, 0.3].forEach((d) => BASE_SOUND.tap(ctx, t0 + d)),
@@ -508,7 +545,7 @@ export function playAsset(name) {
 // matches reality instead of a fixed guess.
 export const ASSET_DURATION_MS = {
   clock: 1450, rain: 1350, car: 1050, drum_slow: 1450, clap_slow: 1350, tap_slow: 1350,
-  finger_slow: 1350, fast_compare: 2650, slow_compare: 2650, drum_compare: 950,
+  finger_slow: 1350, fast_compare: 2650, slow_compare: 2650, drum_compare: 950, violin: 750, violin_drum_compare: 1200,
   phone: 1000, wind: 1450, siren: 1050, thunder: 1250,
   bell_loud: 950, bell_soft: 950,
 };
@@ -532,7 +569,7 @@ export function assetDurationMs(assetName) {
 // pre-reader can't read the text, so every option needs to produce some
 // audio when tapped, never silence.
 const IDENTITY_SOUND_WORDS = new Set([
-  "bell", "clock", "car", "rain", "phone", "wind", "siren", "thunder", "drum", "whisper", "clap", "tap", "finger",
+  "bell", "clock", "car", "rain", "phone", "wind", "siren", "thunder", "drum", "whisper", "clap", "tap", "finger", "violin",
 ]);
 export function soundForOption(question, opt) {
   const key = opt.toLowerCase();
