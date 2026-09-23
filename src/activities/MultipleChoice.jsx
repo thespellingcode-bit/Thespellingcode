@@ -13,7 +13,7 @@ import { AudioPlayer } from "../components/AudioPlayer";
 import { LetterTile } from "../components/LetterTile";
 import { Feedback } from "../components/Feedback";
 import { Btn } from "../components/Btn";
-import { playSfx, playAsset, assetDurationMs, soundForOption } from "../services/audioService";
+import { playSfx, playAsset, assetDurationMs, soundForOption, spellOutWord } from "../services/audioService";
 import { shuffled } from "../services/shuffle";
 import { COMPARE_TYPES, PREVIEW_CONFIRM_TYPES } from "../services/questionTypes";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
@@ -99,9 +99,20 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
         {question.prompt ?? question.question}
       </p>
       {question.written_word ? (
-        <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, margin: 0, letterSpacing: 1 }}>
-          {question.written_word}
-        </p>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+          <button
+            onClick={() => spellOutWord(question.correct_answer)}
+            style={{
+              background: "none", border: "none", cursor: "pointer", padding: 0,
+              fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, letterSpacing: 1,
+            }}
+          >
+            {question.written_word}
+          </button>
+          <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12, color: T.textMute }}>
+            🔊 Tap the word to sound it out
+          </span>
+        </div>
       ) : question.letter_prompt ? (
         <LetterTile letter={question.letter_prompt} size={88} />
       ) : (

@@ -16,6 +16,7 @@ import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
 import { shuffled } from "../services/shuffle";
 import { isTtsEnabled, setTtsEnabled as persistTtsEnabled } from "../services/ttsPreference";
+import { spellOutWord } from "../services/audioService";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
 // Question types shaped like "does word X share [some phonetic property]
@@ -255,9 +256,18 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
       <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 20, color: T.ink, maxWidth: 420, margin: 0 }}>{heading}</p>
       {currentExample.written_word ? (
         <>
-          <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, margin: 0, letterSpacing: 1 }}>
+          <button
+            onClick={() => spellOutWord(currentExample.correct_answer)}
+            style={{
+              background: "none", border: "none", cursor: "pointer", padding: 0,
+              fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, letterSpacing: 1,
+            }}
+          >
             {currentExample.written_word}
-          </p>
+          </button>
+          <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12, color: T.textMute, marginTop: -8 }}>
+            🔊 Tap the word to sound it out
+          </span>
           {labelToIcon(currentExample.correct_answer) && <Illustration name={labelToIcon(currentExample.correct_answer)} size={88} />}
         </>
       ) : currentExample.letter_prompt ? (

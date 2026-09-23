@@ -471,6 +471,54 @@ export function speak(text) {
   }
 }
 
+// TTS-friendly approximations of each letter's SOUND, not its NAME — the
+// same problem flagged elsewhere in this file (bare "n" gets spoken as
+// "en") applies here, just solved differently: instead of staying silent,
+// feed the browser's TTS a short nonsense syllable close to the phoneme
+// ("nnn" instead of "en", "puh" instead of "pee"). Real recordings would
+// do this properly; until then this is a genuine decoding demonstration
+// instead of no audio at all, which is what "Read the Words" had before —
+// reported directly as "not helping in learning anything".
+const PHONEME_APPROX = {
+  a: "ah", b: "buh", c: "kuh", d: "duh", e: "eh", f: "fff", g: "guh", h: "huh",
+  i: "ih", j: "juh", k: "kuh", l: "lll", m: "mmm", n: "nnn", o: "aw", p: "puh",
+  q: "kwuh", r: "ruh", s: "sss", t: "tuh", u: "uh", v: "vvv", w: "wuh", x: "ks",
+  y: "yuh", z: "zzz",
+};
+
+// Sounds out a word letter-by-letter (each letter's phoneme approximation,
+// not its name) and then speaks the whole word blended — the actual
+// decode-then-blend sequence real phonics instruction uses, e.g. for
+// "nap": nnn - ah - puh - nap. Queues every utterance via the Web Speech
+// API's own queue (speak() without a cancel() in between plays them in
+// order) instead of speakWord's cancel-first path, which would just
+// interrupt each phoneme as the next one starts.
+export function spellOutWord(word) {
+  if (typeof window === "undefined" || !window.speechSynthesis) return false;
+  const synth = window.speechSynthesis;
+  try {
+    const letters = word.toLowerCase().replace(/[^a-z]/g, "").split("");
+    const makeUtter = (text, rate) => {
+      const u = new SpeechSynthesisUtterance(text);
+      u.rate = rate;
+      u.pitch = 1.15;
+      return u;
+    };
+    const queueAndSpeak = () => {
+      letters.forEach((l) => synth.speak(makeUtter(PHONEME_APPROX[l] || l, 0.7)));
+      synth.speak(makeUtter(word, 0.8));
+    };
+    synth.resume();
+    // Same Chrome cancel-then-speak race speakWord guards against — give
+    // the cancel a tick to actually settle before queuing the sequence.
+    synth.cancel();
+    setTimeout(queueAndSpeak, 50);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 // Real recordings — supplied by the user (car, thunder, wind) — replace
 // the synthesized placeholder for just these three sounds. Served from
 // public/audio/ (Vite serves public/ at the site root). Everything else
