@@ -527,6 +527,8 @@ const REAL_AUDIO_FILES = {
   car: "/audio/car.aac",
   thunder: "/audio/thunder.aac",
   wind: "/audio/wind.aac",
+  birds: "/audio/birds.wav",
+  drip: "/audio/drip.mp3",
 };
 const realAudioCache = {};
 function getRealAudio(key) {
@@ -543,8 +545,12 @@ function getRealAudio(key) {
   }
   return realAudioCache[key];
 }
+// Clips longer than a question needs get cut off after this many ms.
+const REAL_AUDIO_MAX_MS = { drip: 4000 };
 let activeRealAudio = null;
+let realAudioTimer = null;
 function stopRealAudio() {
+  clearTimeout(realAudioTimer);
   if (activeRealAudio) {
     try { activeRealAudio.pause(); activeRealAudio.currentTime = 0; } catch (e) {}
     activeRealAudio = null;
@@ -590,6 +596,9 @@ export function playAsset(name) {
     const el = getRealAudio(key);
     el.currentTime = 0;
     activeRealAudio = el;
+    if (REAL_AUDIO_MAX_MS[key]) {
+      realAudioTimer = setTimeout(stopRealAudio, REAL_AUDIO_MAX_MS[key]);
+    }
     const playPromise = el.play();
     // A real file can fail to play on some browser/codec combination even
     // though it loaded fine elsewhere — fall back to the synthesized
@@ -609,7 +618,7 @@ export const ASSET_DURATION_MS = {
   clock: 1450, rain: 1350, car: 1050, drum_slow: 1450, clap_slow: 1350, tap_slow: 1350,
   finger_slow: 1350, fast_compare: 2650, slow_compare: 2650, drum_compare: 950, violin: 750, violin_drum_compare: 1200,
   phone: 1000, wind: 1450, siren: 1050, thunder: 1250,
-  bell_loud: 950, bell_soft: 950,
+  bell_loud: 950, bell_soft: 950, birds: 4000, drip: 4000,
 };
 export function assetDurationMs(assetName) {
   if (assetName.startsWith("say:")) {
@@ -631,7 +640,7 @@ export function assetDurationMs(assetName) {
 // pre-reader can't read the text, so every option needs to produce some
 // audio when tapped, never silence.
 const IDENTITY_SOUND_WORDS = new Set([
-  "bell", "clock", "car", "rain", "phone", "wind", "siren", "thunder", "drum", "whisper", "clap", "tap", "finger", "violin",
+  "bell", "clock", "car", "rain", "phone", "wind", "siren", "thunder", "birds", "drip", "drum", "whisper", "clap", "tap", "finger", "violin",
 ]);
 export function soundForOption(question, opt) {
   const key = opt.toLowerCase();

@@ -17,6 +17,7 @@ const BG = {
   fan: "#E1F3E6", pan: "#F1E3D3", dog: "#F1E3D3", log: "#EAE2D3",
   hen: "#FDE9D2", pen: "#DCEBFF", cap: "#FFE7E0", map: "#E1F3E6", nap: "#E8E6F7",
   phone: "#E8E6F7", wind: "#DCEEF6", siren: "#FDEBE4", thunder: "#E4E1EA",
+  birds: "#E1F3E6", drip: "#DCEEF6",
   bag: "#DCEBFF", tag: "#FDE9D2", rag: "#E1F3E6", net: "#DCEEF6", jet: "#DCEBFF",
   vet: "#E1F3E6", fig: "#EAE2F7", wig: "#F1E3D3", mop: "#DCEEF6", pop: "#FDEBE4",
   top: "#FFF3D6",
@@ -289,6 +290,25 @@ const PICTURES = {
       <path d="M62 58l-10 18h8l-6 14 16-20h-8z" fill="#F2B705" stroke="#C99400" strokeWidth="2" strokeLinejoin="round" />
     </>
   ),
+  birds: (
+    <>
+      <path d="M22 84h76" stroke="#8A6A4A" strokeWidth="4" strokeLinecap="round" />
+      <ellipse cx="46" cy="66" rx="16" ry="13" fill="#F2B705" stroke="#C99400" strokeWidth="2.4" />
+      <circle cx="58" cy="54" r="9" fill="#F2B705" stroke="#C99400" strokeWidth="2.4" />
+      <path d="M66 53l8 3-8 3z" fill="#FF6F59" />
+      <circle cx="60" cy="52" r="1.8" fill="#1F2246" />
+      <path d="M34 66q8-8 16 0" fill="none" stroke="#C99400" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M78 36q4-4 8 0M86 46q4-4 8 0" fill="none" stroke="#3E9B5A" strokeWidth="2.6" strokeLinecap="round" />
+    </>
+  ),
+  drip: (
+    <>
+      <path d="M40 28h40v8a6 6 0 01-6 6H46a6 6 0 01-6-6z" fill="#B8BCC8" stroke="#7A7F91" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M60 46c-8 10-11 15-11 20a11 11 0 0022 0c0-5-3-10-11-20z" fill="#6FB8E8" stroke="#3E8CC4" strokeWidth="2.4" strokeLinejoin="round" />
+      <ellipse cx="60" cy="96" rx="22" ry="5" fill="#B7DDF3" stroke="#3E8CC4" strokeWidth="2" />
+      <path d="M55 62a5 5 0 013-4" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" opacity="0.8" />
+    </>
+  ),
   bag: (
     <>
       <path d="M34 48h52l-4 38a6 6 0 01-6 5H44a6 6 0 01-6-5z" fill="#6FA4FF" stroke="#2B5FCC" strokeWidth="2.4" strokeLinejoin="round" />
@@ -473,7 +493,23 @@ const PICTURES = {
   ),
 };
 
+// Pictures supplied as image files (Google Noto Emoji, public/img/words/)
+// rather than hand-drawn inline SVG.
+const IMAGE_BG = {
+  pig: "#FDE0E8", bug: "#E1F3E6", bed: "#E8E6F7", rat: "#EAE2D3", nut: "#F1E3D3", leg: "#FFE7E0",
+  cab: "#FFF3D6", fog: "#E4E1EA", bin: "#DCEEF6", tub: "#DCEBFF", hut: "#FDE9D2",
+};
+
 export function Illustration({ name = "pattern", size = 96 }) {
+  if (IMAGE_BG[name]) {
+    return (
+      <div style={{ width: size, height: size }}>
+        <Bubble bg={IMAGE_BG[name]}>
+          <image href={`/img/words/${name}.svg`} x="22" y="22" width="76" height="76" />
+        </Bubble>
+      </div>
+    );
+  }
   const key = PICTURES[name] ? name : "pattern";
   return (
     <div style={{ width: size, height: size }}>

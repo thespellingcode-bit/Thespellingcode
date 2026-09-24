@@ -81,13 +81,16 @@ const WORD_KEYS = [
   // icons above; "sip" and "pin" are new so this cluster's Read lesson has
   // enough illustrated words to draw from beyond the 4 that pre-existed.
   "sip", "pin",
+  // Picture-only additions (Noto Emoji SVG files in public/img/words/, see
+  // Illustration.jsx IMAGE_PICTURES) — widen the pool of readable CVC words.
+  "pig", "bug", "bed", "rat", "nut", "leg", "cab", "fog", "bin", "tub", "hut",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
 // the "say:" TTS prefix (see audioService.playAsset) before matching.
 export function iconForAsset(assetId = "") {
   const n = assetId.replace(/^say:/, "").toLowerCase();
-  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier", "phone", "wind", "siren", "thunder", ...WORD_KEYS]) {
+  for (const key of ["bell", "clock", "car", "rain", "drum", "whisper", "clap", "tap", "finger", "same", "different", "fast", "slow", "magnifier", "phone", "wind", "siren", "thunder", "birds", "drip", ...WORD_KEYS]) {
     if (n.includes(key)) return key;
   }
   return "pattern";
@@ -98,7 +101,7 @@ export function iconForAsset(assetId = "") {
 // picture makes sense (multi-sound sequence labels like "Clap-Tap-Clap").
 export function labelToIcon(label = "") {
   const n = label.toLowerCase();
-  const direct = { bell: "bell", clock: "clock", car: "car", rain: "rain", drum: "drum", whisper: "whisper", clap: "clap", tap: "tap", finger: "finger", same: "same", different: "different", fast: "fast", slow: "slow", loud: "loud", soft: "soft", phone: "phone", wind: "wind", siren: "siren", thunder: "thunder" };
+  const direct = { bell: "bell", clock: "clock", car: "car", rain: "rain", drum: "drum", whisper: "whisper", clap: "clap", tap: "tap", finger: "finger", same: "same", different: "different", fast: "fast", slow: "slow", loud: "loud", soft: "soft", phone: "phone", wind: "wind", siren: "siren", thunder: "thunder", birds: "birds", drip: "drip" };
   for (const key in direct) if (n.includes(key)) return direct[key];
   for (const key of WORD_KEYS) if (n.includes(key)) return key;
   return null;

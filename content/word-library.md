@@ -237,6 +237,26 @@ in `public/audio/`), they'd slot in as an enhancement.
   "The cat sat.") rather than a single word, with `correct_answer` set to
   the sentence's illustrated subject.
 
+## 9. Letter Cluster 3 (Module 5) — k, b, h, r, e
+
+- **Cumulative letters:** s a t p i n m d g o c + k b h r e (16). Words decodable here: hen, bat, hat, bag, bed, red, kid, keg, pen, net, rag, rat, rib, ram, hip, hog, beg.
+- **Read the Words** reuses the existing illustrated words (hen, bat, kid, pen, rag; hat, bag, net; plus cap and dog from earlier clusters) — no new artwork was needed. Distractor pictures may use letters not yet taught (log, bus, wig...), same as earlier clusters.
+- **C/K boundary:** "k" and "c" are never both offered as answer options in a letter-sound question, and a decoy tray never pairs "k" with a "c"-word (or vice versa).
+- **Letter Sound "e"** uses egg / end (short /e/); no r-controlled vowels or digraphs are used anywhere.
+
+## 9. Letter Cluster 3 (Module 5) — k, b, h, r, e
+
+- **Cumulative letters:** s a t p i n m d g o c + k b h r e (16). Words decodable at this point include hen, bat, hat, bag, bed, red, kid, keg, pen, net, rag, rat, rib, ram, hip, hog, beg.
+- **Read the Words** reuses existing illustrated words (hen, bat, kid, pen, rag; hat, bag, net; plus cap and dog from earlier clusters), so no new artwork was needed. Distractor pictures may use letters not yet taught (log, bus, wig...), same as earlier clusters.
+- **C/K boundary:** "k" and "c" are never both offered as answer options in a letter-sound question, and a decoy tray never pairs "k" with a "c"-word (or vice versa).
+- **Letter /e/** uses egg and end (short /e/); no r-controlled vowels or digraphs appear anywhere in this cluster.
+
+## 10. Letter Cluster 4 (Module 6) and Level 1 Review (Module 7)
+
+- **Module 6 — l, f, u:** completes the 19 Level 1 letters. Read the Words uses existing illustrated words only (fan, log, cup, sun, lip; fig, run, gum, bus, hen). Letter /u/ uses "up" and "us" (short /u/ starting words).
+- **Module 7 — Level 1 Review:** same five-lesson shape, but every lesson mixes words from all clusters. The final Level 1 Challenge has 11 mixed items (3 letter sound, 2 build, 3 read, 3 spell). Read-word answers are limited to the illustrated words in `WORD_KEYS` (Icon.jsx) and always use only letters taught by then.
+- **Picture bank:** 38 hand-drawn word pictures plus 11 image-file pictures from Google Noto Emoji (pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut), stored in `public/img/words/` with license and credits. Add a new picture-only word by dropping an SVG there, adding its key to `WORD_KEYS` (Icon.jsx) and `IMAGE_BG` (Illustration.jsx). "fog" is the least clear picture (a cloud) and may deserve a better image.
+
 ---
 
 *Maintained alongside the content JSON in `content/`. Update this file whenever a module adds new vocabulary — treat it as the first stop before writing new lesson content, not an afterthought.*
