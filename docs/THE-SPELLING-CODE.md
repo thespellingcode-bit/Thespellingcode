@@ -3,11 +3,12 @@
 > **Generated file — do not edit by hand.** Edit `docs/project-notes.md` for the written sections and the content JSON under `content/` for the curriculum, then run `npm run docs`. Everything from “Curriculum” down is built directly from the live content files, so it always matches the app.
 
 ## Contents
-1. Project notes (purpose, scope, architecture, decisions, workflow)
-2. Curriculum at a glance
-3. Curriculum in full (every module, lesson and question)
-4. Content library (pictures, audio, badges)
-5. Code map
+1. Project notes (purpose, roadmap, scope, architecture, decisions, workflow)
+2. Plan: Level 2 plan — Word Builder (draft for owner review)
+3. Curriculum at a glance
+4. Curriculum in full (every module, lesson and question)
+5. Content library (pictures, audio, badges)
+6. Code map
 
 ---
 
@@ -21,12 +22,25 @@
 - **Progress storage:** the child's browser (`localStorage`), one child profile, no accounts, no backend.
 - **Feedback loop:** the Parent Dashboard has “Share my progress” and “Send feedback” buttons that open WhatsApp to the owner with a pre-filled message. No server involved.
 
+### The six-level roadmap (from the Master Curriculum Blueprint v0.1)
+| Level | Name | Approx. age | Blueprint modules | State |
+|---|---|---|---|---|
+| 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
+| 2 | Word Builder | 5–6 | 8 | **Planning** — see the Level 2 plan below |
+| 3 | Pattern Detective | 6–7 | 10 | Not started |
+| 4 | Spelling Detective | 7–9 | 13 | Not started |
+| 5 | Word Builder Pro | 9–11 | 10 | Not started |
+| 6 | Word Master | 11–15 | 10 | Not started |
+
+The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
+
 ### Where the build stands
 | Piece | State |
 |---|---|
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
-| Modules 8–11 (sentences, tricky words, spiral review, master assessment) | Not built. Listed as inactive in `content/modules.json`. Build only when the owner asks. |
-| Level 2 and beyond, payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
+| Level 1 Modules 8–11 (sentences, tricky words, spiral review, master assessment) | Not built. Listed as inactive in `content/modules.json`. The Level 2 plan recommends moving sentences and tricky words into Level 2 rather than building them here. |
+| Level 2 | Plan drafted, awaiting the owner's answers to its open questions |
+| Level 3 and beyond, payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
 
@@ -90,6 +104,113 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Fixed per-example headers, missing pictures, decoy-letter demonstration, and the loud/soft audio (several rounds, ending with chart-based sounds).
 - Added tap-to-sound-out for written words.
 - Built Letter Clusters 1–4 and the Level 1 Review; added 11 word pictures from Noto Emoji; set up this master document and GitHub.
+
+---
+
+## 2. Level 2 plan — Word Builder (draft for owner review)
+
+*Status: planning only. Nothing in Level 2 is built. Source: the Master Curriculum Blueprint v0.1 (Level 2: ages about 5–6, eight modules) plus the Curriculum Revision Proposal (sight-word strand and syllable chunking). Decisions the owner needs to make are collected in “Open questions” at the end.*
+
+### Big goal
+“I can combine sounds and common spelling patterns to read and build more words.” Level 1 taught single letters and plain three-letter words. Level 2 takes a child from plain CVC words to real, everyday words: blends (frog), digraphs (ship), common endings (duck, ring), the first tricky words, and short sentences.
+
+### The learning path
+
+```mermaid
+flowchart TD
+    L1["Level 1 complete<br/>19 letters, CVC words<br/>(Modules 1-7, built)"]
+    G["Groundwork before Module 1<br/>level switcher, Level 2 unlock,<br/>digraph tiles, word-check test"]
+    M1["M1 CVC Review and Automaticity<br/>short vowels, word families, fast reading"]
+    M2["M2 Consonant Blends<br/>bl cl fl gl pl sl / br cr dr fr gr pr tr"]
+    M3["M3 Digraphs<br/>sh ch th wh (ph: see open questions)"]
+    M4["M4 Common Endings<br/>-ck -tch -dge -ng -nk"]
+    M5["M5 Qu and Common Patterns<br/>qu, s-blends, end blends"]
+    M6["M6 Tricky Words<br/>first sight words, which part is tricky"]
+    M7["M7 Sentence Spelling<br/>dictated phrases and sentences, punctuation"]
+    M8["M8 Review and Assessment<br/>mixed retrieval, unseen words, dictation"]
+    L3["Level 3 Pattern Detective<br/>(silent e, vowel teams)"]
+
+    L1 --> G --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> L3
+    M2 -. "words must use only taught patterns" .-> M3
+    M6 -. "tricky words appear in sentences" .-> M7
+```
+
+### Rules that keep it decodable
+1. **A word may appear in a module only if every pattern in it has already been taught.** For example, “duck” cannot appear before Module 4 teaches -ck, and “ship” cannot appear before Module 3 teaches sh. Wrong-answer picture options are exempt, as in Level 1.
+2. **Still no silent e, vowel teams or r-controlled vowels** — those are Level 3. This means the Revision Proposal's idea of putting long vowels in Level 2 is not followed; the Blueprint puts them in Level 3.
+3. **No choice between spellings.** Every item has one correct spelling that the module has just taught (the C/K/CK choice and its relatives belong to Level 4).
+4. **A “taught patterns” list, checked by a test.** Before building, add a machine-readable list of what each module teaches, and a test that fails if any word in a module uses something not yet taught. This is the main safeguard for scaling from 7 modules to over 40.
+
+### Module by module
+
+| # | Module | What is taught | Sample words | Lessons |
+|---|---|---|---|---|
+| 1 | CVC Review and Automaticity | Short vowels a e i o u; word families (-at, -an, -ig, -op, -ug, -et); reading quickly and smoothly | cat, pig, mop, bug, net | 5 |
+| 2 | Consonant Blends | L-blends bl cl fl gl pl sl; R-blends br cr dr fr gr pr tr | flag, clap, plan, slip, frog, drum, crab, trip | 6 |
+| 3 | Digraphs | sh, ch, th (soft and voiced), wh; at the start and end of words | ship, fish, chip, chin, thin, this, bath, when | 6 |
+| 4 | Common Endings | -ck, -tch, -dge, -ng, -nk | duck, sock, catch, badge, ring, song, pink, bank | 6 |
+| 5 | Qu and Common Patterns | qu; s-blends (st sp sn sm sw sk); end blends (nd nt mp ft lt lk) | quit, quick, stop, snap, hand, jump, milk | 5 |
+| 6 | Tricky Words | About 30 common words that cannot be fully sounded out, in small groups; which part is tricky; memory cues | the, said, was, you, they, are, have, one | 5 |
+| 7 | Sentence Spelling | Dictated phrases and short sentences; capital letter, full stop, question mark | The frog can jump. | 5 |
+| 8 | Review and Assessment | Mixed retrieval, unfamiliar decodable words, dictation; optional “clap the parts” syllable lesson | compound words such as sunset, catnap | 5 |
+
+**Total: about 43 lessons and about 430 questions** (roughly 5 practice and 5 assessment items per lesson, the same density as Level 1).
+
+### Lesson shape
+Each module follows the Level 1 pattern so the app needs little new code: Meet the new pattern (hear it, see it) → Blend and Build → Read the Words → Spell the Words → Challenge. Module-specific variations:
+- **M1:** adds a fast-reading round. It should feel like beating your own best, not a countdown clock.
+- **M3:** adds a sorting lesson (sh or ch? th or wh?).
+- **M6:** each lesson shows a word with the tricky letters highlighted and a memory cue, then read it and spell it.
+- **M7:** builds sentences from word tiles, then dictation, then “fix the sentence” (add the capital letter and the full stop).
+
+### Words and pictures
+- Level 2 needs roughly **70 new picture words** (for example flag, plug, sled, crab, drum, frog, ship, fish, chip, chin, duck, sock, king, ring, bank). The current library has about 49.
+- Picture sourcing follows the standing rule: take freely licensed pictures from the internet when short. First choice Google Noto Emoji (already used), then Twemoji (credit required); keep licenses and credits beside the files. Some words have no good emoji (for example “blob”, “glum”) and will be drawn as inline SVG or left as write/build-only words.
+- Words used in Read the Words need a picture; Build and Spell words do not.
+
+### Audio
+- Words and sentences use the browser's speech voice, as in Level 1.
+- New sounds to teach: bl, cl, fl and so on as blended sounds; sh, ch, th, wh and ng as single sounds. The browser voice pronounces these poorly in isolation. Approximations (for example “shh”, “ch”) will be added to the sound-out feature, but **recorded voice for every phoneme is the biggest quality upgrade available** and is worth considering before launching Level 2.
+
+### What has to be built in the app
+| Needed | Why | Size |
+|---|---|---|
+| Level switcher and Level 2 unlock | The app has a single level today; lessons and progress need a level dimension | Medium |
+| Digraph and blend tiles (two or three letters on one tile) | Word building must treat “sh” as one tile | Medium |
+| Sentence builder (tap word tiles in order) and “fix the sentence” | Module 7 | Medium |
+| Tricky-letter highlighting | Module 6 | Small |
+| Fast-reading round | Module 1 | Small |
+| Taught-patterns list and decodability test | Guard rail for content quality | Small |
+| Everything else (build, read, sort, letter-sound) | Already exists | None |
+
+### Build order
+1. **Groundwork:** level switcher, Level 2 unlock rule, tiles, taught-patterns list and test. Deploy.
+2. **M1, M2, M3, M4, M5** in order, each: content → tests → walk it live → regenerate this document → commit → deploy.
+3. **M6 and M7** (need the new components).
+4. **M8** and a full Level 2 walkthrough.
+
+Each module ends with your review before the next begins, as with Level 1.
+
+### Overlap with Level 1 to resolve
+The app currently lists Level 1 Modules 8–11 as future work: **My First Sentences**, **Tricky Words**, Spelling Detective Review and Level 1 Master Assessment. The Blueprint places tricky words and sentence spelling in **Level 2 (Modules 6 and 7)** and ends Level 1 with a single review. Recommendation: retire Level 1 Modules 8–10, keep only the Level 1 Master Assessment, and build sentences and tricky words once, in Level 2.
+
+### Open questions for the owner
+1. **Scope:** keep the Blueprint's eight modules (recommended), or follow the Revision Proposal that adds long vowels to Level 2?
+2. **“ph”:** the Blueprint teaches ph in Level 2 Module 3 and again in Level 4 (F / FF / PH). Almost all ph words are not plain decodable words. Recommend leaving ph to Level 4.
+3. **Doubled endings (off, bell, miss):** the Level 1 boundaries put F/FF, L/LL, S/SS in later levels, yet everyday words like “will”, “miss”, “off” appear constantly. Teach them lightly in Module 4, or keep them out until Level 4?
+4. **More blends:** the Blueprint lists only L- and R-blends. s-blends (stop, snap) and end blends (hand, jump) are needed for common words. Add them in Module 5 as proposed?
+5. **Tricky-word list:** anchor on Dolch, Fry, or a custom list? Recommend starting from the Dolch pre-primer and primer lists, trimmed to words that appear in our sentences.
+6. **Retire Level 1 Modules 8–10** as described above?
+7. **Syllable chunking:** include the optional “clap the parts” lesson in Module 8, as the Revision Proposal suggests?
+8. **Skipping ahead:** a confident 6- or 7-year-old should not have to redo all of Level 1. Add a short placement check, or rely on “unlock all” in the Parent Dashboard?
+9. **Free or paid:** Level 1 has Module 1 free and Module 2 unlockable free at 85%. What should Level 2's access rule be?
+10. **Voice:** stay with the browser voice, or record a voice for letter and blend sounds first?
+
+### Risks
+- **Word supply:** many blend and ending words have no clear picture. Mitigation: Build and Spell lessons do not need pictures; Read lessons use only pictureable words.
+- **Speech quality** for blends and digraphs (see Audio).
+- **Scale:** over 400 items by hand invites mistakes. Mitigation: the taught-patterns test and the generated master document.
+- **Age fit:** Level 2 is designed for about 5–6-year-olds; older children may find it easy, which is what the placement question is about.
 
 ---
 

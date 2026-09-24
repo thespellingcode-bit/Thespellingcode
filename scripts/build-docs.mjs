@@ -76,11 +76,15 @@ export function buildDoc() {
   w("> **Generated file — do not edit by hand.** Edit `docs/project-notes.md` for the written sections and the content JSON under `content/` for the curriculum, then run `npm run docs`. Everything from “Curriculum” down is built directly from the live content files, so it always matches the app.");
   w();
   w("## Contents");
-  w("1. Project notes (purpose, scope, architecture, decisions, workflow)");
-  w("2. Curriculum at a glance");
-  w("3. Curriculum in full (every module, lesson and question)");
-  w("4. Content library (pictures, audio, badges)");
-  w("5. Code map");
+  w("1. Project notes (purpose, roadmap, scope, architecture, decisions, workflow)");
+  const planDir = path.join(ROOT, "docs", "plans");
+  const plans = fs.existsSync(planDir) ? fs.readdirSync(planDir).filter((f) => f.endsWith(".md")).sort() : [];
+  plans.forEach((f, i) => w(`${i + 2}. Plan: ${read(`docs/plans/${f}`).match(/^## \d+\.\s*(.+)$/m)?.[1] ?? f}`));
+  let n = plans.length + 2;
+  w(`${n++}. Curriculum at a glance`);
+  w(`${n++}. Curriculum in full (every module, lesson and question)`);
+  w(`${n++}. Content library (pictures, audio, badges)`);
+  w(`${n++}. Code map`);
   w();
   w("---");
   w();
@@ -88,6 +92,12 @@ export function buildDoc() {
   w();
   w("---");
   w();
+  for (const f of plans) {
+    w(read(`docs/plans/${f}`).trim());
+    w();
+    w("---");
+    w();
+  }
 
   // ---- curriculum at a glance
   w("## Curriculum at a glance");

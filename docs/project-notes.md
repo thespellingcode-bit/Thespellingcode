@@ -8,12 +8,25 @@
 - **Progress storage:** the child's browser (`localStorage`), one child profile, no accounts, no backend.
 - **Feedback loop:** the Parent Dashboard has “Share my progress” and “Send feedback” buttons that open WhatsApp to the owner with a pre-filled message. No server involved.
 
+### The six-level roadmap (from the Master Curriculum Blueprint v0.1)
+| Level | Name | Approx. age | Blueprint modules | State |
+|---|---|---|---|---|
+| 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
+| 2 | Word Builder | 5–6 | 8 | **Planning** — see the Level 2 plan below |
+| 3 | Pattern Detective | 6–7 | 10 | Not started |
+| 4 | Spelling Detective | 7–9 | 13 | Not started |
+| 5 | Word Builder Pro | 9–11 | 10 | Not started |
+| 6 | Word Master | 11–15 | 10 | Not started |
+
+The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
+
 ### Where the build stands
 | Piece | State |
 |---|---|
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
-| Modules 8–11 (sentences, tricky words, spiral review, master assessment) | Not built. Listed as inactive in `content/modules.json`. Build only when the owner asks. |
-| Level 2 and beyond, payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
+| Level 1 Modules 8–11 (sentences, tricky words, spiral review, master assessment) | Not built. Listed as inactive in `content/modules.json`. The Level 2 plan recommends moving sentences and tricky words into Level 2 rather than building them here. |
+| Level 2 | Plan drafted, awaiting the owner's answers to its open questions |
+| Level 3 and beyond, payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
 
