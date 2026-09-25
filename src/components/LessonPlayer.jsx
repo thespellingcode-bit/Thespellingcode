@@ -1,5 +1,5 @@
 // src/components/LessonPlayer.jsx
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import { theme as T } from "../theme";
 import { Icon } from "./Icon";
 import { Btn } from "./Btn";
@@ -312,10 +312,11 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
   );
 }
 
-// onFinish receives { lessonId, mastery, ratio, attemptNumber, responses }
-// — the caller (LessonPage) is responsible for persisting progress via
-// progressService. LessonPlayer itself has no storage dependency.
-export function LessonPlayer({ lesson, onExit, onFinish, isModuleFinal = false, nextModuleName = null, unlockThreshold = 0.85, priorBestScore = 0 }) {
+// onRecord receives { lessonId, mastery, ratio, attemptNumber, responses }
+// the moment a challenge attempt is scored — pass or fail — so a score is
+// never lost by leaving the screen early. The caller persists it via
+// progressService; LessonPlayer itself has no storage dependency.
+export function LessonPlayer({ lesson, onExit, onRecord, isModuleFinal = false, nextModuleName = null, unlockThreshold = 0.85, priorBestScore = 0 }) {
   const stages = stagesFor(lesson);
   const [stageIdx, setStageIdx] = useState(0);
   const stage = stages[stageIdx];
@@ -380,6 +381,15 @@ export function LessonPlayer({ lesson, onExit, onFinish, isModuleFinal = false, 
   // whatever's already banked from a previous attempt, so a worse retry
   // can never look like it cost them progress.
   const bestEver = Math.max(priorBestScore, ratio);
+
+  const recordedAttempt = useRef(0);
+  useEffect(() => {
+    if (attemptComplete && recordedAttempt.current !== attemptNumber) {
+      recordedAttempt.current = attemptNumber;
+      onRecord({ lessonId: lesson.lesson_id, mastery: mastered, ratio, attemptNumber, responses });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [attemptComplete, attemptNumber]);
 
   const recordResponse = (question, result) => {
     setResponses((prev) => [...prev, {
@@ -522,10 +532,7 @@ export function LessonPlayer({ lesson, onExit, onFinish, isModuleFinal = false, 
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
             <Icon name="check" size={54} color="#2C7A3C" />
             <p style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 21, color: T.ink, margin: 0 }}>Lesson complete!</p>
-            <Btn
-              variant="gold" size="lg"
-              onClick={() => onFinish({ lessonId: lesson.lesson_id, mastery: mastered, ratio, attemptNumber, responses })}
-            >
+            <Btn variant="gold" size="lg" onClick={onExit}>
               Back to path
             </Btn>
           </div>

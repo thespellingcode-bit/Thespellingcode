@@ -30,7 +30,23 @@ function skillStatuses(lessons, state) {
   }));
 }
 
-const SKILL_LABELS = { auditory_discrimination: "Listening", auditory_memory: "Sound memory", rhyming: "Rhyming" };
+const SKILL_LABELS = {
+  auditory_discrimination: "Listening", auditory_memory: "Sound memory", rhyming: "Rhyming",
+  grapheme_phoneme_correspondence: "Letter sounds", word_building: "Building words", decoding: "Reading words", spelling: "Spelling",
+};
+
+function LessonScoreRow({ lesson, progress, first }) {
+  const tried = progress?.attempts > 0;
+  const mastered = !!progress?.mastery;
+  return (
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, padding: "10px 18px", borderTop: first ? "none" : `1px solid ${T.line}` }}>
+      <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 13.5, color: T.ink }}>{lesson.number}. {lesson.title}</span>
+      <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, fontWeight: 700, whiteSpace: "nowrap", color: mastered ? "#2C7A3C" : tried ? T.goldDeep : T.textMute }}>
+        {tried ? `${mastered ? "🟢" : "🟡"} ${pct(progress.bestScore || 0)} · ${progress.attempts} ${progress.attempts === 1 ? "try" : "tries"}` : "⚪ Not tried"}
+      </span>
+    </div>
+  );
+}
 
 // The pilot has no backend at all — nothing about a family's usage ever
 // leaves their own device. These two buttons are the deliberately
@@ -85,7 +101,7 @@ export function ParentDashboard({ profile, state, onToggleUnlockAll }) {
     <div style={{ padding: "28px 20px 60px", maxWidth: 640, margin: "0 auto" }}>
       <h1 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 22, color: T.ink, margin: "0 0 4px" }}>{profile.name}'s progress</h1>
       <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: "0 0 22px" }}>
-        Level 1 — Sound Explorer · {activeModules.map((m) => m.module_name).join(" + ")}
+        Level 1 — Sound Explorer · {activeModules.length} modules
       </p>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, marginBottom: 22 }}>
@@ -93,7 +109,23 @@ export function ParentDashboard({ profile, state, onToggleUnlockAll }) {
         <Card><div style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute }}>Overall progress</div><div style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 22, fontWeight: 700, color: T.ink }}>{pct(masteredCount / lessons.length)}</div></Card>
       </div>
 
-      <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 15, color: T.ink, marginBottom: 8 }}>Skills</h2>
+      <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 15, color: T.ink, marginBottom: 2 }}>Scores by lesson</h2>
+      <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12.5, color: T.textMute, margin: "0 0 8px" }}>
+        Best challenge score for each lesson. Mastery needs 80%.
+      </p>
+      {activeModules.map((m) => {
+        const ls = getLessonsByModule(m.module_id);
+        return (
+          <Card key={m.module_id} style={{ marginBottom: 12, padding: 0, overflow: "hidden" }}>
+            <div style={{ padding: "10px 18px", background: T.mist, fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 13.5, color: T.ink }}>
+              Module {m.module_id} — {m.module_name}
+            </div>
+            {ls.map((l, i) => <LessonScoreRow key={l.lesson_id} lesson={l} progress={state.progress[l.lesson_id]} first={i === 0} />)}
+          </Card>
+        );
+      })}
+
+      <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 15, color: T.ink, margin: "10px 0 8px" }}>Skills</h2>
       <Card style={{ marginBottom: 22, padding: 0, overflow: "hidden" }}>
         {skills.map((s, i) => (
           <div key={s.skill} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 18px", borderTop: i === 0 ? "none" : `1px solid ${T.line}` }}>
@@ -112,7 +144,7 @@ export function ParentDashboard({ profile, state, onToggleUnlockAll }) {
       <Card style={{ marginBottom: 22 }}>
         {lastAttempted ? (
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.inkSoft, margin: 0 }}>
-            {lastAttempted.title}: scored {pct(lastResult.bestScore || 0)} {lastResult.mastery ? "(mastered)" : "(not yet at mastery)"}
+            {lastAttempted.title}: best score {pct(lastResult.bestScore || 0)} {lastResult.mastery ? "(mastered)" : "(not yet at mastery)"}
           </p>
         ) : (
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: 0 }}>No lessons attempted yet.</p>

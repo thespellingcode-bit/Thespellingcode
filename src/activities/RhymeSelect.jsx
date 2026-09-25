@@ -7,7 +7,7 @@
 // pick-one-of-three format. Question shape differs from MultipleChoice's
 // too: `correct_answers` (array) instead of `correct_answer` (string) —
 // see content-integrity.test.mjs for how that's validated.
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { theme as T } from "../theme";
 import { Illustration } from "../components/Illustration";
 import { Icon } from "../components/Icon";
@@ -45,8 +45,10 @@ export function RhymeSelect({ question, onResult, allowRetry = true, ttsEnabled 
     });
   };
 
+  const submitting = useRef(false);
   const submit = () => {
-    if (picked.size === 0) return;
+    if (picked.size === 0 || submitting.current || status !== "idle") return;
+    submitting.current = true;
     setAttempts((a) => a + 1);
     const chosen = [...picked];
     const isCorrect = chosen.length === correctSet.size && chosen.every((p) => correctSet.has(p));
@@ -65,6 +67,7 @@ export function RhymeSelect({ question, onResult, allowRetry = true, ttsEnabled 
         setStatus("wrong");
         playSfx("incorrect");
         if (!allowRetry) setTimeout(() => onResult({ correct: false, attempts: attempts + 1 }), 950);
+        else submitting.current = false;
       }
     }, settleDelay);
   };

@@ -5,7 +5,7 @@
 // correct/wrong styling, retry vs scored (no-retry) modes. Nothing here
 // knows about "listen_choose" vs "same_different" etc — activity-specific
 // files just pass in the right options/copy.
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { theme as T } from "../theme";
 import { Icon, labelToIcon } from "../components/Icon";
 import { Illustration } from "../components/Illustration";
@@ -44,6 +44,11 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
 
   useAutoSpeak(question.prompt ?? question.question, ttsEnabled);
 
+  // A quick second tap on an answer must not count as a second answer —
+  // it would report the same question twice and skip the next one. Locked
+  // from the first tap until a wrong answer that allows a retry.
+  const locked = useRef(false);
+
   const resolve = (opt) => {
     const isCorrect = opt === correctAnswer;
     if (isCorrect) {
@@ -54,11 +59,13 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
       setStatus("wrong");
       playSfx("incorrect");
       if (!allowRetry) setTimeout(() => onResult({ correct: false, attempts: attempts + 1 }), 950);
+      else locked.current = false;
     }
   };
 
   const choose = (opt) => {
-    if (status === "correct") return;
+    if (status === "correct" || locked.current) return;
+    locked.current = true;
     setSelected(opt);
     setAttempts((a) => a + 1);
 
@@ -86,7 +93,8 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
   };
 
   const confirmChoice = () => {
-    if (!selected || status !== "idle") return;
+    if (!selected || status !== "idle" || locked.current) return;
+    locked.current = true;
     setAttempts((a) => a + 1);
     resolve(selected);
   };

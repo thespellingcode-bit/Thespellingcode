@@ -4,7 +4,7 @@ import { LessonPlayer } from "../components/LessonPlayer";
 import { getLesson, getLessonsByModule, getActiveModules } from "../services/contentService";
 import { MODULE_UNLOCK_THRESHOLD, FREE_UNLOCK_FROM_MODULE_ID } from "../services/progressService";
 
-export function Lesson({ lessonId, state, onExit, onFinish }) {
+export function Lesson({ lessonId, state, onExit, onRecord }) {
   const lesson = getLesson(lessonId);
   if (!lesson) {
     return <div style={{ padding: 40, textAlign: "center" }}>Lesson not found.</div>;
@@ -29,7 +29,7 @@ export function Lesson({ lessonId, state, onExit, onFinish }) {
     <LessonPlayer
       lesson={lesson}
       onExit={onExit}
-      onFinish={onFinish}
+      onRecord={onRecord}
       isModuleFinal={isModuleFinal}
       nextModuleName={nextModuleName}
       unlockThreshold={MODULE_UNLOCK_THRESHOLD}

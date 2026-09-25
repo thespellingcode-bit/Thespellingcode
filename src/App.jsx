@@ -35,7 +35,10 @@ export default function App() {
 
   const handleToggleUnlockAll = (unlockAll) => persist((prev) => ({ ...prev, settings: { ...prev.settings, unlockAll } }));
 
-  const handleFinishLesson = ({ lessonId, mastery, ratio, attemptNumber, responses }) => {
+  // Called the moment a challenge attempt is scored (pass or fail), while
+  // the child is still on the result screen — leaving the lesson never
+  // depends on it.
+  const handleRecordAttempt = ({ lessonId, mastery, ratio, attemptNumber, responses }) => {
     persist((prev) =>
       recordLessonAttempt(prev, {
         lessonId,
@@ -46,7 +49,6 @@ export default function App() {
         attemptNumber,
       })
     );
-    setActiveLessonId(null);
   };
 
   if (loading) {
@@ -67,7 +69,7 @@ export default function App() {
     <div style={wrapperStyle}>
       {!activeLessonId && <TopBar view={view} setView={setView} profile={state.profile} />}
       {activeLessonId ? (
-        <Lesson lessonId={activeLessonId} state={state} onExit={() => setActiveLessonId(null)} onFinish={handleFinishLesson} />
+        <Lesson lessonId={activeLessonId} state={state} onExit={() => setActiveLessonId(null)} onRecord={handleRecordAttempt} />
       ) : view === "child" ? (
         <ChildHome profile={state.profile} state={state} onOpenLesson={setActiveLessonId} />
       ) : (
