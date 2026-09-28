@@ -194,17 +194,17 @@ Each module ends with your review before the next begins, as with Level 1.
 ### Overlap with Level 1 to resolve
 The app currently lists Level 1 Modules 8–11 as future work: **My First Sentences**, **Tricky Words**, Spelling Detective Review and Level 1 Master Assessment. The Blueprint places tricky words and sentence spelling in **Level 2 (Modules 6 and 7)** and ends Level 1 with a single review. Recommendation: retire Level 1 Modules 8–10, keep only the Level 1 Master Assessment, and build sentences and tricky words once, in Level 2.
 
-### Open questions for the owner
-1. **Scope:** keep the Blueprint's eight modules (recommended), or follow the Revision Proposal that adds long vowels to Level 2?
-2. **“ph”:** the Blueprint teaches ph in Level 2 Module 3 and again in Level 4 (F / FF / PH). Almost all ph words are not plain decodable words. Recommend leaving ph to Level 4.
-3. **Doubled endings (off, bell, miss):** the Level 1 boundaries put F/FF, L/LL, S/SS in later levels, yet everyday words like “will”, “miss”, “off” appear constantly. Teach them lightly in Module 4, or keep them out until Level 4?
-4. **More blends:** the Blueprint lists only L- and R-blends. s-blends (stop, snap) and end blends (hand, jump) are needed for common words. Add them in Module 5 as proposed?
-5. **Tricky-word list:** anchor on Dolch, Fry, or a custom list? Recommend starting from the Dolch pre-primer and primer lists, trimmed to words that appear in our sentences.
-6. **Retire Level 1 Modules 8–10** as described above?
-7. **Syllable chunking:** include the optional “clap the parts” lesson in Module 8, as the Revision Proposal suggests?
-8. **Skipping ahead:** a confident 6- or 7-year-old should not have to redo all of Level 1. Add a short placement check, or rely on “unlock all” in the Parent Dashboard?
-9. **Free or paid:** Level 1 has Module 1 free and Module 2 unlockable free at 85%. What should Level 2's access rule be?
-10. **Voice:** stay with the browser voice, or record a voice for letter and blend sounds first?
+### Decisions (owner deferred to the developer's recommendation, 2026-09-28)
+1. **Scope:** the Blueprint's eight modules, not the Revision Proposal's — no long vowels in Level 2.
+2. **“ph”:** left to Level 4, not taught in Level 2.
+3. **Doubled endings (off, bell, miss, buzz):** taught receptively (reading only, no spelling choice) inside Module 1, the same way Level 1 handled “c” for /k/ — a child reads these common words correctly without ever being asked to choose ff/ll/ss/zz vs a single letter. The choice itself stays a Level 4 topic.
+4. **More blends:** s-blends and end blends are included in Module 5, as proposed.
+5. **Tricky-word list:** Dolch pre-primer and primer lists, trimmed to words that fit our sentences.
+6. **Level 1 Modules 8–10 are retired.** Only the Level 1 Master Assessment (renumbered Module 8) remains as future work; sentences and tricky words are taught once, here in Level 2.
+7. **Syllable chunking:** included as Module 8's optional “clap the parts” lesson.
+8. **Skipping ahead:** no new placement test for now — the existing “unlock all” toggle in the Parent Dashboard covers it. A real placement check can be designed later if needed.
+9. **Access rule:** Level 2 unlocks only once every active Level 1 module is fully mastered. No score-based free shortcut is added here — that mechanic stays specific to the Level 1 Module 1 → 2 boundary, per the owner's original instruction not to generalise it.
+10. **Voice:** stays with the browser's speech voice for now. A recorded voice for letters, blends and digraphs is flagged as a future upgrade, not a blocker.
 
 ### Risks
 - **Word supply:** many blend and ending words have no clear picture. Mitigation: Build and Spell lessons do not need pictures; Read lessons use only pictureable words.
@@ -216,7 +216,8 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 
 ## Curriculum at a glance
 
-- **Level 1** — Sound Explorer — Listening → phonemic awareness → phonics → CVC reading → CVC spelling → simple sentences.
+- **Level 1** — Sound Explorer — Listening → phonemic awareness → letter sounds → CVC reading → CVC spelling.
+- **Level 2** — Word Builder — Consonant blends, digraphs, common endings, first tricky words, and short dictated sentences.
 
 | Module | Name | Status | Lessons | Practice items | Assessment items |
 |---|---|---|---|---|---|
@@ -227,10 +228,15 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 5 | Letter Cluster 3: k b h r e | **Live** | 5 | 20 | 28 |
 | 6 | Letter Cluster 4: l f u | **Live** | 5 | 20 | 28 |
 | 7 | Level 1 Review | **Live** | 5 | 20 | 31 |
-| 8 | My First Sentences | Not built | 0 | 0 | 0 |
-| 9 | Tricky Words | Not built | 0 | 0 | 0 |
-| 10 | Spelling Detective Review | Not built | 0 | 0 | 0 |
-| 11 | Level 1 Master Assessment | Not built | 0 | 0 | 0 |
+| 8 | Level 1 Master Assessment | Not built | 0 | 0 | 0 |
+| 9 | CVC Review & Automaticity | **Live** | 5 | 22 | 27 |
+| 10 | Consonant Blends | Not built | 0 | 0 | 0 |
+| 11 | Digraphs | Not built | 0 | 0 | 0 |
+| 12 | Common Endings | Not built | 0 | 0 | 0 |
+| 13 | Qu & Common Patterns | Not built | 0 | 0 | 0 |
+| 14 | Tricky Words | Not built | 0 | 0 | 0 |
+| 15 | Sentence Spelling | Not built | 0 | 0 | 0 |
+| 16 | Review & Assessment | Not built | 0 | 0 | 0 |
 
 ## Curriculum in full
 
@@ -1345,12 +1351,158 @@ Read it as: what the child hears or sees → what they choose or build → the c
 
 **Words used in this module:** bed, bin, bug, bus, cat, cot, cup, dog, dot, egg, fog, fun, ham, hat, hen, hug, hut, kid, kit, leg, lip, map, mud, mug, nap, nut, ox, pan, pig, pin, rat, rub, sip, sit, sun, tag
 
+### Module 9 — CVC Review & Automaticity
+
+*Goal:* Read and build core CVC words quickly and confidently before learning new patterns.
+
+#### Lesson 1: Word Families Warm-Up (`L2-M09-01`)
+
+- **Objective:** Read familiar CVC words quickly across several word families.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome to Level 2! Let's warm up with words you already know.
+- **Narration (teach):** Look at the written word, then find the matching picture.
+- **Narration (model):** Read. Cat. Find the picture that matches!
+- **Narration (transition):** Now you try! Read the word, then choose its picture.
+- **Narration (close):** Great reading! Those words are yours for good now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M09-01 | read “cat” → picture \| options cat, hen, bus \| answer **cat** |
+| Q-M09-02 | read “fan” → picture \| options fan, dog, sip \| answer **fan** |
+| Q-M09-03 | read “pig” → picture \| options pig, top, vet \| answer **pig** |
+| Q-M09-04 | read “mop” → picture \| options mop, net, rat \| answer **mop** |
+| Q-M09-05 | read “bug” → picture \| options bug, cap, hut \| answer **bug** |
+| Q-M09-06 | read “net” → picture \| options net, kid, bag \| answer **net** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M09-01-1 | read “hat” → picture \| options hat, mop, lip \| answer **hat** |  |
+| AS-M09-01-2 | read “man” → picture \| options man, fig, bus \| answer **man** |  |
+| AS-M09-01-3 | read “fig” → picture \| options fig, hut, gum \| answer **fig** |  |
+| AS-M09-01-4 | read “top” → picture \| options top, hen, dad \| answer **top** |  |
+
+#### Lesson 2: Build It Fast (`L2-M09-02`)
+
+- **Objective:** Build CVC words quickly by tapping letter tiles in order.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's build words fast!
+- **Narration (teach):** Listen to the word, then tap each letter tile in order to build it.
+- **Narration (model):** Listen. Rug. Tap r, then u, then g to build it!
+- **Narration (transition):** Now you try! Listen, then build the word.
+- **Narration (close):** Speedy building! You know these letters really well.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M09-07 | hear “rug” → build \| tray g r u \| answer **rug** |
+| Q-M09-08 | hear “mug” → build \| tray g m u \| answer **mug** |
+| Q-M09-09 | hear “kit” → build \| tray t k i \| answer **kit** |
+| Q-M09-10 | hear “ram” → build \| tray m a r \| answer **ram** |
+| Q-M09-11 | hear “tin” → build \| tray n t i \| answer **tin** |
+| Q-M09-12 | hear “rub” → build \| tray b r u \| answer **rub** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M09-02-1 | hear “lit” → build \| tray t l i \| answer **lit** |  |
+| AS-M09-02-2 | hear “dim” → build \| tray m d i \| answer **dim** |  |
+| AS-M09-02-3 | hear “tap” → build \| tray p t a \| answer **tap** |  |
+| AS-M09-02-4 | hear “bad” → build \| tray d b a \| answer **bad** |  |
+| AS-M09-02-5 | hear “cot” → build \| tray t c o \| answer **cot** |  |
+| AS-M09-02-6 | hear “hop” → build \| tray p h o \| answer **hop** |  |
+
+#### Lesson 3: Spell It Fast (`L2-M09-03`)
+
+- **Objective:** Spell dictated CVC words, choosing the right letters from a mixed tray.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to spell some words!
+- **Narration (teach):** Listen to the word. The tray has an extra letter that doesn't belong — leave it out!
+- **Narration (model):** Listen. Sap. Pick s, a, p — and leave the extra letter behind!
+- **Narration (transition):** Now you try! Listen, then spell the word.
+- **Narration (close):** Great spelling! You picked every right letter.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M09-13 | hear “sap” → spell (1 extra tile) \| tray s a p n \| answer **sap** |
+| Q-M09-14 | hear “hid” → spell (1 extra tile) \| tray h i d t \| answer **hid** |
+| Q-M09-15 | hear “rob” → spell (1 extra tile) \| tray r o b g \| answer **rob** |
+| Q-M09-16 | hear “gum” → spell (1 extra tile) \| tray g u m e \| answer **gum** |
+| Q-M09-17 | hear “fit” → spell (1 extra tile) \| tray f i t l \| answer **fit** |
+| Q-M09-18 | hear “cab” → spell (1 extra tile) \| tray c a b o \| answer **cab** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M09-03-1 | hear “hug” → spell (1 extra tile) \| tray h u g r \| answer **hug** |  |
+| AS-M09-03-2 | hear “dip” → spell (1 extra tile) \| tray d i p o \| answer **dip** |  |
+| AS-M09-03-3 | hear “fog” → spell (1 extra tile) \| tray f o g u \| answer **fog** |  |
+| AS-M09-03-4 | hear “nab” → spell (1 extra tile) \| tray n a b s \| answer **nab** |  |
+| AS-M09-03-5 | hear “cop” → spell (1 extra tile) \| tray c o p a \| answer **cop** |  |
+| AS-M09-03-6 | hear “rat” → spell (1 extra tile) \| tray r a t e \| answer **rat** |  |
+
+#### Lesson 4: Doubled-Letter Endings (`L2-M09-04`)
+
+- **Objective:** Build common words ending in a doubled letter (ff, ll, ss), without choosing between spellings.
+- **Skill:** decoding · **Activity:** word_build · **Time:** 3–4 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Some words end with a doubled letter — two of the same letter together, still just one sound.
+- **Narration (teach):** Listen to the word, then tap each letter tile in order — including the doubled letter.
+- **Narration (model):** Listen. Bell. Tap b, then e, then l, then l to build it!
+- **Narration (transition):** Now you try! Listen, then build the word.
+- **Narration (close):** You built every doubled-letter word!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M09-19 | hear “off” → build \| tray o f f \| answer **off** |
+| Q-M09-20 | hear “bell” → build \| tray b e l l \| answer **bell** |
+| Q-M09-21 | hear “hill” → build \| tray h i l l \| answer **hill** |
+| Q-M09-22 | hear “doll” → build \| tray d o l l \| answer **doll** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M09-04-1 | hear “miss” → build \| tray m i s s \| answer **miss** |  |
+| AS-M09-04-2 | hear “fell” → build \| tray f e l l \| answer **fell** |  |
+| AS-M09-04-3 | hear “tell” → build \| tray t e l l \| answer **tell** |  |
+
+#### Lesson 5: Automaticity Challenge (`L2-M09-05`)
+
+- **Objective:** Demonstrate fast, confident reading, building and spelling of familiar CVC words and doubled-letter endings.
+- **Skill:** decoding · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** You are ready for the Automaticity Challenge.
+- **Narration (instruction):** Reading, building, spelling — any of it could show up. Go at your own best pace.
+- **Narration (close):** Challenge complete! You are ready for new patterns.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M09-05-1 | read “pop” → picture \| options pop, hen, sit \| answer **pop** |  |
+| AS-M09-05-2 | read “can” → picture \| options can, wig, bus \| answer **can** |  |
+| AS-M09-05-3 | hear “run” → build \| tray n r u \| answer **run** |  |
+| AS-M09-05-4 | hear “hut” → build \| tray t h u \| answer **hut** |  |
+| AS-M09-05-5 | hear “pit” → spell (1 extra tile) \| tray p i t d \| answer **pit** |  |
+| AS-M09-05-6 | hear “mad” → spell (1 extra tile) \| tray m a d n \| answer **mad** |  |
+| AS-M09-05-7 | hear “bell” → build \| tray b e l l \| answer **bell** |  |
+| AS-M09-05-8 | hear “hill” → build \| tray h i l l \| answer **hill** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (11, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (12, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 
@@ -1383,8 +1535,8 @@ Spoken words (26 listed in `content/media.json`, plus every `say:word` used in l
 | BADGE-03 | Letter Champion | Not built |
 | BADGE-04 | Word Builder | Not built |
 | BADGE-05 | Reading Star | Not built |
-| BADGE-06 | Sentence Star | Not built |
-| BADGE-07 | Level 1 Sound Explorer | Not built |
+| BADGE-06 | Level 1 Sound Explorer | Not built |
+| BADGE-07 | Sentence Star | Not built |
 
 ## Code map
 
@@ -1478,6 +1630,7 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `test/assessmentService.test.mjs` |  |
 | `test/content-integrity.test.mjs` | Validates structural guarantees of the content layer itself — the things that would silently break the app if a content edit introduced a typo'd lesson_id or a dangling error_tag. Run with: npm test |
 | `test/docs-up-to-date.test.mjs` |  |
+| `test/level2-decodability.test.mjs` | Level 2's own safeguard against the mistake Level 1 avoided by hand: a word must never require a pattern the child hasn't been taught yet. LETTERS_KNOWN never changes in Level 2 (Level 1 already taught all 19 single letters); GRAPHEMES_BY_MODULE lists the w... |
 | `test/progressService.test.mjs` |  |
 
 ### Scripts

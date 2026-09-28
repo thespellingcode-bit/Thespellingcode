@@ -19,3 +19,13 @@ export const COMPARE_TYPES = ["same_different", "loud_soft", "fast_slow", "segme
 // per-example heading, example dedup) so new word-comparison types only
 // need to be added here once.
 export const PREVIEW_CONFIRM_TYPES = ["rhyme_match", "beginning_sound_match", "ending_sound_match", "vowel_match", "letter_sound_match"];
+
+// A word_build item's tray tiles, in build order. Plain CVC content never
+// sets `answer_tiles` explicitly — every tile is one letter, so it falls
+// back to splitting correct_answer into characters (unchanged behavior).
+// Level 2 content sets it explicitly wherever a tile is a whole grapheme
+// bigger than one letter (e.g. "sh" as a single tile for "ship"), since
+// that can't be recovered by splitting the answer text itself.
+export function answerTilesFor(item) {
+  return item.answer_tiles || (item.correct_answer || "").split("");
+}

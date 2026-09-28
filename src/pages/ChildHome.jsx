@@ -5,7 +5,7 @@ import { Icon } from "../components/Icon";
 import { Btn } from "../components/Btn";
 import { Badge } from "../components/Badge";
 import { ProgressBar } from "../components/ProgressBar";
-import { getLessonsByModule, getActiveModules, getActiveBadges, getBadges } from "../services/contentService";
+import { getLessonsByModule, getActiveModules, getActiveBadges, getBadges, getLevel } from "../services/contentService";
 import { statusOfLesson, MODULE_UNLOCK_THRESHOLD, FREE_UNLOCK_FROM_MODULE_ID } from "../services/progressService";
 
 function pct(n) {
@@ -93,7 +93,7 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
         <div>
           <h1 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 25, color: T.ink, margin: 0 }}>Hi {profile.name}!</h1>
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: "4px 0 0" }}>
-            Level 1 · Sound Explorer
+            {[...new Set(activeModules.map((m) => m.level_id))].map((id) => `Level ${id} · ${getLevel(id)?.level_name || ""}`).join(" + ")}
           </p>
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 13, color: T.goldDeep, fontWeight: 600, margin: "4px 0 0" }}>
             {totalMastered} of {totalLessons} lessons mastered
@@ -105,23 +105,29 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
         {masteredCount === 0 ? "Start your first mission!" : moduleComplete ? "Replay a mission" : "Continue your mission"}
       </Btn>
 
-      <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 18, color: T.ink, marginBottom: 14 }}>Level 1 · Sound Explorer</h2>
       <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 34 }}>
         {activeModules.map((m, idx) => {
           const unlocked = moduleUnlocked(idx);
+          const isFirstOfItsLevel = idx === 0 || activeModules[idx - 1].level_id !== m.level_id;
+          const levelInfo = getLevel(m.level_id);
           const expanded = unlocked && m.module_id === expandedModuleId;
           const isGoalCardModule = !unlocked && m.module_id === nextLockedModule?.module_id;
           const moduleLessons = getLessonsByModule(m.module_id);
           const moduleMasteredCount = moduleLessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
 
           return (
-            <div
-              key={m.module_id}
-              style={{
-                border: `1.5px solid ${expanded ? T.gold : T.line}`, borderRadius: 18, overflow: "hidden",
-                background: "#fff",
-              }}
-            >
+            <React.Fragment key={m.module_id}>
+              {isFirstOfItsLevel && (
+                <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 18, color: T.ink, margin: idx === 0 ? "0 0 4px" : "20px 0 4px" }}>
+                  Level {m.level_id} · {levelInfo?.level_name || ""}
+                </h2>
+              )}
+              <div
+                style={{
+                  border: `1.5px solid ${expanded ? T.gold : T.line}`, borderRadius: 18, overflow: "hidden",
+                  background: "#fff",
+                }}
+              >
               <button
                 disabled={!unlocked}
                 onClick={() => unlocked && setExpandedModuleId((cur) => (cur === m.module_id ? null : m.module_id))}
@@ -204,7 +210,8 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
                   </div>
                 </div>
               )}
-            </div>
+              </div>
+            </React.Fragment>
           );
         })}
       </div>

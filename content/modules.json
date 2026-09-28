@@ -6,8 +6,13 @@
   { "module_id": 5, "level_id": 1, "module_name": "Letter Cluster 3: k b h r e", "module_goal": "Learn k, b, h, r, e and use every letter known so far to build, read, and spell more words.", "units": 5, "active": true },
   { "module_id": 6, "level_id": 1, "module_name": "Letter Cluster 4: l f u", "module_goal": "Learn l, f, u — the last Level 1 letters — and use the full letter set to build, read, and spell words.", "units": 5, "active": true },
   { "module_id": 7, "level_id": 1, "module_name": "Level 1 Review", "module_goal": "Cumulative mixed practice and challenge across every Level 1 letter and word learned.", "units": 5, "active": true },
-  { "module_id": 8, "level_id": 1, "module_name": "My First Sentences", "module_goal": "Apply reading and spelling in simple sentences.", "units": 7, "active": false },
-  { "module_id": 9, "level_id": 1, "module_name": "Tricky Words", "module_goal": "Introduce a small controlled set of early high-frequency words.", "units": 6, "active": false },
-  { "module_id": 10, "level_id": 1, "module_name": "Spelling Detective Review", "module_goal": "Spiral and strengthen all Level 1 skills.", "units": 6, "active": false },
-  { "module_id": 11, "level_id": 1, "module_name": "Level 1 Master Assessment", "module_goal": "Demonstrate independent Level 1 mastery.", "units": 8, "active": false }
+  { "module_id": 8, "level_id": 1, "module_name": "Level 1 Master Assessment", "module_goal": "Demonstrate independent Level 1 mastery across every module.", "units": 8, "active": false },
+  { "module_id": 9, "level_id": 2, "module_name": "CVC Review & Automaticity", "module_goal": "Read and build core CVC words quickly and confidently before learning new patterns.", "units": 5, "active": true },
+  { "module_id": 10, "level_id": 2, "module_name": "Consonant Blends", "module_goal": "Read and spell words starting with two-consonant blends (bl, cl, fl... br, cr, dr...).", "units": 6, "active": false },
+  { "module_id": 11, "level_id": 2, "module_name": "Digraphs", "module_goal": "Recognise sh, ch, th and wh as single sounds and read/spell words that use them.", "units": 6, "active": false },
+  { "module_id": 12, "level_id": 2, "module_name": "Common Endings", "module_goal": "Read and spell words ending in -ck, -tch, -dge, -ng and -nk.", "units": 6, "active": false },
+  { "module_id": 13, "level_id": 2, "module_name": "Qu & Common Patterns", "module_goal": "Read and spell words with qu and common s-blends/end-blends.", "units": 5, "active": false },
+  { "module_id": 14, "level_id": 2, "module_name": "Tricky Words", "module_goal": "Read a first set of common words that can't be fully sounded out.", "units": 5, "active": false },
+  { "module_id": 15, "level_id": 2, "module_name": "Sentence Spelling", "module_goal": "Read and write short dictated sentences using everything learned so far.", "units": 5, "active": false },
+  { "module_id": 16, "level_id": 2, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 2 mastery across every pattern learned.", "units": 5, "active": false }
 ]

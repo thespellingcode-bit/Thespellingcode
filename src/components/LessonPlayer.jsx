@@ -16,6 +16,7 @@ import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
 import { shuffled } from "../services/shuffle";
 import { isTtsEnabled, setTtsEnabled as persistTtsEnabled } from "../services/ttsPreference";
+import { answerTilesFor } from "../services/questionTypes";
 import { spellOutWord } from "../services/audioService";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
@@ -96,7 +97,7 @@ function modelCaptionFor(item) {
       return word ? `${word} starts with the letter ${answer}!` : `That's the letter ${answer}!`;
     }
     case "word_build":
-      return `That word is spelled ${answer.split("").join("-")}: ${answer}!`;
+      return `That word is spelled ${answerTilesFor(item).join("-")}: ${answer}!`;
     case "read_word":
       return `You read it! That word is ${answer}.`;
     case "listen_choose":
@@ -120,15 +121,18 @@ function modelWordsFor(item) {
   return [anchor, ...(answers || [])].filter(Boolean);
 }
 
-// Multiset difference: which letters in a word_build item's tray don't
-// end up used in the target word — i.e. the decoy tile(s) the model
+// Multiset difference: which tiles in a word_build item's tray don't end
+// up used to build the target word — i.e. the decoy tile(s) the model
 // stage should visibly call out, since the child never otherwise SEES
 // that concept (the demo previously only played audio and showed text,
 // never the actual tray — reported directly: "no extra letter" shown).
+// Compares against answerTilesFor, not correct_answer's raw characters —
+// a Level 2 item's tray tiles can be whole graphemes (e.g. "sh"), which a
+// per-character diff against the answer text would wrongly flag as decoys.
 function decoyLettersFor(item) {
   const counts = {};
   for (const l of item.letters || []) counts[l] = (counts[l] || 0) + 1;
-  for (const l of item.correct_answer || "") counts[l] = (counts[l] || 0) - 1;
+  for (const l of answerTilesFor(item)) counts[l] = (counts[l] || 0) - 1;
   const decoys = [];
   for (const [l, c] of Object.entries(counts)) for (let i = 0; i < c; i++) decoys.push(l);
   return decoys;
@@ -156,10 +160,11 @@ function modelHeadingFor(lesson, item) {
   }
   if (item.type === "word_build") {
     const word = capitalize(item.audio_asset?.replace(/^say:/, "") || item.correct_answer);
-    const decoyCount = (item.letters?.length || 0) - item.correct_answer.length;
+    const tiles = answerTilesFor(item);
+    const decoyCount = (item.letters?.length || 0) - tiles.length;
     return decoyCount > 0
-      ? `Listen. ${word}. Pick ${item.correct_answer.split("").join(", ")} — and leave the extra letter${decoyCount > 1 ? "s" : ""} behind!`
-      : `Listen. ${word}. Tap ${item.correct_answer.split("").join(", then ")} to build it!`;
+      ? `Listen. ${word}. Pick ${tiles.join(", ")} — and leave the extra letter${decoyCount > 1 ? "s" : ""} behind!`
+      : `Listen. ${word}. Tap ${tiles.join(", then ")} to build it!`;
   }
   if (item.type === "read_word" && item.written_word) {
     return `Read. ${capitalize(item.written_word.replace(/\.$/, ""))}. Find the picture that matches!`;
@@ -278,7 +283,7 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
         <>
           <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
           <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", justifyContent: "center" }}>
-            {currentExample.correct_answer.split("").map((letter, i) => (
+            {answerTilesFor(currentExample).map((letter, i) => (
               <LetterTile key={`correct-${i}`} letter={letter} size={44} state="correct" />
             ))}
             {decoyLettersFor(currentExample).length > 0 && (

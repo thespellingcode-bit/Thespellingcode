@@ -1,7 +1,7 @@
 // src/pages/ParentDashboard.jsx
 import React from "react";
 import { theme as T } from "../theme";
-import { getLessonsByModule, getActiveModules, getParentPractice, getRemediationByErrorTag } from "../services/contentService";
+import { getLessonsByModule, getActiveModules, getParentPractice, getRemediationByErrorTag, getLevel } from "../services/contentService";
 import { statusOfLesson, errorTagCounts } from "../services/progressService";
 
 function pct(n) {
@@ -67,10 +67,11 @@ function buildProgressMessage(profile, state, activeModules) {
   });
   const totalMastered = rows.reduce((sum, r) => sum + r.mastered, 0);
   const totalLessons = rows.reduce((sum, r) => sum + r.total, 0);
+  const levelLabel = [...new Set(activeModules.map((m) => m.level_id))].map((id) => `Level ${id}`).join(" + ");
   const lines = [
     `📊 ${profile.name}'s progress on The Spelling Code ${profile.avatar}`,
     "",
-    `Level 1 · Sound Explorer — ${totalMastered} of ${totalLessons} lessons mastered`,
+    `${levelLabel} — ${totalMastered} of ${totalLessons} lessons mastered`,
     "",
     ...rows.map((r) => `Module ${r.id} (${r.name}): ${r.mastered}/${r.total} mastered`),
   ];
@@ -101,7 +102,7 @@ export function ParentDashboard({ profile, state, onToggleUnlockAll }) {
     <div style={{ padding: "28px 20px 60px", maxWidth: 640, margin: "0 auto" }}>
       <h1 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 22, color: T.ink, margin: "0 0 4px" }}>{profile.name}'s progress</h1>
       <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: "0 0 22px" }}>
-        Level 1 — Sound Explorer · {activeModules.length} modules
+        {[...new Set(activeModules.map((m) => m.level_id))].map((id) => `Level ${id} · ${getLevel(id)?.level_name || ""}`).join(" + ")} · {activeModules.length} modules
       </p>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, marginBottom: 22 }}>

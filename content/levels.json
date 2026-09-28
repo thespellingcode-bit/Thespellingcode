@@ -2,7 +2,15 @@
   {
     "level_id": 1,
     "level_name": "Sound Explorer",
-    "description": "Listening \u2192 phonemic awareness \u2192 phonics \u2192 CVC reading \u2192 CVC spelling \u2192 simple sentences.",
-    "total_units": 101
+    "description": "Listening → phonemic awareness → letter sounds → CVC reading → CVC spelling.",
+    "approx_age": "4–6",
+    "total_units": 46
+  },
+  {
+    "level_id": 2,
+    "level_name": "Word Builder",
+    "description": "Consonant blends, digraphs, common endings, first tricky words, and short dictated sentences.",
+    "approx_age": "5–6",
+    "total_units": 43
   }
 ]

@@ -84,6 +84,8 @@ const WORD_KEYS = [
   // Picture-only additions (Noto Emoji SVG files in public/img/words/, see
   // Illustration.jsx IMAGE_PICTURES) — widen the pool of readable CVC words.
   "pig", "bug", "bed", "rat", "nut", "leg", "cab", "fog", "bin", "tub", "hut",
+  // Level 2 Module 9 (CVC Review) — rounds out the -ug word family.
+  "jug",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

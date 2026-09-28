@@ -135,7 +135,11 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
           else if (isSelected && status === "wrong") { bg = "#FDEDEB"; border = T.coral; color = T.coralDeep; iconBg = "#FBD9D2"; }
           else if (status === "wrong" && !allowRetry && isCorrectOpt) { bg = "#EAF7EE"; border = "#5CB86B"; color = "#2C7A3C"; iconBg = "#D5EEDB"; }
           else if (isSelected && isPreviewConfirm && status === "idle") { bg = T.mist; border = T.gold; color = T.ink; iconBg = "#FFF4D6"; }
-          const isLetterOption = opt.length === 1;
+          // letter_sound_match's options are always a bare grapheme (a
+          // single letter, or — from Level 2 on — a digraph like "sh"),
+          // never a real word, so this type always renders as tiles
+          // regardless of how many characters the grapheme has.
+          const isLetterOption = opt.length === 1 || question.type === "letter_sound_match";
           const optIcon = !isLetterOption && labelToIcon(opt);
           const bigPicture = !isCompareType && optIcon;
           // A letter tile already IS the answer, visually — showing the

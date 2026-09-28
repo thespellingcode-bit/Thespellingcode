@@ -85,17 +85,17 @@ Each module ends with your review before the next begins, as with Level 1.
 ### Overlap with Level 1 to resolve
 The app currently lists Level 1 Modules 8–11 as future work: **My First Sentences**, **Tricky Words**, Spelling Detective Review and Level 1 Master Assessment. The Blueprint places tricky words and sentence spelling in **Level 2 (Modules 6 and 7)** and ends Level 1 with a single review. Recommendation: retire Level 1 Modules 8–10, keep only the Level 1 Master Assessment, and build sentences and tricky words once, in Level 2.
 
-### Open questions for the owner
-1. **Scope:** keep the Blueprint's eight modules (recommended), or follow the Revision Proposal that adds long vowels to Level 2?
-2. **“ph”:** the Blueprint teaches ph in Level 2 Module 3 and again in Level 4 (F / FF / PH). Almost all ph words are not plain decodable words. Recommend leaving ph to Level 4.
-3. **Doubled endings (off, bell, miss):** the Level 1 boundaries put F/FF, L/LL, S/SS in later levels, yet everyday words like “will”, “miss”, “off” appear constantly. Teach them lightly in Module 4, or keep them out until Level 4?
-4. **More blends:** the Blueprint lists only L- and R-blends. s-blends (stop, snap) and end blends (hand, jump) are needed for common words. Add them in Module 5 as proposed?
-5. **Tricky-word list:** anchor on Dolch, Fry, or a custom list? Recommend starting from the Dolch pre-primer and primer lists, trimmed to words that appear in our sentences.
-6. **Retire Level 1 Modules 8–10** as described above?
-7. **Syllable chunking:** include the optional “clap the parts” lesson in Module 8, as the Revision Proposal suggests?
-8. **Skipping ahead:** a confident 6- or 7-year-old should not have to redo all of Level 1. Add a short placement check, or rely on “unlock all” in the Parent Dashboard?
-9. **Free or paid:** Level 1 has Module 1 free and Module 2 unlockable free at 85%. What should Level 2's access rule be?
-10. **Voice:** stay with the browser voice, or record a voice for letter and blend sounds first?
+### Decisions (owner deferred to the developer's recommendation, 2026-09-28)
+1. **Scope:** the Blueprint's eight modules, not the Revision Proposal's — no long vowels in Level 2.
+2. **“ph”:** left to Level 4, not taught in Level 2.
+3. **Doubled endings (off, bell, miss, buzz):** taught receptively (reading only, no spelling choice) inside Module 1, the same way Level 1 handled “c” for /k/ — a child reads these common words correctly without ever being asked to choose ff/ll/ss/zz vs a single letter. The choice itself stays a Level 4 topic.
+4. **More blends:** s-blends and end blends are included in Module 5, as proposed.
+5. **Tricky-word list:** Dolch pre-primer and primer lists, trimmed to words that fit our sentences.
+6. **Level 1 Modules 8–10 are retired.** Only the Level 1 Master Assessment (renumbered Module 8) remains as future work; sentences and tricky words are taught once, here in Level 2.
+7. **Syllable chunking:** included as Module 8's optional “clap the parts” lesson.
+8. **Skipping ahead:** no new placement test for now — the existing “unlock all” toggle in the Parent Dashboard covers it. A real placement check can be designed later if needed.
+9. **Access rule:** Level 2 unlocks only once every active Level 1 module is fully mastered. No score-based free shortcut is added here — that mechanic stays specific to the Level 1 Module 1 → 2 boundary, per the owner's original instruction not to generalise it.
+10. **Voice:** stays with the browser's speech voice for now. A recorded voice for letters, blends and digraphs is flagged as a future upgrade, not a blocker.
 
 ### Risks
 - **Word supply:** many blend and ending words have no clear picture. Mitigation: Build and Spell lessons do not need pictures; Read lessons use only pictureable words.

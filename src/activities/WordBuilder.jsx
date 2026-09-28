@@ -16,6 +16,7 @@ import { Feedback } from "../components/Feedback";
 import { Btn } from "../components/Btn";
 import { playSfx } from "../services/audioService";
 import { shuffled } from "../services/shuffle";
+import { answerTilesFor } from "../services/questionTypes";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
 export function WordBuilder({ question, onResult, allowRetry = true, ttsEnabled = true }) {
@@ -26,7 +27,11 @@ export function WordBuilder({ question, onResult, allowRetry = true, ttsEnabled 
   // (e.g. "pop" needs two p-tiles) place and clear independently without
   // needing to look anything up by value.
   const [bank] = useState(() => shuffled(question.letters));
-  const [slots, setSlots] = useState(() => new Array(target.length).fill(null)); // holds a bank position, or null
+  // Number of tiles the child must place — normally one per character of
+  // the target word, but a Level 2 item whose tiles include a whole
+  // grapheme (e.g. "sh" as one tile for "ship") needs fewer slots than
+  // target.length, hence answerTilesFor rather than target.length itself.
+  const [slots, setSlots] = useState(() => new Array(answerTilesFor(question).length).fill(null)); // holds a bank position, or null
   const [status, setStatus] = useState("idle"); // idle | wrong | correct
   const [attempts, setAttempts] = useState(0);
 
