@@ -88,6 +88,10 @@ const WORD_KEYS = [
   "jug",
   // Level 2 Module 10 (Consonant Blends) — new blend-initial words.
   "flag", "crab", "frog", "drum", "plug",
+  // Level 2 Module 11 (Digraphs) — sh (initial and final) and th words.
+  // No clean ch/wh picture was found (candidates were ambiguous or relied
+  // on an untaught pattern); those two are covered by build/spell only.
+  "ship", "shell", "fish", "thumb",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

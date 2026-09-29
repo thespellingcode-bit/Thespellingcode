@@ -29,3 +29,16 @@ export const PREVIEW_CONFIRM_TYPES = ["rhyme_match", "beginning_sound_match", "e
 export function answerTilesFor(item) {
   return item.answer_tiles || (item.correct_answer || "").split("");
 }
+
+// A digraph (sh, ch, th, wh...) is two letters making ONE sound — the
+// opposite idea from a blend (fl, cr...), which is two letters keeping
+// their OWN two sounds said quickly together. Narration must not call a
+// digraph a "blend" or vice versa, so this is a real lookup, not just a
+// "more than one character" length check. Extend this set as later
+// modules teach more digraphs (e.g. ck, tch, dge, ng, nk).
+const DIGRAPHS = new Set(["sh", "ch", "th", "wh"]);
+export function graphemeKindFor(grapheme) {
+  if (DIGRAPHS.has(grapheme)) return "digraph";
+  if (grapheme.length > 1) return "blend";
+  return "letter";
+}

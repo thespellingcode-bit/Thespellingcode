@@ -16,7 +16,7 @@ import { scoreAssessment, isMastered } from "../services/assessmentService";
 import { pickRemediation } from "../services/remediationService";
 import { shuffled } from "../services/shuffle";
 import { isTtsEnabled, setTtsEnabled as persistTtsEnabled } from "../services/ttsPreference";
-import { answerTilesFor } from "../services/questionTypes";
+import { answerTilesFor, graphemeKindFor } from "../services/questionTypes";
 import { spellOutWord } from "../services/audioService";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
@@ -92,12 +92,14 @@ function modelCaptionFor(item) {
     case "segment_count":
       return `Listen — that word has ${answer} sounds!`;
     case "letter_sound_match": {
-      // A grapheme longer than one character is a blend/digraph, not a
-      // single letter — "starts with the letter fl" reads as a mistake.
-      const unit = answer.length > 1 ? "blend" : "letter";
+      const kind = graphemeKindFor(answer); // "letter" | "blend" | "digraph"
       if (item.letter_prompt) return `${item.letter_prompt} makes the sound at the start of ${answer}!`;
       const word = item.audio_asset?.replace(/^say:/, "");
-      return word ? `${word} starts with the ${unit} ${answer}!` : `That's the ${unit} ${answer}!`;
+      if (kind === "digraph") {
+        const pos = word && word.endsWith(answer) && !word.startsWith(answer) ? "end" : "start";
+        return word ? `${word} has the digraph ${answer} at the ${pos}!` : `That's the digraph ${answer}!`;
+      }
+      return word ? `${word} starts with the ${kind} ${answer}!` : `That's the ${kind} ${answer}!`;
     }
     case "word_build":
       return `That word is spelled ${answerTilesFor(item).join("-")}: ${answer}!`;
@@ -145,6 +147,13 @@ function capitalize(s) {
   return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 }
 
+// "letter" reads correctly when every tray tile is one character (all of
+// Level 1); once a tray can hold a whole grapheme like "sh" (Level 2
+// digraphs on), "tile" is the accurate word for what's being left out.
+function decoyNounFor(item) {
+  return (item.letters || []).every((t) => t.length === 1) ? "letter" : "tile";
+}
+
 // The model-stage heading text. Every lesson type here needs its own
 // PER-EXAMPLE heading, not the lesson's static narration.model line —
 // that line is only ever written once in content, so leaving it as the
@@ -159,15 +168,20 @@ function modelHeadingFor(lesson, item) {
   if (WORD_CARD_LESSON_TYPES.includes(lesson.activity_type) && item.prompt) return item.prompt;
   if (item.type === "letter_sound_match") {
     const word = item.audio_asset?.replace(/^say:/, "");
-    const unit = item.correct_answer.length > 1 ? "blend" : "letter";
-    return word ? `Listen. ${capitalize(word)} starts with the ${unit} ${item.correct_answer}.` : lesson.narration.model;
+    const kind = graphemeKindFor(item.correct_answer);
+    if (word && kind === "digraph") {
+      const pos = word.endsWith(item.correct_answer) && !word.startsWith(item.correct_answer) ? "end" : "start";
+      return `Listen. ${capitalize(word)} has the digraph ${item.correct_answer} at the ${pos}.`;
+    }
+    return word ? `Listen. ${capitalize(word)} starts with the ${kind} ${item.correct_answer}.` : lesson.narration.model;
   }
   if (item.type === "word_build") {
     const word = capitalize(item.audio_asset?.replace(/^say:/, "") || item.correct_answer);
     const tiles = answerTilesFor(item);
     const decoyCount = (item.letters?.length || 0) - tiles.length;
+    const noun = decoyNounFor(item);
     return decoyCount > 0
-      ? `Listen. ${word}. Pick ${tiles.join(", ")} — and leave the extra letter${decoyCount > 1 ? "s" : ""} behind!`
+      ? `Listen. ${word}. Pick ${tiles.join(", ")} — and leave the extra ${noun}${decoyCount > 1 ? "s" : ""} behind!`
       : `Listen. ${word}. Tap ${tiles.join(", then ")} to build it!`;
   }
   if (item.type === "read_word" && item.written_word) {
@@ -301,7 +315,7 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
           </div>
           {decoyLettersFor(currentExample).length > 0 && (
             <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12, color: T.coralDeep, margin: 0 }}>
-              That extra letter doesn't belong in this word — leave it out!
+              That extra {decoyNounFor(currentExample)} doesn't belong in this word — leave it out!
             </p>
           )}
         </>

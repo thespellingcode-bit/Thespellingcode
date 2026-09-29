@@ -231,7 +231,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 8 | Level 1 Master Assessment | **Live** | 1 | 0 | 16 |
 | 9 | CVC Review & Automaticity | **Live** | 5 | 22 | 27 |
 | 10 | Consonant Blends | **Live** | 5 | 23 | 23 |
-| 11 | Digraphs | Not built | 0 | 0 | 0 |
+| 11 | Digraphs | **Live** | 5 | 22 | 22 |
 | 12 | Common Endings | Not built | 0 | 0 | 0 |
 | 13 | Qu & Common Patterns | Not built | 0 | 0 | 0 |
 | 14 | Tricky Words | Not built | 0 | 0 | 0 |
@@ -1673,12 +1673,153 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M10-05-7 | hear “clap” → spell (1 extra tile) \| tray c l a p g \| answer **clap** |  |
 | AS-M10-05-8 | hear “drip” → spell (1 extra tile) \| tray d r i p m \| answer **drip** |  |
 
+### Module 11 — Digraphs
+
+*Goal:* Recognise sh, ch, th and wh as single sounds and read/spell words that use them.
+
+#### Lesson 1: Meet the Sounds (`L2-M11-01`)
+
+- **Objective:** Recognise sh, ch, th and wh as single sounds, at the start or end of a word.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two letters, ONE sound — that's a digraph!
+- **Narration (teach):** Listen to a word, then find the two letters that make one sound together.
+- **Narration (model):** Listen. Ship has the digraph sh at the start.
+- **Narration (transition):** Now you try! Listen to the word, then choose its digraph.
+- **Narration (close):** Great listening! Two letters, one sound — you've got it.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M11-01 | hear “ship” → letter \| options sh ch th \| answer **sh** |
+| Q-M11-02 | hear “chin” → letter \| options ch sh wh \| answer **ch** |
+| Q-M11-03 | hear “thumb” → letter \| options th wh sh \| answer **th** |
+| Q-M11-04 | hear “whip” → letter \| options wh th ch \| answer **wh** |
+| Q-M11-05 | hear “fish” → letter \| options sh ch th \| answer **sh** |
+| Q-M11-06 | hear “moth” → letter \| options th ch sh \| answer **th** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M11-01-1 | hear “shop” → letter \| options sh ch wh \| answer **sh** |  |
+| AS-M11-01-2 | hear “chat” → letter \| options ch sh th \| answer **ch** |  |
+| AS-M11-01-3 | hear “math” → letter \| options th wh ch \| answer **th** |  |
+| AS-M11-01-4 | hear “when” → letter \| options wh sh th \| answer **wh** |  |
+
+#### Lesson 2: Sound & Build (`L2-M11-02`)
+
+- **Objective:** Build words containing sh, ch, th or wh, treating the digraph as a single tile.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's build some digraph words!
+- **Narration (teach):** Listen to the word, then tap each tile in order — the digraph is ONE tile.
+- **Narration (model):** Listen. Ship. Tap sh, then i, then p to build it!
+- **Narration (transition):** Now you try! Listen, then build the word.
+- **Narration (close):** Great building! You treated every digraph as one team.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M11-07 | hear “ship” → build \| tray sh i p \| answer **ship** |
+| Q-M11-08 | hear “chin” → build \| tray ch i n \| answer **chin** |
+| Q-M11-09 | hear “thumb” → build \| tray th u m b \| answer **thumb** |
+| Q-M11-10 | hear “whip” → build \| tray wh i p \| answer **whip** |
+| Q-M11-11 | hear “fish” → build \| tray f i sh \| answer **fish** |
+| Q-M11-12 | hear “moth” → build \| tray m o th \| answer **moth** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M11-02-1 | hear “shed” → build \| tray sh e d \| answer **shed** |  |
+| AS-M11-02-2 | hear “chop” → build \| tray ch o p \| answer **chop** |  |
+| AS-M11-02-3 | hear “path” → build \| tray p a th \| answer **path** |  |
+| AS-M11-02-4 | hear “when” → build \| tray wh e n \| answer **when** |  |
+
+#### Lesson 3: Read the Words (`L2-M11-03`)
+
+- **Objective:** Read digraph words and match them to pictures.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's read some digraph words!
+- **Narration (teach):** Look at the written word, then find the matching picture.
+- **Narration (model):** Read. Ship. Find the picture that matches!
+- **Narration (transition):** Now you try! Read the word, then choose its picture.
+- **Narration (close):** You read every digraph word!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M11-13 | read “ship” → picture \| options ship, hen, bus \| answer **ship** |
+| Q-M11-14 | read “shell” → picture \| options shell, cap, gum \| answer **shell** |
+| Q-M11-15 | read “fish” → picture \| options fish, net, rat \| answer **fish** |
+| Q-M11-16 | read “thumb” → picture \| options thumb, kid, bag \| answer **thumb** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M11-03-1 | read “ship” → picture \| options ship, mop, lip \| answer **ship** | Identical written_word+answer to practice item in this lesson. Only 4 illustrated digraph words exist right now (ship, shell, fish, thumb) — ch and wh have no clean picture available yet. Recommend real illustrations for a ch/wh word (e.g. chin, whip) to widen this pool. |
+| AS-M11-03-2 | read “fish” → picture \| options fish, hut, dad \| answer **fish** | Identical written_word+answer to practice item in this lesson. Same thin illustrated-digraph-word pool as AS-M11-03-1. |
+
+#### Lesson 4: Spell the Words (`L2-M11-04`)
+
+- **Objective:** Spell dictated digraph words, choosing the right tiles — including telling one digraph apart from another.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to spell some digraph words!
+- **Narration (teach):** Listen to the word. The tray has an extra tile that doesn't belong — leave it out!
+- **Narration (model):** Listen. Dish. Pick d, i, sh — and leave the extra tile behind!
+- **Narration (transition):** Now you try! Listen, then spell the word.
+- **Narration (close):** Great spelling! You picked the right digraph every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M11-17 | hear “dish” → spell (1 extra tile) \| tray d i sh ch \| answer **dish** |
+| Q-M11-18 | hear “chat” → spell (1 extra tile) \| tray ch a t sh \| answer **chat** |
+| Q-M11-19 | hear “math” → spell (1 extra tile) \| tray m a th wh \| answer **math** |
+| Q-M11-20 | hear “when” → spell (1 extra tile) \| tray wh e n th \| answer **when** |
+| Q-M11-21 | hear “shed” → spell (1 extra tile) \| tray sh e d p \| answer **shed** |
+| Q-M11-22 | hear “rich” → spell (1 extra tile) \| tray r i ch sh \| answer **rich** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M11-04-1 | hear “gush” → spell (1 extra tile) \| tray g u sh ch \| answer **gush** |  |
+| AS-M11-04-2 | hear “chop” → spell (1 extra tile) \| tray ch o p th \| answer **chop** |  |
+| AS-M11-04-3 | hear “bath” → spell (1 extra tile) \| tray b a th ch \| answer **bath** |  |
+| AS-M11-04-4 | hear “this” → spell (1 extra tile) \| tray th i s sh \| answer **this** |  |
+
+#### Lesson 5: Sound Challenge (`L2-M11-05`)
+
+- **Objective:** Demonstrate independent mastery of digraphs: recognising, building, reading, and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** You are ready for the Sound Challenge.
+- **Narration (instruction):** Digraphs, building, reading, spelling — any of it could show up. Take your time.
+- **Narration (close):** Challenge complete! You know your digraphs — start or end, it's still one sound.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M11-05-1 | hear “dish” → letter \| options sh ch th \| answer **sh** |  |
+| AS-M11-05-2 | hear “chip” → letter \| options ch sh wh \| answer **ch** |  |
+| AS-M11-05-3 | hear “fish” → build \| tray f i sh \| answer **fish** |  |
+| AS-M11-05-4 | hear “whip” → build \| tray wh i p \| answer **whip** |  |
+| AS-M11-05-5 | read “shell” → picture \| options shell, run, sad \| answer **shell** |  |
+| AS-M11-05-6 | read “thumb” → picture \| options thumb, pan, wig \| answer **thumb** |  |
+| AS-M11-05-7 | hear “chin” → spell (1 extra tile) \| tray ch i n sh \| answer **chin** |  |
+| AS-M11-05-8 | hear “moth” → spell (1 extra tile) \| tray m o th wh \| answer **moth** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (17, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (21, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 
