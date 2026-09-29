@@ -98,9 +98,13 @@ function modelCaptionFor(item) {
       if (kind === "ending") return word ? `${word} ends with ${answer}!` : `That's the ending ${answer}!`;
       if (kind === "qu") return word ? `${word} starts with qu!` : `That's qu!`;
       if (kind === "digraph") {
-        const pos = word && word.endsWith(answer) && !word.startsWith(answer) ? "end" : "start";
-        return word ? `${word} has the digraph ${answer} at the ${pos}!` : `That's the digraph ${answer}!`;
+        return word ? `${word} has the digraph ${answer} at the ${graphemePosition(word, answer)}!` : `That's the digraph ${answer}!`;
       }
+      // "letter" and "blend" are usually word-initial (every Level 1
+      // letter and every Module 10 blend was taught that way), but a
+      // single letter like "x" is almost always word-FINAL instead
+      // (fox, box) — never assume, check the actual word.
+      if (word && graphemePosition(word, answer) === "end") return `${word} ends with the ${kind} ${answer}!`;
       return word ? `${word} starts with the ${kind} ${answer}!` : `That's the ${kind} ${answer}!`;
     }
     case "word_build":
@@ -145,6 +149,15 @@ function decoyLettersFor(item) {
   return decoys;
 }
 
+// Whether a grapheme sits at the start or end of a word — used wherever
+// narration needs to say "starts with"/"ends with" instead of assuming.
+// Defaults to "start" for the (rare) case a grapheme is neither, or a
+// short word where prefix and suffix overlap (e.g. a 1-letter word).
+function graphemePosition(word, grapheme) {
+  if (word && word.endsWith(grapheme) && !word.startsWith(grapheme)) return "end";
+  return "start";
+}
+
 function capitalize(s) {
   return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 }
@@ -174,9 +187,9 @@ function modelHeadingFor(lesson, item) {
     if (word && kind === "ending") return `Listen. ${capitalize(word)} ends with ${item.correct_answer}.`;
     if (word && kind === "qu") return `Listen. ${capitalize(word)} starts with qu.`;
     if (word && kind === "digraph") {
-      const pos = word.endsWith(item.correct_answer) && !word.startsWith(item.correct_answer) ? "end" : "start";
-      return `Listen. ${capitalize(word)} has the digraph ${item.correct_answer} at the ${pos}.`;
+      return `Listen. ${capitalize(word)} has the digraph ${item.correct_answer} at the ${graphemePosition(word, item.correct_answer)}.`;
     }
+    if (word && graphemePosition(word, item.correct_answer) === "end") return `Listen. ${capitalize(word)} ends with the ${kind} ${item.correct_answer}.`;
     return word ? `Listen. ${capitalize(word)} starts with the ${kind} ${item.correct_answer}.` : lesson.narration.model;
   }
   if (item.type === "word_build") {

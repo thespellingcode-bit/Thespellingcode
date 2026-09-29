@@ -1,6 +1,6 @@
 ## 2. Level 2 plan — Word Builder (draft for owner review)
 
-*Status: planning only. Nothing in Level 2 is built. Source: the Master Curriculum Blueprint v0.1 (Level 2: ages about 5–6, eight modules) plus the Curriculum Revision Proposal (sight-word strand and syllable chunking). Decisions the owner needs to make are collected in “Open questions” at the end.*
+*Status (2026-09-29): Modules 1–5 of this plan are built and deployed as Level 2 Modules 9–13. A 6th module was added after Module 5 (Letter Cluster 5: j v w x y z, Level 2 Module 14) once building surfaced a real gap — Level 1's 19 letters never included these six, which was starting to block ordinary sight words and sentences. Modules 6–8 of this plan (now Level 2 Modules 15–17: Tricky Words, Sentence Spelling, Review & Assessment) are not yet built. Source: the Master Curriculum Blueprint v0.1 (Level 2: ages about 5–6, eight modules) plus the Curriculum Revision Proposal (sight-word strand and syllable chunking).*
 
 ### Big goal
 “I can combine sounds and common spelling patterns to read and build more words.” Level 1 taught single letters and plain three-letter words. Level 2 takes a child from plain CVC words to real, everyday words: blends (frog), digraphs (ship), common endings (duck, ring), the first tricky words, and short sentences.
@@ -10,20 +10,21 @@
 ```mermaid
 flowchart TD
     L1["Level 1 complete<br/>19 letters, CVC words<br/>(Modules 1-7, built)"]
-    G["Groundwork before Module 1<br/>level switcher, Level 2 unlock,<br/>digraph tiles, word-check test"]
-    M1["M1 CVC Review and Automaticity<br/>short vowels, word families, fast reading"]
-    M2["M2 Consonant Blends<br/>bl cl fl gl pl sl / br cr dr fr gr pr tr"]
-    M3["M3 Digraphs<br/>sh ch th wh (ph: see open questions)"]
-    M4["M4 Common Endings<br/>-ck -tch -dge -ng -nk"]
-    M5["M5 Qu and Common Patterns<br/>qu, s-blends, end blends"]
-    M6["M6 Tricky Words<br/>first sight words, which part is tricky"]
-    M7["M7 Sentence Spelling<br/>dictated phrases and sentences, punctuation"]
-    M8["M8 Review and Assessment<br/>mixed retrieval, unseen words, dictation"]
+    G["Groundwork, built<br/>multi-letter tiles,<br/>decodability test"]
+    M1["M9 CVC Review, built<br/>word families, doubled endings"]
+    M2["M10 Blends, built<br/>bl cl fl.. br cr dr.."]
+    M3["M11 Digraphs, built<br/>sh ch th wh"]
+    M4["M12 Endings, built<br/>-ck -tch -dge -ng -nk"]
+    M5["M13 Qu and Patterns, built<br/>qu, s-blends, end blends"]
+    M6["M14 Letter Cluster 5, next<br/>j v w x y z"]
+    M7["M15 Tricky Words<br/>first sight words"]
+    M8["M16 Sentence Spelling<br/>dictated sentences"]
+    M9["M17 Review and Assessment<br/>mixed retrieval, dictation"]
     L3["Level 3 Pattern Detective<br/>(silent e, vowel teams)"]
 
-    L1 --> G --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> L3
+    L1 --> G --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9 --> L3
     M2 -. "words must use only taught patterns" .-> M3
-    M6 -. "tricky words appear in sentences" .-> M7
+    M6 -. "unblocks was, will, you, jump, van..." .-> M7
 ```
 
 ### Rules that keep it decodable
@@ -34,18 +35,21 @@ flowchart TD
 
 ### Module by module
 
-| # | Module | What is taught | Sample words | Lessons |
-|---|---|---|---|---|
-| 1 | CVC Review and Automaticity | Short vowels a e i o u; word families (-at, -an, -ig, -op, -ug, -et); reading quickly and smoothly | cat, pig, mop, bug, net | 5 |
-| 2 | Consonant Blends | L-blends bl cl fl gl pl sl; R-blends br cr dr fr gr pr tr | flag, clap, plan, slip, frog, drum, crab, trip | 6 |
-| 3 | Digraphs | sh, ch, th (soft and voiced), wh; at the start and end of words | ship, fish, chip, chin, thin, this, bath, when | 6 |
-| 4 | Common Endings | -ck, -tch, -dge, -ng, -nk | duck, sock, catch, badge, ring, song, pink, bank | 6 |
-| 5 | Qu and Common Patterns | qu; s-blends (st sp sn sm sw sk); end blends (nd nt mp ft lt lk) | quit, quick, stop, snap, hand, jump, milk | 5 |
-| 6 | Tricky Words | About 30 common words that cannot be fully sounded out, in small groups; which part is tricky; memory cues | the, said, was, you, they, are, have, one | 5 |
-| 7 | Sentence Spelling | Dictated phrases and short sentences; capital letter, full stop, question mark | The frog can jump. | 5 |
-| 8 | Review and Assessment | Mixed retrieval, unfamiliar decodable words, dictation; optional “clap the parts” syllable lesson | compound words such as sunset, catnap | 5 |
+| Level 2 # | Module | What is taught | Sample words | Lessons | Status |
+|---|---|---|---|---|---|
+| 9 | CVC Review and Automaticity | Short vowels a e i o u; word families (-at, -an, -ig, -op, -ug, -et); doubled-letter endings (off, bell) taught receptively | cat, pig, mop, bug, net, bell | 5 | **Built** |
+| 10 | Consonant Blends | L-blends bl cl fl gl pl sl; R-blends br cr dr fr gr pr tr | flag, crab, frog, drum, plug | 5 | **Built** |
+| 11 | Digraphs | sh, ch, th, wh; at the start and end of words | ship, fish, thumb, chin, whip | 5 | **Built** |
+| 12 | Common Endings | -ck, -tch, -dge, -ng, -nk | duck, catch, bridge, ring, pink | 5 | **Built** |
+| 13 | Qu and Common Patterns | qu; s-blends (st sp sn sm sk); end blends (nd nt mp ft lt lk) | quit, quick, stop, snap, hand, tent, milk | 5 | **Built** |
+| 14 | Letter Cluster 5: j v w x y z | The six letters Level 1 and Modules 9–13 never taught, added once the gap started blocking ordinary words | jam, van, wet, fox, yes, zip, was, will | 5 | **Building next** |
+| 15 | Tricky Words | About 30 common words that cannot be fully sounded out, in small groups; which part is tricky; memory cues | the, said, was, you, they, are, have, one | 5 | Not built |
+| 16 | Sentence Spelling | Dictated phrases and short sentences; capital letter, full stop, question mark | The frog can jump. | 5 | Not built |
+| 17 | Review and Assessment | Mixed retrieval, unfamiliar decodable words, dictation; optional “clap the parts” syllable lesson | compound words such as sunset, catnap | 5 | Not built |
 
-**Total: about 43 lessons and about 430 questions** (roughly 5 practice and 5 assessment items per lesson, the same density as Level 1).
+**Revised total: about 45 lessons** (the extra letter-cluster module added 5 to the original ~43-lesson estimate), roughly 5 practice and 5 assessment items per lesson, the same density as Level 1.
+
+Once Module 14 is built, “was” and “will” move from Module 15's tricky-word list to being ordinary *decodable* words (every letter in them is now taught) — they can still appear in Module 15 as words worth extra practice, but they no longer need to be memorized as irregular.
 
 ### Lesson shape
 Each module follows the Level 1 pattern so the app needs little new code: Meet the new pattern (hear it, see it) → Blend and Build → Read the Words → Spell the Words → Challenge. Module-specific variations:
@@ -96,6 +100,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 8. **Skipping ahead:** no new placement test for now — the existing “unlock all” toggle in the Parent Dashboard covers it. A real placement check can be designed later if needed.
 9. **Access rule:** Level 2 unlocks only once every active Level 1 module is fully mastered. No score-based free shortcut is added here — that mechanic stays specific to the Level 1 Module 1 → 2 boundary, per the owner's original instruction not to generalise it.
 10. **Voice:** stays with the browser's speech voice for now. A recorded voice for letters, blends and digraphs is flagged as a future upgrade, not a blocker.
+11. **Missing letters (owner decision, 2026-09-29):** Level 1's 19 letters never included j, v, w, x, y, z — a gap only noticed while scoping Module 13. The owner chose to add a short module teaching them (Module 14, Letter Cluster 5) rather than continue avoiding them, since avoidance was already restricting Module 13's word choice and would have restricted Tricky Words and Sentence Spelling much more.
 
 ### Risks
 - **Word supply:** many blend and ending words have no clear picture. Mitigation: Build and Spell lessons do not need pictures; Read lessons use only pictureable words.

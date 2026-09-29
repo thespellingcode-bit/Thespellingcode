@@ -102,6 +102,12 @@ const WORD_KEYS = [
   "duck", "bridge", "ring",
   // Level 2 Module 13 (Qu & Common Patterns).
   "tent", "lamp", "milk",
+  // Level 2 Module 14 (Letter Cluster 5: j v w x y z). "jet", "vet" and
+  // "wig" were already illustrated (Level 1 could only use them as
+  // distractor pictures, since j/v/w weren't taught yet) — now valid
+  // targets too. No good "yak" or "zip" picture was found (the closest
+  // Noto icons were mislabeled or wrong), so y and z are build/spell-only.
+  "fox",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

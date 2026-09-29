@@ -2,13 +2,14 @@
 //
 // Level 2's own safeguard against the mistake Level 1 avoided by hand:
 // a word must never require a pattern the child hasn't been taught yet.
-// LETTERS_KNOWN never changes in Level 2 (Level 1 already taught all 19
-// single letters); GRAPHEMES_BY_MODULE lists the whole-grapheme tiles
-// (digraphs, endings...) each module ADDS on top of every earlier
-// module's graphemes. A word is decodable once every earlier-taught
-// grapheme is stripped out and everything left over is a known single
-// letter. Extend GRAPHEMES_BY_MODULE as each later module is built —
-// nothing else about this test should need to change.
+// LETTERS_BY_MODULE lists new SINGLE letters a module adds (Level 1 gave
+// every Level 2 module the same base 19 until Module 14, which finally
+// teaches j/v/w/x/y/z); GRAPHEMES_BY_MODULE lists the whole-grapheme
+// tiles (digraphs, endings...) each module ADDS. Both accumulate across
+// modules. A word is decodable once every earlier-taught grapheme is
+// stripped out and everything left over is a known single letter.
+// Extend either map as each later module is built — nothing else about
+// this test should need to change.
 import test from "node:test";
 import assert from "node:assert/strict";
 import modules from "../content/modules.json" with { type: "json" };
@@ -16,7 +17,12 @@ import lessons from "../content/lessons.json" with { type: "json" };
 import activities from "../content/activities.json" with { type: "json" };
 import assessments from "../content/assessments.json" with { type: "json" };
 
-const LETTERS_KNOWN = new Set("satpinmdgockbhrelfu".split(""));
+// module_id -> new single letters that module teaches, on top of every
+// letter already known from an earlier module.
+const LETTERS_BY_MODULE = {
+  9: "satpinmdgockbhrelfu".split(""), // Level 1's 19 letters, carried into Level 2 as the baseline
+  14: ["j", "v", "w", "x", "y", "z"], // Letter Cluster 5 — completes the alphabet (q is never taught alone, only as "qu")
+};
 
 // module_id -> new whole-grapheme tiles that module teaches, on top of
 // every grapheme already known from an earlier module.
@@ -45,6 +51,15 @@ function graphemesKnownThrough(moduleId) {
   return known;
 }
 
+function lettersKnownThrough(moduleId) {
+  const known = new Set();
+  for (const m of level2Modules) {
+    if (m.module_id > moduleId) break;
+    for (const l of LETTERS_BY_MODULE[m.module_id] || []) known.add(l);
+  }
+  return known;
+}
+
 // Doubled-letter endings (ff, ll, ss, zz) are taught receptively inside
 // Module 9 itself (see docs/plans/level-2.md decision #3) — a spelling
 // CHOICE between them and a single letter is Level 4 material, but simply
@@ -55,9 +70,10 @@ const ALWAYS_ALLOWED_DOUBLES = ["ff", "ll", "ss", "zz"];
 
 function isDecodable(word, moduleId) {
   const graphemes = [...graphemesKnownThrough(moduleId), ...ALWAYS_ALLOWED_DOUBLES].sort((a, b) => b.length - a.length);
+  const letters = lettersKnownThrough(moduleId);
   let rest = word.toLowerCase();
   for (const g of graphemes) rest = rest.split(g).join("");
-  return [...rest].every((ch) => LETTERS_KNOWN.has(ch));
+  return [...rest].every((ch) => letters.has(ch));
 }
 
 test("every Level 2 word only uses letters/patterns already taught by its own module", () => {

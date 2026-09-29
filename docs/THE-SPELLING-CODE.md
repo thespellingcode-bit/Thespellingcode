@@ -124,7 +124,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 
 ## 2. Level 2 plan — Word Builder (draft for owner review)
 
-*Status: planning only. Nothing in Level 2 is built. Source: the Master Curriculum Blueprint v0.1 (Level 2: ages about 5–6, eight modules) plus the Curriculum Revision Proposal (sight-word strand and syllable chunking). Decisions the owner needs to make are collected in “Open questions” at the end.*
+*Status (2026-09-29): Modules 1–5 of this plan are built and deployed as Level 2 Modules 9–13. A 6th module was added after Module 5 (Letter Cluster 5: j v w x y z, Level 2 Module 14) once building surfaced a real gap — Level 1's 19 letters never included these six, which was starting to block ordinary sight words and sentences. Modules 6–8 of this plan (now Level 2 Modules 15–17: Tricky Words, Sentence Spelling, Review & Assessment) are not yet built. Source: the Master Curriculum Blueprint v0.1 (Level 2: ages about 5–6, eight modules) plus the Curriculum Revision Proposal (sight-word strand and syllable chunking).*
 
 ### Big goal
 “I can combine sounds and common spelling patterns to read and build more words.” Level 1 taught single letters and plain three-letter words. Level 2 takes a child from plain CVC words to real, everyday words: blends (frog), digraphs (ship), common endings (duck, ring), the first tricky words, and short sentences.
@@ -134,20 +134,21 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 ```mermaid
 flowchart TD
     L1["Level 1 complete<br/>19 letters, CVC words<br/>(Modules 1-7, built)"]
-    G["Groundwork before Module 1<br/>level switcher, Level 2 unlock,<br/>digraph tiles, word-check test"]
-    M1["M1 CVC Review and Automaticity<br/>short vowels, word families, fast reading"]
-    M2["M2 Consonant Blends<br/>bl cl fl gl pl sl / br cr dr fr gr pr tr"]
-    M3["M3 Digraphs<br/>sh ch th wh (ph: see open questions)"]
-    M4["M4 Common Endings<br/>-ck -tch -dge -ng -nk"]
-    M5["M5 Qu and Common Patterns<br/>qu, s-blends, end blends"]
-    M6["M6 Tricky Words<br/>first sight words, which part is tricky"]
-    M7["M7 Sentence Spelling<br/>dictated phrases and sentences, punctuation"]
-    M8["M8 Review and Assessment<br/>mixed retrieval, unseen words, dictation"]
+    G["Groundwork, built<br/>multi-letter tiles,<br/>decodability test"]
+    M1["M9 CVC Review, built<br/>word families, doubled endings"]
+    M2["M10 Blends, built<br/>bl cl fl.. br cr dr.."]
+    M3["M11 Digraphs, built<br/>sh ch th wh"]
+    M4["M12 Endings, built<br/>-ck -tch -dge -ng -nk"]
+    M5["M13 Qu and Patterns, built<br/>qu, s-blends, end blends"]
+    M6["M14 Letter Cluster 5, next<br/>j v w x y z"]
+    M7["M15 Tricky Words<br/>first sight words"]
+    M8["M16 Sentence Spelling<br/>dictated sentences"]
+    M9["M17 Review and Assessment<br/>mixed retrieval, dictation"]
     L3["Level 3 Pattern Detective<br/>(silent e, vowel teams)"]
 
-    L1 --> G --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> L3
+    L1 --> G --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9 --> L3
     M2 -. "words must use only taught patterns" .-> M3
-    M6 -. "tricky words appear in sentences" .-> M7
+    M6 -. "unblocks was, will, you, jump, van..." .-> M7
 ```
 
 ### Rules that keep it decodable
@@ -158,18 +159,21 @@ flowchart TD
 
 ### Module by module
 
-| # | Module | What is taught | Sample words | Lessons |
-|---|---|---|---|---|
-| 1 | CVC Review and Automaticity | Short vowels a e i o u; word families (-at, -an, -ig, -op, -ug, -et); reading quickly and smoothly | cat, pig, mop, bug, net | 5 |
-| 2 | Consonant Blends | L-blends bl cl fl gl pl sl; R-blends br cr dr fr gr pr tr | flag, clap, plan, slip, frog, drum, crab, trip | 6 |
-| 3 | Digraphs | sh, ch, th (soft and voiced), wh; at the start and end of words | ship, fish, chip, chin, thin, this, bath, when | 6 |
-| 4 | Common Endings | -ck, -tch, -dge, -ng, -nk | duck, sock, catch, badge, ring, song, pink, bank | 6 |
-| 5 | Qu and Common Patterns | qu; s-blends (st sp sn sm sw sk); end blends (nd nt mp ft lt lk) | quit, quick, stop, snap, hand, jump, milk | 5 |
-| 6 | Tricky Words | About 30 common words that cannot be fully sounded out, in small groups; which part is tricky; memory cues | the, said, was, you, they, are, have, one | 5 |
-| 7 | Sentence Spelling | Dictated phrases and short sentences; capital letter, full stop, question mark | The frog can jump. | 5 |
-| 8 | Review and Assessment | Mixed retrieval, unfamiliar decodable words, dictation; optional “clap the parts” syllable lesson | compound words such as sunset, catnap | 5 |
+| Level 2 # | Module | What is taught | Sample words | Lessons | Status |
+|---|---|---|---|---|---|
+| 9 | CVC Review and Automaticity | Short vowels a e i o u; word families (-at, -an, -ig, -op, -ug, -et); doubled-letter endings (off, bell) taught receptively | cat, pig, mop, bug, net, bell | 5 | **Built** |
+| 10 | Consonant Blends | L-blends bl cl fl gl pl sl; R-blends br cr dr fr gr pr tr | flag, crab, frog, drum, plug | 5 | **Built** |
+| 11 | Digraphs | sh, ch, th, wh; at the start and end of words | ship, fish, thumb, chin, whip | 5 | **Built** |
+| 12 | Common Endings | -ck, -tch, -dge, -ng, -nk | duck, catch, bridge, ring, pink | 5 | **Built** |
+| 13 | Qu and Common Patterns | qu; s-blends (st sp sn sm sk); end blends (nd nt mp ft lt lk) | quit, quick, stop, snap, hand, tent, milk | 5 | **Built** |
+| 14 | Letter Cluster 5: j v w x y z | The six letters Level 1 and Modules 9–13 never taught, added once the gap started blocking ordinary words | jam, van, wet, fox, yes, zip, was, will | 5 | **Building next** |
+| 15 | Tricky Words | About 30 common words that cannot be fully sounded out, in small groups; which part is tricky; memory cues | the, said, was, you, they, are, have, one | 5 | Not built |
+| 16 | Sentence Spelling | Dictated phrases and short sentences; capital letter, full stop, question mark | The frog can jump. | 5 | Not built |
+| 17 | Review and Assessment | Mixed retrieval, unfamiliar decodable words, dictation; optional “clap the parts” syllable lesson | compound words such as sunset, catnap | 5 | Not built |
 
-**Total: about 43 lessons and about 430 questions** (roughly 5 practice and 5 assessment items per lesson, the same density as Level 1).
+**Revised total: about 45 lessons** (the extra letter-cluster module added 5 to the original ~43-lesson estimate), roughly 5 practice and 5 assessment items per lesson, the same density as Level 1.
+
+Once Module 14 is built, “was” and “will” move from Module 15's tricky-word list to being ordinary *decodable* words (every letter in them is now taught) — they can still appear in Module 15 as words worth extra practice, but they no longer need to be memorized as irregular.
 
 ### Lesson shape
 Each module follows the Level 1 pattern so the app needs little new code: Meet the new pattern (hear it, see it) → Blend and Build → Read the Words → Spell the Words → Challenge. Module-specific variations:
@@ -220,6 +224,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 8. **Skipping ahead:** no new placement test for now — the existing “unlock all” toggle in the Parent Dashboard covers it. A real placement check can be designed later if needed.
 9. **Access rule:** Level 2 unlocks only once every active Level 1 module is fully mastered. No score-based free shortcut is added here — that mechanic stays specific to the Level 1 Module 1 → 2 boundary, per the owner's original instruction not to generalise it.
 10. **Voice:** stays with the browser's speech voice for now. A recorded voice for letters, blends and digraphs is flagged as a future upgrade, not a blocker.
+11. **Missing letters (owner decision, 2026-09-29):** Level 1's 19 letters never included j, v, w, x, y, z — a gap only noticed while scoping Module 13. The owner chose to add a short module teaching them (Module 14, Letter Cluster 5) rather than continue avoiding them, since avoidance was already restricting Module 13's word choice and would have restricted Tricky Words and Sentence Spelling much more.
 
 ### Risks
 - **Word supply:** many blend and ending words have no clear picture. Mitigation: Build and Spell lessons do not need pictures; Read lessons use only pictureable words.
@@ -249,9 +254,10 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 11 | Digraphs | **Live** | 5 | 22 | 22 |
 | 12 | Common Endings | **Live** | 5 | 21 | 22 |
 | 13 | Qu & Common Patterns | **Live** | 5 | 19 | 20 |
-| 14 | Tricky Words | Not built | 0 | 0 | 0 |
-| 15 | Sentence Spelling | Not built | 0 | 0 | 0 |
-| 16 | Review & Assessment | Not built | 0 | 0 | 0 |
+| 14 | Letter Cluster 5: j v w x y z | **Live** | 5 | 23 | 22 |
+| 15 | Tricky Words | Not built | 0 | 0 | 0 |
+| 16 | Sentence Spelling | Not built | 0 | 0 | 0 |
+| 17 | Review & Assessment | Not built | 0 | 0 | 0 |
 
 ## Curriculum in full
 
@@ -2105,12 +2111,156 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M13-05-7 | hear “spot” → spell (1 extra tile) \| tray s p o t st \| answer **spot** |  |
 | AS-M13-05-8 | hear “hand” → spell (1 extra tile) \| tray h a n d nt \| answer **hand** |  |
 
+### Module 14 — Letter Cluster 5: j v w x y z
+
+*Goal:* Learn the six letters Level 1 never taught, and use them to build, read, and spell more words — including many common sight words.
+
+#### Lesson 1: Meet the Letters (`L2-M14-01`)
+
+- **Objective:** Learn the letters j, v, w, x, y and z and their sounds.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Six brand new letters — the last ones! j, v, w, x, y, z.
+- **Narration (teach):** Listen to a word, then find the letter it has. Most of these start a word — x almost always ends one.
+- **Narration (model):** Listen. Jam starts with the letter j.
+- **Narration (transition):** Now you try! Listen to the word, then choose its letter.
+- **Narration (close):** Great matching! You know every letter in the alphabet now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M14-01 | hear “jam” → letter \| options j y z \| answer **j** |
+| Q-M14-02 | hear “van” → letter \| options v w j \| answer **v** |
+| Q-M14-03 | hear “wet” → letter \| options w v y \| answer **w** |
+| Q-M14-04 | hear “fox” → letter \| options x z j \| answer **x** |
+| Q-M14-05 | hear “yes” → letter \| options y w v \| answer **y** |
+| Q-M14-06 | hear “zip” → letter \| options z x j \| answer **z** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M14-01-1 | hear “jog” → letter \| options j z y \| answer **j** |  |
+| AS-M14-01-2 | hear “vet” → letter \| options v j w \| answer **v** |  |
+| AS-M14-01-3 | hear “win” → letter \| options w y v \| answer **w** |  |
+| AS-M14-01-4 | hear “box” → letter \| options x j z \| answer **x** |  |
+
+#### Lesson 2: Blend & Build (`L2-M14-02`)
+
+- **Objective:** Build words using j, v, w, x, y, z and every letter learned so far.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's build words with your new letters!
+- **Narration (teach):** Listen to the word, then tap each letter tile in order.
+- **Narration (model):** Listen. Van. Tap v, then a, then n to build it!
+- **Narration (transition):** Now you try! Listen, then build the word.
+- **Narration (close):** Great building! Look how many more words you can make now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M14-07 | hear “van” → build \| tray n v a \| answer **van** |
+| Q-M14-08 | hear “wet” → build \| tray t w e \| answer **wet** |
+| Q-M14-09 | hear “box” → build \| tray x b o \| answer **box** |
+| Q-M14-10 | hear “yes” → build \| tray s y e \| answer **yes** |
+| Q-M14-11 | hear “zap” → build \| tray p z a \| answer **zap** |
+| Q-M14-12 | hear “jog” → build \| tray g j o \| answer **jog** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M14-02-1 | hear “jam” → build \| tray m j a \| answer **jam** |  |
+| AS-M14-02-2 | hear “win” → build \| tray n w i \| answer **win** |  |
+| AS-M14-02-3 | hear “six” → build \| tray x s i \| answer **six** |  |
+| AS-M14-02-4 | hear “yam” → build \| tray m y a \| answer **yam** |  |
+
+#### Lesson 3: Read the Words (`L2-M14-03`)
+
+- **Objective:** Read words using every letter learned so far and match them to pictures.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's read some more words!
+- **Narration (teach):** Look at the written word, then find the matching picture.
+- **Narration (model):** Read. Fox. Find the picture that matches!
+- **Narration (transition):** Now you try! Read the word, then choose its picture.
+- **Narration (close):** You read every word!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M14-13 | read “jet” → picture \| options jet, hen, bus \| answer **jet** |
+| Q-M14-14 | read “vet” → picture \| options vet, cap, gum \| answer **vet** |
+| Q-M14-15 | read “wig” → picture \| options wig, net, rat \| answer **wig** |
+| Q-M14-16 | read “fox” → picture \| options fox, kid, bag \| answer **fox** |
+| Q-M14-17 | read “jug” → picture \| options jug, sun, top \| answer **jug** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M14-03-1 | read “fox” → picture \| options fox, hut, lip \| answer **fox** | Identical written_word+answer to practice item in this lesson. Only 5 illustrated words are valid targets this module (jet, vet, wig, fox, jug) — y and z have no clean picture available. Recommend real illustrations for a y or z word to widen this pool. |
+| AS-M14-03-2 | read “jet” → picture \| options jet, dad, vet \| answer **jet** | Identical written_word+answer to practice item in this lesson. Same thin illustrated-word pool as AS-M14-03-1. |
+
+#### Lesson 4: Spell the Words (`L2-M14-04`)
+
+- **Objective:** Spell dictated words using j, v, w, x, y, z and every letter learned so far.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to spell some trickier words!
+- **Narration (teach):** Listen to the word. The tray has an extra letter that doesn't belong — leave it out!
+- **Narration (model):** Listen. Web. Pick w, e, b — and leave the extra letter behind!
+- **Narration (transition):** Now you try! Listen, then spell the word.
+- **Narration (close):** Great spelling! You picked every right letter.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M14-18 | hear “web” → spell (1 extra tile) \| tray w e b n \| answer **web** |
+| Q-M14-19 | hear “jog” → spell (1 extra tile) \| tray j o g d \| answer **jog** |
+| Q-M14-20 | hear “vat” → spell (1 extra tile) \| tray v a t b \| answer **vat** |
+| Q-M14-21 | hear “yet” → spell (1 extra tile) \| tray y e t w \| answer **yet** |
+| Q-M14-22 | hear “zag” → spell (1 extra tile) \| tray z a g j \| answer **zag** |
+| Q-M14-23 | hear “mix” → spell (1 extra tile) \| tray m i x n \| answer **mix** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M14-04-1 | hear “jab” → spell (1 extra tile) \| tray j a b g \| answer **jab** |  |
+| AS-M14-04-2 | hear “vest” → spell (1 extra tile) \| tray v e s t w \| answer **vest** |  |
+| AS-M14-04-3 | hear “wig” → spell (1 extra tile) \| tray w i g y \| answer **wig** |  |
+| AS-M14-04-4 | hear “fix” → spell (1 extra tile) \| tray f i x v \| answer **fix** |  |
+
+#### Lesson 5: Cluster Challenge (`L2-M14-05`)
+
+- **Objective:** Demonstrate independent mastery of every letter in the alphabet: letter sounds, building, reading, and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** You are ready for the Cluster Challenge.
+- **Narration (instruction):** Letters, building, reading, spelling — any of it could show up. Take your time.
+- **Narration (close):** Challenge complete! You know every letter of the alphabet.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M14-05-1 | hear “van” → letter \| options v w j \| answer **v** |  |
+| AS-M14-05-2 | hear “six” → letter \| options x z y \| answer **x** |  |
+| AS-M14-05-3 | hear “zip” → build \| tray p z i \| answer **zip** |  |
+| AS-M14-05-4 | hear “yes” → build \| tray s y e \| answer **yes** |  |
+| AS-M14-05-5 | read “vet” → picture \| options vet, mop, sit \| answer **vet** |  |
+| AS-M14-05-6 | read “wig” → picture \| options wig, bin, nut \| answer **wig** |  |
+| AS-M14-05-7 | hear “jog” → spell (1 extra tile) \| tray j o g d \| answer **jog** |  |
+| AS-M14-05-8 | hear “web” → spell (1 extra tile) \| tray w e b s \| answer **web** |  |
+
+**Words used in this module:** box, fix, fox, jab, jam, jet, jog, jug, mix, six, van, vat, vest, vet, web, wet, wig, win, yam, yes, yet, zag, zap, zip
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (27, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (28, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 
@@ -2238,7 +2388,7 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `test/assessmentService.test.mjs` |  |
 | `test/content-integrity.test.mjs` | Validates structural guarantees of the content layer itself — the things that would silently break the app if a content edit introduced a typo'd lesson_id or a dangling error_tag. Run with: npm test |
 | `test/docs-up-to-date.test.mjs` |  |
-| `test/level2-decodability.test.mjs` | Level 2's own safeguard against the mistake Level 1 avoided by hand: a word must never require a pattern the child hasn't been taught yet. LETTERS_KNOWN never changes in Level 2 (Level 1 already taught all 19 single letters); GRAPHEMES_BY_MODULE lists the w... |
+| `test/level2-decodability.test.mjs` | Level 2's own safeguard against the mistake Level 1 avoided by hand: a word must never require a pattern the child hasn't been taught yet. LETTERS_BY_MODULE lists new SINGLE letters a module adds (Level 1 gave every Level 2 module the same base 19 until Mod... |
 | `test/progressService.test.mjs` |  |
 
 ### Scripts

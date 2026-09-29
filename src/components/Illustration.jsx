@@ -503,6 +503,7 @@ const IMAGE_BG = {
   ship: "#DCEBFF", shell: "#FFF3D6", fish: "#DCEEF6", thumb: "#FDE9D2",
   duck: "#E1F3E6", bridge: "#FDEBE4", ring: "#DCEEF6",
   tent: "#FDE9D2", lamp: "#FFF3D6", milk: "#DCEBFF",
+  fox: "#FDEBE4",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {
