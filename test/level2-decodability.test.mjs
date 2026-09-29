@@ -24,7 +24,7 @@ const GRAPHEMES_BY_MODULE = {
   9: [], // CVC Review — no new patterns, pure review of the known 19 letters
   10: [], // Consonant Blends — two already-known letters said together, not a new grapheme
   11: ["sh", "ch", "th", "wh"], // Digraphs
-  12: ["ck", "tch", "dge", "ng", "nk"], // Common Endings
+  12: ["tch", "dge", "ck", "ng", "nk"], // Common Endings — longest first so "tch" isn't stripped as "ch" (already known) + "t"
   13: ["qu"], // Qu & Common Patterns
 };
 

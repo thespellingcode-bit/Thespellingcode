@@ -232,7 +232,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 9 | CVC Review & Automaticity | **Live** | 5 | 22 | 27 |
 | 10 | Consonant Blends | **Live** | 5 | 23 | 23 |
 | 11 | Digraphs | **Live** | 5 | 22 | 22 |
-| 12 | Common Endings | Not built | 0 | 0 | 0 |
+| 12 | Common Endings | **Live** | 5 | 21 | 22 |
 | 13 | Qu & Common Patterns | Not built | 0 | 0 | 0 |
 | 14 | Tricky Words | Not built | 0 | 0 | 0 |
 | 15 | Sentence Spelling | Not built | 0 | 0 | 0 |
@@ -1814,12 +1814,152 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M11-05-7 | hear “chin” → spell (1 extra tile) \| tray ch i n sh \| answer **chin** |  |
 | AS-M11-05-8 | hear “moth” → spell (1 extra tile) \| tray m o th wh \| answer **moth** |  |
 
+### Module 12 — Common Endings
+
+*Goal:* Read and spell words ending in -ck, -tch, -dge, -ng and -nk.
+
+#### Lesson 1: Meet the Endings (`L2-M12-01`)
+
+- **Objective:** Recognise -ck, -tch, -dge, -ng and -nk as single sounds at the end of a word.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Some word endings are two or three letters making one sound!
+- **Narration (teach):** Listen to a word, then find the ending it has.
+- **Narration (model):** Listen. Duck ends with ck.
+- **Narration (transition):** Now you try! Listen to the word, then choose its ending.
+- **Narration (close):** Great listening! You know five common word endings now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M12-01 | hear “duck” → letter \| options ck tch dge \| answer **ck** |
+| Q-M12-02 | hear “catch” → letter \| options tch ck dge \| answer **tch** |
+| Q-M12-03 | hear “bridge” → letter \| options dge ck tch \| answer **dge** |
+| Q-M12-04 | hear “ring” → letter \| options ng nk dge \| answer **ng** |
+| Q-M12-05 | hear “pink” → letter \| options nk ng tch \| answer **nk** |
+| Q-M12-06 | hear “sock” → letter \| options ck ng nk \| answer **ck** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M12-01-1 | hear “rock” → letter \| options ck dge ng \| answer **ck** |  |
+| AS-M12-01-2 | hear “match” → letter \| options tch dge nk \| answer **tch** |  |
+| AS-M12-01-3 | hear “song” → letter \| options ng nk ck \| answer **ng** |  |
+| AS-M12-01-4 | hear “bank” → letter \| options nk tch ng \| answer **nk** |  |
+
+#### Lesson 2: Sound & Build (`L2-M12-02`)
+
+- **Objective:** Build words ending in -ck, -tch, -dge, -ng or -nk, treating the ending as a single tile.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's build some words with these endings!
+- **Narration (teach):** Listen to the word, then tap each tile in order — the ending is ONE tile.
+- **Narration (model):** Listen. Duck. Tap d, then u, then ck to build it!
+- **Narration (transition):** Now you try! Listen, then build the word.
+- **Narration (close):** Great building! Every ending is one team of letters.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M12-07 | hear “duck” → build \| tray d u ck \| answer **duck** |
+| Q-M12-08 | hear “catch” → build \| tray c a tch \| answer **catch** |
+| Q-M12-09 | hear “bridge” → build \| tray b r i dge \| answer **bridge** |
+| Q-M12-10 | hear “ring” → build \| tray r i ng \| answer **ring** |
+| Q-M12-11 | hear “pink” → build \| tray p i nk \| answer **pink** |
+| Q-M12-12 | hear “sock” → build \| tray s o ck \| answer **sock** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M12-02-1 | hear “rock” → build \| tray r o ck \| answer **rock** |  |
+| AS-M12-02-2 | hear “hatch” → build \| tray h a tch \| answer **hatch** |  |
+| AS-M12-02-3 | hear “lodge” → build \| tray l o dge \| answer **lodge** |  |
+| AS-M12-02-4 | hear “sink” → build \| tray s i nk \| answer **sink** |  |
+
+#### Lesson 3: Read the Words (`L2-M12-03`)
+
+- **Objective:** Read words ending in -ck, -dge or -ng and match them to pictures.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's read some words with these endings!
+- **Narration (teach):** Look at the written word, then find the matching picture.
+- **Narration (model):** Read. Duck. Find the picture that matches!
+- **Narration (transition):** Now you try! Read the word, then choose its picture.
+- **Narration (close):** You read every word!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M12-13 | read “duck” → picture \| options duck, hen, bus \| answer **duck** |
+| Q-M12-14 | read “bridge” → picture \| options bridge, cap, gum \| answer **bridge** |
+| Q-M12-15 | read “ring” → picture \| options ring, net, rat \| answer **ring** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M12-03-1 | read “duck” → picture \| options duck, mop, lip \| answer **duck** | Identical written_word+answer to practice item in this lesson. Only 3 illustrated common-endings words exist right now (duck, bridge, ring) — -tch and -nk have no clean picture available yet, and "clock" was deliberately kept out of the picture set (see Icon.jsx) to avoid replacing its existing Level 1 sound-icon. Recommend real illustrations for a -tch or -nk word to widen this pool. |
+| AS-M12-03-2 | read “ring” → picture \| options ring, hut, dad \| answer **ring** | Identical written_word+answer to practice item in this lesson. Same thin illustrated-word pool as AS-M12-03-1. |
+
+#### Lesson 4: Spell the Words (`L2-M12-04`)
+
+- **Objective:** Spell dictated words, choosing the right tiles — including telling one ending apart from another.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to spell some words with tricky endings!
+- **Narration (teach):** Listen to the word. The tray has an extra tile that doesn't belong — leave it out!
+- **Narration (model):** Listen. Pack. Pick p, a, ck — and leave the extra tile behind!
+- **Narration (transition):** Now you try! Listen, then spell the word.
+- **Narration (close):** Great spelling! You picked the right ending every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M12-16 | hear “pack” → spell (1 extra tile) \| tray p a ck tch \| answer **pack** |
+| Q-M12-17 | hear “patch” → spell (1 extra tile) \| tray p a tch ck \| answer **patch** |
+| Q-M12-18 | hear “edge” → spell (1 extra tile) \| tray e dge ng \| answer **edge** |
+| Q-M12-19 | hear “king” → spell (1 extra tile) \| tray k i ng nk \| answer **king** |
+| Q-M12-20 | hear “honk” → spell (1 extra tile) \| tray h o nk ng \| answer **honk** |
+| Q-M12-21 | hear “badge” → spell (1 extra tile) \| tray b a dge ck \| answer **badge** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M12-04-1 | hear “neck” → spell (1 extra tile) \| tray n e ck dge \| answer **neck** |  |
+| AS-M12-04-2 | hear “fetch” → spell (1 extra tile) \| tray f e tch dge \| answer **fetch** |  |
+| AS-M12-04-3 | hear “long” → spell (1 extra tile) \| tray l o ng nk \| answer **long** |  |
+| AS-M12-04-4 | hear “tank” → spell (1 extra tile) \| tray t a nk ng \| answer **tank** |  |
+
+#### Lesson 5: Endings Challenge (`L2-M12-05`)
+
+- **Objective:** Demonstrate independent mastery of common endings: recognising, building, reading, and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** You are ready for the Endings Challenge.
+- **Narration (instruction):** Endings, building, reading, spelling — any of it could show up. Take your time.
+- **Narration (close):** Challenge complete! You know five common word endings.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M12-05-1 | hear “kick” → letter \| options ck tch dge \| answer **ck** |  |
+| AS-M12-05-2 | hear “hang” → letter \| options ng nk dge \| answer **ng** |  |
+| AS-M12-05-3 | hear “clock” → build \| tray c l o ck \| answer **clock** |  |
+| AS-M12-05-4 | hear “fudge” → build \| tray f u dge \| answer **fudge** |  |
+| AS-M12-05-5 | read “duck” → picture \| options duck, run, sad \| answer **duck** |  |
+| AS-M12-05-6 | read “bridge” → picture \| options bridge, pan, wig \| answer **bridge** |  |
+| AS-M12-05-7 | hear “rack” → spell (1 extra tile) \| tray r a ck tch \| answer **rack** |  |
+| AS-M12-05-8 | hear “dunk” → spell (1 extra tile) \| tray d u nk ng \| answer **dunk** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (21, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (24, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

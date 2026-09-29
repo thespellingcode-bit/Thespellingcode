@@ -92,6 +92,14 @@ const WORD_KEYS = [
   // No clean ch/wh picture was found (candidates were ambiguous or relied
   // on an untaught pattern); those two are covered by build/spell only.
   "ship", "shell", "fish", "thumb",
+  // Level 2 Module 12 (Common Endings) — "clock" deliberately excluded:
+  // it already exists as a sound-identification icon in Level 1
+  // (Illustration.jsx PICTURES.clock, the hand-drawn ticking-clock sound
+  // icon), and adding it here would silently replace that icon wherever
+  // it's used today. "clock" is still a valid Module 12 word — it's just
+  // build/spell-only, like ch/wh in Module 11. No clean -tch or -nk
+  // picture was found either, so those are build/spell-only too.
+  "duck", "bridge", "ring",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

@@ -32,13 +32,18 @@ export function answerTilesFor(item) {
 
 // A digraph (sh, ch, th, wh...) is two letters making ONE sound — the
 // opposite idea from a blend (fl, cr...), which is two letters keeping
-// their OWN two sounds said quickly together. Narration must not call a
-// digraph a "blend" or vice versa, so this is a real lookup, not just a
-// "more than one character" length check. Extend this set as later
-// modules teach more digraphs (e.g. ck, tch, dge, ng, nk).
+// their OWN two sounds said quickly together. An ending (ck, tch, dge,
+// ng, nk) is also two-or-three letters making one sound, like a digraph,
+// but — unlike sh/ch/th/wh — it only ever appears at the end of a word,
+// so narration calls it an "ending" rather than dynamically checking
+// position. Narration must never call one of these the wrong name, so
+// this is a real lookup, not just a "more than one character" check.
+// Extend these sets as later modules teach more graphemes.
 const DIGRAPHS = new Set(["sh", "ch", "th", "wh"]);
+const ENDINGS = new Set(["ck", "tch", "dge", "ng", "nk"]);
 export function graphemeKindFor(grapheme) {
   if (DIGRAPHS.has(grapheme)) return "digraph";
+  if (ENDINGS.has(grapheme)) return "ending";
   if (grapheme.length > 1) return "blend";
   return "letter";
 }
