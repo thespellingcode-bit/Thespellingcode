@@ -4,6 +4,6 @@
   { "badge_id": "BADGE-03", "name": "Letter Champion", "criteria": "Master Letter Cluster 1", "type": "module", "module_id": 3, "active": false },
   { "badge_id": "BADGE-04", "name": "Word Builder", "criteria": "Master Letter Clusters 2–4", "type": "milestone", "module_id": null, "active": false },
   { "badge_id": "BADGE-05", "name": "Reading Star", "criteria": "Master the Level 1 Review module", "type": "module", "module_id": 7, "active": false },
-  { "badge_id": "BADGE-06", "name": "Level 1 Sound Explorer", "criteria": "Pass the Level 1 Master Assessment", "type": "module", "module_id": 8, "active": false },
+  { "badge_id": "BADGE-06", "name": "Level 1 Sound Explorer", "criteria": "Pass the Level 1 Master Assessment", "type": "module", "module_id": 8, "active": true },
   { "badge_id": "BADGE-07", "name": "Sentence Star", "criteria": "Master Sentence Spelling (Level 2)", "type": "module", "module_id": 15, "active": false }
 ]

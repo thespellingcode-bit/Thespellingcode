@@ -228,7 +228,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 5 | Letter Cluster 3: k b h r e | **Live** | 5 | 20 | 28 |
 | 6 | Letter Cluster 4: l f u | **Live** | 5 | 20 | 28 |
 | 7 | Level 1 Review | **Live** | 5 | 20 | 31 |
-| 8 | Level 1 Master Assessment | Not built | 0 | 0 | 0 |
+| 8 | Level 1 Master Assessment | **Live** | 1 | 0 | 16 |
 | 9 | CVC Review & Automaticity | **Live** | 5 | 22 | 27 |
 | 10 | Consonant Blends | Not built | 0 | 0 | 0 |
 | 11 | Digraphs | Not built | 0 | 0 | 0 |
@@ -1351,6 +1351,39 @@ Read it as: what the child hears or sees → what they choose or build → the c
 
 **Words used in this module:** bed, bin, bug, bus, cat, cot, cup, dog, dot, egg, fog, fun, ham, hat, hen, hug, hut, kid, kit, leg, lip, map, mud, mug, nap, nut, ox, pan, pig, pin, rat, rub, sip, sit, sun, tag
 
+### Module 8 — Level 1 Master Assessment
+
+*Goal:* Demonstrate independent Level 1 mastery across every module.
+
+#### Lesson 1: Level 1 Master Assessment (`L1-M08-01`)
+
+- **Objective:** Demonstrate independent mastery of every Level 1 skill: all 19 letters, building, reading, and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 10–12 min · **Mastery threshold:** 80%
+- **Narration (welcome):** This is it — the big one. Everything you've learned in Level 1, all in one place.
+- **Narration (instruction):** Letters from every cluster, building, reading, spelling — any of it could show up. Take your time and do your best.
+- **Narration (close):** You are officially a Sound Explorer! Level 1 complete.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M08-01-1 | hear “sun” → letter \| options s t n \| answer **s** |  |
+| AS-M08-01-2 | hear “dog” → letter \| options d g c \| answer **d** |  |
+| AS-M08-01-3 | hear “keg” → letter \| options k b h \| answer **k** |  |
+| AS-M08-01-4 | hear “up” → letter \| options u o a \| answer **u** |  |
+| AS-M08-01-5 | hear “tip” → build \| tray p t i \| answer **tip** |  |
+| AS-M08-01-6 | hear “cot” → build \| tray t c o \| answer **cot** |  |
+| AS-M08-01-7 | hear “rib” → build \| tray b r i \| answer **rib** |  |
+| AS-M08-01-8 | hear “fun” → build \| tray n f u \| answer **fun** |  |
+| AS-M08-01-9 | hear “pan” → spell (1 extra tile) \| tray p a n g \| answer **pan** |  |
+| AS-M08-01-10 | hear “dig” → spell (1 extra tile) \| tray d i g b \| answer **dig** |  |
+| AS-M08-01-11 | hear “hen” → spell (1 extra tile) \| tray h e n r \| answer **hen** |  |
+| AS-M08-01-12 | hear “lip” → spell (1 extra tile) \| tray l i p f \| answer **lip** |  |
+| AS-M08-01-13 | read “sit” → picture \| options sit, cap, gum \| answer **sit** |  |
+| AS-M08-01-14 | read “dog” → picture \| options dog, vet, rag \| answer **dog** |  |
+| AS-M08-01-15 | read “pig” → picture \| options pig, mop, jet \| answer **pig** |  |
+| AS-M08-01-16 | read “hut” → picture \| options hut, pan, wig \| answer **hut** |  |
+
 ### Module 9 — CVC Review & Automaticity
 
 *Goal:* Read and build core CVC words quickly and confidently before learning new patterns.
@@ -1535,7 +1568,7 @@ Spoken words (26 listed in `content/media.json`, plus every `say:word` used in l
 | BADGE-03 | Letter Champion | Not built |
 | BADGE-04 | Word Builder | Not built |
 | BADGE-05 | Reading Star | Not built |
-| BADGE-06 | Level 1 Sound Explorer | Not built |
+| BADGE-06 | Level 1 Sound Explorer | Live |
 | BADGE-07 | Sentence Star | Not built |
 
 ## Code map
