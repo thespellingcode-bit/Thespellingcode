@@ -230,7 +230,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 7 | Level 1 Review | **Live** | 5 | 20 | 31 |
 | 8 | Level 1 Master Assessment | **Live** | 1 | 0 | 16 |
 | 9 | CVC Review & Automaticity | **Live** | 5 | 22 | 27 |
-| 10 | Consonant Blends | Not built | 0 | 0 | 0 |
+| 10 | Consonant Blends | **Live** | 5 | 23 | 23 |
 | 11 | Digraphs | Not built | 0 | 0 | 0 |
 | 12 | Common Endings | Not built | 0 | 0 | 0 |
 | 13 | Qu & Common Patterns | Not built | 0 | 0 | 0 |
@@ -1530,12 +1530,155 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M09-05-7 | hear “bell” → build \| tray b e l l \| answer **bell** |  |
 | AS-M09-05-8 | hear “hill” → build \| tray h i l l \| answer **hill** |  |
 
+### Module 10 — Consonant Blends
+
+*Goal:* Read and spell words starting with two-consonant blends (bl, cl, fl... br, cr, dr...).
+
+#### Lesson 1: Meet the Blends (`L2-M10-01`)
+
+- **Objective:** Recognise two-consonant blends (bl, cl, fl... br, cr, dr...) at the start of a word.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Some words start with two letters said quickly together — a blend!
+- **Narration (teach):** Listen to a word, then find the blend it starts with. Both letters keep their own sound.
+- **Narration (model):** Listen. Flag starts with the blend fl.
+- **Narration (transition):** Now you try! Listen to the word, then choose its blend.
+- **Narration (close):** Great blending! You can hear two consonants working together.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M10-01 | hear “flag” → letter \| options fl cl gl \| answer **fl** |
+| Q-M10-02 | hear “crab” → letter \| options cr br dr \| answer **cr** |
+| Q-M10-03 | hear “frog” → letter \| options fr tr pr \| answer **fr** |
+| Q-M10-04 | hear “plug” → letter \| options pl sl cl \| answer **pl** |
+| Q-M10-05 | hear “drum” → letter \| options dr gr br \| answer **dr** |
+| Q-M10-06 | hear “slip” → letter \| options sl pl fl \| answer **sl** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M10-01-1 | hear “clip” → letter \| options cl fl gl \| answer **cl** |  |
+| AS-M10-01-2 | hear “brag” → letter \| options br dr cr \| answer **br** |  |
+| AS-M10-01-3 | hear “trap” → letter \| options tr cr pr \| answer **tr** |  |
+| AS-M10-01-4 | hear “glad” → letter \| options gl cl bl \| answer **gl** |  |
+
+#### Lesson 2: Blend & Build (`L2-M10-02`)
+
+- **Objective:** Build words that start with a consonant blend.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's build some blend words!
+- **Narration (teach):** Listen to the word, then tap each letter tile in order — including both blend letters.
+- **Narration (model):** Listen. Crab. Tap c, then r, then a, then b to build it!
+- **Narration (transition):** Now you try! Listen, then build the word.
+- **Narration (close):** Great building! Every blend has two letters, two sounds, one quick team.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M10-07 | hear “crab” → build \| tray b c a r \| answer **crab** |
+| Q-M10-08 | hear “frog” → build \| tray g f o r \| answer **frog** |
+| Q-M10-09 | hear “plug” → build \| tray g p u l \| answer **plug** |
+| Q-M10-10 | hear “drum” → build \| tray m d u r \| answer **drum** |
+| Q-M10-11 | hear “flag” → build \| tray g f a l \| answer **flag** |
+| Q-M10-12 | hear “trip” → build \| tray p t i r \| answer **trip** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M10-02-1 | hear “grab” → build \| tray b g a r \| answer **grab** |  |
+| AS-M10-02-2 | hear “clap” → build \| tray p c a l \| answer **clap** |  |
+| AS-M10-02-3 | hear “slam” → build \| tray m s a l \| answer **slam** |  |
+| AS-M10-02-4 | hear “prop” → build \| tray p p o r \| answer **prop** |  |
+
+#### Lesson 3: Read the Words (`L2-M10-03`)
+
+- **Objective:** Read blend words and match them to pictures.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's read some blend words!
+- **Narration (teach):** Look at the written word, then find the matching picture.
+- **Narration (model):** Read. Crab. Find the picture that matches!
+- **Narration (transition):** Now you try! Read the word, then choose its picture.
+- **Narration (close):** You read every blend word!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M10-13 | read “crab” → picture \| options crab, hen, bus \| answer **crab** |
+| Q-M10-14 | read “frog” → picture \| options frog, cap, gum \| answer **frog** |
+| Q-M10-15 | read “plug” → picture \| options plug, net, rat \| answer **plug** |
+| Q-M10-16 | read “drum” → picture \| options drum, kid, bag \| answer **drum** |
+| Q-M10-17 | read “flag” → picture \| options flag, vet, hut \| answer **flag** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M10-03-1 | read “crab” → picture \| options crab, mop, lip \| answer **crab** | Identical written_word+answer to practice item in this lesson. Only 5 illustrated blend words exist right now (crab, frog, plug, drum, flag), so this lesson's small assessment bank necessarily reuses one. Recommend real illustrations for more blend words (e.g. slip, trap, glass) to widen this pool. |
+| AS-M10-03-2 | read “plug” → picture \| options plug, fig, cab \| answer **plug** | Identical written_word+answer to practice item in this lesson. Same thin illustrated-blend-word pool as AS-M10-03-1. |
+| AS-M10-03-3 | read “frog” → picture \| options frog, hut, dad \| answer **frog** | Identical written_word+answer to practice item in this lesson. Same thin illustrated-blend-word pool as AS-M10-03-1. |
+
+#### Lesson 4: Spell the Words (`L2-M10-04`)
+
+- **Objective:** Spell dictated blend words, choosing the right letters from a mixed tray.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to spell some blend words!
+- **Narration (teach):** Listen to the word. The tray has an extra letter that doesn't belong — leave it out!
+- **Narration (model):** Listen. Trip. Pick t, r, i, p — and leave the extra letter behind!
+- **Narration (transition):** Now you try! Listen, then spell the word.
+- **Narration (close):** Great spelling! You picked every right letter, blend and all.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M10-18 | hear “clip” → spell (1 extra tile) \| tray c l i p d \| answer **clip** |
+| Q-M10-19 | hear “grab” → spell (1 extra tile) \| tray g r a b l \| answer **grab** |
+| Q-M10-20 | hear “trap” → spell (1 extra tile) \| tray t r a p d \| answer **trap** |
+| Q-M10-21 | hear “slam” → spell (1 extra tile) \| tray s l a m b \| answer **slam** |
+| Q-M10-22 | hear “brag” → spell (1 extra tile) \| tray b r a g t \| answer **brag** |
+| Q-M10-23 | hear “plum” → spell (1 extra tile) \| tray p l u m r \| answer **plum** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M10-04-1 | hear “glad” → spell (1 extra tile) \| tray g l a d r \| answer **glad** |  |
+| AS-M10-04-2 | hear “trip” → spell (1 extra tile) \| tray t r i p l \| answer **trip** |  |
+| AS-M10-04-3 | hear “crib” → spell (1 extra tile) \| tray c r i b s \| answer **crib** |  |
+| AS-M10-04-4 | hear “slip” → spell (1 extra tile) \| tray s l i p t \| answer **slip** |  |
+
+#### Lesson 5: Blend Challenge (`L2-M10-05`)
+
+- **Objective:** Demonstrate independent mastery of consonant blends: recognising, building, reading, and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** You are ready for the Blend Challenge.
+- **Narration (instruction):** Blends, building, reading, spelling — any of it could show up. Take your time.
+- **Narration (close):** Challenge complete! You know your consonant blends.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M10-05-1 | hear “frog” → letter \| options fr fl cr \| answer **fr** |  |
+| AS-M10-05-2 | hear “drum” → letter \| options dr gr br \| answer **dr** |  |
+| AS-M10-05-3 | hear “flag” → build \| tray a f l g \| answer **flag** |  |
+| AS-M10-05-4 | hear “plug” → build \| tray u p l g \| answer **plug** |  |
+| AS-M10-05-5 | read “crab” → picture \| options crab, sit, top \| answer **crab** |  |
+| AS-M10-05-6 | read “frog” → picture \| options frog, bin, nut \| answer **frog** |  |
+| AS-M10-05-7 | hear “clap” → spell (1 extra tile) \| tray c l a p g \| answer **clap** |  |
+| AS-M10-05-8 | hear “drip” → spell (1 extra tile) \| tray d r i p m \| answer **drip** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (12, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (17, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

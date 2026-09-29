@@ -124,9 +124,9 @@ test("REQUIREMENT: assessment questions do not reuse practice audio_asset+correc
   assert.deepEqual(violations, [], violations.join("\n"));
 });
 
-test("exactly Modules 1-9 active — scope guard for this build (Level 2 Modules 10-16 not yet built)", () => {
+test("exactly Modules 1-10 active — scope guard for this build (Level 2 Modules 11-16 not yet built)", () => {
   const active = modules.filter((m) => m.active).map((m) => m.module_id).sort((a, b) => a - b);
-  assert.deepEqual(active, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  assert.deepEqual(active, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 });
 
 test("exactly Sound Starter, Rhyme Ranger, and Level 1 Sound Explorer badges active — scope guard for this build", () => {

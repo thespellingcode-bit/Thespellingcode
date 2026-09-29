@@ -86,6 +86,8 @@ const WORD_KEYS = [
   "pig", "bug", "bed", "rat", "nut", "leg", "cab", "fog", "bin", "tub", "hut",
   // Level 2 Module 9 (CVC Review) — rounds out the -ug word family.
   "jug",
+  // Level 2 Module 10 (Consonant Blends) — new blend-initial words.
+  "flag", "crab", "frog", "drum", "plug",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

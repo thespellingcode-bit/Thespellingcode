@@ -92,9 +92,12 @@ function modelCaptionFor(item) {
     case "segment_count":
       return `Listen — that word has ${answer} sounds!`;
     case "letter_sound_match": {
+      // A grapheme longer than one character is a blend/digraph, not a
+      // single letter — "starts with the letter fl" reads as a mistake.
+      const unit = answer.length > 1 ? "blend" : "letter";
       if (item.letter_prompt) return `${item.letter_prompt} makes the sound at the start of ${answer}!`;
       const word = item.audio_asset?.replace(/^say:/, "");
-      return word ? `${word} starts with the letter ${answer}!` : `That's the letter ${answer}!`;
+      return word ? `${word} starts with the ${unit} ${answer}!` : `That's the ${unit} ${answer}!`;
     }
     case "word_build":
       return `That word is spelled ${answerTilesFor(item).join("-")}: ${answer}!`;
@@ -156,7 +159,8 @@ function modelHeadingFor(lesson, item) {
   if (WORD_CARD_LESSON_TYPES.includes(lesson.activity_type) && item.prompt) return item.prompt;
   if (item.type === "letter_sound_match") {
     const word = item.audio_asset?.replace(/^say:/, "");
-    return word ? `Listen. ${capitalize(word)} starts with the letter ${item.correct_answer}.` : lesson.narration.model;
+    const unit = item.correct_answer.length > 1 ? "blend" : "letter";
+    return word ? `Listen. ${capitalize(word)} starts with the ${unit} ${item.correct_answer}.` : lesson.narration.model;
   }
   if (item.type === "word_build") {
     const word = capitalize(item.audio_asset?.replace(/^say:/, "") || item.correct_answer);

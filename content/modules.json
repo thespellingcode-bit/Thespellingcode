@@ -8,7 +8,7 @@
   { "module_id": 7, "level_id": 1, "module_name": "Level 1 Review", "module_goal": "Cumulative mixed practice and challenge across every Level 1 letter and word learned.", "units": 5, "active": true },
   { "module_id": 8, "level_id": 1, "module_name": "Level 1 Master Assessment", "module_goal": "Demonstrate independent Level 1 mastery across every module.", "units": 8, "active": true },
   { "module_id": 9, "level_id": 2, "module_name": "CVC Review & Automaticity", "module_goal": "Read and build core CVC words quickly and confidently before learning new patterns.", "units": 5, "active": true },
-  { "module_id": 10, "level_id": 2, "module_name": "Consonant Blends", "module_goal": "Read and spell words starting with two-consonant blends (bl, cl, fl... br, cr, dr...).", "units": 6, "active": false },
+  { "module_id": 10, "level_id": 2, "module_name": "Consonant Blends", "module_goal": "Read and spell words starting with two-consonant blends (bl, cl, fl... br, cr, dr...).", "units": 6, "active": true },
   { "module_id": 11, "level_id": 2, "module_name": "Digraphs", "module_goal": "Recognise sh, ch, th and wh as single sounds and read/spell words that use them.", "units": 6, "active": false },
   { "module_id": 12, "level_id": 2, "module_name": "Common Endings", "module_goal": "Read and spell words ending in -ck, -tch, -dge, -ng and -nk.", "units": 6, "active": false },
   { "module_id": 13, "level_id": 2, "module_name": "Qu & Common Patterns", "module_goal": "Read and spell words with qu and common s-blends/end-blends.", "units": 5, "active": false },
