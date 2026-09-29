@@ -92,10 +92,11 @@ function modelCaptionFor(item) {
     case "segment_count":
       return `Listen — that word has ${answer} sounds!`;
     case "letter_sound_match": {
-      const kind = graphemeKindFor(answer); // "letter" | "blend" | "digraph" | "ending"
+      const kind = graphemeKindFor(answer); // "letter" | "blend" | "digraph" | "ending" | "qu"
       if (item.letter_prompt) return `${item.letter_prompt} makes the sound at the start of ${answer}!`;
       const word = item.audio_asset?.replace(/^say:/, "");
       if (kind === "ending") return word ? `${word} ends with ${answer}!` : `That's the ending ${answer}!`;
+      if (kind === "qu") return word ? `${word} starts with qu!` : `That's qu!`;
       if (kind === "digraph") {
         const pos = word && word.endsWith(answer) && !word.startsWith(answer) ? "end" : "start";
         return word ? `${word} has the digraph ${answer} at the ${pos}!` : `That's the digraph ${answer}!`;
@@ -171,6 +172,7 @@ function modelHeadingFor(lesson, item) {
     const word = item.audio_asset?.replace(/^say:/, "");
     const kind = graphemeKindFor(item.correct_answer);
     if (word && kind === "ending") return `Listen. ${capitalize(word)} ends with ${item.correct_answer}.`;
+    if (word && kind === "qu") return `Listen. ${capitalize(word)} starts with qu.`;
     if (word && kind === "digraph") {
       const pos = word.endsWith(item.correct_answer) && !word.startsWith(item.correct_answer) ? "end" : "start";
       return `Listen. ${capitalize(word)} has the digraph ${item.correct_answer} at the ${pos}.`;

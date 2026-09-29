@@ -502,6 +502,7 @@ const IMAGE_BG = {
   flag: "#FDEBE4", crab: "#FFE7E0", frog: "#E1F3E6", drum: "#F1E3D3", plug: "#DCEEF6",
   ship: "#DCEBFF", shell: "#FFF3D6", fish: "#DCEEF6", thumb: "#FDE9D2",
   duck: "#E1F3E6", bridge: "#FDEBE4", ring: "#DCEEF6",
+  tent: "#FDE9D2", lamp: "#FFF3D6", milk: "#DCEBFF",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {

@@ -25,7 +25,13 @@ const GRAPHEMES_BY_MODULE = {
   10: [], // Consonant Blends — two already-known letters said together, not a new grapheme
   11: ["sh", "ch", "th", "wh"], // Digraphs
   12: ["tch", "dge", "ck", "ng", "nk"], // Common Endings — longest first so "tch" isn't stripped as "ch" (already known) + "t"
-  13: ["qu"], // Qu & Common Patterns
+  // Qu & Common Patterns — "qu" is the only new grapheme; s-blends and
+  // end-blends are just pairs of already-known letters, same reasoning
+  // as Module 10's blends. The "w" in a bare grapheme table would matter
+  // only if it were a taught single letter, and it never is (see
+  // docs/project-notes.md's known-letters note) — no s-blend or
+  // end-blend word in this module's content uses it.
+  13: ["qu"],
 };
 
 const level2Modules = modules.filter((m) => m.level_id === 2).sort((a, b) => a.module_id - b.module_id);

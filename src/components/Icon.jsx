@@ -100,6 +100,8 @@ const WORD_KEYS = [
   // build/spell-only, like ch/wh in Module 11. No clean -tch or -nk
   // picture was found either, so those are build/spell-only too.
   "duck", "bridge", "ring",
+  // Level 2 Module 13 (Qu & Common Patterns).
+  "tent", "lamp", "milk",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

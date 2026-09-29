@@ -26,7 +26,7 @@
 | Level | Name | Approx. age | Blueprint modules | State |
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
-| 2 | Word Builder | 5–6 | 8 | **Planning** — see the Level 2 plan below |
+| 2 | Word Builder | 5–6 | 8 | **In progress** — 5 of 8 modules built (Modules 9–13); see the Level 2 plan for the rest |
 | 3 | Pattern Detective | 6–7 | 10 | Not started |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
@@ -38,8 +38,9 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Piece | State |
 |---|---|
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
-| Level 1 Modules 8–11 (sentences, tricky words, spiral review, master assessment) | Not built. Listed as inactive in `content/modules.json`. The Level 2 plan recommends moving sentences and tricky words into Level 2 rather than building them here. |
-| Level 2 | Plan drafted, awaiting the owner's answers to its open questions |
+| Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
+| Level 2 “Word Builder”, Modules 9–13 (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns) | **Built and deployed** |
+| Level 2 Modules 14–16 (Tricky Words, Sentence Spelling, Review & Assessment) | Not built |
 | Level 3 and beyond, payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -53,6 +54,15 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **The c/k decision:** “c” is taught as a second letter for the /k/ sound (needed for cat, cap, can, cup). No question ever makes a child choose between c and k: they are never offered together as letter options, and a decoy tray never pairs one with a word using the other.
 - **Letter sounds, not names:** text-to-speech reads a bare letter by its name (“em”), which teaches the wrong thing. So the app never speaks an isolated letter; “tap a word to sound it out” uses phoneme approximations (n → “nnn”, a → “ah”, p → “puh”) and then the whole word.
 - **Mastery:** each lesson has a mastery threshold (80%). A module is complete when all its lessons are mastered.
+
+### Level 2 curriculum design (Modules 9–13, built)
+- **Module 9, CVC Review & Automaticity:** no new letters — pure review of Level 1's 19 letters, plus one lesson teaching common doubled-letter-ending words (off, bell, hill, doll...) receptively only. A child builds/reads these correctly without ever being asked to *choose* a spelling — that choice stays a Level 4 topic, matching the c/k precedent from Level 1.
+- **Module 10, Consonant Blends** (bl/cl/fl/gl/pl/sl, br/cr/dr/fr/gr/pr/tr): a blend is two already-known letters said quickly together, so it needs no new letter and no new tile — each blend letter is tapped separately, exactly like any other CVC word.
+- **Module 11, Digraphs** (sh, ch, th, wh) and **Module 12, Common Endings** (-ck, -tch, -dge, -ng, -nk): unlike a blend, these are two-or-three letters making **one** sound, so the tray must offer them as a single tile (see “Multi-letter tiles” below). Digraphs can sit at the start or end of a word (ship vs. fish); endings only ever sit at the end.
+- **Module 13, Qu & Common Patterns:** “qu” is tiled as one inseparable unit like a digraph (English never spells /kw/ with a bare q), plus s-blends and end-blends, which — like Module 10's blends — are just pairs of already-known letters needing no new tile.
+- **Narration must name the right concept.** A blend is not a digraph is not an ending is not qu — conflating them (e.g. calling “ck” a “blend” because it's more than one character) is a real bug that shipped once and was caught by a live browser check, not by the test suite. `graphemeKindFor()` in `src/services/questionTypes.js` is the single source of truth for which is which; extend its `DIGRAPHS`/`ENDINGS` sets when a later module adds more, rather than guessing from a grapheme's length.
+- **Multi-letter tiles.** A `word_build` item can set `answer_tiles` (e.g. `["sh", "i", "p"]` for “ship”) so a tray tile can hold a whole grapheme instead of always one letter. Every place that used to do `correct_answer.split("")` — the tile count, the decoy calculation, the Watch-stage demo, the narration — now goes through `answerTilesFor()` instead. Level 1 content never sets `answer_tiles`, so it's unaffected; this is purely additive.
+- **Known letters gap (flagged, not yet resolved):** Level 1 and Level 2 together still only teach 19 letters — **j, v, w, x, y, z are never taught**, at any point. This was inherited from Level 1's four Jolly-Phonics-style letter clusters and was not revisited when Level 2 was scoped. It already constrains word choice throughout Level 2 (for example “sw” was dropped from Module 13's s-blends because it needs w; “jump”, “van”, “wet”, “zip” are all currently off-limits). Recommend deciding where these six letters get taught — real Jolly Phonics teaches them alongside its own later digraphs/vowel-team groups — before Level 2's remaining modules (especially Sentence Spelling, which will want ordinary vocabulary) are built.
 
 ### Access rules (free vs full)
 - Module 1 is free. **Module 2 unlocks free if the child scores 85% or more on Module 1's challenge** (`FREE_UNLOCK_FROM_MODULE_ID = 1`, `MODULE_UNLOCK_THRESHOLD = 0.85` in `progressService.js`). This shortcut applies only at the Module 1 → 2 boundary.
@@ -96,7 +106,9 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Only two reliable loud sounds (thunder, clap) exist, so loud assessment items repeat practice items; these are marked with review flags in the tables below. A friendly real recording of another loud sound from the chart (for example a bang) would widen it.
 - Sound-out audio depends on each device's speech voice and should be tried on a real phone.
 - Clap, bell, clock, rain, phone and siren are still synthesized placeholders; real recordings would improve them.
-- Modules 8–11 and Level 2 are not built.
+- Level 2 Modules 14–16 (Tricky Words, Sentence Spelling, Review & Assessment) are not built.
+- j, v, w, x, y, z are never taught anywhere in Level 1 or Level 2 so far — see the Level 2 curriculum design note above.
+- A handful of common digraph/ending words have no clean picture (ch, wh, -tch, -nk) — those lessons' Read the Words pool is thinner than other lessons', with real gaps marked by `review_flag` in the content.
 
 ### Build log
 - Level 1 first built as 15 planned modules (one skill each), then **redesigned into letter-cluster modules** after playing through showed thin, repetitive word pools.
@@ -104,6 +116,9 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Fixed per-example headers, missing pictures, decoy-letter demonstration, and the loud/soft audio (several rounds, ending with chart-based sounds).
 - Added tap-to-sound-out for written words.
 - Built Letter Clusters 1–4 and the Level 1 Review; added 11 word pictures from Noto Emoji; set up this master document and GitHub.
+- Fixed a bug where a lesson's score was only saved after tapping all the way through to "Back to path" — a failed attempt, or leaving early, silently lost the score. Scores now save the instant a challenge is scored. Also fixed a double-tap on an answer counting as two answers.
+- Moved GitHub ownership to a dedicated account/email for the project, separate from the owner's personal one; Netlify stays on the owner's personal account for now by their choice.
+- Built Level 1 Module 8 (Master Assessment) and Level 2 Modules 9–13, plus the groundwork they needed (multi-letter tiles, blend/digraph/ending-aware narration). See the Level 2 curriculum design note above for what each module teaches and the known-letters gap it surfaced.
 
 ---
 
@@ -233,7 +248,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 10 | Consonant Blends | **Live** | 5 | 23 | 23 |
 | 11 | Digraphs | **Live** | 5 | 22 | 22 |
 | 12 | Common Endings | **Live** | 5 | 21 | 22 |
-| 13 | Qu & Common Patterns | Not built | 0 | 0 | 0 |
+| 13 | Qu & Common Patterns | **Live** | 5 | 19 | 20 |
 | 14 | Tricky Words | Not built | 0 | 0 | 0 |
 | 15 | Sentence Spelling | Not built | 0 | 0 | 0 |
 | 16 | Review & Assessment | Not built | 0 | 0 | 0 |
@@ -1954,12 +1969,148 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M12-05-7 | hear “rack” → spell (1 extra tile) \| tray r a ck tch \| answer **rack** |  |
 | AS-M12-05-8 | hear “dunk” → spell (1 extra tile) \| tray d u nk ng \| answer **dunk** |  |
 
+### Module 13 — Qu & Common Patterns
+
+*Goal:* Read and spell words with qu and common s-blends/end-blends.
+
+#### Lesson 1: Meet Qu (`L2-M13-01`)
+
+- **Objective:** Recognise qu as an inseparable pair at the start of a word.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Q always brings a friend — u! Together they say kw.
+- **Narration (teach):** Listen to a word, then find what it starts with.
+- **Narration (model):** Listen. Quit starts with qu.
+- **Narration (transition):** Now you try! Listen to the word, then choose what it starts with.
+- **Narration (close):** Great listening! Q and u are always a team.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M13-01 | hear “quit” → letter \| options qu st sp \| answer **qu** |
+| Q-M13-02 | hear “quick” → letter \| options qu sk sn \| answer **qu** |
+| Q-M13-03 | hear “quack” → letter \| options qu sn sk \| answer **qu** |
+| Q-M13-04 | hear “quilt” → letter \| options qu sp st \| answer **qu** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M13-01-1 | hear “quit” → letter \| options qu sm sp \| answer **qu** | Identical audio+answer to a practice item in this lesson. Only 4 valid qu-words exist in the known 19-letter set (quit, quick, quack, quilt — quiz and queen need untaught letters/patterns), so this lesson's small assessment bank necessarily reuses them. |
+| AS-M13-01-2 | hear “quick” → letter \| options qu st sk \| answer **qu** | Identical audio+answer to a practice item in this lesson. Only 4 valid qu-words exist in the known 19-letter set (quit, quick, quack, quilt — quiz and queen need untaught letters/patterns), so this lesson's small assessment bank necessarily reuses them. |
+
+#### Lesson 2: Blend & Build (`L2-M13-02`)
+
+- **Objective:** Build words starting with qu, or with an s-blend or end-blend, using already-known letters.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's build more pattern words!
+- **Narration (teach):** Listen to the word, then tap each tile in order — qu is ONE tile, every other letter is its own.
+- **Narration (model):** Listen. Quit. Tap qu, then i, then t to build it!
+- **Narration (transition):** Now you try! Listen, then build the word.
+- **Narration (close):** Great building! You handled qu, s-blends, and end-blends.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M13-05 | hear “quit” → build \| tray qu i t \| answer **quit** |
+| Q-M13-06 | hear “stop” → build \| tray s t o p \| answer **stop** |
+| Q-M13-07 | hear “spot” → build \| tray s p o t \| answer **spot** |
+| Q-M13-08 | hear “snap” → build \| tray s n a p \| answer **snap** |
+| Q-M13-09 | hear “skip” → build \| tray s k i p \| answer **skip** |
+| Q-M13-10 | hear “hand” → build \| tray h a n d \| answer **hand** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M13-02-1 | hear “quack” → build \| tray qu a c k \| answer **quack** |  |
+| AS-M13-02-2 | hear “step” → build \| tray s t e p \| answer **step** |  |
+| AS-M13-02-3 | hear “band” → build \| tray b a n d \| answer **band** |  |
+| AS-M13-02-4 | hear “gift” → build \| tray g i f t \| answer **gift** |  |
+
+#### Lesson 3: Read the Words (`L2-M13-03`)
+
+- **Objective:** Read pattern words and match them to pictures.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's read some more pattern words!
+- **Narration (teach):** Look at the written word, then find the matching picture.
+- **Narration (model):** Read. Tent. Find the picture that matches!
+- **Narration (transition):** Now you try! Read the word, then choose its picture.
+- **Narration (close):** You read every word!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M13-11 | read “tent” → picture \| options tent, hen, bus \| answer **tent** |
+| Q-M13-12 | read “lamp” → picture \| options lamp, cap, gum \| answer **lamp** |
+| Q-M13-13 | read “milk” → picture \| options milk, net, rat \| answer **milk** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M13-03-1 | read “tent” → picture \| options tent, hut, lip \| answer **tent** | Identical written_word+answer to practice item in this lesson. Only 3 illustrated qu/pattern words exist right now (tent, lamp, milk) — most qu/blend words (quit, stop, hand...) have no clean single-object picture. Recommend real illustrations for more pattern words to widen this pool. |
+| AS-M13-03-2 | read “milk” → picture \| options milk, dad, vet \| answer **milk** | Identical written_word+answer to practice item in this lesson. Same thin illustrated-word pool as AS-M13-03-1. |
+
+#### Lesson 4: Spell the Words (`L2-M13-04`)
+
+- **Objective:** Spell dictated pattern words, choosing the right tiles from a mixed tray.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to spell some pattern words!
+- **Narration (teach):** Listen to the word. The tray has an extra tile that doesn't belong — leave it out!
+- **Narration (model):** Listen. Spot. Pick s, p, o, t — and leave the extra tile behind!
+- **Narration (transition):** Now you try! Listen, then spell the word.
+- **Narration (close):** Great spelling! You picked every right tile.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M13-14 | hear “spin” → spell (1 extra tile) \| tray s p i n st \| answer **spin** |
+| Q-M13-15 | hear “snip” → spell (1 extra tile) \| tray s n i p sp \| answer **snip** |
+| Q-M13-16 | hear “smell” → spell (1 extra tile) \| tray s m e l l sn \| answer **smell** |
+| Q-M13-17 | hear “sand” → spell (1 extra tile) \| tray s a n d m \| answer **sand** |
+| Q-M13-18 | hear “belt” → spell (1 extra tile) \| tray b e l t n \| answer **belt** |
+| Q-M13-19 | hear “milk” → spell (1 extra tile) \| tray m i l k t \| answer **milk** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M13-04-1 | hear “stick” → spell (1 extra tile) \| tray s t i c k sp \| answer **stick** |  |
+| AS-M13-04-2 | hear “melt” → spell (1 extra tile) \| tray m e l t nd \| answer **melt** |  |
+| AS-M13-04-3 | hear “hunt” → spell (1 extra tile) \| tray h u n t nd \| answer **hunt** |  |
+| AS-M13-04-4 | hear “lamp” → spell (1 extra tile) \| tray l a m p b \| answer **lamp** |  |
+
+#### Lesson 5: Patterns Challenge (`L2-M13-05`)
+
+- **Objective:** Demonstrate independent mastery of qu, s-blends and end-blends: recognising, building, reading, and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** You are ready for the Patterns Challenge.
+- **Narration (instruction):** Qu, blends, building, reading, spelling — any of it could show up. Take your time.
+- **Narration (close):** Challenge complete! Level 2 is almost yours.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M13-05-1 | hear “quack” → letter \| options qu sn sk \| answer **qu** |  |
+| AS-M13-05-2 | hear “quilt” → letter \| options qu st sp \| answer **qu** |  |
+| AS-M13-05-3 | hear “stop” → build \| tray s t o p \| answer **stop** |  |
+| AS-M13-05-4 | hear “skip” → build \| tray s k i p \| answer **skip** |  |
+| AS-M13-05-5 | read “tent” → picture \| options tent, run, sad \| answer **tent** |  |
+| AS-M13-05-6 | read “lamp” → picture \| options lamp, pan, wig \| answer **lamp** |  |
+| AS-M13-05-7 | hear “spot” → spell (1 extra tile) \| tray s p o t st \| answer **spot** |  |
+| AS-M13-05-8 | hear “hand” → spell (1 extra tile) \| tray h a n d nt \| answer **hand** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (24, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (27, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

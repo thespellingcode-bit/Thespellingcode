@@ -41,7 +41,13 @@ export function answerTilesFor(item) {
 // Extend these sets as later modules teach more graphemes.
 const DIGRAPHS = new Set(["sh", "ch", "th", "wh"]);
 const ENDINGS = new Set(["ck", "tch", "dge", "ng", "nk"]);
+// "qu" is always taught and tiled as one inseparable pair (English never
+// spells /kw/ with a bare q) — not a digraph (it's two sounds, k+w, not
+// one) and always word-initial like a blend, but it isn't "two already-
+// known letters" either since w on its own is never taught. Its own kind
+// keeps the narration honest without overloading "blend" or "digraph".
 export function graphemeKindFor(grapheme) {
+  if (grapheme === "qu") return "qu";
   if (DIGRAPHS.has(grapheme)) return "digraph";
   if (ENDINGS.has(grapheme)) return "ending";
   if (grapheme.length > 1) return "blend";
