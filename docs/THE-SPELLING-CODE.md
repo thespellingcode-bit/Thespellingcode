@@ -28,7 +28,7 @@
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
-| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–19 (Short vs Long Vowels, Silent E) built |
+| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–20 (Short vs Long Vowels, Silent E, ai/ay) built |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
@@ -41,7 +41,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
-| Level 3 “Pattern Detective”, Modules 18–19 (Short vs Long Vowels, Silent E) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 20–27 (ai/ay onward) are planned in `docs/plans/level-3.md` but not yet built. |
+| Level 3 “Pattern Detective”, Modules 18–20 (Short vs Long Vowels, Silent E, ai/ay) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 21–27 (ee/ea onward) are planned in `docs/plans/level-3.md` but not yet built. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -76,6 +76,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Full plan:** `docs/plans/level-3.md` — big goal, module-by-module table, and the two owner-confirmed decisions (2026-09-30): vowel-team spellings (ai/ay, ee/ea, etc.) are taught **receptively only** — a child never picks between two valid spellings of the same word until Level 4 — and building continues level after level without pausing for review.
 - **Module 18, Short vs Long Vowels:** purely auditory, no spelling shown — the child hears a real word (via the browser's speech voice, same `say:word`-prefixed `audio_asset` mechanism Module 2's rhyming already used) and judges whether its vowel sound is short or long. A new activity type, `vowel_length`, reuses `Sort.jsx` (itself a thin wrapper over `MultipleChoice`) with plain `["Short", "Long"]` text options — no new component needed. Added to `COMPARE_TYPES` in `questionTypes.js` so it gets the same "no option picture" treatment as `same_different`/`loud_soft`. Word pairs were deliberately chosen as CVC/CVCe near-minimal pairs (cap/cake, hop/hope) to set up Module 19 (Silent E) without teaching spelling yet.
 - **Module 19, Silent E (CVCe):** the standard five-lesson template (Meet the Pattern → Blend & Build → Read the Words → Spell the Words → Challenge) applies cleanly — unlike a digraph or vowel team, a CVCe word (cake, bike...) is spelled entirely from already-known single letters, so no new tile shape was needed anywhere. "Meet the Pattern" reuses Module 18's own `vowel_length` type, this time with `written_word` also set (not just audio) so the child sees the silent-e spelling while judging short/long — the exact same component, no new code. Added 5 new word pictures (cake, bike, kite, rose, wave) from Noto Emoji, since no existing CVC/digraph word in the picture library has a silent-e shape.
+- **Module 20, ai/ay — the first module to actually apply the receptive-only decision.** `graphemeKindFor()` gained a `"vowel team"` kind (`VOWEL_TEAMS` set in `questionTypes.js`, currently `{ai, ay}`) so narration never calls it a digraph. A vowel team can sit at the start, middle or end of a word (the "ai" in "rain" is neither) — reusing the existing start/end `graphemePosition()` guess would have wrongly claimed "rain starts with ai"; both `modelCaptionFor` and `modelHeadingFor` in `LessonPlayer.jsx` got a dedicated branch that never claims a position for a vowel team, caught and fixed by live-verifying the Watch stage before shipping. **"Meet the Sounds" (recognition) never offers ai and ay as two options for the same item** — that would be exactly the graded ai-vs-ay choice the owner's decision rules out — so its decoy options are always a bare single vowel (`[correct, "a", "o"]`) instead, testing "is this a vowel team or just a short vowel" rather than "which spelling is it." Vowel-team tiles reuse `word_build`'s existing `answer_tiles` mechanism exactly like a Level 2 digraph tile (e.g. "rain" → `["r", "ai", "n"]`) — no new component. Added 5 new word pictures (train, rain, mail, sail, paint); no clean picture was found for any -ay word, so Read the Words covers -ai words only, matching the ch/wh precedent from Module 11. One picture-ordering gotcha: `WORD_KEYS`' substring match required listing "train" before "rain" (`"train".includes("rain")` is true), or every "train" picture would have silently shown rain's icon instead.
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
@@ -148,6 +149,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Redesigned `ChildHome.jsx` with a level-pill switcher so the module list only shows one level at a time, per the owner's explicit "don't let the first screen clutter" requirement — and removed the now-fully-superseded score-gated free-unlock mechanic (`ResultScreen.jsx`'s old celebration branch, `moduleScore`/threshold logic) rather than leaving dead code behind.
 - Built Level 3 Module 18 (Short vs Long Vowels) — a new `vowel_length` activity type (audio-only, no spelling shown) that reuses the existing `Sort`/`MultipleChoice`/`say:`-prefixed-TTS machinery with no new components. **Level 3 is now in progress**; see the Level 3 curriculum design note above for what's built and `docs/plans/level-3.md` for what's next (Module 19, Silent E).
 - Built Level 3 Module 19 (Silent E/CVCe) — reused every existing mechanic (word_build, read_word, and Module 18's own vowel_length type now with the spelling shown) with zero new components. Added 5 new word pictures (cake, bike, kite, rose, wave) from Noto Emoji. Generalized the Level 2 decodability safeguard (`test/level2-decodability.test.mjs`) to track every module from Level 2 on, Level 3 included, rather than being hard-scoped to Level 2 only — ready for Module 20 (ai/ay), the first module that actually introduces a new taught grapheme this safeguard needs to enforce.
+- Built Level 3 Module 20 (ai/ay) — the first module to put the owner's receptive-only vowel-team decision into practice (see the curriculum design note above for how "Meet the Sounds" avoids ever pairing ai against ay as options). Added `"vowel team"` as a new `graphemeKindFor()` kind and fixed a position-narration bug it surfaced live (a vowel team isn't always word-initial or word-final, unlike every earlier grapheme kind). Added 5 new word pictures (train, rain, mail, sail, paint).
 
 ---
 
@@ -369,6 +371,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 | 17 | Review & Assessment | **Live** | 5 | 20 | 26 |
 | 18 | Short vs Long Vowels | **Live** | 5 | 28 | 30 |
 | 19 | Silent E (CVCe) | **Live** | 5 | 20 | 20 |
+| 20 | ai / ay | **Live** | 5 | 21 | 20 |
 
 ## Curriculum in full
 
@@ -3077,12 +3080,152 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M19-05-7 | read “rose” → picture \| options rose, shell, bus \| answer **rose** |  |
 | AS-M19-05-8 | read “kite” → picture \| options kite, duck, fish \| answer **kite** |  |
 
+### Module 20 — ai / ay
+
+*Goal:* Read and spell words using the ai and ay vowel teams, which both spell the long A sound.
+
+#### Lesson 1: Meet the Sounds (`L3-M20-01`)
+
+- **Objective:** Recognise ai and ay as spellings of the long A sound, distinguishing them from a plain short vowel.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome, Pattern Detective! Two letters, one brand-new team.
+- **Narration (teach):** ai and ay are vowel teams — two letters working together to make one long A sound. ai usually hides in the middle of a word, like rain. ay usually stands at the end, like day.
+- **Narration (model):** Listen. Which pattern makes the long A sound in this word?
+- **Narration (transition):** Your turn! Listen for the vowel team.
+- **Narration (close):** Sharp listening! You can spot the ai and ay vowel teams.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M20-01 | hear “rain” → letter \| options ai a o \| answer **ai** |
+| Q-M20-02 | hear “wait” → letter \| options ai a o \| answer **ai** |
+| Q-M20-03 | hear “day” → letter \| options ay a o \| answer **ay** |
+| Q-M20-04 | hear “play” → letter \| options ay a o \| answer **ay** |
+| Q-M20-05 | hear “sail” → letter \| options ai a o \| answer **ai** |
+| Q-M20-06 | hear “stay” → letter \| options ay a o \| answer **ay** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M20-01-1 | hear “train” → letter \| options ai a o \| answer **ai** |  |
+| AS-M20-01-2 | hear “mail” → letter \| options ai a o \| answer **ai** |  |
+| AS-M20-01-3 | hear “say” → letter \| options ay a o \| answer **ay** |  |
+| AS-M20-01-4 | hear “way” → letter \| options ay a o \| answer **ay** |  |
+
+#### Lesson 2: Blend & Build (`L3-M20-02`)
+
+- **Objective:** Build ai/ay words from a tray where the vowel team is a single tile.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some vowel-team words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — the vowel team (ai or ay) is one tile, not two.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! Every vowel team snapped in as one tile.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M20-07 | hear “rain” → build \| tray r ai n \| answer **rain** |
+| Q-M20-08 | hear “day” → build \| tray d ay \| answer **day** |
+| Q-M20-09 | hear “mail” → build \| tray m ai l \| answer **mail** |
+| Q-M20-10 | hear “play” → build \| tray p l ay \| answer **play** |
+| Q-M20-11 | hear “sail” → build \| tray s ai l \| answer **sail** |
+| Q-M20-12 | hear “stay” → build \| tray s t ay \| answer **stay** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M20-02-1 | hear “gain” → build \| tray g ai n \| answer **gain** |  |
+| AS-M20-02-2 | hear “tray” → build \| tray t r ay \| answer **tray** |  |
+| AS-M20-02-3 | hear “pain” → build \| tray p ai n \| answer **pain** |  |
+
+#### Lesson 3: Read the Words (`L3-M20-03`)
+
+- **Objective:** Read an ai word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! These words all hide ai in the middle.
+- **Narration (teach):** Read the word, remembering ai together makes one long A sound. Then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You matched every ai word to its picture.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M20-13 | read “rain” → picture \| options rain, bus, hen \| answer **rain** |
+| Q-M20-14 | read “train” → picture \| options train, fish, pig \| answer **train** |
+| Q-M20-15 | read “mail” → picture \| options mail, frog, duck \| answer **mail** |
+| Q-M20-16 | read “sail” → picture \| options sail, crab, shell \| answer **sail** |
+| Q-M20-17 | read “paint” → picture \| options paint, bike, rose \| answer **paint** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M20-03-1 | read “rain” → picture \| options rain, shell, bus \| answer **rain** | true |
+| AS-M20-03-2 | read “mail” → picture \| options mail, duck, fish \| answer **mail** | true |
+
+#### Lesson 4: Spell the Words (`L3-M20-04`)
+
+- **Objective:** Spell a dictated ai/ay word from a tray that includes one decoy letter.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — watch out for the extra letter!
+- **Narration (teach):** Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!
+- **Narration (model):** Listen. Pick the right tiles — and leave the extra letter behind!
+- **Narration (transition):** Your turn! Listen carefully and leave out the extra letter.
+- **Narration (close):** Excellent spelling! You left every extra letter behind.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M20-18 | hear “rain” → build \| tray r ai n s \| answer **rain** |
+| Q-M20-19 | hear “day” → build \| tray d ay t \| answer **day** |
+| Q-M20-20 | hear “paint” → build \| tray p ai n t s \| answer **paint** |
+| Q-M20-21 | hear “stay” → build \| tray s t ay m \| answer **stay** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M20-04-1 | hear “mail” → build \| tray m ai l t \| answer **mail** |  |
+| AS-M20-04-2 | hear “say” → build \| tray s ay w \| answer **say** |  |
+| AS-M20-04-3 | hear “train” → build \| tray t r ai n p \| answer **train** |  |
+
+#### Lesson 5: ai/ay Challenge (`L3-M20-05`)
+
+- **Objective:** Demonstrate independent mastery of ai/ay across listening, building, reading and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time! Show everything you know about ai and ay.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Amazing! You've mastered the ai/ay vowel teams.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M20-05-1 | hear “wait” → letter \| options ai a o \| answer **ai** |  |
+| AS-M20-05-2 | hear “play” → letter \| options ay a o \| answer **ay** |  |
+| AS-M20-05-3 | hear “sail” → letter \| options ai a o \| answer **ai** |  |
+| AS-M20-05-4 | hear “way” → letter \| options ay a o \| answer **ay** |  |
+| AS-M20-05-5 | hear “rain” → build \| tray r ai n \| answer **rain** |  |
+| AS-M20-05-6 | hear “day” → build \| tray d ay \| answer **day** |  |
+| AS-M20-05-7 | read “train” → picture \| options train, shell, bus \| answer **train** |  |
+| AS-M20-05-8 | read “paint” → picture \| options paint, duck, fish \| answer **paint** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (33, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (38, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

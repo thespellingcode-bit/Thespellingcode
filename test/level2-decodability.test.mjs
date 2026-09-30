@@ -45,6 +45,7 @@ const GRAPHEMES_BY_MODULE = {
   // already-known single letters, and the "final e is silent" idea is a
   // word-SHAPE rule this letter-by-letter check has no reason to model.
   19: [],
+  20: ["ai", "ay"], // ai/ay — the first Level 3 module that actually adds a new tile-worthy grapheme.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

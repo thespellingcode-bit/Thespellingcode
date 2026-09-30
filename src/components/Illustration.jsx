@@ -505,6 +505,7 @@ const IMAGE_BG = {
   tent: "#FDE9D2", lamp: "#FFF3D6", milk: "#DCEBFF",
   fox: "#FDEBE4",
   cake: "#FFF3D6", bike: "#DCEBFF", kite: "#FDEBE4", rose: "#FDE0E8", wave: "#DCEBFF",
+  train: "#FDEBE4", rain: "#DCEBFF", mail: "#DCEEF6", sail: "#DCEBFF", paint: "#FFF3D6",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {

@@ -17,5 +17,6 @@
   { "module_id": 16, "level_id": 2, "module_name": "Sentence Spelling", "module_goal": "Read and write short dictated sentences using everything learned so far.", "units": 5, "active": true },
   { "module_id": 17, "level_id": 2, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 2 mastery across every pattern learned.", "units": 5, "active": true },
   { "module_id": 18, "level_id": 3, "module_name": "Short vs Long Vowels", "module_goal": "Hear whether a word's vowel sound is short (a quick sound) or long (says its own name) — the listening skill every later Level 3 spelling pattern builds on.", "units": 5, "active": true },
-  { "module_id": 19, "level_id": 3, "module_name": "Silent E (CVCe)", "module_goal": "Read and spell words where a final silent e makes the vowel before it say its long sound.", "units": 5, "active": true }
+  { "module_id": 19, "level_id": 3, "module_name": "Silent E (CVCe)", "module_goal": "Read and spell words where a final silent e makes the vowel before it say its long sound.", "units": 5, "active": true },
+  { "module_id": 20, "level_id": 3, "module_name": "ai / ay", "module_goal": "Read and spell words using the ai and ay vowel teams, which both spell the long A sound.", "units": 5, "active": true }
 ]

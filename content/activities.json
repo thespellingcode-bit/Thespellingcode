@@ -7505,5 +7505,435 @@
     "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-01",
+    "lesson_id": "L3-M20-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:rain",
+    "feedback": "Yes! rain has the vowel team ai.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-02",
+    "lesson_id": "L3-M20-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:wait",
+    "feedback": "Yes! wait has the vowel team ai.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-03",
+    "lesson_id": "L3-M20-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:day",
+    "feedback": "Yes! day has the vowel team ay.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-04",
+    "lesson_id": "L3-M20-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:play",
+    "feedback": "Yes! play has the vowel team ay.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-05",
+    "lesson_id": "L3-M20-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:sail",
+    "feedback": "Yes! sail has the vowel team ai.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-06",
+    "lesson_id": "L3-M20-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:stay",
+    "feedback": "Yes! stay has the vowel team ay.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-07",
+    "lesson_id": "L3-M20-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:rain",
+    "letters": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "answer_tiles": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You built rain.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-08",
+    "lesson_id": "L3-M20-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:day",
+    "letters": [
+      "d",
+      "ay"
+    ],
+    "answer_tiles": [
+      "d",
+      "ay"
+    ],
+    "correct_answer": "day",
+    "feedback": "Yes! You built day.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-09",
+    "lesson_id": "L3-M20-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mail",
+    "letters": [
+      "m",
+      "ai",
+      "l"
+    ],
+    "answer_tiles": [
+      "m",
+      "ai",
+      "l"
+    ],
+    "correct_answer": "mail",
+    "feedback": "Yes! You built mail.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-10",
+    "lesson_id": "L3-M20-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:play",
+    "letters": [
+      "p",
+      "l",
+      "ay"
+    ],
+    "answer_tiles": [
+      "p",
+      "l",
+      "ay"
+    ],
+    "correct_answer": "play",
+    "feedback": "Yes! You built play.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-11",
+    "lesson_id": "L3-M20-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sail",
+    "letters": [
+      "s",
+      "ai",
+      "l"
+    ],
+    "answer_tiles": [
+      "s",
+      "ai",
+      "l"
+    ],
+    "correct_answer": "sail",
+    "feedback": "Yes! You built sail.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-12",
+    "lesson_id": "L3-M20-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:stay",
+    "letters": [
+      "s",
+      "t",
+      "ay"
+    ],
+    "answer_tiles": [
+      "s",
+      "t",
+      "ay"
+    ],
+    "correct_answer": "stay",
+    "feedback": "Yes! You built stay.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-13",
+    "lesson_id": "L3-M20-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "rain",
+    "options": [
+      "rain",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You read rain.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-14",
+    "lesson_id": "L3-M20-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "train",
+    "options": [
+      "train",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "train",
+    "feedback": "Yes! You read train.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-15",
+    "lesson_id": "L3-M20-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "mail",
+    "options": [
+      "mail",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "mail",
+    "feedback": "Yes! You read mail.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-16",
+    "lesson_id": "L3-M20-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "sail",
+    "options": [
+      "sail",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "sail",
+    "feedback": "Yes! You read sail.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-17",
+    "lesson_id": "L3-M20-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "paint",
+    "options": [
+      "paint",
+      "bike",
+      "rose"
+    ],
+    "correct_answer": "paint",
+    "feedback": "Yes! You read paint.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-18",
+    "lesson_id": "L3-M20-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:rain",
+    "letters": [
+      "r",
+      "ai",
+      "n",
+      "s"
+    ],
+    "answer_tiles": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You built rain.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-19",
+    "lesson_id": "L3-M20-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:day",
+    "letters": [
+      "d",
+      "ay",
+      "t"
+    ],
+    "answer_tiles": [
+      "d",
+      "ay"
+    ],
+    "correct_answer": "day",
+    "feedback": "Yes! You built day.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-20",
+    "lesson_id": "L3-M20-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:paint",
+    "letters": [
+      "p",
+      "ai",
+      "n",
+      "t",
+      "s"
+    ],
+    "answer_tiles": [
+      "p",
+      "ai",
+      "n",
+      "t"
+    ],
+    "correct_answer": "paint",
+    "feedback": "Yes! You built paint.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M20-21",
+    "lesson_id": "L3-M20-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:stay",
+    "letters": [
+      "s",
+      "t",
+      "ay",
+      "m"
+    ],
+    "answer_tiles": [
+      "s",
+      "t",
+      "ay"
+    ],
+    "correct_answer": "stay",
+    "feedback": "Yes! You built stay.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

@@ -111,6 +111,10 @@ const WORD_KEYS = [
   // Level 3 Module 19 (Silent E / CVCe) — the first Level 3 words needing
   // pictures; none of Level 1/2's CVC word bank has a silent-e shape.
   "cake", "bike", "kite", "rose", "wave",
+  // Level 3 Module 20 (ai/ay). "train" must come before "rain" — the
+  // substring match below would otherwise match "train" against "rain"
+  // first ("train".includes("rain") is true) and show the wrong picture.
+  "train", "rain", "mail", "sail", "paint",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

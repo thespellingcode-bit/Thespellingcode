@@ -41,6 +41,13 @@ export function answerTilesFor(item) {
 // Extend these sets as later modules teach more graphemes.
 const DIGRAPHS = new Set(["sh", "ch", "th", "wh"]);
 const ENDINGS = new Set(["ck", "tch", "dge", "ng", "nk"]);
+// Level 3: two letters making ONE long-vowel sound (ai, ay...) — the same
+// underlying definition as a digraph (two letters, one sound), but a vowel
+// TEAM is not a consonant digraph, so it gets its own label rather than
+// overloading "digraph" — matches the standing rule from Level 2 that
+// narration must name the right concept. Extend as each later Level 3
+// module teaches more (ee/ea, oa/ow, oi/oy, ou/ow).
+const VOWEL_TEAMS = new Set(["ai", "ay"]);
 // "qu" is always taught and tiled as one inseparable pair (English never
 // spells /kw/ with a bare q) — not a digraph (it's two sounds, k+w, not
 // one) and always word-initial like a blend, but it isn't "two already-
@@ -50,6 +57,7 @@ export function graphemeKindFor(grapheme) {
   if (grapheme === "qu") return "qu";
   if (DIGRAPHS.has(grapheme)) return "digraph";
   if (ENDINGS.has(grapheme)) return "ending";
+  if (VOWEL_TEAMS.has(grapheme)) return "vowel team";
   if (grapheme.length > 1) return "blend";
   return "letter";
 }

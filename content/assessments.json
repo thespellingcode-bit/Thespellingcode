@@ -8545,5 +8545,388 @@
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION",
     "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M20-01-1",
+    "lesson_id": "L3-M20-01",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:train",
+    "feedback": "Yes! train has the vowel team ai.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-01-2",
+    "lesson_id": "L3-M20-01",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:mail",
+    "feedback": "Yes! mail has the vowel team ai.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-01-3",
+    "lesson_id": "L3-M20-01",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:say",
+    "feedback": "Yes! say has the vowel team ay.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-01-4",
+    "lesson_id": "L3-M20-01",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:way",
+    "feedback": "Yes! way has the vowel team ay.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-02-1",
+    "lesson_id": "L3-M20-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:gain",
+    "letters": [
+      "g",
+      "ai",
+      "n"
+    ],
+    "answer_tiles": [
+      "g",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "gain",
+    "feedback": "Yes! You built gain.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-02-2",
+    "lesson_id": "L3-M20-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tray",
+    "letters": [
+      "t",
+      "r",
+      "ay"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ay"
+    ],
+    "correct_answer": "tray",
+    "feedback": "Yes! You built tray.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-02-3",
+    "lesson_id": "L3-M20-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:pain",
+    "letters": [
+      "p",
+      "ai",
+      "n"
+    ],
+    "answer_tiles": [
+      "p",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "pain",
+    "feedback": "Yes! You built pain.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-03-1",
+    "lesson_id": "L3-M20-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "rain",
+    "options": [
+      "rain",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You read rain.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M20-03-2",
+    "lesson_id": "L3-M20-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "mail",
+    "options": [
+      "mail",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "mail",
+    "feedback": "Yes! You read mail.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M20-04-1",
+    "lesson_id": "L3-M20-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mail",
+    "letters": [
+      "m",
+      "ai",
+      "l",
+      "t"
+    ],
+    "answer_tiles": [
+      "m",
+      "ai",
+      "l"
+    ],
+    "correct_answer": "mail",
+    "feedback": "Yes! You built mail.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-04-2",
+    "lesson_id": "L3-M20-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:say",
+    "letters": [
+      "s",
+      "ay",
+      "w"
+    ],
+    "answer_tiles": [
+      "s",
+      "ay"
+    ],
+    "correct_answer": "say",
+    "feedback": "Yes! You built say.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-04-3",
+    "lesson_id": "L3-M20-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:train",
+    "letters": [
+      "t",
+      "r",
+      "ai",
+      "n",
+      "p"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "train",
+    "feedback": "Yes! You built train.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-05-1",
+    "lesson_id": "L3-M20-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:wait",
+    "feedback": "Yes! wait has the vowel team ai.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-05-2",
+    "lesson_id": "L3-M20-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:play",
+    "feedback": "Yes! play has the vowel team ay.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-05-3",
+    "lesson_id": "L3-M20-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:sail",
+    "feedback": "Yes! sail has the vowel team ai.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-05-4",
+    "lesson_id": "L3-M20-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long A sound in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:way",
+    "feedback": "Yes! way has the vowel team ay.",
+    "retry_feedback": "Listen for two letters together making one long A sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-05-5",
+    "lesson_id": "L3-M20-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:rain",
+    "letters": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "answer_tiles": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You built rain.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-05-6",
+    "lesson_id": "L3-M20-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:day",
+    "letters": [
+      "d",
+      "ay"
+    ],
+    "answer_tiles": [
+      "d",
+      "ay"
+    ],
+    "correct_answer": "day",
+    "feedback": "Yes! You built day.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-05-7",
+    "lesson_id": "L3-M20-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "train",
+    "options": [
+      "train",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "train",
+    "feedback": "Yes! You read train.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M20-05-8",
+    "lesson_id": "L3-M20-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "paint",
+    "options": [
+      "paint",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "paint",
+    "feedback": "Yes! You read paint.",
+    "retry_feedback": "Sound out each part, then blend them together — ai says one long A sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

@@ -1726,5 +1726,100 @@
       "transition": "",
       "close": "Amazing! You've mastered the silent-e pattern."
     }
+  },
+  {
+    "lesson_id": "L3-M20-01",
+    "module_id": 20,
+    "number": 1,
+    "title": "Meet the Sounds",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise ai and ay as spellings of the long A sound, distinguishing them from a plain short vowel.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome, Pattern Detective! Two letters, one brand-new team.",
+      "teach": "ai and ay are vowel teams — two letters working together to make one long A sound. ai usually hides in the middle of a word, like rain. ay usually stands at the end, like day.",
+      "model": "Listen. Which pattern makes the long A sound in this word?",
+      "transition": "Your turn! Listen for the vowel team.",
+      "close": "Sharp listening! You can spot the ai and ay vowel teams."
+    }
+  },
+  {
+    "lesson_id": "L3-M20-02",
+    "module_id": 20,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build ai/ay words from a tray where the vowel team is a single tile.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some vowel-team words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — the vowel team (ai or ay) is one tile, not two.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! Every vowel team snapped in as one tile."
+    }
+  },
+  {
+    "lesson_id": "L3-M20-03",
+    "module_id": 20,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read an ai word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! These words all hide ai in the middle.",
+      "teach": "Read the word, remembering ai together makes one long A sound. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You matched every ai word to its picture."
+    }
+  },
+  {
+    "lesson_id": "L3-M20-04",
+    "module_id": 20,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated ai/ay word from a tray that includes one decoy letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — watch out for the extra letter!",
+      "teach": "Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!",
+      "model": "Listen. Pick the right tiles — and leave the extra letter behind!",
+      "transition": "Your turn! Listen carefully and leave out the extra letter.",
+      "close": "Excellent spelling! You left every extra letter behind."
+    }
+  },
+  {
+    "lesson_id": "L3-M20-05",
+    "module_id": 20,
+    "number": 5,
+    "title": "ai/ay Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of ai/ay across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time! Show everything you know about ai and ay.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Amazing! You've mastered the ai/ay vowel teams."
+    }
   }
 ]
