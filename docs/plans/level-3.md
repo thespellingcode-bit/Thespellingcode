@@ -70,8 +70,7 @@ Unlike Level 2, which needed real new mechanics (multi-letter tiles, sentence bu
 ### Build order
 Same rhythm as every level so far: one module at a time — content → validate → `npm test` → live browser check → regenerate `docs/THE-SPELLING-CODE.md` → commit → push → deploy. Recommend starting with **Module 2 (Silent E)** rather than Module 1, since M2 is the one with the clearest existing template to follow (matches every "Meet a new pattern" module already built) and would validate the `answer_tiles`-for-vowel-teams approach immediately; Module 1's audio-discrimination shape is worth a short design conversation first rather than guessing.
 
-### Open questions for the owner
-1. **The design problem above** — receptive-only vowel teams with a dedicated "Alternative Spellings" recognition module (recommended), or teach the ai/ay-style position rules as gradable now?
-2. **Module 1's shape** — reuse Level 1's `same_different`/`sound_memory`-style audio discrimination, or is a different treatment wanted for "hear whether this vowel is short or long"?
-3. **Build order** — start with Module 2 (Silent E) as recommended above, or a different module first?
-4. **Pacing** — keep building level after level without stopping (matching how Level 2 went, module by module with your check-ins along the way), or would you like to review Level 3's plan and a couple of built modules before Level 4 planning even starts?
+### Decisions (owner confirmed, 2026-09-30)
+1. **Vowel-team choice:** receptive only — never ask the child to pick between ai/ay (or any vowel-team pair) for the same word. Module 9 (Alternative Spellings) is recognition-only; the graded "which spelling" skill stays Level 4's.
+2. **Pacing:** keep building level after level without stopping, same rhythm as Level 2 — module by module, verify live, ship, keep moving.
+3. **Module 1's shape and exact build order** — still open; will be resolved in practice as each module is built (Module 1's audio-discrimination shape gets a fresh look when its turn comes, following the same live-verification discipline as every module so far).
