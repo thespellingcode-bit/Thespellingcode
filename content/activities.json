@@ -8835,5 +8835,413 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-01",
+    "lesson_id": "L3-M23-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /oi/ sound in this word?",
+    "options": [
+      "oi",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oi",
+    "audio_asset": "say:coin",
+    "feedback": "Yes! coin has the vowel team oi.",
+    "retry_feedback": "Listen for two letters together making the /oi/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-02",
+    "lesson_id": "L3-M23-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /oi/ sound in this word?",
+    "options": [
+      "oi",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oi",
+    "audio_asset": "say:point",
+    "feedback": "Yes! point has the vowel team oi.",
+    "retry_feedback": "Listen for two letters together making the /oi/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-03",
+    "lesson_id": "L3-M23-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /oi/ sound in this word?",
+    "options": [
+      "oy",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oy",
+    "audio_asset": "say:boy",
+    "feedback": "Yes! boy has the vowel team oy.",
+    "retry_feedback": "Listen for two letters together making the /oi/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-04",
+    "lesson_id": "L3-M23-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /oi/ sound in this word?",
+    "options": [
+      "oy",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oy",
+    "audio_asset": "say:toy",
+    "feedback": "Yes! toy has the vowel team oy.",
+    "retry_feedback": "Listen for two letters together making the /oi/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-05",
+    "lesson_id": "L3-M23-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /oi/ sound in this word?",
+    "options": [
+      "oi",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oi",
+    "audio_asset": "say:soil",
+    "feedback": "Yes! soil has the vowel team oi.",
+    "retry_feedback": "Listen for two letters together making the /oi/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-06",
+    "lesson_id": "L3-M23-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /oi/ sound in this word?",
+    "options": [
+      "oy",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oy",
+    "audio_asset": "say:joy",
+    "feedback": "Yes! joy has the vowel team oy.",
+    "retry_feedback": "Listen for two letters together making the /oi/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-07",
+    "lesson_id": "L3-M23-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:coin",
+    "letters": [
+      "c",
+      "oi",
+      "n"
+    ],
+    "answer_tiles": [
+      "c",
+      "oi",
+      "n"
+    ],
+    "correct_answer": "coin",
+    "feedback": "Yes! You built coin.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-08",
+    "lesson_id": "L3-M23-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:boy",
+    "letters": [
+      "b",
+      "oy"
+    ],
+    "answer_tiles": [
+      "b",
+      "oy"
+    ],
+    "correct_answer": "boy",
+    "feedback": "Yes! You built boy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-09",
+    "lesson_id": "L3-M23-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:toy",
+    "letters": [
+      "t",
+      "oy"
+    ],
+    "answer_tiles": [
+      "t",
+      "oy"
+    ],
+    "correct_answer": "toy",
+    "feedback": "Yes! You built toy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-10",
+    "lesson_id": "L3-M23-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:soil",
+    "letters": [
+      "s",
+      "oi",
+      "l"
+    ],
+    "answer_tiles": [
+      "s",
+      "oi",
+      "l"
+    ],
+    "correct_answer": "soil",
+    "feedback": "Yes! You built soil.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-11",
+    "lesson_id": "L3-M23-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:joy",
+    "letters": [
+      "j",
+      "oy"
+    ],
+    "answer_tiles": [
+      "j",
+      "oy"
+    ],
+    "correct_answer": "joy",
+    "feedback": "Yes! You built joy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-12",
+    "lesson_id": "L3-M23-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:point",
+    "letters": [
+      "p",
+      "oi",
+      "n",
+      "t"
+    ],
+    "answer_tiles": [
+      "p",
+      "oi",
+      "n",
+      "t"
+    ],
+    "correct_answer": "point",
+    "feedback": "Yes! You built point.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-13",
+    "lesson_id": "L3-M23-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "coin",
+    "options": [
+      "coin",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "coin",
+    "feedback": "Yes! You read coin.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /oi/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-14",
+    "lesson_id": "L3-M23-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "boy",
+    "options": [
+      "boy",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "boy",
+    "feedback": "Yes! You read boy.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /oi/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-15",
+    "lesson_id": "L3-M23-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "toy",
+    "options": [
+      "toy",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "toy",
+    "feedback": "Yes! You read toy.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /oi/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-16",
+    "lesson_id": "L3-M23-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "oyster",
+    "options": [
+      "oyster",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "oyster",
+    "feedback": "Yes! You read oyster.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /oi/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-17",
+    "lesson_id": "L3-M23-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:coin",
+    "letters": [
+      "c",
+      "oi",
+      "n",
+      "s"
+    ],
+    "answer_tiles": [
+      "c",
+      "oi",
+      "n"
+    ],
+    "correct_answer": "coin",
+    "feedback": "Yes! You built coin.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-18",
+    "lesson_id": "L3-M23-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:point",
+    "letters": [
+      "p",
+      "oi",
+      "n",
+      "t",
+      "s"
+    ],
+    "answer_tiles": [
+      "p",
+      "oi",
+      "n",
+      "t"
+    ],
+    "correct_answer": "point",
+    "feedback": "Yes! You built point.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-19",
+    "lesson_id": "L3-M23-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:joy",
+    "letters": [
+      "j",
+      "oy",
+      "t"
+    ],
+    "answer_tiles": [
+      "j",
+      "oy"
+    ],
+    "correct_answer": "joy",
+    "feedback": "Yes! You built joy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M23-20",
+    "lesson_id": "L3-M23-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:toy",
+    "letters": [
+      "t",
+      "oy",
+      "p"
+    ],
+    "answer_tiles": [
+      "t",
+      "oy"
+    ],
+    "correct_answer": "toy",
+    "feedback": "Yes! You built toy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

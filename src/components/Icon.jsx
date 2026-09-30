@@ -122,6 +122,8 @@ const WORD_KEYS = [
   // sound icon key, and "window".includes("wind") would silently show
   // that icon instead of a window picture.
   "goat", "coat", "soap", "road", "snow", "bowl",
+  // Level 3 Module 23 (oi/oy).
+  "coin", "boy", "toy", "oyster",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

@@ -48,6 +48,7 @@ const GRAPHEMES_BY_MODULE = {
   20: ["ai", "ay"], // ai/ay — the first Level 3 module that actually adds a new tile-worthy grapheme.
   21: ["ee", "ea"],
   22: ["oa", "ow"],
+  23: ["oi", "oy"],
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

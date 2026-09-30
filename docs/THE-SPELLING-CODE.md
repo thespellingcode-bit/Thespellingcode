@@ -28,7 +28,7 @@
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
-| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–22 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow) built |
+| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–23 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy) built |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
@@ -41,7 +41,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
-| Level 3 “Pattern Detective”, Modules 18–22 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 23–27 (oi/oy onward) are planned in `docs/plans/level-3.md` but not yet built. |
+| Level 3 “Pattern Detective”, Modules 18–23 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 24–27 (ou/ow onward) are planned in `docs/plans/level-3.md` but not yet built. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -79,6 +79,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 20, ai/ay — the first module to actually apply the receptive-only decision.** `graphemeKindFor()` gained a `"vowel team"` kind (`VOWEL_TEAMS` set in `questionTypes.js`) so narration never calls it a digraph. A vowel team can sit at the start, middle or end of a word (the "ai" in "rain" is neither) — reusing the existing start/end `graphemePosition()` guess would have wrongly claimed "rain starts with ai"; both `modelCaptionFor` and `modelHeadingFor` in `LessonPlayer.jsx` got a dedicated branch that never claims a position for a vowel team, caught and fixed by live-verifying the Watch stage before shipping. **"Meet the Sounds" (recognition) never offers ai and ay as two options for the same item** — that would be exactly the graded ai-vs-ay choice the owner's decision rules out — so its decoy options are always a bare single vowel (`[correct, "a", "o"]`) instead, testing "is this a vowel team or just a short vowel" rather than "which spelling is it." Vowel-team tiles reuse `word_build`'s existing `answer_tiles` mechanism exactly like a Level 2 digraph tile (e.g. "rain" → `["r", "ai", "n"]`) — no new component. Added 5 new word pictures (train, rain, mail, sail, paint); no clean picture was found for any -ay word, so Read the Words covers -ai words only, matching the ch/wh precedent from Module 11. One picture-ordering gotcha: `WORD_KEYS`' substring match required listing "train" before "rain" (`"train".includes("rain")` is true), or every "train" picture would have silently shown rain's icon instead.
 - **Module 21, ee/ea — same shape as Module 20**, `VOWEL_TEAMS` extended to `{ai, ay, ee, ea}`, same non-competing-decoy design for "Meet the Sounds". First module where a word combines a Level 2 digraph tile AND a Level 3 vowel-team tile in the same build (wheel → `["wh", "ee", "l"]`) — verified live that the two tile kinds compose cleanly with no code changes needed. Added 6 new word pictures (tree, bee, sheep, wheel, leaf, seal); unlike Module 20, both spellings had enough clean pictures to include in Read the Words together.
 - **Module 22, oa/ow — same shape again**, `VOWEL_TEAMS` extended to `{ai, ay, ee, ea, oa, ow}`. Two picture words were deliberately dropped rather than wired in with a workaround: "boat" (its natural emoji is a sailboat, which "sail" from Module 20 already claims — using it for both would show the same picture for two different words) and "window" (`labelToIcon`'s `direct` map already has "wind" as an environmental-sound icon key, and `"window".includes("wind")` would silently show that icon instead). Both still work fine as build/spell-only targets, matching the ch/wh precedent. Added 6 new word pictures (goat, coat, soap, road, snow, bowl).
+- **Module 23, oi/oy** — same shape, `VOWEL_TEAMS` extended to `{ai, ay, ee, ea, oa, ow, oi, oy}`. Thinnest picture pool of any Level 3 module so far (4 words: coin, boy, toy, oyster) — Read the Words runs shorter than the standard 5-6 items as a result, matching the established "thinner lesson when the picture pool is thin" precedent (ch/wh, -tch/-nk in Level 2) rather than forcing in a weaker picture match.
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
@@ -154,6 +155,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 3 Module 20 (ai/ay) — the first module to put the owner's receptive-only vowel-team decision into practice (see the curriculum design note above for how "Meet the Sounds" avoids ever pairing ai against ay as options). Added `"vowel team"` as a new `graphemeKindFor()` kind and fixed a position-narration bug it surfaced live (a vowel team isn't always word-initial or word-final, unlike every earlier grapheme kind). Added 5 new word pictures (train, rain, mail, sail, paint).
 - Built Level 3 Module 21 (ee/ea) — same shape as Module 20, confirmed live that a digraph tile and a vowel-team tile compose cleanly in the same word (wheel → wh + ee + l). Added 6 new word pictures (tree, bee, sheep, wheel, leaf, seal).
 - Built Level 3 Module 22 (oa/ow) — same shape again; dropped "boat" and "window" as picture words (an emoji collision with "sail" and a substring false-match with the "wind" sound icon, respectively) rather than working around either, keeping both as build/spell-only. Added 6 new word pictures (goat, coat, soap, road, snow, bowl).
+- Built Level 3 Module 23 (oi/oy) — same shape again, thinnest picture pool yet (coin, boy, toy, oyster), Read the Words shortened accordingly rather than diluted with a mismatched picture.
 
 ---
 
@@ -378,6 +380,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 | 20 | ai / ay | **Live** | 5 | 21 | 20 |
 | 21 | ee / ea | **Live** | 5 | 22 | 20 |
 | 22 | oa / ow | **Live** | 5 | 22 | 20 |
+| 23 | oi / oy | **Live** | 5 | 20 | 20 |
 
 ## Curriculum in full
 
@@ -3508,12 +3511,151 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M22-05-7 | read “goat” → picture \| options goat, shell, bus \| answer **goat** |  |
 | AS-M22-05-8 | read “bowl” → picture \| options bowl, duck, fish \| answer **bowl** |  |
 
+### Module 23 — oi / oy
+
+*Goal:* Read and spell words using the oi and oy vowel teams, which both spell the /oi/ sound.
+
+#### Lesson 1: Meet the Sounds (`L3-M23-01`)
+
+- **Objective:** Recognise oi and oy as spellings of the /oi/ sound, distinguishing them from a plain single vowel.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome back, Pattern Detective! A brand-new sound today.
+- **Narration (teach):** oi and oy are vowel teams that make the /oi/ sound, like in coin and boy.
+- **Narration (model):** Listen. Which pattern makes the /oi/ sound in this word?
+- **Narration (transition):** Your turn! Listen for the vowel team.
+- **Narration (close):** Sharp listening! You can spot the oi and oy vowel teams.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M23-01 | hear “coin” → letter \| options oi o i \| answer **oi** |
+| Q-M23-02 | hear “point” → letter \| options oi o i \| answer **oi** |
+| Q-M23-03 | hear “boy” → letter \| options oy o i \| answer **oy** |
+| Q-M23-04 | hear “toy” → letter \| options oy o i \| answer **oy** |
+| Q-M23-05 | hear “soil” → letter \| options oi o i \| answer **oi** |
+| Q-M23-06 | hear “joy” → letter \| options oy o i \| answer **oy** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M23-01-1 | hear “join” → letter \| options oi o i \| answer **oi** |  |
+| AS-M23-01-2 | hear “noise” → letter \| options oi o i \| answer **oi** |  |
+| AS-M23-01-3 | hear “enjoy” → letter \| options oy o i \| answer **oy** |  |
+| AS-M23-01-4 | hear “annoy” → letter \| options oy o i \| answer **oy** |  |
+
+#### Lesson 2: Blend & Build (`L3-M23-02`)
+
+- **Objective:** Build oi/oy words from a tray where the vowel team is a single tile.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some vowel-team words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — the vowel team (oi or oy) is one tile, not two.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! Every vowel team snapped in as one tile.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M23-07 | hear “coin” → build \| tray c oi n \| answer **coin** |
+| Q-M23-08 | hear “boy” → build \| tray b oy \| answer **boy** |
+| Q-M23-09 | hear “toy” → build \| tray t oy \| answer **toy** |
+| Q-M23-10 | hear “soil” → build \| tray s oi l \| answer **soil** |
+| Q-M23-11 | hear “joy” → build \| tray j oy \| answer **joy** |
+| Q-M23-12 | hear “point” → build \| tray p oi n t \| answer **point** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M23-02-1 | hear “join” → build \| tray j oi n \| answer **join** |  |
+| AS-M23-02-2 | hear “oil” → build \| tray oi l \| answer **oil** |  |
+| AS-M23-02-3 | hear “boil” → build \| tray b oi l \| answer **boil** |  |
+
+#### Lesson 3: Read the Words (`L3-M23-03`)
+
+- **Objective:** Read an oi/oy word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! oi and oy both say the /oi/ sound.
+- **Narration (teach):** Read the word, remembering the vowel team makes the /oi/ sound. Then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You matched every oi/oy word to its picture.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M23-13 | read “coin” → picture \| options coin, bus, hen \| answer **coin** |
+| Q-M23-14 | read “boy” → picture \| options boy, fish, pig \| answer **boy** |
+| Q-M23-15 | read “toy” → picture \| options toy, frog, duck \| answer **toy** |
+| Q-M23-16 | read “oyster” → picture \| options oyster, crab, shell \| answer **oyster** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M23-03-1 | read “coin” → picture \| options coin, shell, bus \| answer **coin** | true |
+| AS-M23-03-2 | read “toy” → picture \| options toy, duck, fish \| answer **toy** | true |
+
+#### Lesson 4: Spell the Words (`L3-M23-04`)
+
+- **Objective:** Spell a dictated oi/oy word from a tray that includes one decoy letter.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — watch out for the extra letter!
+- **Narration (teach):** Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!
+- **Narration (model):** Listen. Pick the right tiles — and leave the extra letter behind!
+- **Narration (transition):** Your turn! Listen carefully and leave out the extra letter.
+- **Narration (close):** Excellent spelling! You left every extra letter behind.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M23-17 | hear “coin” → build \| tray c oi n s \| answer **coin** |
+| Q-M23-18 | hear “point” → build \| tray p oi n t s \| answer **point** |
+| Q-M23-19 | hear “joy” → build \| tray j oy t \| answer **joy** |
+| Q-M23-20 | hear “toy” → build \| tray t oy p \| answer **toy** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M23-04-1 | hear “soil” → build \| tray s oi l t \| answer **soil** |  |
+| AS-M23-04-2 | hear “boil” → build \| tray b oi l c \| answer **boil** |  |
+| AS-M23-04-3 | hear “join” → build \| tray j oi n s \| answer **join** |  |
+
+#### Lesson 5: oi/oy Challenge (`L3-M23-05`)
+
+- **Objective:** Demonstrate independent mastery of oi/oy across listening, building, reading and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time! Show everything you know about oi and oy.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Amazing! You've mastered the oi/oy vowel teams.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M23-05-1 | hear “point” → letter \| options oi o i \| answer **oi** |  |
+| AS-M23-05-2 | hear “toy” → letter \| options oy o i \| answer **oy** |  |
+| AS-M23-05-3 | hear “soil” → letter \| options oi o i \| answer **oi** |  |
+| AS-M23-05-4 | hear “joy” → letter \| options oy o i \| answer **oy** |  |
+| AS-M23-05-5 | hear “coin” → build \| tray c oi n \| answer **coin** |  |
+| AS-M23-05-6 | hear “boy” → build \| tray b oy \| answer **boy** |  |
+| AS-M23-05-7 | read “coin” → picture \| options coin, shell, bus \| answer **coin** |  |
+| AS-M23-05-8 | read “oyster” → picture \| options oyster, duck, fish \| answer **oyster** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (50, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (54, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

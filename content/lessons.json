@@ -2011,5 +2011,100 @@
       "transition": "",
       "close": "Amazing! You've mastered the oa/ow vowel teams."
     }
+  },
+  {
+    "lesson_id": "L3-M23-01",
+    "module_id": 23,
+    "number": 1,
+    "title": "Meet the Sounds",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise oi and oy as spellings of the /oi/ sound, distinguishing them from a plain single vowel.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome back, Pattern Detective! A brand-new sound today.",
+      "teach": "oi and oy are vowel teams that make the /oi/ sound, like in coin and boy.",
+      "model": "Listen. Which pattern makes the /oi/ sound in this word?",
+      "transition": "Your turn! Listen for the vowel team.",
+      "close": "Sharp listening! You can spot the oi and oy vowel teams."
+    }
+  },
+  {
+    "lesson_id": "L3-M23-02",
+    "module_id": 23,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build oi/oy words from a tray where the vowel team is a single tile.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some vowel-team words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — the vowel team (oi or oy) is one tile, not two.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! Every vowel team snapped in as one tile."
+    }
+  },
+  {
+    "lesson_id": "L3-M23-03",
+    "module_id": 23,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read an oi/oy word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! oi and oy both say the /oi/ sound.",
+      "teach": "Read the word, remembering the vowel team makes the /oi/ sound. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You matched every oi/oy word to its picture."
+    }
+  },
+  {
+    "lesson_id": "L3-M23-04",
+    "module_id": 23,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated oi/oy word from a tray that includes one decoy letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — watch out for the extra letter!",
+      "teach": "Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!",
+      "model": "Listen. Pick the right tiles — and leave the extra letter behind!",
+      "transition": "Your turn! Listen carefully and leave out the extra letter.",
+      "close": "Excellent spelling! You left every extra letter behind."
+    }
+  },
+  {
+    "lesson_id": "L3-M23-05",
+    "module_id": 23,
+    "number": 5,
+    "title": "oi/oy Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of oi/oy across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time! Show everything you know about oi and oy.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Amazing! You've mastered the oi/oy vowel teams."
+    }
   }
 ]
