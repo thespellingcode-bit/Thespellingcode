@@ -129,6 +129,10 @@ const WORD_KEYS = [
   // loud/soft icon key, and "cloud".includes("loud") would silently show
   // that icon instead of a cloud picture.
   "mouth", "cow", "owl", "house", "mouse",
+  // Level 3 Module 25 (r-controlled vowels: ar/er/ir/or/ur). "car" reuses
+  // the same real-world object as the existing Level 1 "car" sound icon —
+  // desired reuse, not a collision, since it's genuinely the same car.
+  "car", "star", "corn", "bird", "shirt", "purse",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

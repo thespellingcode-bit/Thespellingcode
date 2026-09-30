@@ -28,7 +28,7 @@
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
-| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–24 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow) built |
+| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–25 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels) built |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
@@ -41,7 +41,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
-| Level 3 “Pattern Detective”, Modules 18–24 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 25–27 (r-controlled vowels onward) are planned in `docs/plans/level-3.md` but not yet built. |
+| Level 3 “Pattern Detective”, Modules 18–25 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 26–27 (Alternative Spellings, Review & Assessment) are planned in `docs/plans/level-3.md` but not yet built. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -81,6 +81,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 22, oa/ow — same shape again**, `VOWEL_TEAMS` extended to `{ai, ay, ee, ea, oa, ow}`. Two picture words were deliberately dropped rather than wired in with a workaround: "boat" (its natural emoji is a sailboat, which "sail" from Module 20 already claims — using it for both would show the same picture for two different words) and "window" (`labelToIcon`'s `direct` map already has "wind" as an environmental-sound icon key, and `"window".includes("wind")` would silently show that icon instead). Both still work fine as build/spell-only targets, matching the ch/wh precedent. Added 6 new word pictures (goat, coat, soap, road, snow, bowl).
 - **Module 23, oi/oy** — same shape, `VOWEL_TEAMS` extended to `{ai, ay, ee, ea, oa, ow, oi, oy}`. Thinnest picture pool of any Level 3 module so far (4 words: coin, boy, toy, oyster) — Read the Words runs shorter than the standard 5-6 items as a result, matching the established "thinner lesson when the picture pool is thin" precedent (ch/wh, -tch/-nk in Level 2) rather than forcing in a weaker picture match.
 - **Module 24, ou/ow — the first Level 3 module the plan itself flagged as having "genuinely no simple position rule".** Unlike ai/ay, ee/ea, oa/ow and oi/oy, `ow` is reused here for a *different* sound than Module 22's (long O in "snow" vs this module's /ow/ in "cow") — `VOWEL_TEAMS` doesn't need a second entry since it only tracks "is this a vowel team," not which sound, but the decodability test's `GRAPHEMES_BY_MODULE[24]` only lists `["ou"]` since `"ow"` the grapheme string is already known from Module 22. Dropped "cloud" as a picture word — `labelToIcon`'s `direct` map has "loud" as a Level 1 icon key, and `"cloud".includes("loud")` would silently show that icon instead — the same class of bug as "window"/"wind" in Module 22, now the third time this exact collision shape has appeared. Added 5 new word pictures (mouth, cow, owl, house, mouse).
+- **Module 25, R-Controlled Vowels (ar/er/ir/or/ur) — the first Level 3 module with 6 lessons instead of 5**, per the plan (it teaches five patterns, not one or two). `graphemeKindFor()` gained a genuinely new kind, `"r-controlled vowel"`, rather than folding it into `"vowel team"` — a vowel-plus-r isn't two vowels, it's a vowel whose own sound the r swallows, so calling it a vowel team would be the same "wrong name" mistake the digraph/blend/ending distinction exists to prevent. Same position-narration fix as Module 20's vowel teams was needed again here (car ends with ar, but bird has ir in the middle). er, ir and ur are taught together in one lesson (they're the exact same sound, genuinely no rule for which spelling a word uses — closer to Module 9's Alternative Spellings problem than a normal two-way vowel-team split), while ar and or each get their own lesson since they're distinct sounds. "car" reuses the existing Level 1 hand-drawn car icon (the same real object, not a naming collision) rather than adding a redundant image file — confirmed live that `Illustration()`'s `IMAGE_BG`-then-`PICTURES` fallback picks it up automatically. Added 5 new word pictures (star, corn, bird, shirt, purse).
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
@@ -158,6 +159,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 3 Module 22 (oa/ow) — same shape again; dropped "boat" and "window" as picture words (an emoji collision with "sail" and a substring false-match with the "wind" sound icon, respectively) rather than working around either, keeping both as build/spell-only. Added 6 new word pictures (goat, coat, soap, road, snow, bowl).
 - Built Level 3 Module 23 (oi/oy) — same shape again, thinnest picture pool yet (coin, boy, toy, oyster), Read the Words shortened accordingly rather than diluted with a mismatched picture.
 - Built Level 3 Module 24 (ou/ow) — the plan's own flagged "no simple position rule" module; dropped "cloud" as a picture word (a third recurrence of the same substring-collision bug shape as "window"/"wind"). Added 5 new word pictures (mouth, cow, owl, house, mouse).
+- Built Level 3 Module 25 (R-Controlled Vowels: ar/er/ir/or/ur) — the first 6-lesson Level 3 module; added a genuinely new `graphemeKindFor()` kind rather than reusing "vowel team," and reused the existing Level 1 car icon instead of adding a duplicate. Added 5 new word pictures (star, corn, bird, shirt, purse).
 
 ---
 
@@ -384,6 +386,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 | 22 | oa / ow | **Live** | 5 | 22 | 20 |
 | 23 | oi / oy | **Live** | 5 | 20 | 20 |
 | 24 | ou / ow | **Live** | 5 | 21 | 20 |
+| 25 | R-Controlled Vowels | **Live** | 6 | 28 | 27 |
 
 ## Curriculum in full
 
@@ -3793,12 +3796,186 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M24-05-7 | read “owl” → picture \| options owl, shell, bus \| answer **owl** |  |
 | AS-M24-05-8 | read “mouse” → picture \| options mouse, duck, fish \| answer **mouse** |  |
 
+### Module 25 — R-Controlled Vowels
+
+*Goal:* Read and spell words where ar, er, ir, or or ur — a vowel's own sound swallowed by a following r.
+
+#### Lesson 1: Meet ar (`L3-M25-01`)
+
+- **Objective:** Recognise ar — a vowel whose own sound is swallowed by the r that follows.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome to a brand-new kind of pattern, Pattern Detective!
+- **Narration (teach):** When r follows a vowel, it swallows the vowel's own sound. a plus r makes ar, like in car and star.
+- **Narration (model):** Listen. Does this word have the r-controlled vowel ar?
+- **Narration (transition):** Your turn! Listen for ar.
+- **Narration (close):** Great listening! You can hear ar wherever it hides.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M25-01 | hear “car” → letter \| options ar a o \| answer **ar** |
+| Q-M25-02 | hear “star” → letter \| options ar a o \| answer **ar** |
+| Q-M25-03 | hear “farm” → letter \| options ar a o \| answer **ar** |
+| Q-M25-04 | hear “dark” → letter \| options ar a o \| answer **ar** |
+| Q-M25-05 | hear “park” → letter \| options ar a o \| answer **ar** |
+| Q-M25-06 | hear “arm” → letter \| options ar a o \| answer **ar** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M25-01-1 | hear “shark” → letter \| options ar a o \| answer **ar** |  |
+| AS-M25-01-2 | hear “yarn” → letter \| options ar a o \| answer **ar** |  |
+| AS-M25-01-3 | hear “barn” → letter \| options ar a o \| answer **ar** |  |
+| AS-M25-01-4 | hear “hard” → letter \| options ar a o \| answer **ar** |  |
+
+#### Lesson 2: Meet or (`L3-M25-02`)
+
+- **Objective:** Recognise or — a vowel whose own sound is swallowed by the r that follows.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Another r-controlled vowel today!
+- **Narration (teach):** o plus r makes or, like in corn and fork.
+- **Narration (model):** Listen. Does this word have the r-controlled vowel or?
+- **Narration (transition):** Your turn! Listen for or.
+- **Narration (close):** Great listening! You can hear or wherever it hides.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M25-07 | hear “corn” → letter \| options or a o \| answer **or** |
+| Q-M25-08 | hear “fork” → letter \| options or a o \| answer **or** |
+| Q-M25-09 | hear “horn” → letter \| options or a o \| answer **or** |
+| Q-M25-10 | hear “storm” → letter \| options or a o \| answer **or** |
+| Q-M25-11 | hear “born” → letter \| options or a o \| answer **or** |
+| Q-M25-12 | hear “short” → letter \| options or a o \| answer **or** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M25-02-1 | hear “sport” → letter \| options or a o \| answer **or** |  |
+| AS-M25-02-2 | hear “north” → letter \| options or a o \| answer **or** |  |
+| AS-M25-02-3 | hear “fort” → letter \| options or a o \| answer **or** |  |
+| AS-M25-02-4 | hear “torn” → letter \| options or a o \| answer **or** |  |
+
+#### Lesson 3: Meet er/ir/ur (`L3-M25-03`)
+
+- **Objective:** Recognise er, ir and ur — three different spellings of the exact same r-controlled sound.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Three spellings, one sound — today's a tricky one!
+- **Narration (teach):** er, ir and ur all make the exact same sound, like in her, bird and purse. There's no simple rule for which one a word uses — you just have to learn each word.
+- **Narration (model):** Listen. Does this word have an r-controlled vowel?
+- **Narration (transition):** Your turn! Listen for the r-controlled sound.
+- **Narration (close):** Great listening! You can hear that er/ir/ur sound wherever it hides.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M25-13 | hear “her” → letter \| options er a o \| answer **er** |
+| Q-M25-14 | hear “bird” → letter \| options ir a o \| answer **ir** |
+| Q-M25-15 | hear “purse” → letter \| options ur a o \| answer **ur** |
+| Q-M25-16 | hear “term” → letter \| options er a o \| answer **er** |
+| Q-M25-17 | hear “girl” → letter \| options ir a o \| answer **ir** |
+| Q-M25-18 | hear “hurt” → letter \| options ur a o \| answer **ur** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M25-03-1 | hear “fern” → letter \| options er a o \| answer **er** |  |
+| AS-M25-03-2 | hear “shirt” → letter \| options ir a o \| answer **ir** |  |
+| AS-M25-03-3 | hear “turn” → letter \| options ur a o \| answer **ur** |  |
+| AS-M25-03-4 | hear “first” → letter \| options ir a o \| answer **ir** |  |
+
+#### Lesson 4: Read the Words (`L3-M25-04`)
+
+- **Objective:** Read an r-controlled-vowel word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! ar, or, er, ir and ur all over the place today.
+- **Narration (teach):** Read the word, remembering the r swallows the vowel's own sound. Then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You matched every r-controlled word to its picture.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M25-19 | read “car” → picture \| options car, bus, hen \| answer **car** |
+| Q-M25-20 | read “star” → picture \| options star, fish, pig \| answer **star** |
+| Q-M25-21 | read “corn” → picture \| options corn, frog, duck \| answer **corn** |
+| Q-M25-22 | read “bird” → picture \| options bird, crab, shell \| answer **bird** |
+| Q-M25-23 | read “shirt” → picture \| options shirt, bike, rose \| answer **shirt** |
+| Q-M25-24 | read “purse” → picture \| options purse, train, sail \| answer **purse** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M25-04-1 | read “star” → picture \| options star, shell, bus \| answer **star** | true |
+| AS-M25-04-2 | read “bird” → picture \| options bird, duck, fish \| answer **bird** | true |
+
+#### Lesson 5: Spell the Words (`L3-M25-05`)
+
+- **Objective:** Spell a dictated r-controlled-vowel word from a tray that includes one decoy letter.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — watch out for the extra letter!
+- **Narration (teach):** Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!
+- **Narration (model):** Listen. Pick the right tiles — and leave the extra letter behind!
+- **Narration (transition):** Your turn! Listen carefully and leave out the extra letter.
+- **Narration (close):** Excellent spelling! You left every extra letter behind.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M25-25 | hear “car” → build \| tray c ar t \| answer **car** |
+| Q-M25-26 | hear “corn” → build \| tray c or n s \| answer **corn** |
+| Q-M25-27 | hear “bird” → build \| tray b ir d p \| answer **bird** |
+| Q-M25-28 | hear “purse” → build \| tray p ur s e t \| answer **purse** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M25-05-1 | hear “star” → build \| tray s t ar c \| answer **star** |  |
+| AS-M25-05-2 | hear “short” → build \| tray sh or t p \| answer **short** |  |
+| AS-M25-05-3 | hear “shirt” → build \| tray sh ir t s \| answer **shirt** |  |
+
+#### Lesson 6: R-Controlled Challenge (`L3-M25-06`)
+
+- **Objective:** Demonstrate independent mastery of ar/er/ir/or/ur across listening, building, reading and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 7–9 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time! Show everything you know about r-controlled vowels.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Amazing! You've mastered ar, or, er, ir and ur.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M25-06-1 | hear “dark” → letter \| options ar a o \| answer **ar** |  |
+| AS-M25-06-2 | hear “north” → letter \| options or a o \| answer **or** |  |
+| AS-M25-06-3 | hear “her” → letter \| options er a o \| answer **er** |  |
+| AS-M25-06-4 | hear “girl” → letter \| options ir a o \| answer **ir** |  |
+| AS-M25-06-5 | hear “hurt” → letter \| options ur a o \| answer **ur** |  |
+| AS-M25-06-6 | hear “car” → build \| tray c ar \| answer **car** |  |
+| AS-M25-06-7 | hear “corn” → build \| tray c or n \| answer **corn** |  |
+| AS-M25-06-8 | hear “bird” → build \| tray b ir d \| answer **bird** |  |
+| AS-M25-06-9 | read “star” → picture \| options star, shell, bus \| answer **star** |  |
+| AS-M25-06-10 | read “purse” → picture \| options purse, duck, fish \| answer **purse** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (59, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (64, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

@@ -510,6 +510,10 @@ const IMAGE_BG = {
   goat: "#FDE9D2", coat: "#F1E3D3", soap: "#FBD9D2", road: "#E4E1EA", snow: "#DCEBFF", bowl: "#DCEBFF",
   coin: "#FFF3D6", boy: "#FDE9D2", toy: "#F1E3D3", oyster: "#E4E1EA",
   mouth: "#FBD9D2", cow: "#F1E3D3", owl: "#FDE9D2", house: "#FDEBE4", mouse: "#E4E1EA",
+  // "car" deliberately omitted — it already renders via the hand-drawn
+  // PICTURES.car entry above (the existing Level 1 car sound icon), which
+  // Illustration() falls back to whenever IMAGE_BG has no entry for a name.
+  star: "#FFF3D6", corn: "#FDE9D2", bird: "#DCEBFF", shirt: "#DCEEF6", purse: "#FBD9D2",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {

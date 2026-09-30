@@ -52,6 +52,12 @@ const ENDINGS = new Set(["ck", "tch", "dge", "ng", "nk"]);
 // set only needs to know it's a vowel team either way; which SOUND it
 // makes is content, not something graphemeKindFor tracks.
 const VOWEL_TEAMS = new Set(["ai", "ay", "ee", "ea", "oa", "ow", "oi", "oy", "ou"]);
+// A vowel + r (ar, er, ir, or, ur) isn't a vowel TEAM — it's not two
+// vowels, it's a vowel whose own sound gets swallowed by the r that
+// follows. Same "two letters, one sound" shape as a vowel team for tiling
+// purposes, but calling it one would be the wrong name, same standing
+// rule as digraph vs blend vs ending.
+const R_CONTROLLED = new Set(["ar", "er", "ir", "or", "ur"]);
 // "qu" is always taught and tiled as one inseparable pair (English never
 // spells /kw/ with a bare q) — not a digraph (it's two sounds, k+w, not
 // one) and always word-initial like a blend, but it isn't "two already-
@@ -62,6 +68,7 @@ export function graphemeKindFor(grapheme) {
   if (DIGRAPHS.has(grapheme)) return "digraph";
   if (ENDINGS.has(grapheme)) return "ending";
   if (VOWEL_TEAMS.has(grapheme)) return "vowel team";
+  if (R_CONTROLLED.has(grapheme)) return "r-controlled vowel";
   if (grapheme.length > 1) return "blend";
   return "letter";
 }

@@ -2201,5 +2201,119 @@
       "transition": "",
       "close": "Amazing! You've mastered the ou/ow vowel teams."
     }
+  },
+  {
+    "lesson_id": "L3-M25-01",
+    "module_id": 25,
+    "number": 1,
+    "title": "Meet ar",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise ar — a vowel whose own sound is swallowed by the r that follows.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome to a brand-new kind of pattern, Pattern Detective!",
+      "teach": "When r follows a vowel, it swallows the vowel's own sound. a plus r makes ar, like in car and star.",
+      "model": "Listen. Does this word have the r-controlled vowel ar?",
+      "transition": "Your turn! Listen for ar.",
+      "close": "Great listening! You can hear ar wherever it hides."
+    }
+  },
+  {
+    "lesson_id": "L3-M25-02",
+    "module_id": 25,
+    "number": 2,
+    "title": "Meet or",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise or — a vowel whose own sound is swallowed by the r that follows.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Another r-controlled vowel today!",
+      "teach": "o plus r makes or, like in corn and fork.",
+      "model": "Listen. Does this word have the r-controlled vowel or?",
+      "transition": "Your turn! Listen for or.",
+      "close": "Great listening! You can hear or wherever it hides."
+    }
+  },
+  {
+    "lesson_id": "L3-M25-03",
+    "module_id": 25,
+    "number": 3,
+    "title": "Meet er/ir/ur",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise er, ir and ur — three different spellings of the exact same r-controlled sound.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Three spellings, one sound — today's a tricky one!",
+      "teach": "er, ir and ur all make the exact same sound, like in her, bird and purse. There's no simple rule for which one a word uses — you just have to learn each word.",
+      "model": "Listen. Does this word have an r-controlled vowel?",
+      "transition": "Your turn! Listen for the r-controlled sound.",
+      "close": "Great listening! You can hear that er/ir/ur sound wherever it hides."
+    }
+  },
+  {
+    "lesson_id": "L3-M25-04",
+    "module_id": 25,
+    "number": 4,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read an r-controlled-vowel word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! ar, or, er, ir and ur all over the place today.",
+      "teach": "Read the word, remembering the r swallows the vowel's own sound. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You matched every r-controlled word to its picture."
+    }
+  },
+  {
+    "lesson_id": "L3-M25-05",
+    "module_id": 25,
+    "number": 5,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated r-controlled-vowel word from a tray that includes one decoy letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — watch out for the extra letter!",
+      "teach": "Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!",
+      "model": "Listen. Pick the right tiles — and leave the extra letter behind!",
+      "transition": "Your turn! Listen carefully and leave out the extra letter.",
+      "close": "Excellent spelling! You left every extra letter behind."
+    }
+  },
+  {
+    "lesson_id": "L3-M25-06",
+    "module_id": 25,
+    "number": 6,
+    "title": "R-Controlled Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of ar/er/ir/or/ur across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "7–9 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time! Show everything you know about r-controlled vowels.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Amazing! You've mastered ar, or, er, ir and ur."
+    }
   }
 ]

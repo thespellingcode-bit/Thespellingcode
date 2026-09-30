@@ -110,6 +110,9 @@ function modelCaptionFor(item) {
       // guess would wrongly claim rain "starts with" ai), so this never
       // claims a position at all, unlike digraph/ending/letter/blend above.
       if (kind === "vowel team") return word ? `${word} has the vowel team ${answer} in it!` : `That's the vowel team ${answer}!`;
+      // Same reasoning as vowel team above — car ends with ar, but bird
+      // has ir in the middle, so this never claims a position either.
+      if (kind === "r-controlled vowel") return word ? `${word} has the r-controlled vowel ${answer} in it!` : `That's the r-controlled vowel ${answer}!`;
       // "letter" and "blend" are usually word-initial (every Level 1
       // letter and every Module 10 blend was taught that way), but a
       // single letter like "x" is almost always word-FINAL instead
@@ -209,6 +212,7 @@ function modelHeadingFor(lesson, item) {
       return `Listen. ${capitalize(word)} has the digraph ${item.correct_answer} at the ${graphemePosition(word, item.correct_answer)}.`;
     }
     if (word && kind === "vowel team") return `Listen. ${capitalize(word)} has the vowel team ${item.correct_answer} in it.`;
+    if (word && kind === "r-controlled vowel") return `Listen. ${capitalize(word)} has the r-controlled vowel ${item.correct_answer} in it.`;
     if (word && graphemePosition(word, item.correct_answer) === "end") return `Listen. ${capitalize(word)} ends with the ${kind} ${item.correct_answer}.`;
     return word ? `Listen. ${capitalize(word)} starts with the ${kind} ${item.correct_answer}.` : lesson.narration.model;
   }

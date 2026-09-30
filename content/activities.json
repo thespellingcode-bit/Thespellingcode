@@ -9675,5 +9675,533 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-01",
+    "lesson_id": "L3-M25-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ar",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ar",
+    "audio_asset": "say:car",
+    "feedback": "Yes! car has the r-controlled vowel ar.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-02",
+    "lesson_id": "L3-M25-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ar",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ar",
+    "audio_asset": "say:star",
+    "feedback": "Yes! star has the r-controlled vowel ar.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-03",
+    "lesson_id": "L3-M25-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ar",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ar",
+    "audio_asset": "say:farm",
+    "feedback": "Yes! farm has the r-controlled vowel ar.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-04",
+    "lesson_id": "L3-M25-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ar",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ar",
+    "audio_asset": "say:dark",
+    "feedback": "Yes! dark has the r-controlled vowel ar.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-05",
+    "lesson_id": "L3-M25-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ar",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ar",
+    "audio_asset": "say:park",
+    "feedback": "Yes! park has the r-controlled vowel ar.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-06",
+    "lesson_id": "L3-M25-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ar",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ar",
+    "audio_asset": "say:arm",
+    "feedback": "Yes! arm has the r-controlled vowel ar.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-07",
+    "lesson_id": "L3-M25-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "or",
+      "a",
+      "o"
+    ],
+    "correct_answer": "or",
+    "audio_asset": "say:corn",
+    "feedback": "Yes! corn has the r-controlled vowel or.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-08",
+    "lesson_id": "L3-M25-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "or",
+      "a",
+      "o"
+    ],
+    "correct_answer": "or",
+    "audio_asset": "say:fork",
+    "feedback": "Yes! fork has the r-controlled vowel or.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-09",
+    "lesson_id": "L3-M25-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "or",
+      "a",
+      "o"
+    ],
+    "correct_answer": "or",
+    "audio_asset": "say:horn",
+    "feedback": "Yes! horn has the r-controlled vowel or.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-10",
+    "lesson_id": "L3-M25-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "or",
+      "a",
+      "o"
+    ],
+    "correct_answer": "or",
+    "audio_asset": "say:storm",
+    "feedback": "Yes! storm has the r-controlled vowel or.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-11",
+    "lesson_id": "L3-M25-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "or",
+      "a",
+      "o"
+    ],
+    "correct_answer": "or",
+    "audio_asset": "say:born",
+    "feedback": "Yes! born has the r-controlled vowel or.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-12",
+    "lesson_id": "L3-M25-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "or",
+      "a",
+      "o"
+    ],
+    "correct_answer": "or",
+    "audio_asset": "say:short",
+    "feedback": "Yes! short has the r-controlled vowel or.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-13",
+    "lesson_id": "L3-M25-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "er",
+      "a",
+      "o"
+    ],
+    "correct_answer": "er",
+    "audio_asset": "say:her",
+    "feedback": "Yes! her has the r-controlled vowel er.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-14",
+    "lesson_id": "L3-M25-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ir",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ir",
+    "audio_asset": "say:bird",
+    "feedback": "Yes! bird has the r-controlled vowel ir.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-15",
+    "lesson_id": "L3-M25-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ur",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ur",
+    "audio_asset": "say:purse",
+    "feedback": "Yes! purse has the r-controlled vowel ur.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-16",
+    "lesson_id": "L3-M25-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "er",
+      "a",
+      "o"
+    ],
+    "correct_answer": "er",
+    "audio_asset": "say:term",
+    "feedback": "Yes! term has the r-controlled vowel er.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-17",
+    "lesson_id": "L3-M25-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ir",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ir",
+    "audio_asset": "say:girl",
+    "feedback": "Yes! girl has the r-controlled vowel ir.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-18",
+    "lesson_id": "L3-M25-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is the r-controlled vowel in this word?",
+    "options": [
+      "ur",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ur",
+    "audio_asset": "say:hurt",
+    "feedback": "Yes! hurt has the r-controlled vowel ur.",
+    "retry_feedback": "Listen for the vowel and r together — the r swallows the vowel's own sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-19",
+    "lesson_id": "L3-M25-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "car",
+    "options": [
+      "car",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "car",
+    "feedback": "Yes! You read car.",
+    "retry_feedback": "Sound out each part — remember the r swallows the vowel's own sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-20",
+    "lesson_id": "L3-M25-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "star",
+    "options": [
+      "star",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "star",
+    "feedback": "Yes! You read star.",
+    "retry_feedback": "Sound out each part — remember the r swallows the vowel's own sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-21",
+    "lesson_id": "L3-M25-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "corn",
+    "options": [
+      "corn",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "corn",
+    "feedback": "Yes! You read corn.",
+    "retry_feedback": "Sound out each part — remember the r swallows the vowel's own sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-22",
+    "lesson_id": "L3-M25-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bird",
+    "options": [
+      "bird",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "bird",
+    "feedback": "Yes! You read bird.",
+    "retry_feedback": "Sound out each part — remember the r swallows the vowel's own sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-23",
+    "lesson_id": "L3-M25-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "shirt",
+    "options": [
+      "shirt",
+      "bike",
+      "rose"
+    ],
+    "correct_answer": "shirt",
+    "feedback": "Yes! You read shirt.",
+    "retry_feedback": "Sound out each part — remember the r swallows the vowel's own sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-24",
+    "lesson_id": "L3-M25-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "purse",
+    "options": [
+      "purse",
+      "train",
+      "sail"
+    ],
+    "correct_answer": "purse",
+    "feedback": "Yes! You read purse.",
+    "retry_feedback": "Sound out each part — remember the r swallows the vowel's own sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-25",
+    "lesson_id": "L3-M25-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:car",
+    "letters": [
+      "c",
+      "ar",
+      "t"
+    ],
+    "answer_tiles": [
+      "c",
+      "ar"
+    ],
+    "correct_answer": "car",
+    "feedback": "Yes! You built car.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-26",
+    "lesson_id": "L3-M25-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:corn",
+    "letters": [
+      "c",
+      "or",
+      "n",
+      "s"
+    ],
+    "answer_tiles": [
+      "c",
+      "or",
+      "n"
+    ],
+    "correct_answer": "corn",
+    "feedback": "Yes! You built corn.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-27",
+    "lesson_id": "L3-M25-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bird",
+    "letters": [
+      "b",
+      "ir",
+      "d",
+      "p"
+    ],
+    "answer_tiles": [
+      "b",
+      "ir",
+      "d"
+    ],
+    "correct_answer": "bird",
+    "feedback": "Yes! You built bird.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M25-28",
+    "lesson_id": "L3-M25-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:purse",
+    "letters": [
+      "p",
+      "ur",
+      "s",
+      "e",
+      "t"
+    ],
+    "answer_tiles": [
+      "p",
+      "ur",
+      "s",
+      "e"
+    ],
+    "correct_answer": "purse",
+    "feedback": "Yes! You built purse.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]
