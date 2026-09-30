@@ -138,9 +138,20 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
           // letter_sound_match's options are always a bare grapheme (a
           // single letter, or — from Level 2 on — a digraph like "sh"),
           // never a real word, so this type always renders as tiles
-          // regardless of how many characters the grapheme has.
-          const isLetterOption = opt.length === 1 || question.type === "letter_sound_match";
-          const optIcon = !isLetterOption && labelToIcon(opt);
+          // regardless of how many characters the grapheme has. The
+          // reverse case matters too: sight_word_match's options are
+          // always real WORDS, and "I" is a genuine one-character Dolch
+          // word — it must never render as a bare letter tile just
+          // because it happens to be short.
+          const isLetterOption = question.type === "letter_sound_match" || (opt.length === 1 && question.type !== "sight_word_match");
+          // sight_word_match options are real multi-letter English words
+          // ("then", "sad") that can accidentally CONTAIN an illustrated
+          // word as a substring ("then" contains "hen") — labelToIcon's
+          // substring matching is fine for isolated CVC words but wrong
+          // here, where the whole point is telling similar words apart by
+          // their letters, not by an unrelated picture. Never picture
+          // this type's options, matched or not.
+          const optIcon = !isLetterOption && question.type !== "sight_word_match" && labelToIcon(opt);
           const bigPicture = !isCompareType && optIcon;
           // A letter tile already IS the answer, visually — showing the
           // same character again as a text label underneath would be

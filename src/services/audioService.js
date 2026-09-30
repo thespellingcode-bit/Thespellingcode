@@ -650,8 +650,10 @@ export function soundForOption(question, opt) {
   // exactly the mistake this app avoids everywhere else (see
   // word-library.md §5). Silence on tap is more honest than a wrong
   // sound; the grapheme is meant to be recognized visually here, not by
-  // ear — matched by MultipleChoice's own isLetterOption check.
-  if (key.length === 1 || question.type === "letter_sound_match") return null;
+  // ear — matched by MultipleChoice's own isLetterOption check. "I" is
+  // the one exception: a real one-character sight WORD, not a grapheme,
+  // so it should speak like any other word option.
+  if (question.type === "letter_sound_match" || (key.length === 1 && question.type !== "sight_word_match")) return null;
   if (question.type === "rhyme_match") return `say:${key}`;
   if (IDENTITY_SOUND_WORDS.has(key)) return key;
   if (question.type === "sound_memory") return key.replace(/-/g, "_");

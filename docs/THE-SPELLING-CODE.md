@@ -263,7 +263,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 12 | Common Endings | **Live** | 5 | 21 | 22 |
 | 13 | Qu & Common Patterns | **Live** | 5 | 19 | 20 |
 | 14 | Letter Cluster 5: j v w x y z | **Live** | 5 | 23 | 22 |
-| 15 | Tricky Words | Not built | 0 | 0 | 0 |
+| 15 | Tricky Words | **Live** | 5 | 16 | 24 |
 | 16 | Sentence Spelling | Not built | 0 | 0 | 0 |
 | 17 | Review & Assessment | Not built | 0 | 0 | 0 |
 
@@ -2263,6 +2263,143 @@ Read it as: what the child hears or sees → what they choose or build → the c
 
 **Words used in this module:** box, fix, fox, jab, jam, jet, jog, jug, mix, six, van, vat, vest, vet, web, wet, wig, win, yam, yes, yet, zag, zap, zip
 
+### Module 15 — Tricky Words
+
+*Goal:* Read a first set of common words that can't be fully sounded out.
+
+#### Lesson 1: Meet the Tricky Words (`L2-M15-01`)
+
+- **Objective:** Recognise a first set of common words that can't be fully sounded out.
+- **Skill:** decoding · **Activity:** sight_word_match · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Some words break the rules! You just have to know them by sight.
+- **Narration (teach):** Listen to the word, then find it — look closely, some of these look almost the same.
+- **Narration (model):** Listen. Said. You can't sound out every letter — you just have to know it!
+- **Narration (transition):** Now you try! Listen to the word, then find it.
+- **Narration (close):** Great work! You know these tricky words by sight now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M15-01 | sound: said \| options said, sad, slid \| answer **said** |
+| Q-M15-02 | sound: was \| options was, saw, has \| answer **was** |
+| Q-M15-03 | sound: you \| options you, your, out \| answer **you** |
+| Q-M15-04 | sound: they \| options they, the, then \| answer **they** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M15-01-1 | sound: one \| options one, on, own \| answer **one** |  |
+| AS-M15-01-2 | sound: two \| options two, to, too \| answer **two** |  |
+| AS-M15-01-3 | sound: have \| options have, gave, hive \| answer **have** |  |
+| AS-M15-01-4 | sound: my \| options my, by, may \| answer **my** |  |
+
+#### Lesson 2: Build the Words (`L2-M15-02`)
+
+- **Objective:** Build tricky words letter by letter, memorising the spelling even where the sound is irregular.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's build these tricky words!
+- **Narration (teach):** Listen to the word, then tap each tile in order — even the tricky part.
+- **Narration (model):** Listen. The. Tap th, then e, to build it!
+- **Narration (transition):** Now you try! Listen, then build the word.
+- **Narration (close):** Great building! You know exactly how these words are spelled.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M15-05 | hear “the” → build \| tray e th \| answer **the** |
+| Q-M15-06 | hear “go” → build \| tray o g \| answer **go** |
+| Q-M15-07 | hear “so” → build \| tray o s \| answer **so** |
+| Q-M15-08 | hear “no” → build \| tray o n \| answer **no** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M15-02-1 | hear “do” → build \| tray o d \| answer **do** |  |
+| AS-M15-02-2 | hear “to” → build \| tray o t \| answer **to** |  |
+| AS-M15-02-3 | hear “who” → build \| tray o wh \| answer **who** |  |
+| AS-M15-02-4 | hear “what” → build \| tray t wh a \| answer **what** |  |
+
+#### Lesson 3: Read Them Again (`L2-M15-03`)
+
+- **Objective:** Read more tricky words by sight, building speed and confidence.
+- **Skill:** decoding · **Activity:** sight_word_match · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More tricky words — let's get fast at spotting these!
+- **Narration (teach):** Listen to the word, then find it.
+- **Narration (model):** Listen. Here. Look closely — where and here look alike!
+- **Narration (transition):** Now you try! Listen to the word, then find it.
+- **Narration (close):** You are getting fast at these tricky words!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M15-09 | sound: here \| options here, hero, hear \| answer **here** |
+| Q-M15-10 | sound: where \| options where, were, wear \| answer **where** |
+| Q-M15-11 | sound: come \| options come, some, home \| answer **come** |
+| Q-M15-12 | sound: some \| options some, same, come \| answer **some** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M15-03-1 | sound: little \| options little, litter, kitten \| answer **little** |  |
+| AS-M15-03-2 | sound: I \| options I, a, is \| answer **I** |  |
+| AS-M15-03-3 | sound: was \| options was, saw, has \| answer **was** |  |
+| AS-M15-03-4 | sound: they \| options they, the, then \| answer **they** |  |
+
+#### Lesson 4: Spell the Words (`L2-M15-04`)
+
+- **Objective:** Spell dictated tricky words, choosing the right tiles from a mixed tray.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to spell some tricky words!
+- **Narration (teach):** Listen to the word. The tray has an extra tile that doesn't belong — leave it out!
+- **Narration (model):** Listen. Was. Pick w, a, s — and leave the extra tile behind!
+- **Narration (transition):** Now you try! Listen, then spell the word.
+- **Narration (close):** Great spelling! Tricky words and all.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M15-13 | hear “said” → spell (1 extra tile) \| tray s a i d e \| answer **said** |
+| Q-M15-14 | hear “was” → spell (1 extra tile) \| tray w a s o \| answer **was** |
+| Q-M15-15 | hear “the” → spell (1 extra tile) \| tray th e a \| answer **the** |
+| Q-M15-16 | hear “you” → spell (1 extra tile) \| tray y o u e \| answer **you** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M15-04-1 | hear “have” → spell (1 extra tile) \| tray h a v e o \| answer **have** |  |
+| AS-M15-04-2 | hear “they” → spell (1 extra tile) \| tray th e y a \| answer **they** |  |
+| AS-M15-04-3 | hear “one” → spell (1 extra tile) \| tray o n e u \| answer **one** |  |
+| AS-M15-04-4 | hear “two” → spell (1 extra tile) \| tray t w o e \| answer **two** |  |
+
+#### Lesson 5: Tricky Words Challenge (`L2-M15-05`)
+
+- **Objective:** Demonstrate independent mastery of tricky words: recognising, building, and spelling.
+- **Skill:** decoding · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** You are ready for the Tricky Words Challenge.
+- **Narration (instruction):** Finding, building, spelling — any of it could show up. Take your time.
+- **Narration (close):** Challenge complete! You can spot tricky words anywhere.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M15-05-1 | sound: said \| options said, sad, slid \| answer **said** |  |
+| AS-M15-05-2 | sound: was \| options was, saw, has \| answer **was** |  |
+| AS-M15-05-3 | hear “you” → build \| tray y o u \| answer **you** |  |
+| AS-M15-05-4 | hear “the” → build \| tray e th \| answer **the** |  |
+| AS-M15-05-5 | sound: they \| options they, the, then \| answer **they** |  |
+| AS-M15-05-6 | sound: one \| options one, on, own \| answer **one** |  |
+| AS-M15-05-7 | hear “have” → spell (1 extra tile) \| tray h a v e o \| answer **have** |  |
+| AS-M15-05-8 | hear “two” → spell (1 extra tile) \| tray t w o e \| answer **two** |  |
+
 ## Content library
 
 ### Pictures
@@ -2333,6 +2470,7 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `src/activities/RhymeMatch.jsx` | Thin wrapper over MultipleChoice for Module 2's "rhyme_match" activity type (ACT-04 in the curriculum content engine). Kept as its own file per the activity-type registry, matching every other activity type. |
 | `src/activities/RhymeSelect.jsx` | Genuinely different mechanic from MultipleChoice's single-tap-select: the child taps every option that rhymes (multiple can be active at once), then confirms with "Check my answer." Used by Module 2 Lesson 5 ("Make a Rhyme") so it isn't just a reworded copy... |
 | `src/activities/SameDifferent.jsx` | Thin wrapper over MultipleChoice for the "same_different" activity type(s). Kept as its own file per the activity-type registry so this interaction can get a bespoke UI later without touching the others. |
+| `src/activities/SightWordMatch.jsx` | Module 15's "sight_word_match" activity type — a tricky word can't be sounded out reliably (the vowel in "said" doesn't say its usual sound), so unlike read_word this is deliberately audio-first: hear the whole word spoken naturally, then pick it out from o... |
 | `src/activities/Sort.jsx` | Thin wrapper over MultipleChoice for the "loud_soft/fast_slow" activity type(s). Kept as its own file per the activity-type registry so this interaction can get a bespoke UI later without touching the others. |
 | `src/activities/SoundMemory.jsx` | Thin wrapper over MultipleChoice for the "sound_memory" activity type(s). Kept as its own file per the activity-type registry so this interaction can get a bespoke UI later without touching the others. |
 | `src/activities/VowelMatch.jsx` | Thin wrapper over MultipleChoice for Module 5's "vowel_match" activity type — compares a word's MIDDLE vowel sound instead of its first (beginning_sound_match) or last (ending_sound_match). Same content shape and preview-then-confirm interaction as the othe... |

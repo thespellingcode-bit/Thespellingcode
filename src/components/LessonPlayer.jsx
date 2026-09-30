@@ -111,6 +111,8 @@ function modelCaptionFor(item) {
       return `That word is spelled ${answerTilesFor(item).join("-")}: ${answer}!`;
     case "read_word":
       return `You read it! That word is ${answer}.`;
+    case "sight_word_match":
+      return item.tricky_part ? `That word is ${answer} — the tricky part is ${item.tricky_part}!` : `That word is ${answer}!`;
     case "listen_choose":
     default:
       return `Listen — that's the ${answer.toLowerCase()} sound!`;
@@ -204,6 +206,9 @@ function modelHeadingFor(lesson, item) {
   if (item.type === "read_word" && item.written_word) {
     return `Read. ${capitalize(item.written_word.replace(/\.$/, ""))}. Find the picture that matches!`;
   }
+  if (item.type === "sight_word_match") {
+    return `Listen. This tricky word is ${item.correct_answer}. You can't sound out every letter — you just have to know it!`;
+  }
   return lesson.narration.model;
 }
 
@@ -275,6 +280,27 @@ function StreakBadge({ streak }) {
   );
 }
 
+// Shows a tricky word with its irregular part (the bit that doesn't sound
+// out the normal way, e.g. the "ai" in "said") picked out in a different
+// colour — the standard "look at the tricky part" teaching technique for
+// sight words. Falls back to plain text if an item has no tricky_part.
+function TrickyWordDisplay({ word, trickyPart }) {
+  const i = trickyPart ? word.toLowerCase().indexOf(trickyPart.toLowerCase()) : -1;
+  if (i === -1) {
+    return (
+      <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, color: T.ink, letterSpacing: 1, margin: 0 }}>{word}</p>
+    );
+  }
+  const before = word.slice(0, i), mid = word.slice(i, i + trickyPart.length), after = word.slice(i + trickyPart.length);
+  return (
+    <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800, fontSize: 44, letterSpacing: 1, margin: 0 }}>
+      <span style={{ color: T.ink }}>{before}</span>
+      <span style={{ color: T.coralDeep }}>{mid}</span>
+      <span style={{ color: T.ink }}>{after}</span>
+    </p>
+  );
+}
+
 // The Model/"Watch" stage: a carousel of worked examples. Its own
 // component (rather than inline in LessonPlayer) so its auto-speak hook
 // call is unconditional within ITS render — LessonPlayer only mounts this
@@ -335,6 +361,11 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
               That extra {decoyNounFor(currentExample)} doesn't belong in this word — leave it out!
             </p>
           )}
+        </>
+      ) : currentExample.type === "sight_word_match" ? (
+        <>
+          <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
+          <TrickyWordDisplay word={currentExample.correct_answer} trickyPart={currentExample.tricky_part} />
         </>
       ) : (
         <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
