@@ -9,19 +9,6 @@
 
 const STORAGE_KEY = "spelling-code-state-v2";
 
-// A module's own final "Challenge"/"Assessment" lesson score gates the
-// NEXT module's unlock — hitting this bar unlocks it for free, below it
-// only that one lesson needs a retry (not the whole module). Shared here
-// so ChildHome (the gate check) and Lesson (the in-lesson messaging)
-// can't drift out of sync on the number.
-export const MODULE_UNLOCK_THRESHOLD = 0.85;
-
-// The score-gated free unlock is a one-time promotional mechanic scoped
-// to exactly one boundary — Module 1's Challenge unlocking Module 2 —
-// not a general "any module's score unlocks the next one" rule. Every
-// other module boundary uses the plain "every lesson mastered" gate.
-export const FREE_UNLOCK_FROM_MODULE_ID = 1;
-
 export const DEFAULT_STATE = { profile: null, progress: {}, errorLog: [], badges: [], settings: { unlockAll: false } };
 
 export async function loadState() {

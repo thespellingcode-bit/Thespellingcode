@@ -356,7 +356,7 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
 // the moment a challenge attempt is scored — pass or fail — so a score is
 // never lost by leaving the screen early. The caller persists it via
 // progressService; LessonPlayer itself has no storage dependency.
-export function LessonPlayer({ lesson, onExit, onRecord, isModuleFinal = false, nextModuleName = null, unlockThreshold = 0.85, priorBestScore = 0 }) {
+export function LessonPlayer({ lesson, onExit, onRecord }) {
   const stages = stagesFor(lesson);
   const [stageIdx, setStageIdx] = useState(0);
   const stage = stages[stageIdx];
@@ -417,10 +417,6 @@ export function LessonPlayer({ lesson, onExit, onRecord, isModuleFinal = false, 
   const attemptComplete = responses.length === totalQuestions && totalQuestions > 0;
   const mastered = attemptComplete && isMastered(ratio, lesson.masteryThreshold);
   const remediation = attemptComplete ? pickRemediation(errorTags) : null;
-  // The score that will actually gate the next module: never lower than
-  // whatever's already banked from a previous attempt, so a worse retry
-  // can never look like it cost them progress.
-  const bestEver = Math.max(priorBestScore, ratio);
 
   const recordedAttempt = useRef(0);
   useEffect(() => {
@@ -544,12 +540,7 @@ export function LessonPlayer({ lesson, onExit, onRecord, isModuleFinal = false, 
             total={totalQuestions}
             onFinish={() => goTo("complete")}
             onSeeRemediation={() => goTo("remediation")}
-            onRetryChallenge={restartAssessment}
             ttsEnabled={ttsEnabled}
-            isModuleFinal={isModuleFinal}
-            nextModuleName={nextModuleName}
-            unlockThreshold={unlockThreshold}
-            bestEver={bestEver}
           />
         )}
         {stage === "remediation" && (

@@ -69,7 +69,7 @@ export default function App() {
     <div style={wrapperStyle}>
       {!activeLessonId && <TopBar view={view} setView={setView} profile={state.profile} />}
       {activeLessonId ? (
-        <Lesson lessonId={activeLessonId} state={state} onExit={() => setActiveLessonId(null)} onRecord={handleRecordAttempt} />
+        <Lesson lessonId={activeLessonId} onExit={() => setActiveLessonId(null)} onRecord={handleRecordAttempt} />
       ) : view === "child" ? (
         <ChildHome profile={state.profile} state={state} onOpenLesson={setActiveLessonId} />
       ) : (

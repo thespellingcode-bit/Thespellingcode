@@ -64,10 +64,16 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Multi-letter tiles.** A `word_build` item can set `answer_tiles` (e.g. `["sh", "i", "p"]` for “ship”) so a tray tile can hold a whole grapheme instead of always one letter. Every place that used to do `correct_answer.split("")` — the tile count, the decoy calculation, the Watch-stage demo, the narration — now goes through `answerTilesFor()` instead. Level 1 content never sets `answer_tiles`, so it's unaffected; this is purely additive.
 - **Known letters gap (flagged, not yet resolved):** Level 1 and Level 2 together still only teach 19 letters — **j, v, w, x, y, z are never taught**, at any point. This was inherited from Level 1's four Jolly-Phonics-style letter clusters and was not revisited when Level 2 was scoped. It already constrains word choice throughout Level 2 (for example “sw” was dropped from Module 13's s-blends because it needs w; “jump”, “van”, “wet”, “zip” are all currently off-limits). Recommend deciding where these six letters get taught — real Jolly Phonics teaches them alongside its own later digraphs/vowel-team groups — before Level 2's remaining modules (especially Sentence Spelling, which will want ordinary vocabulary) are built.
 
-### Access rules (free vs full)
-- Module 1 is free. **Module 2 unlocks free if the child scores 85% or more on Module 1's challenge** (`FREE_UNLOCK_FROM_MODULE_ID = 1`, `MODULE_UNLOCK_THRESHOLD = 0.85` in `progressService.js`). This shortcut applies only at the Module 1 → 2 boundary.
-- Every other module unlocks only after the previous module is fully mastered.
-- Parent Dashboard has an “unlock all” switch for reviewing and testing.
+### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
+- **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
+- Every module still unlocks only after the previous one is fully mastered (`moduleUnlocked` in `ChildHome.jsx`) — that gating is unchanged; what's new is a *payment* gate still to be added at the Level 1 → Level 2 boundary specifically.
+- **Not yet implemented:** there is no paywall in the app yet. Level 2 (Modules 9–14, all built) is currently reachable the same way Level 1 is, gated only by mastery — building the actual Level 2 payment gate is on hold until the payment gateway and pricing are decided (see “Monetisation” below).
+- Parent Dashboard has an “unlock all” switch for reviewing and testing (unaffected by any of this).
+
+### Monetisation (in progress, 2026-09-30 — not yet built)
+- **Decision made:** free/paid boundary is Level 1 (free) / Level 2+ (paid), confirmed by the owner.
+- **Decision deferred:** which payment gateway (Razorpay, Instamojo, Gumroad, or a manual UPI flow) — owner wants to build the app-side pieces (sign-up, payment screen UI) first and pick a gateway later. See the pricing research the assistant did on 2026-09-30 for Indian-market comparables and a recommended price point.
+- **Reality check for whoever builds this next:** the app has zero backend today (`localStorage` only, no accounts). A real paywall needs *some* way to verify payment that a technical user can't trivially bypass by editing `localStorage` (the existing `settings.unlockAll` toggle is proof this is easy to flip today) — plan for at least a minimal serverless check (e.g. a Netlify Function verifying a payment/license token), not a client-only "if paid flag is true" gate, once real money is involved.
 
 ### Architecture (how the code is organised)
 - **Stack:** Vite + React (plain JS/JSX, no TypeScript). Tests use Node's built-in runner. No backend.
@@ -81,7 +87,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 ### Decisions worth remembering
 - **Loud and Soft uses recognisable real-world sounds from the owner's reference chart** — thunder and a clap (loud); wind, bell, birds, dripping water (soft). Drums and violins were tried and rejected: the owner did not want children learning “that's a drum”; the lesson is loudness only.
 - **Audio sources:** thunder, wind and car were supplied by the owner. Birds and dripping water come from Mixkit (free commercial use, no credit needed). Pixabay's sounds were rejected as low quality. The birds clip was trimmed and volume-boosted because the original was very quiet.
-- **Only one 85% unlock**, at Module 1 → 2, because the owner does not want later modules free.
+- **The old score-gated free unlock (85% at Module 1 → 2) was removed 2026-09-30** once the owner decided all of Level 1 would be free outright, making a partial shortcut redundant. See “Monetisation” above.
 - **The mascot** appears on the welcome header and result screen only — not the top bar, the Parent Dashboard or per-question feedback.
 - **Playfulness:** the owner wants a game-like feel, and practice questions are randomised.
 - **Design inspiration** was taken from other children's apps for look and feel only, never for curriculum content.
@@ -119,6 +125,8 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Fixed a bug where a lesson's score was only saved after tapping all the way through to "Back to path" — a failed attempt, or leaving early, silently lost the score. Scores now save the instant a challenge is scored. Also fixed a double-tap on an answer counting as two answers.
 - Moved GitHub ownership to a dedicated account/email for the project, separate from the owner's personal one; Netlify stays on the owner's personal account for now by their choice.
 - Built Level 1 Module 8 (Master Assessment) and Level 2 Modules 9–13, plus the groundwork they needed (multi-letter tiles, blend/digraph/ending-aware narration). See the Level 2 curriculum design note above for what each module teaches and the known-letters gap it surfaced.
+- Built Level 2 Module 14 (Letter Cluster 5: j v w x y z) once the known-letters gap started blocking real words; fixed a narration bug it surfaced (a single letter like "x" assumed to always be word-initial, wrong for "fox").
+- Owner decided the monetisation boundary: all of Level 1 free, Level 2 onward paid. Removed the old score-gated 85% shortcut at Module 1 → 2 as redundant. No paywall is built yet — see “Monetisation” above.
 
 ---
 
