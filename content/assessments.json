@@ -12341,5 +12341,418 @@
     "retry_feedback": "Sound out each letter, then blend them together.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-01-1",
+    "lesson_id": "L4-M29-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "lock",
+      "lok"
+    ],
+    "correct_answer": "lock",
+    "audio_asset": "say:lock",
+    "feedback": "Yes! lock uses ck — a short vowel comes right before /k/.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-01-2",
+    "lesson_id": "L4-M29-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "desk",
+      "desck"
+    ],
+    "correct_answer": "desk",
+    "audio_asset": "say:desk",
+    "feedback": "Yes! desk uses just k — a consonant or long vowel comes right before /k/, not a bare short vowel.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-01-3",
+    "lesson_id": "L4-M29-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "rock",
+      "rok"
+    ],
+    "correct_answer": "rock",
+    "audio_asset": "say:rock",
+    "feedback": "Yes! rock uses ck — a short vowel comes right before /k/.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-01-4",
+    "lesson_id": "L4-M29-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "look",
+      "loock"
+    ],
+    "correct_answer": "look",
+    "audio_asset": "say:look",
+    "feedback": "Yes! look uses just k — a consonant or long vowel comes right before /k/, not a bare short vowel.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-02-1",
+    "lesson_id": "L4-M29-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:rock",
+    "letters": [
+      "r",
+      "o",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "r",
+      "o",
+      "ck"
+    ],
+    "correct_answer": "rock",
+    "feedback": "Yes! You built rock with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-02-2",
+    "lesson_id": "L4-M29-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tank",
+    "letters": [
+      "t",
+      "a",
+      "n",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "t",
+      "a",
+      "n",
+      "k"
+    ],
+    "correct_answer": "tank",
+    "feedback": "Yes! You built tank with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-02-3",
+    "lesson_id": "L4-M29-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:pack",
+    "letters": [
+      "p",
+      "a",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "p",
+      "a",
+      "ck"
+    ],
+    "correct_answer": "pack",
+    "feedback": "Yes! You built pack with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-02-4",
+    "lesson_id": "L4-M29-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:book",
+    "letters": [
+      "b",
+      "o",
+      "o",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "b",
+      "o",
+      "o",
+      "k"
+    ],
+    "correct_answer": "book",
+    "feedback": "Yes! You built book with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-03-1",
+    "lesson_id": "L4-M29-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "duck",
+    "options": [
+      "duck",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "duck",
+    "feedback": "Yes! You read duck.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M29-03-2",
+    "lesson_id": "L4-M29-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "sock",
+    "options": [
+      "sock",
+      "milk",
+      "fish"
+    ],
+    "correct_answer": "sock",
+    "feedback": "Yes! You read sock.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M29-04-1",
+    "lesson_id": "L4-M29-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:kick",
+    "letters": [
+      "k",
+      "i",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "k",
+      "i",
+      "ck"
+    ],
+    "correct_answer": "kick",
+    "feedback": "Yes! You built kick with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-04-2",
+    "lesson_id": "L4-M29-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mark",
+    "letters": [
+      "m",
+      "a",
+      "r",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "m",
+      "a",
+      "r",
+      "k"
+    ],
+    "correct_answer": "mark",
+    "feedback": "Yes! You built mark with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-04-3",
+    "lesson_id": "L4-M29-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:deck",
+    "letters": [
+      "d",
+      "e",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "d",
+      "e",
+      "ck"
+    ],
+    "correct_answer": "deck",
+    "feedback": "Yes! You built deck with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-05-1",
+    "lesson_id": "L4-M29-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "back",
+      "bak"
+    ],
+    "correct_answer": "back",
+    "audio_asset": "say:back",
+    "feedback": "Yes! back uses ck — a short vowel comes right before /k/.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-05-2",
+    "lesson_id": "L4-M29-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "milk",
+      "milck"
+    ],
+    "correct_answer": "milk",
+    "audio_asset": "say:milk",
+    "feedback": "Yes! milk uses just k — a consonant or long vowel comes right before /k/, not a bare short vowel.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-05-3",
+    "lesson_id": "L4-M29-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "rock",
+      "rok"
+    ],
+    "correct_answer": "rock",
+    "audio_asset": "say:rock",
+    "feedback": "Yes! rock uses ck — a short vowel comes right before /k/.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-05-4",
+    "lesson_id": "L4-M29-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pink",
+      "pinck"
+    ],
+    "correct_answer": "pink",
+    "audio_asset": "say:pink",
+    "feedback": "Yes! pink uses just k — a consonant or long vowel comes right before /k/, not a bare short vowel.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-05-5",
+    "lesson_id": "L4-M29-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sock",
+    "letters": [
+      "s",
+      "o",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "s",
+      "o",
+      "ck"
+    ],
+    "correct_answer": "sock",
+    "feedback": "Yes! You built sock with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-05-6",
+    "lesson_id": "L4-M29-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:book",
+    "letters": [
+      "b",
+      "o",
+      "o",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "b",
+      "o",
+      "o",
+      "k"
+    ],
+    "correct_answer": "book",
+    "feedback": "Yes! You built book with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-05-7",
+    "lesson_id": "L4-M29-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "duck",
+    "options": [
+      "duck",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "duck",
+    "feedback": "Yes! You read duck.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M29-05-8",
+    "lesson_id": "L4-M29-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "milk",
+    "options": [
+      "milk",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "milk",
+    "feedback": "Yes! You read milk.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

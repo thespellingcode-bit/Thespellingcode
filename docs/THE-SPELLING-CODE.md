@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Module 28 (C or K?) built |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–29 (C or K?, K or CK?) built |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,7 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
-| Level 4 “Spelling Detective”, Module 28 (C or K?) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first module to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
+| Level 4 “Spelling Detective”, Modules 28–29 (C or K?, K or CK?) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -89,11 +89,12 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Level 4 curriculum design (Module 28 built; Modules 29–40 planned, not yet built)
+### Level 4 curriculum design (Modules 28–29 built; Modules 30–40 planned, not yet built)
 - **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
 - **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
 - **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
-- **Module 28, C or K?** — the first module, and the one the design problem above was written for. C before a/o/u, k before e/i/y. Needed no new word pictures at all — cat, cup, kid and cab were all already illustrated from Level 1/2, so Read the Words reuses them directly. (free vs paid) — business decision made 2026-09-30, not yet built
+- **Module 28, C or K?** — the first module, and the one the design problem above was written for. C before a/o/u, k before e/i/y. Needed no new word pictures at all — cat, cup, kid and cab were all already illustrated from Level 1/2, so Read the Words reuses them directly.
+- **Module 29, K or CK?** — same shape, applied to the end of a word instead of the start: ck directly after a short vowel, plain k after anything else (a consonant, a long vowel, or a vowel team). Word choice deliberately stayed away from silent-e words like "bike"/"cake" — this module's generic content-authoring helpers (`wrongOf()`, `wb()`) assume the target word ends literally in "k" or "ck" with nothing after it, and a CVCe word's final letter is the silent "e", not "k"; rather than special-case that shape now, the word list simply used only words ending directly in the sound (milk, pink, book, desk...). Confirmed live that the word_build demo correctly explains *both* directions of the choice (ck-is-right-here vs k-is-right-here), not just one. Added 2 new word pictures (sock, book). (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
 - Every module still unlocks only after the previous one is fully mastered (`moduleUnlocked` in `ChildHome.jsx`) — that gating is unchanged; what's new is a *payment* gate still to be added at the Level 1 → Level 2 boundary specifically.
 - **Not yet implemented:** there is no paywall in the app yet. Level 2 (Modules 9–14, all built) is currently reachable the same way Level 1 is, gated only by mastery — building the actual Level 2 payment gate is on hold until the payment gateway and pricing are decided (see “Monetisation” below).
@@ -171,6 +172,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 3 Module 26 (Alternative Spellings) — the module the plan's central design problem was written for; confirmed live that its recognition items never pair two valid spellings of the same sound against each other. No new grapheme, no new pictures — a pure review/consolidation module.
 - Built Level 3 Module 27 (Review & Assessment), mirroring Level 2's Module 17 exactly. **Level 3 "Pattern Detective" is now fully built and deployed** — live-verified end to end, including a new "Level 3 Pattern Detective" badge earned on the 14-item final Challenge (93% on the first try). The entire planned curriculum through Level 3 now exists: 8 free Level 1 modules, 9 paid Level 2 modules, 10 paid Level 3 modules. Next real decisions are the ones in "Monetisation" above (payment gateway, sign-up, payment screens) and whether to keep building Level 4+ or pause to launch.
 - Owner asked to build Level 4. Drafted `docs/plans/level-4.md` (Spelling Detective, 13 modules) and built Module 28 (C or K?) — the first module in the app to grade a spelling *choice*, via a new `spelling_choice` activity type and `word_build`'s decoy tiles repurposed to hold the competing spelling rather than a random letter. Live-verified both mechanics end to end.
+- Built Level 4 Module 29 (K or CK?), the same choice-grading shape applied to the end of a word. Added 2 new word pictures (sock, book).
 
 ---
 
@@ -482,6 +484,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 26 | Alternative Spellings | **Live** | 5 | 24 | 24 |
 | 27 | Review & Assessment | **Live** | 5 | 22 | 29 |
 | 28 | C or K? | **Live** | 5 | 20 | 21 |
+| 29 | K or CK? | **Live** | 5 | 21 | 21 |
 
 ## Curriculum in full
 
@@ -4502,12 +4505,153 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M28-05-7 | read “cup” → picture \| options cup, shell, bus \| answer **cup** |  |
 | AS-M28-05-8 | read “cab” → picture \| options cab, duck, fish \| answer **cab** |  |
 
+### Module 29 — K or CK?
+
+*Goal:* Choose k or ck for the /k/ sound at the end of a word, based on whether a short vowel comes directly before it.
+
+#### Lesson 1: Meet the Choice (`L4-M29-01`)
+
+- **Objective:** Choose k or ck for the /k/ sound at the end of a word, based on whether a short vowel comes directly before it.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** New case, Detective! Today: k or ck at the end of a word?
+- **Narration (teach):** Right after a short vowel, /k/ is spelled ck — back, sock, duck. When something else comes before /k/ — a consonant, a long vowel, or a vowel team — it's just k — milk, pink, book.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Listen for what comes right before the /k/ sound.
+- **Narration (close):** Case closed! You know when to use k and when to use ck.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M29-01 | sound: back \| options back, bak \| answer **back** |
+| Q-M29-02 | sound: duck \| options duck, duk \| answer **duck** |
+| Q-M29-03 | sound: milk \| options milk, milck \| answer **milk** |
+| Q-M29-04 | sound: pink \| options pink, pinck \| answer **pink** |
+| Q-M29-05 | sound: sock \| options sock, sok \| answer **sock** |
+| Q-M29-06 | sound: book \| options book, boock \| answer **book** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M29-01-1 | sound: lock \| options lock, lok \| answer **lock** |  |
+| AS-M29-01-2 | sound: desk \| options desk, desck \| answer **desk** |  |
+| AS-M29-01-3 | sound: rock \| options rock, rok \| answer **rock** |  |
+| AS-M29-01-4 | sound: look \| options look, loock \| answer **look** |  |
+
+#### Lesson 2: Blend & Build (`L4-M29-02`)
+
+- **Objective:** Build k/ck words, choosing the correct ending from a tray offering both.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Building mission — the tray has both k and ck. Pick the right ending!
+- **Narration (teach):** Listen to the word, then build it — only one ending belongs.
+- **Narration (model):** Listen. Watch which ending gets picked, and why.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! You chose the right ending every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M29-07 | hear “back” → build \| tray b a ck k \| answer **back** |
+| Q-M29-08 | hear “duck” → build \| tray d u ck k \| answer **duck** |
+| Q-M29-09 | hear “milk” → build \| tray m i l k ck \| answer **milk** |
+| Q-M29-10 | hear “mask” → build \| tray m a s k ck \| answer **mask** |
+| Q-M29-11 | hear “sock” → build \| tray s o ck k \| answer **sock** |
+| Q-M29-12 | hear “look” → build \| tray l o o k ck \| answer **look** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M29-02-1 | hear “rock” → build \| tray r o ck k \| answer **rock** |  |
+| AS-M29-02-2 | hear “tank” → build \| tray t a n k ck \| answer **tank** |  |
+| AS-M29-02-3 | hear “pack” → build \| tray p a ck k \| answer **pack** |  |
+| AS-M29-02-4 | hear “book” → build \| tray b o o k ck \| answer **book** |  |
+
+#### Lesson 3: Read the Words (`L4-M29-03`)
+
+- **Objective:** Read a k/ck word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! Both endings show up today.
+- **Narration (teach):** Read the word, then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You read every k and ck word correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M29-13 | read “duck” → picture \| options duck, bus, hen \| answer **duck** |
+| Q-M29-14 | read “milk” → picture \| options milk, fish, pig \| answer **milk** |
+| Q-M29-15 | read “lock” → picture \| options lock, frog, hen \| answer **lock** |
+| Q-M29-16 | read “sock” → picture \| options sock, crab, shell \| answer **sock** |
+| Q-M29-17 | read “book” → picture \| options book, train, sail \| answer **book** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M29-03-1 | read “duck” → picture \| options duck, shell, bus \| answer **duck** | true |
+| AS-M29-03-2 | read “sock” → picture \| options sock, milk, fish \| answer **sock** | true |
+
+#### Lesson 4: Spell the Words (`L4-M29-04`)
+
+- **Objective:** Spell a dictated k/ck word, choosing the correct ending from a tray offering both.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — solve the k-or-ck case for each word!
+- **Narration (teach):** Listen to the word, then spell it — remember, a short vowel right before /k/ means ck.
+- **Narration (model):** Listen. Pick the right ending.
+- **Narration (transition):** Your turn! Listen carefully and choose k or ck.
+- **Narration (close):** Excellent spelling! You solved every k-or-ck case.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M29-18 | hear “sack” → build \| tray s a ck k \| answer **sack** |
+| Q-M29-19 | hear “dark” → build \| tray d a r k ck \| answer **dark** |
+| Q-M29-20 | hear “neck” → build \| tray n e ck k \| answer **neck** |
+| Q-M29-21 | hear “week” → build \| tray w e e k ck \| answer **week** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M29-04-1 | hear “kick” → build \| tray k i ck k \| answer **kick** |  |
+| AS-M29-04-2 | hear “mark” → build \| tray m a r k ck \| answer **mark** |  |
+| AS-M29-04-3 | hear “deck” → build \| tray d e ck k \| answer **deck** |  |
+
+#### Lesson 5: K or CK? Challenge (`L4-M29-05`)
+
+- **Objective:** Demonstrate independent mastery of the k/ck spelling choice across listening, building, reading and spelling.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Solve every k-or-ck case.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered the k/ck spelling choice.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M29-05-1 | sound: back \| options back, bak \| answer **back** |  |
+| AS-M29-05-2 | sound: milk \| options milk, milck \| answer **milk** |  |
+| AS-M29-05-3 | sound: rock \| options rock, rok \| answer **rock** |  |
+| AS-M29-05-4 | sound: pink \| options pink, pinck \| answer **pink** |  |
+| AS-M29-05-5 | hear “sock” → build \| tray s o ck k \| answer **sock** |  |
+| AS-M29-05-6 | hear “book” → build \| tray b o o k ck \| answer **book** |  |
+| AS-M29-05-7 | read “duck” → picture \| options duck, shell, bus \| answer **duck** |  |
+| AS-M29-05-8 | read “milk” → picture \| options milk, duck, fish \| answer **milk** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (64, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (66, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

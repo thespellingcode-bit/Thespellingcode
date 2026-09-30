@@ -54,6 +54,7 @@ const GRAPHEMES_BY_MODULE = {
   26: [], // Alternative Spellings — recognition-only review, no new grapheme (see Level 2's Module 9 CVC Review for the same pattern).
   27: [], // Review & Assessment — cumulative review, no new grapheme.
   28: [], // C or K? — no new grapheme, c and k are both already-known single letters; this module is about which known letter to choose, not a new tile.
+  29: [], // K or CK? — ck was already taught receptively in Level 2 Module 12; this module is about which known ending to choose, not a new tile.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

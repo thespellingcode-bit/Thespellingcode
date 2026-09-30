@@ -11501,5 +11501,447 @@
     "retry_feedback": "Listen again — before e, use k, not c.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-01",
+    "lesson_id": "L4-M29-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "back",
+      "bak"
+    ],
+    "correct_answer": "back",
+    "audio_asset": "say:back",
+    "feedback": "Yes! back uses ck — a short vowel comes right before /k/.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-02",
+    "lesson_id": "L4-M29-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "duck",
+      "duk"
+    ],
+    "correct_answer": "duck",
+    "audio_asset": "say:duck",
+    "feedback": "Yes! duck uses ck — a short vowel comes right before /k/.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-03",
+    "lesson_id": "L4-M29-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "milk",
+      "milck"
+    ],
+    "correct_answer": "milk",
+    "audio_asset": "say:milk",
+    "feedback": "Yes! milk uses just k — a consonant or long vowel comes right before /k/, not a bare short vowel.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-04",
+    "lesson_id": "L4-M29-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pink",
+      "pinck"
+    ],
+    "correct_answer": "pink",
+    "audio_asset": "say:pink",
+    "feedback": "Yes! pink uses just k — a consonant or long vowel comes right before /k/, not a bare short vowel.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-05",
+    "lesson_id": "L4-M29-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "sock",
+      "sok"
+    ],
+    "correct_answer": "sock",
+    "audio_asset": "say:sock",
+    "feedback": "Yes! sock uses ck — a short vowel comes right before /k/.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-06",
+    "lesson_id": "L4-M29-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "book",
+      "boock"
+    ],
+    "correct_answer": "book",
+    "audio_asset": "say:book",
+    "feedback": "Yes! book uses just k — a consonant or long vowel comes right before /k/, not a bare short vowel.",
+    "retry_feedback": "Listen again: ck follows a short vowel directly; k follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-07",
+    "lesson_id": "L4-M29-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:back",
+    "letters": [
+      "b",
+      "a",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "b",
+      "a",
+      "ck"
+    ],
+    "correct_answer": "back",
+    "feedback": "Yes! You built back with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-08",
+    "lesson_id": "L4-M29-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:duck",
+    "letters": [
+      "d",
+      "u",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "d",
+      "u",
+      "ck"
+    ],
+    "correct_answer": "duck",
+    "feedback": "Yes! You built duck with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-09",
+    "lesson_id": "L4-M29-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:milk",
+    "letters": [
+      "m",
+      "i",
+      "l",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "m",
+      "i",
+      "l",
+      "k"
+    ],
+    "correct_answer": "milk",
+    "feedback": "Yes! You built milk with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-10",
+    "lesson_id": "L4-M29-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mask",
+    "letters": [
+      "m",
+      "a",
+      "s",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "m",
+      "a",
+      "s",
+      "k"
+    ],
+    "correct_answer": "mask",
+    "feedback": "Yes! You built mask with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-11",
+    "lesson_id": "L4-M29-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sock",
+    "letters": [
+      "s",
+      "o",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "s",
+      "o",
+      "ck"
+    ],
+    "correct_answer": "sock",
+    "feedback": "Yes! You built sock with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-12",
+    "lesson_id": "L4-M29-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:look",
+    "letters": [
+      "l",
+      "o",
+      "o",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "l",
+      "o",
+      "o",
+      "k"
+    ],
+    "correct_answer": "look",
+    "feedback": "Yes! You built look with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-13",
+    "lesson_id": "L4-M29-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "duck",
+    "options": [
+      "duck",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "duck",
+    "feedback": "Yes! You read duck.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-14",
+    "lesson_id": "L4-M29-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "milk",
+    "options": [
+      "milk",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "milk",
+    "feedback": "Yes! You read milk.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-15",
+    "lesson_id": "L4-M29-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "lock",
+    "options": [
+      "lock",
+      "frog",
+      "hen"
+    ],
+    "correct_answer": "lock",
+    "feedback": "Yes! You read lock.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-16",
+    "lesson_id": "L4-M29-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "sock",
+    "options": [
+      "sock",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "sock",
+    "feedback": "Yes! You read sock.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-17",
+    "lesson_id": "L4-M29-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "book",
+    "options": [
+      "book",
+      "train",
+      "sail"
+    ],
+    "correct_answer": "book",
+    "feedback": "Yes! You read book.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-18",
+    "lesson_id": "L4-M29-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sack",
+    "letters": [
+      "s",
+      "a",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "s",
+      "a",
+      "ck"
+    ],
+    "correct_answer": "sack",
+    "feedback": "Yes! You built sack with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-19",
+    "lesson_id": "L4-M29-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dark",
+    "letters": [
+      "d",
+      "a",
+      "r",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "d",
+      "a",
+      "r",
+      "k"
+    ],
+    "correct_answer": "dark",
+    "feedback": "Yes! You built dark with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-20",
+    "lesson_id": "L4-M29-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:neck",
+    "letters": [
+      "n",
+      "e",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "n",
+      "e",
+      "ck"
+    ],
+    "correct_answer": "neck",
+    "feedback": "Yes! You built neck with ck.",
+    "retry_feedback": "Listen again — a short vowel right before /k/ needs ck.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M29-21",
+    "lesson_id": "L4-M29-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:week",
+    "letters": [
+      "w",
+      "e",
+      "e",
+      "k",
+      "ck"
+    ],
+    "answer_tiles": [
+      "w",
+      "e",
+      "e",
+      "k"
+    ],
+    "correct_answer": "week",
+    "feedback": "Yes! You built week with k.",
+    "retry_feedback": "Listen again — this doesn't need ck, just k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]

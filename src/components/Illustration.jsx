@@ -514,6 +514,7 @@ const IMAGE_BG = {
   // PICTURES.car entry above (the existing Level 1 car sound icon), which
   // Illustration() falls back to whenever IMAGE_BG has no entry for a name.
   star: "#FFF3D6", corn: "#FDE9D2", bird: "#DCEBFF", shirt: "#DCEEF6", purse: "#FBD9D2",
+  sock: "#DCEBFF", book: "#F1E3D3",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {

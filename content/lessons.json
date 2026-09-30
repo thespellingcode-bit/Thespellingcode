@@ -2600,5 +2600,100 @@
       "transition": "",
       "close": "Case closed! You've mastered the c/k spelling choice."
     }
+  },
+  {
+    "lesson_id": "L4-M29-01",
+    "module_id": 29,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Choose k or ck for the /k/ sound at the end of a word, based on whether a short vowel comes directly before it.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "New case, Detective! Today: k or ck at the end of a word?",
+      "teach": "Right after a short vowel, /k/ is spelled ck — back, sock, duck. When something else comes before /k/ — a consonant, a long vowel, or a vowel team — it's just k — milk, pink, book.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for what comes right before the /k/ sound.",
+      "close": "Case closed! You know when to use k and when to use ck."
+    }
+  },
+  {
+    "lesson_id": "L4-M29-02",
+    "module_id": 29,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "spelling",
+    "objective": "Build k/ck words, choosing the correct ending from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — the tray has both k and ck. Pick the right ending!",
+      "teach": "Listen to the word, then build it — only one ending belongs.",
+      "model": "Listen. Watch which ending gets picked, and why.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! You chose the right ending every time."
+    }
+  },
+  {
+    "lesson_id": "L4-M29-03",
+    "module_id": 29,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a k/ck word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Both endings show up today.",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every k and ck word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M29-04",
+    "module_id": 29,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated k/ck word, choosing the correct ending from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — solve the k-or-ck case for each word!",
+      "teach": "Listen to the word, then spell it — remember, a short vowel right before /k/ means ck.",
+      "model": "Listen. Pick the right ending.",
+      "transition": "Your turn! Listen carefully and choose k or ck.",
+      "close": "Excellent spelling! You solved every k-or-ck case."
+    }
+  },
+  {
+    "lesson_id": "L4-M29-05",
+    "module_id": 29,
+    "number": 5,
+    "title": "K or CK? Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of the k/ck spelling choice across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Solve every k-or-ck case.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the k/ck spelling choice."
+    }
   }
 ]

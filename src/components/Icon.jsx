@@ -133,6 +133,8 @@ const WORD_KEYS = [
   // the same real-world object as the existing Level 1 "car" sound icon —
   // desired reuse, not a collision, since it's genuinely the same car.
   "car", "star", "corn", "bird", "shirt", "purse",
+  // Level 4 Module 29 (K or CK?).
+  "sock", "book",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
