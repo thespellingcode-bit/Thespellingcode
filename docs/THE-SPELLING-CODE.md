@@ -28,7 +28,7 @@
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
-| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–25 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels) built |
+| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–26 built; only Module 27 (Review & Assessment) remains |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
@@ -41,7 +41,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
-| Level 3 “Pattern Detective”, Modules 18–25 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 26–27 (Alternative Spellings, Review & Assessment) are planned in `docs/plans/level-3.md` but not yet built. |
+| Level 3 “Pattern Detective”, Modules 18–26 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings) | **Built.** See the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; only Module 27 (Review & Assessment) remains — Level 3 will be complete once it ships. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -82,6 +82,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 23, oi/oy** — same shape, `VOWEL_TEAMS` extended to `{ai, ay, ee, ea, oa, ow, oi, oy}`. Thinnest picture pool of any Level 3 module so far (4 words: coin, boy, toy, oyster) — Read the Words runs shorter than the standard 5-6 items as a result, matching the established "thinner lesson when the picture pool is thin" precedent (ch/wh, -tch/-nk in Level 2) rather than forcing in a weaker picture match.
 - **Module 24, ou/ow — the first Level 3 module the plan itself flagged as having "genuinely no simple position rule".** Unlike ai/ay, ee/ea, oa/ow and oi/oy, `ow` is reused here for a *different* sound than Module 22's (long O in "snow" vs this module's /ow/ in "cow") — `VOWEL_TEAMS` doesn't need a second entry since it only tracks "is this a vowel team," not which sound, but the decodability test's `GRAPHEMES_BY_MODULE[24]` only lists `["ou"]` since `"ow"` the grapheme string is already known from Module 22. Dropped "cloud" as a picture word — `labelToIcon`'s `direct` map has "loud" as a Level 1 icon key, and `"cloud".includes("loud")` would silently show that icon instead — the same class of bug as "window"/"wind" in Module 22, now the third time this exact collision shape has appeared. Added 5 new word pictures (mouth, cow, owl, house, mouse).
 - **Module 25, R-Controlled Vowels (ar/er/ir/or/ur) — the first Level 3 module with 6 lessons instead of 5**, per the plan (it teaches five patterns, not one or two). `graphemeKindFor()` gained a genuinely new kind, `"r-controlled vowel"`, rather than folding it into `"vowel team"` — a vowel-plus-r isn't two vowels, it's a vowel whose own sound the r swallows, so calling it a vowel team would be the same "wrong name" mistake the digraph/blend/ending distinction exists to prevent. Same position-narration fix as Module 20's vowel teams was needed again here (car ends with ar, but bird has ir in the middle). er, ir and ur are taught together in one lesson (they're the exact same sound, genuinely no rule for which spelling a word uses — closer to Module 9's Alternative Spellings problem than a normal two-way vowel-team split), while ar and or each get their own lesson since they're distinct sounds. "car" reuses the existing Level 1 hand-drawn car icon (the same real object, not a naming collision) rather than adding a redundant image file — confirmed live that `Illustration()`'s `IMAGE_BG`-then-`PICTURES` fallback picks it up automatically. Added 5 new word pictures (star, corn, bird, shirt, purse).
+- **Module 26, Alternative Spellings — the module the whole "one real design problem" section of the plan was written for.** Explicitly recognition-only: every practice/assessment item's `letter_sound_match` options are `[correct_pattern, bare_vowel, bare_vowel]`, exactly like every earlier Level 3 module — the pattern never changes here, it's just now applied across *pairs* of families in the same lesson (ai/ay vs ee/ea, oa/ow vs oi/oy, ou/ow vs er/ir/ur) with `teach` narration that explicitly states the comparison ("rain uses ai... day uses ay... same sound, different spelling"). Confirmed live that no item ever offers two spellings of the same sound as competing options. Introduces no new grapheme (`GRAPHEMES_BY_MODULE[26] = []`, same as Level 2's Module 9 CVC Review) and needed no new word pictures — Read & Build Review reuses the full picture pool built up across every Level 3 module so far.
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
@@ -160,6 +161,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 3 Module 23 (oi/oy) — same shape again, thinnest picture pool yet (coin, boy, toy, oyster), Read the Words shortened accordingly rather than diluted with a mismatched picture.
 - Built Level 3 Module 24 (ou/ow) — the plan's own flagged "no simple position rule" module; dropped "cloud" as a picture word (a third recurrence of the same substring-collision bug shape as "window"/"wind"). Added 5 new word pictures (mouth, cow, owl, house, mouse).
 - Built Level 3 Module 25 (R-Controlled Vowels: ar/er/ir/or/ur) — the first 6-lesson Level 3 module; added a genuinely new `graphemeKindFor()` kind rather than reusing "vowel team," and reused the existing Level 1 car icon instead of adding a duplicate. Added 5 new word pictures (star, corn, bird, shirt, purse).
+- Built Level 3 Module 26 (Alternative Spellings) — the module the plan's central design problem was written for; confirmed live that its recognition items never pair two valid spellings of the same sound against each other. No new grapheme, no new pictures — a pure review/consolidation module. **Only Module 27 (Review & Assessment) remains before Level 3 is complete.**
 
 ---
 
@@ -387,6 +389,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 | 23 | oi / oy | **Live** | 5 | 20 | 20 |
 | 24 | ou / ow | **Live** | 5 | 21 | 20 |
 | 25 | R-Controlled Vowels | **Live** | 6 | 28 | 27 |
+| 26 | Alternative Spellings | **Live** | 5 | 24 | 24 |
 
 ## Curriculum in full
 
@@ -3969,6 +3972,153 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M25-06-8 | hear “bird” → build \| tray b ir d \| answer **bird** |  |
 | AS-M25-06-9 | read “star” → picture \| options star, shell, bus \| answer **star** |  |
 | AS-M25-06-10 | read “purse” → picture \| options purse, duck, fish \| answer **purse** |  |
+
+### Module 26 — Alternative Spellings
+
+*Goal:* Recognise that the same sound can be spelled more than one way (ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, er/ir/ur) — recognition only, never a graded choice between two valid spellings.
+
+#### Lesson 1: Compare Long A and Long E (`L3-M26-01`)
+
+- **Objective:** Recognise that ai/ay both spell long A and ee/ea both spell long E — the same sound, more than one spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome, Pattern Detective! Today's mission: comparing spellings.
+- **Narration (teach):** rain and day both say long A — rain uses ai (usually in the middle), day uses ay (usually at the end). tree and leaf both say long E — tree uses ee, leaf uses ea. Same sound, different spelling!
+- **Narration (model):** Listen. Which pattern does this word use?
+- **Narration (transition):** Your turn! Listen for the pattern.
+- **Narration (close):** Great comparing! You can hear how the same sound wears different spellings.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M26-01 | hear “rain” → letter \| options ai a o \| answer **ai** |
+| Q-M26-02 | hear “day” → letter \| options ay a o \| answer **ay** |
+| Q-M26-03 | hear “tree” → letter \| options ee e o \| answer **ee** |
+| Q-M26-04 | hear “leaf” → letter \| options ea e o \| answer **ea** |
+| Q-M26-05 | hear “train” → letter \| options ai a e \| answer **ai** |
+| Q-M26-06 | hear “play” → letter \| options ay a e \| answer **ay** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M26-01-1 | hear “sail” → letter \| options ai a o \| answer **ai** |  |
+| AS-M26-01-2 | hear “stay” → letter \| options ay a o \| answer **ay** |  |
+| AS-M26-01-3 | hear “sheep” → letter \| options ee e o \| answer **ee** |  |
+| AS-M26-01-4 | hear “seal” → letter \| options ea e o \| answer **ea** |  |
+
+#### Lesson 2: Compare Long O and /oi/ (`L3-M26-02`)
+
+- **Objective:** Recognise that oa/ow both spell long O and oi/oy both spell /oi/ — the same sound, more than one spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More spellings to compare today!
+- **Narration (teach):** boat and snow both say long O — boat uses oa (usually in the middle), snow uses ow (usually at the end). coin and boy both say /oi/ — coin uses oi (usually in the middle), boy uses oy (usually at the end).
+- **Narration (model):** Listen. Which pattern does this word use?
+- **Narration (transition):** Your turn! Listen for the pattern.
+- **Narration (close):** Great comparing! You're spotting the pattern behind the pattern.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M26-07 | hear “goat” → letter \| options oa o a \| answer **oa** |
+| Q-M26-08 | hear “snow” → letter \| options ow o a \| answer **ow** |
+| Q-M26-09 | hear “coin” → letter \| options oi o i \| answer **oi** |
+| Q-M26-10 | hear “boy” → letter \| options oy o i \| answer **oy** |
+| Q-M26-11 | hear “soap” → letter \| options oa o e \| answer **oa** |
+| Q-M26-12 | hear “toy” → letter \| options oy o e \| answer **oy** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M26-02-1 | hear “road” → letter \| options oa o a \| answer **oa** |  |
+| AS-M26-02-2 | hear “bowl” → letter \| options ow o a \| answer **ow** |  |
+| AS-M26-02-3 | hear “soil” → letter \| options oi o i \| answer **oi** |  |
+| AS-M26-02-4 | hear “joy” → letter \| options oy o i \| answer **oy** |  |
+
+#### Lesson 3: Compare /ow/ and R-Controlled (`L3-M26-03`)
+
+- **Objective:** Recognise that ou/ow both spell /ow/ (no simple rule) and er/ir/ur all spell the exact same r-controlled sound.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two of the trickiest comparisons today!
+- **Narration (teach):** mouth and cow both say /ow/ — ou and ow can pop up anywhere, no simple rule. her, bird and purse all say the exact same r-controlled sound — er, ir and ur are just three different spellings of one sound.
+- **Narration (model):** Listen. Which pattern does this word use?
+- **Narration (transition):** Your turn! Listen for the pattern.
+- **Narration (close):** Great comparing! Even the trickiest spellings make sense once you listen closely.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M26-13 | hear “mouth” → letter \| options ou o u \| answer **ou** |
+| Q-M26-14 | hear “cow” → letter \| options ow o u \| answer **ow** |
+| Q-M26-15 | hear “her” → letter \| options er a o \| answer **er** |
+| Q-M26-16 | hear “bird” → letter \| options ir a o \| answer **ir** |
+| Q-M26-17 | hear “purse” → letter \| options ur a o \| answer **ur** |
+| Q-M26-18 | hear “house” → letter \| options ou o a \| answer **ou** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M26-03-1 | hear “owl” → letter \| options ow o u \| answer **ow** |  |
+| AS-M26-03-2 | hear “found” → letter \| options ou o u \| answer **ou** |  |
+| AS-M26-03-3 | hear “girl” → letter \| options ir a o \| answer **ir** |  |
+| AS-M26-03-4 | hear “term” → letter \| options er a o \| answer **er** |  |
+
+#### Lesson 4: Read & Build Review (`L3-M26-04`)
+
+- **Objective:** Read and build words across every vowel-team and r-controlled pattern taught in Level 3 so far.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Big review mission! Every pattern you've learned, all mixed together.
+- **Narration (teach):** Read each word carefully — remember, every word here is spelled the one correct way. Then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Amazing reading! You've reviewed every pattern in Level 3.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M26-19 | read “rain” → picture \| options rain, bus, hen \| answer **rain** |
+| Q-M26-20 | read “tree” → picture \| options tree, fish, pig \| answer **tree** |
+| Q-M26-21 | read “goat” → picture \| options goat, frog, duck \| answer **goat** |
+| Q-M26-22 | read “coin” → picture \| options coin, crab, shell \| answer **coin** |
+| Q-M26-23 | read “mouth” → picture \| options mouth, bike, rose \| answer **mouth** |
+| Q-M26-24 | read “bird” → picture \| options bird, train, sail \| answer **bird** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M26-04-1 | read “cake” → picture \| options cake, shell, bus \| answer **cake** | true |
+| AS-M26-04-2 | read “star” → picture \| options star, duck, fish \| answer **star** | true |
+
+#### Lesson 5: Alternative Spellings Challenge (`L3-M26-05`)
+
+- **Objective:** Demonstrate independent recognition of every vowel-team and r-controlled pattern taught in Level 3, and how the same sound can wear different spellings.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 7–9 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time! Show everything you've learned about alternative spellings.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Incredible! You understand how English can spell the same sound more than one way.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M26-05-1 | hear “day” → letter \| options ay a o \| answer **ay** |  |
+| AS-M26-05-2 | hear “leaf” → letter \| options ea e o \| answer **ea** |  |
+| AS-M26-05-3 | hear “snow” → letter \| options ow o a \| answer **ow** |  |
+| AS-M26-05-4 | hear “boy” → letter \| options oy o i \| answer **oy** |  |
+| AS-M26-05-5 | hear “cow” → letter \| options ow o u \| answer **ow** |  |
+| AS-M26-05-6 | hear “shirt” → letter \| options ir a o \| answer **ir** |  |
+| AS-M26-05-7 | read “rain” → picture \| options rain, shell, bus \| answer **rain** |  |
+| AS-M26-05-8 | read “goat” → picture \| options goat, duck, fish \| answer **goat** |  |
+| AS-M26-05-9 | hear “bike” → build \| tray b i k e \| answer **bike** |  |
+| AS-M26-05-10 | hear “corn” → build \| tray c or n \| answer **corn** |  |
 
 ## Content library
 

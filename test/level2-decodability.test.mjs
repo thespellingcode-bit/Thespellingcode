@@ -51,6 +51,7 @@ const GRAPHEMES_BY_MODULE = {
   23: ["oi", "oy"],
   24: ["ou"], // "ow" is already known from Module 22 — same spelling, different sound, no new grapheme string to track.
   25: ["ar", "er", "ir", "or", "ur"],
+  26: [], // Alternative Spellings — recognition-only review, no new grapheme (see Level 2's Module 9 CVC Review for the same pattern).
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

@@ -10203,5 +10203,437 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-01",
+    "lesson_id": "L3-M26-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:rain",
+    "feedback": "Yes! rain has the pattern ai.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-02",
+    "lesson_id": "L3-M26-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:day",
+    "feedback": "Yes! day has the pattern ay.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-03",
+    "lesson_id": "L3-M26-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ee",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ee",
+    "audio_asset": "say:tree",
+    "feedback": "Yes! tree has the pattern ee.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-04",
+    "lesson_id": "L3-M26-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ea",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ea",
+    "audio_asset": "say:leaf",
+    "feedback": "Yes! leaf has the pattern ea.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-05",
+    "lesson_id": "L3-M26-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ai",
+      "a",
+      "e"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:train",
+    "feedback": "Yes! train has the pattern ai.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-06",
+    "lesson_id": "L3-M26-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ay",
+      "a",
+      "e"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:play",
+    "feedback": "Yes! play has the pattern ay.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-07",
+    "lesson_id": "L3-M26-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "oa",
+      "o",
+      "a"
+    ],
+    "correct_answer": "oa",
+    "audio_asset": "say:goat",
+    "feedback": "Yes! goat has the pattern oa.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-08",
+    "lesson_id": "L3-M26-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ow",
+      "o",
+      "a"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:snow",
+    "feedback": "Yes! snow has the pattern ow.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-09",
+    "lesson_id": "L3-M26-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "oi",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oi",
+    "audio_asset": "say:coin",
+    "feedback": "Yes! coin has the pattern oi.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-10",
+    "lesson_id": "L3-M26-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "oy",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oy",
+    "audio_asset": "say:boy",
+    "feedback": "Yes! boy has the pattern oy.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-11",
+    "lesson_id": "L3-M26-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "oa",
+      "o",
+      "e"
+    ],
+    "correct_answer": "oa",
+    "audio_asset": "say:soap",
+    "feedback": "Yes! soap has the pattern oa.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-12",
+    "lesson_id": "L3-M26-02",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "oy",
+      "o",
+      "e"
+    ],
+    "correct_answer": "oy",
+    "audio_asset": "say:toy",
+    "feedback": "Yes! toy has the pattern oy.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-13",
+    "lesson_id": "L3-M26-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ou",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ou",
+    "audio_asset": "say:mouth",
+    "feedback": "Yes! mouth has the pattern ou.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-14",
+    "lesson_id": "L3-M26-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ow",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:cow",
+    "feedback": "Yes! cow has the pattern ow.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-15",
+    "lesson_id": "L3-M26-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "er",
+      "a",
+      "o"
+    ],
+    "correct_answer": "er",
+    "audio_asset": "say:her",
+    "feedback": "Yes! her has the pattern er.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-16",
+    "lesson_id": "L3-M26-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ir",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ir",
+    "audio_asset": "say:bird",
+    "feedback": "Yes! bird has the pattern ir.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-17",
+    "lesson_id": "L3-M26-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ur",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ur",
+    "audio_asset": "say:purse",
+    "feedback": "Yes! purse has the pattern ur.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-18",
+    "lesson_id": "L3-M26-03",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ou",
+      "o",
+      "a"
+    ],
+    "correct_answer": "ou",
+    "audio_asset": "say:house",
+    "feedback": "Yes! house has the pattern ou.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-19",
+    "lesson_id": "L3-M26-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "rain",
+    "options": [
+      "rain",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You read rain.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-20",
+    "lesson_id": "L3-M26-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "tree",
+    "options": [
+      "tree",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "tree",
+    "feedback": "Yes! You read tree.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-21",
+    "lesson_id": "L3-M26-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "goat",
+    "options": [
+      "goat",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "goat",
+    "feedback": "Yes! You read goat.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-22",
+    "lesson_id": "L3-M26-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "coin",
+    "options": [
+      "coin",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "coin",
+    "feedback": "Yes! You read coin.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-23",
+    "lesson_id": "L3-M26-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "mouth",
+    "options": [
+      "mouth",
+      "bike",
+      "rose"
+    ],
+    "correct_answer": "mouth",
+    "feedback": "Yes! You read mouth.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M26-24",
+    "lesson_id": "L3-M26-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bird",
+    "options": [
+      "bird",
+      "train",
+      "sail"
+    ],
+    "correct_answer": "bird",
+    "feedback": "Yes! You read bird.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

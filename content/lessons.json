@@ -2315,5 +2315,100 @@
       "transition": "",
       "close": "Amazing! You've mastered ar, or, er, ir and ur."
     }
+  },
+  {
+    "lesson_id": "L3-M26-01",
+    "module_id": 26,
+    "number": 1,
+    "title": "Compare Long A and Long E",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise that ai/ay both spell long A and ee/ea both spell long E — the same sound, more than one spelling.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome, Pattern Detective! Today's mission: comparing spellings.",
+      "teach": "rain and day both say long A — rain uses ai (usually in the middle), day uses ay (usually at the end). tree and leaf both say long E — tree uses ee, leaf uses ea. Same sound, different spelling!",
+      "model": "Listen. Which pattern does this word use?",
+      "transition": "Your turn! Listen for the pattern.",
+      "close": "Great comparing! You can hear how the same sound wears different spellings."
+    }
+  },
+  {
+    "lesson_id": "L3-M26-02",
+    "module_id": 26,
+    "number": 2,
+    "title": "Compare Long O and /oi/",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise that oa/ow both spell long O and oi/oy both spell /oi/ — the same sound, more than one spelling.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More spellings to compare today!",
+      "teach": "boat and snow both say long O — boat uses oa (usually in the middle), snow uses ow (usually at the end). coin and boy both say /oi/ — coin uses oi (usually in the middle), boy uses oy (usually at the end).",
+      "model": "Listen. Which pattern does this word use?",
+      "transition": "Your turn! Listen for the pattern.",
+      "close": "Great comparing! You're spotting the pattern behind the pattern."
+    }
+  },
+  {
+    "lesson_id": "L3-M26-03",
+    "module_id": 26,
+    "number": 3,
+    "title": "Compare /ow/ and R-Controlled",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise that ou/ow both spell /ow/ (no simple rule) and er/ir/ur all spell the exact same r-controlled sound.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two of the trickiest comparisons today!",
+      "teach": "mouth and cow both say /ow/ — ou and ow can pop up anywhere, no simple rule. her, bird and purse all say the exact same r-controlled sound — er, ir and ur are just three different spellings of one sound.",
+      "model": "Listen. Which pattern does this word use?",
+      "transition": "Your turn! Listen for the pattern.",
+      "close": "Great comparing! Even the trickiest spellings make sense once you listen closely."
+    }
+  },
+  {
+    "lesson_id": "L3-M26-04",
+    "module_id": 26,
+    "number": 4,
+    "title": "Read & Build Review",
+    "skill": "decoding",
+    "objective": "Read and build words across every vowel-team and r-controlled pattern taught in Level 3 so far.",
+    "activity_type": "read_word",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Big review mission! Every pattern you've learned, all mixed together.",
+      "teach": "Read each word carefully — remember, every word here is spelled the one correct way. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Amazing reading! You've reviewed every pattern in Level 3."
+    }
+  },
+  {
+    "lesson_id": "L3-M26-05",
+    "module_id": 26,
+    "number": 5,
+    "title": "Alternative Spellings Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent recognition of every vowel-team and r-controlled pattern taught in Level 3, and how the same sound can wear different spellings.",
+    "activity_type": "assessment",
+    "estimated_time": "7–9 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time! Show everything you've learned about alternative spellings.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Incredible! You understand how English can spell the same sound more than one way."
+    }
   }
 ]
