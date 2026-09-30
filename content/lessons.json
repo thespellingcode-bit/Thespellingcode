@@ -2695,5 +2695,100 @@
       "transition": "",
       "close": "Case closed! You've mastered the k/ck spelling choice."
     }
+  },
+  {
+    "lesson_id": "L4-M30-01",
+    "module_id": 30,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Choose j (not g) for the /j/ sound at the start of a word.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "New case, Detective! Today: g or j at the start of a word?",
+      "teach": "At the start of a word, the /j/ sound is almost always spelled j — jam, jog, jump, jug. g at the start usually makes a different sound, like in goat or game.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for the /j/ sound.",
+      "close": "Case closed! You know j starts the /j/ sound."
+    }
+  },
+  {
+    "lesson_id": "L4-M30-02",
+    "module_id": 30,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "spelling",
+    "objective": "Build j-words, choosing the correct starting letter from a tray offering both g and j.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — the tray has both g and j. Pick the right one!",
+      "teach": "Listen to the word, then build it — j belongs at the start, not g.",
+      "model": "Listen. Watch j get picked, and g left behind.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! You chose j every time."
+    }
+  },
+  {
+    "lesson_id": "L4-M30-03",
+    "module_id": 30,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a j-word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Every word starts the same way today.",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every j word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M30-04",
+    "module_id": 30,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated j-word, choosing the correct starting letter from a tray offering both g and j.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — solve the g-or-j case for each word!",
+      "teach": "Listen to the word, then spell it — remember, /j/ at the start is almost always j.",
+      "model": "Listen. Pick the right first letter.",
+      "transition": "Your turn! Listen carefully and choose j.",
+      "close": "Excellent spelling! You solved every g-or-j case."
+    }
+  },
+  {
+    "lesson_id": "L4-M30-05",
+    "module_id": 30,
+    "number": 5,
+    "title": "G or J? Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of the word-initial g/j spelling choice across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Solve every g-or-j case.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the word-initial g/j spelling choice."
+    }
   }
 ]

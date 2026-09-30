@@ -12754,5 +12754,412 @@
     "retry_feedback": "Sound out each letter, then blend them together.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-01-1",
+    "lesson_id": "L4-M30-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "job",
+      "gob"
+    ],
+    "correct_answer": "job",
+    "audio_asset": "say:job",
+    "feedback": "Yes! At the start of a word, the /j/ sound is almost always spelled j.",
+    "retry_feedback": "Listen again: at the start of a word, /j/ is almost always spelled j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-01-2",
+    "lesson_id": "L4-M30-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jig",
+      "gig"
+    ],
+    "correct_answer": "jig",
+    "audio_asset": "say:jig",
+    "feedback": "Yes! At the start of a word, the /j/ sound is almost always spelled j.",
+    "retry_feedback": "Listen again: at the start of a word, /j/ is almost always spelled j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-01-3",
+    "lesson_id": "L4-M30-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jazz",
+      "gazz"
+    ],
+    "correct_answer": "jazz",
+    "audio_asset": "say:jazz",
+    "feedback": "Yes! At the start of a word, the /j/ sound is almost always spelled j.",
+    "retry_feedback": "Listen again: at the start of a word, /j/ is almost always spelled j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-01-4",
+    "lesson_id": "L4-M30-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jot",
+      "got"
+    ],
+    "correct_answer": "jot",
+    "audio_asset": "say:jot",
+    "feedback": "Yes! At the start of a word, the /j/ sound is almost always spelled j.",
+    "retry_feedback": "Listen again: at the start of a word, /j/ is almost always spelled j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-02-1",
+    "lesson_id": "L4-M30-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:job",
+    "letters": [
+      "j",
+      "g",
+      "o",
+      "b"
+    ],
+    "answer_tiles": [
+      "j",
+      "o",
+      "b"
+    ],
+    "correct_answer": "job",
+    "feedback": "Yes! You built job with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-02-2",
+    "lesson_id": "L4-M30-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jig",
+    "letters": [
+      "j",
+      "g",
+      "i",
+      "g"
+    ],
+    "answer_tiles": [
+      "j",
+      "i",
+      "g"
+    ],
+    "correct_answer": "jig",
+    "feedback": "Yes! You built jig with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-02-3",
+    "lesson_id": "L4-M30-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jot",
+    "letters": [
+      "j",
+      "g",
+      "o",
+      "t"
+    ],
+    "answer_tiles": [
+      "j",
+      "o",
+      "t"
+    ],
+    "correct_answer": "jot",
+    "feedback": "Yes! You built jot with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-02-4",
+    "lesson_id": "L4-M30-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jazz",
+    "letters": [
+      "j",
+      "g",
+      "a",
+      "z",
+      "z"
+    ],
+    "answer_tiles": [
+      "j",
+      "a",
+      "z",
+      "z"
+    ],
+    "correct_answer": "jazz",
+    "feedback": "Yes! You built jazz with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-03-1",
+    "lesson_id": "L4-M30-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "jug",
+    "options": [
+      "jug",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "jug",
+    "feedback": "Yes! You read jug.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M30-03-2",
+    "lesson_id": "L4-M30-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "jet",
+    "options": [
+      "jet",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "jet",
+    "feedback": "Yes! You read jet.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M30-04-1",
+    "lesson_id": "L4-M30-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jug",
+    "letters": [
+      "j",
+      "g",
+      "u",
+      "g"
+    ],
+    "answer_tiles": [
+      "j",
+      "u",
+      "g"
+    ],
+    "correct_answer": "jug",
+    "feedback": "Yes! You built jug with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-04-2",
+    "lesson_id": "L4-M30-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jet",
+    "letters": [
+      "j",
+      "g",
+      "e",
+      "t"
+    ],
+    "answer_tiles": [
+      "j",
+      "e",
+      "t"
+    ],
+    "correct_answer": "jet",
+    "feedback": "Yes! You built jet with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-04-3",
+    "lesson_id": "L4-M30-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:job",
+    "letters": [
+      "j",
+      "g",
+      "o",
+      "b"
+    ],
+    "answer_tiles": [
+      "j",
+      "o",
+      "b"
+    ],
+    "correct_answer": "job",
+    "feedback": "Yes! You built job with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-05-1",
+    "lesson_id": "L4-M30-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jam",
+      "gam"
+    ],
+    "correct_answer": "jam",
+    "audio_asset": "say:jam",
+    "feedback": "Yes! At the start of a word, the /j/ sound is almost always spelled j.",
+    "retry_feedback": "Listen again: at the start of a word, /j/ is almost always spelled j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-05-2",
+    "lesson_id": "L4-M30-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jog",
+      "gog"
+    ],
+    "correct_answer": "jog",
+    "audio_asset": "say:jog",
+    "feedback": "Yes! At the start of a word, the /j/ sound is almost always spelled j.",
+    "retry_feedback": "Listen again: at the start of a word, /j/ is almost always spelled j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-05-3",
+    "lesson_id": "L4-M30-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jump",
+      "gump"
+    ],
+    "correct_answer": "jump",
+    "audio_asset": "say:jump",
+    "feedback": "Yes! At the start of a word, the /j/ sound is almost always spelled j.",
+    "retry_feedback": "Listen again: at the start of a word, /j/ is almost always spelled j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-05-4",
+    "lesson_id": "L4-M30-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jig",
+      "gig"
+    ],
+    "correct_answer": "jig",
+    "audio_asset": "say:jig",
+    "feedback": "Yes! At the start of a word, the /j/ sound is almost always spelled j.",
+    "retry_feedback": "Listen again: at the start of a word, /j/ is almost always spelled j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-05-5",
+    "lesson_id": "L4-M30-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jug",
+    "letters": [
+      "j",
+      "g",
+      "u",
+      "g"
+    ],
+    "answer_tiles": [
+      "j",
+      "u",
+      "g"
+    ],
+    "correct_answer": "jug",
+    "feedback": "Yes! You built jug with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-05-6",
+    "lesson_id": "L4-M30-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jab",
+    "letters": [
+      "j",
+      "g",
+      "a",
+      "b"
+    ],
+    "answer_tiles": [
+      "j",
+      "a",
+      "b"
+    ],
+    "correct_answer": "jab",
+    "feedback": "Yes! You built jab with j.",
+    "retry_feedback": "Listen again — at the start of a word, /j/ is almost always j, not g.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-05-7",
+    "lesson_id": "L4-M30-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "jug",
+    "options": [
+      "jug",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "jug",
+    "feedback": "Yes! You read jug.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M30-05-8",
+    "lesson_id": "L4-M30-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "jet",
+    "options": [
+      "jet",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "jet",
+    "feedback": "Yes! You read jet.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

@@ -55,6 +55,7 @@ const GRAPHEMES_BY_MODULE = {
   27: [], // Review & Assessment — cumulative review, no new grapheme.
   28: [], // C or K? — no new grapheme, c and k are both already-known single letters; this module is about which known letter to choose, not a new tile.
   29: [], // K or CK? — ck was already taught receptively in Level 2 Module 12; this module is about which known ending to choose, not a new tile.
+  30: [], // G or J? — g and j are both already-known single letters; this module is about which known letter to choose, not a new tile.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same
