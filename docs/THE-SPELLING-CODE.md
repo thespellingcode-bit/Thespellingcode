@@ -28,7 +28,7 @@
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
-| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Module 18 (Short vs Long Vowels) built |
+| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–19 (Short vs Long Vowels, Silent E) built |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
@@ -41,7 +41,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
-| Level 3 “Pattern Detective”, Module 18 (Short vs Long Vowels) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 19–27 (Silent E onward) are planned in `docs/plans/level-3.md` but not yet built. |
+| Level 3 “Pattern Detective”, Modules 18–19 (Short vs Long Vowels, Silent E) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 20–27 (ai/ay onward) are planned in `docs/plans/level-3.md` but not yet built. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -75,6 +75,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 ### Level 3 curriculum design (Module 18 built; Modules 19–27 planned, not yet built)
 - **Full plan:** `docs/plans/level-3.md` — big goal, module-by-module table, and the two owner-confirmed decisions (2026-09-30): vowel-team spellings (ai/ay, ee/ea, etc.) are taught **receptively only** — a child never picks between two valid spellings of the same word until Level 4 — and building continues level after level without pausing for review.
 - **Module 18, Short vs Long Vowels:** purely auditory, no spelling shown — the child hears a real word (via the browser's speech voice, same `say:word`-prefixed `audio_asset` mechanism Module 2's rhyming already used) and judges whether its vowel sound is short or long. A new activity type, `vowel_length`, reuses `Sort.jsx` (itself a thin wrapper over `MultipleChoice`) with plain `["Short", "Long"]` text options — no new component needed. Added to `COMPARE_TYPES` in `questionTypes.js` so it gets the same "no option picture" treatment as `same_different`/`loud_soft`. Word pairs were deliberately chosen as CVC/CVCe near-minimal pairs (cap/cake, hop/hope) to set up Module 19 (Silent E) without teaching spelling yet.
+- **Module 19, Silent E (CVCe):** the standard five-lesson template (Meet the Pattern → Blend & Build → Read the Words → Spell the Words → Challenge) applies cleanly — unlike a digraph or vowel team, a CVCe word (cake, bike...) is spelled entirely from already-known single letters, so no new tile shape was needed anywhere. "Meet the Pattern" reuses Module 18's own `vowel_length` type, this time with `written_word` also set (not just audio) so the child sees the silent-e spelling while judging short/long — the exact same component, no new code. Added 5 new word pictures (cake, bike, kite, rose, wave) from Noto Emoji, since no existing CVC/digraph word in the picture library has a silent-e shape.
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
@@ -146,6 +147,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Owner researched Indian-market pricing/payment gateways (Razorpay recommended over Instamojo, whose aggregator license was rejected) and, after reconsidering an annual-subscription price as over-generous with only 2 levels live, decided to build out every remaining level before going live at all rather than launch early. Drafted `docs/plans/level-3.md` (Pattern Detective) and got the owner's sign-off on its one open design question (vowel-team spellings taught receptively only) plus pacing (keep building without pausing).
 - Redesigned `ChildHome.jsx` with a level-pill switcher so the module list only shows one level at a time, per the owner's explicit "don't let the first screen clutter" requirement — and removed the now-fully-superseded score-gated free-unlock mechanic (`ResultScreen.jsx`'s old celebration branch, `moduleScore`/threshold logic) rather than leaving dead code behind.
 - Built Level 3 Module 18 (Short vs Long Vowels) — a new `vowel_length` activity type (audio-only, no spelling shown) that reuses the existing `Sort`/`MultipleChoice`/`say:`-prefixed-TTS machinery with no new components. **Level 3 is now in progress**; see the Level 3 curriculum design note above for what's built and `docs/plans/level-3.md` for what's next (Module 19, Silent E).
+- Built Level 3 Module 19 (Silent E/CVCe) — reused every existing mechanic (word_build, read_word, and Module 18's own vowel_length type now with the spelling shown) with zero new components. Added 5 new word pictures (cake, bike, kite, rose, wave) from Noto Emoji. Generalized the Level 2 decodability safeguard (`test/level2-decodability.test.mjs`) to track every module from Level 2 on, Level 3 included, rather than being hard-scoped to Level 2 only — ready for Module 20 (ai/ay), the first module that actually introduces a new taught grapheme this safeguard needs to enforce.
 
 ---
 
@@ -366,6 +368,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 | 16 | Sentence Spelling | **Live** | 5 | 16 | 22 |
 | 17 | Review & Assessment | **Live** | 5 | 20 | 26 |
 | 18 | Short vs Long Vowels | **Live** | 5 | 28 | 30 |
+| 19 | Silent E (CVCe) | **Live** | 5 | 20 | 20 |
 
 ## Curriculum in full
 
@@ -2935,12 +2938,151 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M18-05-9 | sound: mud \| options Short, Long \| answer **Short** |  |
 | AS-M18-05-10 | sound: huge \| options Short, Long \| answer **Long** |  |
 
+### Module 19 — Silent E (CVCe)
+
+*Goal:* Read and spell words where a final silent e makes the vowel before it say its long sound.
+
+#### Lesson 1: Meet Silent E (`L3-M19-01`)
+
+- **Objective:** Recognise that a final silent e makes the vowel before it say its long sound.
+- **Skill:** vowel_discrimination · **Activity:** vowel_length · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome back, Pattern Detective! Today you'll meet a letter with a secret job.
+- **Narration (teach):** When a word ends in e, that e stays silent — you never say it. But it's magic: it reaches back and makes the vowel before it say its own name! cap becomes cake.
+- **Narration (model):** Look and listen. Does this word have a short or long vowel sound?
+- **Narration (transition):** Now you try! Look at the word, then decide: short or long?
+- **Narration (close):** Great detective work! You can spot silent e's magic.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M19-01 | sound: cap \| options Short, Long \| answer **Short** |
+| Q-M19-02 | sound: cake \| options Short, Long \| answer **Long** |
+| Q-M19-03 | sound: kit \| options Short, Long \| answer **Short** |
+| Q-M19-04 | sound: kite \| options Short, Long \| answer **Long** |
+| Q-M19-05 | sound: hop \| options Short, Long \| answer **Short** |
+| Q-M19-06 | sound: hope \| options Short, Long \| answer **Long** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M19-01-1 | sound: cub \| options Short, Long \| answer **Short** |  |
+| AS-M19-01-2 | sound: cube \| options Short, Long \| answer **Long** |  |
+| AS-M19-01-3 | sound: pin \| options Short, Long \| answer **Short** |  |
+| AS-M19-01-4 | sound: pine \| options Short, Long \| answer **Long** |  |
+
+#### Lesson 2: Blend & Build (`L3-M19-02`)
+
+- **Objective:** Build CVCe words letter by letter from an exact tray.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some silent-e words!
+- **Narration (teach):** Listen to the whole word, then tap the letters in order — don't forget the silent e at the end!
+- **Narration (model):** Listen. Watch how the letters build the word, ending with e.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! Every word had a silent e at the end.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M19-07 | hear “cake” → build \| tray k a c e \| answer **cake** |
+| Q-M19-08 | hear “bike” → build \| tray e b k i \| answer **bike** |
+| Q-M19-09 | hear “rope” → build \| tray p e r o \| answer **rope** |
+| Q-M19-10 | hear “cute” → build \| tray u t c e \| answer **cute** |
+| Q-M19-11 | hear “name” → build \| tray m a n e \| answer **name** |
+| Q-M19-12 | hear “five” → build \| tray v f e i \| answer **five** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M19-02-1 | hear “gate” → build \| tray g a t e \| answer **gate** |  |
+| AS-M19-02-2 | hear “tune” → build \| tray t u n e \| answer **tune** |  |
+| AS-M19-02-3 | hear “pine” → build \| tray p i n e \| answer **pine** |  |
+
+#### Lesson 3: Read the Words (`L3-M19-03`)
+
+- **Objective:** Read a CVCe word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! Sound out each silent-e word.
+- **Narration (teach):** Read the word, remembering the silent e makes the vowel say its own name. Then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You matched every silent-e word to its picture.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M19-13 | read “cake” → picture \| options cake, bus, hen \| answer **cake** |
+| Q-M19-14 | read “bike” → picture \| options bike, fish, pig \| answer **bike** |
+| Q-M19-15 | read “kite” → picture \| options kite, frog, duck \| answer **kite** |
+| Q-M19-16 | read “rose” → picture \| options rose, crab, shell \| answer **rose** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M19-03-1 | read “wave” → picture \| options wave, frog, duck \| answer **wave** |  |
+| AS-M19-03-2 | read “bike” → picture \| options bike, crab, shell \| answer **bike** | true |
+
+#### Lesson 4: Spell the Words (`L3-M19-04`)
+
+- **Objective:** Spell a dictated CVCe word from a tray that includes one decoy letter.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — watch out for the extra letter!
+- **Narration (teach):** Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!
+- **Narration (model):** Listen. Pick the right letters — and leave the extra one behind!
+- **Narration (transition):** Your turn! Listen carefully and leave out the extra letter.
+- **Narration (close):** Excellent spelling! You left every extra letter behind.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M19-17 | hear “name” → build \| tray n a m e t \| answer **name** |
+| Q-M19-18 | hear “tune” → build \| tray t u n e s \| answer **tune** |
+| Q-M19-19 | hear “mule” → build \| tray m u l e d \| answer **mule** |
+| Q-M19-20 | hear “gate” → build \| tray g a t e p \| answer **gate** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M19-04-1 | hear “hope” → build \| tray h o p e b \| answer **hope** |  |
+| AS-M19-04-2 | hear “five” → build \| tray f i v e r \| answer **five** |  |
+| AS-M19-04-3 | hear “rope” → build \| tray r o p e c \| answer **rope** |  |
+
+#### Lesson 5: Silent E Challenge (`L3-M19-05`)
+
+- **Objective:** Demonstrate independent mastery of the silent-e (CVCe) pattern across listening, building, reading and spelling.
+- **Skill:** vowel_discrimination · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time! Show everything you know about silent e.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Amazing! You've mastered the silent-e pattern.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M19-05-1 | sound: mad \| options Short, Long \| answer **Short** |  |
+| AS-M19-05-2 | sound: made \| options Short, Long \| answer **Long** |  |
+| AS-M19-05-3 | sound: dim \| options Short, Long \| answer **Short** |  |
+| AS-M19-05-4 | sound: dime \| options Short, Long \| answer **Long** |  |
+| AS-M19-05-5 | hear “cake” → build \| tray c a k e \| answer **cake** |  |
+| AS-M19-05-6 | hear “bike” → build \| tray b i k e \| answer **bike** |  |
+| AS-M19-05-7 | read “rose” → picture \| options rose, shell, bus \| answer **rose** |  |
+| AS-M19-05-8 | read “kite” → picture \| options kite, duck, fish \| answer **kite** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (28, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (33, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 
@@ -3074,7 +3216,7 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `test/assessmentService.test.mjs` |  |
 | `test/content-integrity.test.mjs` | Validates structural guarantees of the content layer itself — the things that would silently break the app if a content edit introduced a typo'd lesson_id or a dangling error_tag. Run with: npm test |
 | `test/docs-up-to-date.test.mjs` |  |
-| `test/level2-decodability.test.mjs` | Level 2's own safeguard against the mistake Level 1 avoided by hand: a word must never require a pattern the child hasn't been taught yet. LETTERS_BY_MODULE lists new SINGLE letters a module adds (Level 1 gave every Level 2 module the same base 19 until Mod... |
+| `test/level2-decodability.test.mjs` | Started as Level 2's own safeguard against the mistake Level 1 avoided by hand, now covers Level 2 AND Level 3 (same mechanism, same file, to avoid duplicating the whole accumulation machinery): a word must never require a pattern the child hasn't been taug... |
 | `test/progressService.test.mjs` |  |
 
 ### Scripts

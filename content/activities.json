@@ -7131,5 +7131,379 @@
     "retry_feedback": "Listen again — does the vowel say its own name (long), or just a quick sound (short)?",
     "skill": "vowel_discrimination",
     "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-01",
+    "lesson_id": "L3-M19-01",
+    "stage": "practice",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Short",
+    "audio_asset": "say:cap",
+    "written_word": "cap",
+    "feedback": "Right! cap has a short vowel sound — no silent e here.",
+    "retry_feedback": "Look for a silent e at the end — it means the vowel says its own name.",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-02",
+    "lesson_id": "L3-M19-01",
+    "stage": "practice",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Long",
+    "audio_asset": "say:cake",
+    "written_word": "cake",
+    "feedback": "Yes! The silent e makes cake say a long vowel sound.",
+    "retry_feedback": "Look for a silent e at the end — it means the vowel says its own name.",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-03",
+    "lesson_id": "L3-M19-01",
+    "stage": "practice",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Short",
+    "audio_asset": "say:kit",
+    "written_word": "kit",
+    "feedback": "Right! kit has a short vowel sound — no silent e here.",
+    "retry_feedback": "Look for a silent e at the end — it means the vowel says its own name.",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-04",
+    "lesson_id": "L3-M19-01",
+    "stage": "practice",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Long",
+    "audio_asset": "say:kite",
+    "written_word": "kite",
+    "feedback": "Yes! The silent e makes kite say a long vowel sound.",
+    "retry_feedback": "Look for a silent e at the end — it means the vowel says its own name.",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-05",
+    "lesson_id": "L3-M19-01",
+    "stage": "practice",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Short",
+    "audio_asset": "say:hop",
+    "written_word": "hop",
+    "feedback": "Right! hop has a short vowel sound — no silent e here.",
+    "retry_feedback": "Look for a silent e at the end — it means the vowel says its own name.",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-06",
+    "lesson_id": "L3-M19-01",
+    "stage": "practice",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Long",
+    "audio_asset": "say:hope",
+    "written_word": "hope",
+    "feedback": "Yes! The silent e makes hope say a long vowel sound.",
+    "retry_feedback": "Look for a silent e at the end — it means the vowel says its own name.",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-07",
+    "lesson_id": "L3-M19-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cake",
+    "letters": [
+      "k",
+      "a",
+      "c",
+      "e"
+    ],
+    "correct_answer": "cake",
+    "feedback": "Yes! You built cake.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-08",
+    "lesson_id": "L3-M19-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bike",
+    "letters": [
+      "e",
+      "b",
+      "k",
+      "i"
+    ],
+    "correct_answer": "bike",
+    "feedback": "Yes! You built bike.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-09",
+    "lesson_id": "L3-M19-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:rope",
+    "letters": [
+      "p",
+      "e",
+      "r",
+      "o"
+    ],
+    "correct_answer": "rope",
+    "feedback": "Yes! You built rope.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-10",
+    "lesson_id": "L3-M19-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cute",
+    "letters": [
+      "u",
+      "t",
+      "c",
+      "e"
+    ],
+    "correct_answer": "cute",
+    "feedback": "Yes! You built cute.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-11",
+    "lesson_id": "L3-M19-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:name",
+    "letters": [
+      "m",
+      "a",
+      "n",
+      "e"
+    ],
+    "correct_answer": "name",
+    "feedback": "Yes! You built name.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-12",
+    "lesson_id": "L3-M19-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:five",
+    "letters": [
+      "v",
+      "f",
+      "e",
+      "i"
+    ],
+    "correct_answer": "five",
+    "feedback": "Yes! You built five.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-13",
+    "lesson_id": "L3-M19-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "cake",
+    "options": [
+      "cake",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "cake",
+    "feedback": "Yes! You read cake.",
+    "retry_feedback": "Sound out each letter, then blend them together — say the vowel's own name.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-14",
+    "lesson_id": "L3-M19-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bike",
+    "options": [
+      "bike",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "bike",
+    "feedback": "Yes! You read bike.",
+    "retry_feedback": "Sound out each letter, then blend them together — say the vowel's own name.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-15",
+    "lesson_id": "L3-M19-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "kite",
+    "options": [
+      "kite",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "kite",
+    "feedback": "Yes! You read kite.",
+    "retry_feedback": "Sound out each letter, then blend them together — say the vowel's own name.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-16",
+    "lesson_id": "L3-M19-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "rose",
+    "options": [
+      "rose",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "rose",
+    "feedback": "Yes! You read rose.",
+    "retry_feedback": "Sound out each letter, then blend them together — say the vowel's own name.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-17",
+    "lesson_id": "L3-M19-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:name",
+    "letters": [
+      "n",
+      "a",
+      "m",
+      "e",
+      "t"
+    ],
+    "correct_answer": "name",
+    "feedback": "Yes! You built name.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-18",
+    "lesson_id": "L3-M19-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tune",
+    "letters": [
+      "t",
+      "u",
+      "n",
+      "e",
+      "s"
+    ],
+    "correct_answer": "tune",
+    "feedback": "Yes! You built tune.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-19",
+    "lesson_id": "L3-M19-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mule",
+    "letters": [
+      "m",
+      "u",
+      "l",
+      "e",
+      "d"
+    ],
+    "correct_answer": "mule",
+    "feedback": "Yes! You built mule.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M19-20",
+    "lesson_id": "L3-M19-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:gate",
+    "letters": [
+      "g",
+      "a",
+      "t",
+      "e",
+      "p"
+    ],
+    "correct_answer": "gate",
+    "feedback": "Yes! You built gate.",
+    "retry_feedback": "Listen again and place the letters in order — the silent e goes last.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

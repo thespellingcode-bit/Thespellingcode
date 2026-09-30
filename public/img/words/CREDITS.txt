@@ -1,3 +1,4 @@
-Word pictures in this folder (pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut) come from Google Noto Emoji
+Word pictures in this folder (pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, flag, crab, frog, drum, plug,
+ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave) come from Google Noto Emoji
 https://github.com/googlefonts/noto-emoji (2D/svg). Free for commercial use; license text in LICENSE-noto-emoji.txt.
 Copyright Google LLC.

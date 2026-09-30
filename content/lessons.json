@@ -1631,5 +1631,100 @@
       "transition": "",
       "close": "You did it! You can hear short and long vowels like a true Pattern Detective."
     }
+  },
+  {
+    "lesson_id": "L3-M19-01",
+    "module_id": 19,
+    "number": 1,
+    "title": "Meet Silent E",
+    "skill": "vowel_discrimination",
+    "objective": "Recognise that a final silent e makes the vowel before it say its long sound.",
+    "activity_type": "vowel_length",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome back, Pattern Detective! Today you'll meet a letter with a secret job.",
+      "teach": "When a word ends in e, that e stays silent — you never say it. But it's magic: it reaches back and makes the vowel before it say its own name! cap becomes cake.",
+      "model": "Look and listen. Does this word have a short or long vowel sound?",
+      "transition": "Now you try! Look at the word, then decide: short or long?",
+      "close": "Great detective work! You can spot silent e's magic."
+    }
+  },
+  {
+    "lesson_id": "L3-M19-02",
+    "module_id": 19,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build CVCe words letter by letter from an exact tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some silent-e words!",
+      "teach": "Listen to the whole word, then tap the letters in order — don't forget the silent e at the end!",
+      "model": "Listen. Watch how the letters build the word, ending with e.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! Every word had a silent e at the end."
+    }
+  },
+  {
+    "lesson_id": "L3-M19-03",
+    "module_id": 19,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a CVCe word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Sound out each silent-e word.",
+      "teach": "Read the word, remembering the silent e makes the vowel say its own name. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You matched every silent-e word to its picture."
+    }
+  },
+  {
+    "lesson_id": "L3-M19-04",
+    "module_id": 19,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated CVCe word from a tray that includes one decoy letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — watch out for the extra letter!",
+      "teach": "Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!",
+      "model": "Listen. Pick the right letters — and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully and leave out the extra letter.",
+      "close": "Excellent spelling! You left every extra letter behind."
+    }
+  },
+  {
+    "lesson_id": "L3-M19-05",
+    "module_id": 19,
+    "number": 5,
+    "title": "Silent E Challenge",
+    "skill": "vowel_discrimination",
+    "objective": "Demonstrate independent mastery of the silent-e (CVCe) pattern across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time! Show everything you know about silent e.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Amazing! You've mastered the silent-e pattern."
+    }
   }
 ]

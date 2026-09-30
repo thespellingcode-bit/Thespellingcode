@@ -1,15 +1,17 @@
 // test/level2-decodability.test.mjs
 //
-// Level 2's own safeguard against the mistake Level 1 avoided by hand:
-// a word must never require a pattern the child hasn't been taught yet.
-// LETTERS_BY_MODULE lists new SINGLE letters a module adds (Level 1 gave
-// every Level 2 module the same base 19 until Module 14, which finally
-// teaches j/v/w/x/y/z); GRAPHEMES_BY_MODULE lists the whole-grapheme
-// tiles (digraphs, endings...) each module ADDS. Both accumulate across
-// modules. A word is decodable once every earlier-taught grapheme is
-// stripped out and everything left over is a known single letter.
-// Extend either map as each later module is built — nothing else about
-// this test should need to change.
+// Started as Level 2's own safeguard against the mistake Level 1 avoided
+// by hand, now covers Level 2 AND Level 3 (same mechanism, same file, to
+// avoid duplicating the whole accumulation machinery): a word must never
+// require a pattern the child hasn't been taught yet. LETTERS_BY_MODULE
+// lists new SINGLE letters a module adds (Level 1 gave every Level 2
+// module the same base 19 until Module 14, which finally teaches
+// j/v/w/x/y/z); GRAPHEMES_BY_MODULE lists the whole-grapheme tiles
+// (digraphs, endings, vowel teams, r-controlled vowels...) each module
+// ADDS. Both accumulate across modules. A word is decodable once every
+// earlier-taught grapheme is stripped out and everything left over is a
+// known single letter. Extend either map as each later module is built —
+// nothing else about this test should need to change.
 import test from "node:test";
 import assert from "node:assert/strict";
 import modules from "../content/modules.json" with { type: "json" };
@@ -38,13 +40,23 @@ const GRAPHEMES_BY_MODULE = {
   // docs/project-notes.md's known-letters note) — no s-blend or
   // end-blend word in this module's content uses it.
   13: ["qu"],
+  // Level 3 — Module 19 (Silent E/CVCe) introduces no new tile-worthy
+  // grapheme: every CVCe word (cake, bike...) is spelled entirely from
+  // already-known single letters, and the "final e is silent" idea is a
+  // word-SHAPE rule this letter-by-letter check has no reason to model.
+  19: [],
 };
 
-const level2Modules = modules.filter((m) => m.level_id === 2).sort((a, b) => a.module_id - b.module_id);
+// Every module from Level 2 on (module_id 9+) participates in this same
+// accumulation, Level 2 and Level 3 alike — module_id is globally unique
+// across levels, so a single sorted list keeps every later level's
+// modules correctly building on Level 2's full known set without any
+// level_id branching here.
+const trackedModules = modules.filter((m) => m.module_id >= 9).sort((a, b) => a.module_id - b.module_id);
 
 function graphemesKnownThrough(moduleId) {
   const known = new Set();
-  for (const m of level2Modules) {
+  for (const m of trackedModules) {
     if (m.module_id > moduleId) break;
     for (const g of GRAPHEMES_BY_MODULE[m.module_id] || []) known.add(g);
   }
@@ -53,7 +65,7 @@ function graphemesKnownThrough(moduleId) {
 
 function lettersKnownThrough(moduleId) {
   const known = new Set();
-  for (const m of level2Modules) {
+  for (const m of trackedModules) {
     if (m.module_id > moduleId) break;
     for (const l of LETTERS_BY_MODULE[m.module_id] || []) known.add(l);
   }
@@ -86,7 +98,7 @@ function wordsIn(text) {
   return text.split(/\s+/).map((w) => w.replace(/[^a-zA-Z]/g, "")).filter(Boolean);
 }
 
-test("every Level 2 word only uses letters/patterns already taught by its own module", () => {
+test("every Level 2+ word only uses letters/patterns already taught by its own module", () => {
   const lessonModule = Object.fromEntries(lessons.filter((l) => l.module_id >= 9).map((l) => [l.lesson_id, l.module_id]));
   const violations = [];
   for (const it of [...activities, ...assessments]) {

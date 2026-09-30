@@ -108,6 +108,9 @@ const WORD_KEYS = [
   // targets too. No good "yak" or "zip" picture was found (the closest
   // Noto icons were mislabeled or wrong), so y and z are build/spell-only.
   "fox",
+  // Level 3 Module 19 (Silent E / CVCe) — the first Level 3 words needing
+  // pictures; none of Level 1/2's CVC word bank has a silent-e shape.
+  "cake", "bike", "kite", "rose", "wave",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
