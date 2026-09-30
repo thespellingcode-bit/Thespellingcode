@@ -47,7 +47,7 @@ const ENDINGS = new Set(["ck", "tch", "dge", "ng", "nk"]);
 // overloading "digraph" — matches the standing rule from Level 2 that
 // narration must name the right concept. Extend as each later Level 3
 // module teaches more (ee/ea, oa/ow, oi/oy, ou/ow).
-const VOWEL_TEAMS = new Set(["ai", "ay", "ee", "ea"]);
+const VOWEL_TEAMS = new Set(["ai", "ay", "ee", "ea", "oa", "ow"]);
 // "qu" is always taught and tiled as one inseparable pair (English never
 // spells /kw/ with a bare q) — not a digraph (it's two sounds, k+w, not
 // one) and always word-initial like a blend, but it isn't "two already-

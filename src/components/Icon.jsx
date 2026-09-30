@@ -117,6 +117,11 @@ const WORD_KEYS = [
   "train", "rain", "mail", "sail", "paint",
   // Level 3 Module 21 (ee/ea).
   "tree", "bee", "sheep", "wheel", "leaf", "seal",
+  // Level 3 Module 22 (oa/ow). "window" deliberately excluded — the
+  // labelToIcon "direct" map below already has "wind" as an environmental-
+  // sound icon key, and "window".includes("wind") would silently show
+  // that icon instead of a window picture.
+  "goat", "coat", "soap", "road", "snow", "bowl",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

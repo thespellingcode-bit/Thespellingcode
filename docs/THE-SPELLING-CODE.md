@@ -375,6 +375,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 | 19 | Silent E (CVCe) | **Live** | 5 | 20 | 20 |
 | 20 | ai / ay | **Live** | 5 | 21 | 20 |
 | 21 | ee / ea | **Live** | 5 | 22 | 20 |
+| 22 | oa / ow | **Live** | 5 | 22 | 20 |
 
 ## Curriculum in full
 
@@ -3364,12 +3365,153 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M21-05-7 | read “sheep” → picture \| options sheep, shell, bus \| answer **sheep** |  |
 | AS-M21-05-8 | read “seal” → picture \| options seal, duck, fish \| answer **seal** |  |
 
+### Module 22 — oa / ow
+
+*Goal:* Read and spell words using the oa and ow vowel teams, which both spell the long O sound.
+
+#### Lesson 1: Meet the Sounds (`L3-M22-01`)
+
+- **Objective:** Recognise oa and ow as spellings of the long O sound, distinguishing them from a plain short vowel.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome back, Pattern Detective! One more long-vowel team today.
+- **Narration (teach):** oa and ow are vowel teams too — two letters working together to make one long O sound, like in boat and snow.
+- **Narration (model):** Listen. Which pattern makes the long O sound in this word?
+- **Narration (transition):** Your turn! Listen for the vowel team.
+- **Narration (close):** Sharp listening! You can spot the oa and ow vowel teams.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M22-01 | hear “boat” → letter \| options oa o a \| answer **oa** |
+| Q-M22-02 | hear “road” → letter \| options oa o a \| answer **oa** |
+| Q-M22-03 | hear “snow” → letter \| options ow o a \| answer **ow** |
+| Q-M22-04 | hear “grow” → letter \| options ow o a \| answer **ow** |
+| Q-M22-05 | hear “soap” → letter \| options oa o a \| answer **oa** |
+| Q-M22-06 | hear “slow” → letter \| options ow o a \| answer **ow** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M22-01-1 | hear “goat” → letter \| options oa o a \| answer **oa** |  |
+| AS-M22-01-2 | hear “coat” → letter \| options oa o a \| answer **oa** |  |
+| AS-M22-01-3 | hear “know” → letter \| options ow o a \| answer **ow** |  |
+| AS-M22-01-4 | hear “low” → letter \| options ow o a \| answer **ow** |  |
+
+#### Lesson 2: Blend & Build (`L3-M22-02`)
+
+- **Objective:** Build oa/ow words from a tray where the vowel team is a single tile.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some vowel-team words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — the vowel team (oa or ow) is one tile, not two.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! Every vowel team snapped in as one tile.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M22-07 | hear “boat” → build \| tray b oa t \| answer **boat** |
+| Q-M22-08 | hear “road” → build \| tray r oa d \| answer **road** |
+| Q-M22-09 | hear “snow” → build \| tray s n ow \| answer **snow** |
+| Q-M22-10 | hear “grow” → build \| tray g r ow \| answer **grow** |
+| Q-M22-11 | hear “soap” → build \| tray s oa p \| answer **soap** |
+| Q-M22-12 | hear “slow” → build \| tray s l ow \| answer **slow** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M22-02-1 | hear “coast” → build \| tray c oa s t \| answer **coast** |  |
+| AS-M22-02-2 | hear “blow” → build \| tray b l ow \| answer **blow** |  |
+| AS-M22-02-3 | hear “toast” → build \| tray t oa s t \| answer **toast** |  |
+
+#### Lesson 3: Read the Words (`L3-M22-03`)
+
+- **Objective:** Read an oa/ow word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! oa and ow both say long O.
+- **Narration (teach):** Read the word, remembering the vowel team makes one long O sound. Then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You matched every oa/ow word to its picture.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M22-13 | read “goat” → picture \| options goat, bus, hen \| answer **goat** |
+| Q-M22-14 | read “coat” → picture \| options coat, fish, pig \| answer **coat** |
+| Q-M22-15 | read “soap” → picture \| options soap, frog, duck \| answer **soap** |
+| Q-M22-16 | read “road” → picture \| options road, crab, shell \| answer **road** |
+| Q-M22-17 | read “snow” → picture \| options snow, bike, rose \| answer **snow** |
+| Q-M22-18 | read “bowl” → picture \| options bowl, train, sail \| answer **bowl** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M22-03-1 | read “goat” → picture \| options goat, shell, bus \| answer **goat** | true |
+| AS-M22-03-2 | read “snow” → picture \| options snow, duck, fish \| answer **snow** | true |
+
+#### Lesson 4: Spell the Words (`L3-M22-04`)
+
+- **Objective:** Spell a dictated oa/ow word from a tray that includes one decoy letter.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — watch out for the extra letter!
+- **Narration (teach):** Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!
+- **Narration (model):** Listen. Pick the right tiles — and leave the extra letter behind!
+- **Narration (transition):** Your turn! Listen carefully and leave out the extra letter.
+- **Narration (close):** Excellent spelling! You left every extra letter behind.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M22-19 | hear “boat” → build \| tray b oa t s \| answer **boat** |
+| Q-M22-20 | hear “grow” → build \| tray g r ow p \| answer **grow** |
+| Q-M22-21 | hear “soap” → build \| tray s oa p t \| answer **soap** |
+| Q-M22-22 | hear “snow” → build \| tray s n ow b \| answer **snow** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M22-04-1 | hear “road” → build \| tray r oa d p \| answer **road** |  |
+| AS-M22-04-2 | hear “slow” → build \| tray s l ow t \| answer **slow** |  |
+| AS-M22-04-3 | hear “coast” → build \| tray c oa s t p \| answer **coast** |  |
+
+#### Lesson 5: oa/ow Challenge (`L3-M22-05`)
+
+- **Objective:** Demonstrate independent mastery of oa/ow across listening, building, reading and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time! Show everything you know about oa and ow.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Amazing! You've mastered the oa/ow vowel teams.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M22-05-1 | hear “road” → letter \| options oa o a \| answer **oa** |  |
+| AS-M22-05-2 | hear “slow” → letter \| options ow o a \| answer **ow** |  |
+| AS-M22-05-3 | hear “coat” → letter \| options oa o a \| answer **oa** |  |
+| AS-M22-05-4 | hear “grow” → letter \| options ow o a \| answer **ow** |  |
+| AS-M22-05-5 | hear “boat” → build \| tray b oa t \| answer **boat** |  |
+| AS-M22-05-6 | hear “snow” → build \| tray s n ow \| answer **snow** |  |
+| AS-M22-05-7 | read “goat” → picture \| options goat, shell, bus \| answer **goat** |  |
+| AS-M22-05-8 | read “bowl” → picture \| options bowl, duck, fish \| answer **bowl** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (44, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (50, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

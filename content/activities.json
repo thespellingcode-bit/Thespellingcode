@@ -8385,5 +8385,455 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-01",
+    "lesson_id": "L3-M22-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long O sound in this word?",
+    "options": [
+      "oa",
+      "o",
+      "a"
+    ],
+    "correct_answer": "oa",
+    "audio_asset": "say:boat",
+    "feedback": "Yes! boat has the vowel team oa.",
+    "retry_feedback": "Listen for two letters together making one long O sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-02",
+    "lesson_id": "L3-M22-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long O sound in this word?",
+    "options": [
+      "oa",
+      "o",
+      "a"
+    ],
+    "correct_answer": "oa",
+    "audio_asset": "say:road",
+    "feedback": "Yes! road has the vowel team oa.",
+    "retry_feedback": "Listen for two letters together making one long O sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-03",
+    "lesson_id": "L3-M22-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long O sound in this word?",
+    "options": [
+      "ow",
+      "o",
+      "a"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:snow",
+    "feedback": "Yes! snow has the vowel team ow.",
+    "retry_feedback": "Listen for two letters together making one long O sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-04",
+    "lesson_id": "L3-M22-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long O sound in this word?",
+    "options": [
+      "ow",
+      "o",
+      "a"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:grow",
+    "feedback": "Yes! grow has the vowel team ow.",
+    "retry_feedback": "Listen for two letters together making one long O sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-05",
+    "lesson_id": "L3-M22-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long O sound in this word?",
+    "options": [
+      "oa",
+      "o",
+      "a"
+    ],
+    "correct_answer": "oa",
+    "audio_asset": "say:soap",
+    "feedback": "Yes! soap has the vowel team oa.",
+    "retry_feedback": "Listen for two letters together making one long O sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-06",
+    "lesson_id": "L3-M22-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long O sound in this word?",
+    "options": [
+      "ow",
+      "o",
+      "a"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:slow",
+    "feedback": "Yes! slow has the vowel team ow.",
+    "retry_feedback": "Listen for two letters together making one long O sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-07",
+    "lesson_id": "L3-M22-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:boat",
+    "letters": [
+      "b",
+      "oa",
+      "t"
+    ],
+    "answer_tiles": [
+      "b",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "boat",
+    "feedback": "Yes! You built boat.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-08",
+    "lesson_id": "L3-M22-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:road",
+    "letters": [
+      "r",
+      "oa",
+      "d"
+    ],
+    "answer_tiles": [
+      "r",
+      "oa",
+      "d"
+    ],
+    "correct_answer": "road",
+    "feedback": "Yes! You built road.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-09",
+    "lesson_id": "L3-M22-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:snow",
+    "letters": [
+      "s",
+      "n",
+      "ow"
+    ],
+    "answer_tiles": [
+      "s",
+      "n",
+      "ow"
+    ],
+    "correct_answer": "snow",
+    "feedback": "Yes! You built snow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-10",
+    "lesson_id": "L3-M22-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:grow",
+    "letters": [
+      "g",
+      "r",
+      "ow"
+    ],
+    "answer_tiles": [
+      "g",
+      "r",
+      "ow"
+    ],
+    "correct_answer": "grow",
+    "feedback": "Yes! You built grow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-11",
+    "lesson_id": "L3-M22-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:soap",
+    "letters": [
+      "s",
+      "oa",
+      "p"
+    ],
+    "answer_tiles": [
+      "s",
+      "oa",
+      "p"
+    ],
+    "correct_answer": "soap",
+    "feedback": "Yes! You built soap.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-12",
+    "lesson_id": "L3-M22-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:slow",
+    "letters": [
+      "s",
+      "l",
+      "ow"
+    ],
+    "answer_tiles": [
+      "s",
+      "l",
+      "ow"
+    ],
+    "correct_answer": "slow",
+    "feedback": "Yes! You built slow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-13",
+    "lesson_id": "L3-M22-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "goat",
+    "options": [
+      "goat",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "goat",
+    "feedback": "Yes! You read goat.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long O sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-14",
+    "lesson_id": "L3-M22-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "coat",
+    "options": [
+      "coat",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "coat",
+    "feedback": "Yes! You read coat.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long O sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-15",
+    "lesson_id": "L3-M22-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "soap",
+    "options": [
+      "soap",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "soap",
+    "feedback": "Yes! You read soap.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long O sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-16",
+    "lesson_id": "L3-M22-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "road",
+    "options": [
+      "road",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "road",
+    "feedback": "Yes! You read road.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long O sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-17",
+    "lesson_id": "L3-M22-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "snow",
+    "options": [
+      "snow",
+      "bike",
+      "rose"
+    ],
+    "correct_answer": "snow",
+    "feedback": "Yes! You read snow.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long O sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-18",
+    "lesson_id": "L3-M22-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bowl",
+    "options": [
+      "bowl",
+      "train",
+      "sail"
+    ],
+    "correct_answer": "bowl",
+    "feedback": "Yes! You read bowl.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long O sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-19",
+    "lesson_id": "L3-M22-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:boat",
+    "letters": [
+      "b",
+      "oa",
+      "t",
+      "s"
+    ],
+    "answer_tiles": [
+      "b",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "boat",
+    "feedback": "Yes! You built boat.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-20",
+    "lesson_id": "L3-M22-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:grow",
+    "letters": [
+      "g",
+      "r",
+      "ow",
+      "p"
+    ],
+    "answer_tiles": [
+      "g",
+      "r",
+      "ow"
+    ],
+    "correct_answer": "grow",
+    "feedback": "Yes! You built grow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-21",
+    "lesson_id": "L3-M22-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:soap",
+    "letters": [
+      "s",
+      "oa",
+      "p",
+      "t"
+    ],
+    "answer_tiles": [
+      "s",
+      "oa",
+      "p"
+    ],
+    "correct_answer": "soap",
+    "feedback": "Yes! You built soap.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M22-22",
+    "lesson_id": "L3-M22-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:snow",
+    "letters": [
+      "s",
+      "n",
+      "ow",
+      "b"
+    ],
+    "answer_tiles": [
+      "s",
+      "n",
+      "ow"
+    ],
+    "correct_answer": "snow",
+    "feedback": "Yes! You built snow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]
