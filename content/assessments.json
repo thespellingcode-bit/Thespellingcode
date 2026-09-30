@@ -11936,5 +11936,410 @@
     "retry_feedback": "Sound out each part, then blend them together.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-01-1",
+    "lesson_id": "L4-M28-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cub",
+      "kub"
+    ],
+    "correct_answer": "cub",
+    "audio_asset": "say:cub",
+    "feedback": "Yes! cub is spelled with c — before u, use c.",
+    "retry_feedback": "Listen again: c is used before a, o, u — k is used before e, i, y.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-01-2",
+    "lesson_id": "L4-M28-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "kit",
+      "cit"
+    ],
+    "correct_answer": "kit",
+    "audio_asset": "say:kit",
+    "feedback": "Yes! kit is spelled with k — before i, use k.",
+    "retry_feedback": "Listen again: c is used before a, o, u — k is used before e, i, y.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-01-3",
+    "lesson_id": "L4-M28-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cod",
+      "kod"
+    ],
+    "correct_answer": "cod",
+    "audio_asset": "say:cod",
+    "feedback": "Yes! cod is spelled with c — before o, use c.",
+    "retry_feedback": "Listen again: c is used before a, o, u — k is used before e, i, y.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-01-4",
+    "lesson_id": "L4-M28-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cab",
+      "kab"
+    ],
+    "correct_answer": "cab",
+    "audio_asset": "say:cab",
+    "feedback": "Yes! cab is spelled with c — before a, use c.",
+    "retry_feedback": "Listen again: c is used before a, o, u — k is used before e, i, y.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-02-1",
+    "lesson_id": "L4-M28-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cub",
+    "letters": [
+      "c",
+      "k",
+      "u",
+      "b"
+    ],
+    "answer_tiles": [
+      "c",
+      "u",
+      "b"
+    ],
+    "correct_answer": "cub",
+    "feedback": "Yes! You built cub with c.",
+    "retry_feedback": "Listen again — before u, use c, not k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-02-2",
+    "lesson_id": "L4-M28-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cap",
+    "letters": [
+      "c",
+      "k",
+      "a",
+      "p"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "p"
+    ],
+    "correct_answer": "cap",
+    "feedback": "Yes! You built cap with c.",
+    "retry_feedback": "Listen again — before a, use c, not k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-02-3",
+    "lesson_id": "L4-M28-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cod",
+    "letters": [
+      "c",
+      "k",
+      "o",
+      "d"
+    ],
+    "answer_tiles": [
+      "c",
+      "o",
+      "d"
+    ],
+    "correct_answer": "cod",
+    "feedback": "Yes! You built cod with c.",
+    "retry_feedback": "Listen again — before o, use c, not k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-02-4",
+    "lesson_id": "L4-M28-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:kin",
+    "letters": [
+      "k",
+      "c",
+      "i",
+      "n"
+    ],
+    "answer_tiles": [
+      "k",
+      "i",
+      "n"
+    ],
+    "correct_answer": "kin",
+    "feedback": "Yes! You built kin with k.",
+    "retry_feedback": "Listen again — before i, use k, not c.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-03-1",
+    "lesson_id": "L4-M28-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "cat",
+    "options": [
+      "cat",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "cat",
+    "feedback": "Yes! You read cat.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M28-03-2",
+    "lesson_id": "L4-M28-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "kid",
+    "options": [
+      "kid",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "kid",
+    "feedback": "Yes! You read kid.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M28-04-1",
+    "lesson_id": "L4-M28-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cab",
+    "letters": [
+      "c",
+      "k",
+      "a",
+      "b"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "b"
+    ],
+    "correct_answer": "cab",
+    "feedback": "Yes! You built cab with c.",
+    "retry_feedback": "Listen again — before a, use c, not k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-04-2",
+    "lesson_id": "L4-M28-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:kid",
+    "letters": [
+      "k",
+      "c",
+      "i",
+      "d"
+    ],
+    "answer_tiles": [
+      "k",
+      "i",
+      "d"
+    ],
+    "correct_answer": "kid",
+    "feedback": "Yes! You built kid with k.",
+    "retry_feedback": "Listen again — before i, use k, not c.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-04-3",
+    "lesson_id": "L4-M28-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cod",
+    "letters": [
+      "c",
+      "k",
+      "o",
+      "d"
+    ],
+    "answer_tiles": [
+      "c",
+      "o",
+      "d"
+    ],
+    "correct_answer": "cod",
+    "feedback": "Yes! You built cod with c.",
+    "retry_feedback": "Listen again — before o, use c, not k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-05-1",
+    "lesson_id": "L4-M28-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cap",
+      "kap"
+    ],
+    "correct_answer": "cap",
+    "audio_asset": "say:cap",
+    "feedback": "Yes! cap is spelled with c — before a, use c.",
+    "retry_feedback": "Listen again: c is used before a, o, u — k is used before e, i, y.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-05-2",
+    "lesson_id": "L4-M28-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "kit",
+      "cit"
+    ],
+    "correct_answer": "kit",
+    "audio_asset": "say:kit",
+    "feedback": "Yes! kit is spelled with k — before i, use k.",
+    "retry_feedback": "Listen again: c is used before a, o, u — k is used before e, i, y.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-05-3",
+    "lesson_id": "L4-M28-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cub",
+      "kub"
+    ],
+    "correct_answer": "cub",
+    "audio_asset": "say:cub",
+    "feedback": "Yes! cub is spelled with c — before u, use c.",
+    "retry_feedback": "Listen again: c is used before a, o, u — k is used before e, i, y.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-05-4",
+    "lesson_id": "L4-M28-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "keg",
+      "ceg"
+    ],
+    "correct_answer": "keg",
+    "audio_asset": "say:keg",
+    "feedback": "Yes! keg is spelled with k — before e, use k.",
+    "retry_feedback": "Listen again: c is used before a, o, u — k is used before e, i, y.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-05-5",
+    "lesson_id": "L4-M28-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cat",
+    "letters": [
+      "c",
+      "k",
+      "a",
+      "t"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "t"
+    ],
+    "correct_answer": "cat",
+    "feedback": "Yes! You built cat with c.",
+    "retry_feedback": "Listen again — before a, use c, not k.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-05-6",
+    "lesson_id": "L4-M28-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:kid",
+    "letters": [
+      "k",
+      "c",
+      "i",
+      "d"
+    ],
+    "answer_tiles": [
+      "k",
+      "i",
+      "d"
+    ],
+    "correct_answer": "kid",
+    "feedback": "Yes! You built kid with k.",
+    "retry_feedback": "Listen again — before i, use k, not c.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-05-7",
+    "lesson_id": "L4-M28-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "cup",
+    "options": [
+      "cup",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "cup",
+    "feedback": "Yes! You read cup.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M28-05-8",
+    "lesson_id": "L4-M28-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "cab",
+    "options": [
+      "cab",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "cab",
+    "feedback": "Yes! You read cab.",
+    "retry_feedback": "Sound out each letter, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

@@ -53,6 +53,7 @@ const GRAPHEMES_BY_MODULE = {
   25: ["ar", "er", "ir", "or", "ur"],
   26: [], // Alternative Spellings — recognition-only review, no new grapheme (see Level 2's Module 9 CVC Review for the same pattern).
   27: [], // Review & Assessment — cumulative review, no new grapheme.
+  28: [], // C or K? — no new grapheme, c and k are both already-known single letters; this module is about which known letter to choose, not a new tile.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

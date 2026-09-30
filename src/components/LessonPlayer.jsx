@@ -132,6 +132,8 @@ function modelCaptionFor(item) {
       return `You read it! That sentence is about a ${answer}.`;
     case "fix_sentence":
       return `That's right: ${answer}`;
+    case "spelling_choice":
+      return `Yes! It's spelled ${answer}.`;
     case "listen_choose":
     default:
       return `Listen — that's the ${answer.toLowerCase()} sound!`;
@@ -243,6 +245,10 @@ function modelHeadingFor(lesson, item) {
   }
   if (item.type === "fix_sentence") {
     return `A sentence starts with a capital letter and ends with a full stop. Which one is written correctly?`;
+  }
+  if (item.type === "spelling_choice") {
+    const word = item.audio_asset?.replace(/^say:/, "");
+    return word ? `Listen. Which spelling of "${word}" is correct?` : `Listen. Which spelling is correct?`;
   }
   if (item.type === "vowel_length") {
     const word = item.audio_asset?.replace(/^say:/, "");

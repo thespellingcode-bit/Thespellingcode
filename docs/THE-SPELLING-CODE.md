@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 | Not started |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Module 28 (C or K?) built |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,6 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
+| Level 4 “Spelling Detective”, Module 28 (C or K?) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first module to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -88,7 +89,11 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
+### Level 4 curriculum design (Module 28 built; Modules 29–40 planned, not yet built)
+- **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
+- **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
+- **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
+- **Module 28, C or K?** — the first module, and the one the design problem above was written for. C before a/o/u, k before e/i/y. Needed no new word pictures at all — cat, cup, kid and cab were all already illustrated from Level 1/2, so Read the Words reuses them directly. (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
 - Every module still unlocks only after the previous one is fully mastered (`moduleUnlocked` in `ChildHome.jsx`) — that gating is unchanged; what's new is a *payment* gate still to be added at the Level 1 → Level 2 boundary specifically.
 - **Not yet implemented:** there is no paywall in the app yet. Level 2 (Modules 9–14, all built) is currently reachable the same way Level 1 is, gated only by mastery — building the actual Level 2 payment gate is on hold until the payment gateway and pricing are decided (see “Monetisation” below).
@@ -165,6 +170,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 3 Module 25 (R-Controlled Vowels: ar/er/ir/or/ur) — the first 6-lesson Level 3 module; added a genuinely new `graphemeKindFor()` kind rather than reusing "vowel team," and reused the existing Level 1 car icon instead of adding a duplicate. Added 5 new word pictures (star, corn, bird, shirt, purse).
 - Built Level 3 Module 26 (Alternative Spellings) — the module the plan's central design problem was written for; confirmed live that its recognition items never pair two valid spellings of the same sound against each other. No new grapheme, no new pictures — a pure review/consolidation module.
 - Built Level 3 Module 27 (Review & Assessment), mirroring Level 2's Module 17 exactly. **Level 3 "Pattern Detective" is now fully built and deployed** — live-verified end to end, including a new "Level 3 Pattern Detective" badge earned on the 14-item final Challenge (93% on the first try). The entire planned curriculum through Level 3 now exists: 8 free Level 1 modules, 9 paid Level 2 modules, 10 paid Level 3 modules. Next real decisions are the ones in "Monetisation" above (payment gateway, sign-up, payment screens) and whether to keep building Level 4+ or pause to launch.
+- Owner asked to build Level 4. Drafted `docs/plans/level-4.md` (Spelling Detective, 13 modules) and built Module 28 (C or K?) — the first module in the app to grade a spelling *choice*, via a new `spelling_choice` activity type and `word_build`'s decoy tiles repurposed to hold the competing spelling rather than a random letter. Live-verified both mechanics end to end.
 
 ---
 
@@ -444,6 +450,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 - **Level 1** — Sound Explorer — Listening → phonemic awareness → letter sounds → CVC reading → CVC spelling.
 - **Level 2** — Word Builder — Consonant blends, digraphs, common endings, first tricky words, and short dictated sentences.
 - **Level 3** — Pattern Detective — Long vowels: silent e, vowel teams (ai/ay, ee/ea, oa/ow, oi/oy, ou/ow) and r-controlled vowels.
+- **Level 4** — Spelling Detective — Choosing the right spelling when more than one is plausible: c/k, g/j, doubling, silent letters, y as a vowel, plurals, prefixes and suffixes.
 
 | Module | Name | Status | Lessons | Practice items | Assessment items |
 |---|---|---|---|---|---|
@@ -474,6 +481,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 25 | R-Controlled Vowels | **Live** | 6 | 28 | 27 |
 | 26 | Alternative Spellings | **Live** | 5 | 24 | 24 |
 | 27 | Review & Assessment | **Live** | 5 | 22 | 29 |
+| 28 | C or K? | **Live** | 5 | 20 | 21 |
 
 ## Curriculum in full
 
@@ -4354,6 +4362,146 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M27-05-13 | read “goat” → picture \| options goat, shell, bus \| answer **goat** |  |
 | AS-M27-05-14 | read “purse” → picture \| options purse, duck, fish \| answer **purse** |  |
 
+### Module 28 — C or K?
+
+*Goal:* Choose c or k for the /k/ sound at the start of a word, based on the vowel that follows — the first graded spelling choice in the app.
+
+#### Lesson 1: Meet the Choice (`L4-M28-01`)
+
+- **Objective:** Choose c or k for the /k/ sound at the start of a word, based on the vowel that follows.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome to Level 4, Spelling Detective! Today's case: c or k?
+- **Narration (teach):** Both c and k can spell the /k/ sound. Before a, o or u, use c — cat, cot, cup. Before e, i or y, use k — kid, keg, kit. Listen for the vowel to solve the case!
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Listen for the vowel, then choose.
+- **Narration (close):** Case closed! You know when to use c and when to use k.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M28-01 | sound: cat \| options cat, kat \| answer **cat** |
+| Q-M28-02 | sound: cup \| options cup, kup \| answer **cup** |
+| Q-M28-03 | sound: kid \| options kid, cid \| answer **kid** |
+| Q-M28-04 | sound: cot \| options cot, kot \| answer **cot** |
+| Q-M28-05 | sound: keg \| options keg, ceg \| answer **keg** |
+| Q-M28-06 | sound: cap \| options cap, kap \| answer **cap** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M28-01-1 | sound: cub \| options cub, kub \| answer **cub** |  |
+| AS-M28-01-2 | sound: kit \| options kit, cit \| answer **kit** |  |
+| AS-M28-01-3 | sound: cod \| options cod, kod \| answer **cod** |  |
+| AS-M28-01-4 | sound: cab \| options cab, kab \| answer **cab** |  |
+
+#### Lesson 2: Blend & Build (`L4-M28-02`)
+
+- **Objective:** Build c/k words, choosing the correct starting letter from a tray offering both.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Building mission — the tray has both c and k. Pick the right one!
+- **Narration (teach):** Listen to the word, then build it — but only one of c or k belongs at the start.
+- **Narration (model):** Listen. Watch which letter gets picked, and why.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! You chose the right letter every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M28-07 | hear “cat” → build \| tray c k a t \| answer **cat** |
+| Q-M28-08 | hear “cup” → build \| tray c k u p \| answer **cup** |
+| Q-M28-09 | hear “kid” → build \| tray k c i d \| answer **kid** |
+| Q-M28-10 | hear “kit” → build \| tray k c i t \| answer **kit** |
+| Q-M28-11 | hear “cot” → build \| tray c k o t \| answer **cot** |
+| Q-M28-12 | hear “keg” → build \| tray k c e g \| answer **keg** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M28-02-1 | hear “cub” → build \| tray c k u b \| answer **cub** |  |
+| AS-M28-02-2 | hear “cap” → build \| tray c k a p \| answer **cap** |  |
+| AS-M28-02-3 | hear “cod” → build \| tray c k o d \| answer **cod** |  |
+| AS-M28-02-4 | hear “kin” → build \| tray k c i n \| answer **kin** |  |
+
+#### Lesson 3: Read the Words (`L4-M28-03`)
+
+- **Objective:** Read a c/k word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! c and k both make an appearance today.
+- **Narration (teach):** Read the word, then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You read every c and k word correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M28-13 | read “cat” → picture \| options cat, bus, hen \| answer **cat** |
+| Q-M28-14 | read “cup” → picture \| options cup, fish, pig \| answer **cup** |
+| Q-M28-15 | read “kid” → picture \| options kid, frog, duck \| answer **kid** |
+| Q-M28-16 | read “cab” → picture \| options cab, crab, shell \| answer **cab** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M28-03-1 | read “cat” → picture \| options cat, shell, bus \| answer **cat** | true |
+| AS-M28-03-2 | read “kid” → picture \| options kid, duck, fish \| answer **kid** | true |
+
+#### Lesson 4: Spell the Words (`L4-M28-04`)
+
+- **Objective:** Spell a dictated c/k word, choosing the correct starting letter from a tray offering both.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — solve the c-or-k case for each word!
+- **Narration (teach):** Listen to the word, then spell it — remember, the vowel that follows tells you which letter to use.
+- **Narration (model):** Listen. Pick the right first letter.
+- **Narration (transition):** Your turn! Listen carefully and choose c or k.
+- **Narration (close):** Excellent spelling! You solved every c-or-k case.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M28-17 | hear “cot” → build \| tray c k o t \| answer **cot** |
+| Q-M28-18 | hear “kit” → build \| tray k c i t \| answer **kit** |
+| Q-M28-19 | hear “cup” → build \| tray c k u p \| answer **cup** |
+| Q-M28-20 | hear “keg” → build \| tray k c e g \| answer **keg** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M28-04-1 | hear “cab” → build \| tray c k a b \| answer **cab** |  |
+| AS-M28-04-2 | hear “kid” → build \| tray k c i d \| answer **kid** |  |
+| AS-M28-04-3 | hear “cod” → build \| tray c k o d \| answer **cod** |  |
+
+#### Lesson 5: C or K? Challenge (`L4-M28-05`)
+
+- **Objective:** Demonstrate independent mastery of the c/k spelling choice across listening, building, reading and spelling.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Solve every c-or-k case.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered the c/k spelling choice.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M28-05-1 | sound: cap \| options cap, kap \| answer **cap** |  |
+| AS-M28-05-2 | sound: kit \| options kit, cit \| answer **kit** |  |
+| AS-M28-05-3 | sound: cub \| options cub, kub \| answer **cub** |  |
+| AS-M28-05-4 | sound: keg \| options keg, ceg \| answer **keg** |  |
+| AS-M28-05-5 | hear “cat” → build \| tray c k a t \| answer **cat** |  |
+| AS-M28-05-6 | hear “kid” → build \| tray k c i d \| answer **kid** |  |
+| AS-M28-05-7 | read “cup” → picture \| options cup, shell, bus \| answer **cup** |  |
+| AS-M28-05-8 | read “cab” → picture \| options cab, duck, fish \| answer **cab** |  |
+
 ## Content library
 
 ### Pictures
@@ -4432,6 +4580,7 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `src/activities/SightWordMatch.jsx` | Module 15's "sight_word_match" activity type — a tricky word can't be sounded out reliably (the vowel in "said" doesn't say its usual sound), so unlike read_word this is deliberately audio-first: hear the whole word spoken naturally, then pick it out from o... |
 | `src/activities/Sort.jsx` | Thin wrapper over MultipleChoice for the "loud_soft/fast_slow" activity type(s). Kept as its own file per the activity-type registry so this interaction can get a bespoke UI later without touching the others. |
 | `src/activities/SoundMemory.jsx` | Thin wrapper over MultipleChoice for the "sound_memory" activity type(s). Kept as its own file per the activity-type registry so this interaction can get a bespoke UI later without touching the others. |
+| `src/activities/SpellingChoice.jsx` | Level 4's "spelling_choice" activity type — the first time this app grades a child on picking the CORRECT spelling from two plausible options (every earlier level enforced "no choosing between two valid spellings"; see docs/plans/level-4.md's design problem... |
 | `src/activities/VowelMatch.jsx` | Thin wrapper over MultipleChoice for Module 5's "vowel_match" activity type — compares a word's MIDDLE vowel sound instead of its first (beginning_sound_match) or last (ending_sound_match). Same content shape and preview-then-confirm interaction as the othe... |
 | `src/activities/WordBuilder.jsx` | Module 9's "word_build" activity type — hear (or, for dictation-style items, be shown) a target word, then assemble it by tapping letter tiles into order from a shuffled bank. Tap-to-place rather than drag-and-drop: far more reliable to implement and test o... |
 | `src/activities/registry.js` | Adding a NEW activity type (e.g. drag-and-drop letter tiles for a later module) means: (1) create the component, (2) add one line here. No other file needs to change — LessonPlayer and QuestionCard both go through this registry, never a type-specific switch... |

@@ -2505,5 +2505,100 @@
       "transition": "",
       "close": "Congratulations! You've completed Level 3 — Pattern Detective!"
     }
+  },
+  {
+    "lesson_id": "L4-M28-01",
+    "module_id": 28,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Choose c or k for the /k/ sound at the start of a word, based on the vowel that follows.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome to Level 4, Spelling Detective! Today's case: c or k?",
+      "teach": "Both c and k can spell the /k/ sound. Before a, o or u, use c — cat, cot, cup. Before e, i or y, use k — kid, keg, kit. Listen for the vowel to solve the case!",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for the vowel, then choose.",
+      "close": "Case closed! You know when to use c and when to use k."
+    }
+  },
+  {
+    "lesson_id": "L4-M28-02",
+    "module_id": 28,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "spelling",
+    "objective": "Build c/k words, choosing the correct starting letter from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — the tray has both c and k. Pick the right one!",
+      "teach": "Listen to the word, then build it — but only one of c or k belongs at the start.",
+      "model": "Listen. Watch which letter gets picked, and why.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! You chose the right letter every time."
+    }
+  },
+  {
+    "lesson_id": "L4-M28-03",
+    "module_id": 28,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a c/k word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! c and k both make an appearance today.",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every c and k word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M28-04",
+    "module_id": 28,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated c/k word, choosing the correct starting letter from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — solve the c-or-k case for each word!",
+      "teach": "Listen to the word, then spell it — remember, the vowel that follows tells you which letter to use.",
+      "model": "Listen. Pick the right first letter.",
+      "transition": "Your turn! Listen carefully and choose c or k.",
+      "close": "Excellent spelling! You solved every c-or-k case."
+    }
+  },
+  {
+    "lesson_id": "L4-M28-05",
+    "module_id": 28,
+    "number": 5,
+    "title": "C or K? Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of the c/k spelling choice across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Solve every c-or-k case.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the c/k spelling choice."
+    }
   }
 ]

@@ -20,6 +20,7 @@ import { SightWordMatch } from "./SightWordMatch";
 import { SentenceBuilder } from "./SentenceBuilder";
 import { SentenceRead } from "./SentenceRead";
 import { FixSentence } from "./FixSentence";
+import { SpellingChoice } from "./SpellingChoice";
 
 export const ACTIVITY_REGISTRY = {
   listen_choose: ListenChoose,
@@ -41,6 +42,7 @@ export const ACTIVITY_REGISTRY = {
   sentence_build: SentenceBuilder,
   sentence_read: SentenceRead,
   fix_sentence: FixSentence,
+  spelling_choice: SpellingChoice,
 };
 
 export function componentForType(type) {

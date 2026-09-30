@@ -19,5 +19,12 @@
     "description": "Long vowels: silent e, vowel teams (ai/ay, ee/ea, oa/ow, oi/oy, ou/ow) and r-controlled vowels.",
     "approx_age": "6–7",
     "total_units": 51
+  },
+  {
+    "level_id": 4,
+    "level_name": "Spelling Detective",
+    "description": "Choosing the right spelling when more than one is plausible: c/k, g/j, doubling, silent letters, y as a vowel, plurals, prefixes and suffixes.",
+    "approx_age": "7–9",
+    "total_units": 67
   }
 ]

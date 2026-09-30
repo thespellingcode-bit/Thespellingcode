@@ -21,7 +21,7 @@ import { useAutoSpeak } from "../hooks/useAutoSpeak";
 // Question types whose options are real running text (words or whole
 // sentences) that can accidentally contain an illustrated word as a
 // substring — see the isLetterOption/optIcon computation below.
-const NO_ICON_OPTION_TYPES = new Set(["sight_word_match", "fix_sentence"]);
+const NO_ICON_OPTION_TYPES = new Set(["sight_word_match", "fix_sentence", "spelling_choice"]);
 
 export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabled = true }) {
   const [selected, setSelected] = useState(null);
