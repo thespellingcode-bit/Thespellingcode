@@ -1821,5 +1821,100 @@
       "transition": "",
       "close": "Amazing! You've mastered the ai/ay vowel teams."
     }
+  },
+  {
+    "lesson_id": "L3-M21-01",
+    "module_id": 21,
+    "number": 1,
+    "title": "Meet the Sounds",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise ee and ea as spellings of the long E sound, distinguishing them from a plain short vowel.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome back, Pattern Detective! A new vowel team today.",
+      "teach": "ee and ea are vowel teams too — two letters working together to make one long E sound, like in tree and leaf.",
+      "model": "Listen. Which pattern makes the long E sound in this word?",
+      "transition": "Your turn! Listen for the vowel team.",
+      "close": "Sharp listening! You can spot the ee and ea vowel teams."
+    }
+  },
+  {
+    "lesson_id": "L3-M21-02",
+    "module_id": 21,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build ee/ea words from a tray where the vowel team is a single tile.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some vowel-team words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — the vowel team (ee or ea) is one tile, not two.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! Every vowel team snapped in as one tile."
+    }
+  },
+  {
+    "lesson_id": "L3-M21-03",
+    "module_id": 21,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read an ee/ea word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! ee and ea both say long E.",
+      "teach": "Read the word, remembering the vowel team makes one long E sound. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You matched every ee/ea word to its picture."
+    }
+  },
+  {
+    "lesson_id": "L3-M21-04",
+    "module_id": 21,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated ee/ea word from a tray that includes one decoy letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — watch out for the extra letter!",
+      "teach": "Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!",
+      "model": "Listen. Pick the right tiles — and leave the extra letter behind!",
+      "transition": "Your turn! Listen carefully and leave out the extra letter.",
+      "close": "Excellent spelling! You left every extra letter behind."
+    }
+  },
+  {
+    "lesson_id": "L3-M21-05",
+    "module_id": 21,
+    "number": 5,
+    "title": "ee/ea Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of ee/ea across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time! Show everything you know about ee and ea.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Amazing! You've mastered the ee/ea vowel teams."
+    }
   }
 ]

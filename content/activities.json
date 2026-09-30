@@ -7935,5 +7935,455 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-01",
+    "lesson_id": "L3-M21-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long E sound in this word?",
+    "options": [
+      "ee",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ee",
+    "audio_asset": "say:tree",
+    "feedback": "Yes! tree has the vowel team ee.",
+    "retry_feedback": "Listen for two letters together making one long E sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-02",
+    "lesson_id": "L3-M21-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long E sound in this word?",
+    "options": [
+      "ee",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ee",
+    "audio_asset": "say:feet",
+    "feedback": "Yes! feet has the vowel team ee.",
+    "retry_feedback": "Listen for two letters together making one long E sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-03",
+    "lesson_id": "L3-M21-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long E sound in this word?",
+    "options": [
+      "ee",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ee",
+    "audio_asset": "say:jeep",
+    "feedback": "Yes! jeep has the vowel team ee.",
+    "retry_feedback": "Listen for two letters together making one long E sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-04",
+    "lesson_id": "L3-M21-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long E sound in this word?",
+    "options": [
+      "ea",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ea",
+    "audio_asset": "say:leaf",
+    "feedback": "Yes! leaf has the vowel team ea.",
+    "retry_feedback": "Listen for two letters together making one long E sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-05",
+    "lesson_id": "L3-M21-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long E sound in this word?",
+    "options": [
+      "ea",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ea",
+    "audio_asset": "say:seat",
+    "feedback": "Yes! seat has the vowel team ea.",
+    "retry_feedback": "Listen for two letters together making one long E sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-06",
+    "lesson_id": "L3-M21-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the long E sound in this word?",
+    "options": [
+      "ea",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ea",
+    "audio_asset": "say:read",
+    "feedback": "Yes! read has the vowel team ea.",
+    "retry_feedback": "Listen for two letters together making one long E sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-07",
+    "lesson_id": "L3-M21-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tree",
+    "letters": [
+      "t",
+      "r",
+      "ee"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ee"
+    ],
+    "correct_answer": "tree",
+    "feedback": "Yes! You built tree.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-08",
+    "lesson_id": "L3-M21-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:leaf",
+    "letters": [
+      "l",
+      "ea",
+      "f"
+    ],
+    "answer_tiles": [
+      "l",
+      "ea",
+      "f"
+    ],
+    "correct_answer": "leaf",
+    "feedback": "Yes! You built leaf.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-09",
+    "lesson_id": "L3-M21-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:seed",
+    "letters": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "answer_tiles": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "correct_answer": "seed",
+    "feedback": "Yes! You built seed.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-10",
+    "lesson_id": "L3-M21-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:seal",
+    "letters": [
+      "s",
+      "ea",
+      "l"
+    ],
+    "answer_tiles": [
+      "s",
+      "ea",
+      "l"
+    ],
+    "correct_answer": "seal",
+    "feedback": "Yes! You built seal.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-11",
+    "lesson_id": "L3-M21-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:wheel",
+    "letters": [
+      "wh",
+      "ee",
+      "l"
+    ],
+    "answer_tiles": [
+      "wh",
+      "ee",
+      "l"
+    ],
+    "correct_answer": "wheel",
+    "feedback": "Yes! You built wheel.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-12",
+    "lesson_id": "L3-M21-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bean",
+    "letters": [
+      "b",
+      "ea",
+      "n"
+    ],
+    "answer_tiles": [
+      "b",
+      "ea",
+      "n"
+    ],
+    "correct_answer": "bean",
+    "feedback": "Yes! You built bean.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-13",
+    "lesson_id": "L3-M21-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "tree",
+    "options": [
+      "tree",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "tree",
+    "feedback": "Yes! You read tree.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long E sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-14",
+    "lesson_id": "L3-M21-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bee",
+    "options": [
+      "bee",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "bee",
+    "feedback": "Yes! You read bee.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long E sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-15",
+    "lesson_id": "L3-M21-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "sheep",
+    "options": [
+      "sheep",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "sheep",
+    "feedback": "Yes! You read sheep.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long E sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-16",
+    "lesson_id": "L3-M21-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "wheel",
+    "options": [
+      "wheel",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "wheel",
+    "feedback": "Yes! You read wheel.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long E sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-17",
+    "lesson_id": "L3-M21-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "leaf",
+    "options": [
+      "leaf",
+      "bike",
+      "rose"
+    ],
+    "correct_answer": "leaf",
+    "feedback": "Yes! You read leaf.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long E sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-18",
+    "lesson_id": "L3-M21-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "seal",
+    "options": [
+      "seal",
+      "train",
+      "sail"
+    ],
+    "correct_answer": "seal",
+    "feedback": "Yes! You read seal.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one long E sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-19",
+    "lesson_id": "L3-M21-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tree",
+    "letters": [
+      "t",
+      "r",
+      "ee",
+      "s"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ee"
+    ],
+    "correct_answer": "tree",
+    "feedback": "Yes! You built tree.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-20",
+    "lesson_id": "L3-M21-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:leaf",
+    "letters": [
+      "l",
+      "ea",
+      "f",
+      "p"
+    ],
+    "answer_tiles": [
+      "l",
+      "ea",
+      "f"
+    ],
+    "correct_answer": "leaf",
+    "feedback": "Yes! You built leaf.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-21",
+    "lesson_id": "L3-M21-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:seed",
+    "letters": [
+      "s",
+      "ee",
+      "d",
+      "t"
+    ],
+    "answer_tiles": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "correct_answer": "seed",
+    "feedback": "Yes! You built seed.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M21-22",
+    "lesson_id": "L3-M21-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:team",
+    "letters": [
+      "t",
+      "ea",
+      "m",
+      "p"
+    ],
+    "answer_tiles": [
+      "t",
+      "ea",
+      "m"
+    ],
+    "correct_answer": "team",
+    "feedback": "Yes! You built team.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

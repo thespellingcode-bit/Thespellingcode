@@ -46,6 +46,7 @@ const GRAPHEMES_BY_MODULE = {
   // word-SHAPE rule this letter-by-letter check has no reason to model.
   19: [],
   20: ["ai", "ay"], // ai/ay — the first Level 3 module that actually adds a new tile-worthy grapheme.
+  21: ["ee", "ea"],
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

@@ -115,6 +115,8 @@ const WORD_KEYS = [
   // substring match below would otherwise match "train" against "rain"
   // first ("train".includes("rain") is true) and show the wrong picture.
   "train", "rain", "mail", "sail", "paint",
+  // Level 3 Module 21 (ee/ea).
+  "tree", "bee", "sheep", "wheel", "leaf", "seal",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
