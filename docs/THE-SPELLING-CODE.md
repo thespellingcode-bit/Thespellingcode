@@ -26,7 +26,7 @@
 | Level | Name | Approx. age | Blueprint modules | State |
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
-| 2 | Word Builder | 5–6 | 8 | **In progress** — 5 of 8 modules built (Modules 9–13); see the Level 2 plan for the rest |
+| 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 | Not started |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
@@ -39,8 +39,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 |---|---|
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
-| Level 2 “Word Builder”, Modules 9–16 (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling) | **Built and deployed** |
-| Level 2 Module 17 (Review & Assessment) | Not built — the last module in Level 2 |
+| Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 and beyond, payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -55,7 +54,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Letter sounds, not names:** text-to-speech reads a bare letter by its name (“em”), which teaches the wrong thing. So the app never speaks an isolated letter; “tap a word to sound it out” uses phoneme approximations (n → “nnn”, a → “ah”, p → “puh”) and then the whole word.
 - **Mastery:** each lesson has a mastery threshold (80%). A module is complete when all its lessons are mastered.
 
-### Level 2 curriculum design (Modules 9–16 of 17 built)
+### Level 2 curriculum design (all 9 modules built — Level 2 complete)
 - **Module 9, CVC Review & Automaticity:** no new letters — pure review of Level 1's 19 letters, plus one lesson teaching common doubled-letter-ending words (off, bell, hill, doll...) receptively only. A child builds/reads these correctly without ever being asked to *choose* a spelling — that choice stays a Level 4 topic, matching the c/k precedent from Level 1.
 - **Module 10, Consonant Blends** (bl/cl/fl/gl/pl/sl, br/cr/dr/fr/gr/pr/tr): a blend is two already-known letters said quickly together, so it needs no new letter and no new tile — each blend letter is tapped separately, exactly like any other CVC word.
 - **Module 11, Digraphs** (sh, ch, th, wh) and **Module 12, Common Endings** (-ck, -tch, -dge, -ng, -nk): unlike a blend, these are two-or-three letters making **one** sound, so the tray must offer them as a single tile (see “Multi-letter tiles” below). Digraphs can sit at the start or end of a word (ship vs. fish); endings only ever sit at the end.
@@ -134,7 +133,8 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 1 Module 8 (Master Assessment) and Level 2 Modules 9–13, plus the groundwork they needed (multi-letter tiles, blend/digraph/ending-aware narration). See the Level 2 curriculum design note above for what each module teaches and the known-letters gap it surfaced.
 - Built Level 2 Module 14 (Letter Cluster 5: j v w x y z) once the known-letters gap started blocking real words; fixed a narration bug it surfaced (a single letter like "x" assumed to always be word-initial, wrong for "fox").
 - Owner decided the monetisation boundary: all of Level 1 free, Level 2 onward paid. Removed the old score-gated 85% shortcut at Module 1 → 2 as redundant. No paywall is built yet — see “Monetisation” above.
-- Owner changed plans: build out Level 2 fully before going live/monetising, rather than launching with only 2 levels. Built Level 2 Module 15 (Tricky Words, new sight_word_match type) and Module 16 (Sentence Spelling, three new activity types plus a WordTile component) — see the Level 2 curriculum design note above. Only Module 17 (Review & Assessment) is left to finish Level 2.
+- Owner changed plans: build out Level 2 fully before going live/monetising, rather than launching with only 2 levels. Built Level 2 Module 15 (Tricky Words, new sight_word_match type) and Module 16 (Sentence Spelling, three new activity types plus a WordTile component) — see the Level 2 curriculum design note above.
+- Built Level 2 Module 17 (Review & Assessment) — cumulative mixed practice across every Level 2 skill, plus a 10-item Level 2 Challenge; earns a new "Level 2 Word Builder" badge. **Level 2 is now fully built and deployed**, alongside Level 1 — the entire planned launch curriculum (8 free Level 1 modules, 9 paid Level 2 modules) exists. Next real decisions are the ones in "Monetisation" above (payment gateway, sign-up, payment screens) and whether to keep building Level 3+ or pause to launch.
 
 ---
 
@@ -273,7 +273,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 14 | Letter Cluster 5: j v w x y z | **Live** | 5 | 23 | 22 |
 | 15 | Tricky Words | **Live** | 5 | 16 | 24 |
 | 16 | Sentence Spelling | **Live** | 5 | 16 | 22 |
-| 17 | Review & Assessment | Not built | 0 | 0 | 0 |
+| 17 | Review & Assessment | **Live** | 5 | 20 | 26 |
 
 ## Curriculum in full
 
@@ -2543,6 +2543,149 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M16-05-7 | sound: We had fun \| answer **We had fun.** |  |
 | AS-M16-05-8 | sound: They have a dog \| answer **They have a dog.** |  |
 
+### Module 17 — Review & Assessment
+
+*Goal:* Demonstrate independent Level 2 mastery across every pattern learned.
+
+#### Lesson 1: Mixed Retrieval (`L2-M17-01`)
+
+- **Objective:** Recognise blends, digraphs, endings, qu, and every letter from across Level 2.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to review everything from Level 2!
+- **Narration (teach):** Listen to a word, then find what it starts or ends with.
+- **Narration (model):** Listen. Flag starts with the blend fl.
+- **Narration (transition):** Now you try! Listen to the word, then choose the right answer.
+- **Narration (close):** Great review! You know your patterns.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M17-01 | hear “flag” → letter \| options fl cl gl \| answer **fl** |
+| Q-M17-02 | hear “ship” → letter \| options sh ch th \| answer **sh** |
+| Q-M17-03 | hear “duck” → letter \| options ck tch dge \| answer **ck** |
+| Q-M17-04 | hear “quit” → letter \| options qu st sp \| answer **qu** |
+| Q-M17-05 | hear “van” → letter \| options v w j \| answer **v** |
+| Q-M17-06 | hear “fox” → letter \| options x z j \| answer **x** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M17-01-1 | hear “crab” → letter \| options cr br dr \| answer **cr** |  |
+| AS-M17-01-2 | hear “thumb” → letter \| options th wh sh \| answer **th** |  |
+| AS-M17-01-3 | hear “bridge” → letter \| options dge ck ng \| answer **dge** |  |
+| AS-M17-01-4 | hear “jam” → letter \| options j y z \| answer **j** |  |
+
+#### Lesson 2: Read & Build (`L2-M17-02`)
+
+- **Objective:** Read and build words using every pattern learned across Level 2.
+- **Skill:** decoding · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's read and build words from every part of Level 2!
+- **Narration (teach):** Read a word, or listen and build one — either way, use everything you know.
+- **Narration (model):** Listen. Crab. Tap c, then r, then a, then b to build it!
+- **Narration (transition):** Now you try!
+- **Narration (close):** Great work! You can read and build all kinds of words now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M17-07 | read “ship” → picture \| options ship, hen, bus \| answer **ship** |
+| Q-M17-08 | read “fish” → picture \| options fish, cap, gum \| answer **fish** |
+| Q-M17-09 | hear “crab” → build \| tray c r a b \| answer **crab** |
+| Q-M17-10 | hear “quit” → build \| tray qu i t \| answer **quit** |
+| Q-M17-11 | hear “tent” → build \| tray t e n t \| answer **tent** |
+| Q-M17-12 | read “duck” → picture \| options duck, net, rat \| answer **duck** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M17-02-1 | read “bridge” → picture \| options bridge, kid, bag \| answer **bridge** |  |
+| AS-M17-02-2 | read “fox” → picture \| options fox, sun, top \| answer **fox** |  |
+| AS-M17-02-3 | hear “flag” → build \| tray f l a g \| answer **flag** |  |
+| AS-M17-02-4 | hear “van” → build \| tray v a n \| answer **van** |  |
+
+#### Lesson 3: Tricky Words & Sentences (`L2-M17-03`)
+
+- **Objective:** Review tricky words and read whole sentences.
+- **Skill:** decoding · **Activity:** sight_word_match · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's review tricky words and sentences!
+- **Narration (teach):** Listen to the tricky word and find it, or read a sentence and find its picture.
+- **Narration (model):** Listen. Said. You can't sound out every letter — you just have to know it!
+- **Narration (transition):** Now you try!
+- **Narration (close):** You know your tricky words and sentences!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M17-13 | sound: said \| options said, sad, slid \| answer **said** |
+| Q-M17-14 | sound: was \| options was, saw, has \| answer **was** |
+| Q-M17-15 | sound: the \| options the, then, they \| answer **the** |
+| Q-M17-16 | sound: they \| options they, the, then \| answer **they** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M17-03-1 | options cat, dog, pig \| answer **cat** |  |
+| AS-M17-03-2 | options pig, fox, dog \| answer **pig** |  |
+| AS-M17-03-3 | sound: have \| options have, gave, hive \| answer **have** |  |
+| AS-M17-03-4 | sound: my \| options my, by, may \| answer **my** |  |
+
+#### Lesson 4: Dictation (`L2-M17-04`)
+
+- **Objective:** Spell dictated words and sentences from across Level 2, choosing the right tiles from a mixed tray.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time for dictation — words and sentences!
+- **Narration (teach):** Listen carefully. The tray has an extra tile that doesn't belong — leave it out!
+- **Narration (model):** Listen. Crab. Pick c, r, a, b — and leave the extra tile behind!
+- **Narration (transition):** Now you try!
+- **Narration (close):** Great spelling! Words and sentences, all correct.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M17-17 | hear “crab” → spell (1 extra tile) \| tray c r a b l \| answer **crab** |
+| Q-M17-18 | hear “ship” → spell (1 extra tile) \| tray sh i p ch \| answer **ship** |
+| Q-M17-19 | sound: You can jump \| answer **You can jump.** |
+| Q-M17-20 | sound: We had fun \| answer **We had fun.** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M17-04-1 | hear “duck” → spell (1 extra tile) \| tray d u ck tch \| answer **duck** |  |
+| AS-M17-04-2 | hear “quit” → spell (1 extra tile) \| tray qu i t st \| answer **quit** |  |
+| AS-M17-04-3 | sound: They have a dog \| answer **They have a dog.** |  |
+| AS-M17-04-4 | sound: I can spell \| answer **I can spell.** |  |
+
+#### Lesson 5: Level 2 Challenge (`L2-M17-05`)
+
+- **Objective:** Demonstrate independent mastery of everything taught in Level 2.
+- **Skill:** decoding · **Activity:** assessment · **Time:** 10–12 min · **Mastery threshold:** 80%
+- **Narration (welcome):** This is it — the Level 2 Challenge!
+- **Narration (instruction):** Blends, digraphs, endings, qu, tricky words, sentences — any of it could show up. Take your time and do your best.
+- **Narration (close):** You are officially a Word Builder! Level 2 complete.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M17-05-1 | hear “ship” → letter \| options sh ch th \| answer **sh** |  |
+| AS-M17-05-2 | hear “duck” → letter \| options ck tch dge \| answer **ck** |  |
+| AS-M17-05-3 | hear “quit” → build \| tray qu i t \| answer **quit** |  |
+| AS-M17-05-4 | hear “crab” → build \| tray c r a b \| answer **crab** |  |
+| AS-M17-05-5 | read “bridge” → picture \| options bridge, hen, sit \| answer **bridge** |  |
+| AS-M17-05-6 | sound: was \| options was, saw, has \| answer **was** |  |
+| AS-M17-05-7 | sound: The fox ran fast \| answer **The fox ran fast.** |  |
+| AS-M17-05-8 | options cat, pig, dog \| answer **cat** |  |
+| AS-M17-05-9 | hear “flag” → spell (1 extra tile) \| tray f l a g sh \| answer **flag** |  |
+| AS-M17-05-10 | sound: We had fun \| answer **We had fun.** |  |
+
 ## Content library
 
 ### Pictures
@@ -2583,6 +2726,7 @@ Spoken words (26 listed in `content/media.json`, plus every `say:word` used in l
 | BADGE-05 | Reading Star | Not built |
 | BADGE-06 | Level 1 Sound Explorer | Live |
 | BADGE-07 | Sentence Star | Live |
+| BADGE-08 | Level 2 Word Builder | Live |
 
 ## Code map
 
