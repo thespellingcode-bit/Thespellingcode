@@ -68,12 +68,22 @@ function lettersKnownThrough(moduleId) {
 // new grapheme.
 const ALWAYS_ALLOWED_DOUBLES = ["ff", "ll", "ss", "zz"];
 
+// Checks one WORD (no spaces) against what's taught by moduleId.
 function isDecodable(word, moduleId) {
   const graphemes = [...graphemesKnownThrough(moduleId), ...ALWAYS_ALLOWED_DOUBLES].sort((a, b) => b.length - a.length);
   const letters = lettersKnownThrough(moduleId);
   let rest = word.toLowerCase();
   for (const g of graphemes) rest = rest.split(g).join("");
   return [...rest].every((ch) => letters.has(ch));
+}
+
+// A Level 2 field can now hold a whole SENTENCE (Module 16's
+// correct_answer/written_sentence, e.g. "The cat sat.") rather than one
+// word — split on whitespace and strip each word's own punctuation
+// before checking, since spaces/periods/question marks were never
+// "taught letters" and aren't meant to be.
+function wordsIn(text) {
+  return text.split(/\s+/).map((w) => w.replace(/[^a-zA-Z]/g, "")).filter(Boolean);
 }
 
 test("every Level 2 word only uses letters/patterns already taught by its own module", () => {
@@ -83,7 +93,8 @@ test("every Level 2 word only uses letters/patterns already taught by its own mo
     const moduleId = lessonModule[it.lesson_id];
     if (moduleId === undefined) continue; // Level 1 content — not in scope for this test
     const id = it.activity_id || it.assessment_id;
-    const words = [it.correct_answer, it.written_word].filter(Boolean);
+    const fields = [it.correct_answer, it.written_word, it.written_sentence].filter(Boolean);
+    const words = fields.flatMap(wordsIn);
     for (const w of words) {
       if (!isDecodable(w, moduleId)) violations.push(`${id} (module ${moduleId}): "${w}" uses an untaught pattern`);
     }

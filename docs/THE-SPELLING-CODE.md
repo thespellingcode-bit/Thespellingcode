@@ -39,8 +39,8 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 |---|---|
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
-| Level 2 “Word Builder”, Modules 9–13 (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns) | **Built and deployed** |
-| Level 2 Modules 14–16 (Tricky Words, Sentence Spelling, Review & Assessment) | Not built |
+| Level 2 “Word Builder”, Modules 9–16 (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling) | **Built and deployed** |
+| Level 2 Module 17 (Review & Assessment) | Not built — the last module in Level 2 |
 | Level 3 and beyond, payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -55,14 +55,21 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Letter sounds, not names:** text-to-speech reads a bare letter by its name (“em”), which teaches the wrong thing. So the app never speaks an isolated letter; “tap a word to sound it out” uses phoneme approximations (n → “nnn”, a → “ah”, p → “puh”) and then the whole word.
 - **Mastery:** each lesson has a mastery threshold (80%). A module is complete when all its lessons are mastered.
 
-### Level 2 curriculum design (Modules 9–13, built)
+### Level 2 curriculum design (Modules 9–16 of 17 built)
 - **Module 9, CVC Review & Automaticity:** no new letters — pure review of Level 1's 19 letters, plus one lesson teaching common doubled-letter-ending words (off, bell, hill, doll...) receptively only. A child builds/reads these correctly without ever being asked to *choose* a spelling — that choice stays a Level 4 topic, matching the c/k precedent from Level 1.
 - **Module 10, Consonant Blends** (bl/cl/fl/gl/pl/sl, br/cr/dr/fr/gr/pr/tr): a blend is two already-known letters said quickly together, so it needs no new letter and no new tile — each blend letter is tapped separately, exactly like any other CVC word.
 - **Module 11, Digraphs** (sh, ch, th, wh) and **Module 12, Common Endings** (-ck, -tch, -dge, -ng, -nk): unlike a blend, these are two-or-three letters making **one** sound, so the tray must offer them as a single tile (see “Multi-letter tiles” below). Digraphs can sit at the start or end of a word (ship vs. fish); endings only ever sit at the end.
 - **Module 13, Qu & Common Patterns:** “qu” is tiled as one inseparable unit like a digraph (English never spells /kw/ with a bare q), plus s-blends and end-blends, which — like Module 10's blends — are just pairs of already-known letters needing no new tile.
 - **Narration must name the right concept.** A blend is not a digraph is not an ending is not qu — conflating them (e.g. calling “ck” a “blend” because it's more than one character) is a real bug that shipped once and was caught by a live browser check, not by the test suite. `graphemeKindFor()` in `src/services/questionTypes.js` is the single source of truth for which is which; extend its `DIGRAPHS`/`ENDINGS` sets when a later module adds more, rather than guessing from a grapheme's length.
 - **Multi-letter tiles.** A `word_build` item can set `answer_tiles` (e.g. `["sh", "i", "p"]` for “ship”) so a tray tile can hold a whole grapheme instead of always one letter. Every place that used to do `correct_answer.split("")` — the tile count, the decoy calculation, the Watch-stage demo, the narration — now goes through `answerTilesFor()` instead. Level 1 content never sets `answer_tiles`, so it's unaffected; this is purely additive.
-- **Known letters gap (flagged, not yet resolved):** Level 1 and Level 2 together still only teach 19 letters — **j, v, w, x, y, z are never taught**, at any point. This was inherited from Level 1's four Jolly-Phonics-style letter clusters and was not revisited when Level 2 was scoped. It already constrains word choice throughout Level 2 (for example “sw” was dropped from Module 13's s-blends because it needs w; “jump”, “van”, “wet”, “zip” are all currently off-limits). Recommend deciding where these six letters get taught — real Jolly Phonics teaches them alongside its own later digraphs/vowel-team groups — before Level 2's remaining modules (especially Sentence Spelling, which will want ordinary vocabulary) are built.
+- **Known letters gap — resolved.** Level 1's 19 letters never included j, v, w, x, y, z. Flagged while building Module 13, and fixed with a new **Module 14, Letter Cluster 5** (same 5-lesson shape as Level 1's clusters) — the alphabet is complete from here on (q is still never taught alone, only as "qu").
+- **Module 15, Tricky Words:** a new activity type, `sight_word_match` — deliberately audio-first (hear the whole word, then pick it from similar-looking real-word decoys like was/saw/has), never the written-word tap-to-sound-out pattern, because sounding out an irregular word like "said" letter by letter teaches the wrong pronunciation. The Watch-stage demo highlights the word's irregular part in a different colour (`tricky_part` field, e.g. "ai" in "said") — the standard sight-word teaching technique.
+- **Module 16, Sentence Spelling — three more new activity types**, all reusing `MultipleChoice`'s existing plain-text-option fallback rather than needing new picker UI:
+  - `sentence_build`: the sentence-level sibling of `word_build`. A new `WordTile` component (auto-width, not a fixed square like `LetterTile`) and a new `SentenceBuilder` component — the one real behavioural difference from word-building is that words join with a **space**, not nothing, so this couldn't just reuse `WordBuilder` with different tiles. Content always sets `answer_tiles` explicitly (e.g. `["The", "cat", "sat."]`); `answerTilesFor()`/`decoyLettersFor()` needed no changes since they already treat a tray as a generic list of tiles, letters or words alike.
+  - `sentence_read`: written_sentence field (deliberately separate from `written_word` — see next point) plus picture options, reusing `read_word`'s picture-matching idea at sentence scale.
+  - `fix_sentence`: two plain-text options, one correctly capitalised/punctuated, one not — simpler than building an interactive text editor, while still testing the same recognition.
+  - **Two bugs found live, not by the test suite, while verifying this module:** (1) `labelToIcon`'s substring matching, fine for isolated CVC words, false-positives on real running text — "then" contains "hen", so a sight/sentence option could silently show an unrelated picture; `sight_word_match` and `fix_sentence` options now never get a picture, matched or not. (2) `spellOutWord` strips punctuation and spaces then sounds out whatever's left as ONE word, so wiring a sentence into the existing `written_word` field would try to sound out "The cat sat." as "thecatsat" — hence the separate `written_sentence` field, rendered as plain non-interactive text instead.
+  - Two of the app's own generic content-integrity tests didn't know about sentence-shaped content and needed updates: the "correct_answer is among options" test now recognises `sentence_build` as tile-based (like `word_build`) rather than expecting an `options` array it doesn't have, and the decodability test now splits a `correct_answer`/`written_sentence` on whitespace and checks each word separately, since a bare space or period was never a "taught letter" and was never meant to be one.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -127,6 +134,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 1 Module 8 (Master Assessment) and Level 2 Modules 9–13, plus the groundwork they needed (multi-letter tiles, blend/digraph/ending-aware narration). See the Level 2 curriculum design note above for what each module teaches and the known-letters gap it surfaced.
 - Built Level 2 Module 14 (Letter Cluster 5: j v w x y z) once the known-letters gap started blocking real words; fixed a narration bug it surfaced (a single letter like "x" assumed to always be word-initial, wrong for "fox").
 - Owner decided the monetisation boundary: all of Level 1 free, Level 2 onward paid. Removed the old score-gated 85% shortcut at Module 1 → 2 as redundant. No paywall is built yet — see “Monetisation” above.
+- Owner changed plans: build out Level 2 fully before going live/monetising, rather than launching with only 2 levels. Built Level 2 Module 15 (Tricky Words, new sight_word_match type) and Module 16 (Sentence Spelling, three new activity types plus a WordTile component) — see the Level 2 curriculum design note above. Only Module 17 (Review & Assessment) is left to finish Level 2.
 
 ---
 
@@ -264,7 +272,7 @@ The app currently lists Level 1 Modules 8–11 as future work: **My First Senten
 | 13 | Qu & Common Patterns | **Live** | 5 | 19 | 20 |
 | 14 | Letter Cluster 5: j v w x y z | **Live** | 5 | 23 | 22 |
 | 15 | Tricky Words | **Live** | 5 | 16 | 24 |
-| 16 | Sentence Spelling | Not built | 0 | 0 | 0 |
+| 16 | Sentence Spelling | **Live** | 5 | 16 | 22 |
 | 17 | Review & Assessment | Not built | 0 | 0 | 0 |
 
 ## Curriculum in full
@@ -2400,6 +2408,141 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M15-05-7 | hear “have” → spell (1 extra tile) \| tray h a v e o \| answer **have** |  |
 | AS-M15-05-8 | hear “two” → spell (1 extra tile) \| tray t w o e \| answer **two** |  |
 
+### Module 16 — Sentence Spelling
+
+*Goal:* Read and write short dictated sentences using everything learned so far.
+
+#### Lesson 1: Meet Sentences (`L2-M16-01`)
+
+- **Objective:** Recognise that a sentence starts with a capital letter and ends with a full stop.
+- **Skill:** decoding · **Activity:** fix_sentence · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Words join up to make sentences — and sentences follow two rules!
+- **Narration (teach):** A sentence starts with a CAPITAL letter and ends with a full stop. Which one is written correctly?
+- **Narration (model):** A capital letter at the start, a full stop at the end.
+- **Narration (transition):** Now you try! Pick the sentence that's written correctly.
+- **Narration (close):** Great work! You can spot a correctly written sentence.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M16-01 | options the cat sat., The cat sat. \| answer **The cat sat.** |
+| Q-M16-02 | options The dog ran, The dog ran. \| answer **The dog ran.** |
+| Q-M16-03 | options you can jump, You can jump. \| answer **You can jump.** |
+| Q-M16-04 | options she has a pet, She has a pet. \| answer **She has a pet.** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M16-01-1 | options we had fun, We had fun. \| answer **We had fun.** |  |
+| AS-M16-01-2 | options they have a dog, They have a dog. \| answer **They have a dog.** |  |
+| AS-M16-01-3 | options the fox ran fast, The fox ran fast. \| answer **The fox ran fast.** |  |
+| AS-M16-01-4 | options was it fun, Was it fun? \| answer **Was it fun?** |  |
+
+#### Lesson 2: Build the Sentence (`L2-M16-02`)
+
+- **Objective:** Build short sentences by tapping word tiles in order.
+- **Skill:** word_building · **Activity:** sentence_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's build whole sentences!
+- **Narration (teach):** Listen to the sentence, then tap each word tile in order.
+- **Narration (model):** Listen. "I can run." Tap the words in order to build it!
+- **Narration (transition):** Now you try! Listen, then build the sentence.
+- **Narration (close):** Great building! You can put words together into sentences.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M16-05 | sound: The cat sat \| answer **The cat sat.** |
+| Q-M16-06 | sound: I can run \| answer **I can run.** |
+| Q-M16-07 | sound: The dog ran \| answer **The dog ran.** |
+| Q-M16-08 | sound: You can jump \| answer **You can jump.** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M16-02-1 | sound: She has a pet \| answer **She has a pet.** |  |
+| AS-M16-02-2 | sound: We had fun \| answer **We had fun.** |  |
+| AS-M16-02-3 | sound: They have a dog \| answer **They have a dog.** |  |
+| AS-M16-02-4 | sound: The fox ran fast \| answer **The fox ran fast.** |  |
+
+#### Lesson 3: Read the Sentence (`L2-M16-03`)
+
+- **Objective:** Read short sentences and match them to pictures.
+- **Skill:** decoding · **Activity:** sentence_read · **Time:** 4–5 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Let's read whole sentences!
+- **Narration (teach):** Read the sentence, then find the picture it's about.
+- **Narration (model):** Read. "The cat sat." Find the picture that matches!
+- **Narration (transition):** Now you try! Read the sentence, then choose its picture.
+- **Narration (close):** You read every sentence!
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M16-09 | options cat, dog, pig \| answer **cat** |
+| Q-M16-10 | options dog, cat, fox \| answer **dog** |
+| Q-M16-11 | options fox, cat, dog \| answer **fox** |
+| Q-M16-12 | options pig, dog, frog \| answer **pig** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M16-03-1 | options frog, pig, cat \| answer **frog** |  |
+| AS-M16-03-2 | options dog, fox, pig \| answer **dog** | Identical correct_answer ("dog", the matched picture) to practice item "The dog ran." in this lesson — only 5 illustrated animal words exist (cat, dog, fox, pig, frog), so this lesson's small assessment bank reuses one picture target with a different sentence. Recommend one more illustrated animal to widen this pool. |
+
+#### Lesson 4: Spell the Sentence (`L2-M16-04`)
+
+- **Objective:** Build dictated sentences, choosing the right words from a mixed tray.
+- **Skill:** spelling · **Activity:** sentence_build · **Time:** 5–6 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to spell whole sentences!
+- **Narration (teach):** Listen to the sentence. The tray has an extra word that doesn't belong — leave it out!
+- **Narration (model):** Listen. "We had fun." Pick we, had, fun — and leave the extra word behind!
+- **Narration (transition):** Now you try! Listen, then build the sentence.
+- **Narration (close):** Great spelling! Whole sentences and all.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M16-13 | sound: I can run \| answer **I can run.** |
+| Q-M16-14 | sound: You can jump \| answer **You can jump.** |
+| Q-M16-15 | sound: She has a pet \| answer **She has a pet.** |
+| Q-M16-16 | sound: We had fun \| answer **We had fun.** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M16-04-1 | sound: They have a dog \| answer **They have a dog.** |  |
+| AS-M16-04-2 | sound: Was it fun \| answer **Was it fun?** |  |
+| AS-M16-04-3 | sound: I can spell \| answer **I can spell.** |  |
+| AS-M16-04-4 | sound: The kids can hop \| answer **The kids can hop.** |  |
+
+#### Lesson 5: Sentence Challenge (`L2-M16-05`)
+
+- **Objective:** Demonstrate independent mastery of sentences: correct format, building, reading, and spelling.
+- **Skill:** decoding · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** You are ready for the Sentence Challenge.
+- **Narration (instruction):** Fixing, building, reading, spelling — any of it could show up. Take your time.
+- **Narration (close):** Challenge complete! You can read and write whole sentences.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M16-05-1 | options the cat sat., The cat sat. \| answer **The cat sat.** |  |
+| AS-M16-05-2 | options The dog ran, The dog ran. \| answer **The dog ran.** |  |
+| AS-M16-05-3 | sound: You can jump \| answer **You can jump.** |  |
+| AS-M16-05-4 | sound: The fox ran fast \| answer **The fox ran fast.** |  |
+| AS-M16-05-5 | options pig, dog, cat \| answer **pig** |  |
+| AS-M16-05-6 | options frog, pig, fox \| answer **frog** |  |
+| AS-M16-05-7 | sound: We had fun \| answer **We had fun.** |  |
+| AS-M16-05-8 | sound: They have a dog \| answer **They have a dog.** |  |
+
 ## Content library
 
 ### Pictures
@@ -2439,7 +2582,7 @@ Spoken words (26 listed in `content/media.json`, plus every `say:word` used in l
 | BADGE-04 | Word Builder | Not built |
 | BADGE-05 | Reading Star | Not built |
 | BADGE-06 | Level 1 Sound Explorer | Live |
-| BADGE-07 | Sentence Star | Not built |
+| BADGE-07 | Sentence Star | Live |
 
 ## Code map
 
@@ -2463,6 +2606,7 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `src/activities/Assessment.jsx` | Wraps any question type for the scored assessment stage: no hints, no retry, first response counts. This is what actually enforces "no second chances during scoring" — activity-type components themselves don't know or care whether they're in practice or ass... |
 | `src/activities/BeginningSoundMatch.jsx` | Thin wrapper over MultipleChoice for Module 3's "beginning_sound_match" activity type — structurally identical to RhymeMatch (compare a first sound instead of a last sound), same content shape and same preview-then-confirm interaction (see PREVIEW_CONFIRM_T... |
 | `src/activities/EndingSoundMatch.jsx` | Thin wrapper over MultipleChoice for Module 4's "ending_sound_match" activity type — compares a word's LAST sound instead of its first (beginning_sound_match, Module 3) or its rhyme (rhyme_match, Module 2). A genuinely distinct skill: cat/hot share an endin... |
+| `src/activities/FixSentence.jsx` | Module 16's "fix_sentence" activity type — a capital letter starts a sentence, a full stop ends it. Rather than building an interactive text-editing UI, this tests the same recognition receptively: two plain-text options, one correctly formatted ("The cat s... |
 | `src/activities/LetterSoundMatch.jsx` | Thin wrapper over MultipleChoice for Module 8's "letter_sound_match" activity type — MultipleChoice itself renders the LetterTile branches (central prompt when question.letter_prompt is set, option tiles when an option is a single letter). Kept as its own f... |
 | `src/activities/ListenChoose.jsx` | Thin wrapper: today this is identical to MultipleChoice, but kept as its own file/type per the activity-type registry so this interaction can diverge (e.g. different layout) later without touching the other activity types or the generic renderer. |
 | `src/activities/MultipleChoice.jsx` | The generic answer-option renderer used by every activity type below. Handles: option buttons, per-option pictures/sound (for pre-readers), correct/wrong styling, retry vs scored (no-retry) modes. Nothing here knows about "listen_choose" vs "same_different"... |
@@ -2470,6 +2614,8 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `src/activities/RhymeMatch.jsx` | Thin wrapper over MultipleChoice for Module 2's "rhyme_match" activity type (ACT-04 in the curriculum content engine). Kept as its own file per the activity-type registry, matching every other activity type. |
 | `src/activities/RhymeSelect.jsx` | Genuinely different mechanic from MultipleChoice's single-tap-select: the child taps every option that rhymes (multiple can be active at once), then confirms with "Check my answer." Used by Module 2 Lesson 5 ("Make a Rhyme") so it isn't just a reworded copy... |
 | `src/activities/SameDifferent.jsx` | Thin wrapper over MultipleChoice for the "same_different" activity type(s). Kept as its own file per the activity-type registry so this interaction can get a bespoke UI later without touching the others. |
+| `src/activities/SentenceBuilder.jsx` | Module 16's "sentence_build" activity type — the sentence-level sibling of WordBuilder: hear (or hold in mind) a target sentence, then assemble it by tapping WORD tiles into order from a shuffled bank, exactly the same tap-to-place/tap-to-clear interaction ... |
+| `src/activities/SentenceRead.jsx` | Module 16's "sentence_read" activity type — the sentence-level sibling of read_word: show a written sentence (question.written_sentence, rendered as plain static text by MultipleChoice — NOT the tap-to- sound-out written_word treatment, which would mangle a... |
 | `src/activities/SightWordMatch.jsx` | Module 15's "sight_word_match" activity type — a tricky word can't be sounded out reliably (the vowel in "said" doesn't say its usual sound), so unlike read_word this is deliberately audio-first: hear the whole word spoken naturally, then pick it out from o... |
 | `src/activities/Sort.jsx` | Thin wrapper over MultipleChoice for the "loud_soft/fast_slow" activity type(s). Kept as its own file per the activity-type registry so this interaction can get a bespoke UI later without touching the others. |
 | `src/activities/SoundMemory.jsx` | Thin wrapper over MultipleChoice for the "sound_memory" activity type(s). Kept as its own file per the activity-type registry so this interaction can get a bespoke UI later without touching the others. |
@@ -2498,6 +2644,7 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `src/components/ResultScreen.jsx` |  |
 | `src/components/TopBar.jsx` |  |
 | `src/components/WordSoundRow.jsx` | Individual per-word playback: each word gets its own picture and its own tap-to-hear button, no merged "say:a, b, c" phrase. Used wherever a rhyme comparison needs a child to hear each word separately rather than parse one run-on TTS sentence — the model/ex... |
+| `src/components/WordTile.jsx` | A whole WORD in a rounded tile, for Module 16's sentence-building mechanic — the sentence-level equivalent of LetterTile. Deliberately a separate component rather than stretching LetterTile: a letter tile is a fixed square sized for 1-3 characters, but a wo... |
 
 ### Services (logic with no UI)
 

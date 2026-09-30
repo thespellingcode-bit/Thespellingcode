@@ -9,6 +9,7 @@ import { ResultScreen } from "./ResultScreen";
 import { AudioPlayer } from "./AudioPlayer";
 import { WordSoundRow } from "./WordSoundRow";
 import { LetterTile } from "./LetterTile";
+import { WordTile } from "./WordTile";
 import { Illustration } from "./Illustration";
 import { labelToIcon } from "./Icon";
 import { getPracticeActivities, getAssessmentQuestions } from "../services/contentService";
@@ -113,6 +114,12 @@ function modelCaptionFor(item) {
       return `You read it! That word is ${answer}.`;
     case "sight_word_match":
       return item.tricky_part ? `That word is ${answer} — the tricky part is ${item.tricky_part}!` : `That word is ${answer}!`;
+    case "sentence_build":
+      return `That sentence is: ${answer}`;
+    case "sentence_read":
+      return `You read it! That sentence is about a ${answer}.`;
+    case "fix_sentence":
+      return `That's right: ${answer}`;
     case "listen_choose":
     default:
       return `Listen — that's the ${answer.toLowerCase()} sound!`;
@@ -168,6 +175,7 @@ function capitalize(s) {
 // Level 1); once a tray can hold a whole grapheme like "sh" (Level 2
 // digraphs on), "tile" is the accurate word for what's being left out.
 function decoyNounFor(item) {
+  if (item.type === "sentence_build") return "word";
   return (item.letters || []).every((t) => t.length === 1) ? "letter" : "tile";
 }
 
@@ -208,6 +216,19 @@ function modelHeadingFor(lesson, item) {
   }
   if (item.type === "sight_word_match") {
     return `Listen. This tricky word is ${item.correct_answer}. You can't sound out every letter — you just have to know it!`;
+  }
+  if (item.type === "sentence_build") {
+    const words = answerTilesFor(item);
+    const decoyCount = (item.letters?.length || 0) - words.length;
+    return decoyCount > 0
+      ? `Listen. "${item.correct_answer}" Tap the words in order — and leave the extra word behind!`
+      : `Listen. "${item.correct_answer}" Tap the words in order to build it!`;
+  }
+  if (item.type === "sentence_read" && item.written_sentence) {
+    return `Read the sentence, then find the picture it's about!`;
+  }
+  if (item.type === "fix_sentence") {
+    return `A sentence starts with a capital letter and ends with a full stop. Which one is written correctly?`;
   }
   return lesson.narration.model;
 }
@@ -340,25 +361,29 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
         <LetterTile key={currentExample.activity_id} letter={currentExample.letter_prompt} size={96} />
       ) : isWordCardLesson ? (
         <WordSoundRow key={currentExample.activity_id} words={modelWordsFor(currentExample)} />
-      ) : currentExample.type === "word_build" ? (
+      ) : currentExample.type === "word_build" || currentExample.type === "sentence_build" ? (
         <>
           <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
           <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", justifyContent: "center" }}>
-            {answerTilesFor(currentExample).map((letter, i) => (
-              <LetterTile key={`correct-${i}`} letter={letter} size={44} state="correct" />
-            ))}
+            {answerTilesFor(currentExample).map((piece, i) =>
+              currentExample.type === "sentence_build"
+                ? <WordTile key={`correct-${i}`} word={piece} state="correct" />
+                : <LetterTile key={`correct-${i}`} letter={piece} size={44} state="correct" />
+            )}
             {decoyLettersFor(currentExample).length > 0 && (
               <>
                 <span style={{ color: T.textMute, fontSize: 18, fontFamily: "'Baloo 2', sans-serif" }}>+</span>
-                {decoyLettersFor(currentExample).map((letter, i) => (
-                  <LetterTile key={`decoy-${i}`} letter={letter} size={44} state="wrong" disabled />
-                ))}
+                {decoyLettersFor(currentExample).map((piece, i) =>
+                  currentExample.type === "sentence_build"
+                    ? <WordTile key={`decoy-${i}`} word={piece} state="wrong" disabled />
+                    : <LetterTile key={`decoy-${i}`} letter={piece} size={44} state="wrong" disabled />
+                )}
               </>
             )}
           </div>
           {decoyLettersFor(currentExample).length > 0 && (
             <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 12, color: T.coralDeep, margin: 0 }}>
-              That extra {decoyNounFor(currentExample)} doesn't belong in this word — leave it out!
+              That extra {decoyNounFor(currentExample)} doesn't belong in this {currentExample.type === "sentence_build" ? "sentence" : "word"} — leave it out!
             </p>
           )}
         </>
@@ -367,6 +392,17 @@ function ModelStage({ lesson, exampleItems, modelIdx, setModelIdx, next, ttsEnab
           <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
           <TrickyWordDisplay word={currentExample.correct_answer} trickyPart={currentExample.tricky_part} />
         </>
+      ) : currentExample.type === "sentence_read" ? (
+        <>
+          <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 26, color: T.ink, maxWidth: 380, lineHeight: 1.4, margin: 0 }}>
+            {currentExample.written_sentence}
+          </p>
+          {labelToIcon(currentExample.correct_answer) && <Illustration name={labelToIcon(currentExample.correct_answer)} size={88} />}
+        </>
+      ) : currentExample.type === "fix_sentence" ? (
+        <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 26, color: "#2C7A3C", maxWidth: 380, lineHeight: 1.4, margin: 0 }}>
+          ✓ {currentExample.correct_answer}
+        </p>
       ) : (
         <AudioPlayer key={currentExample.activity_id} asset={currentExample.audio_asset} />
       )}

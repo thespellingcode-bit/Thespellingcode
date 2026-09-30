@@ -18,6 +18,11 @@ import { shuffled } from "../services/shuffle";
 import { COMPARE_TYPES, PREVIEW_CONFIRM_TYPES } from "../services/questionTypes";
 import { useAutoSpeak } from "../hooks/useAutoSpeak";
 
+// Question types whose options are real running text (words or whole
+// sentences) that can accidentally contain an illustrated word as a
+// substring — see the isLetterOption/optIcon computation below.
+const NO_ICON_OPTION_TYPES = new Set(["sight_word_match", "fix_sentence"]);
+
 export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabled = true }) {
   const [selected, setSelected] = useState(null);
   const [status, setStatus] = useState("idle"); // idle | wrong | correct
@@ -121,6 +126,15 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
             🔊 Tap the word to sound it out
           </span>
         </div>
+      ) : question.written_sentence ? (
+        // Deliberately plain, non-interactive text — NOT the same
+        // tap-to-spellOutWord affordance as written_word. spellOutWord
+        // strips punctuation/spaces and sounds out whatever's left as one
+        // giant word ("The cat sat." -> "thecatsat"), which is nonsense
+        // for a full sentence; a sentence is read, not sounded out.
+        <p style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 26, color: T.ink, maxWidth: 380, lineHeight: 1.4, margin: 0 }}>
+          {question.written_sentence}
+        </p>
       ) : question.letter_prompt ? (
         <LetterTile letter={question.letter_prompt} size={88} />
       ) : (
@@ -144,14 +158,14 @@ export function MultipleChoice({ question, onResult, allowRetry = true, ttsEnabl
           // word — it must never render as a bare letter tile just
           // because it happens to be short.
           const isLetterOption = question.type === "letter_sound_match" || (opt.length === 1 && question.type !== "sight_word_match");
-          // sight_word_match options are real multi-letter English words
-          // ("then", "sad") that can accidentally CONTAIN an illustrated
-          // word as a substring ("then" contains "hen") — labelToIcon's
-          // substring matching is fine for isolated CVC words but wrong
-          // here, where the whole point is telling similar words apart by
-          // their letters, not by an unrelated picture. Never picture
-          // this type's options, matched or not.
-          const optIcon = !isLetterOption && question.type !== "sight_word_match" && labelToIcon(opt);
+          // sight_word_match's options are real multi-letter English words
+          // ("then", "sad") and fix_sentence's are whole sentences — both
+          // can accidentally CONTAIN an illustrated word as a substring
+          // ("then" contains "hen") — labelToIcon's substring matching is
+          // fine for isolated CVC words but wrong here, where the whole
+          // point is telling similar text apart by its letters, not by an
+          // unrelated picture. Never picture these types' options.
+          const optIcon = !isLetterOption && !NO_ICON_OPTION_TYPES.has(question.type) && labelToIcon(opt);
           const bigPicture = !isCompareType && optIcon;
           // A letter tile already IS the answer, visually — showing the
           // same character again as a text label underneath would be

@@ -17,6 +17,9 @@ import { LetterSoundMatch } from "./LetterSoundMatch";
 import { WordBuilder } from "./WordBuilder";
 import { ReadWord } from "./ReadWord";
 import { SightWordMatch } from "./SightWordMatch";
+import { SentenceBuilder } from "./SentenceBuilder";
+import { SentenceRead } from "./SentenceRead";
+import { FixSentence } from "./FixSentence";
 
 export const ACTIVITY_REGISTRY = {
   listen_choose: ListenChoose,
@@ -34,6 +37,9 @@ export const ACTIVITY_REGISTRY = {
   word_build: WordBuilder,
   read_word: ReadWord,
   sight_word_match: SightWordMatch,
+  sentence_build: SentenceBuilder,
+  sentence_read: SentenceRead,
+  fix_sentence: FixSentence,
 };
 
 export function componentForType(type) {
