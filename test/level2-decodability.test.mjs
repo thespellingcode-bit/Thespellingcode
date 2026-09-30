@@ -49,6 +49,7 @@ const GRAPHEMES_BY_MODULE = {
   21: ["ee", "ea"],
   22: ["oa", "ow"],
   23: ["oi", "oy"],
+  24: ["ou"], // "ow" is already known from Module 22 — same spelling, different sound, no new grapheme string to track.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

@@ -21,5 +21,6 @@
   { "module_id": 20, "level_id": 3, "module_name": "ai / ay", "module_goal": "Read and spell words using the ai and ay vowel teams, which both spell the long A sound.", "units": 5, "active": true },
   { "module_id": 21, "level_id": 3, "module_name": "ee / ea", "module_goal": "Read and spell words using the ee and ea vowel teams, which both spell the long E sound.", "units": 5, "active": true },
   { "module_id": 22, "level_id": 3, "module_name": "oa / ow", "module_goal": "Read and spell words using the oa and ow vowel teams, which both spell the long O sound.", "units": 5, "active": true },
-  { "module_id": 23, "level_id": 3, "module_name": "oi / oy", "module_goal": "Read and spell words using the oi and oy vowel teams, which both spell the /oi/ sound.", "units": 5, "active": true }
+  { "module_id": 23, "level_id": 3, "module_name": "oi / oy", "module_goal": "Read and spell words using the oi and oy vowel teams, which both spell the /oi/ sound.", "units": 5, "active": true },
+  { "module_id": 24, "level_id": 3, "module_name": "ou / ow", "module_goal": "Read and spell words using the ou and ow vowel teams, which both spell the /ow/ sound (as in cow) — with no simple rule for which spelling goes where.", "units": 5, "active": true }
 ]

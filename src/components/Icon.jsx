@@ -124,6 +124,11 @@ const WORD_KEYS = [
   "goat", "coat", "soap", "road", "snow", "bowl",
   // Level 3 Module 23 (oi/oy).
   "coin", "boy", "toy", "oyster",
+  // Level 3 Module 24 (ou/ow, the /ow/ sound). "cloud" deliberately
+  // excluded — labelToIcon's "direct" map already has "loud" as a Level 1
+  // loud/soft icon key, and "cloud".includes("loud") would silently show
+  // that icon instead of a cloud picture.
+  "mouth", "cow", "owl", "house", "mouse",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

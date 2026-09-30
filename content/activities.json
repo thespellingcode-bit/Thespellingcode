@@ -9243,5 +9243,437 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-01",
+    "lesson_id": "L3-M24-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /ow/ sound in this word?",
+    "options": [
+      "ou",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ou",
+    "audio_asset": "say:mouth",
+    "feedback": "Yes! mouth has the vowel team ou.",
+    "retry_feedback": "Listen for two letters together making the /ow/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-02",
+    "lesson_id": "L3-M24-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /ow/ sound in this word?",
+    "options": [
+      "ou",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ou",
+    "audio_asset": "say:cloud",
+    "feedback": "Yes! cloud has the vowel team ou.",
+    "retry_feedback": "Listen for two letters together making the /ow/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-03",
+    "lesson_id": "L3-M24-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /ow/ sound in this word?",
+    "options": [
+      "ow",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:cow",
+    "feedback": "Yes! cow has the vowel team ow.",
+    "retry_feedback": "Listen for two letters together making the /ow/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-04",
+    "lesson_id": "L3-M24-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /ow/ sound in this word?",
+    "options": [
+      "ow",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:owl",
+    "feedback": "Yes! owl has the vowel team ow.",
+    "retry_feedback": "Listen for two letters together making the /ow/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-05",
+    "lesson_id": "L3-M24-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /ow/ sound in this word?",
+    "options": [
+      "ou",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ou",
+    "audio_asset": "say:sound",
+    "feedback": "Yes! sound has the vowel team ou.",
+    "retry_feedback": "Listen for two letters together making the /ow/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-06",
+    "lesson_id": "L3-M24-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern makes the /ow/ sound in this word?",
+    "options": [
+      "ow",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:town",
+    "feedback": "Yes! town has the vowel team ow.",
+    "retry_feedback": "Listen for two letters together making the /ow/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-07",
+    "lesson_id": "L3-M24-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mouth",
+    "letters": [
+      "m",
+      "ou",
+      "th"
+    ],
+    "answer_tiles": [
+      "m",
+      "ou",
+      "th"
+    ],
+    "correct_answer": "mouth",
+    "feedback": "Yes! You built mouth.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-08",
+    "lesson_id": "L3-M24-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cow",
+    "letters": [
+      "c",
+      "ow"
+    ],
+    "answer_tiles": [
+      "c",
+      "ow"
+    ],
+    "correct_answer": "cow",
+    "feedback": "Yes! You built cow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-09",
+    "lesson_id": "L3-M24-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:owl",
+    "letters": [
+      "ow",
+      "l"
+    ],
+    "answer_tiles": [
+      "ow",
+      "l"
+    ],
+    "correct_answer": "owl",
+    "feedback": "Yes! You built owl.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-10",
+    "lesson_id": "L3-M24-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sound",
+    "letters": [
+      "s",
+      "ou",
+      "n",
+      "d"
+    ],
+    "answer_tiles": [
+      "s",
+      "ou",
+      "n",
+      "d"
+    ],
+    "correct_answer": "sound",
+    "feedback": "Yes! You built sound.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-11",
+    "lesson_id": "L3-M24-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:town",
+    "letters": [
+      "t",
+      "ow",
+      "n"
+    ],
+    "answer_tiles": [
+      "t",
+      "ow",
+      "n"
+    ],
+    "correct_answer": "town",
+    "feedback": "Yes! You built town.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-12",
+    "lesson_id": "L3-M24-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:house",
+    "letters": [
+      "h",
+      "ou",
+      "s",
+      "e"
+    ],
+    "answer_tiles": [
+      "h",
+      "ou",
+      "s",
+      "e"
+    ],
+    "correct_answer": "house",
+    "feedback": "Yes! You built house.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-13",
+    "lesson_id": "L3-M24-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "mouth",
+    "options": [
+      "mouth",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "mouth",
+    "feedback": "Yes! You read mouth.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /ow/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-14",
+    "lesson_id": "L3-M24-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "cow",
+    "options": [
+      "cow",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "cow",
+    "feedback": "Yes! You read cow.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /ow/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-15",
+    "lesson_id": "L3-M24-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "owl",
+    "options": [
+      "owl",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "owl",
+    "feedback": "Yes! You read owl.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /ow/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-16",
+    "lesson_id": "L3-M24-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "house",
+    "options": [
+      "house",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "house",
+    "feedback": "Yes! You read house.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /ow/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-17",
+    "lesson_id": "L3-M24-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "mouse",
+    "options": [
+      "mouse",
+      "bike",
+      "rose"
+    ],
+    "correct_answer": "mouse",
+    "feedback": "Yes! You read mouse.",
+    "retry_feedback": "Sound out each part, then blend them together — the vowel team says one /ow/ sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-18",
+    "lesson_id": "L3-M24-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mouth",
+    "letters": [
+      "m",
+      "ou",
+      "th",
+      "p"
+    ],
+    "answer_tiles": [
+      "m",
+      "ou",
+      "th"
+    ],
+    "correct_answer": "mouth",
+    "feedback": "Yes! You built mouth.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-19",
+    "lesson_id": "L3-M24-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cow",
+    "letters": [
+      "c",
+      "ow",
+      "t"
+    ],
+    "answer_tiles": [
+      "c",
+      "ow"
+    ],
+    "correct_answer": "cow",
+    "feedback": "Yes! You built cow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-20",
+    "lesson_id": "L3-M24-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sound",
+    "letters": [
+      "s",
+      "ou",
+      "n",
+      "d",
+      "p"
+    ],
+    "answer_tiles": [
+      "s",
+      "ou",
+      "n",
+      "d"
+    ],
+    "correct_answer": "sound",
+    "feedback": "Yes! You built sound.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M24-21",
+    "lesson_id": "L3-M24-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:town",
+    "letters": [
+      "t",
+      "ow",
+      "n",
+      "s"
+    ],
+    "answer_tiles": [
+      "t",
+      "ow",
+      "n"
+    ],
+    "correct_answer": "town",
+    "feedback": "Yes! You built town.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]
