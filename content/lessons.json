@@ -2410,5 +2410,100 @@
       "transition": "",
       "close": "Incredible! You understand how English can spell the same sound more than one way."
     }
+  },
+  {
+    "lesson_id": "L3-M27-01",
+    "module_id": 27,
+    "number": 1,
+    "title": "Mixed Retrieval",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise every vowel-team and r-controlled pattern taught in Level 3, mixed in random order.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome to your final Level 3 mission, Pattern Detective!",
+      "teach": "You've learned so many patterns this level — silent e, vowel teams, and r-controlled vowels. Let's mix them all up and see what you remember!",
+      "model": "Listen. Which pattern is in this word?",
+      "transition": "Your turn! Every pattern from Level 3 could show up.",
+      "close": "Fantastic retrieval! You remember every pattern from Level 3."
+    }
+  },
+  {
+    "lesson_id": "L3-M27-02",
+    "module_id": 27,
+    "number": 2,
+    "title": "Read & Build",
+    "skill": "word_building",
+    "objective": "Build words drawing on every Level 3 pattern, cumulatively.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — every pattern from Level 3 in one lesson!",
+      "teach": "Listen to the whole word, then tap the tiles in order.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Excellent building! You can build words with any Level 3 pattern."
+    }
+  },
+  {
+    "lesson_id": "L3-M27-03",
+    "module_id": 27,
+    "number": 3,
+    "title": "Silent E & Vowel Length Review",
+    "skill": "vowel_discrimination",
+    "objective": "Review the short-vs-long vowel discrimination skill that opened Level 3, now including silent-e spellings.",
+    "activity_type": "vowel_length",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Back to where Level 3 began — short and long vowels!",
+      "teach": "Remember: a silent e at the end makes the vowel before it say its own name. Let's see how sharp your ear still is.",
+      "model": "Look and listen. Is the vowel sound short or long?",
+      "transition": "Your turn! Look at the word, then decide.",
+      "close": "Great ears! Short and long vowels hold no secrets from you now."
+    }
+  },
+  {
+    "lesson_id": "L3-M27-04",
+    "module_id": 27,
+    "number": 4,
+    "title": "Dictation",
+    "skill": "spelling",
+    "objective": "Spell dictated words across every Level 3 pattern, with a decoy letter to leave out.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — the biggest one yet!",
+      "teach": "Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!",
+      "model": "Listen. Pick the right tiles — and leave the extra letter behind!",
+      "transition": "Your turn! Listen carefully and leave out the extra letter.",
+      "close": "Incredible spelling! You've mastered dictation across all of Level 3."
+    }
+  },
+  {
+    "lesson_id": "L3-M27-05",
+    "module_id": 27,
+    "number": 5,
+    "title": "Level 3 Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of every Level 3 pattern: short vs long vowels, silent e, every vowel team, and r-controlled vowels.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "The big one, Pattern Detective! Show everything you've learned in Level 3.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Congratulations! You've completed Level 3 — Pattern Detective!"
+    }
   }
 ]

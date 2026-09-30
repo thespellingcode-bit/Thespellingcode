@@ -24,5 +24,6 @@
   { "module_id": 23, "level_id": 3, "module_name": "oi / oy", "module_goal": "Read and spell words using the oi and oy vowel teams, which both spell the /oi/ sound.", "units": 5, "active": true },
   { "module_id": 24, "level_id": 3, "module_name": "ou / ow", "module_goal": "Read and spell words using the ou and ow vowel teams, which both spell the /ow/ sound (as in cow) — with no simple rule for which spelling goes where.", "units": 5, "active": true },
   { "module_id": 25, "level_id": 3, "module_name": "R-Controlled Vowels", "module_goal": "Read and spell words where ar, er, ir, or or ur — a vowel's own sound swallowed by a following r.", "units": 6, "active": true },
-  { "module_id": 26, "level_id": 3, "module_name": "Alternative Spellings", "module_goal": "Recognise that the same sound can be spelled more than one way (ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, er/ir/ur) — recognition only, never a graded choice between two valid spellings.", "units": 5, "active": true }
+  { "module_id": 26, "level_id": 3, "module_name": "Alternative Spellings", "module_goal": "Recognise that the same sound can be spelled more than one way (ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, er/ir/ur) — recognition only, never a graded choice between two valid spellings.", "units": 5, "active": true },
+  { "module_id": 27, "level_id": 3, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 3 mastery across every pattern learned.", "units": 5, "active": true }
 ]

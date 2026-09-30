@@ -11386,5 +11386,555 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-01-1",
+    "lesson_id": "L3-M27-01",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ow",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:cow",
+    "feedback": "Yes! cow has the pattern ow.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-01-2",
+    "lesson_id": "L3-M27-01",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ir",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ir",
+    "audio_asset": "say:bird",
+    "feedback": "Yes! bird has the pattern ir.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-01-3",
+    "lesson_id": "L3-M27-01",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ay",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ay",
+    "audio_asset": "say:play",
+    "feedback": "Yes! play has the pattern ay.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-01-4",
+    "lesson_id": "L3-M27-01",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ea",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ea",
+    "audio_asset": "say:leaf",
+    "feedback": "Yes! leaf has the pattern ea.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-02-1",
+    "lesson_id": "L3-M27-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mouth",
+    "letters": [
+      "m",
+      "ou",
+      "th"
+    ],
+    "answer_tiles": [
+      "m",
+      "ou",
+      "th"
+    ],
+    "correct_answer": "mouth",
+    "feedback": "Yes! You built mouth.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-02-2",
+    "lesson_id": "L3-M27-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:corn",
+    "letters": [
+      "c",
+      "or",
+      "n"
+    ],
+    "answer_tiles": [
+      "c",
+      "or",
+      "n"
+    ],
+    "correct_answer": "corn",
+    "feedback": "Yes! You built corn.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-02-3",
+    "lesson_id": "L3-M27-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bike",
+    "letters": [
+      "b",
+      "i",
+      "k",
+      "e"
+    ],
+    "answer_tiles": [
+      "b",
+      "i",
+      "k",
+      "e"
+    ],
+    "correct_answer": "bike",
+    "feedback": "Yes! You built bike.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-02-4",
+    "lesson_id": "L3-M27-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sheep",
+    "letters": [
+      "sh",
+      "ee",
+      "p"
+    ],
+    "answer_tiles": [
+      "sh",
+      "ee",
+      "p"
+    ],
+    "correct_answer": "sheep",
+    "feedback": "Yes! You built sheep.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-03-1",
+    "lesson_id": "L3-M27-03",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Short",
+    "audio_asset": "say:rat",
+    "written_word": "rat",
+    "feedback": "Right! rat has a short vowel sound.",
+    "retry_feedback": "Listen — does the vowel say its own name (long), or just a quick sound (short)?",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-03-2",
+    "lesson_id": "L3-M27-03",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Long",
+    "audio_asset": "say:rate",
+    "written_word": "rate",
+    "feedback": "Yes! rate has a long vowel sound.",
+    "retry_feedback": "Listen — does the vowel say its own name (long), or just a quick sound (short)?",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-03-3",
+    "lesson_id": "L3-M27-03",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Short",
+    "audio_asset": "say:dim",
+    "written_word": "dim",
+    "feedback": "Right! dim has a short vowel sound.",
+    "retry_feedback": "Listen — does the vowel say its own name (long), or just a quick sound (short)?",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-03-4",
+    "lesson_id": "L3-M27-03",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Long",
+    "audio_asset": "say:dime",
+    "written_word": "dime",
+    "feedback": "Yes! dime has a long vowel sound.",
+    "retry_feedback": "Listen — does the vowel say its own name (long), or just a quick sound (short)?",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-04-1",
+    "lesson_id": "L3-M27-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:seed",
+    "letters": [
+      "s",
+      "ee",
+      "d",
+      "t"
+    ],
+    "answer_tiles": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "correct_answer": "seed",
+    "feedback": "Yes! You built seed.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-04-2",
+    "lesson_id": "L3-M27-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:town",
+    "letters": [
+      "t",
+      "ow",
+      "n",
+      "s"
+    ],
+    "answer_tiles": [
+      "t",
+      "ow",
+      "n"
+    ],
+    "correct_answer": "town",
+    "feedback": "Yes! You built town.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-04-3",
+    "lesson_id": "L3-M27-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:girl",
+    "letters": [
+      "g",
+      "ir",
+      "l",
+      "c"
+    ],
+    "answer_tiles": [
+      "g",
+      "ir",
+      "l"
+    ],
+    "correct_answer": "girl",
+    "feedback": "Yes! You built girl.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-1",
+    "lesson_id": "L3-M27-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ai",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ai",
+    "audio_asset": "say:train",
+    "feedback": "Yes! train has the pattern ai.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-2",
+    "lesson_id": "L3-M27-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ea",
+      "e",
+      "o"
+    ],
+    "correct_answer": "ea",
+    "audio_asset": "say:leaf",
+    "feedback": "Yes! leaf has the pattern ea.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-3",
+    "lesson_id": "L3-M27-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ow",
+      "o",
+      "a"
+    ],
+    "correct_answer": "ow",
+    "audio_asset": "say:snow",
+    "feedback": "Yes! snow has the pattern ow.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-4",
+    "lesson_id": "L3-M27-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ir",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ir",
+    "audio_asset": "say:shirt",
+    "feedback": "Yes! shirt has the pattern ir.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-5",
+    "lesson_id": "L3-M27-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "oy",
+      "o",
+      "i"
+    ],
+    "correct_answer": "oy",
+    "audio_asset": "say:boy",
+    "feedback": "Yes! boy has the pattern oy.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-6",
+    "lesson_id": "L3-M27-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ou",
+      "o",
+      "u"
+    ],
+    "correct_answer": "ou",
+    "audio_asset": "say:mouth",
+    "feedback": "Yes! mouth has the pattern ou.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-7",
+    "lesson_id": "L3-M27-05",
+    "type": "letter_sound_match",
+    "prompt": "Which pattern is in this word?",
+    "options": [
+      "ar",
+      "a",
+      "o"
+    ],
+    "correct_answer": "ar",
+    "audio_asset": "say:star",
+    "feedback": "Yes! star has the pattern ar.",
+    "retry_feedback": "Listen carefully for the vowel pattern.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-8",
+    "lesson_id": "L3-M27-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cake",
+    "letters": [
+      "c",
+      "a",
+      "k",
+      "e"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "k",
+      "e"
+    ],
+    "correct_answer": "cake",
+    "feedback": "Yes! You built cake.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-9",
+    "lesson_id": "L3-M27-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:rain",
+    "letters": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "answer_tiles": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You built rain.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-10",
+    "lesson_id": "L3-M27-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bird",
+    "letters": [
+      "b",
+      "ir",
+      "d"
+    ],
+    "answer_tiles": [
+      "b",
+      "ir",
+      "d"
+    ],
+    "correct_answer": "bird",
+    "feedback": "Yes! You built bird.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-11",
+    "lesson_id": "L3-M27-05",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Short",
+    "audio_asset": "say:kit",
+    "written_word": "kit",
+    "feedback": "Right! kit has a short vowel sound.",
+    "retry_feedback": "Listen — does the vowel say its own name (long), or just a quick sound (short)?",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-12",
+    "lesson_id": "L3-M27-05",
+    "type": "vowel_length",
+    "prompt": "Is the vowel sound short or long?",
+    "options": [
+      "Short",
+      "Long"
+    ],
+    "correct_answer": "Long",
+    "audio_asset": "say:kite",
+    "written_word": "kite",
+    "feedback": "Yes! kite has a long vowel sound.",
+    "retry_feedback": "Listen — does the vowel say its own name (long), or just a quick sound (short)?",
+    "skill": "vowel_discrimination",
+    "error_tag": "VOWEL_LENGTH_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-13",
+    "lesson_id": "L3-M27-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "goat",
+    "options": [
+      "goat",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "goat",
+    "feedback": "Yes! You read goat.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M27-05-14",
+    "lesson_id": "L3-M27-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "purse",
+    "options": [
+      "purse",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "purse",
+    "feedback": "Yes! You read purse.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

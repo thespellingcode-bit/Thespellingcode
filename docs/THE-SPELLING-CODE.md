@@ -28,7 +28,7 @@
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
-| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Modules 18–26 built; only Module 27 (Review & Assessment) remains |
+| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
@@ -41,7 +41,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
-| Level 3 “Pattern Detective”, Modules 18–26 (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings) | **Built.** See the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; only Module 27 (Review & Assessment) remains — Level 3 will be complete once it ships. |
+| Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -72,7 +72,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
   - **Two bugs found live, not by the test suite, while verifying this module:** (1) `labelToIcon`'s substring matching, fine for isolated CVC words, false-positives on real running text — "then" contains "hen", so a sight/sentence option could silently show an unrelated picture; `sight_word_match` and `fix_sentence` options now never get a picture, matched or not. (2) `spellOutWord` strips punctuation and spaces then sounds out whatever's left as ONE word, so wiring a sentence into the existing `written_word` field would try to sound out "The cat sat." as "thecatsat" — hence the separate `written_sentence` field, rendered as plain non-interactive text instead.
   - Two of the app's own generic content-integrity tests didn't know about sentence-shaped content and needed updates: the "correct_answer is among options" test now recognises `sentence_build` as tile-based (like `word_build`) rather than expecting an `options` array it doesn't have, and the decodability test now splits a `correct_answer`/`written_sentence` on whitespace and checks each word separately, since a bare space or period was never a "taught letter" and was never meant to be one.
 
-### Level 3 curriculum design (Module 18 built; Modules 19–27 planned, not yet built)
+### Level 3 curriculum design (all 10 modules built — Level 3 complete)
 - **Full plan:** `docs/plans/level-3.md` — big goal, module-by-module table, and the two owner-confirmed decisions (2026-09-30): vowel-team spellings (ai/ay, ee/ea, etc.) are taught **receptively only** — a child never picks between two valid spellings of the same word until Level 4 — and building continues level after level without pausing for review.
 - **Module 18, Short vs Long Vowels:** purely auditory, no spelling shown — the child hears a real word (via the browser's speech voice, same `say:word`-prefixed `audio_asset` mechanism Module 2's rhyming already used) and judges whether its vowel sound is short or long. A new activity type, `vowel_length`, reuses `Sort.jsx` (itself a thin wrapper over `MultipleChoice`) with plain `["Short", "Long"]` text options — no new component needed. Added to `COMPARE_TYPES` in `questionTypes.js` so it gets the same "no option picture" treatment as `same_different`/`loud_soft`. Word pairs were deliberately chosen as CVC/CVCe near-minimal pairs (cap/cake, hop/hope) to set up Module 19 (Silent E) without teaching spelling yet.
 - **Module 19, Silent E (CVCe):** the standard five-lesson template (Meet the Pattern → Blend & Build → Read the Words → Spell the Words → Challenge) applies cleanly — unlike a digraph or vowel team, a CVCe word (cake, bike...) is spelled entirely from already-known single letters, so no new tile shape was needed anywhere. "Meet the Pattern" reuses Module 18's own `vowel_length` type, this time with `written_word` also set (not just audio) so the child sees the silent-e spelling while judging short/long — the exact same component, no new code. Added 5 new word pictures (cake, bike, kite, rose, wave) from Noto Emoji, since no existing CVC/digraph word in the picture library has a silent-e shape.
@@ -83,6 +83,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 24, ou/ow — the first Level 3 module the plan itself flagged as having "genuinely no simple position rule".** Unlike ai/ay, ee/ea, oa/ow and oi/oy, `ow` is reused here for a *different* sound than Module 22's (long O in "snow" vs this module's /ow/ in "cow") — `VOWEL_TEAMS` doesn't need a second entry since it only tracks "is this a vowel team," not which sound, but the decodability test's `GRAPHEMES_BY_MODULE[24]` only lists `["ou"]` since `"ow"` the grapheme string is already known from Module 22. Dropped "cloud" as a picture word — `labelToIcon`'s `direct` map has "loud" as a Level 1 icon key, and `"cloud".includes("loud")` would silently show that icon instead — the same class of bug as "window"/"wind" in Module 22, now the third time this exact collision shape has appeared. Added 5 new word pictures (mouth, cow, owl, house, mouse).
 - **Module 25, R-Controlled Vowels (ar/er/ir/or/ur) — the first Level 3 module with 6 lessons instead of 5**, per the plan (it teaches five patterns, not one or two). `graphemeKindFor()` gained a genuinely new kind, `"r-controlled vowel"`, rather than folding it into `"vowel team"` — a vowel-plus-r isn't two vowels, it's a vowel whose own sound the r swallows, so calling it a vowel team would be the same "wrong name" mistake the digraph/blend/ending distinction exists to prevent. Same position-narration fix as Module 20's vowel teams was needed again here (car ends with ar, but bird has ir in the middle). er, ir and ur are taught together in one lesson (they're the exact same sound, genuinely no rule for which spelling a word uses — closer to Module 9's Alternative Spellings problem than a normal two-way vowel-team split), while ar and or each get their own lesson since they're distinct sounds. "car" reuses the existing Level 1 hand-drawn car icon (the same real object, not a naming collision) rather than adding a redundant image file — confirmed live that `Illustration()`'s `IMAGE_BG`-then-`PICTURES` fallback picks it up automatically. Added 5 new word pictures (star, corn, bird, shirt, purse).
 - **Module 26, Alternative Spellings — the module the whole "one real design problem" section of the plan was written for.** Explicitly recognition-only: every practice/assessment item's `letter_sound_match` options are `[correct_pattern, bare_vowel, bare_vowel]`, exactly like every earlier Level 3 module — the pattern never changes here, it's just now applied across *pairs* of families in the same lesson (ai/ay vs ee/ea, oa/ow vs oi/oy, ou/ow vs er/ir/ur) with `teach` narration that explicitly states the comparison ("rain uses ai... day uses ay... same sound, different spelling"). Confirmed live that no item ever offers two spellings of the same sound as competing options. Introduces no new grapheme (`GRAPHEMES_BY_MODULE[26] = []`, same as Level 2's Module 9 CVC Review) and needed no new word pictures — Read & Build Review reuses the full picture pool built up across every Level 3 module so far.
+- **Module 27, Review & Assessment — closes out Level 3, mirroring Level 2's Module 17 exactly** (Mixed Retrieval → Read & Build → a third review lesson → Dictation → Level 3 Challenge). The third lesson deliberately returns to Module 18's own `vowel_length` type (short-vs-long, now including silent-e spellings) rather than adding a new review angle, closing the loop on where Level 3 began. A 14-item final Challenge mixes all four activity types built or reused this level (`letter_sound_match`, `word_build`, `vowel_length`, `read_word`) — live-verified end to end: scored 93%, showed the mastery close narration, and correctly earned a new "Level 3 Pattern Detective" badge (`BADGE-09`) on the child's badge shelf. Introduces no new grapheme and no new pictures.
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
@@ -161,7 +162,8 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 3 Module 23 (oi/oy) — same shape again, thinnest picture pool yet (coin, boy, toy, oyster), Read the Words shortened accordingly rather than diluted with a mismatched picture.
 - Built Level 3 Module 24 (ou/ow) — the plan's own flagged "no simple position rule" module; dropped "cloud" as a picture word (a third recurrence of the same substring-collision bug shape as "window"/"wind"). Added 5 new word pictures (mouth, cow, owl, house, mouse).
 - Built Level 3 Module 25 (R-Controlled Vowels: ar/er/ir/or/ur) — the first 6-lesson Level 3 module; added a genuinely new `graphemeKindFor()` kind rather than reusing "vowel team," and reused the existing Level 1 car icon instead of adding a duplicate. Added 5 new word pictures (star, corn, bird, shirt, purse).
-- Built Level 3 Module 26 (Alternative Spellings) — the module the plan's central design problem was written for; confirmed live that its recognition items never pair two valid spellings of the same sound against each other. No new grapheme, no new pictures — a pure review/consolidation module. **Only Module 27 (Review & Assessment) remains before Level 3 is complete.**
+- Built Level 3 Module 26 (Alternative Spellings) — the module the plan's central design problem was written for; confirmed live that its recognition items never pair two valid spellings of the same sound against each other. No new grapheme, no new pictures — a pure review/consolidation module.
+- Built Level 3 Module 27 (Review & Assessment), mirroring Level 2's Module 17 exactly. **Level 3 "Pattern Detective" is now fully built and deployed** — live-verified end to end, including a new "Level 3 Pattern Detective" badge earned on the 14-item final Challenge (93% on the first try). The entire planned curriculum through Level 3 now exists: 8 free Level 1 modules, 9 paid Level 2 modules, 10 paid Level 3 modules. Next real decisions are the ones in "Monetisation" above (payment gateway, sign-up, payment screens) and whether to keep building Level 4+ or pause to launch.
 
 ---
 
@@ -390,6 +392,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 | 24 | ou / ow | **Live** | 5 | 21 | 20 |
 | 25 | R-Controlled Vowels | **Live** | 6 | 28 | 27 |
 | 26 | Alternative Spellings | **Live** | 5 | 24 | 24 |
+| 27 | Review & Assessment | **Live** | 5 | 22 | 29 |
 
 ## Curriculum in full
 
@@ -4120,6 +4123,156 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M26-05-9 | hear “bike” → build \| tray b i k e \| answer **bike** |  |
 | AS-M26-05-10 | hear “corn” → build \| tray c or n \| answer **corn** |  |
 
+### Module 27 — Review & Assessment
+
+*Goal:* Demonstrate independent Level 3 mastery across every pattern learned.
+
+#### Lesson 1: Mixed Retrieval (`L3-M27-01`)
+
+- **Objective:** Recognise every vowel-team and r-controlled pattern taught in Level 3, mixed in random order.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome to your final Level 3 mission, Pattern Detective!
+- **Narration (teach):** You've learned so many patterns this level — silent e, vowel teams, and r-controlled vowels. Let's mix them all up and see what you remember!
+- **Narration (model):** Listen. Which pattern is in this word?
+- **Narration (transition):** Your turn! Every pattern from Level 3 could show up.
+- **Narration (close):** Fantastic retrieval! You remember every pattern from Level 3.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M27-01 | hear “rain” → letter \| options ai a o \| answer **ai** |
+| Q-M27-02 | hear “tree” → letter \| options ee e o \| answer **ee** |
+| Q-M27-03 | hear “boat” → letter \| options oa o a \| answer **oa** |
+| Q-M27-04 | hear “coin” → letter \| options oi o i \| answer **oi** |
+| Q-M27-05 | hear “car” → letter \| options ar a o \| answer **ar** |
+| Q-M27-06 | hear “corn” → letter \| options or a o \| answer **or** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M27-01-1 | hear “cow” → letter \| options ow o u \| answer **ow** |  |
+| AS-M27-01-2 | hear “bird” → letter \| options ir a o \| answer **ir** |  |
+| AS-M27-01-3 | hear “play” → letter \| options ay a o \| answer **ay** |  |
+| AS-M27-01-4 | hear “leaf” → letter \| options ea e o \| answer **ea** |  |
+
+#### Lesson 2: Read & Build (`L3-M27-02`)
+
+- **Objective:** Build words drawing on every Level 3 pattern, cumulatively.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Building mission — every pattern from Level 3 in one lesson!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Excellent building! You can build words with any Level 3 pattern.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M27-07 | hear “cake” → build \| tray c a k e \| answer **cake** |
+| Q-M27-08 | hear “rain” → build \| tray r ai n \| answer **rain** |
+| Q-M27-09 | hear “tree” → build \| tray t r ee \| answer **tree** |
+| Q-M27-10 | hear “goat” → build \| tray g oa t \| answer **goat** |
+| Q-M27-11 | hear “boy” → build \| tray b oy \| answer **boy** |
+| Q-M27-12 | hear “star” → build \| tray s t ar \| answer **star** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M27-02-1 | hear “mouth” → build \| tray m ou th \| answer **mouth** |  |
+| AS-M27-02-2 | hear “corn” → build \| tray c or n \| answer **corn** |  |
+| AS-M27-02-3 | hear “bike” → build \| tray b i k e \| answer **bike** |  |
+| AS-M27-02-4 | hear “sheep” → build \| tray sh ee p \| answer **sheep** |  |
+
+#### Lesson 3: Silent E & Vowel Length Review (`L3-M27-03`)
+
+- **Objective:** Review the short-vs-long vowel discrimination skill that opened Level 3, now including silent-e spellings.
+- **Skill:** vowel_discrimination · **Activity:** vowel_length · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Back to where Level 3 began — short and long vowels!
+- **Narration (teach):** Remember: a silent e at the end makes the vowel before it say its own name. Let's see how sharp your ear still is.
+- **Narration (model):** Look and listen. Is the vowel sound short or long?
+- **Narration (transition):** Your turn! Look at the word, then decide.
+- **Narration (close):** Great ears! Short and long vowels hold no secrets from you now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M27-13 | sound: hop \| options Short, Long \| answer **Short** |
+| Q-M27-14 | sound: hope \| options Short, Long \| answer **Long** |
+| Q-M27-15 | sound: pin \| options Short, Long \| answer **Short** |
+| Q-M27-16 | sound: pine \| options Short, Long \| answer **Long** |
+| Q-M27-17 | sound: cub \| options Short, Long \| answer **Short** |
+| Q-M27-18 | sound: cube \| options Short, Long \| answer **Long** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M27-03-1 | sound: rat \| options Short, Long \| answer **Short** |  |
+| AS-M27-03-2 | sound: rate \| options Short, Long \| answer **Long** |  |
+| AS-M27-03-3 | sound: dim \| options Short, Long \| answer **Short** |  |
+| AS-M27-03-4 | sound: dime \| options Short, Long \| answer **Long** |  |
+
+#### Lesson 4: Dictation (`L3-M27-04`)
+
+- **Objective:** Spell dictated words across every Level 3 pattern, with a decoy letter to leave out.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — the biggest one yet!
+- **Narration (teach):** Listen to the word, then build it — but this tray has one extra letter that doesn't belong. Leave it out!
+- **Narration (model):** Listen. Pick the right tiles — and leave the extra letter behind!
+- **Narration (transition):** Your turn! Listen carefully and leave out the extra letter.
+- **Narration (close):** Incredible spelling! You've mastered dictation across all of Level 3.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M27-19 | hear “name” → build \| tray n a m e t \| answer **name** |
+| Q-M27-20 | hear “sail” → build \| tray s ai l t \| answer **sail** |
+| Q-M27-21 | hear “road” → build \| tray r oa d p \| answer **road** |
+| Q-M27-22 | hear “join” → build \| tray j oi n s \| answer **join** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M27-04-1 | hear “seed” → build \| tray s ee d t \| answer **seed** |  |
+| AS-M27-04-2 | hear “town” → build \| tray t ow n s \| answer **town** |  |
+| AS-M27-04-3 | hear “girl” → build \| tray g ir l c \| answer **girl** |  |
+
+#### Lesson 5: Level 3 Challenge (`L3-M27-05`)
+
+- **Objective:** Demonstrate independent mastery of every Level 3 pattern: short vs long vowels, silent e, every vowel team, and r-controlled vowels.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** The big one, Pattern Detective! Show everything you've learned in Level 3.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Congratulations! You've completed Level 3 — Pattern Detective!
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M27-05-1 | hear “train” → letter \| options ai a o \| answer **ai** |  |
+| AS-M27-05-2 | hear “leaf” → letter \| options ea e o \| answer **ea** |  |
+| AS-M27-05-3 | hear “snow” → letter \| options ow o a \| answer **ow** |  |
+| AS-M27-05-4 | hear “shirt” → letter \| options ir a o \| answer **ir** |  |
+| AS-M27-05-5 | hear “boy” → letter \| options oy o i \| answer **oy** |  |
+| AS-M27-05-6 | hear “mouth” → letter \| options ou o u \| answer **ou** |  |
+| AS-M27-05-7 | hear “star” → letter \| options ar a o \| answer **ar** |  |
+| AS-M27-05-8 | hear “cake” → build \| tray c a k e \| answer **cake** |  |
+| AS-M27-05-9 | hear “rain” → build \| tray r ai n \| answer **rain** |  |
+| AS-M27-05-10 | hear “bird” → build \| tray b ir d \| answer **bird** |  |
+| AS-M27-05-11 | sound: kit \| options Short, Long \| answer **Short** |  |
+| AS-M27-05-12 | sound: kite \| options Short, Long \| answer **Long** |  |
+| AS-M27-05-13 | read “goat” → picture \| options goat, shell, bus \| answer **goat** |  |
+| AS-M27-05-14 | read “purse” → picture \| options purse, duck, fish \| answer **purse** |  |
+
 ## Content library
 
 ### Pictures
@@ -4161,6 +4314,7 @@ Spoken words (26 listed in `content/media.json`, plus every `say:word` used in l
 | BADGE-06 | Level 1 Sound Explorer | Live |
 | BADGE-07 | Sentence Star | Live |
 | BADGE-08 | Level 2 Word Builder | Live |
+| BADGE-09 | Level 3 Pattern Detective | Live |
 
 ## Code map
 
