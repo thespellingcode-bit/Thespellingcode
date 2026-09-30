@@ -15,5 +15,6 @@
   { "module_id": 14, "level_id": 2, "module_name": "Letter Cluster 5: j v w x y z", "module_goal": "Learn the six letters Level 1 never taught, and use them to build, read, and spell more words — including many common sight words.", "units": 5, "active": true },
   { "module_id": 15, "level_id": 2, "module_name": "Tricky Words", "module_goal": "Read a first set of common words that can't be fully sounded out.", "units": 5, "active": true },
   { "module_id": 16, "level_id": 2, "module_name": "Sentence Spelling", "module_goal": "Read and write short dictated sentences using everything learned so far.", "units": 5, "active": true },
-  { "module_id": 17, "level_id": 2, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 2 mastery across every pattern learned.", "units": 5, "active": true }
+  { "module_id": 17, "level_id": 2, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 2 mastery across every pattern learned.", "units": 5, "active": true },
+  { "module_id": 18, "level_id": 3, "module_name": "Short vs Long Vowels", "module_goal": "Hear whether a word's vowel sound is short (a quick sound) or long (says its own name) — the listening skill every later Level 3 spelling pattern builds on.", "units": 5, "active": true }
 ]

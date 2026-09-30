@@ -7,7 +7,7 @@
     "skill": "auditory_discrimination",
     "objective": "Identify and match familiar environmental sounds.",
     "activity_type": "listen_choose",
-    "estimated_time": "4\u20136 min",
+    "estimated_time": "4–6 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -26,7 +26,7 @@
     "skill": "auditory_discrimination",
     "objective": "Determine whether two sounds are the same or different.",
     "activity_type": "same_different",
-    "estimated_time": "4\u20135 min",
+    "estimated_time": "4–5 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -44,7 +44,7 @@
     "skill": "auditory_discrimination",
     "objective": "Distinguish loud and soft sounds.",
     "activity_type": "sort",
-    "estimated_time": "4\u20135 min",
+    "estimated_time": "4–5 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -62,7 +62,7 @@
     "skill": "auditory_discrimination",
     "objective": "Distinguish fast and slow sound patterns.",
     "activity_type": "sort",
-    "estimated_time": "4\u20135 min",
+    "estimated_time": "4–5 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -80,7 +80,7 @@
     "skill": "auditory_memory",
     "objective": "Remember and identify short sound sequences.",
     "activity_type": "sound_memory",
-    "estimated_time": "4\u20136 min",
+    "estimated_time": "4–6 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -97,7 +97,7 @@
     "skill": "auditory_discrimination",
     "objective": "Demonstrate independent mastery of Module 1 listening skills.",
     "activity_type": "assessment",
-    "estimated_time": "6\u20138 min",
+    "estimated_time": "6–8 min",
     "masteryThreshold": 0.8,
     "status": "active",
     "narration": {
@@ -218,75 +218,1418 @@
       "close": "Challenge complete! Your results are ready."
     }
   },
-  {"lesson_id":"L1-M03-01","module_id":3,"number":1,"title":"Meet the Letters","skill":"grapheme_phoneme_correspondence","objective":"Learn the letters s, a, t, p, i, n and their sounds.","activity_type":"letter_sound_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Hello, Letter Detective! Six new letters are waiting for you.","teach":"Listen to a word, then find the letter it starts with.","model":"Listen. Sun starts with the letter s.","transition":"Now you try! Listen to the word, then choose its letter.","close":"Great matching! You met every letter — s, a, t, p, i, n."}},
-  {"lesson_id":"L1-M03-02","module_id":3,"number":2,"title":"Blend & Build","skill":"word_building","objective":"Build real words using s, a, t, p, i, n.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Now let's put your letters to work!","teach":"Listen to the word, then tap each letter tile in order to build it.","model":"Listen. Sat. Tap s, then a, then t to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! You made real words with your new letters."}},
-  {"lesson_id":"L1-M03-03","module_id":3,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read words built from s, a, t, p, i, n and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read the words you can already build!","teach":"Look at the written word, then find the matching picture.","model":"Read. Sit. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every word!"}},
-  {"lesson_id":"L1-M03-04","module_id":3,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated words using s, a, t, p, i, n, choosing the right letters from a mixed tray.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Now let's spell some words — you pick the letters yourself!","teach":"Listen to the word. The tray has an extra letter that doesn't belong — leave it out!","model":"Listen. Tan. Pick t, a, n — and leave the extra letter behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right letter."}},
-  {"lesson_id":"L1-M03-05","module_id":3,"number":5,"title":"Cluster Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of Letter Cluster 1: letter sounds, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Cluster Challenge.","instruction":"Letters, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You know s, a, t, p, i, n."}},
-  {"lesson_id":"L1-M04-01","module_id":4,"number":1,"title":"Meet the Letters","skill":"grapheme_phoneme_correspondence","objective":"Learn the letters m, d, g, o, c and their sounds.","activity_type":"letter_sound_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Hello again, Letter Detective! Five more letters are waiting for you.","teach":"Listen to a word, then find the letter it starts with.","model":"Listen. Man starts with the letter m.","transition":"Now you try! Listen to the word, then choose its letter.","close":"Great matching! You met every letter — m, d, g, o, c."}},
-  {"lesson_id":"L1-M04-02","module_id":4,"number":2,"title":"Blend & Build","skill":"word_building","objective":"Build real words using every letter learned so far.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's put all your letters to work!","teach":"Listen to the word, then tap each letter tile in order to build it.","model":"Listen. Dog. Tap d, then o, then g to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! Look how many words you can make now."}},
-  {"lesson_id":"L1-M04-03","module_id":4,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read words built from every letter learned so far and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read even more words!","teach":"Look at the written word, then find the matching picture.","model":"Read. Dog. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every word!"}},
-  {"lesson_id":"L1-M04-04","module_id":4,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated words using every letter learned so far, choosing the right letters from a mixed tray.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some trickier words!","teach":"Listen to the word. The tray has an extra letter that doesn't belong — leave it out!","model":"Listen. Cap. Pick c, a, p — and leave the extra letter behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right letter."}},
-  {"lesson_id":"L1-M04-05","module_id":4,"number":5,"title":"Cluster Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of Letter Cluster 2: letter sounds, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Cluster Challenge.","instruction":"Letters, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You know s, a, t, p, i, n, m, d, g, o, c."}},
-  {"lesson_id":"L1-M05-01","module_id":5,"number":1,"title":"Meet the Letters","skill":"grapheme_phoneme_correspondence","objective":"Learn the letters k, b, h, r, e and their sounds.","activity_type":"letter_sound_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Hello again, Letter Detective! Five brand new letters are waiting for you.","teach":"Listen to a word, then find the letter it starts with.","model":"Listen. Kid starts with the letter k.","transition":"Now you try! Listen to the word, then choose its letter.","close":"Great matching! You met every letter — k, b, h, r, e."}},
-  {"lesson_id":"L1-M05-02","module_id":5,"number":2,"title":"Blend & Build","skill":"word_building","objective":"Build real words using every letter learned so far.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's put all your letters to work!","teach":"Listen to the word, then tap each letter tile in order to build it.","model":"Listen. Hen. Tap h, then e, then n to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! Look how many words you can make now."}},
-  {"lesson_id":"L1-M05-03","module_id":5,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read words built from every letter learned so far and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read even more words!","teach":"Look at the written word, then find the matching picture.","model":"Read. Hen. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every word!"}},
-  {"lesson_id":"L1-M05-04","module_id":5,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated words using every letter learned so far, choosing the right letters from a mixed tray.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some trickier words!","teach":"Listen to the word. The tray has an extra letter that doesn't belong — leave it out!","model":"Listen. Bed. Pick b, e, d — and leave the extra letter behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right letter."}},
-  {"lesson_id":"L1-M05-05","module_id":5,"number":5,"title":"Cluster Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of Letter Cluster 3: letter sounds, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Cluster Challenge.","instruction":"Letters, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You know s, a, t, p, i, n, m, d, g, o, c, k, b, h, r, e."}},
-  {"lesson_id":"L1-M06-01","module_id":6,"number":1,"title":"Meet the Letters","skill":"grapheme_phoneme_correspondence","objective":"Learn the letters l, f, u and their sounds.","activity_type":"letter_sound_match","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Hello again, Letter Detective! Three last letters are waiting for you.","teach":"Listen to a word, then find the letter it starts with.","model":"Listen. Lip starts with the letter l.","transition":"Now you try! Listen to the word, then choose its letter.","close":"Great matching! You met every letter — l, f, u."}},
-  {"lesson_id":"L1-M06-02","module_id":6,"number":2,"title":"Blend & Build","skill":"word_building","objective":"Build real words using every letter learned so far.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's put all your letters to work!","teach":"Listen to the word, then tap each letter tile in order to build it.","model":"Listen. Fun. Tap f, then u, then n to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! You now know every Level 1 letter."}},
-  {"lesson_id":"L1-M06-03","module_id":6,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read words built from every letter learned so far and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read even more words!","teach":"Look at the written word, then find the matching picture.","model":"Read. Cup. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every word!"}},
-  {"lesson_id":"L1-M06-04","module_id":6,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated words using every letter learned so far, choosing the right letters from a mixed tray.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some trickier words!","teach":"Listen to the word. The tray has an extra letter that doesn't belong — leave it out!","model":"Listen. Lip. Pick l, i, p — and leave the extra letter behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right letter."}},
-  {"lesson_id":"L1-M06-05","module_id":6,"number":5,"title":"Cluster Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of Letter Cluster 4: letter sounds, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Cluster Challenge.","instruction":"Letters, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You now know all 19 Level 1 letters."}},
-  {"lesson_id":"L1-M07-01","module_id":7,"number":1,"title":"Letter Sounds Review","skill":"grapheme_phoneme_correspondence","objective":"Match words to their first letter across every Level 1 letter.","activity_type":"letter_sound_match","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Welcome to the Level 1 Review, Letter Detective!","teach":"Listen to a word, then find the letter it starts with.","model":"Listen. Sun starts with the letter s.","transition":"Now you try! Listen to the word, then choose its letter.","close":"Great matching! You know your letters."}},
-  {"lesson_id":"L1-M07-02","module_id":7,"number":2,"title":"Build It","skill":"word_building","objective":"Build words from across every Level 1 cluster.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to build words from every cluster!","teach":"Listen to the word, then tap each letter tile in order to build it.","model":"Listen. Sit. Tap s, then i, then t to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! You can make words from any letters you know."}},
-  {"lesson_id":"L1-M07-03","module_id":7,"number":3,"title":"Read It","skill":"decoding","objective":"Read words from across every Level 1 cluster and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read words from everywhere!","teach":"Look at the written word, then find the matching picture.","model":"Read. Sun. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every word!"}},
-  {"lesson_id":"L1-M07-04","module_id":7,"number":4,"title":"Spell It","skill":"spelling","objective":"Spell dictated words from across every Level 1 cluster.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell words from every cluster!","teach":"Listen to the word. The tray has an extra letter that doesn't belong — leave it out!","model":"Listen. Pig. Pick p, i, g — and leave the extra letter behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right letter."}},
-  {"lesson_id":"L1-M07-05","module_id":7,"number":5,"title":"Level 1 Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of Level 1: letter sounds, building, reading, and spelling.","activity_type":"assessment","estimated_time":"10–12 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the big Level 1 Challenge.","instruction":"Letters, building, reading, spelling — anything you have learned could show up. Take your time.","close":"Level 1 complete! You are a real Sound Explorer."}},
-  {"lesson_id":"L2-M09-01","module_id":9,"number":1,"title":"Word Families Warm-Up","skill":"decoding","objective":"Read familiar CVC words quickly across several word families.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Welcome to Level 2! Let's warm up with words you already know.","teach":"Look at the written word, then find the matching picture.","model":"Read. Cat. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"Great reading! Those words are yours for good now."}},
-  {"lesson_id":"L2-M09-02","module_id":9,"number":2,"title":"Build It Fast","skill":"word_building","objective":"Build CVC words quickly by tapping letter tiles in order.","activity_type":"word_build","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's build words fast!","teach":"Listen to the word, then tap each letter tile in order to build it.","model":"Listen. Rug. Tap r, then u, then g to build it!","transition":"Now you try! Listen, then build the word.","close":"Speedy building! You know these letters really well."}},
-  {"lesson_id":"L2-M09-03","module_id":9,"number":3,"title":"Spell It Fast","skill":"spelling","objective":"Spell dictated CVC words, choosing the right letters from a mixed tray.","activity_type":"word_build","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some words!","teach":"Listen to the word. The tray has an extra letter that doesn't belong — leave it out!","model":"Listen. Sap. Pick s, a, p — and leave the extra letter behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right letter."}},
-  {"lesson_id":"L2-M09-04","module_id":9,"number":4,"title":"Doubled-Letter Endings","skill":"decoding","objective":"Build common words ending in a doubled letter (ff, ll, ss), without choosing between spellings.","activity_type":"word_build","estimated_time":"3–4 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Some words end with a doubled letter — two of the same letter together, still just one sound.","teach":"Listen to the word, then tap each letter tile in order — including the doubled letter.","model":"Listen. Bell. Tap b, then e, then l, then l to build it!","transition":"Now you try! Listen, then build the word.","close":"You built every doubled-letter word!"}},
-  {"lesson_id":"L2-M09-05","module_id":9,"number":5,"title":"Automaticity Challenge","skill":"decoding","objective":"Demonstrate fast, confident reading, building and spelling of familiar CVC words and doubled-letter endings.","activity_type":"assessment","estimated_time":"6–8 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Automaticity Challenge.","instruction":"Reading, building, spelling — any of it could show up. Go at your own best pace.","close":"Challenge complete! You are ready for new patterns."}},
-  {"lesson_id":"L1-M08-01","module_id":8,"number":1,"title":"Level 1 Master Assessment","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of every Level 1 skill: all 19 letters, building, reading, and spelling.","activity_type":"assessment","estimated_time":"10–12 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"This is it — the big one. Everything you've learned in Level 1, all in one place.","instruction":"Letters from every cluster, building, reading, spelling — any of it could show up. Take your time and do your best.","close":"You are officially a Sound Explorer! Level 1 complete."}},
-  {"lesson_id":"L2-M10-01","module_id":10,"number":1,"title":"Meet the Blends","skill":"grapheme_phoneme_correspondence","objective":"Recognise two-consonant blends (bl, cl, fl... br, cr, dr...) at the start of a word.","activity_type":"letter_sound_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Some words start with two letters said quickly together — a blend!","teach":"Listen to a word, then find the blend it starts with. Both letters keep their own sound.","model":"Listen. Flag starts with the blend fl.","transition":"Now you try! Listen to the word, then choose its blend.","close":"Great blending! You can hear two consonants working together."}},
-  {"lesson_id":"L2-M10-02","module_id":10,"number":2,"title":"Blend & Build","skill":"word_building","objective":"Build words that start with a consonant blend.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's build some blend words!","teach":"Listen to the word, then tap each letter tile in order — including both blend letters.","model":"Listen. Crab. Tap c, then r, then a, then b to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! Every blend has two letters, two sounds, one quick team."}},
-  {"lesson_id":"L2-M10-03","module_id":10,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read blend words and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read some blend words!","teach":"Look at the written word, then find the matching picture.","model":"Read. Crab. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every blend word!"}},
-  {"lesson_id":"L2-M10-04","module_id":10,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated blend words, choosing the right letters from a mixed tray.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some blend words!","teach":"Listen to the word. The tray has an extra letter that doesn't belong — leave it out!","model":"Listen. Trip. Pick t, r, i, p — and leave the extra letter behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right letter, blend and all."}},
-  {"lesson_id":"L2-M10-05","module_id":10,"number":5,"title":"Blend Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of consonant blends: recognising, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Blend Challenge.","instruction":"Blends, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You know your consonant blends."}},
-  {"lesson_id":"L2-M11-01","module_id":11,"number":1,"title":"Meet the Sounds","skill":"grapheme_phoneme_correspondence","objective":"Recognise sh, ch, th and wh as single sounds, at the start or end of a word.","activity_type":"letter_sound_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Two letters, ONE sound — that's a digraph!","teach":"Listen to a word, then find the two letters that make one sound together.","model":"Listen. Ship has the digraph sh at the start.","transition":"Now you try! Listen to the word, then choose its digraph.","close":"Great listening! Two letters, one sound — you've got it."}},
-  {"lesson_id":"L2-M11-02","module_id":11,"number":2,"title":"Sound & Build","skill":"word_building","objective":"Build words containing sh, ch, th or wh, treating the digraph as a single tile.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's build some digraph words!","teach":"Listen to the word, then tap each tile in order — the digraph is ONE tile.","model":"Listen. Ship. Tap sh, then i, then p to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! You treated every digraph as one team."}},
-  {"lesson_id":"L2-M11-03","module_id":11,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read digraph words and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read some digraph words!","teach":"Look at the written word, then find the matching picture.","model":"Read. Ship. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every digraph word!"}},
-  {"lesson_id":"L2-M11-04","module_id":11,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated digraph words, choosing the right tiles — including telling one digraph apart from another.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some digraph words!","teach":"Listen to the word. The tray has an extra tile that doesn't belong — leave it out!","model":"Listen. Dish. Pick d, i, sh — and leave the extra tile behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked the right digraph every time."}},
-  {"lesson_id":"L2-M11-05","module_id":11,"number":5,"title":"Sound Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of digraphs: recognising, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Sound Challenge.","instruction":"Digraphs, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You know your digraphs — start or end, it's still one sound."}},
-  {"lesson_id":"L2-M12-01","module_id":12,"number":1,"title":"Meet the Endings","skill":"grapheme_phoneme_correspondence","objective":"Recognise -ck, -tch, -dge, -ng and -nk as single sounds at the end of a word.","activity_type":"letter_sound_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Some word endings are two or three letters making one sound!","teach":"Listen to a word, then find the ending it has.","model":"Listen. Duck ends with ck.","transition":"Now you try! Listen to the word, then choose its ending.","close":"Great listening! You know five common word endings now."}},
-  {"lesson_id":"L2-M12-02","module_id":12,"number":2,"title":"Sound & Build","skill":"word_building","objective":"Build words ending in -ck, -tch, -dge, -ng or -nk, treating the ending as a single tile.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's build some words with these endings!","teach":"Listen to the word, then tap each tile in order — the ending is ONE tile.","model":"Listen. Duck. Tap d, then u, then ck to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! Every ending is one team of letters."}},
-  {"lesson_id":"L2-M12-03","module_id":12,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read words ending in -ck, -dge or -ng and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read some words with these endings!","teach":"Look at the written word, then find the matching picture.","model":"Read. Duck. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every word!"}},
-  {"lesson_id":"L2-M12-04","module_id":12,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated words, choosing the right tiles — including telling one ending apart from another.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some words with tricky endings!","teach":"Listen to the word. The tray has an extra tile that doesn't belong — leave it out!","model":"Listen. Pack. Pick p, a, ck — and leave the extra tile behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked the right ending every time."}},
-  {"lesson_id":"L2-M12-05","module_id":12,"number":5,"title":"Endings Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of common endings: recognising, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Endings Challenge.","instruction":"Endings, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You know five common word endings."}},
-  {"lesson_id":"L2-M13-01","module_id":13,"number":1,"title":"Meet Qu","skill":"grapheme_phoneme_correspondence","objective":"Recognise qu as an inseparable pair at the start of a word.","activity_type":"letter_sound_match","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Q always brings a friend — u! Together they say kw.","teach":"Listen to a word, then find what it starts with.","model":"Listen. Quit starts with qu.","transition":"Now you try! Listen to the word, then choose what it starts with.","close":"Great listening! Q and u are always a team."}},
-  {"lesson_id":"L2-M13-02","module_id":13,"number":2,"title":"Blend & Build","skill":"word_building","objective":"Build words starting with qu, or with an s-blend or end-blend, using already-known letters.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's build more pattern words!","teach":"Listen to the word, then tap each tile in order — qu is ONE tile, every other letter is its own.","model":"Listen. Quit. Tap qu, then i, then t to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! You handled qu, s-blends, and end-blends."}},
-  {"lesson_id":"L2-M13-03","module_id":13,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read pattern words and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read some more pattern words!","teach":"Look at the written word, then find the matching picture.","model":"Read. Tent. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every word!"}},
-  {"lesson_id":"L2-M13-04","module_id":13,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated pattern words, choosing the right tiles from a mixed tray.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some pattern words!","teach":"Listen to the word. The tray has an extra tile that doesn't belong — leave it out!","model":"Listen. Spot. Pick s, p, o, t — and leave the extra tile behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right tile."}},
-  {"lesson_id":"L2-M13-05","module_id":13,"number":5,"title":"Patterns Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of qu, s-blends and end-blends: recognising, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Patterns Challenge.","instruction":"Qu, blends, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! Level 2 is almost yours."}},
-  {"lesson_id":"L2-M14-01","module_id":14,"number":1,"title":"Meet the Letters","skill":"grapheme_phoneme_correspondence","objective":"Learn the letters j, v, w, x, y and z and their sounds.","activity_type":"letter_sound_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Six brand new letters — the last ones! j, v, w, x, y, z.","teach":"Listen to a word, then find the letter it has. Most of these start a word — x almost always ends one.","model":"Listen. Jam starts with the letter j.","transition":"Now you try! Listen to the word, then choose its letter.","close":"Great matching! You know every letter in the alphabet now."}},
-  {"lesson_id":"L2-M14-02","module_id":14,"number":2,"title":"Blend & Build","skill":"word_building","objective":"Build words using j, v, w, x, y, z and every letter learned so far.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's build words with your new letters!","teach":"Listen to the word, then tap each letter tile in order.","model":"Listen. Van. Tap v, then a, then n to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! Look how many more words you can make now."}},
-  {"lesson_id":"L2-M14-03","module_id":14,"number":3,"title":"Read the Words","skill":"decoding","objective":"Read words using every letter learned so far and match them to pictures.","activity_type":"read_word","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read some more words!","teach":"Look at the written word, then find the matching picture.","model":"Read. Fox. Find the picture that matches!","transition":"Now you try! Read the word, then choose its picture.","close":"You read every word!"}},
-  {"lesson_id":"L2-M14-04","module_id":14,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated words using j, v, w, x, y, z and every letter learned so far.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some trickier words!","teach":"Listen to the word. The tray has an extra letter that doesn't belong — leave it out!","model":"Listen. Web. Pick w, e, b — and leave the extra letter behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! You picked every right letter."}},
-  {"lesson_id":"L2-M14-05","module_id":14,"number":5,"title":"Cluster Challenge","skill":"grapheme_phoneme_correspondence","objective":"Demonstrate independent mastery of every letter in the alphabet: letter sounds, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Cluster Challenge.","instruction":"Letters, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You know every letter of the alphabet."}},
-  {"lesson_id":"L2-M15-01","module_id":15,"number":1,"title":"Meet the Tricky Words","skill":"decoding","objective":"Recognise a first set of common words that can't be fully sounded out.","activity_type":"sight_word_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Some words break the rules! You just have to know them by sight.","teach":"Listen to the word, then find it — look closely, some of these look almost the same.","model":"Listen. Said. You can't sound out every letter — you just have to know it!","transition":"Now you try! Listen to the word, then find it.","close":"Great work! You know these tricky words by sight now."}},
-  {"lesson_id":"L2-M15-02","module_id":15,"number":2,"title":"Build the Words","skill":"word_building","objective":"Build tricky words letter by letter, memorising the spelling even where the sound is irregular.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's build these tricky words!","teach":"Listen to the word, then tap each tile in order — even the tricky part.","model":"Listen. The. Tap th, then e, to build it!","transition":"Now you try! Listen, then build the word.","close":"Great building! You know exactly how these words are spelled."}},
-  {"lesson_id":"L2-M15-03","module_id":15,"number":3,"title":"Read Them Again","skill":"decoding","objective":"Read more tricky words by sight, building speed and confidence.","activity_type":"sight_word_match","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"More tricky words — let's get fast at spotting these!","teach":"Listen to the word, then find it.","model":"Listen. Here. Look closely — where and here look alike!","transition":"Now you try! Listen to the word, then find it.","close":"You are getting fast at these tricky words!"}},
-  {"lesson_id":"L2-M15-04","module_id":15,"number":4,"title":"Spell the Words","skill":"spelling","objective":"Spell dictated tricky words, choosing the right tiles from a mixed tray.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell some tricky words!","teach":"Listen to the word. The tray has an extra tile that doesn't belong — leave it out!","model":"Listen. Was. Pick w, a, s — and leave the extra tile behind!","transition":"Now you try! Listen, then spell the word.","close":"Great spelling! Tricky words and all."}},
-  {"lesson_id":"L2-M15-05","module_id":15,"number":5,"title":"Tricky Words Challenge","skill":"decoding","objective":"Demonstrate independent mastery of tricky words: recognising, building, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Tricky Words Challenge.","instruction":"Finding, building, spelling — any of it could show up. Take your time.","close":"Challenge complete! You can spot tricky words anywhere."}},
-  {"lesson_id":"L2-M16-01","module_id":16,"number":1,"title":"Meet Sentences","skill":"decoding","objective":"Recognise that a sentence starts with a capital letter and ends with a full stop.","activity_type":"fix_sentence","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Words join up to make sentences — and sentences follow two rules!","teach":"A sentence starts with a CAPITAL letter and ends with a full stop. Which one is written correctly?","model":"A capital letter at the start, a full stop at the end.","transition":"Now you try! Pick the sentence that's written correctly.","close":"Great work! You can spot a correctly written sentence."}},
-  {"lesson_id":"L2-M16-02","module_id":16,"number":2,"title":"Build the Sentence","skill":"word_building","objective":"Build short sentences by tapping word tiles in order.","activity_type":"sentence_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's build whole sentences!","teach":"Listen to the sentence, then tap each word tile in order.","model":"Listen. \"I can run.\" Tap the words in order to build it!","transition":"Now you try! Listen, then build the sentence.","close":"Great building! You can put words together into sentences."}},
-  {"lesson_id":"L2-M16-03","module_id":16,"number":3,"title":"Read the Sentence","skill":"decoding","objective":"Read short sentences and match them to pictures.","activity_type":"sentence_read","estimated_time":"4–5 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read whole sentences!","teach":"Read the sentence, then find the picture it's about.","model":"Read. \"The cat sat.\" Find the picture that matches!","transition":"Now you try! Read the sentence, then choose its picture.","close":"You read every sentence!"}},
-  {"lesson_id":"L2-M16-04","module_id":16,"number":4,"title":"Spell the Sentence","skill":"spelling","objective":"Build dictated sentences, choosing the right words from a mixed tray.","activity_type":"sentence_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to spell whole sentences!","teach":"Listen to the sentence. The tray has an extra word that doesn't belong — leave it out!","model":"Listen. \"We had fun.\" Pick we, had, fun — and leave the extra word behind!","transition":"Now you try! Listen, then build the sentence.","close":"Great spelling! Whole sentences and all."}},
-  {"lesson_id":"L2-M16-05","module_id":16,"number":5,"title":"Sentence Challenge","skill":"decoding","objective":"Demonstrate independent mastery of sentences: correct format, building, reading, and spelling.","activity_type":"assessment","estimated_time":"8–10 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"You are ready for the Sentence Challenge.","instruction":"Fixing, building, reading, spelling — any of it could show up. Take your time.","close":"Challenge complete! You can read and write whole sentences."}},
-  {"lesson_id":"L2-M17-01","module_id":17,"number":1,"title":"Mixed Retrieval","skill":"grapheme_phoneme_correspondence","objective":"Recognise blends, digraphs, endings, qu, and every letter from across Level 2.","activity_type":"letter_sound_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time to review everything from Level 2!","teach":"Listen to a word, then find what it starts or ends with.","model":"Listen. Flag starts with the blend fl.","transition":"Now you try! Listen to the word, then choose the right answer.","close":"Great review! You know your patterns."}},
-  {"lesson_id":"L2-M17-02","module_id":17,"number":2,"title":"Read & Build","skill":"decoding","objective":"Read and build words using every pattern learned across Level 2.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's read and build words from every part of Level 2!","teach":"Read a word, or listen and build one — either way, use everything you know.","model":"Listen. Crab. Tap c, then r, then a, then b to build it!","transition":"Now you try!","close":"Great work! You can read and build all kinds of words now."}},
-  {"lesson_id":"L2-M17-03","module_id":17,"number":3,"title":"Tricky Words & Sentences","skill":"decoding","objective":"Review tricky words and read whole sentences.","activity_type":"sight_word_match","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Let's review tricky words and sentences!","teach":"Listen to the tricky word and find it, or read a sentence and find its picture.","model":"Listen. Said. You can't sound out every letter — you just have to know it!","transition":"Now you try!","close":"You know your tricky words and sentences!"}},
-  {"lesson_id":"L2-M17-04","module_id":17,"number":4,"title":"Dictation","skill":"spelling","objective":"Spell dictated words and sentences from across Level 2, choosing the right tiles from a mixed tray.","activity_type":"word_build","estimated_time":"5–6 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"Time for dictation — words and sentences!","teach":"Listen carefully. The tray has an extra tile that doesn't belong — leave it out!","model":"Listen. Crab. Pick c, r, a, b — and leave the extra tile behind!","transition":"Now you try!","close":"Great spelling! Words and sentences, all correct."}},
-  {"lesson_id":"L2-M17-05","module_id":17,"number":5,"title":"Level 2 Challenge","skill":"decoding","objective":"Demonstrate independent mastery of everything taught in Level 2.","activity_type":"assessment","estimated_time":"10–12 min","masteryThreshold":0.8,"status":"active","narration":{"welcome":"This is it — the Level 2 Challenge!","instruction":"Blends, digraphs, endings, qu, tricky words, sentences — any of it could show up. Take your time and do your best.","close":"You are officially a Word Builder! Level 2 complete."}}
+  {
+    "lesson_id": "L1-M03-01",
+    "module_id": 3,
+    "number": 1,
+    "title": "Meet the Letters",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Learn the letters s, a, t, p, i, n and their sounds.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Hello, Letter Detective! Six new letters are waiting for you.",
+      "teach": "Listen to a word, then find the letter it starts with.",
+      "model": "Listen. Sun starts with the letter s.",
+      "transition": "Now you try! Listen to the word, then choose its letter.",
+      "close": "Great matching! You met every letter — s, a, t, p, i, n."
+    }
+  },
+  {
+    "lesson_id": "L1-M03-02",
+    "module_id": 3,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build real words using s, a, t, p, i, n.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Now let's put your letters to work!",
+      "teach": "Listen to the word, then tap each letter tile in order to build it.",
+      "model": "Listen. Sat. Tap s, then a, then t to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! You made real words with your new letters."
+    }
+  },
+  {
+    "lesson_id": "L1-M03-03",
+    "module_id": 3,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read words built from s, a, t, p, i, n and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read the words you can already build!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Sit. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every word!"
+    }
+  },
+  {
+    "lesson_id": "L1-M03-04",
+    "module_id": 3,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated words using s, a, t, p, i, n, choosing the right letters from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Now let's spell some words — you pick the letters yourself!",
+      "teach": "Listen to the word. The tray has an extra letter that doesn't belong — leave it out!",
+      "model": "Listen. Tan. Pick t, a, n — and leave the extra letter behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right letter."
+    }
+  },
+  {
+    "lesson_id": "L1-M03-05",
+    "module_id": 3,
+    "number": 5,
+    "title": "Cluster Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of Letter Cluster 1: letter sounds, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Cluster Challenge.",
+      "instruction": "Letters, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You know s, a, t, p, i, n."
+    }
+  },
+  {
+    "lesson_id": "L1-M04-01",
+    "module_id": 4,
+    "number": 1,
+    "title": "Meet the Letters",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Learn the letters m, d, g, o, c and their sounds.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Hello again, Letter Detective! Five more letters are waiting for you.",
+      "teach": "Listen to a word, then find the letter it starts with.",
+      "model": "Listen. Man starts with the letter m.",
+      "transition": "Now you try! Listen to the word, then choose its letter.",
+      "close": "Great matching! You met every letter — m, d, g, o, c."
+    }
+  },
+  {
+    "lesson_id": "L1-M04-02",
+    "module_id": 4,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build real words using every letter learned so far.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's put all your letters to work!",
+      "teach": "Listen to the word, then tap each letter tile in order to build it.",
+      "model": "Listen. Dog. Tap d, then o, then g to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! Look how many words you can make now."
+    }
+  },
+  {
+    "lesson_id": "L1-M04-03",
+    "module_id": 4,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read words built from every letter learned so far and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read even more words!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Dog. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every word!"
+    }
+  },
+  {
+    "lesson_id": "L1-M04-04",
+    "module_id": 4,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated words using every letter learned so far, choosing the right letters from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some trickier words!",
+      "teach": "Listen to the word. The tray has an extra letter that doesn't belong — leave it out!",
+      "model": "Listen. Cap. Pick c, a, p — and leave the extra letter behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right letter."
+    }
+  },
+  {
+    "lesson_id": "L1-M04-05",
+    "module_id": 4,
+    "number": 5,
+    "title": "Cluster Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of Letter Cluster 2: letter sounds, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Cluster Challenge.",
+      "instruction": "Letters, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You know s, a, t, p, i, n, m, d, g, o, c."
+    }
+  },
+  {
+    "lesson_id": "L1-M05-01",
+    "module_id": 5,
+    "number": 1,
+    "title": "Meet the Letters",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Learn the letters k, b, h, r, e and their sounds.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Hello again, Letter Detective! Five brand new letters are waiting for you.",
+      "teach": "Listen to a word, then find the letter it starts with.",
+      "model": "Listen. Kid starts with the letter k.",
+      "transition": "Now you try! Listen to the word, then choose its letter.",
+      "close": "Great matching! You met every letter — k, b, h, r, e."
+    }
+  },
+  {
+    "lesson_id": "L1-M05-02",
+    "module_id": 5,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build real words using every letter learned so far.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's put all your letters to work!",
+      "teach": "Listen to the word, then tap each letter tile in order to build it.",
+      "model": "Listen. Hen. Tap h, then e, then n to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! Look how many words you can make now."
+    }
+  },
+  {
+    "lesson_id": "L1-M05-03",
+    "module_id": 5,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read words built from every letter learned so far and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read even more words!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Hen. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every word!"
+    }
+  },
+  {
+    "lesson_id": "L1-M05-04",
+    "module_id": 5,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated words using every letter learned so far, choosing the right letters from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some trickier words!",
+      "teach": "Listen to the word. The tray has an extra letter that doesn't belong — leave it out!",
+      "model": "Listen. Bed. Pick b, e, d — and leave the extra letter behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right letter."
+    }
+  },
+  {
+    "lesson_id": "L1-M05-05",
+    "module_id": 5,
+    "number": 5,
+    "title": "Cluster Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of Letter Cluster 3: letter sounds, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Cluster Challenge.",
+      "instruction": "Letters, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You know s, a, t, p, i, n, m, d, g, o, c, k, b, h, r, e."
+    }
+  },
+  {
+    "lesson_id": "L1-M06-01",
+    "module_id": 6,
+    "number": 1,
+    "title": "Meet the Letters",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Learn the letters l, f, u and their sounds.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Hello again, Letter Detective! Three last letters are waiting for you.",
+      "teach": "Listen to a word, then find the letter it starts with.",
+      "model": "Listen. Lip starts with the letter l.",
+      "transition": "Now you try! Listen to the word, then choose its letter.",
+      "close": "Great matching! You met every letter — l, f, u."
+    }
+  },
+  {
+    "lesson_id": "L1-M06-02",
+    "module_id": 6,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build real words using every letter learned so far.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's put all your letters to work!",
+      "teach": "Listen to the word, then tap each letter tile in order to build it.",
+      "model": "Listen. Fun. Tap f, then u, then n to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! You now know every Level 1 letter."
+    }
+  },
+  {
+    "lesson_id": "L1-M06-03",
+    "module_id": 6,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read words built from every letter learned so far and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read even more words!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Cup. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every word!"
+    }
+  },
+  {
+    "lesson_id": "L1-M06-04",
+    "module_id": 6,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated words using every letter learned so far, choosing the right letters from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some trickier words!",
+      "teach": "Listen to the word. The tray has an extra letter that doesn't belong — leave it out!",
+      "model": "Listen. Lip. Pick l, i, p — and leave the extra letter behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right letter."
+    }
+  },
+  {
+    "lesson_id": "L1-M06-05",
+    "module_id": 6,
+    "number": 5,
+    "title": "Cluster Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of Letter Cluster 4: letter sounds, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Cluster Challenge.",
+      "instruction": "Letters, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You now know all 19 Level 1 letters."
+    }
+  },
+  {
+    "lesson_id": "L1-M07-01",
+    "module_id": 7,
+    "number": 1,
+    "title": "Letter Sounds Review",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Match words to their first letter across every Level 1 letter.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome to the Level 1 Review, Letter Detective!",
+      "teach": "Listen to a word, then find the letter it starts with.",
+      "model": "Listen. Sun starts with the letter s.",
+      "transition": "Now you try! Listen to the word, then choose its letter.",
+      "close": "Great matching! You know your letters."
+    }
+  },
+  {
+    "lesson_id": "L1-M07-02",
+    "module_id": 7,
+    "number": 2,
+    "title": "Build It",
+    "skill": "word_building",
+    "objective": "Build words from across every Level 1 cluster.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build words from every cluster!",
+      "teach": "Listen to the word, then tap each letter tile in order to build it.",
+      "model": "Listen. Sit. Tap s, then i, then t to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! You can make words from any letters you know."
+    }
+  },
+  {
+    "lesson_id": "L1-M07-03",
+    "module_id": 7,
+    "number": 3,
+    "title": "Read It",
+    "skill": "decoding",
+    "objective": "Read words from across every Level 1 cluster and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read words from everywhere!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Sun. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every word!"
+    }
+  },
+  {
+    "lesson_id": "L1-M07-04",
+    "module_id": 7,
+    "number": 4,
+    "title": "Spell It",
+    "skill": "spelling",
+    "objective": "Spell dictated words from across every Level 1 cluster.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell words from every cluster!",
+      "teach": "Listen to the word. The tray has an extra letter that doesn't belong — leave it out!",
+      "model": "Listen. Pig. Pick p, i, g — and leave the extra letter behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right letter."
+    }
+  },
+  {
+    "lesson_id": "L1-M07-05",
+    "module_id": 7,
+    "number": 5,
+    "title": "Level 1 Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of Level 1: letter sounds, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "10–12 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the big Level 1 Challenge.",
+      "instruction": "Letters, building, reading, spelling — anything you have learned could show up. Take your time.",
+      "close": "Level 1 complete! You are a real Sound Explorer."
+    }
+  },
+  {
+    "lesson_id": "L2-M09-01",
+    "module_id": 9,
+    "number": 1,
+    "title": "Word Families Warm-Up",
+    "skill": "decoding",
+    "objective": "Read familiar CVC words quickly across several word families.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome to Level 2! Let's warm up with words you already know.",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Cat. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "Great reading! Those words are yours for good now."
+    }
+  },
+  {
+    "lesson_id": "L2-M09-02",
+    "module_id": 9,
+    "number": 2,
+    "title": "Build It Fast",
+    "skill": "word_building",
+    "objective": "Build CVC words quickly by tapping letter tiles in order.",
+    "activity_type": "word_build",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's build words fast!",
+      "teach": "Listen to the word, then tap each letter tile in order to build it.",
+      "model": "Listen. Rug. Tap r, then u, then g to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Speedy building! You know these letters really well."
+    }
+  },
+  {
+    "lesson_id": "L2-M09-03",
+    "module_id": 9,
+    "number": 3,
+    "title": "Spell It Fast",
+    "skill": "spelling",
+    "objective": "Spell dictated CVC words, choosing the right letters from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some words!",
+      "teach": "Listen to the word. The tray has an extra letter that doesn't belong — leave it out!",
+      "model": "Listen. Sap. Pick s, a, p — and leave the extra letter behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right letter."
+    }
+  },
+  {
+    "lesson_id": "L2-M09-04",
+    "module_id": 9,
+    "number": 4,
+    "title": "Doubled-Letter Endings",
+    "skill": "decoding",
+    "objective": "Build common words ending in a doubled letter (ff, ll, ss), without choosing between spellings.",
+    "activity_type": "word_build",
+    "estimated_time": "3–4 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Some words end with a doubled letter — two of the same letter together, still just one sound.",
+      "teach": "Listen to the word, then tap each letter tile in order — including the doubled letter.",
+      "model": "Listen. Bell. Tap b, then e, then l, then l to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "You built every doubled-letter word!"
+    }
+  },
+  {
+    "lesson_id": "L2-M09-05",
+    "module_id": 9,
+    "number": 5,
+    "title": "Automaticity Challenge",
+    "skill": "decoding",
+    "objective": "Demonstrate fast, confident reading, building and spelling of familiar CVC words and doubled-letter endings.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Automaticity Challenge.",
+      "instruction": "Reading, building, spelling — any of it could show up. Go at your own best pace.",
+      "close": "Challenge complete! You are ready for new patterns."
+    }
+  },
+  {
+    "lesson_id": "L1-M08-01",
+    "module_id": 8,
+    "number": 1,
+    "title": "Level 1 Master Assessment",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of every Level 1 skill: all 19 letters, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "10–12 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "This is it — the big one. Everything you've learned in Level 1, all in one place.",
+      "instruction": "Letters from every cluster, building, reading, spelling — any of it could show up. Take your time and do your best.",
+      "close": "You are officially a Sound Explorer! Level 1 complete."
+    }
+  },
+  {
+    "lesson_id": "L2-M10-01",
+    "module_id": 10,
+    "number": 1,
+    "title": "Meet the Blends",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise two-consonant blends (bl, cl, fl... br, cr, dr...) at the start of a word.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Some words start with two letters said quickly together — a blend!",
+      "teach": "Listen to a word, then find the blend it starts with. Both letters keep their own sound.",
+      "model": "Listen. Flag starts with the blend fl.",
+      "transition": "Now you try! Listen to the word, then choose its blend.",
+      "close": "Great blending! You can hear two consonants working together."
+    }
+  },
+  {
+    "lesson_id": "L2-M10-02",
+    "module_id": 10,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build words that start with a consonant blend.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's build some blend words!",
+      "teach": "Listen to the word, then tap each letter tile in order — including both blend letters.",
+      "model": "Listen. Crab. Tap c, then r, then a, then b to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! Every blend has two letters, two sounds, one quick team."
+    }
+  },
+  {
+    "lesson_id": "L2-M10-03",
+    "module_id": 10,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read blend words and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read some blend words!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Crab. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every blend word!"
+    }
+  },
+  {
+    "lesson_id": "L2-M10-04",
+    "module_id": 10,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated blend words, choosing the right letters from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some blend words!",
+      "teach": "Listen to the word. The tray has an extra letter that doesn't belong — leave it out!",
+      "model": "Listen. Trip. Pick t, r, i, p — and leave the extra letter behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right letter, blend and all."
+    }
+  },
+  {
+    "lesson_id": "L2-M10-05",
+    "module_id": 10,
+    "number": 5,
+    "title": "Blend Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of consonant blends: recognising, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Blend Challenge.",
+      "instruction": "Blends, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You know your consonant blends."
+    }
+  },
+  {
+    "lesson_id": "L2-M11-01",
+    "module_id": 11,
+    "number": 1,
+    "title": "Meet the Sounds",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise sh, ch, th and wh as single sounds, at the start or end of a word.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two letters, ONE sound — that's a digraph!",
+      "teach": "Listen to a word, then find the two letters that make one sound together.",
+      "model": "Listen. Ship has the digraph sh at the start.",
+      "transition": "Now you try! Listen to the word, then choose its digraph.",
+      "close": "Great listening! Two letters, one sound — you've got it."
+    }
+  },
+  {
+    "lesson_id": "L2-M11-02",
+    "module_id": 11,
+    "number": 2,
+    "title": "Sound & Build",
+    "skill": "word_building",
+    "objective": "Build words containing sh, ch, th or wh, treating the digraph as a single tile.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's build some digraph words!",
+      "teach": "Listen to the word, then tap each tile in order — the digraph is ONE tile.",
+      "model": "Listen. Ship. Tap sh, then i, then p to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! You treated every digraph as one team."
+    }
+  },
+  {
+    "lesson_id": "L2-M11-03",
+    "module_id": 11,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read digraph words and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read some digraph words!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Ship. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every digraph word!"
+    }
+  },
+  {
+    "lesson_id": "L2-M11-04",
+    "module_id": 11,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated digraph words, choosing the right tiles — including telling one digraph apart from another.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some digraph words!",
+      "teach": "Listen to the word. The tray has an extra tile that doesn't belong — leave it out!",
+      "model": "Listen. Dish. Pick d, i, sh — and leave the extra tile behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked the right digraph every time."
+    }
+  },
+  {
+    "lesson_id": "L2-M11-05",
+    "module_id": 11,
+    "number": 5,
+    "title": "Sound Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of digraphs: recognising, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Sound Challenge.",
+      "instruction": "Digraphs, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You know your digraphs — start or end, it's still one sound."
+    }
+  },
+  {
+    "lesson_id": "L2-M12-01",
+    "module_id": 12,
+    "number": 1,
+    "title": "Meet the Endings",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise -ck, -tch, -dge, -ng and -nk as single sounds at the end of a word.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Some word endings are two or three letters making one sound!",
+      "teach": "Listen to a word, then find the ending it has.",
+      "model": "Listen. Duck ends with ck.",
+      "transition": "Now you try! Listen to the word, then choose its ending.",
+      "close": "Great listening! You know five common word endings now."
+    }
+  },
+  {
+    "lesson_id": "L2-M12-02",
+    "module_id": 12,
+    "number": 2,
+    "title": "Sound & Build",
+    "skill": "word_building",
+    "objective": "Build words ending in -ck, -tch, -dge, -ng or -nk, treating the ending as a single tile.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's build some words with these endings!",
+      "teach": "Listen to the word, then tap each tile in order — the ending is ONE tile.",
+      "model": "Listen. Duck. Tap d, then u, then ck to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! Every ending is one team of letters."
+    }
+  },
+  {
+    "lesson_id": "L2-M12-03",
+    "module_id": 12,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read words ending in -ck, -dge or -ng and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read some words with these endings!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Duck. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every word!"
+    }
+  },
+  {
+    "lesson_id": "L2-M12-04",
+    "module_id": 12,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated words, choosing the right tiles — including telling one ending apart from another.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some words with tricky endings!",
+      "teach": "Listen to the word. The tray has an extra tile that doesn't belong — leave it out!",
+      "model": "Listen. Pack. Pick p, a, ck — and leave the extra tile behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked the right ending every time."
+    }
+  },
+  {
+    "lesson_id": "L2-M12-05",
+    "module_id": 12,
+    "number": 5,
+    "title": "Endings Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of common endings: recognising, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Endings Challenge.",
+      "instruction": "Endings, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You know five common word endings."
+    }
+  },
+  {
+    "lesson_id": "L2-M13-01",
+    "module_id": 13,
+    "number": 1,
+    "title": "Meet Qu",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise qu as an inseparable pair at the start of a word.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Q always brings a friend — u! Together they say kw.",
+      "teach": "Listen to a word, then find what it starts with.",
+      "model": "Listen. Quit starts with qu.",
+      "transition": "Now you try! Listen to the word, then choose what it starts with.",
+      "close": "Great listening! Q and u are always a team."
+    }
+  },
+  {
+    "lesson_id": "L2-M13-02",
+    "module_id": 13,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build words starting with qu, or with an s-blend or end-blend, using already-known letters.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's build more pattern words!",
+      "teach": "Listen to the word, then tap each tile in order — qu is ONE tile, every other letter is its own.",
+      "model": "Listen. Quit. Tap qu, then i, then t to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! You handled qu, s-blends, and end-blends."
+    }
+  },
+  {
+    "lesson_id": "L2-M13-03",
+    "module_id": 13,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read pattern words and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read some more pattern words!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Tent. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every word!"
+    }
+  },
+  {
+    "lesson_id": "L2-M13-04",
+    "module_id": 13,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated pattern words, choosing the right tiles from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some pattern words!",
+      "teach": "Listen to the word. The tray has an extra tile that doesn't belong — leave it out!",
+      "model": "Listen. Spot. Pick s, p, o, t — and leave the extra tile behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right tile."
+    }
+  },
+  {
+    "lesson_id": "L2-M13-05",
+    "module_id": 13,
+    "number": 5,
+    "title": "Patterns Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of qu, s-blends and end-blends: recognising, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Patterns Challenge.",
+      "instruction": "Qu, blends, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! Level 2 is almost yours."
+    }
+  },
+  {
+    "lesson_id": "L2-M14-01",
+    "module_id": 14,
+    "number": 1,
+    "title": "Meet the Letters",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Learn the letters j, v, w, x, y and z and their sounds.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Six brand new letters — the last ones! j, v, w, x, y, z.",
+      "teach": "Listen to a word, then find the letter it has. Most of these start a word — x almost always ends one.",
+      "model": "Listen. Jam starts with the letter j.",
+      "transition": "Now you try! Listen to the word, then choose its letter.",
+      "close": "Great matching! You know every letter in the alphabet now."
+    }
+  },
+  {
+    "lesson_id": "L2-M14-02",
+    "module_id": 14,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build words using j, v, w, x, y, z and every letter learned so far.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's build words with your new letters!",
+      "teach": "Listen to the word, then tap each letter tile in order.",
+      "model": "Listen. Van. Tap v, then a, then n to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! Look how many more words you can make now."
+    }
+  },
+  {
+    "lesson_id": "L2-M14-03",
+    "module_id": 14,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read words using every letter learned so far and match them to pictures.",
+    "activity_type": "read_word",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read some more words!",
+      "teach": "Look at the written word, then find the matching picture.",
+      "model": "Read. Fox. Find the picture that matches!",
+      "transition": "Now you try! Read the word, then choose its picture.",
+      "close": "You read every word!"
+    }
+  },
+  {
+    "lesson_id": "L2-M14-04",
+    "module_id": 14,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated words using j, v, w, x, y, z and every letter learned so far.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some trickier words!",
+      "teach": "Listen to the word. The tray has an extra letter that doesn't belong — leave it out!",
+      "model": "Listen. Web. Pick w, e, b — and leave the extra letter behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! You picked every right letter."
+    }
+  },
+  {
+    "lesson_id": "L2-M14-05",
+    "module_id": 14,
+    "number": 5,
+    "title": "Cluster Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of every letter in the alphabet: letter sounds, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Cluster Challenge.",
+      "instruction": "Letters, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You know every letter of the alphabet."
+    }
+  },
+  {
+    "lesson_id": "L2-M15-01",
+    "module_id": 15,
+    "number": 1,
+    "title": "Meet the Tricky Words",
+    "skill": "decoding",
+    "objective": "Recognise a first set of common words that can't be fully sounded out.",
+    "activity_type": "sight_word_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Some words break the rules! You just have to know them by sight.",
+      "teach": "Listen to the word, then find it — look closely, some of these look almost the same.",
+      "model": "Listen. Said. You can't sound out every letter — you just have to know it!",
+      "transition": "Now you try! Listen to the word, then find it.",
+      "close": "Great work! You know these tricky words by sight now."
+    }
+  },
+  {
+    "lesson_id": "L2-M15-02",
+    "module_id": 15,
+    "number": 2,
+    "title": "Build the Words",
+    "skill": "word_building",
+    "objective": "Build tricky words letter by letter, memorising the spelling even where the sound is irregular.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's build these tricky words!",
+      "teach": "Listen to the word, then tap each tile in order — even the tricky part.",
+      "model": "Listen. The. Tap th, then e, to build it!",
+      "transition": "Now you try! Listen, then build the word.",
+      "close": "Great building! You know exactly how these words are spelled."
+    }
+  },
+  {
+    "lesson_id": "L2-M15-03",
+    "module_id": 15,
+    "number": 3,
+    "title": "Read Them Again",
+    "skill": "decoding",
+    "objective": "Read more tricky words by sight, building speed and confidence.",
+    "activity_type": "sight_word_match",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More tricky words — let's get fast at spotting these!",
+      "teach": "Listen to the word, then find it.",
+      "model": "Listen. Here. Look closely — where and here look alike!",
+      "transition": "Now you try! Listen to the word, then find it.",
+      "close": "You are getting fast at these tricky words!"
+    }
+  },
+  {
+    "lesson_id": "L2-M15-04",
+    "module_id": 15,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated tricky words, choosing the right tiles from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell some tricky words!",
+      "teach": "Listen to the word. The tray has an extra tile that doesn't belong — leave it out!",
+      "model": "Listen. Was. Pick w, a, s — and leave the extra tile behind!",
+      "transition": "Now you try! Listen, then spell the word.",
+      "close": "Great spelling! Tricky words and all."
+    }
+  },
+  {
+    "lesson_id": "L2-M15-05",
+    "module_id": 15,
+    "number": 5,
+    "title": "Tricky Words Challenge",
+    "skill": "decoding",
+    "objective": "Demonstrate independent mastery of tricky words: recognising, building, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Tricky Words Challenge.",
+      "instruction": "Finding, building, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You can spot tricky words anywhere."
+    }
+  },
+  {
+    "lesson_id": "L2-M16-01",
+    "module_id": 16,
+    "number": 1,
+    "title": "Meet Sentences",
+    "skill": "decoding",
+    "objective": "Recognise that a sentence starts with a capital letter and ends with a full stop.",
+    "activity_type": "fix_sentence",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Words join up to make sentences — and sentences follow two rules!",
+      "teach": "A sentence starts with a CAPITAL letter and ends with a full stop. Which one is written correctly?",
+      "model": "A capital letter at the start, a full stop at the end.",
+      "transition": "Now you try! Pick the sentence that's written correctly.",
+      "close": "Great work! You can spot a correctly written sentence."
+    }
+  },
+  {
+    "lesson_id": "L2-M16-02",
+    "module_id": 16,
+    "number": 2,
+    "title": "Build the Sentence",
+    "skill": "word_building",
+    "objective": "Build short sentences by tapping word tiles in order.",
+    "activity_type": "sentence_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's build whole sentences!",
+      "teach": "Listen to the sentence, then tap each word tile in order.",
+      "model": "Listen. \"I can run.\" Tap the words in order to build it!",
+      "transition": "Now you try! Listen, then build the sentence.",
+      "close": "Great building! You can put words together into sentences."
+    }
+  },
+  {
+    "lesson_id": "L2-M16-03",
+    "module_id": 16,
+    "number": 3,
+    "title": "Read the Sentence",
+    "skill": "decoding",
+    "objective": "Read short sentences and match them to pictures.",
+    "activity_type": "sentence_read",
+    "estimated_time": "4–5 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read whole sentences!",
+      "teach": "Read the sentence, then find the picture it's about.",
+      "model": "Read. \"The cat sat.\" Find the picture that matches!",
+      "transition": "Now you try! Read the sentence, then choose its picture.",
+      "close": "You read every sentence!"
+    }
+  },
+  {
+    "lesson_id": "L2-M16-04",
+    "module_id": 16,
+    "number": 4,
+    "title": "Spell the Sentence",
+    "skill": "spelling",
+    "objective": "Build dictated sentences, choosing the right words from a mixed tray.",
+    "activity_type": "sentence_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to spell whole sentences!",
+      "teach": "Listen to the sentence. The tray has an extra word that doesn't belong — leave it out!",
+      "model": "Listen. \"We had fun.\" Pick we, had, fun — and leave the extra word behind!",
+      "transition": "Now you try! Listen, then build the sentence.",
+      "close": "Great spelling! Whole sentences and all."
+    }
+  },
+  {
+    "lesson_id": "L2-M16-05",
+    "module_id": 16,
+    "number": 5,
+    "title": "Sentence Challenge",
+    "skill": "decoding",
+    "objective": "Demonstrate independent mastery of sentences: correct format, building, reading, and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "You are ready for the Sentence Challenge.",
+      "instruction": "Fixing, building, reading, spelling — any of it could show up. Take your time.",
+      "close": "Challenge complete! You can read and write whole sentences."
+    }
+  },
+  {
+    "lesson_id": "L2-M17-01",
+    "module_id": 17,
+    "number": 1,
+    "title": "Mixed Retrieval",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise blends, digraphs, endings, qu, and every letter from across Level 2.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to review everything from Level 2!",
+      "teach": "Listen to a word, then find what it starts or ends with.",
+      "model": "Listen. Flag starts with the blend fl.",
+      "transition": "Now you try! Listen to the word, then choose the right answer.",
+      "close": "Great review! You know your patterns."
+    }
+  },
+  {
+    "lesson_id": "L2-M17-02",
+    "module_id": 17,
+    "number": 2,
+    "title": "Read & Build",
+    "skill": "decoding",
+    "objective": "Read and build words using every pattern learned across Level 2.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's read and build words from every part of Level 2!",
+      "teach": "Read a word, or listen and build one — either way, use everything you know.",
+      "model": "Listen. Crab. Tap c, then r, then a, then b to build it!",
+      "transition": "Now you try!",
+      "close": "Great work! You can read and build all kinds of words now."
+    }
+  },
+  {
+    "lesson_id": "L2-M17-03",
+    "module_id": 17,
+    "number": 3,
+    "title": "Tricky Words & Sentences",
+    "skill": "decoding",
+    "objective": "Review tricky words and read whole sentences.",
+    "activity_type": "sight_word_match",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Let's review tricky words and sentences!",
+      "teach": "Listen to the tricky word and find it, or read a sentence and find its picture.",
+      "model": "Listen. Said. You can't sound out every letter — you just have to know it!",
+      "transition": "Now you try!",
+      "close": "You know your tricky words and sentences!"
+    }
+  },
+  {
+    "lesson_id": "L2-M17-04",
+    "module_id": 17,
+    "number": 4,
+    "title": "Dictation",
+    "skill": "spelling",
+    "objective": "Spell dictated words and sentences from across Level 2, choosing the right tiles from a mixed tray.",
+    "activity_type": "word_build",
+    "estimated_time": "5–6 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time for dictation — words and sentences!",
+      "teach": "Listen carefully. The tray has an extra tile that doesn't belong — leave it out!",
+      "model": "Listen. Crab. Pick c, r, a, b — and leave the extra tile behind!",
+      "transition": "Now you try!",
+      "close": "Great spelling! Words and sentences, all correct."
+    }
+  },
+  {
+    "lesson_id": "L2-M17-05",
+    "module_id": 17,
+    "number": 5,
+    "title": "Level 2 Challenge",
+    "skill": "decoding",
+    "objective": "Demonstrate independent mastery of everything taught in Level 2.",
+    "activity_type": "assessment",
+    "estimated_time": "10–12 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "This is it — the Level 2 Challenge!",
+      "instruction": "Blends, digraphs, endings, qu, tricky words, sentences — any of it could show up. Take your time and do your best.",
+      "close": "You are officially a Word Builder! Level 2 complete."
+    }
+  },
+  {
+    "lesson_id": "L3-M18-01",
+    "module_id": 18,
+    "number": 1,
+    "title": "What Is a Vowel Sound?",
+    "skill": "vowel_discrimination",
+    "objective": "Understand that a vowel sound can be short (a quick sound) or long (says its own name), starting with A and E.",
+    "activity_type": "vowel_length",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome, Pattern Detective! Get your listening ears ready for a brand new skill.",
+      "teach": "Every word has a vowel sound in it. Sometimes it's short and quick, like the a in cap. Sometimes it's long — it says its own name, like the a in cake!",
+      "model": "Listen carefully. Is the vowel short, or long?",
+      "transition": "Now you try! Listen first, then decide: short or long?",
+      "close": "Great listening! You can hear the difference between short and long vowels."
+    }
+  },
+  {
+    "lesson_id": "L3-M18-02",
+    "module_id": 18,
+    "number": 2,
+    "title": "Short or Long: I and O",
+    "skill": "vowel_discrimination",
+    "objective": "Distinguish short and long vowel sounds for I and O.",
+    "activity_type": "vowel_length",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome back, Detective! Today's letters: i and o.",
+      "teach": "Short i is quick, like in pig. Long i says its own name, like in kite! Short o is quick, like in hot. Long o says its own name, like in boat!",
+      "model": "Listen. Is the vowel short, or long?",
+      "transition": "Your turn! Listen carefully before you choose.",
+      "close": "Wonderful! You're getting sharper at hearing short and long vowels."
+    }
+  },
+  {
+    "lesson_id": "L3-M18-03",
+    "module_id": 18,
+    "number": 3,
+    "title": "Short or Long: U (and Mixed Review)",
+    "skill": "vowel_discrimination",
+    "objective": "Distinguish short and long U, and review all five vowels mixed together.",
+    "activity_type": "vowel_length",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "One more vowel to meet: u!",
+      "teach": "Short u is quick, like in cup. Long u says its own name, like in cube! Now let's mix in every vowel you've learned so far.",
+      "model": "Listen. Short, or long?",
+      "transition": "Time to practice — some easy, some mixed in from before!",
+      "close": "Excellent! You can hear short and long vowels across the whole alphabet now."
+    }
+  },
+  {
+    "lesson_id": "L3-M18-04",
+    "module_id": 18,
+    "number": 4,
+    "title": "Mixed Vowel Round-Up",
+    "skill": "vowel_discrimination",
+    "objective": "Discriminate short vs long vowels across all five vowels in mixed, unpredictable order.",
+    "activity_type": "vowel_length",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Round-up time! Every vowel, all mixed up.",
+      "teach": "You know all five vowels now. Some of these pairs sound almost the same except for one thing — short or long. Listen closely!",
+      "model": "Listen. Short, or long?",
+      "transition": "Ready? These are mixed up on purpose — stay sharp!",
+      "close": "Amazing detective work! You're ready for the challenge."
+    }
+  },
+  {
+    "lesson_id": "L3-M18-05",
+    "module_id": 18,
+    "number": 5,
+    "title": "Short vs Long Challenge",
+    "skill": "vowel_discrimination",
+    "objective": "Demonstrate independent mastery of short vs long vowel discrimination across all five vowels.",
+    "activity_type": "assessment",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Pattern Detective! Show what you've learned.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "You did it! You can hear short and long vowels like a true Pattern Detective."
+    }
+  }
 ]

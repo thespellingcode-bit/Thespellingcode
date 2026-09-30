@@ -33,6 +33,7 @@ function skillStatuses(lessons, state) {
 const SKILL_LABELS = {
   auditory_discrimination: "Listening", auditory_memory: "Sound memory", rhyming: "Rhyming",
   grapheme_phoneme_correspondence: "Letter sounds", word_building: "Building words", decoding: "Reading words", spelling: "Spelling",
+  vowel_discrimination: "Short vs long vowels",
 };
 
 function LessonScoreRow({ lesson, progress, first }) {

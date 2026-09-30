@@ -92,6 +92,10 @@ function modelCaptionFor(item) {
     }
     case "segment_count":
       return `Listen — that word has ${answer} sounds!`;
+    case "vowel_length": {
+      const word = item.audio_asset?.replace(/^say:/, "");
+      return word ? `${capitalize(word)} has a ${answer.toLowerCase()} vowel sound!` : `Listen — that's a ${answer.toLowerCase()} vowel sound!`;
+    }
     case "letter_sound_match": {
       const kind = graphemeKindFor(answer); // "letter" | "blend" | "digraph" | "ending" | "qu"
       if (item.letter_prompt) return `${item.letter_prompt} makes the sound at the start of ${answer}!`;
@@ -229,6 +233,10 @@ function modelHeadingFor(lesson, item) {
   }
   if (item.type === "fix_sentence") {
     return `A sentence starts with a capital letter and ends with a full stop. Which one is written correctly?`;
+  }
+  if (item.type === "vowel_length") {
+    const word = item.audio_asset?.replace(/^say:/, "");
+    return word ? `Listen. Is the vowel sound in "${word}" short or long?` : lesson.narration.model;
   }
   return lesson.narration.model;
 }

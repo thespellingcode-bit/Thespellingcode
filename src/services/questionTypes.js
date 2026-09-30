@@ -7,7 +7,7 @@
 // "which sound is this" or "which word rhymes" questions. Shared
 // between LessonPlayer (example-stage picture) and MultipleChoice
 // (option pictures/sound) so the rule lives in exactly one place.
-export const COMPARE_TYPES = ["same_different", "loud_soft", "fast_slow", "segment_count"];
+export const COMPARE_TYPES = ["same_different", "loud_soft", "fast_slow", "segment_count", "vowel_length"];
 
 // Question types where tapping an option should PREVIEW it (play its
 // sound, mark it picked) rather than immediately committing an answer —

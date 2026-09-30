@@ -12,5 +12,12 @@
     "description": "Consonant blends, digraphs, common endings, first tricky words, and short dictated sentences.",
     "approx_age": "5–6",
     "total_units": 43
+  },
+  {
+    "level_id": 3,
+    "level_name": "Pattern Detective",
+    "description": "Long vowels: silent e, vowel teams (ai/ay, ee/ea, oa/ow, oi/oy, ou/ow) and r-controlled vowels.",
+    "approx_age": "6–7",
+    "total_units": 51
   }
 ]

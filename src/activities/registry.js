@@ -27,6 +27,7 @@ export const ACTIVITY_REGISTRY = {
   loud_soft: Sort,
   fast_slow: Sort,
   segment_count: Sort,
+  vowel_length: Sort,
   sound_memory: SoundMemory,
   rhyme_match: RhymeMatch,
   rhyme_select: RhymeSelect,

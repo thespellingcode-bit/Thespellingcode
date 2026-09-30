@@ -28,7 +28,7 @@
 |---|---|---|---|---|
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
-| 3 | Pattern Detective | 6–7 | 10 | Not started |
+| 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **In progress** — Module 18 (Short vs Long Vowels) built |
 | 4 | Spelling Detective | 7–9 | 13 | Not started |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
@@ -41,7 +41,8 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 “Sound Explorer”, Modules 1–7 | **Built and deployed** (the agreed launch set) |
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
-| Level 3 and beyond, payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
+| Level 3 “Pattern Detective”, Module 18 (Short vs Long Vowels) | **Built** — see the Level 3 curriculum design note below. Owner decided (2026-09-30) to keep building level after level without pausing; Modules 19–27 (Silent E onward) are planned in `docs/plans/level-3.md` but not yet built. |
+| Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
 
@@ -70,6 +71,12 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
   - `fix_sentence`: two plain-text options, one correctly capitalised/punctuated, one not — simpler than building an interactive text editor, while still testing the same recognition.
   - **Two bugs found live, not by the test suite, while verifying this module:** (1) `labelToIcon`'s substring matching, fine for isolated CVC words, false-positives on real running text — "then" contains "hen", so a sight/sentence option could silently show an unrelated picture; `sight_word_match` and `fix_sentence` options now never get a picture, matched or not. (2) `spellOutWord` strips punctuation and spaces then sounds out whatever's left as ONE word, so wiring a sentence into the existing `written_word` field would try to sound out "The cat sat." as "thecatsat" — hence the separate `written_sentence` field, rendered as plain non-interactive text instead.
   - Two of the app's own generic content-integrity tests didn't know about sentence-shaped content and needed updates: the "correct_answer is among options" test now recognises `sentence_build` as tile-based (like `word_build`) rather than expecting an `options` array it doesn't have, and the decodability test now splits a `correct_answer`/`written_sentence` on whitespace and checks each word separately, since a bare space or period was never a "taught letter" and was never meant to be one.
+
+### Level 3 curriculum design (Module 18 built; Modules 19–27 planned, not yet built)
+- **Full plan:** `docs/plans/level-3.md` — big goal, module-by-module table, and the two owner-confirmed decisions (2026-09-30): vowel-team spellings (ai/ay, ee/ea, etc.) are taught **receptively only** — a child never picks between two valid spellings of the same word until Level 4 — and building continues level after level without pausing for review.
+- **Module 18, Short vs Long Vowels:** purely auditory, no spelling shown — the child hears a real word (via the browser's speech voice, same `say:word`-prefixed `audio_asset` mechanism Module 2's rhyming already used) and judges whether its vowel sound is short or long. A new activity type, `vowel_length`, reuses `Sort.jsx` (itself a thin wrapper over `MultipleChoice`) with plain `["Short", "Long"]` text options — no new component needed. Added to `COMPARE_TYPES` in `questionTypes.js` so it gets the same "no option picture" treatment as `same_different`/`loud_soft`. Word pairs were deliberately chosen as CVC/CVCe near-minimal pairs (cap/cake, hop/hope) to set up Module 19 (Silent E) without teaching spelling yet.
+- **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
+- **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -136,6 +143,9 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Owner decided the monetisation boundary: all of Level 1 free, Level 2 onward paid. Removed the old score-gated 85% shortcut at Module 1 → 2 as redundant. No paywall is built yet — see “Monetisation” above.
 - Owner changed plans: build out Level 2 fully before going live/monetising, rather than launching with only 2 levels. Built Level 2 Module 15 (Tricky Words, new sight_word_match type) and Module 16 (Sentence Spelling, three new activity types plus a WordTile component) — see the Level 2 curriculum design note above.
 - Built Level 2 Module 17 (Review & Assessment) — cumulative mixed practice across every Level 2 skill, plus a 10-item Level 2 Challenge; earns a new "Level 2 Word Builder" badge. **Level 2 is now fully built and deployed**, alongside Level 1 — the entire planned launch curriculum (8 free Level 1 modules, 9 paid Level 2 modules) exists. Next real decisions are the ones in "Monetisation" above (payment gateway, sign-up, payment screens) and whether to keep building Level 3+ or pause to launch.
+- Owner researched Indian-market pricing/payment gateways (Razorpay recommended over Instamojo, whose aggregator license was rejected) and, after reconsidering an annual-subscription price as over-generous with only 2 levels live, decided to build out every remaining level before going live at all rather than launch early. Drafted `docs/plans/level-3.md` (Pattern Detective) and got the owner's sign-off on its one open design question (vowel-team spellings taught receptively only) plus pacing (keep building without pausing).
+- Redesigned `ChildHome.jsx` with a level-pill switcher so the module list only shows one level at a time, per the owner's explicit "don't let the first screen clutter" requirement — and removed the now-fully-superseded score-gated free-unlock mechanic (`ResultScreen.jsx`'s old celebration branch, `moduleScore`/threshold logic) rather than leaving dead code behind.
+- Built Level 3 Module 18 (Short vs Long Vowels) — a new `vowel_length` activity type (audio-only, no spelling shown) that reuses the existing `Sort`/`MultipleChoice`/`say:`-prefixed-TTS machinery with no new components. **Level 3 is now in progress**; see the Level 3 curriculum design note above for what's built and `docs/plans/level-3.md` for what's next (Module 19, Silent E).
 
 ---
 
@@ -334,6 +344,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 
 - **Level 1** — Sound Explorer — Listening → phonemic awareness → letter sounds → CVC reading → CVC spelling.
 - **Level 2** — Word Builder — Consonant blends, digraphs, common endings, first tricky words, and short dictated sentences.
+- **Level 3** — Pattern Detective — Long vowels: silent e, vowel teams (ai/ay, ee/ea, oa/ow, oi/oy, ou/ow) and r-controlled vowels.
 
 | Module | Name | Status | Lessons | Practice items | Assessment items |
 |---|---|---|---|---|---|
@@ -354,6 +365,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 | 15 | Tricky Words | **Live** | 5 | 16 | 24 |
 | 16 | Sentence Spelling | **Live** | 5 | 16 | 22 |
 | 17 | Review & Assessment | **Live** | 5 | 20 | 26 |
+| 18 | Short vs Long Vowels | **Live** | 5 | 28 | 30 |
 
 ## Curriculum in full
 
@@ -2765,6 +2777,163 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M17-05-8 | options cat, pig, dog \| answer **cat** |  |
 | AS-M17-05-9 | hear “flag” → spell (1 extra tile) \| tray f l a g sh \| answer **flag** |  |
 | AS-M17-05-10 | sound: We had fun \| answer **We had fun.** |  |
+
+### Module 18 — Short vs Long Vowels
+
+*Goal:* Hear whether a word's vowel sound is short (a quick sound) or long (says its own name) — the listening skill every later Level 3 spelling pattern builds on.
+
+#### Lesson 1: What Is a Vowel Sound? (`L3-M18-01`)
+
+- **Objective:** Understand that a vowel sound can be short (a quick sound) or long (says its own name), starting with A and E.
+- **Skill:** vowel_discrimination · **Activity:** vowel_length · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome, Pattern Detective! Get your listening ears ready for a brand new skill.
+- **Narration (teach):** Every word has a vowel sound in it. Sometimes it's short and quick, like the a in cap. Sometimes it's long — it says its own name, like the a in cake!
+- **Narration (model):** Listen carefully. Is the vowel short, or long?
+- **Narration (transition):** Now you try! Listen first, then decide: short or long?
+- **Narration (close):** Great listening! You can hear the difference between short and long vowels.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M18-01 | sound: cap \| options Short, Long \| answer **Short** |
+| Q-M18-02 | sound: cake \| options Short, Long \| answer **Long** |
+| Q-M18-03 | sound: hat \| options Short, Long \| answer **Short** |
+| Q-M18-04 | sound: gate \| options Short, Long \| answer **Long** |
+| Q-M18-05 | sound: pet \| options Short, Long \| answer **Short** |
+| Q-M18-06 | sound: tree \| options Short, Long \| answer **Long** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M18-01-1 | sound: tap \| options Short, Long \| answer **Short** |  |
+| AS-M18-01-2 | sound: day \| options Short, Long \| answer **Long** |  |
+| AS-M18-01-3 | sound: ten \| options Short, Long \| answer **Short** |  |
+| AS-M18-01-4 | sound: bee \| options Short, Long \| answer **Long** |  |
+
+#### Lesson 2: Short or Long: I and O (`L3-M18-02`)
+
+- **Objective:** Distinguish short and long vowel sounds for I and O.
+- **Skill:** vowel_discrimination · **Activity:** vowel_length · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome back, Detective! Today's letters: i and o.
+- **Narration (teach):** Short i is quick, like in pig. Long i says its own name, like in kite! Short o is quick, like in hot. Long o says its own name, like in boat!
+- **Narration (model):** Listen. Is the vowel short, or long?
+- **Narration (transition):** Your turn! Listen carefully before you choose.
+- **Narration (close):** Wonderful! You're getting sharper at hearing short and long vowels.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M18-07 | sound: pig \| options Short, Long \| answer **Short** |
+| Q-M18-08 | sound: kite \| options Short, Long \| answer **Long** |
+| Q-M18-09 | sound: sit \| options Short, Long \| answer **Short** |
+| Q-M18-10 | sound: pie \| options Short, Long \| answer **Long** |
+| Q-M18-11 | sound: hot \| options Short, Long \| answer **Short** |
+| Q-M18-12 | sound: boat \| options Short, Long \| answer **Long** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M18-02-1 | sound: fish \| options Short, Long \| answer **Short** |  |
+| AS-M18-02-2 | sound: five \| options Short, Long \| answer **Long** |  |
+| AS-M18-02-3 | sound: dog \| options Short, Long \| answer **Short** |  |
+| AS-M18-02-4 | sound: snow \| options Short, Long \| answer **Long** |  |
+
+#### Lesson 3: Short or Long: U (and Mixed Review) (`L3-M18-03`)
+
+- **Objective:** Distinguish short and long U, and review all five vowels mixed together.
+- **Skill:** vowel_discrimination · **Activity:** vowel_length · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** One more vowel to meet: u!
+- **Narration (teach):** Short u is quick, like in cup. Long u says its own name, like in cube! Now let's mix in every vowel you've learned so far.
+- **Narration (model):** Listen. Short, or long?
+- **Narration (transition):** Time to practice — some easy, some mixed in from before!
+- **Narration (close):** Excellent! You can hear short and long vowels across the whole alphabet now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M18-13 | sound: cup \| options Short, Long \| answer **Short** |
+| Q-M18-14 | sound: cube \| options Short, Long \| answer **Long** |
+| Q-M18-15 | sound: sun \| options Short, Long \| answer **Short** |
+| Q-M18-16 | sound: blue \| options Short, Long \| answer **Long** |
+| Q-M18-17 | sound: mad \| options Short, Long \| answer **Short** |
+| Q-M18-18 | sound: rain \| options Short, Long \| answer **Long** |
+| Q-M18-19 | sound: bug \| options Short, Long \| answer **Short** |
+| Q-M18-20 | sound: tune \| options Short, Long \| answer **Long** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M18-03-1 | sound: cut \| options Short, Long \| answer **Short** |  |
+| AS-M18-03-2 | sound: mule \| options Short, Long \| answer **Long** |  |
+| AS-M18-03-3 | sound: box \| options Short, Long \| answer **Short** |  |
+| AS-M18-03-4 | sound: road \| options Short, Long \| answer **Long** |  |
+| AS-M18-03-5 | sound: bed \| options Short, Long \| answer **Short** |  |
+| AS-M18-03-6 | sound: feet \| options Short, Long \| answer **Long** |  |
+
+#### Lesson 4: Mixed Vowel Round-Up (`L3-M18-04`)
+
+- **Objective:** Discriminate short vs long vowels across all five vowels in mixed, unpredictable order.
+- **Skill:** vowel_discrimination · **Activity:** vowel_length · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Round-up time! Every vowel, all mixed up.
+- **Narration (teach):** You know all five vowels now. Some of these pairs sound almost the same except for one thing — short or long. Listen closely!
+- **Narration (model):** Listen. Short, or long?
+- **Narration (transition):** Ready? These are mixed up on purpose — stay sharp!
+- **Narration (close):** Amazing detective work! You're ready for the challenge.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M18-21 | sound: tan \| options Short, Long \| answer **Short** |
+| Q-M18-22 | sound: plate \| options Short, Long \| answer **Long** |
+| Q-M18-23 | sound: hop \| options Short, Long \| answer **Short** |
+| Q-M18-24 | sound: hope \| options Short, Long \| answer **Long** |
+| Q-M18-25 | sound: rub \| options Short, Long \| answer **Short** |
+| Q-M18-26 | sound: rude \| options Short, Long \| answer **Long** |
+| Q-M18-27 | sound: fit \| options Short, Long \| answer **Short** |
+| Q-M18-28 | sound: light \| options Short, Long \| answer **Long** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M18-04-1 | sound: pan \| options Short, Long \| answer **Short** |  |
+| AS-M18-04-2 | sound: cane \| options Short, Long \| answer **Long** |  |
+| AS-M18-04-3 | sound: mop \| options Short, Long \| answer **Short** |  |
+| AS-M18-04-4 | sound: mole \| options Short, Long \| answer **Long** |  |
+| AS-M18-04-5 | sound: cub \| options Short, Long \| answer **Short** |  |
+| AS-M18-04-6 | sound: cute \| options Short, Long \| answer **Long** |  |
+
+#### Lesson 5: Short vs Long Challenge (`L3-M18-05`)
+
+- **Objective:** Demonstrate independent mastery of short vs long vowel discrimination across all five vowels.
+- **Skill:** vowel_discrimination · **Activity:** assessment · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Pattern Detective! Show what you've learned.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** You did it! You can hear short and long vowels like a true Pattern Detective.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M18-05-1 | sound: cat \| options Short, Long \| answer **Short** |  |
+| AS-M18-05-2 | sound: cape \| options Short, Long \| answer **Long** |  |
+| AS-M18-05-3 | sound: web \| options Short, Long \| answer **Short** |  |
+| AS-M18-05-4 | sound: leaf \| options Short, Long \| answer **Long** |  |
+| AS-M18-05-5 | sound: lip \| options Short, Long \| answer **Short** |  |
+| AS-M18-05-6 | sound: bike \| options Short, Long \| answer **Long** |  |
+| AS-M18-05-7 | sound: rock \| options Short, Long \| answer **Short** |  |
+| AS-M18-05-8 | sound: coat \| options Short, Long \| answer **Long** |  |
+| AS-M18-05-9 | sound: mud \| options Short, Long \| answer **Short** |  |
+| AS-M18-05-10 | sound: huge \| options Short, Long \| answer **Long** |  |
 
 ## Content library
 
