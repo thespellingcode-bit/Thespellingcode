@@ -42,6 +42,17 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
   const [expandedModuleId, setExpandedModuleId] = useState(moduleId || defaultModuleId);
   const module = activeModules.find((m) => m.module_id === expandedModuleId) || activeModules[0];
 
+  // The home screen shows ONE level's modules at a time behind a compact
+  // level switcher, not every module from every level in one long list —
+  // with 2 levels (17 modules) that list was already a long scroll, and
+  // it only grows as more levels ship. Defaults to whichever level the
+  // child's current unlock frontier is in, so returning users land where
+  // they left off rather than always on Level 1.
+  const levelIds = [...new Set(activeModules.map((m) => m.level_id))];
+  const defaultLevelId = activeModules.find((m) => m.module_id === defaultModuleId)?.level_id ?? levelIds[0];
+  const [selectedLevel, setSelectedLevel] = useState(defaultLevelId);
+  const levelModules = activeModules.filter((m) => m.level_id === selectedLevel);
+
   const lessons = getLessonsByModule(module.module_id);
   const masteredCount = lessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
   const moduleComplete = masteredCount === lessons.length;
@@ -49,6 +60,21 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
 
   const totalMastered = activeModules.reduce((sum, m) => sum + getLessonsByModule(m.module_id).filter((l) => state.progress[l.lesson_id]?.mastery).length, 0);
   const totalLessons = activeModules.reduce((sum, m) => sum + getLessonsByModule(m.module_id).length, 0);
+
+  // A level is unlocked exactly when its first module is (moduleUnlocked
+  // already implements "previous module fully mastered" at every
+  // boundary, including the Level 1 → 2 one — no separate level-gating
+  // rule needed).
+  const levelSummaries = levelIds.map((id) => {
+    const mods = activeModules.filter((m) => m.level_id === id);
+    const firstIdx = activeModules.findIndex((m) => m.level_id === id);
+    const lessonsIn = mods.flatMap((m) => getLessonsByModule(m.module_id));
+    const mastered = lessonsIn.filter((l) => state.progress[l.lesson_id]?.mastery).length;
+    return {
+      id, info: getLevel(id), unlocked: moduleUnlocked(firstIdx),
+      mastered, total: lessonsIn.length, complete: lessonsIn.length > 0 && mastered === lessonsIn.length,
+    };
+  });
 
   const activeBadges = getActiveBadges();
   const lockedBadges = getBadges().filter((b) => !b.active).slice(0, 3);
@@ -62,7 +88,7 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
         <div>
           <h1 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 25, color: T.ink, margin: 0 }}>Hi {profile.name}!</h1>
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 14, color: T.textMute, margin: "4px 0 0" }}>
-            {[...new Set(activeModules.map((m) => m.level_id))].map((id) => `Level ${id} · ${getLevel(id)?.level_name || ""}`).join(" + ")}
+            {levelIds.length} {levelIds.length === 1 ? "level" : "levels"} available
           </p>
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 13, color: T.goldDeep, fontWeight: 600, margin: "4px 0 0" }}>
             {totalMastered} of {totalLessons} lessons mastered
@@ -74,22 +100,52 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
         {masteredCount === 0 ? "Start your first mission!" : moduleComplete ? "Replay a mission" : "Continue your mission"}
       </Btn>
 
+      {/* Level switcher — a short row even with many levels, since it's
+          levels (at most a handful, ever) not modules (dozens). Picking a
+          level swaps which level's own module accordion shows below;
+          nothing about a level's modules renders until it's selected. */}
+      {levelIds.length > 1 && (
+        <div style={{ display: "flex", gap: 8, overflowX: "auto", marginBottom: 18, paddingBottom: 2 }}>
+          {levelSummaries.map((lv) => {
+            const isSelected = lv.id === selectedLevel;
+            return (
+              <button
+                key={lv.id}
+                disabled={!lv.unlocked}
+                onClick={() => lv.unlocked && setSelectedLevel(lv.id)}
+                style={{
+                  flex: "0 0 auto", display: "flex", alignItems: "center", gap: 8,
+                  padding: "10px 16px", borderRadius: 999, cursor: lv.unlocked ? "pointer" : "not-allowed",
+                  border: `1.5px solid ${isSelected ? T.gold : T.line}`,
+                  background: isSelected ? "#FFFBEF" : "#fff",
+                  opacity: lv.unlocked ? 1 : 0.55,
+                }}
+              >
+                {!lv.unlocked && <Icon name="lock" size={13} color={T.textMute} />}
+                <span style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 13.5, color: isSelected ? T.ink : T.textMute, whiteSpace: "nowrap" }}>
+                  Level {lv.id}{lv.info?.level_name ? ` · ${lv.info.level_name}` : ""}
+                </span>
+                {lv.unlocked && (
+                  <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, color: lv.complete ? "#2C7A3C" : T.textMute, fontWeight: 600 }}>
+                    {lv.complete ? "✓" : `${lv.mastered}/${lv.total}`}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
       <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 34 }}>
-        {activeModules.map((m, idx) => {
+        {levelModules.map((m) => {
+          const idx = activeModules.indexOf(m);
           const unlocked = moduleUnlocked(idx);
-          const isFirstOfItsLevel = idx === 0 || activeModules[idx - 1].level_id !== m.level_id;
-          const levelInfo = getLevel(m.level_id);
           const expanded = unlocked && m.module_id === expandedModuleId;
           const moduleLessons = getLessonsByModule(m.module_id);
           const moduleMasteredCount = moduleLessons.filter((l) => state.progress[l.lesson_id]?.mastery).length;
 
           return (
             <React.Fragment key={m.module_id}>
-              {isFirstOfItsLevel && (
-                <h2 style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: 18, color: T.ink, margin: idx === 0 ? "0 0 4px" : "20px 0 4px" }}>
-                  Level {m.level_id} · {levelInfo?.level_name || ""}
-                </h2>
-              )}
               <div
                 style={{
                   border: `1.5px solid ${expanded ? T.gold : T.line}`, borderRadius: 18, overflow: "hidden",
