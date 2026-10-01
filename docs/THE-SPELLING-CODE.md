@@ -32,7 +32,7 @@
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
-| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–49 built (through More Prefixes & Suffixes) |
+| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–50 built (through Word Families) |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
@@ -47,7 +47,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
-| Level 5 “Word Builder Pro”, Modules 41–49 (through More Prefixes & Suffixes) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Modules 47–49 are genuinely-new blueprint-Level-5 morphology content. |
+| Level 5 “Word Builder Pro”, Modules 41–50 (through Word Families) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Modules 47–50 are genuinely-new blueprint-Level-5 morphology content. Only Module 51 (Review & Assessment) remains. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -111,7 +111,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 39, Prefixes & Suffixes — back to build-focused, closer to Level 2's sentence-building shape than a phonics-choice module, per the plan.** un-/re- at the start mean "not"/"again"; -ful/-less at the end mean "full of"/"without" (genuine antonym minimal pairs — careful/careless, hopeful/hopeless, harmful/harmless — the same "real word either way, audio is the only tell" shape Module 34 used for hop/hope); -ly just adds on. No new mechanic: `spelling_choice` reused for all three "Meet" recognition lessons (un-, re-, -ful/-less) with real un-/re- word pairs (unwrap/rewrap, undo/redo, untie/retie, unload/reload, unfold/refold) as the audio-driven choice, and `word_build` reused for Blend & Build/Spell the Words with the prefix or suffix tiled as its own single tile (e.g. quickly → `[qu, i, ck, ly]`, composing the new suffix tile with already-known qu/ck graphemes). Added a new remediation tag, `PREFIX_SUFFIX_CONFUSION` (REM-18) — distinct from `SPELLING_CHOICE_CONFUSION` since the confusion here is about a word PART's meaning, not a sound's spelling. No new word pictures — same reasoning as Module 34 (a still image can't distinguish "unwrap" from "rewrap" or "careful" from "careless"), so no Read the Words lesson. **Two real bugs caught before shipping, neither live-only this time:** every assessment item was first written with the `activity_id` field instead of the required `assessment_id` (functionally needed — `LessonPlayer` uses it as a React key and for `questionId`), caught by re-reading the generated content before testing; and Lessons 1–2's assessment banks first exactly reused their own practice lessons' audio+answer pairs (unwrap/undo/untie/unload/unfold, redo/reload/retie), caught live by `npm test`'s transfer-to-new-example check — fixed by swapping in three fresh un-/re- pairs (unseal/reseal, uncap/recap, unpack/repack) the practice lessons never used. Live-verified the Watch-stage spelling_choice narration, the Practice-stage two-option buttons, and the word_build tiling for both a simple word (unwrap) and the most composed one (quickly).
 - **Module 40, Review & Assessment — closes out Level 4, same closing shape as every earlier level (Modules 7/8, 17, 27).** Five lessons cumulatively sampling all 12 earlier modules' rules rather than teaching anything new: Mixed Retrieval (`spelling_choice` — c/k, ck/k, g/j, ge/dge, ch/tch, FLOSS doubling), Read & Build (`word_build`, no decoy, one word per several modules — duck, orange, watch, hopping, knee, boxes), Plurals & Word Parts Review (`spelling_choice` — plurals plus un-/re-/-ful/-less), Dictation (`word_build` with a decoy tile, mixing choice-type rules across modules), and the Level 4 Challenge (`assessment`, 14 items freely mixing `spelling_choice`, `word_build`, `letter_sound_match` and `read_word` — the broadest single-lesson type mix of any module this level). Added `BADGE-10` ("Level 4 Spelling Detective", tied to `module_id: 40`, same pattern as every earlier level's closing badge) — purely data-driven, no code changes needed since badge-earning already derives from `isModuleComplete(state, badge.module_id)`. GRAPHEMES_BY_MODULE[40] stays `[]`, same reasoning as Level 2/3's own closing review modules — pure review teaches no new grapheme. All 22 tests passed on the first run (the assessment_id field-name bug from Module 39 was written correctly here from the start). Live-verified the Mixed Retrieval lesson's all 5 Watch-stage examples (cat, sock, jam, bridge, catch) sampling every Level 4 letter/ending-choice rule in one lesson.
 
-### Level 5 curriculum design (Modules 41–49 built; Modules 50–51 planned, not yet built)
+### Level 5 curriculum design (Modules 41–50 built; Module 51 planned, not yet built)
 - **Scope note:** see the roadmap section above for why Level 5's module list doesn't match the blueprint's Level 5 list — it absorbs the blueprint's missing Level-4 long-vowel/soft-C content and skips the blueprint-Level-5 modules already covered by app-Modules 34/37/39. Full reasoning in `docs/plans/level-5.md`.
 - **Module 41, The Many Spellings of /s/ — same shape as Level 4's spelling-choice modules, no new mechanic.** /s/ can be spelled s (sun), ss (miss, already familiar from FLOSS doubling), soft c before e/i/y (city, pencil) or -ce at a word's end (ice, dance). "ce" is treated as a single fused ending tile, the same symmetry call Module 31 made for "ge" alongside "dge"; mid-word soft c needs no new tile at all since "c" is already a known single letter — only its *sound* is new, not its spelling. **A real picture collision was caught and fixed before shipping, not live this time:** "pencil" was the natural third Read-the-Words picture for mid-word soft c, but `"pencil".includes("pen")` would have matched the existing Level 1 "pen" sound-icon key first, silently showing the wrong picture — caught by checking `Icon.jsx`'s `WORD_KEYS` array before wiring in the new SVG (the same check the file's own word-library.md recommends but easy to skip). Dropped "pencil" as a picture word entirely (word_build/spelling_choice content keeps using it fine, since those lesson types never render an icon) and substituted "sun"/"bus" — both already-illustrated, zero collision risk — for the plain-s picture examples instead. Added 2 new word pictures (ice, city). Live-verified the Read the Words lesson renders sun/ice/city correctly.
 - **Module 42, Long-A Choices — the first Level 5 module with a genuine, reliable positional rule, same confidence level as Level 4's c/k.** ai sits in the middle of a word (rain, train), ay sits at the end (day, play) — both were already taught receptively in Level 3 Module 20, so this module's real job is turning that recognition into a graded choice, reusing the exact same word list (rain, train, mail, sail, paint, day, play, stay, tray, gain) rather than inventing a new one. No new grapheme tile (ai/ay already existed), no new word pictures — Read the Words reuses Level 3's existing train/rain/mail/sail pictures outright, since ay-ending words (day, play, stay, tray) don't have a clean concrete-noun picture pool; that gap is stated plainly in the content rather than forcing in a weak picture. `word_build`'s decoy-tile mechanic again needed zero code changes — a tray for "rain" offers "ay" as the decoy, a tray for "day" offers "ai", exactly mirroring Level 4's ge/dge and ch/tch "explains both directions" pattern. Live-verified both directions of the Spell the Words decoy live (rain/ay-decoy, day/ai-decoy).
@@ -122,6 +122,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 47, The Three Sounds of -ed — the first genuinely-new Level 5 content (not a Level-4 gap-fill), and a different KIND of skill than any `spelling_choice` module: auditory discrimination, since the spelling is always "-ed" regardless of which sound it makes.** /t/ after an unvoiced consonant (walked), /d/ after a voiced sound (played), /id/ after t/d (wanted) — same "hear the sound" shape as Level 1's phonemic-awareness modules, not a spelling task at all. Reused `letter_sound_match` with a new `edSound: true` content field (`correct_answer` is "t"/"d"/"id", not a grapheme), following the exact precedent Module 35's `silent` and Module 36's `yVowel` fields established — added the matching narration branches in both `modelCaptionFor` and `modelHeadingFor` proactively, before any content was written, rather than discovering the generic-fallback bug live as Module 35 originally did. No new remediation tag reused — added `ED_SOUND_CONFUSION` (REM-19) since this is neither a spelling choice nor a letter-sound-correspondence confusion in the usual sense. No decoy-tile "Spell the Words" lesson — since the spelling never changes, a second `word_build` lesson (Lesson 4) just gives more building reps on fresh words instead of a genuine decoy choice; no Read the Words either, same "can't picture a verb tense" reasoning as Modules 34/39. Live-verified all three Watch-stage narration branches (walked→/t/, wanted→/id/, called→/d/) and the three-button Practice-stage layout (t/d/id).
 - **Module 48, Change Y Before a Suffix — back to a genuine spelling rule (like Module 34's doubling/drop-e), with one clean exception.** A word ending in consonant+y swaps y for i before most suffixes (happy→happier, cry→cried) but keeps the y before -ing specifically (crying, never criing) — taught as two separate "Meet the Rule" lessons (Change Y, then the -ing exception) before merging them in a "More Practice" lesson, mirroring Module 34's three-separate-then-combined structure. `word_build`'s decoy mechanic reused exactly as Module 34 did for its stray-e decoy — a stray "y" tile for words that changed to i, a stray "i" tile for words that kept y. No new grapheme tiles (`-er`/`-est`/`-ly`/`-ness` all decompose to already-known single letters, same reasoning as Modules 34/47's suffix tiles). Live-verified both directions of the Spell the Words decoy (happiest/y-decoy, flying/i-decoy).
 - **Module 49, More Prefixes & Suffixes — extends Module 39 rather than repeating it: dis-, pre-, mis- at the start, -ness and -ment at the end, no overlap with Module 39's un-/re-/-ful/-less/-ly.** Same shape throughout: `spelling_choice` for recognition (two "Meet" lessons — prefixes, then suffixes — plus a combined "More Practice" round mirroring Module 48's structure), `word_build` with the prefix/suffix as its own tile for building. One word (`"preview"`) was deliberately kept recognition-only and never used in `word_build` — "view" contains an irregular vowel pattern (v-i-e-w) that doesn't decompose cleanly into this app's taught graphemes, so it's fine for a fixed audio+spelling pair but not for tile-level decomposition. Also avoided a real-word decoy collision: "distrust" and "mistrust" are both genuine, nearly-synonymous English words, so "mistrust" could never be used as a *wrong* decoy for "distrust" (unlike the nonsense decoys everywhere else) — used "pretrust" (nonsense) instead. Reused the existing `PREFIX_SUFFIX_CONFUSION` tag from Module 39, no new remediation entry needed. Live-verified both the prefix decoy (distrust/mis-decoy) and a second prefix pair (pretest/mis-decoy) in Spell the Words.
+- **Module 50, Word Families — a genuinely different skill from every earlier Level 5 module, and the first one with no spelling transformation at all.** act/action/active/actor, play/player/playful/playing and four more families (teach, help, read, build) are all *already correctly spelled* real words — the task is choosing which family member's grammatical JOB fits a sentence (noun vs verb vs adjective), not spelling anything. Reused `spelling_choice` again, but its existing caption ("Yes! It's spelled X") and heading ("Which spelling of X is correct?") would have been actively wrong here — nothing was misspelled, and there's no single target word, only a sentence. Added a `wordFamily: true` field with its own narration branches in both `modelCaptionFor` ("Yes! 'player' fits best here!") and `modelHeadingFor` (shows the item's own `prompt` — the fill-in-the-blank sentence — directly as the heading), written proactively before any content, same discipline as Module 47's `edSound`. `MultipleChoice.jsx` needed no changes at all — it already renders `question.prompt` as the on-screen text and auto-speaks it via TTS, so a sentence-with-blank prompt "just worked" once the narration branches existed. No `word_build` or `read_word` lessons anywhere in this module — every lesson is a `spelling_choice` round, an honest reflection that this skill has no building or picture-matching component. **One real bug caught by `npm test`, not live:** an assessment item first reused "builder" with the exact same sentence context as its own lesson's practice item (a copy-paste slip), fixed by swapping to "readers" (plural, genuinely untested elsewhere in that lesson). Live-verified the sentence renders as both the Watch-stage heading and the Practice-stage prompt, with both family-member options showing as separate buttons.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -223,6 +224,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 5 Module 47 (The Three Sounds of -ed) — first genuinely-new Level 5 content, auditory-only (spelling is always -ed, sound varies: /t/, /d/, /id/). Added a new edSound content field with narration branches written proactively (not caught live), following Module 35/36's established field-flag pattern. Added remediation tag ED_SOUND_CONFUSION (REM-19). No Spell/Read lessons — no spelling choice to decoy, and action-verb words don't picture cleanly.
 - Built Level 5 Module 48 (Change Y Before a Suffix) — y changes to i before most suffixes (happy->happier) but stays before -ing (crying, not criing). Same shape as Module 34's doubling/drop-e rule: two "Meet the Rule" lessons then a combined practice round. No new graphemes. 22/22 on the first run.
 - Built Level 5 Module 49 (More Prefixes & Suffixes) — dis-/pre-/mis-/-ness/-ment, extending Module 39 (no overlap with un-/re-/-ful/-less/-ly). Kept "preview" recognition-only (its "iew" pattern doesn't tile cleanly) and avoided a real-word decoy collision (distrust/mistrust are both genuine words, so "mistrust" could never be a wrong-decoy for "distrust"). Reused Module 39's PREFIX_SUFFIX_CONFUSION tag. 22/22 on the first run.
+- Built Level 5 Module 50 (Word Families) — act/action/active/actor and 5 more families, choosing the right grammatical form for a sentence (no spelling transformation at all, a first for this level). Added a new wordFamily narration field (proactively, not live) since spelling_choice's existing "It's spelled X" caption would have been wrong here. Caught a duplicate-content bug via npm test (an assessment item reused "builder" exactly, fixed by swapping to "readers"). Every lesson is spelling_choice — no word_build/read_word, an honest reflection of this module's actual skill.
 
 ---
 
@@ -631,6 +633,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 47 | The Three Sounds of -ed | **Live** | 5 | 20 | 17 |
 | 48 | Change Y Before a Suffix | **Live** | 6 | 25 | 19 |
 | 49 | More Prefixes & Suffixes | **Live** | 6 | 25 | 19 |
+| 50 | Word Families | **Live** | 5 | 20 | 17 |
 
 ## Curriculum in full
 
@@ -7678,6 +7681,142 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M49-06-6 | hear “misread” → build \| tray mis r ea d \| answer **misread** |  |
 | AS-M49-06-7 | hear “preheat” → build \| tray pre h ea t \| answer **preheat** |  |
 | AS-M49-06-8 | hear “shipment” → build \| tray sh i p ment \| answer **shipment** |  |
+
+### Module 50 — Word Families
+
+*Goal:* Choose which member of a word family (e.g. act/action/active/actor) fits a sentence, using the root's job in the sentence as the clue.
+
+#### Lesson 1: Meet Word Families: act & play (`L5-M50-01`)
+
+- **Objective:** Choose the correct member of the act/action/active/actor and play/player/playful/playing word families for a sentence.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A new kind of case, Detective! A root word can grow into a whole FAMILY of related words — act, action, active, actor all share the root 'act'.
+- **Narration (teach):** Each word in the family has its own job in a sentence. 'She wants to act in the play' needs act. 'The fire drill needs quick action' needs action. Read the sentence, then pick the word that fits.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn, Detective! Read the sentence and pick the word that fits.
+- **Narration (close):** Case closed! You can tell word family members apart.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M50-01 | sound: act \| options act, action \| answer **act** |
+| Q-M50-02 | sound: action \| options action, act \| answer **action** |
+| Q-M50-03 | sound: actor \| options actor, active \| answer **actor** |
+| Q-M50-04 | sound: play \| options play, player \| answer **play** |
+| Q-M50-05 | sound: player \| options player, play \| answer **player** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M50-01-1 | sound: active \| options active, action \| answer **active** |  |
+| AS-M50-01-2 | sound: playful \| options playful, player \| answer **playful** |  |
+| AS-M50-01-3 | sound: playing \| options playing, play \| answer **playing** |  |
+
+#### Lesson 2: Meet Word Families: teach & help (`L5-M50-02`)
+
+- **Objective:** Choose the correct member of the teach/teacher/teaching and help/helper/helpful/helping word families for a sentence.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two more word families, Detective — teach and help!
+- **Narration (teach):** teach, teacher, teaching all share the root 'teach'. Read each sentence carefully to find the clue for which one fits.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use the sentence as your clue.
+- **Narration (close):** Case closed! Two more word families mastered.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M50-06 | sound: teacher \| options teacher, teach \| answer **teacher** |
+| Q-M50-07 | sound: teach \| options teach, teacher \| answer **teach** |
+| Q-M50-08 | sound: teaching \| options teaching, teacher \| answer **teaching** |
+| Q-M50-09 | sound: help \| options help, helper \| answer **help** |
+| Q-M50-10 | sound: helper \| options helper, help \| answer **helper** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M50-02-1 | sound: helpful \| options helpful, helper \| answer **helpful** |  |
+| AS-M50-02-2 | sound: helping \| options helping, help \| answer **helping** |  |
+
+#### Lesson 3: Meet Word Families: read & build (`L5-M50-03`)
+
+- **Objective:** Choose the correct member of the read/reader/reading and build/builder/building word families for a sentence.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two more word families, Detective — read and build!
+- **Narration (teach):** read, reader, reading; build, builder, building — same idea, different root words.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use the sentence as your clue.
+- **Narration (close):** Case closed! You know six word families now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M50-11 | sound: read \| options read, reader \| answer **read** |
+| Q-M50-12 | sound: reader \| options reader, read \| answer **reader** |
+| Q-M50-13 | sound: reading \| options reading, read \| answer **reading** |
+| Q-M50-14 | sound: build \| options build, builder \| answer **build** |
+| Q-M50-15 | sound: builder \| options builder, build \| answer **builder** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M50-03-1 | sound: building \| options building, build \| answer **building** |  |
+| AS-M50-03-2 | sound: readers \| options readers, reader \| answer **readers** |  |
+
+#### Lesson 4: More Practice (`L5-M50-04`)
+
+- **Objective:** Practise all six word families together across more sentences.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More practice, Detective — mixing every word family together now!
+- **Narration (teach):** Keep reading each sentence carefully for the clue to which family member fits.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use everything you've learned.
+- **Narration (close):** Fantastic! You're a word family expert.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M50-16 | sound: action \| options action, act \| answer **action** |
+| Q-M50-17 | sound: teaching \| options teaching, teach \| answer **teaching** |
+| Q-M50-18 | sound: reader \| options reader, read \| answer **reader** |
+| Q-M50-19 | sound: builder \| options builder, build \| answer **builder** |
+| Q-M50-20 | sound: playful \| options playful, player \| answer **playful** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M50-04-1 | sound: act \| options act, action \| answer **act** |  |
+| AS-M50-04-2 | sound: helping \| options helping, help \| answer **helping** |  |
+
+#### Lesson 5: Word Families Challenge (`L5-M50-05`)
+
+- **Objective:** Demonstrate independent mastery of choosing the right word family member for a sentence.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about word families.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered word families.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M50-05-1 | sound: act \| options act, action \| answer **act** |  |
+| AS-M50-05-2 | sound: player \| options player, play \| answer **player** |  |
+| AS-M50-05-3 | sound: teacher \| options teacher, teach \| answer **teacher** |  |
+| AS-M50-05-4 | sound: help \| options help, helper \| answer **help** |  |
+| AS-M50-05-5 | sound: read \| options read, reader \| answer **read** |  |
+| AS-M50-05-6 | sound: builder \| options builder, build \| answer **builder** |  |
+| AS-M50-05-7 | sound: active \| options active, action \| answer **active** |  |
+| AS-M50-05-8 | sound: reading \| options reading, read \| answer **reading** |  |
 
 ## Content library
 

@@ -47,5 +47,6 @@
   { "module_id": 46, "level_id": 5, "module_name": "Long-U Choices", "module_goal": "Choose ue, ew or oo for the long-U sound, alongside the already-known u_e spelling — oo is the most common, ue and ew are smaller sets to learn by heart.", "units": 6, "active": true },
   { "module_id": 47, "level_id": 5, "module_name": "The Three Sounds of -ed", "module_goal": "Hear that -ed is always spelled the same way, but can sound like /t/, /d/ or /id/ depending on the sound before it.", "units": 5, "active": true },
   { "module_id": 48, "level_id": 5, "module_name": "Change Y Before a Suffix", "module_goal": "Swap a final y for i before most suffixes (happy to happier), but keep the y before -ing (crying, not criing).", "units": 6, "active": true },
-  { "module_id": 49, "level_id": 5, "module_name": "More Prefixes & Suffixes", "module_goal": "Recognise and spell words with dis-, pre- or mis- at the start, and -ness or -ment at the end, extending Module 39's un-/re-/-ful/-less/-ly.", "units": 6, "active": true }
+  { "module_id": 49, "level_id": 5, "module_name": "More Prefixes & Suffixes", "module_goal": "Recognise and spell words with dis-, pre- or mis- at the start, and -ness or -ment at the end, extending Module 39's un-/re-/-ful/-less/-ly.", "units": 6, "active": true },
+  { "module_id": 50, "level_id": 5, "module_name": "Word Families", "module_goal": "Choose which member of a word family (e.g. act/action/active/actor) fits a sentence, using the root's job in the sentence as the clue.", "units": 5, "active": true }
 ]

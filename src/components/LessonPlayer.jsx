@@ -151,6 +151,11 @@ function modelCaptionFor(item) {
     case "fix_sentence":
       return `That's right: ${answer}`;
     case "spelling_choice":
+      // Module 50's word-family items reuse spelling_choice for a
+      // genuinely different skill — both options are correctly spelled,
+      // the point is which FORM fits the sentence — so "It's spelled X"
+      // would be beside the point (nothing was misspelled).
+      if (item.wordFamily) return `Yes! "${answer}" fits best here.`;
       return `Yes! It's spelled ${answer}.`;
     case "listen_choose":
     default:
@@ -275,6 +280,9 @@ function modelHeadingFor(lesson, item) {
   }
   if (item.type === "fix_sentence") {
     return `A sentence starts with a capital letter and ends with a full stop. Which one is written correctly?`;
+  }
+  if (item.type === "spelling_choice" && item.wordFamily) {
+    return item.prompt || "Which word fits best in this sentence?";
   }
   if (item.type === "spelling_choice") {
     const word = item.audio_asset?.replace(/^say:/, "");

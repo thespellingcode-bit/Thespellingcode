@@ -20685,5 +20685,365 @@
     "retry_feedback": "Listen again to the whole word, and think about what it means.",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-01",
+    "lesson_id": "L5-M50-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "She wants to ___ in the school play.",
+    "options": [
+      "act",
+      "action"
+    ],
+    "correct_answer": "act",
+    "audio_asset": "say:act",
+    "wordFamily": true,
+    "feedback": "Yes! \"act\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-02",
+    "lesson_id": "L5-M50-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "The fire drill needs quick ___.",
+    "options": [
+      "action",
+      "act"
+    ],
+    "correct_answer": "action",
+    "audio_asset": "say:action",
+    "wordFamily": true,
+    "feedback": "Yes! \"action\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-03",
+    "lesson_id": "L5-M50-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "He is an ___ in many movies.",
+    "options": [
+      "actor",
+      "active"
+    ],
+    "correct_answer": "actor",
+    "audio_asset": "say:actor",
+    "wordFamily": true,
+    "feedback": "Yes! \"actor\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-04",
+    "lesson_id": "L5-M50-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Let's go ___ outside.",
+    "options": [
+      "play",
+      "player"
+    ],
+    "correct_answer": "play",
+    "audio_asset": "say:play",
+    "wordFamily": true,
+    "feedback": "Yes! \"play\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-05",
+    "lesson_id": "L5-M50-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "He is the best ___ on the team.",
+    "options": [
+      "player",
+      "play"
+    ],
+    "correct_answer": "player",
+    "audio_asset": "say:player",
+    "wordFamily": true,
+    "feedback": "Yes! \"player\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-06",
+    "lesson_id": "L5-M50-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "My favorite ___ is Mr. Lee.",
+    "options": [
+      "teacher",
+      "teach"
+    ],
+    "correct_answer": "teacher",
+    "audio_asset": "say:teacher",
+    "wordFamily": true,
+    "feedback": "Yes! \"teacher\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-07",
+    "lesson_id": "L5-M50-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "She wants to ___ math next year.",
+    "options": [
+      "teach",
+      "teacher"
+    ],
+    "correct_answer": "teach",
+    "audio_asset": "say:teach",
+    "wordFamily": true,
+    "feedback": "Yes! \"teach\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-08",
+    "lesson_id": "L5-M50-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Good ___ takes a lot of patience.",
+    "options": [
+      "teaching",
+      "teacher"
+    ],
+    "correct_answer": "teaching",
+    "audio_asset": "say:teaching",
+    "wordFamily": true,
+    "feedback": "Yes! \"teaching\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-09",
+    "lesson_id": "L5-M50-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Can you ___ me carry this box?",
+    "options": [
+      "help",
+      "helper"
+    ],
+    "correct_answer": "help",
+    "audio_asset": "say:help",
+    "wordFamily": true,
+    "feedback": "Yes! \"help\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-10",
+    "lesson_id": "L5-M50-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "He is a kind ___ at the animal shelter.",
+    "options": [
+      "helper",
+      "help"
+    ],
+    "correct_answer": "helper",
+    "audio_asset": "say:helper",
+    "wordFamily": true,
+    "feedback": "Yes! \"helper\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-11",
+    "lesson_id": "L5-M50-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "I like to ___ before bed.",
+    "options": [
+      "read",
+      "reader"
+    ],
+    "correct_answer": "read",
+    "audio_asset": "say:read",
+    "wordFamily": true,
+    "feedback": "Yes! \"read\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-12",
+    "lesson_id": "L5-M50-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "She is a very fast ___.",
+    "options": [
+      "reader",
+      "read"
+    ],
+    "correct_answer": "reader",
+    "audio_asset": "say:reader",
+    "wordFamily": true,
+    "feedback": "Yes! \"reader\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-13",
+    "lesson_id": "L5-M50-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "We are ___ a new book this week.",
+    "options": [
+      "reading",
+      "read"
+    ],
+    "correct_answer": "reading",
+    "audio_asset": "say:reading",
+    "wordFamily": true,
+    "feedback": "Yes! \"reading\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-14",
+    "lesson_id": "L5-M50-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "They will ___ a new house next year.",
+    "options": [
+      "build",
+      "builder"
+    ],
+    "correct_answer": "build",
+    "audio_asset": "say:build",
+    "wordFamily": true,
+    "feedback": "Yes! \"build\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-15",
+    "lesson_id": "L5-M50-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "My uncle is a ___ who makes houses.",
+    "options": [
+      "builder",
+      "build"
+    ],
+    "correct_answer": "builder",
+    "audio_asset": "say:builder",
+    "wordFamily": true,
+    "feedback": "Yes! \"builder\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-16",
+    "lesson_id": "L5-M50-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Her quick ___ saved the day.",
+    "options": [
+      "action",
+      "act"
+    ],
+    "correct_answer": "action",
+    "audio_asset": "say:action",
+    "wordFamily": true,
+    "feedback": "Yes! \"action\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-17",
+    "lesson_id": "L5-M50-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Good ___ makes hard things easier to learn.",
+    "options": [
+      "teaching",
+      "teach"
+    ],
+    "correct_answer": "teaching",
+    "audio_asset": "say:teaching",
+    "wordFamily": true,
+    "feedback": "Yes! \"teaching\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-18",
+    "lesson_id": "L5-M50-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "She is a strong ___ of the daily newspaper.",
+    "options": [
+      "reader",
+      "read"
+    ],
+    "correct_answer": "reader",
+    "audio_asset": "say:reader",
+    "wordFamily": true,
+    "feedback": "Yes! \"reader\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-19",
+    "lesson_id": "L5-M50-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "He works as a ___ on tall buildings.",
+    "options": [
+      "builder",
+      "build"
+    ],
+    "correct_answer": "builder",
+    "audio_asset": "say:builder",
+    "wordFamily": true,
+    "feedback": "Yes! \"builder\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M50-20",
+    "lesson_id": "L5-M50-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "The kitten is small and very ___.",
+    "options": [
+      "playful",
+      "player"
+    ],
+    "correct_answer": "playful",
+    "audio_asset": "say:playful",
+    "wordFamily": true,
+    "feedback": "Yes! \"playful\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
   }
 ]

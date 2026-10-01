@@ -4690,5 +4690,100 @@
       "transition": "",
       "close": "Case closed! You've mastered more prefixes and suffixes."
     }
+  },
+  {
+    "lesson_id": "L5-M50-01",
+    "module_id": 50,
+    "number": 1,
+    "title": "Meet Word Families: act & play",
+    "skill": "spelling",
+    "objective": "Choose the correct member of the act/action/active/actor and play/player/playful/playing word families for a sentence.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A new kind of case, Detective! A root word can grow into a whole FAMILY of related words — act, action, active, actor all share the root 'act'.",
+      "teach": "Each word in the family has its own job in a sentence. 'She wants to act in the play' needs act. 'The fire drill needs quick action' needs action. Read the sentence, then pick the word that fits.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn, Detective! Read the sentence and pick the word that fits.",
+      "close": "Case closed! You can tell word family members apart."
+    }
+  },
+  {
+    "lesson_id": "L5-M50-02",
+    "module_id": 50,
+    "number": 2,
+    "title": "Meet Word Families: teach & help",
+    "skill": "spelling",
+    "objective": "Choose the correct member of the teach/teacher/teaching and help/helper/helpful/helping word families for a sentence.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two more word families, Detective — teach and help!",
+      "teach": "teach, teacher, teaching all share the root 'teach'. Read each sentence carefully to find the clue for which one fits.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the sentence as your clue.",
+      "close": "Case closed! Two more word families mastered."
+    }
+  },
+  {
+    "lesson_id": "L5-M50-03",
+    "module_id": 50,
+    "number": 3,
+    "title": "Meet Word Families: read & build",
+    "skill": "spelling",
+    "objective": "Choose the correct member of the read/reader/reading and build/builder/building word families for a sentence.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two more word families, Detective — read and build!",
+      "teach": "read, reader, reading; build, builder, building — same idea, different root words.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the sentence as your clue.",
+      "close": "Case closed! You know six word families now."
+    }
+  },
+  {
+    "lesson_id": "L5-M50-04",
+    "module_id": 50,
+    "number": 4,
+    "title": "More Practice",
+    "skill": "spelling",
+    "objective": "Practise all six word families together across more sentences.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More practice, Detective — mixing every word family together now!",
+      "teach": "Keep reading each sentence carefully for the clue to which family member fits.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use everything you've learned.",
+      "close": "Fantastic! You're a word family expert."
+    }
+  },
+  {
+    "lesson_id": "L5-M50-05",
+    "module_id": 50,
+    "number": 5,
+    "title": "Word Families Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of choosing the right word family member for a sentence.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about word families.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered word families."
+    }
   }
 ]
