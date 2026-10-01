@@ -18347,5 +18347,379 @@
     "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-01",
+    "lesson_id": "L5-M45-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "boat",
+      "bowt"
+    ],
+    "correct_answer": "boat",
+    "audio_asset": "say:boat",
+    "feedback": "Yes! It's boat.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-02",
+    "lesson_id": "L5-M45-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "road",
+      "rowd"
+    ],
+    "correct_answer": "road",
+    "audio_asset": "say:road",
+    "feedback": "Yes! It's road.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-03",
+    "lesson_id": "L5-M45-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "soap",
+      "sowp"
+    ],
+    "correct_answer": "soap",
+    "audio_asset": "say:soap",
+    "feedback": "Yes! It's soap.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-04",
+    "lesson_id": "L5-M45-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "goat",
+      "gowt"
+    ],
+    "correct_answer": "goat",
+    "audio_asset": "say:goat",
+    "feedback": "Yes! It's goat.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-05",
+    "lesson_id": "L5-M45-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "snow",
+      "snoa"
+    ],
+    "correct_answer": "snow",
+    "audio_asset": "say:snow",
+    "feedback": "Yes! It's snow.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-06",
+    "lesson_id": "L5-M45-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:boat",
+    "letters": [
+      "b",
+      "oa",
+      "t"
+    ],
+    "answer_tiles": [
+      "b",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "boat",
+    "feedback": "Yes! You built boat.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-07",
+    "lesson_id": "L5-M45-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:road",
+    "letters": [
+      "r",
+      "oa",
+      "d"
+    ],
+    "answer_tiles": [
+      "r",
+      "oa",
+      "d"
+    ],
+    "correct_answer": "road",
+    "feedback": "Yes! You built road.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-08",
+    "lesson_id": "L5-M45-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:soap",
+    "letters": [
+      "s",
+      "oa",
+      "p"
+    ],
+    "answer_tiles": [
+      "s",
+      "oa",
+      "p"
+    ],
+    "correct_answer": "soap",
+    "feedback": "Yes! You built soap.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-09",
+    "lesson_id": "L5-M45-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:goat",
+    "letters": [
+      "g",
+      "oa",
+      "t"
+    ],
+    "answer_tiles": [
+      "g",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "goat",
+    "feedback": "Yes! You built goat.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-10",
+    "lesson_id": "L5-M45-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:snow",
+    "letters": [
+      "s",
+      "n",
+      "ow"
+    ],
+    "answer_tiles": [
+      "s",
+      "n",
+      "ow"
+    ],
+    "correct_answer": "snow",
+    "feedback": "Yes! You built snow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-11",
+    "lesson_id": "L5-M45-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "boat",
+    "options": [
+      "boat",
+      "road",
+      "snow"
+    ],
+    "correct_answer": "boat",
+    "feedback": "Yes! You read boat.",
+    "retry_feedback": "Sound out the letters — oa in the middle, ow at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-12",
+    "lesson_id": "L5-M45-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "road",
+    "options": [
+      "road",
+      "boat",
+      "goat"
+    ],
+    "correct_answer": "road",
+    "feedback": "Yes! You read road.",
+    "retry_feedback": "Sound out the letters — oa in the middle, ow at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-13",
+    "lesson_id": "L5-M45-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "snow",
+    "options": [
+      "snow",
+      "boat",
+      "road"
+    ],
+    "correct_answer": "snow",
+    "feedback": "Yes! You read snow.",
+    "retry_feedback": "Sound out the letters — oa in the middle, ow at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-14",
+    "lesson_id": "L5-M45-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:boat",
+    "letters": [
+      "b",
+      "oa",
+      "t",
+      "ow"
+    ],
+    "answer_tiles": [
+      "b",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "boat",
+    "feedback": "Yes! You built boat.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-15",
+    "lesson_id": "L5-M45-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:road",
+    "letters": [
+      "r",
+      "oa",
+      "d",
+      "ow"
+    ],
+    "answer_tiles": [
+      "r",
+      "oa",
+      "d"
+    ],
+    "correct_answer": "road",
+    "feedback": "Yes! You built road.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-16",
+    "lesson_id": "L5-M45-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:soap",
+    "letters": [
+      "s",
+      "oa",
+      "p",
+      "ow"
+    ],
+    "answer_tiles": [
+      "s",
+      "oa",
+      "p"
+    ],
+    "correct_answer": "soap",
+    "feedback": "Yes! You built soap.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-17",
+    "lesson_id": "L5-M45-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:snow",
+    "letters": [
+      "s",
+      "n",
+      "ow",
+      "oa"
+    ],
+    "answer_tiles": [
+      "s",
+      "n",
+      "ow"
+    ],
+    "correct_answer": "snow",
+    "feedback": "Yes! You built snow.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M45-18",
+    "lesson_id": "L5-M45-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:goat",
+    "letters": [
+      "g",
+      "oa",
+      "t",
+      "ow"
+    ],
+    "answer_tiles": [
+      "g",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "goat",
+    "feedback": "Yes! You built goat.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]

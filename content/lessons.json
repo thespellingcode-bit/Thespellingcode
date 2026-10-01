@@ -4158,5 +4158,100 @@
       "transition": "",
       "close": "Case closed! You've mastered igh and ie."
     }
+  },
+  {
+    "lesson_id": "L5-M45-01",
+    "module_id": 45,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Recognise oa (middle of a word) and ow (end of a word) as two spellings of long O.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A new spelling case, Detective! The long-O sound has two spellings: oa and ow.",
+      "teach": "oa sits in the MIDDLE of a word — boat, road. ow sits at the END of a word — snow, grow. Listen, then pick the spelling in the right place.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Middle of the word is oa, end of the word is ow.",
+      "close": "Case closed! You know when to use oa and when to use ow."
+    }
+  },
+  {
+    "lesson_id": "L5-M45-02",
+    "module_id": 45,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build long-O words using oa or ow correctly.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some long-O words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — oa and ow each get their own single tile.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You placed oa and ow in the right spot every time."
+    }
+  },
+  {
+    "lesson_id": "L5-M45-03",
+    "module_id": 45,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a long-O word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Remember — oa in the middle, ow at the end.",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every long-O word correctly."
+    }
+  },
+  {
+    "lesson_id": "L5-M45-04",
+    "module_id": 45,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated long-O word, choosing oa or ow from a tray that includes one decoy.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — pick oa or ow, and leave the wrong one out!",
+      "teach": "Listen to the word, then build it, leaving out the spelling that doesn't belong.",
+      "model": "Listen. Pick the right tiles and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully, and leave out the tile that doesn't belong.",
+      "close": "Excellent spelling! You never mixed up oa and ow."
+    }
+  },
+  {
+    "lesson_id": "L5-M45-05",
+    "module_id": 45,
+    "number": 5,
+    "title": "Long-O Choices Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of the oa/ow choice across recognition, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about oa and ow.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the long-O choice."
+    }
   }
 ]

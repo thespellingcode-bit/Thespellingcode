@@ -18717,5 +18717,308 @@
     "retry_feedback": "Sound out the letters — remember this word's own spelling.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-01-1",
+    "lesson_id": "L5-M45-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "coat",
+      "cowt"
+    ],
+    "correct_answer": "coat",
+    "audio_asset": "say:coat",
+    "feedback": "Yes! It's coat.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-01-2",
+    "lesson_id": "L5-M45-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "slow",
+      "sloa"
+    ],
+    "correct_answer": "slow",
+    "audio_asset": "say:slow",
+    "feedback": "Yes! It's slow.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-01-3",
+    "lesson_id": "L5-M45-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "grow",
+      "groa"
+    ],
+    "correct_answer": "grow",
+    "audio_asset": "say:grow",
+    "feedback": "Yes! It's grow.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-02-1",
+    "lesson_id": "L5-M45-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:coat",
+    "letters": [
+      "c",
+      "oa",
+      "t"
+    ],
+    "answer_tiles": [
+      "c",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "coat",
+    "feedback": "Yes! You built coat.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-02-2",
+    "lesson_id": "L5-M45-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:slow",
+    "letters": [
+      "s",
+      "l",
+      "ow"
+    ],
+    "answer_tiles": [
+      "s",
+      "l",
+      "ow"
+    ],
+    "correct_answer": "slow",
+    "feedback": "Yes! You built slow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-03-1",
+    "lesson_id": "L5-M45-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "goat",
+    "options": [
+      "goat",
+      "boat",
+      "snow"
+    ],
+    "correct_answer": "goat",
+    "feedback": "Yes! You read goat.",
+    "retry_feedback": "Sound out the letters — oa in the middle, ow at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-04-1",
+    "lesson_id": "L5-M45-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:coat",
+    "letters": [
+      "c",
+      "oa",
+      "t",
+      "ow"
+    ],
+    "answer_tiles": [
+      "c",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "coat",
+    "feedback": "Yes! You built coat.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-04-2",
+    "lesson_id": "L5-M45-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:slow",
+    "letters": [
+      "s",
+      "l",
+      "ow",
+      "oa"
+    ],
+    "answer_tiles": [
+      "s",
+      "l",
+      "ow"
+    ],
+    "correct_answer": "slow",
+    "feedback": "Yes! You built slow.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-05-1",
+    "lesson_id": "L5-M45-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "boat",
+      "bowt"
+    ],
+    "correct_answer": "boat",
+    "audio_asset": "say:boat",
+    "feedback": "Yes! It's boat.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-05-2",
+    "lesson_id": "L5-M45-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "snow",
+      "snoa"
+    ],
+    "correct_answer": "snow",
+    "audio_asset": "say:snow",
+    "feedback": "Yes! It's snow.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-05-3",
+    "lesson_id": "L5-M45-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "road",
+      "rowd"
+    ],
+    "correct_answer": "road",
+    "audio_asset": "say:road",
+    "feedback": "Yes! It's road.",
+    "retry_feedback": "Listen again — is the long-O sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-05-4",
+    "lesson_id": "L5-M45-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:goat",
+    "letters": [
+      "g",
+      "oa",
+      "t"
+    ],
+    "answer_tiles": [
+      "g",
+      "oa",
+      "t"
+    ],
+    "correct_answer": "goat",
+    "feedback": "Yes! You built goat.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-05-5",
+    "lesson_id": "L5-M45-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:slow",
+    "letters": [
+      "s",
+      "l",
+      "ow"
+    ],
+    "answer_tiles": [
+      "s",
+      "l",
+      "ow"
+    ],
+    "correct_answer": "slow",
+    "feedback": "Yes! You built slow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-05-6",
+    "lesson_id": "L5-M45-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:grow",
+    "letters": [
+      "g",
+      "r",
+      "ow"
+    ],
+    "answer_tiles": [
+      "g",
+      "r",
+      "ow"
+    ],
+    "correct_answer": "grow",
+    "feedback": "Yes! You built grow.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-05-7",
+    "lesson_id": "L5-M45-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "boat",
+    "options": [
+      "boat",
+      "road",
+      "goat"
+    ],
+    "correct_answer": "boat",
+    "feedback": "Yes! You read boat.",
+    "retry_feedback": "Sound out the letters — oa in the middle, ow at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M45-05-8",
+    "lesson_id": "L5-M45-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "snow",
+    "options": [
+      "snow",
+      "boat",
+      "road"
+    ],
+    "correct_answer": "snow",
+    "feedback": "Yes! You read snow.",
+    "retry_feedback": "Sound out the letters — oa in the middle, ow at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]
