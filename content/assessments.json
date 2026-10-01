@@ -17803,5 +17803,308 @@
     "retry_feedback": "Sound out the letters — remember c and ce can say /s/ too.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-01-1",
+    "lesson_id": "L5-M42-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "sail",
+      "sayl"
+    ],
+    "correct_answer": "sail",
+    "audio_asset": "say:sail",
+    "feedback": "Yes! It's sail.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-01-2",
+    "lesson_id": "L5-M42-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "stay",
+      "stai"
+    ],
+    "correct_answer": "stay",
+    "audio_asset": "say:stay",
+    "feedback": "Yes! It's stay.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-01-3",
+    "lesson_id": "L5-M42-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "paint",
+      "paynt"
+    ],
+    "correct_answer": "paint",
+    "audio_asset": "say:paint",
+    "feedback": "Yes! It's paint.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-02-1",
+    "lesson_id": "L5-M42-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tray",
+    "letters": [
+      "t",
+      "r",
+      "ay"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ay"
+    ],
+    "correct_answer": "tray",
+    "feedback": "Yes! You built tray.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-02-2",
+    "lesson_id": "L5-M42-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:gain",
+    "letters": [
+      "g",
+      "ai",
+      "n"
+    ],
+    "answer_tiles": [
+      "g",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "gain",
+    "feedback": "Yes! You built gain.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-03-1",
+    "lesson_id": "L5-M42-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "sail",
+    "options": [
+      "sail",
+      "rain",
+      "train"
+    ],
+    "correct_answer": "sail",
+    "feedback": "Yes! You read sail.",
+    "retry_feedback": "Sound out the letters — ai in the middle, ay at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-04-1",
+    "lesson_id": "L5-M42-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tray",
+    "letters": [
+      "t",
+      "r",
+      "ay",
+      "ai"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ay"
+    ],
+    "correct_answer": "tray",
+    "feedback": "Yes! You built tray.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-04-2",
+    "lesson_id": "L5-M42-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:gain",
+    "letters": [
+      "g",
+      "ai",
+      "n",
+      "ay"
+    ],
+    "answer_tiles": [
+      "g",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "gain",
+    "feedback": "Yes! You built gain.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-05-1",
+    "lesson_id": "L5-M42-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "rain",
+      "rayn"
+    ],
+    "correct_answer": "rain",
+    "audio_asset": "say:rain",
+    "feedback": "Yes! It's rain.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-05-2",
+    "lesson_id": "L5-M42-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "day",
+      "dai"
+    ],
+    "correct_answer": "day",
+    "audio_asset": "say:day",
+    "feedback": "Yes! It's day.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-05-3",
+    "lesson_id": "L5-M42-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "train",
+      "trayn"
+    ],
+    "correct_answer": "train",
+    "audio_asset": "say:train",
+    "feedback": "Yes! It's train.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-05-4",
+    "lesson_id": "L5-M42-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:play",
+    "letters": [
+      "p",
+      "l",
+      "ay"
+    ],
+    "answer_tiles": [
+      "p",
+      "l",
+      "ay"
+    ],
+    "correct_answer": "play",
+    "feedback": "Yes! You built play.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-05-5",
+    "lesson_id": "L5-M42-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mail",
+    "letters": [
+      "m",
+      "ai",
+      "l"
+    ],
+    "answer_tiles": [
+      "m",
+      "ai",
+      "l"
+    ],
+    "correct_answer": "mail",
+    "feedback": "Yes! You built mail.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-05-6",
+    "lesson_id": "L5-M42-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sail",
+    "letters": [
+      "s",
+      "ai",
+      "l"
+    ],
+    "answer_tiles": [
+      "s",
+      "ai",
+      "l"
+    ],
+    "correct_answer": "sail",
+    "feedback": "Yes! You built sail.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-05-7",
+    "lesson_id": "L5-M42-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "train",
+    "options": [
+      "train",
+      "rain",
+      "sail"
+    ],
+    "correct_answer": "train",
+    "feedback": "Yes! You read train.",
+    "retry_feedback": "Sound out the letters — ai in the middle, ay at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M42-05-8",
+    "lesson_id": "L5-M42-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "rain",
+    "options": [
+      "rain",
+      "train",
+      "mail"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You read rain.",
+    "retry_feedback": "Sound out the letters — ai in the middle, ay at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

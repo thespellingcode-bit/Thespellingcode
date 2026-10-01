@@ -17237,5 +17237,379 @@
     "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-01",
+    "lesson_id": "L5-M42-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "rain",
+      "rayn"
+    ],
+    "correct_answer": "rain",
+    "audio_asset": "say:rain",
+    "feedback": "Yes! It's rain.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-02",
+    "lesson_id": "L5-M42-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "day",
+      "dai"
+    ],
+    "correct_answer": "day",
+    "audio_asset": "say:day",
+    "feedback": "Yes! It's day.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-03",
+    "lesson_id": "L5-M42-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "train",
+      "trayn"
+    ],
+    "correct_answer": "train",
+    "audio_asset": "say:train",
+    "feedback": "Yes! It's train.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-04",
+    "lesson_id": "L5-M42-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "play",
+      "plai"
+    ],
+    "correct_answer": "play",
+    "audio_asset": "say:play",
+    "feedback": "Yes! It's play.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-05",
+    "lesson_id": "L5-M42-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "mail",
+      "mayl"
+    ],
+    "correct_answer": "mail",
+    "audio_asset": "say:mail",
+    "feedback": "Yes! It's mail.",
+    "retry_feedback": "Listen again — is the long-A sound in the middle or at the end of the word?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-06",
+    "lesson_id": "L5-M42-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:rain",
+    "letters": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "answer_tiles": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You built rain.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-07",
+    "lesson_id": "L5-M42-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:day",
+    "letters": [
+      "d",
+      "ay"
+    ],
+    "answer_tiles": [
+      "d",
+      "ay"
+    ],
+    "correct_answer": "day",
+    "feedback": "Yes! You built day.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-08",
+    "lesson_id": "L5-M42-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:train",
+    "letters": [
+      "t",
+      "r",
+      "ai",
+      "n"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "train",
+    "feedback": "Yes! You built train.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-09",
+    "lesson_id": "L5-M42-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:play",
+    "letters": [
+      "p",
+      "l",
+      "ay"
+    ],
+    "answer_tiles": [
+      "p",
+      "l",
+      "ay"
+    ],
+    "correct_answer": "play",
+    "feedback": "Yes! You built play.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-10",
+    "lesson_id": "L5-M42-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mail",
+    "letters": [
+      "m",
+      "ai",
+      "l"
+    ],
+    "answer_tiles": [
+      "m",
+      "ai",
+      "l"
+    ],
+    "correct_answer": "mail",
+    "feedback": "Yes! You built mail.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-11",
+    "lesson_id": "L5-M42-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "train",
+    "options": [
+      "train",
+      "rain",
+      "mail"
+    ],
+    "correct_answer": "train",
+    "feedback": "Yes! You read train.",
+    "retry_feedback": "Sound out the letters — ai in the middle, ay at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-12",
+    "lesson_id": "L5-M42-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "rain",
+    "options": [
+      "rain",
+      "train",
+      "sail"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You read rain.",
+    "retry_feedback": "Sound out the letters — ai in the middle, ay at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-13",
+    "lesson_id": "L5-M42-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "mail",
+    "options": [
+      "mail",
+      "rain",
+      "train"
+    ],
+    "correct_answer": "mail",
+    "feedback": "Yes! You read mail.",
+    "retry_feedback": "Sound out the letters — ai in the middle, ay at the end.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-14",
+    "lesson_id": "L5-M42-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:rain",
+    "letters": [
+      "r",
+      "ai",
+      "n",
+      "ay"
+    ],
+    "answer_tiles": [
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "rain",
+    "feedback": "Yes! You built rain.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-15",
+    "lesson_id": "L5-M42-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:day",
+    "letters": [
+      "d",
+      "ay",
+      "ai"
+    ],
+    "answer_tiles": [
+      "d",
+      "ay"
+    ],
+    "correct_answer": "day",
+    "feedback": "Yes! You built day.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-16",
+    "lesson_id": "L5-M42-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:train",
+    "letters": [
+      "t",
+      "r",
+      "ai",
+      "n",
+      "ay"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ai",
+      "n"
+    ],
+    "correct_answer": "train",
+    "feedback": "Yes! You built train.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-17",
+    "lesson_id": "L5-M42-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:play",
+    "letters": [
+      "p",
+      "l",
+      "ay",
+      "ai"
+    ],
+    "answer_tiles": [
+      "p",
+      "l",
+      "ay"
+    ],
+    "correct_answer": "play",
+    "feedback": "Yes! You built play.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M42-18",
+    "lesson_id": "L5-M42-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mail",
+    "letters": [
+      "m",
+      "ai",
+      "l",
+      "ay"
+    ],
+    "answer_tiles": [
+      "m",
+      "ai",
+      "l"
+    ],
+    "correct_answer": "mail",
+    "feedback": "Yes! You built mail.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]

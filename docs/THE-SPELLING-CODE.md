@@ -32,7 +32,7 @@
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
-| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Module 41 built (The Many Spellings of /s/) |
+| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–42 built (through Long-A Choices) |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
@@ -47,7 +47,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
-| Level 5 “Word Builder Pro”, Module 41 (The Many Spellings of /s/) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. First Level 5 module, reuses Level 4's `spelling_choice`/`word_build` mechanics with no new component code. |
+| Level 5 “Word Builder Pro”, Modules 41–42 (through Long-A Choices) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Reuses Level 4's `spelling_choice`/`word_build` mechanics with no new component code. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -111,9 +111,10 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 39, Prefixes & Suffixes — back to build-focused, closer to Level 2's sentence-building shape than a phonics-choice module, per the plan.** un-/re- at the start mean "not"/"again"; -ful/-less at the end mean "full of"/"without" (genuine antonym minimal pairs — careful/careless, hopeful/hopeless, harmful/harmless — the same "real word either way, audio is the only tell" shape Module 34 used for hop/hope); -ly just adds on. No new mechanic: `spelling_choice` reused for all three "Meet" recognition lessons (un-, re-, -ful/-less) with real un-/re- word pairs (unwrap/rewrap, undo/redo, untie/retie, unload/reload, unfold/refold) as the audio-driven choice, and `word_build` reused for Blend & Build/Spell the Words with the prefix or suffix tiled as its own single tile (e.g. quickly → `[qu, i, ck, ly]`, composing the new suffix tile with already-known qu/ck graphemes). Added a new remediation tag, `PREFIX_SUFFIX_CONFUSION` (REM-18) — distinct from `SPELLING_CHOICE_CONFUSION` since the confusion here is about a word PART's meaning, not a sound's spelling. No new word pictures — same reasoning as Module 34 (a still image can't distinguish "unwrap" from "rewrap" or "careful" from "careless"), so no Read the Words lesson. **Two real bugs caught before shipping, neither live-only this time:** every assessment item was first written with the `activity_id` field instead of the required `assessment_id` (functionally needed — `LessonPlayer` uses it as a React key and for `questionId`), caught by re-reading the generated content before testing; and Lessons 1–2's assessment banks first exactly reused their own practice lessons' audio+answer pairs (unwrap/undo/untie/unload/unfold, redo/reload/retie), caught live by `npm test`'s transfer-to-new-example check — fixed by swapping in three fresh un-/re- pairs (unseal/reseal, uncap/recap, unpack/repack) the practice lessons never used. Live-verified the Watch-stage spelling_choice narration, the Practice-stage two-option buttons, and the word_build tiling for both a simple word (unwrap) and the most composed one (quickly).
 - **Module 40, Review & Assessment — closes out Level 4, same closing shape as every earlier level (Modules 7/8, 17, 27).** Five lessons cumulatively sampling all 12 earlier modules' rules rather than teaching anything new: Mixed Retrieval (`spelling_choice` — c/k, ck/k, g/j, ge/dge, ch/tch, FLOSS doubling), Read & Build (`word_build`, no decoy, one word per several modules — duck, orange, watch, hopping, knee, boxes), Plurals & Word Parts Review (`spelling_choice` — plurals plus un-/re-/-ful/-less), Dictation (`word_build` with a decoy tile, mixing choice-type rules across modules), and the Level 4 Challenge (`assessment`, 14 items freely mixing `spelling_choice`, `word_build`, `letter_sound_match` and `read_word` — the broadest single-lesson type mix of any module this level). Added `BADGE-10` ("Level 4 Spelling Detective", tied to `module_id: 40`, same pattern as every earlier level's closing badge) — purely data-driven, no code changes needed since badge-earning already derives from `isModuleComplete(state, badge.module_id)`. GRAPHEMES_BY_MODULE[40] stays `[]`, same reasoning as Level 2/3's own closing review modules — pure review teaches no new grapheme. All 22 tests passed on the first run (the assessment_id field-name bug from Module 39 was written correctly here from the start). Live-verified the Mixed Retrieval lesson's all 5 Watch-stage examples (cat, sock, jam, bridge, catch) sampling every Level 4 letter/ending-choice rule in one lesson.
 
-### Level 5 curriculum design (Module 41 built; Modules 42–51 planned, not yet built)
+### Level 5 curriculum design (Modules 41–42 built; Modules 43–51 planned, not yet built)
 - **Scope note:** see the roadmap section above for why Level 5's module list doesn't match the blueprint's Level 5 list — it absorbs the blueprint's missing Level-4 long-vowel/soft-C content and skips the blueprint-Level-5 modules already covered by app-Modules 34/37/39. Full reasoning in `docs/plans/level-5.md`.
 - **Module 41, The Many Spellings of /s/ — same shape as Level 4's spelling-choice modules, no new mechanic.** /s/ can be spelled s (sun), ss (miss, already familiar from FLOSS doubling), soft c before e/i/y (city, pencil) or -ce at a word's end (ice, dance). "ce" is treated as a single fused ending tile, the same symmetry call Module 31 made for "ge" alongside "dge"; mid-word soft c needs no new tile at all since "c" is already a known single letter — only its *sound* is new, not its spelling. **A real picture collision was caught and fixed before shipping, not live this time:** "pencil" was the natural third Read-the-Words picture for mid-word soft c, but `"pencil".includes("pen")` would have matched the existing Level 1 "pen" sound-icon key first, silently showing the wrong picture — caught by checking `Icon.jsx`'s `WORD_KEYS` array before wiring in the new SVG (the same check the file's own word-library.md recommends but easy to skip). Dropped "pencil" as a picture word entirely (word_build/spelling_choice content keeps using it fine, since those lesson types never render an icon) and substituted "sun"/"bus" — both already-illustrated, zero collision risk — for the plain-s picture examples instead. Added 2 new word pictures (ice, city). Live-verified the Read the Words lesson renders sun/ice/city correctly.
+- **Module 42, Long-A Choices — the first Level 5 module with a genuine, reliable positional rule, same confidence level as Level 4's c/k.** ai sits in the middle of a word (rain, train), ay sits at the end (day, play) — both were already taught receptively in Level 3 Module 20, so this module's real job is turning that recognition into a graded choice, reusing the exact same word list (rain, train, mail, sail, paint, day, play, stay, tray, gain) rather than inventing a new one. No new grapheme tile (ai/ay already existed), no new word pictures — Read the Words reuses Level 3's existing train/rain/mail/sail pictures outright, since ay-ending words (day, play, stay, tray) don't have a clean concrete-noun picture pool; that gap is stated plainly in the content rather than forcing in a weak picture. `word_build`'s decoy-tile mechanic again needed zero code changes — a tray for "rain" offers "ay" as the decoy, a tray for "day" offers "ai", exactly mirroring Level 4's ge/dge and ch/tch "explains both directions" pattern. Live-verified both directions of the Spell the Words decoy live (rain/ay-decoy, day/ai-decoy).
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -207,6 +208,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 4 Module 40 (Review & Assessment) — cumulative review across all 12 earlier Level 4 modules, same closing shape as every earlier level. Added BADGE-10 (Level 4 Spelling Detective), purely data-driven. **Level 4 is now complete — 13 modules, 67 lessons, built and deployed.**
 - Discovered and resolved a scope gap while planning Level 5: app-Level-4 built blueprint-Level-5/6 content instead of blueprint-Level-4's long-vowel spelling-choice modules. Flagged to the owner (no preference given); resolution is app-Level-4 stays as-is, app-Level-5 absorbs the missing long-vowel/soft-C content plus only the non-duplicate blueprint-Level-5 modules. Wrote `docs/plans/level-5.md`.
 - Built Level 5 Module 41 (The Many Spellings of /s/) — s/ss/soft-c/-ce, same spelling_choice/word_build shape as Level 4, no new mechanic. Caught and fixed a picture collision before shipping ("pencil" contains "pen", an existing icon key) by substituting sun/bus. Added 2 new word pictures (ice, city).
+- Built Level 5 Module 42 (Long-A Choices) — ai (middle of a word) vs ay (end of a word), a genuine positional rule, same confidence as Level 4's c/k. Reuses Level 3 Module 20's existing word list and pictures entirely — no new grapheme, no new assets. Honestly noted the gap that ay-ending words have no clean concrete picture pool, rather than forcing one in.
 
 ---
 
@@ -607,6 +609,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 39 | Prefixes & Suffixes | **Live** | 6 | 25 | 21 |
 | 40 | Review & Assessment | **Live** | 5 | 24 | 24 |
 | 41 | The Many Spellings of /s/ | **Live** | 5 | 18 | 16 |
+| 42 | Long-A Choices | **Live** | 5 | 18 | 16 |
 
 ## Curriculum in full
 
@@ -6499,6 +6502,139 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M41-05-6 | hear “twice” → build \| tray t w i ce \| answer **twice** |  |
 | AS-M41-05-7 | read “ice” → picture \| options ice, box, doll \| answer **ice** |  |
 | AS-M41-05-8 | read “city” → picture \| options city, house, sock \| answer **city** |  |
+
+### Module 42 — Long-A Choices
+
+*Goal:* Choose ai or ay for the long-A sound, based on whether it sits in the middle or at the end of the word.
+
+#### Lesson 1: Meet the Choice (`L5-M42-01`)
+
+- **Objective:** Recognise ai (middle of a word) and ay (end of a word) as two spellings of long A.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A new spelling case, Detective! The long-A sound has two spellings: ai and ay.
+- **Narration (teach):** ai sits in the MIDDLE of a word — rain, train. ay sits at the END of a word — day, play. Listen, then pick the spelling in the right place.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Middle of the word is ai, end of the word is ay.
+- **Narration (close):** Case closed! You know when to use ai and when to use ay.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M42-01 | sound: rain \| options rain, rayn \| answer **rain** |
+| Q-M42-02 | sound: day \| options day, dai \| answer **day** |
+| Q-M42-03 | sound: train \| options train, trayn \| answer **train** |
+| Q-M42-04 | sound: play \| options play, plai \| answer **play** |
+| Q-M42-05 | sound: mail \| options mail, mayl \| answer **mail** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M42-01-1 | sound: sail \| options sail, sayl \| answer **sail** |  |
+| AS-M42-01-2 | sound: stay \| options stay, stai \| answer **stay** |  |
+| AS-M42-01-3 | sound: paint \| options paint, paynt \| answer **paint** |  |
+
+#### Lesson 2: Blend & Build (`L5-M42-02`)
+
+- **Objective:** Build long-A words using ai or ay correctly.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some long-A words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — ai and ay each get their own single tile.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! You placed ai and ay in the right spot every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M42-06 | hear “rain” → build \| tray r ai n \| answer **rain** |
+| Q-M42-07 | hear “day” → build \| tray d ay \| answer **day** |
+| Q-M42-08 | hear “train” → build \| tray t r ai n \| answer **train** |
+| Q-M42-09 | hear “play” → build \| tray p l ay \| answer **play** |
+| Q-M42-10 | hear “mail” → build \| tray m ai l \| answer **mail** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M42-02-1 | hear “tray” → build \| tray t r ay \| answer **tray** |  |
+| AS-M42-02-2 | hear “gain” → build \| tray g ai n \| answer **gain** |  |
+
+#### Lesson 3: Read the Words (`L5-M42-03`)
+
+- **Objective:** Read a long-A word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! Remember — ai in the middle, ay at the end.
+- **Narration (teach):** Read the word, then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You read every long-A word correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M42-11 | read “train” → picture \| options train, rain, mail \| answer **train** |
+| Q-M42-12 | read “rain” → picture \| options rain, train, sail \| answer **rain** |
+| Q-M42-13 | read “mail” → picture \| options mail, rain, train \| answer **mail** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M42-03-1 | read “sail” → picture \| options sail, rain, train \| answer **sail** |  |
+
+#### Lesson 4: Spell the Words (`L5-M42-04`)
+
+- **Objective:** Spell a dictated long-A word, choosing ai or ay from a tray that includes one decoy.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — pick ai or ay, and leave the wrong one out!
+- **Narration (teach):** Listen to the word, then build it, leaving out the spelling that doesn't belong.
+- **Narration (model):** Listen. Pick the right tiles and leave the extra one behind!
+- **Narration (transition):** Your turn! Listen carefully, and leave out the tile that doesn't belong.
+- **Narration (close):** Excellent spelling! You never mixed up ai and ay.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M42-14 | hear “rain” → build \| tray r ai n ay \| answer **rain** |
+| Q-M42-15 | hear “day” → build \| tray d ay ai \| answer **day** |
+| Q-M42-16 | hear “train” → build \| tray t r ai n ay \| answer **train** |
+| Q-M42-17 | hear “play” → build \| tray p l ay ai \| answer **play** |
+| Q-M42-18 | hear “mail” → build \| tray m ai l ay \| answer **mail** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M42-04-1 | hear “tray” → build \| tray t r ay ai \| answer **tray** |  |
+| AS-M42-04-2 | hear “gain” → build \| tray g ai n ay \| answer **gain** |  |
+
+#### Lesson 5: Long-A Choices Challenge (`L5-M42-05`)
+
+- **Objective:** Demonstrate independent mastery of the ai/ay choice across recognition, building, reading and spelling.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about ai and ay.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered the long-A choice.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M42-05-1 | sound: rain \| options rain, rayn \| answer **rain** |  |
+| AS-M42-05-2 | sound: day \| options day, dai \| answer **day** |  |
+| AS-M42-05-3 | sound: train \| options train, trayn \| answer **train** |  |
+| AS-M42-05-4 | hear “play” → build \| tray p l ay \| answer **play** |  |
+| AS-M42-05-5 | hear “mail” → build \| tray m ai l \| answer **mail** |  |
+| AS-M42-05-6 | hear “sail” → build \| tray s ai l \| answer **sail** |  |
+| AS-M42-05-7 | read “train” → picture \| options train, rain, sail \| answer **train** |  |
+| AS-M42-05-8 | read “rain” → picture \| options rain, train, mail \| answer **rain** |  |
 
 ## Content library
 
