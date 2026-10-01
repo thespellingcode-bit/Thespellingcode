@@ -13121,5 +13121,413 @@
     "retry_feedback": "Listen again — this doesn't need tch, just ch.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-01",
+    "lesson_id": "L4-M33-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "bell",
+      "bel"
+    ],
+    "correct_answer": "bell",
+    "audio_asset": "say:bell",
+    "feedback": "Yes! After a short vowel, l doubles at the end of a short word.",
+    "retry_feedback": "Listen again: f, l, s and z double after a short vowel at the end of a short word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-02",
+    "lesson_id": "L4-M33-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "off",
+      "of"
+    ],
+    "correct_answer": "off",
+    "audio_asset": "say:off",
+    "feedback": "Yes! After a short vowel, f doubles at the end of a short word.",
+    "retry_feedback": "Listen again: f, l, s and z double after a short vowel at the end of a short word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-03",
+    "lesson_id": "L4-M33-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pass",
+      "pas"
+    ],
+    "correct_answer": "pass",
+    "audio_asset": "say:pass",
+    "feedback": "Yes! After a short vowel, s doubles at the end of a short word.",
+    "retry_feedback": "Listen again: f, l, s and z double after a short vowel at the end of a short word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-04",
+    "lesson_id": "L4-M33-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "buzz",
+      "buz"
+    ],
+    "correct_answer": "buzz",
+    "audio_asset": "say:buzz",
+    "feedback": "Yes! After a short vowel, z doubles at the end of a short word.",
+    "retry_feedback": "Listen again: f, l, s and z double after a short vowel at the end of a short word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-05",
+    "lesson_id": "L4-M33-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "doll",
+      "dol"
+    ],
+    "correct_answer": "doll",
+    "audio_asset": "say:doll",
+    "feedback": "Yes! After a short vowel, l doubles at the end of a short word.",
+    "retry_feedback": "Listen again: f, l, s and z double after a short vowel at the end of a short word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-06",
+    "lesson_id": "L4-M33-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "miss",
+      "mis"
+    ],
+    "correct_answer": "miss",
+    "audio_asset": "say:miss",
+    "feedback": "Yes! After a short vowel, s doubles at the end of a short word.",
+    "retry_feedback": "Listen again: f, l, s and z double after a short vowel at the end of a short word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-07",
+    "lesson_id": "L4-M33-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:hill",
+    "letters": [
+      "h",
+      "i",
+      "ll",
+      "l"
+    ],
+    "answer_tiles": [
+      "h",
+      "i",
+      "ll"
+    ],
+    "correct_answer": "hill",
+    "feedback": "Yes! You built hill with ll.",
+    "retry_feedback": "Listen again — a short vowel right before the end means l doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-08",
+    "lesson_id": "L4-M33-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cliff",
+    "letters": [
+      "c",
+      "l",
+      "i",
+      "ff",
+      "f"
+    ],
+    "answer_tiles": [
+      "c",
+      "l",
+      "i",
+      "ff"
+    ],
+    "correct_answer": "cliff",
+    "feedback": "Yes! You built cliff with ff.",
+    "retry_feedback": "Listen again — a short vowel right before the end means f doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-09",
+    "lesson_id": "L4-M33-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:glass",
+    "letters": [
+      "g",
+      "l",
+      "a",
+      "ss",
+      "s"
+    ],
+    "answer_tiles": [
+      "g",
+      "l",
+      "a",
+      "ss"
+    ],
+    "correct_answer": "glass",
+    "feedback": "Yes! You built glass with ss.",
+    "retry_feedback": "Listen again — a short vowel right before the end means s doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-10",
+    "lesson_id": "L4-M33-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jazz",
+    "letters": [
+      "j",
+      "a",
+      "zz",
+      "z"
+    ],
+    "answer_tiles": [
+      "j",
+      "a",
+      "zz"
+    ],
+    "correct_answer": "jazz",
+    "feedback": "Yes! You built jazz with zz.",
+    "retry_feedback": "Listen again — a short vowel right before the end means z doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-11",
+    "lesson_id": "L4-M33-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fill",
+    "letters": [
+      "f",
+      "i",
+      "ll",
+      "l"
+    ],
+    "answer_tiles": [
+      "f",
+      "i",
+      "ll"
+    ],
+    "correct_answer": "fill",
+    "feedback": "Yes! You built fill with ll.",
+    "retry_feedback": "Listen again — a short vowel right before the end means l doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-12",
+    "lesson_id": "L4-M33-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:puff",
+    "letters": [
+      "p",
+      "u",
+      "ff",
+      "f"
+    ],
+    "answer_tiles": [
+      "p",
+      "u",
+      "ff"
+    ],
+    "correct_answer": "puff",
+    "feedback": "Yes! You built puff with ff.",
+    "retry_feedback": "Listen again — a short vowel right before the end means f doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-13",
+    "lesson_id": "L4-M33-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bell",
+    "options": [
+      "bell",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "bell",
+    "feedback": "Yes! You read bell.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-14",
+    "lesson_id": "L4-M33-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "doll",
+    "options": [
+      "doll",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "doll",
+    "feedback": "Yes! You read doll.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-15",
+    "lesson_id": "L4-M33-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "shell",
+    "options": [
+      "shell",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "shell",
+    "feedback": "Yes! You read shell.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-16",
+    "lesson_id": "L4-M33-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:stuff",
+    "letters": [
+      "s",
+      "t",
+      "u",
+      "ff",
+      "f"
+    ],
+    "answer_tiles": [
+      "s",
+      "t",
+      "u",
+      "ff"
+    ],
+    "correct_answer": "stuff",
+    "feedback": "Yes! You built stuff with ff.",
+    "retry_feedback": "Listen again — a short vowel right before the end means f doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-17",
+    "lesson_id": "L4-M33-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:spell",
+    "letters": [
+      "s",
+      "p",
+      "e",
+      "ll",
+      "l"
+    ],
+    "answer_tiles": [
+      "s",
+      "p",
+      "e",
+      "ll"
+    ],
+    "correct_answer": "spell",
+    "feedback": "Yes! You built spell with ll.",
+    "retry_feedback": "Listen again — a short vowel right before the end means l doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-18",
+    "lesson_id": "L4-M33-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dress",
+    "letters": [
+      "d",
+      "r",
+      "e",
+      "ss",
+      "s"
+    ],
+    "answer_tiles": [
+      "d",
+      "r",
+      "e",
+      "ss"
+    ],
+    "correct_answer": "dress",
+    "feedback": "Yes! You built dress with ss.",
+    "retry_feedback": "Listen again — a short vowel right before the end means s doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M33-19",
+    "lesson_id": "L4-M33-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cross",
+    "letters": [
+      "c",
+      "r",
+      "o",
+      "ss",
+      "s"
+    ],
+    "answer_tiles": [
+      "c",
+      "r",
+      "o",
+      "ss"
+    ],
+    "correct_answer": "cross",
+    "feedback": "Yes! You built cross with ss.",
+    "retry_feedback": "Listen again — a short vowel right before the end means s doubles.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]

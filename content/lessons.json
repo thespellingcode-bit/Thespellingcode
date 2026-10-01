@@ -2980,5 +2980,100 @@
       "transition": "",
       "close": "Case closed! You've mastered the ch/tch spelling choice."
     }
+  },
+  {
+    "lesson_id": "L4-M33-01",
+    "module_id": 33,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Choose a doubled or single ending letter for f, l, s and z at the end of a short word.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "New case, Detective! Today: one letter, or two?",
+      "teach": "In a short word, right after a short vowel, f, l, s and sometimes z double at the end — bell, off, pass, buzz. It looks strange, but it's the rule!",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for the doubled letter.",
+      "close": "Case closed! You know when a letter doubles at the end."
+    }
+  },
+  {
+    "lesson_id": "L4-M33-02",
+    "module_id": 33,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "spelling",
+    "objective": "Build FLOSS-doubling words, choosing the doubled ending from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — the tray has both one letter and two. Pick the doubled one!",
+      "teach": "Listen to the word, then build it — the ending always doubles here.",
+      "model": "Listen. Watch the doubled ending get picked.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! You doubled the ending every time."
+    }
+  },
+  {
+    "lesson_id": "L4-M33-03",
+    "module_id": 33,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a FLOSS-doubling word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Every word has a doubled ending today.",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every doubled-ending word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M33-04",
+    "module_id": 33,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated FLOSS-doubling word, choosing the doubled ending from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — remember to double the ending!",
+      "teach": "Listen to the word, then spell it — the ending always doubles here.",
+      "model": "Listen. Pick the doubled ending.",
+      "transition": "Your turn! Listen carefully and double the ending.",
+      "close": "Excellent spelling! You doubled every ending."
+    }
+  },
+  {
+    "lesson_id": "L4-M33-05",
+    "module_id": 33,
+    "number": 5,
+    "title": "FLOSS Doubling Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of the FLOSS doubling rule across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Double every ending.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the FLOSS doubling rule."
+    }
   }
 ]

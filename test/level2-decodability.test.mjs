@@ -58,6 +58,7 @@ const GRAPHEMES_BY_MODULE = {
   30: [], // G or J? — g and j are both already-known single letters; this module is about which known letter to choose, not a new tile.
   31: [], // GE or DGE? — dge was already taught receptively in Level 2 Module 12, and "ge" decomposes to already-known single letters g+e; this module is about which known ending to choose, not a new tile.
   32: [], // CH or TCH? — ch and tch were both already taught receptively in Level 2 (Module 11's digraph, Module 12's ending); this module is about which known ending to choose, not a new tile.
+  33: [], // FLOSS Doubling — ff/ll/ss/zz are already in ALWAYS_ALLOWED_DOUBLES below, handled generically rather than per-module.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

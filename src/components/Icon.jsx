@@ -142,6 +142,9 @@ const WORD_KEYS = [
   // Level 4 Module 32 (CH or TCH?). "torch" deliberately excluded — its
   // emoji commonly reads as "flashlight" to most users, not clearly "torch".
   "watch", "peach",
+  // Level 4 Module 33 (FLOSS Doubling). "bell" already exists (Level 1
+  // sound icon, reused for the same real object, not a collision).
+  "doll",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
