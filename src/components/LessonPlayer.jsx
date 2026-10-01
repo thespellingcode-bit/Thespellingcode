@@ -106,6 +106,11 @@ function modelCaptionFor(item) {
       // which is true but misses the entire point (the letter is SILENT,
       // never actually said), caught live before shipping.
       if (item.silent && word) return `${word} has a silent ${answer}!`;
+      // Module 36's "y as a vowel" items also reuse letter_sound_match,
+      // with correct_answer being "e" or "i" (which long sound y makes),
+      // not a grapheme at all — the generic "starts/ends with" fallback
+      // would be nonsensical here ("happy ends with the letter e").
+      if (item.yVowel) return `${word} ends with y, saying long ${answer}!`;
       if (kind === "ending") return word ? `${word} ends with ${answer}!` : `That's the ending ${answer}!`;
       if (kind === "qu") return word ? `${word} starts with qu!` : `That's qu!`;
       if (kind === "digraph") {
@@ -215,6 +220,7 @@ function modelHeadingFor(lesson, item) {
     const word = item.audio_asset?.replace(/^say:/, "");
     const kind = graphemeKindFor(item.correct_answer);
     if (item.silent && word) return `Listen. Which letter is silent in ${capitalize(word)}?`;
+    if (item.yVowel && word) return `Listen. Does the y in ${capitalize(word)} say long e or long i?`;
     if (word && kind === "ending") return `Listen. ${capitalize(word)} ends with ${item.correct_answer}.`;
     if (word && kind === "qu") return `Listen. ${capitalize(word)} starts with qu.`;
     if (word && kind === "digraph") {

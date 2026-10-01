@@ -15344,5 +15344,408 @@
     "retry_feedback": "Sound out the letters you hear, remembering the silent one stays quiet.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-01-1",
+    "lesson_id": "L4-M36-01",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "e",
+      "i"
+    ],
+    "correct_answer": "e",
+    "audio_asset": "say:funny",
+    "yVowel": true,
+    "feedback": "Yes! funny ends with y, saying long e.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-01-2",
+    "lesson_id": "L4-M36-01",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "e",
+      "i"
+    ],
+    "correct_answer": "e",
+    "audio_asset": "say:party",
+    "yVowel": true,
+    "feedback": "Yes! party ends with y, saying long e.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-01-3",
+    "lesson_id": "L4-M36-01",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "i",
+      "e"
+    ],
+    "correct_answer": "i",
+    "audio_asset": "say:try",
+    "yVowel": true,
+    "feedback": "Yes! try ends with y, saying long i.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-01-4",
+    "lesson_id": "L4-M36-01",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "i",
+      "e"
+    ],
+    "correct_answer": "i",
+    "audio_asset": "say:shy",
+    "yVowel": true,
+    "feedback": "Yes! shy ends with y, saying long i.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-02-1",
+    "lesson_id": "L4-M36-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sunny",
+    "letters": [
+      "s",
+      "u",
+      "n",
+      "n",
+      "y"
+    ],
+    "answer_tiles": [
+      "s",
+      "u",
+      "n",
+      "n",
+      "y"
+    ],
+    "correct_answer": "sunny",
+    "feedback": "Yes! You built sunny.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-02-2",
+    "lesson_id": "L4-M36-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:spy",
+    "letters": [
+      "s",
+      "p",
+      "y"
+    ],
+    "answer_tiles": [
+      "s",
+      "p",
+      "y"
+    ],
+    "correct_answer": "spy",
+    "feedback": "Yes! You built spy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-02-3",
+    "lesson_id": "L4-M36-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:muddy",
+    "letters": [
+      "m",
+      "u",
+      "d",
+      "d",
+      "y"
+    ],
+    "answer_tiles": [
+      "m",
+      "u",
+      "d",
+      "d",
+      "y"
+    ],
+    "correct_answer": "muddy",
+    "feedback": "Yes! You built muddy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-03-1",
+    "lesson_id": "L4-M36-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "baby",
+    "options": [
+      "baby",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "baby",
+    "feedback": "Yes! You read baby.",
+    "retry_feedback": "Sound out each letter, then blend them together — y at the end says a vowel sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M36-03-2",
+    "lesson_id": "L4-M36-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "puppy",
+    "options": [
+      "puppy",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "puppy",
+    "feedback": "Yes! You read puppy.",
+    "retry_feedback": "Sound out each letter, then blend them together — y at the end says a vowel sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M36-04-1",
+    "lesson_id": "L4-M36-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bunny",
+    "letters": [
+      "b",
+      "u",
+      "n",
+      "n",
+      "y",
+      "t"
+    ],
+    "answer_tiles": [
+      "b",
+      "u",
+      "n",
+      "n",
+      "y"
+    ],
+    "correct_answer": "bunny",
+    "feedback": "Yes! You built bunny.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-04-2",
+    "lesson_id": "L4-M36-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:candy",
+    "letters": [
+      "c",
+      "a",
+      "n",
+      "d",
+      "y",
+      "s"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "n",
+      "d",
+      "y"
+    ],
+    "correct_answer": "candy",
+    "feedback": "Yes! You built candy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-04-3",
+    "lesson_id": "L4-M36-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dry",
+    "letters": [
+      "d",
+      "r",
+      "y",
+      "t"
+    ],
+    "answer_tiles": [
+      "d",
+      "r",
+      "y"
+    ],
+    "correct_answer": "dry",
+    "feedback": "Yes! You built dry.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-05-1",
+    "lesson_id": "L4-M36-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "e",
+      "i"
+    ],
+    "correct_answer": "e",
+    "audio_asset": "say:happy",
+    "yVowel": true,
+    "feedback": "Yes! happy ends with y, saying long e.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-05-2",
+    "lesson_id": "L4-M36-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "i",
+      "e"
+    ],
+    "correct_answer": "i",
+    "audio_asset": "say:cry",
+    "yVowel": true,
+    "feedback": "Yes! cry ends with y, saying long i.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-05-3",
+    "lesson_id": "L4-M36-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "e",
+      "i"
+    ],
+    "correct_answer": "e",
+    "audio_asset": "say:sunny",
+    "yVowel": true,
+    "feedback": "Yes! sunny ends with y, saying long e.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-05-4",
+    "lesson_id": "L4-M36-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "i",
+      "e"
+    ],
+    "correct_answer": "i",
+    "audio_asset": "say:sky",
+    "yVowel": true,
+    "feedback": "Yes! sky ends with y, saying long i.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-05-5",
+    "lesson_id": "L4-M36-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:baby",
+    "letters": [
+      "b",
+      "a",
+      "b",
+      "y"
+    ],
+    "answer_tiles": [
+      "b",
+      "a",
+      "b",
+      "y"
+    ],
+    "correct_answer": "baby",
+    "feedback": "Yes! You built baby.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-05-6",
+    "lesson_id": "L4-M36-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fly",
+    "letters": [
+      "f",
+      "l",
+      "y"
+    ],
+    "answer_tiles": [
+      "f",
+      "l",
+      "y"
+    ],
+    "correct_answer": "fly",
+    "feedback": "Yes! You built fly.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-05-7",
+    "lesson_id": "L4-M36-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "puppy",
+    "options": [
+      "puppy",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "puppy",
+    "feedback": "Yes! You read puppy.",
+    "retry_feedback": "Sound out each letter, then blend them together — y at the end says a vowel sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M36-05-8",
+    "lesson_id": "L4-M36-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "fly",
+    "options": [
+      "fly",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "fly",
+    "feedback": "Yes! You read fly.",
+    "retry_feedback": "Sound out each letter, then blend them together — y at the end says a vowel sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

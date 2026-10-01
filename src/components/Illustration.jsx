@@ -519,6 +519,7 @@ const IMAGE_BG = {
   watch: "#DCEEF6", peach: "#FBD9D2",
   doll: "#FDE0E8",
   comb: "#E4E1EA", knee: "#FDE9D2", knife: "#DCEEF6",
+  baby: "#FDE9D2", puppy: "#F1E3D3", fly: "#E4E1EA",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {

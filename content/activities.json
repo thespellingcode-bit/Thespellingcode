@@ -14552,5 +14552,419 @@
     "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-01",
+    "lesson_id": "L4-M36-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "e",
+      "i"
+    ],
+    "correct_answer": "e",
+    "audio_asset": "say:happy",
+    "yVowel": true,
+    "feedback": "Yes! happy ends with y, saying long e.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-02",
+    "lesson_id": "L4-M36-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "e",
+      "i"
+    ],
+    "correct_answer": "e",
+    "audio_asset": "say:baby",
+    "yVowel": true,
+    "feedback": "Yes! baby ends with y, saying long e.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-03",
+    "lesson_id": "L4-M36-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "e",
+      "i"
+    ],
+    "correct_answer": "e",
+    "audio_asset": "say:puppy",
+    "yVowel": true,
+    "feedback": "Yes! puppy ends with y, saying long e.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-04",
+    "lesson_id": "L4-M36-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "i",
+      "e"
+    ],
+    "correct_answer": "i",
+    "audio_asset": "say:cry",
+    "yVowel": true,
+    "feedback": "Yes! cry ends with y, saying long i.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-05",
+    "lesson_id": "L4-M36-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "i",
+      "e"
+    ],
+    "correct_answer": "i",
+    "audio_asset": "say:fly",
+    "yVowel": true,
+    "feedback": "Yes! fly ends with y, saying long i.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-06",
+    "lesson_id": "L4-M36-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Does the y say long e or long i in this word?",
+    "options": [
+      "i",
+      "e"
+    ],
+    "correct_answer": "i",
+    "audio_asset": "say:my",
+    "yVowel": true,
+    "feedback": "Yes! my ends with y, saying long i.",
+    "retry_feedback": "Listen again — a longer word's y usually says long e; a short word's y usually says long i.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-07",
+    "lesson_id": "L4-M36-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:happy",
+    "letters": [
+      "h",
+      "a",
+      "p",
+      "p",
+      "y"
+    ],
+    "answer_tiles": [
+      "h",
+      "a",
+      "p",
+      "p",
+      "y"
+    ],
+    "correct_answer": "happy",
+    "feedback": "Yes! You built happy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-08",
+    "lesson_id": "L4-M36-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:baby",
+    "letters": [
+      "b",
+      "a",
+      "b",
+      "y"
+    ],
+    "answer_tiles": [
+      "b",
+      "a",
+      "b",
+      "y"
+    ],
+    "correct_answer": "baby",
+    "feedback": "Yes! You built baby.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-09",
+    "lesson_id": "L4-M36-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cry",
+    "letters": [
+      "c",
+      "r",
+      "y"
+    ],
+    "answer_tiles": [
+      "c",
+      "r",
+      "y"
+    ],
+    "correct_answer": "cry",
+    "feedback": "Yes! You built cry.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-10",
+    "lesson_id": "L4-M36-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fly",
+    "letters": [
+      "f",
+      "l",
+      "y"
+    ],
+    "answer_tiles": [
+      "f",
+      "l",
+      "y"
+    ],
+    "correct_answer": "fly",
+    "feedback": "Yes! You built fly.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-11",
+    "lesson_id": "L4-M36-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:puppy",
+    "letters": [
+      "p",
+      "u",
+      "p",
+      "p",
+      "y"
+    ],
+    "answer_tiles": [
+      "p",
+      "u",
+      "p",
+      "p",
+      "y"
+    ],
+    "correct_answer": "puppy",
+    "feedback": "Yes! You built puppy.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-12",
+    "lesson_id": "L4-M36-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:try",
+    "letters": [
+      "t",
+      "r",
+      "y"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "y"
+    ],
+    "correct_answer": "try",
+    "feedback": "Yes! You built try.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-13",
+    "lesson_id": "L4-M36-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "baby",
+    "options": [
+      "baby",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "baby",
+    "feedback": "Yes! You read baby.",
+    "retry_feedback": "Sound out each letter, then blend them together — y at the end says a vowel sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-14",
+    "lesson_id": "L4-M36-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "puppy",
+    "options": [
+      "puppy",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "puppy",
+    "feedback": "Yes! You read puppy.",
+    "retry_feedback": "Sound out each letter, then blend them together — y at the end says a vowel sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-15",
+    "lesson_id": "L4-M36-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "fly",
+    "options": [
+      "fly",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "fly",
+    "feedback": "Yes! You read fly.",
+    "retry_feedback": "Sound out each letter, then blend them together — y at the end says a vowel sound.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-16",
+    "lesson_id": "L4-M36-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:funny",
+    "letters": [
+      "f",
+      "u",
+      "n",
+      "n",
+      "y",
+      "t"
+    ],
+    "answer_tiles": [
+      "f",
+      "u",
+      "n",
+      "n",
+      "y"
+    ],
+    "correct_answer": "funny",
+    "feedback": "Yes! You built funny.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-17",
+    "lesson_id": "L4-M36-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sky",
+    "letters": [
+      "s",
+      "k",
+      "y",
+      "t"
+    ],
+    "answer_tiles": [
+      "s",
+      "k",
+      "y"
+    ],
+    "correct_answer": "sky",
+    "feedback": "Yes! You built sky.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-18",
+    "lesson_id": "L4-M36-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:silly",
+    "letters": [
+      "s",
+      "i",
+      "l",
+      "l",
+      "y",
+      "b"
+    ],
+    "answer_tiles": [
+      "s",
+      "i",
+      "l",
+      "l",
+      "y"
+    ],
+    "correct_answer": "silly",
+    "feedback": "Yes! You built silly.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M36-19",
+    "lesson_id": "L4-M36-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:why",
+    "letters": [
+      "w",
+      "h",
+      "y",
+      "s"
+    ],
+    "answer_tiles": [
+      "w",
+      "h",
+      "y"
+    ],
+    "correct_answer": "why",
+    "feedback": "Yes! You built why.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

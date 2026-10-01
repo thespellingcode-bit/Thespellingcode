@@ -3284,5 +3284,100 @@
       "transition": "",
       "close": "Case closed! You've mastered silent letters."
     }
+  },
+  {
+    "lesson_id": "L4-M36-01",
+    "module_id": 36,
+    "number": 1,
+    "title": "Meet Y",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise that y at the end of a word is a vowel — long e in a longer word, long i in a short word.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A new case, Detective! y isn't always a consonant.",
+      "teach": "At the end of a longer word, y says long e — happy, baby. At the end of a short word, y says long i — cry, fly, my.",
+      "model": "Listen. Does the y say long e or long i?",
+      "transition": "Your turn, Detective! Listen for y's vowel sound.",
+      "close": "Case closed! You know when y says long e and when it says long i."
+    }
+  },
+  {
+    "lesson_id": "L4-M36-02",
+    "module_id": 36,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build words ending in y, letter by letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some y-ending words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — y is the last tile every time.",
+      "model": "Listen. Watch how the tiles build the word, ending with y.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! Every word ended with y."
+    }
+  },
+  {
+    "lesson_id": "L4-M36-03",
+    "module_id": 36,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a y-ending word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Every word ends with y today.",
+      "teach": "Read the word, remembering y says a vowel sound at the end. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every y-ending word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M36-04",
+    "module_id": 36,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated y-ending word from a tray that includes one decoy letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — remember y goes at the end!",
+      "teach": "Listen to the word, then build it — remember y, and leave out the extra tile that doesn't belong.",
+      "model": "Listen. Pick the right tiles, ending with y — and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully and leave out the extra letter.",
+      "close": "Excellent spelling! You never forgot the y."
+    }
+  },
+  {
+    "lesson_id": "L4-M36-05",
+    "module_id": 36,
+    "number": 5,
+    "title": "Y as a Vowel Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of y as a vowel across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about y.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered y as a vowel."
+    }
   }
 ]

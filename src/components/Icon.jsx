@@ -149,6 +149,11 @@ const WORD_KEYS = [
   // digraph word, reused for the same real object). "sign" deliberately
   // excluded — its emoji is a construction barrier, not clearly "sign".
   "comb", "knee", "knife",
+  // Level 4 Module 36 (Y as a Vowel). "candy" deliberately excluded —
+  // "candy".includes("can") would match the existing "can" picture first.
+  // "sky" also excluded — its sun-behind-cloud emoji reads as "weather"/
+  // "cloud", not clearly "sky".
+  "baby", "puppy", "fly",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
