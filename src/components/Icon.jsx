@@ -176,6 +176,13 @@ const WORD_KEYS = [
   // prefixed tie-word, it would need a different picture word or careful
   // ordering, the same class of risk as "train" before "rain".
   "pie", "tie", "light",
+  // Level 5 Module 46 (Long-U Choices: ue/ew/oo). blue/true/new/few/grew/
+  // chew have no clean concrete-noun picture (same reasoning as every
+  // earlier level's abstract-word gaps) — moon/spoon/broom cover the oo
+  // spelling instead. "book" (already an existing picture, Module 29)
+  // deliberately NOT reused here — its oo makes the SHORT oo sound, a
+  // different sound from this module's long-oo focus.
+  "moon", "spoon", "broom",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

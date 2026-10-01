@@ -43,5 +43,6 @@
   { "module_id": 42, "level_id": 5, "module_name": "Long-A Choices", "module_goal": "Choose ai or ay for the long-A sound, based on whether it sits in the middle or at the end of the word.", "units": 5, "active": true },
   { "module_id": 43, "level_id": 5, "module_name": "Long-E Choices", "module_goal": "Choose ee or ea for the long-E sound — ee is the more common spelling, ea is a specific set of common words to learn by heart.", "units": 5, "active": true },
   { "module_id": 44, "level_id": 5, "module_name": "Long-I Choices", "module_goal": "Choose igh or ie for the long-I sound, alongside the already-known i_e and y spellings.", "units": 5, "active": true },
-  { "module_id": 45, "level_id": 5, "module_name": "Long-O Choices", "module_goal": "Choose oa or ow for the long-O sound, based on whether it sits in the middle or at the end of the word.", "units": 5, "active": true }
+  { "module_id": 45, "level_id": 5, "module_name": "Long-O Choices", "module_goal": "Choose oa or ow for the long-O sound, based on whether it sits in the middle or at the end of the word.", "units": 5, "active": true },
+  { "module_id": 46, "level_id": 5, "module_name": "Long-U Choices", "module_goal": "Choose ue, ew or oo for the long-U sound, alongside the already-known u_e spelling — oo is the most common, ue and ew are smaller sets to learn by heart.", "units": 6, "active": true }
 ]

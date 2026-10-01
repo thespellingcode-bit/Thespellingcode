@@ -18721,5 +18721,467 @@
     "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-01",
+    "lesson_id": "L5-M46-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "true",
+      "trew"
+    ],
+    "correct_answer": "true",
+    "audio_asset": "say:true",
+    "feedback": "Yes! It's true.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-02",
+    "lesson_id": "L5-M46-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "new",
+      "noo"
+    ],
+    "correct_answer": "new",
+    "audio_asset": "say:new",
+    "feedback": "Yes! It's new.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-03",
+    "lesson_id": "L5-M46-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "moon",
+      "mewn"
+    ],
+    "correct_answer": "moon",
+    "audio_asset": "say:moon",
+    "feedback": "Yes! It's moon.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-04",
+    "lesson_id": "L5-M46-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "glue",
+      "gloo"
+    ],
+    "correct_answer": "glue",
+    "audio_asset": "say:glue",
+    "feedback": "Yes! It's glue.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-05",
+    "lesson_id": "L5-M46-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "few",
+      "fue"
+    ],
+    "correct_answer": "few",
+    "audio_asset": "say:few",
+    "feedback": "Yes! It's few.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-06",
+    "lesson_id": "L5-M46-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "spoon",
+      "spewn"
+    ],
+    "correct_answer": "spoon",
+    "audio_asset": "say:spoon",
+    "feedback": "Yes! It's spoon.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-07",
+    "lesson_id": "L5-M46-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "food",
+      "fewd"
+    ],
+    "correct_answer": "food",
+    "audio_asset": "say:food",
+    "feedback": "Yes! It's food.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-08",
+    "lesson_id": "L5-M46-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "zoo",
+      "zew"
+    ],
+    "correct_answer": "zoo",
+    "audio_asset": "say:zoo",
+    "feedback": "Yes! It's zoo.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-09",
+    "lesson_id": "L5-M46-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "room",
+      "ruem"
+    ],
+    "correct_answer": "room",
+    "audio_asset": "say:room",
+    "feedback": "Yes! It's room.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-10",
+    "lesson_id": "L5-M46-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "chew",
+      "chue"
+    ],
+    "correct_answer": "chew",
+    "audio_asset": "say:chew",
+    "feedback": "Yes! It's chew.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-11",
+    "lesson_id": "L5-M46-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pool",
+      "pewl"
+    ],
+    "correct_answer": "pool",
+    "audio_asset": "say:pool",
+    "feedback": "Yes! It's pool.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-12",
+    "lesson_id": "L5-M46-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:true",
+    "letters": [
+      "tr",
+      "ue"
+    ],
+    "answer_tiles": [
+      "tr",
+      "ue"
+    ],
+    "correct_answer": "true",
+    "feedback": "Yes! You built true.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-13",
+    "lesson_id": "L5-M46-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:new",
+    "letters": [
+      "n",
+      "ew"
+    ],
+    "answer_tiles": [
+      "n",
+      "ew"
+    ],
+    "correct_answer": "new",
+    "feedback": "Yes! You built new.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-14",
+    "lesson_id": "L5-M46-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:moon",
+    "letters": [
+      "m",
+      "oo",
+      "n"
+    ],
+    "answer_tiles": [
+      "m",
+      "oo",
+      "n"
+    ],
+    "correct_answer": "moon",
+    "feedback": "Yes! You built moon.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-15",
+    "lesson_id": "L5-M46-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:glue",
+    "letters": [
+      "gl",
+      "ue"
+    ],
+    "answer_tiles": [
+      "gl",
+      "ue"
+    ],
+    "correct_answer": "glue",
+    "feedback": "Yes! You built glue.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-16",
+    "lesson_id": "L5-M46-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:few",
+    "letters": [
+      "f",
+      "ew"
+    ],
+    "answer_tiles": [
+      "f",
+      "ew"
+    ],
+    "correct_answer": "few",
+    "feedback": "Yes! You built few.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-17",
+    "lesson_id": "L5-M46-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "moon",
+    "options": [
+      "moon",
+      "spoon",
+      "broom"
+    ],
+    "correct_answer": "moon",
+    "feedback": "Yes! You read moon.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-18",
+    "lesson_id": "L5-M46-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "spoon",
+    "options": [
+      "spoon",
+      "moon",
+      "broom"
+    ],
+    "correct_answer": "spoon",
+    "feedback": "Yes! You read spoon.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-19",
+    "lesson_id": "L5-M46-04",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "broom",
+    "options": [
+      "broom",
+      "moon",
+      "spoon"
+    ],
+    "correct_answer": "broom",
+    "feedback": "Yes! You read broom.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-20",
+    "lesson_id": "L5-M46-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:true",
+    "letters": [
+      "tr",
+      "ue",
+      "ew"
+    ],
+    "answer_tiles": [
+      "tr",
+      "ue"
+    ],
+    "correct_answer": "true",
+    "feedback": "Yes! You built true.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-21",
+    "lesson_id": "L5-M46-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:new",
+    "letters": [
+      "n",
+      "ew",
+      "ue"
+    ],
+    "answer_tiles": [
+      "n",
+      "ew"
+    ],
+    "correct_answer": "new",
+    "feedback": "Yes! You built new.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-22",
+    "lesson_id": "L5-M46-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:moon",
+    "letters": [
+      "m",
+      "oo",
+      "n",
+      "ue"
+    ],
+    "answer_tiles": [
+      "m",
+      "oo",
+      "n"
+    ],
+    "correct_answer": "moon",
+    "feedback": "Yes! You built moon.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-23",
+    "lesson_id": "L5-M46-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:glue",
+    "letters": [
+      "gl",
+      "ue",
+      "oo"
+    ],
+    "answer_tiles": [
+      "gl",
+      "ue"
+    ],
+    "correct_answer": "glue",
+    "feedback": "Yes! You built glue.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M46-24",
+    "lesson_id": "L5-M46-05",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:spoon",
+    "letters": [
+      "sp",
+      "oo",
+      "n",
+      "ew"
+    ],
+    "answer_tiles": [
+      "sp",
+      "oo",
+      "n"
+    ],
+    "correct_answer": "spoon",
+    "feedback": "Yes! You built spoon.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]

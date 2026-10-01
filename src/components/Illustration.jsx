@@ -527,6 +527,7 @@ const IMAGE_BG = {
   dolphin: "#DCEBFF", elephant: "#E4E1EA", trophy: "#FFF3D6", graph: "#F1E3D3",
   ice: "#DCEEF6", city: "#E4E1EA",
   pie: "#FFF3D6", tie: "#DCEBFF", light: "#FFF3D6",
+  moon: "#E4E1EA", spoon: "#DCEEF6", broom: "#FFF3D6",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {

@@ -19020,5 +19020,333 @@
     "retry_feedback": "Sound out the letters — oa in the middle, ow at the end.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-01-1",
+    "lesson_id": "L5-M46-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "clue",
+      "clew"
+    ],
+    "correct_answer": "clue",
+    "audio_asset": "say:clue",
+    "feedback": "Yes! It's clue.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-01-2",
+    "lesson_id": "L5-M46-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "grew",
+      "groo"
+    ],
+    "correct_answer": "grew",
+    "audio_asset": "say:grew",
+    "feedback": "Yes! It's grew.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-01-3",
+    "lesson_id": "L5-M46-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "broom",
+      "bruem"
+    ],
+    "correct_answer": "broom",
+    "audio_asset": "say:broom",
+    "feedback": "Yes! It's broom.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-02-1",
+    "lesson_id": "L5-M46-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "flew",
+      "floo"
+    ],
+    "correct_answer": "flew",
+    "audio_asset": "say:flew",
+    "feedback": "Yes! It's flew.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-02-2",
+    "lesson_id": "L5-M46-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "boot",
+      "buet"
+    ],
+    "correct_answer": "boot",
+    "audio_asset": "say:boot",
+    "feedback": "Yes! It's boot.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-03-1",
+    "lesson_id": "L5-M46-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:drew",
+    "letters": [
+      "dr",
+      "ew"
+    ],
+    "answer_tiles": [
+      "dr",
+      "ew"
+    ],
+    "correct_answer": "drew",
+    "feedback": "Yes! You built drew.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-03-2",
+    "lesson_id": "L5-M46-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:spoon",
+    "letters": [
+      "sp",
+      "oo",
+      "n"
+    ],
+    "answer_tiles": [
+      "sp",
+      "oo",
+      "n"
+    ],
+    "correct_answer": "spoon",
+    "feedback": "Yes! You built spoon.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-04-1",
+    "lesson_id": "L5-M46-04",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "moon",
+    "options": [
+      "moon",
+      "spoon",
+      "broom"
+    ],
+    "correct_answer": "moon",
+    "feedback": "Yes! You read moon.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": "Only moon/spoon/broom have clean, unambiguous pictures this module — reuses a practice word rather than forcing in a weaker fourth picture, same precedent as Modules 30 and 44."
+  },
+  {
+    "assessment_id": "AS-M46-05-1",
+    "lesson_id": "L5-M46-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:food",
+    "letters": [
+      "f",
+      "oo",
+      "d",
+      "ue"
+    ],
+    "answer_tiles": [
+      "f",
+      "oo",
+      "d"
+    ],
+    "correct_answer": "food",
+    "feedback": "Yes! You built food.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-05-2",
+    "lesson_id": "L5-M46-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:chew",
+    "letters": [
+      "ch",
+      "ew",
+      "oo"
+    ],
+    "answer_tiles": [
+      "ch",
+      "ew"
+    ],
+    "correct_answer": "chew",
+    "feedback": "Yes! You built chew.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-06-1",
+    "lesson_id": "L5-M46-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "moon",
+      "mewn"
+    ],
+    "correct_answer": "moon",
+    "audio_asset": "say:moon",
+    "feedback": "Yes! It's moon.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-06-2",
+    "lesson_id": "L5-M46-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "glue",
+      "gloo"
+    ],
+    "correct_answer": "glue",
+    "audio_asset": "say:glue",
+    "feedback": "Yes! It's glue.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-06-3",
+    "lesson_id": "L5-M46-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "new",
+      "noo"
+    ],
+    "correct_answer": "new",
+    "audio_asset": "say:new",
+    "feedback": "Yes! It's new.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-06-4",
+    "lesson_id": "L5-M46-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:spoon",
+    "letters": [
+      "sp",
+      "oo",
+      "n"
+    ],
+    "answer_tiles": [
+      "sp",
+      "oo",
+      "n"
+    ],
+    "correct_answer": "spoon",
+    "feedback": "Yes! You built spoon.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-06-5",
+    "lesson_id": "L5-M46-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:clue",
+    "letters": [
+      "cl",
+      "ue"
+    ],
+    "answer_tiles": [
+      "cl",
+      "ue"
+    ],
+    "correct_answer": "clue",
+    "feedback": "Yes! You built clue.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-06-6",
+    "lesson_id": "L5-M46-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:grew",
+    "letters": [
+      "gr",
+      "ew"
+    ],
+    "answer_tiles": [
+      "gr",
+      "ew"
+    ],
+    "correct_answer": "grew",
+    "feedback": "Yes! You built grew.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-06-7",
+    "lesson_id": "L5-M46-06",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "moon",
+    "options": [
+      "moon",
+      "spoon",
+      "broom"
+    ],
+    "correct_answer": "moon",
+    "feedback": "Yes! You read moon.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M46-06-8",
+    "lesson_id": "L5-M46-06",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "spoon",
+    "options": [
+      "spoon",
+      "moon",
+      "broom"
+    ],
+    "correct_answer": "spoon",
+    "feedback": "Yes! You read spoon.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

@@ -134,9 +134,9 @@ test("REQUIREMENT: assessment questions do not reuse practice audio_asset+correc
   assert.deepEqual(violations, [], violations.join("\n"));
 });
 
-test("exactly Modules 1-45 active — scope guard for this build (all of Level 1, Level 2, Level 3, and Level 4, plus Level 5 Modules 1-5, built)", () => {
+test("exactly Modules 1-46 active — scope guard for this build (all of Level 1, Level 2, Level 3, and Level 4, plus Level 5 Modules 1-6, built)", () => {
   const active = modules.filter((m) => m.active).map((m) => m.module_id).sort((a, b) => a - b);
-  assert.deepEqual(active, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]);
+  assert.deepEqual(active, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]);
 });
 
 test("exactly Sound Starter, Rhyme Ranger, Level 1 Sound Explorer, Sentence Star, Level 2 Word Builder, Level 3 Pattern Detective, and Level 4 Spelling Detective badges active — scope guard for this build", () => {

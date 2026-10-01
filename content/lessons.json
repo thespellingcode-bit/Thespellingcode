@@ -4253,5 +4253,119 @@
       "transition": "",
       "close": "Case closed! You've mastered the long-O choice."
     }
+  },
+  {
+    "lesson_id": "L5-M46-01",
+    "module_id": 46,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Recognise ue, ew and oo as three spellings of long U, alongside the already-known u_e.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "The trickiest case yet, Detective! The long-U sound has THREE spellings: ue, ew and oo.",
+      "teach": "oo is the most common spelling (moon, spoon, food). ue and ew are smaller sets to learn by heart (true, glue; new, few). Listen, then pick the spelling this word actually uses.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Remember each word's own correct spelling.",
+      "close": "Case closed! You're learning the three spellings of long U."
+    }
+  },
+  {
+    "lesson_id": "L5-M46-02",
+    "module_id": 46,
+    "number": 2,
+    "title": "More Spellings",
+    "skill": "spelling",
+    "objective": "Practise more long-U words across all three spellings — ue, ew and oo.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More long-U words to learn, Detective — there are a lot of these!",
+      "teach": "Keep listening for each word's own spelling — oo, ue or ew.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn! Keep going — you're getting the hang of it.",
+      "close": "Fantastic! You know even more long-U words now."
+    }
+  },
+  {
+    "lesson_id": "L5-M46-03",
+    "module_id": 46,
+    "number": 3,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build long-U words using ue, ew or oo correctly.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some long-U words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — ue, ew and oo each get their own single tile.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You used the right spelling for each word."
+    }
+  },
+  {
+    "lesson_id": "L5-M46-04",
+    "module_id": 46,
+    "number": 4,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a long-U word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Remember — oo makes the long-oo sound in these words (it can also make a short sound, like in book — but not here).",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every long-U word correctly."
+    }
+  },
+  {
+    "lesson_id": "L5-M46-05",
+    "module_id": 46,
+    "number": 5,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated long-U word, choosing ue, ew or oo from a tray that includes one decoy.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — pick ue, ew or oo, and leave the wrong one out!",
+      "teach": "Listen to the word, then build it, leaving out the spelling that doesn't belong.",
+      "model": "Listen. Pick the right tiles and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully, and leave out the tile that doesn't belong.",
+      "close": "Excellent spelling! You remembered each word's own spelling."
+    }
+  },
+  {
+    "lesson_id": "L5-M46-06",
+    "module_id": 46,
+    "number": 6,
+    "title": "Long-U Choices Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of the ue/ew/oo choice across recognition, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about ue, ew and oo.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the long-U choice."
+    }
   }
 ]

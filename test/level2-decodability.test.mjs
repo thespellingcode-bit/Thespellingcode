@@ -71,6 +71,7 @@ const GRAPHEMES_BY_MODULE = {
   43: [], // Long-E Choices — ee/ea were already taught receptively in Level 3 Module 21; this module makes them a graded choice, no new grapheme tile.
   44: ["igh", "ie"], // Long-I Choices — two genuinely new graphemes, added to questionTypes.js's VOWEL_TEAMS set.
   45: [], // Long-O Choices — oa/ow were already taught receptively in Level 3 Module 22; this module makes them a graded choice, no new grapheme tile.
+  46: ["ue", "ew", "oo"], // Long-U Choices — three genuinely new graphemes, added to questionTypes.js's VOWEL_TEAMS set.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same
