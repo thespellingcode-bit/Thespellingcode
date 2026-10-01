@@ -15747,5 +15747,559 @@
     "retry_feedback": "Sound out each letter, then blend them together — y at the end says a vowel sound.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-01-1",
+    "lesson_id": "L4-M37-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "frogs",
+      "froges"
+    ],
+    "correct_answer": "frogs",
+    "audio_asset": "say:frogs",
+    "feedback": "Yes! frog just adds s.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-01-2",
+    "lesson_id": "L4-M37-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "kites",
+      "kitees"
+    ],
+    "correct_answer": "kites",
+    "audio_asset": "say:kites",
+    "feedback": "Yes! kite just adds s.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-01-3",
+    "lesson_id": "L4-M37-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "books",
+      "bookes"
+    ],
+    "correct_answer": "books",
+    "audio_asset": "say:books",
+    "feedback": "Yes! book just adds s.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-01-4",
+    "lesson_id": "L4-M37-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "socks",
+      "sockes"
+    ],
+    "correct_answer": "socks",
+    "audio_asset": "say:socks",
+    "feedback": "Yes! sock just adds s.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-02-1",
+    "lesson_id": "L4-M37-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "fishes",
+      "fishs"
+    ],
+    "correct_answer": "fishes",
+    "audio_asset": "say:fishes",
+    "feedback": "Yes! fish ends in a sound that needs an extra syllable — add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-02-2",
+    "lesson_id": "L4-M37-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "kisses",
+      "kisss"
+    ],
+    "correct_answer": "kisses",
+    "audio_asset": "say:kisses",
+    "feedback": "Yes! kiss ends in a sound that needs an extra syllable — add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-02-3",
+    "lesson_id": "L4-M37-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "branches",
+      "branchs"
+    ],
+    "correct_answer": "branches",
+    "audio_asset": "say:branches",
+    "feedback": "Yes! branch ends in a sound that needs an extra syllable — add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-02-4",
+    "lesson_id": "L4-M37-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "glasses",
+      "glasss"
+    ],
+    "correct_answer": "glasses",
+    "audio_asset": "say:glasses",
+    "feedback": "Yes! glass ends in a sound that needs an extra syllable — add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-03-1",
+    "lesson_id": "L4-M37-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "ladies",
+      "ladys"
+    ],
+    "correct_answer": "ladies",
+    "audio_asset": "say:ladies",
+    "feedback": "Yes! lady ends in a consonant plus y — change y to i and add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-03-2",
+    "lesson_id": "L4-M37-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "berries",
+      "berrys"
+    ],
+    "correct_answer": "berries",
+    "audio_asset": "say:berries",
+    "feedback": "Yes! berry ends in a consonant plus y — change y to i and add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-03-3",
+    "lesson_id": "L4-M37-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "stories",
+      "storys"
+    ],
+    "correct_answer": "stories",
+    "audio_asset": "say:stories",
+    "feedback": "Yes! story ends in a consonant plus y — change y to i and add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-03-4",
+    "lesson_id": "L4-M37-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pennies",
+      "pennys"
+    ],
+    "correct_answer": "pennies",
+    "audio_asset": "say:pennies",
+    "feedback": "Yes! penny ends in a consonant plus y — change y to i and add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-04-1",
+    "lesson_id": "L4-M37-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:foxes",
+    "letters": [
+      "f",
+      "o",
+      "x",
+      "es",
+      "s"
+    ],
+    "answer_tiles": [
+      "f",
+      "o",
+      "x",
+      "es"
+    ],
+    "correct_answer": "foxes",
+    "feedback": "Yes! You built foxes with es.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-04-2",
+    "lesson_id": "L4-M37-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:ladies",
+    "letters": [
+      "l",
+      "a",
+      "d",
+      "ies",
+      "ys"
+    ],
+    "answer_tiles": [
+      "l",
+      "a",
+      "d",
+      "ies"
+    ],
+    "correct_answer": "ladies",
+    "feedback": "Yes! You built ladies with ies.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-04-3",
+    "lesson_id": "L4-M37-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:birds",
+    "letters": [
+      "b",
+      "i",
+      "r",
+      "d",
+      "s",
+      "es"
+    ],
+    "answer_tiles": [
+      "b",
+      "i",
+      "r",
+      "d",
+      "s"
+    ],
+    "correct_answer": "birds",
+    "feedback": "Yes! You built birds with s.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-04-4",
+    "lesson_id": "L4-M37-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dishes",
+    "letters": [
+      "d",
+      "i",
+      "s",
+      "h",
+      "es",
+      "s"
+    ],
+    "answer_tiles": [
+      "d",
+      "i",
+      "s",
+      "h",
+      "es"
+    ],
+    "correct_answer": "dishes",
+    "feedback": "Yes! You built dishes with es.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-05-1",
+    "lesson_id": "L4-M37-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:glasses",
+    "letters": [
+      "g",
+      "l",
+      "a",
+      "s",
+      "s",
+      "es",
+      "s"
+    ],
+    "answer_tiles": [
+      "g",
+      "l",
+      "a",
+      "s",
+      "s",
+      "es"
+    ],
+    "correct_answer": "glasses",
+    "feedback": "Yes! You built glasses with es.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-05-2",
+    "lesson_id": "L4-M37-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:stories",
+    "letters": [
+      "s",
+      "t",
+      "o",
+      "r",
+      "ies",
+      "ys"
+    ],
+    "answer_tiles": [
+      "s",
+      "t",
+      "o",
+      "r",
+      "ies"
+    ],
+    "correct_answer": "stories",
+    "feedback": "Yes! You built stories with ies.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-05-3",
+    "lesson_id": "L4-M37-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:frogs",
+    "letters": [
+      "f",
+      "r",
+      "o",
+      "g",
+      "s",
+      "es"
+    ],
+    "answer_tiles": [
+      "f",
+      "r",
+      "o",
+      "g",
+      "s"
+    ],
+    "correct_answer": "frogs",
+    "feedback": "Yes! You built frogs with s.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-1",
+    "lesson_id": "L4-M37-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cats",
+      "cates"
+    ],
+    "correct_answer": "cats",
+    "audio_asset": "say:cats",
+    "feedback": "Yes! cat just adds s.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-2",
+    "lesson_id": "L4-M37-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "boxes",
+      "boxs"
+    ],
+    "correct_answer": "boxes",
+    "audio_asset": "say:boxes",
+    "feedback": "Yes! box ends in a sound that needs an extra syllable — add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-3",
+    "lesson_id": "L4-M37-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "babies",
+      "babys"
+    ],
+    "correct_answer": "babies",
+    "audio_asset": "say:babies",
+    "feedback": "Yes! baby ends in a consonant plus y — change y to i and add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-4",
+    "lesson_id": "L4-M37-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "buses",
+      "buss"
+    ],
+    "correct_answer": "buses",
+    "audio_asset": "say:buses",
+    "feedback": "Yes! bus ends in a sound that needs an extra syllable — add es.",
+    "retry_feedback": "Listen again: most words just add s; words ending in a hissing sound add es; a consonant plus y changes to ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-5",
+    "lesson_id": "L4-M37-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dogs",
+    "letters": [
+      "d",
+      "o",
+      "g",
+      "s",
+      "es"
+    ],
+    "answer_tiles": [
+      "d",
+      "o",
+      "g",
+      "s"
+    ],
+    "correct_answer": "dogs",
+    "feedback": "Yes! You built dogs with s.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-6",
+    "lesson_id": "L4-M37-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:foxes",
+    "letters": [
+      "f",
+      "o",
+      "x",
+      "es",
+      "s"
+    ],
+    "answer_tiles": [
+      "f",
+      "o",
+      "x",
+      "es"
+    ],
+    "correct_answer": "foxes",
+    "feedback": "Yes! You built foxes with es.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-7",
+    "lesson_id": "L4-M37-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:puppies",
+    "letters": [
+      "p",
+      "u",
+      "p",
+      "p",
+      "ies",
+      "ys"
+    ],
+    "answer_tiles": [
+      "p",
+      "u",
+      "p",
+      "p",
+      "ies"
+    ],
+    "correct_answer": "puppies",
+    "feedback": "Yes! You built puppies with ies.",
+    "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-8",
+    "lesson_id": "L4-M37-06",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "box",
+    "options": [
+      "box",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "box",
+    "feedback": "Yes! You read box.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M37-06-9",
+    "lesson_id": "L4-M37-06",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "baby",
+    "options": [
+      "baby",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "baby",
+    "feedback": "Yes! You read baby.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

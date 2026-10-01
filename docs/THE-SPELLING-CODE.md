@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–36 built (through Y as a Vowel) |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–37 built (through Plurals) |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,7 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
-| Level 4 “Spelling Detective”, Modules 28–36 (through Y as a Vowel) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
+| Level 4 “Spelling Detective”, Modules 28–37 (through Plurals) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -89,7 +89,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Level 4 curriculum design (Modules 28–36 built; Modules 37–40 planned, not yet built)
+### Level 4 curriculum design (Modules 28–37 built; Modules 38–40 planned, not yet built)
 - **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
 - **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
 - **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
@@ -102,6 +102,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 34, Doubling Before Suffixes — the first module needing a genuinely new word shape: a base word plus a suffix (-ing/-ed), not just an ending choice on an already-whole word.** Three rules, each a full lesson: double the final consonant after a short vowel (hop → hopping), drop a silent e (hope → hoping), or just add the suffix when neither applies (jump → jumping). The `word_build` helper generalizes cleanly across all three — `letters`/`answer_tiles` built from `[...stem, extra, suffix]` with the decoy being either a stray "e" (doubling words) or the stem's own final consonant (drop-e words), confirmed live for all three modes without any new component. The `spelling_choice` recognition lessons lean on genuine minimal pairs wherever English has them (hop/hope, tap/tape, win/wine, plan/plane, grip/gripe, star/stare) — the SAME two words really do exist with different meanings, so the audio itself (short vs long vowel) is the only way to tell which spelling is correct, directly extending Level 3's short/long vowel discrimination skill. No picture-matching lesson — a still image can't clearly distinguish "running" from "run," so this module leans on its six lessons for the skill progression instead of forcing in weak picture content.
 - **Module 35, Silent Letters — the first Level 4 module with no spelling choice at all, receptive only.** kn, wr, mb and gn are simply new patterns (no word is plausibly spelled two ways), so this module returns to the standard Level 1/2 five-lesson shape instead of `spelling_choice`/competing-tile decoys. Every silent letter is tiled as its own single-character tile, never fused into a 2-letter chunk like a digraph (knee → `[k, n, ee]`, not a "kn" tile) — there's no pronunciation reason to fuse them, since the "n" tile is identical whether a silent k precedes it or not; this also means no new `graphemeKindFor()` kind was needed. **A real narration bug was caught and fixed live before shipping:** reusing `letter_sound_match` with a bare single-letter `correct_answer` fell through to the generic "word starts with the letter X" narration — true, but missing the entire point (the letter is never actually said). Added a `silent: true` content field and a dedicated branch in both `modelCaptionFor` and `modelHeadingFor` ("knee has a silent k!" / "Which letter is silent in Knee?") rather than leaving the misleading default. Added 3 new word pictures (comb, knee, knife); "thumb" reused an existing Level 2 picture, and "sign" was dropped — its emoji is a construction barrier, not clearly "sign."
 - **Module 36, Y as a Vowel — same shape as Module 35 (receptive, standard five-lesson template), with the same narration-field trick applied proactively this time.** y at the end of a longer word says long e (happy, baby); at the end of a short word it says long i (cry, fly, my). `correct_answer` here is "e" or "i" — not a grapheme at all — so `letter_sound_match`'s generic fallback would have been nonsensical ("happy ends with the letter e"), the same shape of bug Module 35 caught live; this time a `yVowel: true` field and dedicated narration branch were added from the start rather than discovered after shipping. Added 3 new word pictures (baby, puppy, fly); dropped "candy" as a picture word — `"candy".includes("can")` would have matched the existing "can" picture first — and dropped "sky" — its sun-behind-cloud emoji reads as "weather," not clearly "sky."
+- **Module 37, Plurals — back to a genuine spelling choice, but between three endings instead of two letters.** Add -s for most words (cat → cats), -es after a word ending in a hissing/hushing sound — s, x, ch, sh (box → boxes, bus → buses), or swap final y for -ies after a consonant (baby → babies, puppy → puppies). The content-authoring helper `shape(base, mode)` generalizes the same three-way branch across every lesson, and this time `wb()` was written to separate `tiles` (the correct answer tiles, feeding `answer_tiles`) from `letters` (`[...tiles, wrongEnding]`, feeding the tray) from the very first line, rather than discovering the `answer_tiles`-includes-the-decoy bug live as happened in Modules 29/35/36 — all 22 tests passed on the first run. Unlike Modules 28–34's doubling/minimal-pair rules, plurals don't offer a natural minimal-pair pair for `spelling_choice` recognition (there's no real word that's ambiguously "either -s or -es"), so every `spelling_choice` item instead pairs the correct plural against the *wrong rule applied to the same base word* (boxs vs boxes, babys vs babies) — same "does this spelling match the rule" test as Modules 28–32, just without a genuine-minimal-pair option this time. Verified live that the Watch-stage word_build demo explains all three modes correctly across its 5 examples (cats/s, boxes/es, babies/ies, dogs/s, buses/es) and that Practice correctly advances after a correct build. Added 1 new word picture (box); dropped "dish" as a picture word — its emoji is a single plate, which reads as "plate," not clearly "dish" (and "box" already covers the -es example without it).
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -189,6 +190,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 4 Module 34 (Doubling Before Suffixes) — the first module needing a base-word-plus-suffix shape rather than an ending choice; live-verified all three rules (double, drop-e, just-add) render and score correctly. No new pictures — action words don't picture cleanly, so this module skipped a Read-the-Words lesson rather than forcing in ambiguous ones.
 - Built Level 4 Module 35 (Silent Letters) — receptive only, back to the standard Level 1/2 lesson shape. Caught and fixed a real narration bug live (reusing letter_sound_match's generic "starts with the letter X" phrasing for a silent letter is technically true but misses the point) by adding a `silent` content field and dedicated narration branch. Added 3 new word pictures (comb, knee, knife).
 - Built Level 4 Module 36 (Y as a Vowel) — same receptive shape, applied the same `yVowel` narration-field fix proactively from the start this time. Added 3 new word pictures (baby, puppy, fly); dropped "candy" (substring collision with "can") and "sky" (ambiguous emoji) as picture words.
+- Built Level 4 Module 37 (Plurals) — -s/-es/-ies, back to a graded spelling choice via the `shape()` content helper; separated `tiles` from `letters` in `wb()` from the start, so the recurring answer_tiles-includes-the-decoy bug didn't recur this time (22/22 on the first run). Live-verified all three plural modes in the Watch-stage word_build demo and a correct Practice-stage build. Added 1 new word picture (box); dropped "dish" (ambiguous plate emoji).
 
 ---
 
@@ -508,6 +510,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 34 | Doubling Before Suffixes | **Live** | 6 | 28 | 26 |
 | 35 | Silent Letters | **Live** | 5 | 20 | 20 |
 | 36 | Y as a Vowel | **Live** | 5 | 19 | 20 |
+| 37 | Plurals | **Live** | 6 | 28 | 28 |
 
 ## Curriculum in full
 
@@ -5673,12 +5676,187 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M36-05-7 | read “puppy” → picture \| options puppy, shell, bus \| answer **puppy** |  |
 | AS-M36-05-8 | read “fly” → picture \| options fly, duck, fish \| answer **fly** |  |
 
+### Module 37 — Plurals
+
+*Goal:* Choose -s, -es or y-to-ies to make a word plural, based on how the word ends.
+
+#### Lesson 1: Meet -S (`L4-M37-01`)
+
+- **Objective:** Add -s to make most words plural.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** New case, Detective! More than one of something — plurals!
+- **Narration (teach):** Most words just add s to show there's more than one — cat becomes cats, dog becomes dogs.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Most words just add s.
+- **Narration (close):** Case closed! You know how to add s to most words.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M37-01 | sound: cats \| options cats, cates \| answer **cats** |
+| Q-M37-02 | sound: dogs \| options dogs, doges \| answer **dogs** |
+| Q-M37-03 | sound: pens \| options pens, penes \| answer **pens** |
+| Q-M37-04 | sound: hens \| options hens, henes \| answer **hens** |
+| Q-M37-05 | sound: birds \| options birds, birdes \| answer **birds** |
+| Q-M37-06 | sound: ducks \| options ducks, duckes \| answer **ducks** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M37-01-1 | sound: frogs \| options frogs, froges \| answer **frogs** |  |
+| AS-M37-01-2 | sound: kites \| options kites, kitees \| answer **kites** |  |
+| AS-M37-01-3 | sound: books \| options books, bookes \| answer **books** |  |
+| AS-M37-01-4 | sound: socks \| options socks, sockes \| answer **socks** |  |
+
+#### Lesson 2: Meet -ES (`L4-M37-02`)
+
+- **Objective:** Add -es for words ending in a hissing sound (s, x, ch, sh, ss, z).
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Some words need a little extra — es, not just s!
+- **Narration (teach):** Words ending in a hissing sound — s, x, ch, sh, ss, z — need an extra syllable: box becomes boxes, not boxs.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Listen for the hissing ending.
+- **Narration (close):** Case closed! You know when a word needs es instead of just s.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M37-07 | sound: boxes \| options boxes, boxs \| answer **boxes** |
+| Q-M37-08 | sound: foxes \| options foxes, foxs \| answer **foxes** |
+| Q-M37-09 | sound: buses \| options buses, buss \| answer **buses** |
+| Q-M37-10 | sound: wishes \| options wishes, wishs \| answer **wishes** |
+| Q-M37-11 | sound: matches \| options matches, matchs \| answer **matches** |
+| Q-M37-12 | sound: dresses \| options dresses, dresss \| answer **dresses** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M37-02-1 | sound: fishes \| options fishes, fishs \| answer **fishes** |  |
+| AS-M37-02-2 | sound: kisses \| options kisses, kisss \| answer **kisses** |  |
+| AS-M37-02-3 | sound: branches \| options branches, branchs \| answer **branches** |  |
+| AS-M37-02-4 | sound: glasses \| options glasses, glasss \| answer **glasses** |  |
+
+#### Lesson 3: Meet Y to IES (`L4-M37-03`)
+
+- **Objective:** Change y to i and add -es when a consonant comes before the y (baby -> babies).
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A tricky case — words ending in y!
+- **Narration (teach):** When a consonant comes right before the y, change y to i and add es: baby becomes babies, not babys.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Listen for the y ending.
+- **Narration (close):** Case closed! You know when y changes to ies.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M37-13 | sound: babies \| options babies, babys \| answer **babies** |
+| Q-M37-14 | sound: puppies \| options puppies, puppys \| answer **puppies** |
+| Q-M37-15 | sound: ponies \| options ponies, ponys \| answer **ponies** |
+| Q-M37-16 | sound: cities \| options cities, citys \| answer **cities** |
+| Q-M37-17 | sound: families \| options families, familys \| answer **families** |
+| Q-M37-18 | sound: candies \| options candies, candys \| answer **candies** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M37-03-1 | sound: ladies \| options ladies, ladys \| answer **ladies** |  |
+| AS-M37-03-2 | sound: berries \| options berries, berrys \| answer **berries** |  |
+| AS-M37-03-3 | sound: stories \| options stories, storys \| answer **stories** |  |
+| AS-M37-03-4 | sound: pennies \| options pennies, pennys \| answer **pennies** |  |
+
+#### Lesson 4: Blend & Build (`L4-M37-04`)
+
+- **Objective:** Build plural words, choosing the correct ending from a tray offering two options.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Building mission — all three plural rules in one lesson!
+- **Narration (teach):** Listen to the whole word, then build it — s, es, or ies, depending on the ending.
+- **Narration (model):** Listen. Watch which ending gets picked, and why.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! You chose the right ending every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M37-19 | hear “cats” → build \| tray c a t s es \| answer **cats** |
+| Q-M37-20 | hear “boxes” → build \| tray b o x es s \| answer **boxes** |
+| Q-M37-21 | hear “babies” → build \| tray b a b ies ys \| answer **babies** |
+| Q-M37-22 | hear “dogs” → build \| tray d o g s es \| answer **dogs** |
+| Q-M37-23 | hear “buses” → build \| tray b u s es s \| answer **buses** |
+| Q-M37-24 | hear “puppies” → build \| tray p u p p ies ys \| answer **puppies** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M37-04-1 | hear “foxes” → build \| tray f o x es s \| answer **foxes** |  |
+| AS-M37-04-2 | hear “ladies” → build \| tray l a d ies ys \| answer **ladies** |  |
+| AS-M37-04-3 | hear “birds” → build \| tray b i r d s es \| answer **birds** |  |
+| AS-M37-04-4 | hear “dishes” → build \| tray d i s h es s \| answer **dishes** |  |
+
+#### Lesson 5: Spell the Words (`L4-M37-05`)
+
+- **Objective:** Spell dictated plural words, choosing the correct ending from a tray offering two options.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — solve the plural case for each word!
+- **Narration (teach):** Listen to the word, then spell it — remember the three rules: s, es, or ies.
+- **Narration (model):** Listen. Pick the right ending.
+- **Narration (transition):** Your turn! Listen carefully and choose the right ending.
+- **Narration (close):** Excellent spelling! You solved every plural case.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M37-25 | hear “pens” → build \| tray p e n s es \| answer **pens** |
+| Q-M37-26 | hear “wishes” → build \| tray w i s h es s \| answer **wishes** |
+| Q-M37-27 | hear “cities” → build \| tray c i t ies ys \| answer **cities** |
+| Q-M37-28 | hear “ducks” → build \| tray d u c k s es \| answer **ducks** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M37-05-1 | hear “glasses” → build \| tray g l a s s es s \| answer **glasses** |  |
+| AS-M37-05-2 | hear “stories” → build \| tray s t o r ies ys \| answer **stories** |  |
+| AS-M37-05-3 | hear “frogs” → build \| tray f r o g s es \| answer **frogs** |  |
+
+#### Lesson 6: Plurals Challenge (`L4-M37-06`)
+
+- **Objective:** Demonstrate independent mastery of all three plural rules across listening, building, reading and spelling.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 7–9 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show every plural rule you know.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered making words plural.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M37-06-1 | sound: cats \| options cats, cates \| answer **cats** |  |
+| AS-M37-06-2 | sound: boxes \| options boxes, boxs \| answer **boxes** |  |
+| AS-M37-06-3 | sound: babies \| options babies, babys \| answer **babies** |  |
+| AS-M37-06-4 | sound: buses \| options buses, buss \| answer **buses** |  |
+| AS-M37-06-5 | hear “dogs” → build \| tray d o g s es \| answer **dogs** |  |
+| AS-M37-06-6 | hear “foxes” → build \| tray f o x es s \| answer **foxes** |  |
+| AS-M37-06-7 | hear “puppies” → build \| tray p u p p ies ys \| answer **puppies** |  |
+| AS-M37-06-8 | read “box” → picture \| options box, shell, bus \| answer **box** |  |
+| AS-M37-06-9 | read “baby” → picture \| options baby, duck, fish \| answer **baby** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (77, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach, doll, comb, knee, knife, baby, puppy, fly — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (78, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach, doll, comb, knee, knife, baby, puppy, fly, box — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

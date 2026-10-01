@@ -3379,5 +3379,119 @@
       "transition": "",
       "close": "Case closed! You've mastered y as a vowel."
     }
+  },
+  {
+    "lesson_id": "L4-M37-01",
+    "module_id": 37,
+    "number": 1,
+    "title": "Meet -S",
+    "skill": "spelling",
+    "objective": "Add -s to make most words plural.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "New case, Detective! More than one of something — plurals!",
+      "teach": "Most words just add s to show there's more than one — cat becomes cats, dog becomes dogs.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Most words just add s.",
+      "close": "Case closed! You know how to add s to most words."
+    }
+  },
+  {
+    "lesson_id": "L4-M37-02",
+    "module_id": 37,
+    "number": 2,
+    "title": "Meet -ES",
+    "skill": "spelling",
+    "objective": "Add -es for words ending in a hissing sound (s, x, ch, sh, ss, z).",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Some words need a little extra — es, not just s!",
+      "teach": "Words ending in a hissing sound — s, x, ch, sh, ss, z — need an extra syllable: box becomes boxes, not boxs.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for the hissing ending.",
+      "close": "Case closed! You know when a word needs es instead of just s."
+    }
+  },
+  {
+    "lesson_id": "L4-M37-03",
+    "module_id": 37,
+    "number": 3,
+    "title": "Meet Y to IES",
+    "skill": "spelling",
+    "objective": "Change y to i and add -es when a consonant comes before the y (baby -> babies).",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A tricky case — words ending in y!",
+      "teach": "When a consonant comes right before the y, change y to i and add es: baby becomes babies, not babys.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for the y ending.",
+      "close": "Case closed! You know when y changes to ies."
+    }
+  },
+  {
+    "lesson_id": "L4-M37-04",
+    "module_id": 37,
+    "number": 4,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build plural words, choosing the correct ending from a tray offering two options.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — all three plural rules in one lesson!",
+      "teach": "Listen to the whole word, then build it — s, es, or ies, depending on the ending.",
+      "model": "Listen. Watch which ending gets picked, and why.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! You chose the right ending every time."
+    }
+  },
+  {
+    "lesson_id": "L4-M37-05",
+    "module_id": 37,
+    "number": 5,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated plural words, choosing the correct ending from a tray offering two options.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — solve the plural case for each word!",
+      "teach": "Listen to the word, then spell it — remember the three rules: s, es, or ies.",
+      "model": "Listen. Pick the right ending.",
+      "transition": "Your turn! Listen carefully and choose the right ending.",
+      "close": "Excellent spelling! You solved every plural case."
+    }
+  },
+  {
+    "lesson_id": "L4-M37-06",
+    "module_id": 37,
+    "number": 6,
+    "title": "Plurals Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of all three plural rules across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "7–9 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show every plural rule you know.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered making words plural."
+    }
   }
 ]

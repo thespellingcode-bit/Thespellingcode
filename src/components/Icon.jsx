@@ -154,6 +154,11 @@ const WORD_KEYS = [
   // "sky" also excluded — its sun-behind-cloud emoji reads as "weather"/
   // "cloud", not clearly "sky".
   "baby", "puppy", "fly",
+  // Level 4 Module 37 (Plurals). "dish" deliberately excluded — its emoji
+  // is a full place setting (fork/plate/knife), reading as "cutlery", not
+  // clearly "dish". bus/cat/dog/baby/fox already exist and cover this
+  // module's -s/-es/-ies categories without any more new pictures.
+  "box",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips
