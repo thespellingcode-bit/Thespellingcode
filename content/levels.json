@@ -26,5 +26,12 @@
     "description": "Choosing the right spelling when more than one is plausible: c/k, g/j, doubling, silent letters, y as a vowel, plurals, prefixes and suffixes.",
     "approx_age": "7–9",
     "total_units": 67
+  },
+  {
+    "level_id": 5,
+    "level_name": "Word Builder Pro",
+    "description": "Choosing between long-vowel spellings (ai/ay, ee/ea, igh/ie, oa/ow, ue/ew/oo) and the many spellings of /s/, plus morphology: the three sounds of -ed, changing y before a suffix, more prefixes and suffixes, and word families.",
+    "approx_age": "9–11",
+    "total_units": 58
   }
 ]

@@ -66,6 +66,7 @@ const GRAPHEMES_BY_MODULE = {
   38: ["ph"], // ph for /f/ — a genuine new digraph tile (added to questionTypes.js's DIGRAPHS set too).
   39: [], // Prefixes & Suffixes — un-, re-, -ful, -less, -ly are all spelled from already-known single letters; no new grapheme tile.
   40: [], // Review & Assessment — cumulative review, no new grapheme.
+  41: ["ce"], // The Many Spellings of /s/ — "ce" is a new fused ending tile (mirrors Module 31's "ge"/"dge" treatment); plain mid-word "c" for /s/ (city) uses the already-known single-letter c tile, no new grapheme needed.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

@@ -51,7 +51,7 @@ const ENDINGS = new Set(["ck", "tch", "dge", "ng", "nk"]);
 // long O (Module 22's "snow") and this module's /ow/ (as in "cow"). This
 // set only needs to know it's a vowel team either way; which SOUND it
 // makes is content, not something graphemeKindFor tracks.
-const VOWEL_TEAMS = new Set(["ai", "ay", "ee", "ea", "oa", "ow", "oi", "oy", "ou"]);
+const VOWEL_TEAMS = new Set(["ai", "ay", "ee", "ea", "oa", "ow", "oi", "oy", "ou", "igh", "ie", "ue", "ew", "oo"]);
 // A vowel + r (ar, er, ir, or, ur) isn't a vowel TEAM — it's not two
 // vowels, it's a vowel whose own sound gets swallowed by the r that
 // follows. Same "two letters, one sound" shape as a vowel team for tiling

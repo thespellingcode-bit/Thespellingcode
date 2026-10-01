@@ -17482,5 +17482,326 @@
     "retry_feedback": "Sound out the letters, using everything you've learned.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-01-1",
+    "lesson_id": "L5-M41-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pass",
+      "pas"
+    ],
+    "correct_answer": "pass",
+    "audio_asset": "say:pass",
+    "feedback": "Yes! It's pass.",
+    "retry_feedback": "Listen again — think about where the /s/ sound sits in the word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-01-2",
+    "lesson_id": "L5-M41-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "nice",
+      "nise"
+    ],
+    "correct_answer": "nice",
+    "audio_asset": "say:nice",
+    "feedback": "Yes! It's nice.",
+    "retry_feedback": "Listen again — think about where the /s/ sound sits in the word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-01-3",
+    "lesson_id": "L5-M41-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "race",
+      "rase"
+    ],
+    "correct_answer": "race",
+    "audio_asset": "say:race",
+    "feedback": "Yes! It's race.",
+    "retry_feedback": "Listen again — think about where the /s/ sound sits in the word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-02-1",
+    "lesson_id": "L5-M41-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dance",
+    "letters": [
+      "d",
+      "a",
+      "n",
+      "ce"
+    ],
+    "answer_tiles": [
+      "d",
+      "a",
+      "n",
+      "ce"
+    ],
+    "correct_answer": "dance",
+    "feedback": "Yes! You built dance.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-02-2",
+    "lesson_id": "L5-M41-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mice",
+    "letters": [
+      "m",
+      "i",
+      "ce"
+    ],
+    "answer_tiles": [
+      "m",
+      "i",
+      "ce"
+    ],
+    "correct_answer": "mice",
+    "feedback": "Yes! You built mice.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-03-1",
+    "lesson_id": "L5-M41-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bus",
+    "options": [
+      "bus",
+      "box",
+      "doll"
+    ],
+    "correct_answer": "bus",
+    "feedback": "Yes! You read bus.",
+    "retry_feedback": "Sound out the letters — remember c and ce can say /s/ too.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-04-1",
+    "lesson_id": "L5-M41-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:pencil",
+    "letters": [
+      "p",
+      "e",
+      "n",
+      "c",
+      "i",
+      "l",
+      "s"
+    ],
+    "answer_tiles": [
+      "p",
+      "e",
+      "n",
+      "c",
+      "i",
+      "l"
+    ],
+    "correct_answer": "pencil",
+    "feedback": "Yes! You built pencil.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-04-2",
+    "lesson_id": "L5-M41-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:race",
+    "letters": [
+      "r",
+      "a",
+      "ce",
+      "s"
+    ],
+    "answer_tiles": [
+      "r",
+      "a",
+      "ce"
+    ],
+    "correct_answer": "race",
+    "feedback": "Yes! You built race.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-05-1",
+    "lesson_id": "L5-M41-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "miss",
+      "mis"
+    ],
+    "correct_answer": "miss",
+    "audio_asset": "say:miss",
+    "feedback": "Yes! It's miss.",
+    "retry_feedback": "Listen again — think about where the /s/ sound sits in the word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-05-2",
+    "lesson_id": "L5-M41-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "city",
+      "sity"
+    ],
+    "correct_answer": "city",
+    "audio_asset": "say:city",
+    "feedback": "Yes! It's city.",
+    "retry_feedback": "Listen again — think about where the /s/ sound sits in the word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-05-3",
+    "lesson_id": "L5-M41-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "ice",
+      "ise"
+    ],
+    "correct_answer": "ice",
+    "audio_asset": "say:ice",
+    "feedback": "Yes! It's ice.",
+    "retry_feedback": "Listen again — think about where the /s/ sound sits in the word.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-05-4",
+    "lesson_id": "L5-M41-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dance",
+    "letters": [
+      "d",
+      "a",
+      "n",
+      "ce"
+    ],
+    "answer_tiles": [
+      "d",
+      "a",
+      "n",
+      "ce"
+    ],
+    "correct_answer": "dance",
+    "feedback": "Yes! You built dance.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-05-5",
+    "lesson_id": "L5-M41-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:pencil",
+    "letters": [
+      "p",
+      "e",
+      "n",
+      "c",
+      "i",
+      "l"
+    ],
+    "answer_tiles": [
+      "p",
+      "e",
+      "n",
+      "c",
+      "i",
+      "l"
+    ],
+    "correct_answer": "pencil",
+    "feedback": "Yes! You built pencil.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-05-6",
+    "lesson_id": "L5-M41-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:twice",
+    "letters": [
+      "t",
+      "w",
+      "i",
+      "ce"
+    ],
+    "answer_tiles": [
+      "t",
+      "w",
+      "i",
+      "ce"
+    ],
+    "correct_answer": "twice",
+    "feedback": "Yes! You built twice.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-05-7",
+    "lesson_id": "L5-M41-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "ice",
+    "options": [
+      "ice",
+      "box",
+      "doll"
+    ],
+    "correct_answer": "ice",
+    "feedback": "Yes! You read ice.",
+    "retry_feedback": "Sound out the letters — remember c and ce can say /s/ too.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M41-05-8",
+    "lesson_id": "L5-M41-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "city",
+    "options": [
+      "city",
+      "house",
+      "sock"
+    ],
+    "correct_answer": "city",
+    "feedback": "Yes! You read city.",
+    "retry_feedback": "Sound out the letters — remember c and ce can say /s/ too.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

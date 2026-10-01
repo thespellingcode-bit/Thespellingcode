@@ -164,6 +164,11 @@ const WORD_KEYS = [
   // "photo" deliberately excluded — its emoji is unambiguously a camera,
   // which reads as "camera" not "photo".
   "dolphin", "elephant", "trophy", "graph",
+  // Level 5 Module 41 (The Many Spellings of /s/). "pencil" deliberately
+  // excluded — it contains "pen" (the existing Level 1 pen sound icon key),
+  // so labelToIcon's substring match would show the wrong picture; "sun"
+  // and "bus" (both already illustrated) cover the plain-s example instead.
+  "ice", "city",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

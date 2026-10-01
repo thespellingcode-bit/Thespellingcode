@@ -3778,5 +3778,100 @@
       "transition": "",
       "close": "Case closed! You've mastered Level 4 — you're a true Spelling Detective!"
     }
+  },
+  {
+    "lesson_id": "L5-M41-01",
+    "module_id": 41,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Recognise s, ss, soft c and -ce as four spellings of /s/.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A brand-new case, Detective! The /s/ sound has FOUR different spellings.",
+      "teach": "s (sun), ss (miss), c before e/i/y (city), and ce at the end of a word (ice) can all say /s/. Listen carefully and pick the spelling this word actually uses.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Pick the right spelling for /s/.",
+      "close": "Case closed! You know all four spellings of /s/."
+    }
+  },
+  {
+    "lesson_id": "L5-M41-02",
+    "module_id": 41,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build words using all four spellings of /s/.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some /s/ words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — ss and ce each get their own single tile.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You used the right spelling for /s/ every time."
+    }
+  },
+  {
+    "lesson_id": "L5-M41-03",
+    "module_id": 41,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a word spelled with s, ss, c or ce and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Remember — c and ce can say /s/ too.",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every /s/ word correctly."
+    }
+  },
+  {
+    "lesson_id": "L5-M41-04",
+    "module_id": 41,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated /s/ word, choosing the correct spelling from a tray that includes one decoy.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — pick the right spelling for /s/!",
+      "teach": "Listen to the word, then build it, leaving out the tile that spells /s/ the wrong way for this word.",
+      "model": "Listen. Pick the right tiles and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully, and leave out the tile that doesn't belong.",
+      "close": "Excellent spelling! You picked the right /s/ spelling every time."
+    }
+  },
+  {
+    "lesson_id": "L5-M41-05",
+    "module_id": 41,
+    "number": 5,
+    "title": "The Many Spellings of /s/ Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of all four /s/ spellings across recognition, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about the four spellings of /s/.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the many spellings of /s/."
+    }
   }
 ]
