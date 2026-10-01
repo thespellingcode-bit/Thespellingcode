@@ -18409,5 +18409,313 @@
     "retry_feedback": "Sound out the letters — remember this word's own spelling.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-01-1",
+    "lesson_id": "L5-M44-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "fight",
+      "fiet"
+    ],
+    "correct_answer": "fight",
+    "audio_asset": "say:fight",
+    "feedback": "Yes! It's fight.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-01-2",
+    "lesson_id": "L5-M44-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "fries",
+      "frighs"
+    ],
+    "correct_answer": "fries",
+    "audio_asset": "say:fries",
+    "feedback": "Yes! It's fries.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-01-3",
+    "lesson_id": "L5-M44-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "right",
+      "riet"
+    ],
+    "correct_answer": "right",
+    "audio_asset": "say:right",
+    "feedback": "Yes! It's right.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-02-1",
+    "lesson_id": "L5-M44-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fight",
+    "letters": [
+      "f",
+      "igh",
+      "t"
+    ],
+    "answer_tiles": [
+      "f",
+      "igh",
+      "t"
+    ],
+    "correct_answer": "fight",
+    "feedback": "Yes! You built fight.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-02-2",
+    "lesson_id": "L5-M44-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fries",
+    "letters": [
+      "f",
+      "r",
+      "ie",
+      "s"
+    ],
+    "answer_tiles": [
+      "f",
+      "r",
+      "ie",
+      "s"
+    ],
+    "correct_answer": "fries",
+    "feedback": "Yes! You built fries.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-03-1",
+    "lesson_id": "L5-M44-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "pie",
+    "options": [
+      "pie",
+      "tie",
+      "light"
+    ],
+    "correct_answer": "pie",
+    "feedback": "Yes! You read pie.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": "Only 3 words this module have clean, unambiguous pictures (pie, tie, light) — reuses a practice word rather than forcing in a weaker fourth picture, same precedent as Module 30."
+  },
+  {
+    "assessment_id": "AS-M44-04-1",
+    "lesson_id": "L5-M44-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fight",
+    "letters": [
+      "f",
+      "igh",
+      "t",
+      "ie"
+    ],
+    "answer_tiles": [
+      "f",
+      "igh",
+      "t"
+    ],
+    "correct_answer": "fight",
+    "feedback": "Yes! You built fight.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-04-2",
+    "lesson_id": "L5-M44-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fries",
+    "letters": [
+      "f",
+      "r",
+      "ie",
+      "s",
+      "igh"
+    ],
+    "answer_tiles": [
+      "f",
+      "r",
+      "ie",
+      "s"
+    ],
+    "correct_answer": "fries",
+    "feedback": "Yes! You built fries.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-05-1",
+    "lesson_id": "L5-M44-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "night",
+      "niet"
+    ],
+    "correct_answer": "night",
+    "audio_asset": "say:night",
+    "feedback": "Yes! It's night.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-05-2",
+    "lesson_id": "L5-M44-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pie",
+      "pigh"
+    ],
+    "correct_answer": "pie",
+    "audio_asset": "say:pie",
+    "feedback": "Yes! It's pie.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-05-3",
+    "lesson_id": "L5-M44-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "tie",
+      "tigh"
+    ],
+    "correct_answer": "tie",
+    "audio_asset": "say:tie",
+    "feedback": "Yes! It's tie.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-05-4",
+    "lesson_id": "L5-M44-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:light",
+    "letters": [
+      "l",
+      "igh",
+      "t"
+    ],
+    "answer_tiles": [
+      "l",
+      "igh",
+      "t"
+    ],
+    "correct_answer": "light",
+    "feedback": "Yes! You built light.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-05-5",
+    "lesson_id": "L5-M44-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:high",
+    "letters": [
+      "h",
+      "igh"
+    ],
+    "answer_tiles": [
+      "h",
+      "igh"
+    ],
+    "correct_answer": "high",
+    "feedback": "Yes! You built high.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-05-6",
+    "lesson_id": "L5-M44-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fries",
+    "letters": [
+      "f",
+      "r",
+      "ie",
+      "s"
+    ],
+    "answer_tiles": [
+      "f",
+      "r",
+      "ie",
+      "s"
+    ],
+    "correct_answer": "fries",
+    "feedback": "Yes! You built fries.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-05-7",
+    "lesson_id": "L5-M44-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "pie",
+    "options": [
+      "pie",
+      "tie",
+      "light"
+    ],
+    "correct_answer": "pie",
+    "feedback": "Yes! You read pie.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M44-05-8",
+    "lesson_id": "L5-M44-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "tie",
+    "options": [
+      "tie",
+      "pie",
+      "light"
+    ],
+    "correct_answer": "tie",
+    "feedback": "Yes! You read tie.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

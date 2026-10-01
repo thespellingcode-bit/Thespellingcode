@@ -169,6 +169,13 @@ const WORD_KEYS = [
   // so labelToIcon's substring match would show the wrong picture; "sun"
   // and "bus" (both already illustrated) cover the plain-s example instead.
   "ice", "city",
+  // Level 5 Module 44 (Long-I Choices: igh/ie). "tie" flagged for future
+  // caution — "untie"/"retie" (Module 39's word_build content, never used
+  // in a read_word/picture context today) both contain "tie" as a
+  // substring; if a later module ever adds a read_word lesson for a
+  // prefixed tie-word, it would need a different picture word or careful
+  // ordering, the same class of risk as "train" before "rain".
+  "pie", "tie", "light",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

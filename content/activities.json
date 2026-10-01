@@ -17985,5 +17985,367 @@
     "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-01",
+    "lesson_id": "L5-M44-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "night",
+      "niet"
+    ],
+    "correct_answer": "night",
+    "audio_asset": "say:night",
+    "feedback": "Yes! It's night.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-02",
+    "lesson_id": "L5-M44-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "light",
+      "liet"
+    ],
+    "correct_answer": "light",
+    "audio_asset": "say:light",
+    "feedback": "Yes! It's light.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-03",
+    "lesson_id": "L5-M44-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pie",
+      "pigh"
+    ],
+    "correct_answer": "pie",
+    "audio_asset": "say:pie",
+    "feedback": "Yes! It's pie.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-04",
+    "lesson_id": "L5-M44-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "tie",
+      "tigh"
+    ],
+    "correct_answer": "tie",
+    "audio_asset": "say:tie",
+    "feedback": "Yes! It's tie.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-05",
+    "lesson_id": "L5-M44-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "high",
+      "hie"
+    ],
+    "correct_answer": "high",
+    "audio_asset": "say:high",
+    "feedback": "Yes! It's high.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-06",
+    "lesson_id": "L5-M44-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:night",
+    "letters": [
+      "n",
+      "igh",
+      "t"
+    ],
+    "answer_tiles": [
+      "n",
+      "igh",
+      "t"
+    ],
+    "correct_answer": "night",
+    "feedback": "Yes! You built night.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-07",
+    "lesson_id": "L5-M44-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:light",
+    "letters": [
+      "l",
+      "igh",
+      "t"
+    ],
+    "answer_tiles": [
+      "l",
+      "igh",
+      "t"
+    ],
+    "correct_answer": "light",
+    "feedback": "Yes! You built light.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-08",
+    "lesson_id": "L5-M44-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:pie",
+    "letters": [
+      "p",
+      "ie"
+    ],
+    "answer_tiles": [
+      "p",
+      "ie"
+    ],
+    "correct_answer": "pie",
+    "feedback": "Yes! You built pie.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-09",
+    "lesson_id": "L5-M44-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tie",
+    "letters": [
+      "t",
+      "ie"
+    ],
+    "answer_tiles": [
+      "t",
+      "ie"
+    ],
+    "correct_answer": "tie",
+    "feedback": "Yes! You built tie.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-10",
+    "lesson_id": "L5-M44-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:high",
+    "letters": [
+      "h",
+      "igh"
+    ],
+    "answer_tiles": [
+      "h",
+      "igh"
+    ],
+    "correct_answer": "high",
+    "feedback": "Yes! You built high.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-11",
+    "lesson_id": "L5-M44-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "pie",
+    "options": [
+      "pie",
+      "tie",
+      "box"
+    ],
+    "correct_answer": "pie",
+    "feedback": "Yes! You read pie.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-12",
+    "lesson_id": "L5-M44-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "tie",
+    "options": [
+      "tie",
+      "pie",
+      "doll"
+    ],
+    "correct_answer": "tie",
+    "feedback": "Yes! You read tie.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-13",
+    "lesson_id": "L5-M44-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "light",
+    "options": [
+      "light",
+      "pie",
+      "tie"
+    ],
+    "correct_answer": "light",
+    "feedback": "Yes! You read light.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-14",
+    "lesson_id": "L5-M44-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:night",
+    "letters": [
+      "n",
+      "igh",
+      "t",
+      "ie"
+    ],
+    "answer_tiles": [
+      "n",
+      "igh",
+      "t"
+    ],
+    "correct_answer": "night",
+    "feedback": "Yes! You built night.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-15",
+    "lesson_id": "L5-M44-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:pie",
+    "letters": [
+      "p",
+      "ie",
+      "igh"
+    ],
+    "answer_tiles": [
+      "p",
+      "ie"
+    ],
+    "correct_answer": "pie",
+    "feedback": "Yes! You built pie.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-16",
+    "lesson_id": "L5-M44-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tie",
+    "letters": [
+      "t",
+      "ie",
+      "igh"
+    ],
+    "answer_tiles": [
+      "t",
+      "ie"
+    ],
+    "correct_answer": "tie",
+    "feedback": "Yes! You built tie.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-17",
+    "lesson_id": "L5-M44-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:light",
+    "letters": [
+      "l",
+      "igh",
+      "t",
+      "ie"
+    ],
+    "answer_tiles": [
+      "l",
+      "igh",
+      "t"
+    ],
+    "correct_answer": "light",
+    "feedback": "Yes! You built light.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M44-18",
+    "lesson_id": "L5-M44-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:high",
+    "letters": [
+      "h",
+      "igh",
+      "ie"
+    ],
+    "answer_tiles": [
+      "h",
+      "igh"
+    ],
+    "correct_answer": "high",
+    "feedback": "Yes! You built high.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]

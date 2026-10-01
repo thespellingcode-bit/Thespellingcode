@@ -526,6 +526,7 @@ const IMAGE_BG = {
   // Illustration() falls back to whenever IMAGE_BG has no entry for a name.
   dolphin: "#DCEBFF", elephant: "#E4E1EA", trophy: "#FFF3D6", graph: "#F1E3D3",
   ice: "#DCEEF6", city: "#E4E1EA",
+  pie: "#FFF3D6", tie: "#DCEBFF", light: "#FFF3D6",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {

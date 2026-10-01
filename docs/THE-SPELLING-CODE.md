@@ -32,7 +32,7 @@
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
-| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–43 built (through Long-E Choices) |
+| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–44 built (through Long-I Choices) |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
@@ -47,7 +47,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
-| Level 5 “Word Builder Pro”, Modules 41–43 (through Long-E Choices) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Reuses Level 4's `spelling_choice`/`word_build` mechanics with no new component code. |
+| Level 5 “Word Builder Pro”, Modules 41–44 (through Long-I Choices) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Reuses Level 4's `spelling_choice`/`word_build` mechanics with no new component code. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -111,11 +111,12 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 39, Prefixes & Suffixes — back to build-focused, closer to Level 2's sentence-building shape than a phonics-choice module, per the plan.** un-/re- at the start mean "not"/"again"; -ful/-less at the end mean "full of"/"without" (genuine antonym minimal pairs — careful/careless, hopeful/hopeless, harmful/harmless — the same "real word either way, audio is the only tell" shape Module 34 used for hop/hope); -ly just adds on. No new mechanic: `spelling_choice` reused for all three "Meet" recognition lessons (un-, re-, -ful/-less) with real un-/re- word pairs (unwrap/rewrap, undo/redo, untie/retie, unload/reload, unfold/refold) as the audio-driven choice, and `word_build` reused for Blend & Build/Spell the Words with the prefix or suffix tiled as its own single tile (e.g. quickly → `[qu, i, ck, ly]`, composing the new suffix tile with already-known qu/ck graphemes). Added a new remediation tag, `PREFIX_SUFFIX_CONFUSION` (REM-18) — distinct from `SPELLING_CHOICE_CONFUSION` since the confusion here is about a word PART's meaning, not a sound's spelling. No new word pictures — same reasoning as Module 34 (a still image can't distinguish "unwrap" from "rewrap" or "careful" from "careless"), so no Read the Words lesson. **Two real bugs caught before shipping, neither live-only this time:** every assessment item was first written with the `activity_id` field instead of the required `assessment_id` (functionally needed — `LessonPlayer` uses it as a React key and for `questionId`), caught by re-reading the generated content before testing; and Lessons 1–2's assessment banks first exactly reused their own practice lessons' audio+answer pairs (unwrap/undo/untie/unload/unfold, redo/reload/retie), caught live by `npm test`'s transfer-to-new-example check — fixed by swapping in three fresh un-/re- pairs (unseal/reseal, uncap/recap, unpack/repack) the practice lessons never used. Live-verified the Watch-stage spelling_choice narration, the Practice-stage two-option buttons, and the word_build tiling for both a simple word (unwrap) and the most composed one (quickly).
 - **Module 40, Review & Assessment — closes out Level 4, same closing shape as every earlier level (Modules 7/8, 17, 27).** Five lessons cumulatively sampling all 12 earlier modules' rules rather than teaching anything new: Mixed Retrieval (`spelling_choice` — c/k, ck/k, g/j, ge/dge, ch/tch, FLOSS doubling), Read & Build (`word_build`, no decoy, one word per several modules — duck, orange, watch, hopping, knee, boxes), Plurals & Word Parts Review (`spelling_choice` — plurals plus un-/re-/-ful/-less), Dictation (`word_build` with a decoy tile, mixing choice-type rules across modules), and the Level 4 Challenge (`assessment`, 14 items freely mixing `spelling_choice`, `word_build`, `letter_sound_match` and `read_word` — the broadest single-lesson type mix of any module this level). Added `BADGE-10` ("Level 4 Spelling Detective", tied to `module_id: 40`, same pattern as every earlier level's closing badge) — purely data-driven, no code changes needed since badge-earning already derives from `isModuleComplete(state, badge.module_id)`. GRAPHEMES_BY_MODULE[40] stays `[]`, same reasoning as Level 2/3's own closing review modules — pure review teaches no new grapheme. All 22 tests passed on the first run (the assessment_id field-name bug from Module 39 was written correctly here from the start). Live-verified the Mixed Retrieval lesson's all 5 Watch-stage examples (cat, sock, jam, bridge, catch) sampling every Level 4 letter/ending-choice rule in one lesson.
 
-### Level 5 curriculum design (Modules 41–43 built; Modules 44–51 planned, not yet built)
+### Level 5 curriculum design (Modules 41–44 built; Modules 45–51 planned, not yet built)
 - **Scope note:** see the roadmap section above for why Level 5's module list doesn't match the blueprint's Level 5 list — it absorbs the blueprint's missing Level-4 long-vowel/soft-C content and skips the blueprint-Level-5 modules already covered by app-Modules 34/37/39. Full reasoning in `docs/plans/level-5.md`.
 - **Module 41, The Many Spellings of /s/ — same shape as Level 4's spelling-choice modules, no new mechanic.** /s/ can be spelled s (sun), ss (miss, already familiar from FLOSS doubling), soft c before e/i/y (city, pencil) or -ce at a word's end (ice, dance). "ce" is treated as a single fused ending tile, the same symmetry call Module 31 made for "ge" alongside "dge"; mid-word soft c needs no new tile at all since "c" is already a known single letter — only its *sound* is new, not its spelling. **A real picture collision was caught and fixed before shipping, not live this time:** "pencil" was the natural third Read-the-Words picture for mid-word soft c, but `"pencil".includes("pen")` would have matched the existing Level 1 "pen" sound-icon key first, silently showing the wrong picture — caught by checking `Icon.jsx`'s `WORD_KEYS` array before wiring in the new SVG (the same check the file's own word-library.md recommends but easy to skip). Dropped "pencil" as a picture word entirely (word_build/spelling_choice content keeps using it fine, since those lesson types never render an icon) and substituted "sun"/"bus" — both already-illustrated, zero collision risk — for the plain-s picture examples instead. Added 2 new word pictures (ice, city). Live-verified the Read the Words lesson renders sun/ice/city correctly.
 - **Module 42, Long-A Choices — the first Level 5 module with a genuine, reliable positional rule, same confidence level as Level 4's c/k.** ai sits in the middle of a word (rain, train), ay sits at the end (day, play) — both were already taught receptively in Level 3 Module 20, so this module's real job is turning that recognition into a graded choice, reusing the exact same word list (rain, train, mail, sail, paint, day, play, stay, tray, gain) rather than inventing a new one. No new grapheme tile (ai/ay already existed), no new word pictures — Read the Words reuses Level 3's existing train/rain/mail/sail pictures outright, since ay-ending words (day, play, stay, tray) don't have a clean concrete-noun picture pool; that gap is stated plainly in the content rather than forcing in a weak picture. `word_build`'s decoy-tile mechanic again needed zero code changes — a tray for "rain" offers "ay" as the decoy, a tray for "day" offers "ai", exactly mirroring Level 4's ge/dge and ch/tch "explains both directions" pattern. Live-verified both directions of the Spell the Words decoy live (rain/ay-decoy, day/ai-decoy).
 - **Module 43, Long-E Choices — the first Level 5 module with NO reliable position rule, taught honestly as a pattern rather than a false rule.** ee and ea can both appear anywhere in a word (tree/leaf, seed/bean are both word-initial-consonant-plus-vowel-team shapes) — there's no "middle vs end" story like Long-A's. Narration frames it accurately: ee is the more common default spelling, ea is a specific set of common words to learn by heart, matching the blueprint's own "Rules vs Patterns" distinction from its Core Learning Philosophy. Reuses Level 3 Module 21's word list and pictures (tree, leaf, bean, seed, sheep, team, jeep, peach) entirely — no new grapheme, no new assets. **Two words were deliberately dropped from consideration before writing any content:** "meat" (its only ee-counterpart via simple grapheme substitution is "meet", a real, correctly-spelled different word — using it as a wrong-spelling decoy would have taught a false negative) and "read" (same homophone-adjacent risk, plus past-tense pronunciation ambiguity) — both are genuine homophone territory that belongs to a later level's dedicated homophones module (blueprint Level 6), not this one's "wrong spelling" decoy mechanic.
+- **Module 44, Long-I Choices — igh and ie, two genuinely NEW graphemes (unlike Modules 42/43, which reused patterns Level 3 already taught receptively).** Both added to `questionTypes.js`'s `VOWEL_TEAMS` set. igh is the more common spelling (often before a final t: night, light, fight; or standalone: high); ie is a smaller set, usually at a word's end (pie, tie) or before an ending (fries) — another pattern/frequency call like Module 43's, not a positional rule. Thinnest picture pool of the level so far: only pie, tie and light have clean, unambiguous Noto emoji (a lightbulb for "light" — accepted as reasonably clear for this age band, same judgment call as Module 38's bar-chart-for-"graph"). Read the Words' assessment bank reuses a practice word with an honest `review_flag` explanation rather than forcing in a weak fourth picture, the same precedent Module 30 set. **A real duplicate-content bug was caught by `npm test`, not live:** Lesson 1's assessment bank first reused "light" as both a fresh item AND one of its own practice words (a copy-paste slip while writing the content script) — fixed by swapping in "right" instead. Also flagged a latent, not-yet-triggered risk in `Icon.jsx`: "tie" as a picture key means a future read_word lesson for "untie"/"retie" would need a different picture or careful key ordering, since `"untie".includes("tie")` is true (today those words only appear in `word_build`/`spelling_choice` content, which never renders an icon, so no actual bug yet).
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -211,6 +212,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 5 Module 41 (The Many Spellings of /s/) — s/ss/soft-c/-ce, same spelling_choice/word_build shape as Level 4, no new mechanic. Caught and fixed a picture collision before shipping ("pencil" contains "pen", an existing icon key) by substituting sun/bus. Added 2 new word pictures (ice, city).
 - Built Level 5 Module 42 (Long-A Choices) — ai (middle of a word) vs ay (end of a word), a genuine positional rule, same confidence as Level 4's c/k. Reuses Level 3 Module 20's existing word list and pictures entirely — no new grapheme, no new assets. Honestly noted the gap that ay-ending words have no clean concrete picture pool, rather than forcing one in.
 - Built Level 5 Module 43 (Long-E Choices) — ee vs ea, no reliable position rule this time, taught as a pattern (ee is the default, ea is memorized) rather than a false rule. Reuses Level 3 Module 21's word list and pictures entirely. Deliberately dropped "meat"/"read" from the word list before writing content — their only wrong-spelling decoy would have been a real, correctly-spelled homophone ("meet"), which belongs to a later homophones module, not this one's decoy mechanic.
+- Built Level 5 Module 44 (Long-I Choices) — igh/ie, two genuinely new graphemes (added to VOWEL_TEAMS). Caught a duplicate-content bug via npm test (Lesson 1's assessment reused a practice word, fixed by swapping to "right") and flagged a latent future icon-collision risk ("tie" vs "untie"/"retie") before it could ever bite. Thinnest picture pool so far (pie, tie, light only) — assessment reuses a practice picture with an honest review_flag, same as Module 30's precedent.
 
 ---
 
@@ -613,6 +615,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 41 | The Many Spellings of /s/ | **Live** | 5 | 18 | 16 |
 | 42 | Long-A Choices | **Live** | 5 | 18 | 16 |
 | 43 | Long-E Choices | **Live** | 5 | 18 | 16 |
+| 44 | Long-I Choices | **Live** | 5 | 18 | 16 |
 
 ## Curriculum in full
 
@@ -6772,12 +6775,145 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M43-05-7 | read “tree” → picture \| options tree, sheep, bee \| answer **tree** |  |
 | AS-M43-05-8 | read “leaf” → picture \| options leaf, tree, wheel \| answer **leaf** |  |
 
+### Module 44 — Long-I Choices
+
+*Goal:* Choose igh or ie for the long-I sound, alongside the already-known i_e and y spellings.
+
+#### Lesson 1: Meet the Choice (`L5-M44-01`)
+
+- **Objective:** Recognise igh and ie as two more spellings of long I, alongside the already-known i_e and y.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two more spellings for long I, Detective! You already know i_e (like kite) and y (like cry) — now meet igh and ie.
+- **Narration (teach):** igh is the more common spelling, often before a t (night, light, fight) or on its own (high). ie is used in a smaller set of words, often at the end (pie, tie) or before an ending (fries). Listen, then pick the right one.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Remember each word's own correct spelling.
+- **Narration (close):** Case closed! You know igh and ie too now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M44-01 | sound: night \| options night, niet \| answer **night** |
+| Q-M44-02 | sound: light \| options light, liet \| answer **light** |
+| Q-M44-03 | sound: pie \| options pie, pigh \| answer **pie** |
+| Q-M44-04 | sound: tie \| options tie, tigh \| answer **tie** |
+| Q-M44-05 | sound: high \| options high, hie \| answer **high** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M44-01-1 | sound: fight \| options fight, fiet \| answer **fight** |  |
+| AS-M44-01-2 | sound: fries \| options fries, frighs \| answer **fries** |  |
+| AS-M44-01-3 | sound: right \| options right, riet \| answer **right** |  |
+
+#### Lesson 2: Blend & Build (`L5-M44-02`)
+
+- **Objective:** Build long-I words using igh or ie correctly.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some long-I words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — igh and ie each get their own single tile.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! You used the right spelling for each word.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M44-06 | hear “night” → build \| tray n igh t \| answer **night** |
+| Q-M44-07 | hear “light” → build \| tray l igh t \| answer **light** |
+| Q-M44-08 | hear “pie” → build \| tray p ie \| answer **pie** |
+| Q-M44-09 | hear “tie” → build \| tray t ie \| answer **tie** |
+| Q-M44-10 | hear “high” → build \| tray h igh \| answer **high** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M44-02-1 | hear “fight” → build \| tray f igh t \| answer **fight** |  |
+| AS-M44-02-2 | hear “fries” → build \| tray f r ie s \| answer **fries** |  |
+
+#### Lesson 3: Read the Words (`L5-M44-03`)
+
+- **Objective:** Read a long-I word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! Remember — igh and ie can both say long I.
+- **Narration (teach):** Read the word, then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You read every long-I word correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M44-11 | read “pie” → picture \| options pie, tie, box \| answer **pie** |
+| Q-M44-12 | read “tie” → picture \| options tie, pie, doll \| answer **tie** |
+| Q-M44-13 | read “light” → picture \| options light, pie, tie \| answer **light** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M44-03-1 | read “pie” → picture \| options pie, tie, light \| answer **pie** | Only 3 words this module have clean, unambiguous pictures (pie, tie, light) — reuses a practice word rather than forcing in a weaker fourth picture, same precedent as Module 30. |
+
+#### Lesson 4: Spell the Words (`L5-M44-04`)
+
+- **Objective:** Spell a dictated long-I word, choosing igh or ie from a tray that includes one decoy.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — pick igh or ie, and leave the wrong one out!
+- **Narration (teach):** Listen to the word, then build it, leaving out the spelling that doesn't belong.
+- **Narration (model):** Listen. Pick the right tiles and leave the extra one behind!
+- **Narration (transition):** Your turn! Listen carefully, and leave out the tile that doesn't belong.
+- **Narration (close):** Excellent spelling! You remembered each word's own spelling.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M44-14 | hear “night” → build \| tray n igh t ie \| answer **night** |
+| Q-M44-15 | hear “pie” → build \| tray p ie igh \| answer **pie** |
+| Q-M44-16 | hear “tie” → build \| tray t ie igh \| answer **tie** |
+| Q-M44-17 | hear “light” → build \| tray l igh t ie \| answer **light** |
+| Q-M44-18 | hear “high” → build \| tray h igh ie \| answer **high** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M44-04-1 | hear “fight” → build \| tray f igh t ie \| answer **fight** |  |
+| AS-M44-04-2 | hear “fries” → build \| tray f r ie s igh \| answer **fries** |  |
+
+#### Lesson 5: Long-I Choices Challenge (`L5-M44-05`)
+
+- **Objective:** Demonstrate independent mastery of the igh/ie choice across recognition, building, reading and spelling.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about igh and ie.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered igh and ie.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M44-05-1 | sound: night \| options night, niet \| answer **night** |  |
+| AS-M44-05-2 | sound: pie \| options pie, pigh \| answer **pie** |  |
+| AS-M44-05-3 | sound: tie \| options tie, tigh \| answer **tie** |  |
+| AS-M44-05-4 | hear “light” → build \| tray l igh t \| answer **light** |  |
+| AS-M44-05-5 | hear “high” → build \| tray h igh \| answer **high** |  |
+| AS-M44-05-6 | hear “fries” → build \| tray f r ie s \| answer **fries** |  |
+| AS-M44-05-7 | read “pie” → picture \| options pie, tie, light \| answer **pie** |  |
+| AS-M44-05-8 | read “tie” → picture \| options tie, pie, light \| answer **tie** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (84, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach, doll, comb, knee, knife, baby, puppy, fly, box, dolphin, elephant, trophy, graph, ice, city — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (87, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach, doll, comb, knee, knife, baby, puppy, fly, box, dolphin, elephant, trophy, graph, ice, city, pie, tie, light — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 
