@@ -4462,5 +4462,119 @@
       "transition": "",
       "close": "Case closed! You've mastered the three sounds of -ed."
     }
+  },
+  {
+    "lesson_id": "L5-M48-01",
+    "module_id": 48,
+    "number": 1,
+    "title": "Meet the Rule: Change Y",
+    "skill": "spelling",
+    "objective": "Recognise that a final y changes to i before most suffixes (happy -> happier).",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A new spelling rule, Detective! When a word ends in a consonant plus y, the y usually changes to i before a suffix.",
+      "teach": "happy becomes happier — the y changes to i before -er. cry becomes cried — the y changes to i before -ed. Listen, then pick the correct spelling.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Remember: y usually changes to i.",
+      "close": "Case closed! You know when y changes to i."
+    }
+  },
+  {
+    "lesson_id": "L5-M48-02",
+    "module_id": 48,
+    "number": 2,
+    "title": "Meet the Rule: Keep Y Before -ing",
+    "skill": "spelling",
+    "objective": "Recognise that a final y stays the same before -ing (cry -> crying, not criing).",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "One big exception, Detective! Before -ing, the y always STAYS — it never changes to i.",
+      "teach": "cry becomes crying, not criing — two i's in a row would look strange. The y stays the same before -ing, every single time.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Remember: y always stays before -ing.",
+      "close": "Case closed! You know -ing is the one exception."
+    }
+  },
+  {
+    "lesson_id": "L5-M48-03",
+    "module_id": 48,
+    "number": 3,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build words that change or keep a final y before a suffix.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some y-change words!",
+      "teach": "Listen to the whole word, then tap the tiles in order.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You used the right spelling for each word."
+    }
+  },
+  {
+    "lesson_id": "L5-M48-04",
+    "module_id": 48,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated word, choosing y or i from a tray that includes one decoy.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — pick the right letter, y or i, and leave the wrong one out!",
+      "teach": "Listen to the word, then build it, leaving out the letter that doesn't belong.",
+      "model": "Listen. Pick the right tiles and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully, and leave out the tile that doesn't belong.",
+      "close": "Excellent spelling! You always picked the right letter."
+    }
+  },
+  {
+    "lesson_id": "L5-M48-05",
+    "module_id": 48,
+    "number": 5,
+    "title": "More Practice",
+    "skill": "spelling",
+    "objective": "Practise both the change-y and keep-y rules together across more words.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More practice, Detective — mixing both rules together now!",
+      "teach": "Remember: y changes to i before most suffixes, but stays the same before -ing.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn! Use both rules together.",
+      "close": "Fantastic! You can handle both rules at once now."
+    }
+  },
+  {
+    "lesson_id": "L5-M48-06",
+    "module_id": 48,
+    "number": 6,
+    "title": "Change Y Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of changing (or keeping) y before a suffix.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about changing y before a suffix.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered changing y before a suffix."
+    }
   }
 ]

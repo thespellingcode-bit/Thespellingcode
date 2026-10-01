@@ -19714,5 +19714,389 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-01-1",
+    "lesson_id": "L5-M48-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "carried",
+      "carryed"
+    ],
+    "correct_answer": "carried",
+    "audio_asset": "say:carried",
+    "feedback": "Yes! It's carried.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-01-2",
+    "lesson_id": "L5-M48-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "studied",
+      "studyed"
+    ],
+    "correct_answer": "studied",
+    "audio_asset": "say:studied",
+    "feedback": "Yes! It's studied.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-01-3",
+    "lesson_id": "L5-M48-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "silliest",
+      "sillyest"
+    ],
+    "correct_answer": "silliest",
+    "audio_asset": "say:silliest",
+    "feedback": "Yes! It's silliest.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-02-1",
+    "lesson_id": "L5-M48-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "copying",
+      "copiing"
+    ],
+    "correct_answer": "copying",
+    "audio_asset": "say:copying",
+    "feedback": "Yes! It's copying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-02-2",
+    "lesson_id": "L5-M48-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "drying",
+      "driing"
+    ],
+    "correct_answer": "drying",
+    "audio_asset": "say:drying",
+    "feedback": "Yes! It's drying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-03-1",
+    "lesson_id": "L5-M48-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:carried",
+    "letters": [
+      "c",
+      "a",
+      "rr",
+      "i",
+      "ed"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "rr",
+      "i",
+      "ed"
+    ],
+    "correct_answer": "carried",
+    "feedback": "Yes! You built carried.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-03-2",
+    "lesson_id": "L5-M48-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:studying",
+    "letters": [
+      "s",
+      "t",
+      "u",
+      "d",
+      "y",
+      "ing"
+    ],
+    "answer_tiles": [
+      "s",
+      "t",
+      "u",
+      "d",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "studying",
+    "feedback": "Yes! You built studying.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-04-1",
+    "lesson_id": "L5-M48-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:driest",
+    "letters": [
+      "d",
+      "r",
+      "i",
+      "est",
+      "y"
+    ],
+    "answer_tiles": [
+      "d",
+      "r",
+      "i",
+      "est"
+    ],
+    "correct_answer": "driest",
+    "feedback": "Yes! You built driest.",
+    "retry_feedback": "Listen again and leave out the letter that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-04-2",
+    "lesson_id": "L5-M48-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:copying",
+    "letters": [
+      "c",
+      "o",
+      "p",
+      "y",
+      "ing",
+      "i"
+    ],
+    "answer_tiles": [
+      "c",
+      "o",
+      "p",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "copying",
+    "feedback": "Yes! You built copying.",
+    "retry_feedback": "Listen again and leave out the letter that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-05-1",
+    "lesson_id": "L5-M48-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "hurried",
+      "hurryed"
+    ],
+    "correct_answer": "hurried",
+    "audio_asset": "say:hurried",
+    "feedback": "Yes! It's hurried.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-05-2",
+    "lesson_id": "L5-M48-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "married",
+      "marryed"
+    ],
+    "correct_answer": "married",
+    "audio_asset": "say:married",
+    "feedback": "Yes! It's married.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-06-1",
+    "lesson_id": "L5-M48-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "happier",
+      "happyer"
+    ],
+    "correct_answer": "happier",
+    "audio_asset": "say:happier",
+    "feedback": "Yes! It's happier.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-06-2",
+    "lesson_id": "L5-M48-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "crying",
+      "criing"
+    ],
+    "correct_answer": "crying",
+    "audio_asset": "say:crying",
+    "feedback": "Yes! It's crying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-06-3",
+    "lesson_id": "L5-M48-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "happiness",
+      "happyness"
+    ],
+    "correct_answer": "happiness",
+    "audio_asset": "say:happiness",
+    "feedback": "Yes! It's happiness.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-06-4",
+    "lesson_id": "L5-M48-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "funniest",
+      "funnyest"
+    ],
+    "correct_answer": "funniest",
+    "audio_asset": "say:funniest",
+    "feedback": "Yes! It's funniest.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-06-5",
+    "lesson_id": "L5-M48-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cried",
+    "letters": [
+      "c",
+      "r",
+      "i",
+      "ed"
+    ],
+    "answer_tiles": [
+      "c",
+      "r",
+      "i",
+      "ed"
+    ],
+    "correct_answer": "cried",
+    "feedback": "Yes! You built cried.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-06-6",
+    "lesson_id": "L5-M48-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:trying",
+    "letters": [
+      "t",
+      "r",
+      "y",
+      "ing"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "trying",
+    "feedback": "Yes! You built trying.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-06-7",
+    "lesson_id": "L5-M48-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:carried",
+    "letters": [
+      "c",
+      "a",
+      "rr",
+      "i",
+      "ed"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "rr",
+      "i",
+      "ed"
+    ],
+    "correct_answer": "carried",
+    "feedback": "Yes! You built carried.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M48-06-8",
+    "lesson_id": "L5-M48-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:studying",
+    "letters": [
+      "s",
+      "t",
+      "u",
+      "d",
+      "y",
+      "ing"
+    ],
+    "answer_tiles": [
+      "s",
+      "t",
+      "u",
+      "d",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "studying",
+    "feedback": "Yes! You built studying.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

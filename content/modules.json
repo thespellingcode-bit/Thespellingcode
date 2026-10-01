@@ -45,5 +45,6 @@
   { "module_id": 44, "level_id": 5, "module_name": "Long-I Choices", "module_goal": "Choose igh or ie for the long-I sound, alongside the already-known i_e and y spellings.", "units": 5, "active": true },
   { "module_id": 45, "level_id": 5, "module_name": "Long-O Choices", "module_goal": "Choose oa or ow for the long-O sound, based on whether it sits in the middle or at the end of the word.", "units": 5, "active": true },
   { "module_id": 46, "level_id": 5, "module_name": "Long-U Choices", "module_goal": "Choose ue, ew or oo for the long-U sound, alongside the already-known u_e spelling — oo is the most common, ue and ew are smaller sets to learn by heart.", "units": 6, "active": true },
-  { "module_id": 47, "level_id": 5, "module_name": "The Three Sounds of -ed", "module_goal": "Hear that -ed is always spelled the same way, but can sound like /t/, /d/ or /id/ depending on the sound before it.", "units": 5, "active": true }
+  { "module_id": 47, "level_id": 5, "module_name": "The Three Sounds of -ed", "module_goal": "Hear that -ed is always spelled the same way, but can sound like /t/, /d/ or /id/ depending on the sound before it.", "units": 5, "active": true },
+  { "module_id": 48, "level_id": 5, "module_name": "Change Y Before a Suffix", "module_goal": "Swap a final y for i before most suffixes (happy to happier), but keep the y before -ing (crying, not criing).", "units": 6, "active": true }
 ]

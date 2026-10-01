@@ -32,7 +32,7 @@
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
-| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–47 built (through The Three Sounds of -ed — first genuinely-new Level 5 morphology content) |
+| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–48 built (through Change Y Before a Suffix) |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
@@ -47,7 +47,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
-| Level 5 “Word Builder Pro”, Modules 41–47 (through The Three Sounds of -ed) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Module 47 begins the genuinely-new blueprint-Level-5 morphology content. |
+| Level 5 “Word Builder Pro”, Modules 41–48 (through Change Y Before a Suffix) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Modules 47–48 are genuinely-new blueprint-Level-5 morphology content. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -111,7 +111,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 39, Prefixes & Suffixes — back to build-focused, closer to Level 2's sentence-building shape than a phonics-choice module, per the plan.** un-/re- at the start mean "not"/"again"; -ful/-less at the end mean "full of"/"without" (genuine antonym minimal pairs — careful/careless, hopeful/hopeless, harmful/harmless — the same "real word either way, audio is the only tell" shape Module 34 used for hop/hope); -ly just adds on. No new mechanic: `spelling_choice` reused for all three "Meet" recognition lessons (un-, re-, -ful/-less) with real un-/re- word pairs (unwrap/rewrap, undo/redo, untie/retie, unload/reload, unfold/refold) as the audio-driven choice, and `word_build` reused for Blend & Build/Spell the Words with the prefix or suffix tiled as its own single tile (e.g. quickly → `[qu, i, ck, ly]`, composing the new suffix tile with already-known qu/ck graphemes). Added a new remediation tag, `PREFIX_SUFFIX_CONFUSION` (REM-18) — distinct from `SPELLING_CHOICE_CONFUSION` since the confusion here is about a word PART's meaning, not a sound's spelling. No new word pictures — same reasoning as Module 34 (a still image can't distinguish "unwrap" from "rewrap" or "careful" from "careless"), so no Read the Words lesson. **Two real bugs caught before shipping, neither live-only this time:** every assessment item was first written with the `activity_id` field instead of the required `assessment_id` (functionally needed — `LessonPlayer` uses it as a React key and for `questionId`), caught by re-reading the generated content before testing; and Lessons 1–2's assessment banks first exactly reused their own practice lessons' audio+answer pairs (unwrap/undo/untie/unload/unfold, redo/reload/retie), caught live by `npm test`'s transfer-to-new-example check — fixed by swapping in three fresh un-/re- pairs (unseal/reseal, uncap/recap, unpack/repack) the practice lessons never used. Live-verified the Watch-stage spelling_choice narration, the Practice-stage two-option buttons, and the word_build tiling for both a simple word (unwrap) and the most composed one (quickly).
 - **Module 40, Review & Assessment — closes out Level 4, same closing shape as every earlier level (Modules 7/8, 17, 27).** Five lessons cumulatively sampling all 12 earlier modules' rules rather than teaching anything new: Mixed Retrieval (`spelling_choice` — c/k, ck/k, g/j, ge/dge, ch/tch, FLOSS doubling), Read & Build (`word_build`, no decoy, one word per several modules — duck, orange, watch, hopping, knee, boxes), Plurals & Word Parts Review (`spelling_choice` — plurals plus un-/re-/-ful/-less), Dictation (`word_build` with a decoy tile, mixing choice-type rules across modules), and the Level 4 Challenge (`assessment`, 14 items freely mixing `spelling_choice`, `word_build`, `letter_sound_match` and `read_word` — the broadest single-lesson type mix of any module this level). Added `BADGE-10` ("Level 4 Spelling Detective", tied to `module_id: 40`, same pattern as every earlier level's closing badge) — purely data-driven, no code changes needed since badge-earning already derives from `isModuleComplete(state, badge.module_id)`. GRAPHEMES_BY_MODULE[40] stays `[]`, same reasoning as Level 2/3's own closing review modules — pure review teaches no new grapheme. All 22 tests passed on the first run (the assessment_id field-name bug from Module 39 was written correctly here from the start). Live-verified the Mixed Retrieval lesson's all 5 Watch-stage examples (cat, sock, jam, bridge, catch) sampling every Level 4 letter/ending-choice rule in one lesson.
 
-### Level 5 curriculum design (Modules 41–47 built; Modules 48–51 planned, not yet built)
+### Level 5 curriculum design (Modules 41–48 built; Modules 49–51 planned, not yet built)
 - **Scope note:** see the roadmap section above for why Level 5's module list doesn't match the blueprint's Level 5 list — it absorbs the blueprint's missing Level-4 long-vowel/soft-C content and skips the blueprint-Level-5 modules already covered by app-Modules 34/37/39. Full reasoning in `docs/plans/level-5.md`.
 - **Module 41, The Many Spellings of /s/ — same shape as Level 4's spelling-choice modules, no new mechanic.** /s/ can be spelled s (sun), ss (miss, already familiar from FLOSS doubling), soft c before e/i/y (city, pencil) or -ce at a word's end (ice, dance). "ce" is treated as a single fused ending tile, the same symmetry call Module 31 made for "ge" alongside "dge"; mid-word soft c needs no new tile at all since "c" is already a known single letter — only its *sound* is new, not its spelling. **A real picture collision was caught and fixed before shipping, not live this time:** "pencil" was the natural third Read-the-Words picture for mid-word soft c, but `"pencil".includes("pen")` would have matched the existing Level 1 "pen" sound-icon key first, silently showing the wrong picture — caught by checking `Icon.jsx`'s `WORD_KEYS` array before wiring in the new SVG (the same check the file's own word-library.md recommends but easy to skip). Dropped "pencil" as a picture word entirely (word_build/spelling_choice content keeps using it fine, since those lesson types never render an icon) and substituted "sun"/"bus" — both already-illustrated, zero collision risk — for the plain-s picture examples instead. Added 2 new word pictures (ice, city). Live-verified the Read the Words lesson renders sun/ice/city correctly.
 - **Module 42, Long-A Choices — the first Level 5 module with a genuine, reliable positional rule, same confidence level as Level 4's c/k.** ai sits in the middle of a word (rain, train), ay sits at the end (day, play) — both were already taught receptively in Level 3 Module 20, so this module's real job is turning that recognition into a graded choice, reusing the exact same word list (rain, train, mail, sail, paint, day, play, stay, tray, gain) rather than inventing a new one. No new grapheme tile (ai/ay already existed), no new word pictures — Read the Words reuses Level 3's existing train/rain/mail/sail pictures outright, since ay-ending words (day, play, stay, tray) don't have a clean concrete-noun picture pool; that gap is stated plainly in the content rather than forcing in a weak picture. `word_build`'s decoy-tile mechanic again needed zero code changes — a tray for "rain" offers "ay" as the decoy, a tray for "day" offers "ai", exactly mirroring Level 4's ge/dge and ch/tch "explains both directions" pattern. Live-verified both directions of the Spell the Words decoy live (rain/ay-decoy, day/ai-decoy).
@@ -120,6 +120,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 45, Long-O Choices — back to a genuine positional rule (oa middle, ow end), same shape as Module 42's ai/ay.** Deliberately excluded "bowl" from the word list even though it was already illustrated from Level 3 Module 22 — ow is followed by l in "bowl" (owl-shape), not truly word-final, which would have muddied the clean "ow at the end" rule this module teaches; kept the word list to oa/ow words that fit the rule cleanly (boat, road, soap, goat vs snow, grow, slow). Reuses Level 3 Module 22's word list and pictures (boat, road, soap, goat, coat, snow) entirely — no new grapheme, no new assets. 22/22 tests passed on the first run. Live-verified both directions of the Spell the Words decoy (boat/ow-decoy, snow/oa-decoy).
 - **Module 46, Long-U Choices — the most complex module in this run of five, three competing spellings (ue, ew, oo) instead of two, closing out the blueprint's missing long-vowel-choice content.** All three new graphemes, added to `VOWEL_TEAMS`. oo is the common default (moon, spoon, food); ue and ew are smaller memorized sets, each usually at a word's end (true, glue; new, few) — same pattern/frequency framing as Modules 43/44, not a positional rule. Got a sixth lesson ("More Spellings," a second `spelling_choice` round) per the plan's own call for extra practice given the added complexity. **Two real-word collisions were checked and avoided before writing any content, not caught live:** "blue" was dropped from the word list because its only ew-substitution decoy is "blew," a real, correctly-spelled different word (same homophone trap Module 43 hit with meat/meet); "due" was dropped because its ew-substitution is "dew," also real. "clew" (an obscure nautical term, used as a decoy for "clue") was accepted as safe per the project's standing precedent for low-frequency real-word decoys (Module 34's "teem," Module 30's "get"). Thinnest picture pool of any module this level — only moon, spoon and broom — with "book" deliberately NOT reused despite already being illustrated, since its oo makes the short oo sound (book/look), a different sound from this module's long-oo focus; the Teach narration names this dual-sound fact honestly rather than glossing over it. 22/22 on the first run. Live-verified the Watch-stage decoy narration ("true" tiles as tr-ue with an "ew" decoy called out) and the moon picture in Read the Words.
 - **Module 47, The Three Sounds of -ed — the first genuinely-new Level 5 content (not a Level-4 gap-fill), and a different KIND of skill than any `spelling_choice` module: auditory discrimination, since the spelling is always "-ed" regardless of which sound it makes.** /t/ after an unvoiced consonant (walked), /d/ after a voiced sound (played), /id/ after t/d (wanted) — same "hear the sound" shape as Level 1's phonemic-awareness modules, not a spelling task at all. Reused `letter_sound_match` with a new `edSound: true` content field (`correct_answer` is "t"/"d"/"id", not a grapheme), following the exact precedent Module 35's `silent` and Module 36's `yVowel` fields established — added the matching narration branches in both `modelCaptionFor` and `modelHeadingFor` proactively, before any content was written, rather than discovering the generic-fallback bug live as Module 35 originally did. No new remediation tag reused — added `ED_SOUND_CONFUSION` (REM-19) since this is neither a spelling choice nor a letter-sound-correspondence confusion in the usual sense. No decoy-tile "Spell the Words" lesson — since the spelling never changes, a second `word_build` lesson (Lesson 4) just gives more building reps on fresh words instead of a genuine decoy choice; no Read the Words either, same "can't picture a verb tense" reasoning as Modules 34/39. Live-verified all three Watch-stage narration branches (walked→/t/, wanted→/id/, called→/d/) and the three-button Practice-stage layout (t/d/id).
+- **Module 48, Change Y Before a Suffix — back to a genuine spelling rule (like Module 34's doubling/drop-e), with one clean exception.** A word ending in consonant+y swaps y for i before most suffixes (happy→happier, cry→cried) but keeps the y before -ing specifically (crying, never criing) — taught as two separate "Meet the Rule" lessons (Change Y, then the -ing exception) before merging them in a "More Practice" lesson, mirroring Module 34's three-separate-then-combined structure. `word_build`'s decoy mechanic reused exactly as Module 34 did for its stray-e decoy — a stray "y" tile for words that changed to i, a stray "i" tile for words that kept y. No new grapheme tiles (`-er`/`-est`/`-ly`/`-ness` all decompose to already-known single letters, same reasoning as Modules 34/47's suffix tiles). Live-verified both directions of the Spell the Words decoy (happiest/y-decoy, flying/i-decoy).
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -219,6 +220,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 5 Module 45 (Long-O Choices) — oa (middle) vs ow (end), a genuine positional rule, same confidence as Module 42's ai/ay. Deliberately excluded "bowl" (ow+l isn't truly word-final) to keep the rule honest. Reuses Level 3 Module 22's word list and pictures entirely — no new grapheme, no new assets. 22/22 on the first run.
 - Built Level 5 Module 46 (Long-U Choices) — ue/ew/oo, three new graphemes, the most complex module yet (got a sixth lesson for the added practice). Avoided two real-word decoy collisions before writing content ("blue"→"blew", "due"→"dew", both real words) by dropping those words from the list. Thinnest picture pool so far (moon/spoon/broom); deliberately did not reuse the existing "book" picture since its oo is a different (short) sound. **This closes out all five long-vowel-choice modules (42-46) — the blueprint's missing Level-4 flagship content is now fully built.** 22/22 on the first run.
 - Built Level 5 Module 47 (The Three Sounds of -ed) — first genuinely-new Level 5 content, auditory-only (spelling is always -ed, sound varies: /t/, /d/, /id/). Added a new edSound content field with narration branches written proactively (not caught live), following Module 35/36's established field-flag pattern. Added remediation tag ED_SOUND_CONFUSION (REM-19). No Spell/Read lessons — no spelling choice to decoy, and action-verb words don't picture cleanly.
+- Built Level 5 Module 48 (Change Y Before a Suffix) — y changes to i before most suffixes (happy->happier) but stays before -ing (crying, not criing). Same shape as Module 34's doubling/drop-e rule: two "Meet the Rule" lessons then a combined practice round. No new graphemes. 22/22 on the first run.
 
 ---
 
@@ -625,6 +627,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 45 | Long-O Choices | **Live** | 5 | 18 | 16 |
 | 46 | Long-U Choices | **Live** | 6 | 24 | 18 |
 | 47 | The Three Sounds of -ed | **Live** | 5 | 20 | 17 |
+| 48 | Change Y Before a Suffix | **Live** | 6 | 25 | 19 |
 
 ## Curriculum in full
 
@@ -7346,6 +7349,169 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M47-05-6 | hear “called” → build \| tray c a ll ed \| answer **called** |  |
 | AS-M47-05-7 | hear “watched” → build \| tray w a tch ed \| answer **watched** |  |
 | AS-M47-05-8 | hear “landed” → build \| tray l a n d ed \| answer **landed** |  |
+
+### Module 48 — Change Y Before a Suffix
+
+*Goal:* Swap a final y for i before most suffixes (happy to happier), but keep the y before -ing (crying, not criing).
+
+#### Lesson 1: Meet the Rule: Change Y (`L5-M48-01`)
+
+- **Objective:** Recognise that a final y changes to i before most suffixes (happy -> happier).
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A new spelling rule, Detective! When a word ends in a consonant plus y, the y usually changes to i before a suffix.
+- **Narration (teach):** happy becomes happier — the y changes to i before -er. cry becomes cried — the y changes to i before -ed. Listen, then pick the correct spelling.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Remember: y usually changes to i.
+- **Narration (close):** Case closed! You know when y changes to i.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M48-01 | sound: happier \| options happier, happyer \| answer **happier** |
+| Q-M48-02 | sound: cried \| options cried, cryed \| answer **cried** |
+| Q-M48-03 | sound: happiness \| options happiness, happyness \| answer **happiness** |
+| Q-M48-04 | sound: tried \| options tried, tryed \| answer **tried** |
+| Q-M48-05 | sound: funnier \| options funnier, funnyer \| answer **funnier** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M48-01-1 | sound: carried \| options carried, carryed \| answer **carried** |  |
+| AS-M48-01-2 | sound: studied \| options studied, studyed \| answer **studied** |  |
+| AS-M48-01-3 | sound: silliest \| options silliest, sillyest \| answer **silliest** |  |
+
+#### Lesson 2: Meet the Rule: Keep Y Before -ing (`L5-M48-02`)
+
+- **Objective:** Recognise that a final y stays the same before -ing (cry -> crying, not criing).
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** One big exception, Detective! Before -ing, the y always STAYS — it never changes to i.
+- **Narration (teach):** cry becomes crying, not criing — two i's in a row would look strange. The y stays the same before -ing, every single time.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Remember: y always stays before -ing.
+- **Narration (close):** Case closed! You know -ing is the one exception.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M48-06 | sound: crying \| options crying, criing \| answer **crying** |
+| Q-M48-07 | sound: trying \| options trying, triing \| answer **trying** |
+| Q-M48-08 | sound: carrying \| options carrying, carriing \| answer **carrying** |
+| Q-M48-09 | sound: studying \| options studying, studiing \| answer **studying** |
+| Q-M48-10 | sound: flying \| options flying, fliing \| answer **flying** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M48-02-1 | sound: copying \| options copying, copiing \| answer **copying** |  |
+| AS-M48-02-2 | sound: drying \| options drying, driing \| answer **drying** |  |
+
+#### Lesson 3: Blend & Build (`L5-M48-03`)
+
+- **Objective:** Build words that change or keep a final y before a suffix.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some y-change words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! You used the right spelling for each word.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M48-11 | hear “happier” → build \| tray h a p p i er \| answer **happier** |
+| Q-M48-12 | hear “cried” → build \| tray c r i ed \| answer **cried** |
+| Q-M48-13 | hear “crying” → build \| tray c r y ing \| answer **crying** |
+| Q-M48-14 | hear “trying” → build \| tray t r y ing \| answer **trying** |
+| Q-M48-15 | hear “happiness” → build \| tray h a p p i ness \| answer **happiness** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M48-03-1 | hear “carried” → build \| tray c a rr i ed \| answer **carried** |  |
+| AS-M48-03-2 | hear “studying” → build \| tray s t u d y ing \| answer **studying** |  |
+
+#### Lesson 4: Spell the Words (`L5-M48-04`)
+
+- **Objective:** Spell a dictated word, choosing y or i from a tray that includes one decoy.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — pick the right letter, y or i, and leave the wrong one out!
+- **Narration (teach):** Listen to the word, then build it, leaving out the letter that doesn't belong.
+- **Narration (model):** Listen. Pick the right tiles and leave the extra one behind!
+- **Narration (transition):** Your turn! Listen carefully, and leave out the tile that doesn't belong.
+- **Narration (close):** Excellent spelling! You always picked the right letter.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M48-16 | hear “happiest” → build \| tray h a p p i est y \| answer **happiest** |
+| Q-M48-17 | hear “tried” → build \| tray t r i ed y \| answer **tried** |
+| Q-M48-18 | hear “funnier” → build \| tray f u nn i er y \| answer **funnier** |
+| Q-M48-19 | hear “flying” → build \| tray f l y ing i \| answer **flying** |
+| Q-M48-20 | hear “carrying” → build \| tray c a rr y ing i \| answer **carrying** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M48-04-1 | hear “driest” → build \| tray d r i est y \| answer **driest** |  |
+| AS-M48-04-2 | hear “copying” → build \| tray c o p y ing i \| answer **copying** |  |
+
+#### Lesson 5: More Practice (`L5-M48-05`)
+
+- **Objective:** Practise both the change-y and keep-y rules together across more words.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More practice, Detective — mixing both rules together now!
+- **Narration (teach):** Remember: y changes to i before most suffixes, but stays the same before -ing.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn! Use both rules together.
+- **Narration (close):** Fantastic! You can handle both rules at once now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M48-21 | sound: merrier \| options merrier, merryer \| answer **merrier** |
+| Q-M48-22 | sound: merriest \| options merriest, merryest \| answer **merriest** |
+| Q-M48-23 | sound: merrily \| options merrily, merryly \| answer **merrily** |
+| Q-M48-24 | sound: marrying \| options marrying, marriing \| answer **marrying** |
+| Q-M48-25 | sound: hurrying \| options hurrying, hurriing \| answer **hurrying** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M48-05-1 | sound: hurried \| options hurried, hurryed \| answer **hurried** |  |
+| AS-M48-05-2 | sound: married \| options married, marryed \| answer **married** |  |
+
+#### Lesson 6: Change Y Challenge (`L5-M48-06`)
+
+- **Objective:** Demonstrate independent mastery of changing (or keeping) y before a suffix.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about changing y before a suffix.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered changing y before a suffix.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M48-06-1 | sound: happier \| options happier, happyer \| answer **happier** |  |
+| AS-M48-06-2 | sound: crying \| options crying, criing \| answer **crying** |  |
+| AS-M48-06-3 | sound: happiness \| options happiness, happyness \| answer **happiness** |  |
+| AS-M48-06-4 | sound: funniest \| options funniest, funnyest \| answer **funniest** |  |
+| AS-M48-06-5 | hear “cried” → build \| tray c r i ed \| answer **cried** |  |
+| AS-M48-06-6 | hear “trying” → build \| tray t r y ing \| answer **trying** |  |
+| AS-M48-06-7 | hear “carried” → build \| tray c a rr i ed \| answer **carried** |  |
+| AS-M48-06-8 | hear “studying” → build \| tray s t u d y ing \| answer **studying** |  |
 
 ## Content library
 

@@ -19637,5 +19637,531 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-01",
+    "lesson_id": "L5-M48-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "happier",
+      "happyer"
+    ],
+    "correct_answer": "happier",
+    "audio_asset": "say:happier",
+    "feedback": "Yes! It's happier.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-02",
+    "lesson_id": "L5-M48-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cried",
+      "cryed"
+    ],
+    "correct_answer": "cried",
+    "audio_asset": "say:cried",
+    "feedback": "Yes! It's cried.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-03",
+    "lesson_id": "L5-M48-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "happiness",
+      "happyness"
+    ],
+    "correct_answer": "happiness",
+    "audio_asset": "say:happiness",
+    "feedback": "Yes! It's happiness.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-04",
+    "lesson_id": "L5-M48-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "tried",
+      "tryed"
+    ],
+    "correct_answer": "tried",
+    "audio_asset": "say:tried",
+    "feedback": "Yes! It's tried.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-05",
+    "lesson_id": "L5-M48-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "funnier",
+      "funnyer"
+    ],
+    "correct_answer": "funnier",
+    "audio_asset": "say:funnier",
+    "feedback": "Yes! It's funnier.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-06",
+    "lesson_id": "L5-M48-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "crying",
+      "criing"
+    ],
+    "correct_answer": "crying",
+    "audio_asset": "say:crying",
+    "feedback": "Yes! It's crying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-07",
+    "lesson_id": "L5-M48-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "trying",
+      "triing"
+    ],
+    "correct_answer": "trying",
+    "audio_asset": "say:trying",
+    "feedback": "Yes! It's trying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-08",
+    "lesson_id": "L5-M48-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "carrying",
+      "carriing"
+    ],
+    "correct_answer": "carrying",
+    "audio_asset": "say:carrying",
+    "feedback": "Yes! It's carrying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-09",
+    "lesson_id": "L5-M48-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "studying",
+      "studiing"
+    ],
+    "correct_answer": "studying",
+    "audio_asset": "say:studying",
+    "feedback": "Yes! It's studying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-10",
+    "lesson_id": "L5-M48-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "flying",
+      "fliing"
+    ],
+    "correct_answer": "flying",
+    "audio_asset": "say:flying",
+    "feedback": "Yes! It's flying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-11",
+    "lesson_id": "L5-M48-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:happier",
+    "letters": [
+      "h",
+      "a",
+      "p",
+      "p",
+      "i",
+      "er"
+    ],
+    "answer_tiles": [
+      "h",
+      "a",
+      "p",
+      "p",
+      "i",
+      "er"
+    ],
+    "correct_answer": "happier",
+    "feedback": "Yes! You built happier.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-12",
+    "lesson_id": "L5-M48-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cried",
+    "letters": [
+      "c",
+      "r",
+      "i",
+      "ed"
+    ],
+    "answer_tiles": [
+      "c",
+      "r",
+      "i",
+      "ed"
+    ],
+    "correct_answer": "cried",
+    "feedback": "Yes! You built cried.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-13",
+    "lesson_id": "L5-M48-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:crying",
+    "letters": [
+      "c",
+      "r",
+      "y",
+      "ing"
+    ],
+    "answer_tiles": [
+      "c",
+      "r",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "crying",
+    "feedback": "Yes! You built crying.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-14",
+    "lesson_id": "L5-M48-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:trying",
+    "letters": [
+      "t",
+      "r",
+      "y",
+      "ing"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "trying",
+    "feedback": "Yes! You built trying.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-15",
+    "lesson_id": "L5-M48-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:happiness",
+    "letters": [
+      "h",
+      "a",
+      "p",
+      "p",
+      "i",
+      "ness"
+    ],
+    "answer_tiles": [
+      "h",
+      "a",
+      "p",
+      "p",
+      "i",
+      "ness"
+    ],
+    "correct_answer": "happiness",
+    "feedback": "Yes! You built happiness.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-16",
+    "lesson_id": "L5-M48-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:happiest",
+    "letters": [
+      "h",
+      "a",
+      "p",
+      "p",
+      "i",
+      "est",
+      "y"
+    ],
+    "answer_tiles": [
+      "h",
+      "a",
+      "p",
+      "p",
+      "i",
+      "est"
+    ],
+    "correct_answer": "happiest",
+    "feedback": "Yes! You built happiest.",
+    "retry_feedback": "Listen again and leave out the letter that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-17",
+    "lesson_id": "L5-M48-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tried",
+    "letters": [
+      "t",
+      "r",
+      "i",
+      "ed",
+      "y"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "i",
+      "ed"
+    ],
+    "correct_answer": "tried",
+    "feedback": "Yes! You built tried.",
+    "retry_feedback": "Listen again and leave out the letter that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-18",
+    "lesson_id": "L5-M48-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:funnier",
+    "letters": [
+      "f",
+      "u",
+      "nn",
+      "i",
+      "er",
+      "y"
+    ],
+    "answer_tiles": [
+      "f",
+      "u",
+      "nn",
+      "i",
+      "er"
+    ],
+    "correct_answer": "funnier",
+    "feedback": "Yes! You built funnier.",
+    "retry_feedback": "Listen again and leave out the letter that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-19",
+    "lesson_id": "L5-M48-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:flying",
+    "letters": [
+      "f",
+      "l",
+      "y",
+      "ing",
+      "i"
+    ],
+    "answer_tiles": [
+      "f",
+      "l",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "flying",
+    "feedback": "Yes! You built flying.",
+    "retry_feedback": "Listen again and leave out the letter that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-20",
+    "lesson_id": "L5-M48-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:carrying",
+    "letters": [
+      "c",
+      "a",
+      "rr",
+      "y",
+      "ing",
+      "i"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "rr",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "carrying",
+    "feedback": "Yes! You built carrying.",
+    "retry_feedback": "Listen again and leave out the letter that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-21",
+    "lesson_id": "L5-M48-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "merrier",
+      "merryer"
+    ],
+    "correct_answer": "merrier",
+    "audio_asset": "say:merrier",
+    "feedback": "Yes! It's merrier.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-22",
+    "lesson_id": "L5-M48-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "merriest",
+      "merryest"
+    ],
+    "correct_answer": "merriest",
+    "audio_asset": "say:merriest",
+    "feedback": "Yes! It's merriest.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-23",
+    "lesson_id": "L5-M48-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "merrily",
+      "merryly"
+    ],
+    "correct_answer": "merrily",
+    "audio_asset": "say:merrily",
+    "feedback": "Yes! It's merrily.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-24",
+    "lesson_id": "L5-M48-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "marrying",
+      "marriing"
+    ],
+    "correct_answer": "marrying",
+    "audio_asset": "say:marrying",
+    "feedback": "Yes! It's marrying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M48-25",
+    "lesson_id": "L5-M48-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "hurrying",
+      "hurriing"
+    ],
+    "correct_answer": "hurrying",
+    "audio_asset": "say:hurrying",
+    "feedback": "Yes! It's hurrying.",
+    "retry_feedback": "Listen again — does the y change to i, or stay the same before -ing?",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]
