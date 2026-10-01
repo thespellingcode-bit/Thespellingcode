@@ -1,6 +1,6 @@
 ## 4. Level 4 plan — Spelling Detective (draft for owner review)
 
-*Status (2026-09-30): planning only, nothing built. Source: the Master Curriculum Blueprint v0.1 (Level 4: ages about 7–9, thirteen modules), continuing the boundary rules already fixed in Levels 1–3.*
+*Status (2026-10-01): complete — all 13 modules built and deployed. Source: the Master Curriculum Blueprint v0.1 (Level 4: ages about 7–9, thirteen modules), continuing the boundary rules already fixed in Levels 1–3. See `docs/project-notes.md`'s Level 4 curriculum design section for how each module was actually built.*
 
 ### Big goal
 "I can choose the right spelling when more than one spelling looks plausible." Every earlier level enforced "no choosing between two valid spellings" — Level 1 excluded C/K/CK, Level 2 excluded doubled endings, Level 3 kept vowel teams receptive-only. Level 4 is where that boundary finally lifts: for the first time, the child is graded on picking the *correct* spelling for a word, not just recognising or reproducing one that's already given.

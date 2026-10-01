@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–39 built (through Prefixes & Suffixes) |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,7 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
-| Level 4 “Spelling Detective”, Modules 28–39 (through Prefixes & Suffixes) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
+| Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -89,7 +89,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Level 4 curriculum design (Modules 28–39 built; Module 40 planned, not yet built)
+### Level 4 curriculum design (all 13 modules built — Level 4 complete)
 - **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
 - **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
 - **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
@@ -105,6 +105,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 37, Plurals — back to a genuine spelling choice, but between three endings instead of two letters.** Add -s for most words (cat → cats), -es after a word ending in a hissing/hushing sound — s, x, ch, sh (box → boxes, bus → buses), or swap final y for -ies after a consonant (baby → babies, puppy → puppies). The content-authoring helper `shape(base, mode)` generalizes the same three-way branch across every lesson, and this time `wb()` was written to separate `tiles` (the correct answer tiles, feeding `answer_tiles`) from `letters` (`[...tiles, wrongEnding]`, feeding the tray) from the very first line, rather than discovering the `answer_tiles`-includes-the-decoy bug live as happened in Modules 29/35/36 — all 22 tests passed on the first run. Unlike Modules 28–34's doubling/minimal-pair rules, plurals don't offer a natural minimal-pair pair for `spelling_choice` recognition (there's no real word that's ambiguously "either -s or -es"), so every `spelling_choice` item instead pairs the correct plural against the *wrong rule applied to the same base word* (boxs vs boxes, babys vs babies) — same "does this spelling match the rule" test as Modules 28–32, just without a genuine-minimal-pair option this time. Verified live that the Watch-stage word_build demo explains all three modes correctly across its 5 examples (cats/s, boxes/es, babies/ies, dogs/s, buses/es) and that Practice correctly advances after a correct build. Added 1 new word picture (box); dropped "dish" as a picture word — its emoji is a single plate, which reads as "plate," not clearly "dish" (and "box" already covers the -es example without it).
 - **Module 38, ph for /f/ — back to receptive-only (no spelling choice: ph vs f isn't a live ambiguity at this level), and 4 lessons instead of the usual 5 since the plan's own table calls for it.** `"ph"` was added to `questionTypes.js`'s `DIGRAPHS` set so `graphemeKindFor("ph")` correctly returns `"digraph"` instead of falling through to the generic "blend" narration. **A real narration bug was caught and fixed live before shipping**, this time by live-testing rather than anticipating it in content: `graphemePosition()` only ever returned `"start"` or `"end"` (defaulting to `"start"` for anything else), which was never wrong for Module 11's digraphs (sh/ch/th/wh only ever sat at a word's start or end in this app's word lists) but IS wrong for "dolphin"/"elephant", where ph sits in the middle — the narration said "dolphin has the digraph ph at the start!", which is false. Fixed by having `graphemePosition()` return `null` for a mid-word grapheme instead of guessing, and both narration call sites (`modelCaptionFor`/`modelHeadingFor`) fall back to a position-free "has the digraph ph in it!" phrasing, mirroring the pattern vowel teams already used for the same reason. Verified live after the fix across all 5 Watch-stage examples: phone ("at the start"), dolphin and elephant ("in it"), graph ("at the end"), trophy ("in it"). Added 3 new word pictures (dolphin, elephant, graph — a bar-chart emoji, which reads clearly as "graph"); sourced but rejected "photo" as a picture word — its Noto emoji is an unambiguous camera, which reads as "camera" not "photo", so "photo" stayed build/spell-only, the same treatment Module 12 gave "clock".
 - **Module 39, Prefixes & Suffixes — back to build-focused, closer to Level 2's sentence-building shape than a phonics-choice module, per the plan.** un-/re- at the start mean "not"/"again"; -ful/-less at the end mean "full of"/"without" (genuine antonym minimal pairs — careful/careless, hopeful/hopeless, harmful/harmless — the same "real word either way, audio is the only tell" shape Module 34 used for hop/hope); -ly just adds on. No new mechanic: `spelling_choice` reused for all three "Meet" recognition lessons (un-, re-, -ful/-less) with real un-/re- word pairs (unwrap/rewrap, undo/redo, untie/retie, unload/reload, unfold/refold) as the audio-driven choice, and `word_build` reused for Blend & Build/Spell the Words with the prefix or suffix tiled as its own single tile (e.g. quickly → `[qu, i, ck, ly]`, composing the new suffix tile with already-known qu/ck graphemes). Added a new remediation tag, `PREFIX_SUFFIX_CONFUSION` (REM-18) — distinct from `SPELLING_CHOICE_CONFUSION` since the confusion here is about a word PART's meaning, not a sound's spelling. No new word pictures — same reasoning as Module 34 (a still image can't distinguish "unwrap" from "rewrap" or "careful" from "careless"), so no Read the Words lesson. **Two real bugs caught before shipping, neither live-only this time:** every assessment item was first written with the `activity_id` field instead of the required `assessment_id` (functionally needed — `LessonPlayer` uses it as a React key and for `questionId`), caught by re-reading the generated content before testing; and Lessons 1–2's assessment banks first exactly reused their own practice lessons' audio+answer pairs (unwrap/undo/untie/unload/unfold, redo/reload/retie), caught live by `npm test`'s transfer-to-new-example check — fixed by swapping in three fresh un-/re- pairs (unseal/reseal, uncap/recap, unpack/repack) the practice lessons never used. Live-verified the Watch-stage spelling_choice narration, the Practice-stage two-option buttons, and the word_build tiling for both a simple word (unwrap) and the most composed one (quickly).
+- **Module 40, Review & Assessment — closes out Level 4, same closing shape as every earlier level (Modules 7/8, 17, 27).** Five lessons cumulatively sampling all 12 earlier modules' rules rather than teaching anything new: Mixed Retrieval (`spelling_choice` — c/k, ck/k, g/j, ge/dge, ch/tch, FLOSS doubling), Read & Build (`word_build`, no decoy, one word per several modules — duck, orange, watch, hopping, knee, boxes), Plurals & Word Parts Review (`spelling_choice` — plurals plus un-/re-/-ful/-less), Dictation (`word_build` with a decoy tile, mixing choice-type rules across modules), and the Level 4 Challenge (`assessment`, 14 items freely mixing `spelling_choice`, `word_build`, `letter_sound_match` and `read_word` — the broadest single-lesson type mix of any module this level). Added `BADGE-10` ("Level 4 Spelling Detective", tied to `module_id: 40`, same pattern as every earlier level's closing badge) — purely data-driven, no code changes needed since badge-earning already derives from `isModuleComplete(state, badge.module_id)`. GRAPHEMES_BY_MODULE[40] stays `[]`, same reasoning as Level 2/3's own closing review modules — pure review teaches no new grapheme. All 22 tests passed on the first run (the assessment_id field-name bug from Module 39 was written correctly here from the start). Live-verified the Mixed Retrieval lesson's all 5 Watch-stage examples (cat, sock, jam, bridge, catch) sampling every Level 4 letter/ending-choice rule in one lesson.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -195,6 +196,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 4 Module 37 (Plurals) — -s/-es/-ies, back to a graded spelling choice via the `shape()` content helper; separated `tiles` from `letters` in `wb()` from the start, so the recurring answer_tiles-includes-the-decoy bug didn't recur this time (22/22 on the first run). Live-verified all three plural modes in the Watch-stage word_build demo and a correct Practice-stage build. Added 1 new word picture (box); dropped "dish" (ambiguous plate emoji).
 - Built Level 4 Module 38 (ph for /f/) — receptive only, 4 lessons. Added "ph" to the DIGRAPHS set so it narrates correctly. Caught and fixed a real narration bug live: graphemePosition() defaulted to "start" for a mid-word digraph (wrong for dolphin/elephant), now returns null and both narration sites fall back to a position-free "has the digraph ph in it!" phrasing. Added 3 new word pictures (dolphin, elephant, graph); rejected "photo" as a picture (its emoji is unambiguously a camera).
 - Built Level 4 Module 39 (Prefixes & Suffixes) — un-/re-/-ful/-less/-ly, build-focused, no new mechanic (spelling_choice for recognition, word_build with the affix as its own tile for building). Added remediation tag PREFIX_SUFFIX_CONFUSION (REM-18). Caught two bugs before shipping: assessment items first used the wrong field name (activity_id instead of assessment_id, a React-key/questionId bug), and Lessons 1-2's assessment banks exactly duplicated their own practice words (caught by npm test), both fixed before deploy.
+- Built Level 4 Module 40 (Review & Assessment) — cumulative review across all 12 earlier Level 4 modules, same closing shape as every earlier level. Added BADGE-10 (Level 4 Spelling Detective), purely data-driven. **Level 4 is now complete — 13 modules, 67 lessons, built and deployed.**
 
 ---
 
@@ -391,7 +393,7 @@ Same rhythm as every level so far: one module at a time — content → validate
 
 ## 4. Level 4 plan — Spelling Detective (draft for owner review)
 
-*Status (2026-09-30): planning only, nothing built. Source: the Master Curriculum Blueprint v0.1 (Level 4: ages about 7–9, thirteen modules), continuing the boundary rules already fixed in Levels 1–3.*
+*Status (2026-10-01): complete — all 13 modules built and deployed. Source: the Master Curriculum Blueprint v0.1 (Level 4: ages about 7–9, thirteen modules), continuing the boundary rules already fixed in Levels 1–3. See `docs/project-notes.md`'s Level 4 curriculum design section for how each module was actually built.*
 
 ### Big goal
 "I can choose the right spelling when more than one spelling looks plausible." Every earlier level enforced "no choosing between two valid spellings" — Level 1 excluded C/K/CK, Level 2 excluded doubled endings, Level 3 kept vowel teams receptive-only. Level 4 is where that boundary finally lifts: for the first time, the child is graded on picking the *correct* spelling for a word, not just recognising or reproducing one that's already given.
@@ -517,6 +519,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 37 | Plurals | **Live** | 6 | 28 | 28 |
 | 38 | ph for /f/ | **Live** | 4 | 13 | 16 |
 | 39 | Prefixes & Suffixes | **Live** | 6 | 25 | 21 |
+| 40 | Review & Assessment | **Live** | 5 | 24 | 24 |
 
 ## Curriculum in full
 
@@ -6130,6 +6133,153 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M39-06-7 | hear “helpless” → build \| tray h e l p less \| answer **helpless** |  |
 | AS-M39-06-8 | hear “quickly” → build \| tray qu i ck ly \| answer **quickly** |  |
 
+### Module 40 — Review & Assessment
+
+*Goal:* Demonstrate independent Level 4 mastery across every spelling choice learned.
+
+#### Lesson 1: Mixed Retrieval (`L4-M40-01`)
+
+- **Objective:** Review the c/k, ck/k, g/j, ge/dge, ch/tch and doubling spelling choices from across Level 4.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Review mission, Detective! Let's revisit every spelling choice from Level 4.
+- **Narration (teach):** c or k, ck or k, g or j, ge or dge, ch or tch, doubled or single — you've learned the rule for each one. Listen carefully and pick the spelling that matches.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Use everything you've learned.
+- **Narration (close):** Case closed! You remember every spelling choice.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M40-01 | sound: cat \| options cat, kat \| answer **cat** |
+| Q-M40-02 | sound: sock \| options sock, sok \| answer **sock** |
+| Q-M40-03 | sound: jam \| options jam, gam \| answer **jam** |
+| Q-M40-04 | sound: bridge \| options bridge, brige \| answer **bridge** |
+| Q-M40-05 | sound: catch \| options catch, cach \| answer **catch** |
+| Q-M40-06 | sound: bell \| options bell, bel \| answer **bell** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M40-01-1 | sound: cup \| options cup, kup \| answer **cup** |  |
+| AS-M40-01-2 | sound: pack \| options pack, pak \| answer **pack** |  |
+| AS-M40-01-3 | sound: huge \| options huge, hudge \| answer **huge** |  |
+
+#### Lesson 2: Read & Build (`L4-M40-02`)
+
+- **Objective:** Build words using patterns from across every Level 4 module.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build words from across all of Level 4!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! You built words using every Level 4 pattern.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M40-07 | hear “duck” → build \| tray d u ck \| answer **duck** |
+| Q-M40-08 | hear “orange” → build \| tray o r a n ge \| answer **orange** |
+| Q-M40-09 | hear “watch” → build \| tray w a tch \| answer **watch** |
+| Q-M40-10 | hear “hopping” → build \| tray h o p p ing \| answer **hopping** |
+| Q-M40-11 | hear “knee” → build \| tray k n ee \| answer **knee** |
+| Q-M40-12 | hear “boxes” → build \| tray b o x es \| answer **boxes** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M40-02-1 | hear “cage” → build \| tray c a ge \| answer **cage** |  |
+| AS-M40-02-2 | hear “planned” → build \| tray p l a n n ed \| answer **planned** |  |
+
+#### Lesson 3: Plurals & Word Parts Review (`L4-M40-03`)
+
+- **Objective:** Review plurals and prefix/suffix spelling choices from across Level 4.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More review, Detective! This time: plurals, and word parts like un-, re-, -ful and -less.
+- **Narration (teach):** Listen for the ending that matches the rule — -s, -es or -ies for plurals; the right prefix or suffix for meaning.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Use the rule to pick correctly.
+- **Narration (close):** Case closed! You remember plurals and word parts too.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M40-13 | sound: boxes \| options boxes, boxs \| answer **boxes** |
+| Q-M40-14 | sound: babies \| options babies, babys \| answer **babies** |
+| Q-M40-15 | sound: unload \| options unload, reload \| answer **unload** |
+| Q-M40-16 | sound: careless \| options careless, careful \| answer **careless** |
+| Q-M40-17 | sound: painful \| options painful, painless \| answer **painful** |
+| Q-M40-18 | sound: retie \| options retie, untie \| answer **retie** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M40-03-1 | sound: dogs \| options dogs, doges \| answer **dogs** |  |
+| AS-M40-03-2 | sound: hopeless \| options hopeless, hopeful \| answer **hopeless** |  |
+| AS-M40-03-3 | sound: redo \| options redo, undo \| answer **redo** |  |
+
+#### Lesson 4: Dictation (`L4-M40-04`)
+
+- **Objective:** Spell dictated words from across Level 4, choosing the correct tile and leaving out the decoy.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Dictation mission — pick the right tiles and leave the extra one out!
+- **Narration (teach):** Listen to the word, then build it, leaving out any tile that doesn't belong.
+- **Narration (model):** Listen. Pick the right tiles and leave the extra one behind!
+- **Narration (transition):** Your turn! Listen carefully, and leave out the tile that doesn't belong.
+- **Narration (close):** Excellent spelling! You picked correctly every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M40-19 | hear “kite” → build \| tray k i t e c \| answer **kite** |
+| Q-M40-20 | hear “duck” → build \| tray d u ck k \| answer **duck** |
+| Q-M40-21 | hear “badge” → build \| tray b a dge ge \| answer **badge** |
+| Q-M40-22 | hear “hopping” → build \| tray h o p p ing e \| answer **hopping** |
+| Q-M40-23 | hear “elephant” → build \| tray e l e ph a n t f \| answer **elephant** |
+| Q-M40-24 | hear “unload” → build \| tray un l o a d re \| answer **unload** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M40-04-1 | hear “cot” → build \| tray c o t k \| answer **cot** |  |
+| AS-M40-04-2 | hear “sock” → build \| tray s o ck k \| answer **sock** |  |
+
+#### Lesson 5: Level 4 Challenge (`L4-M40-05`)
+
+- **Objective:** Demonstrate independent mastery of every Level 4 spelling choice.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** The Level 4 Challenge, Detective! Show everything you've learned as a Spelling Detective.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered Level 4 — you're a true Spelling Detective!
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M40-05-1 | sound: cat \| options cat, kat \| answer **cat** |  |
+| AS-M40-05-2 | sound: sock \| options sock, sok \| answer **sock** |  |
+| AS-M40-05-3 | sound: jam \| options jam, gam \| answer **jam** |  |
+| AS-M40-05-4 | sound: bridge \| options bridge, brige \| answer **bridge** |  |
+| AS-M40-05-5 | sound: catch \| options catch, cach \| answer **catch** |  |
+| AS-M40-05-6 | sound: bell \| options bell, bel \| answer **bell** |  |
+| AS-M40-05-7 | hear “hopping” → build \| tray h o p p ing \| answer **hopping** |  |
+| AS-M40-05-8 | hear “knee” → build \| tray k n ee \| answer **knee** |  |
+| AS-M40-05-9 | hear “boxes” → build \| tray b o x es \| answer **boxes** |  |
+| AS-M40-05-10 | hear “unwrap” → build \| tray un w r a p \| answer **unwrap** |  |
+| AS-M40-05-11 | hear “happy” → letter \| options e i \| answer **e** |  |
+| AS-M40-05-12 | hear “phone” → letter \| options ph sh ch \| answer **ph** |  |
+| AS-M40-05-13 | read “sock” → picture \| options sock, box, doll \| answer **sock** |  |
+| AS-M40-05-14 | read “knee” → picture \| options knee, comb, knife \| answer **knee** |  |
+
 ## Content library
 
 ### Pictures
@@ -6172,6 +6322,7 @@ Spoken words (26 listed in `content/media.json`, plus every `say:word` used in l
 | BADGE-07 | Sentence Star | Live |
 | BADGE-08 | Level 2 Word Builder | Live |
 | BADGE-09 | Level 3 Pattern Detective | Live |
+| BADGE-10 | Level 4 Spelling Detective | Live |
 
 ## Code map
 

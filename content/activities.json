@@ -16341,5 +16341,519 @@
     "retry_feedback": "Listen again and pick the right word part — leave the extra tile behind.",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-01",
+    "lesson_id": "L4-M40-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cat",
+      "kat"
+    ],
+    "correct_answer": "cat",
+    "audio_asset": "say:cat",
+    "feedback": "Yes! It's cat.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-02",
+    "lesson_id": "L4-M40-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "sock",
+      "sok"
+    ],
+    "correct_answer": "sock",
+    "audio_asset": "say:sock",
+    "feedback": "Yes! It's sock.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-03",
+    "lesson_id": "L4-M40-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jam",
+      "gam"
+    ],
+    "correct_answer": "jam",
+    "audio_asset": "say:jam",
+    "feedback": "Yes! It's jam.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-04",
+    "lesson_id": "L4-M40-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "bridge",
+      "brige"
+    ],
+    "correct_answer": "bridge",
+    "audio_asset": "say:bridge",
+    "feedback": "Yes! It's bridge.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-05",
+    "lesson_id": "L4-M40-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "catch",
+      "cach"
+    ],
+    "correct_answer": "catch",
+    "audio_asset": "say:catch",
+    "feedback": "Yes! It's catch.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-06",
+    "lesson_id": "L4-M40-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "bell",
+      "bel"
+    ],
+    "correct_answer": "bell",
+    "audio_asset": "say:bell",
+    "feedback": "Yes! It's bell.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-07",
+    "lesson_id": "L4-M40-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:duck",
+    "letters": [
+      "d",
+      "u",
+      "ck"
+    ],
+    "answer_tiles": [
+      "d",
+      "u",
+      "ck"
+    ],
+    "correct_answer": "duck",
+    "feedback": "Yes! You built duck.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-08",
+    "lesson_id": "L4-M40-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:orange",
+    "letters": [
+      "o",
+      "r",
+      "a",
+      "n",
+      "ge"
+    ],
+    "answer_tiles": [
+      "o",
+      "r",
+      "a",
+      "n",
+      "ge"
+    ],
+    "correct_answer": "orange",
+    "feedback": "Yes! You built orange.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-09",
+    "lesson_id": "L4-M40-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:watch",
+    "letters": [
+      "w",
+      "a",
+      "tch"
+    ],
+    "answer_tiles": [
+      "w",
+      "a",
+      "tch"
+    ],
+    "correct_answer": "watch",
+    "feedback": "Yes! You built watch.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-10",
+    "lesson_id": "L4-M40-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:hopping",
+    "letters": [
+      "h",
+      "o",
+      "p",
+      "p",
+      "ing"
+    ],
+    "answer_tiles": [
+      "h",
+      "o",
+      "p",
+      "p",
+      "ing"
+    ],
+    "correct_answer": "hopping",
+    "feedback": "Yes! You built hopping.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-11",
+    "lesson_id": "L4-M40-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:knee",
+    "letters": [
+      "k",
+      "n",
+      "ee"
+    ],
+    "answer_tiles": [
+      "k",
+      "n",
+      "ee"
+    ],
+    "correct_answer": "knee",
+    "feedback": "Yes! You built knee.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-12",
+    "lesson_id": "L4-M40-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:boxes",
+    "letters": [
+      "b",
+      "o",
+      "x",
+      "es"
+    ],
+    "answer_tiles": [
+      "b",
+      "o",
+      "x",
+      "es"
+    ],
+    "correct_answer": "boxes",
+    "feedback": "Yes! You built boxes.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-13",
+    "lesson_id": "L4-M40-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "boxes",
+      "boxs"
+    ],
+    "correct_answer": "boxes",
+    "audio_asset": "say:boxes",
+    "feedback": "Yes! It's boxes.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-14",
+    "lesson_id": "L4-M40-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "babies",
+      "babys"
+    ],
+    "correct_answer": "babies",
+    "audio_asset": "say:babies",
+    "feedback": "Yes! It's babies.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-15",
+    "lesson_id": "L4-M40-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "unload",
+      "reload"
+    ],
+    "correct_answer": "unload",
+    "audio_asset": "say:unload",
+    "feedback": "Yes! It's unload.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-16",
+    "lesson_id": "L4-M40-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "careless",
+      "careful"
+    ],
+    "correct_answer": "careless",
+    "audio_asset": "say:careless",
+    "feedback": "Yes! It's careless.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-17",
+    "lesson_id": "L4-M40-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "painful",
+      "painless"
+    ],
+    "correct_answer": "painful",
+    "audio_asset": "say:painful",
+    "feedback": "Yes! It's painful.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-18",
+    "lesson_id": "L4-M40-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "retie",
+      "untie"
+    ],
+    "correct_answer": "retie",
+    "audio_asset": "say:retie",
+    "feedback": "Yes! It's retie.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-19",
+    "lesson_id": "L4-M40-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:kite",
+    "letters": [
+      "k",
+      "i",
+      "t",
+      "e",
+      "c"
+    ],
+    "answer_tiles": [
+      "k",
+      "i",
+      "t",
+      "e"
+    ],
+    "correct_answer": "kite",
+    "feedback": "Yes! You built kite.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-20",
+    "lesson_id": "L4-M40-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:duck",
+    "letters": [
+      "d",
+      "u",
+      "ck",
+      "k"
+    ],
+    "answer_tiles": [
+      "d",
+      "u",
+      "ck"
+    ],
+    "correct_answer": "duck",
+    "feedback": "Yes! You built duck.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-21",
+    "lesson_id": "L4-M40-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:badge",
+    "letters": [
+      "b",
+      "a",
+      "dge",
+      "ge"
+    ],
+    "answer_tiles": [
+      "b",
+      "a",
+      "dge"
+    ],
+    "correct_answer": "badge",
+    "feedback": "Yes! You built badge.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-22",
+    "lesson_id": "L4-M40-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:hopping",
+    "letters": [
+      "h",
+      "o",
+      "p",
+      "p",
+      "ing",
+      "e"
+    ],
+    "answer_tiles": [
+      "h",
+      "o",
+      "p",
+      "p",
+      "ing"
+    ],
+    "correct_answer": "hopping",
+    "feedback": "Yes! You built hopping.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-23",
+    "lesson_id": "L4-M40-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:elephant",
+    "letters": [
+      "e",
+      "l",
+      "e",
+      "ph",
+      "a",
+      "n",
+      "t",
+      "f"
+    ],
+    "answer_tiles": [
+      "e",
+      "l",
+      "e",
+      "ph",
+      "a",
+      "n",
+      "t"
+    ],
+    "correct_answer": "elephant",
+    "feedback": "Yes! You built elephant.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M40-24",
+    "lesson_id": "L4-M40-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:unload",
+    "letters": [
+      "un",
+      "l",
+      "o",
+      "a",
+      "d",
+      "re"
+    ],
+    "answer_tiles": [
+      "un",
+      "l",
+      "o",
+      "a",
+      "d"
+    ],
+    "correct_answer": "unload",
+    "feedback": "Yes! You built unload.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]

@@ -7,5 +7,6 @@
   { "badge_id": "BADGE-06", "name": "Level 1 Sound Explorer", "criteria": "Pass the Level 1 Master Assessment", "type": "module", "module_id": 8, "active": true },
   { "badge_id": "BADGE-07", "name": "Sentence Star", "criteria": "Master Sentence Spelling (Level 2)", "type": "module", "module_id": 16, "active": true },
   { "badge_id": "BADGE-08", "name": "Level 2 Word Builder", "criteria": "Pass the Level 2 Challenge", "type": "module", "module_id": 17, "active": true },
-  { "badge_id": "BADGE-09", "name": "Level 3 Pattern Detective", "criteria": "Pass the Level 3 Challenge", "type": "module", "module_id": 27, "active": true }
+  { "badge_id": "BADGE-09", "name": "Level 3 Pattern Detective", "criteria": "Pass the Level 3 Challenge", "type": "module", "module_id": 27, "active": true },
+  { "badge_id": "BADGE-10", "name": "Level 4 Spelling Detective", "criteria": "Pass the Level 4 Challenge", "type": "module", "module_id": 40, "active": true }
 ]
