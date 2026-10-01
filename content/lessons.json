@@ -4367,5 +4367,100 @@
       "transition": "",
       "close": "Case closed! You've mastered the long-U choice."
     }
+  },
+  {
+    "lesson_id": "L5-M47-01",
+    "module_id": 47,
+    "number": 1,
+    "title": "Meet the Sound",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Hear that -ed can say /t/, /d/ or /id/ depending on the sound before it, even though the spelling never changes.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A listening case this time, Detective! -ed is always SPELLED the same way, but it doesn't always SOUND the same.",
+      "teach": "walked ends with a /t/ sound. played ends with a /d/ sound. wanted ends with a whole new /id/ syllable! The spelling never changes — only your ears can tell which sound it makes.",
+      "model": "Listen. Does the -ed say /t/, /d/ or /id/?",
+      "transition": "Your turn, Detective! Listen closely to the very end of the word.",
+      "close": "Case closed! You can hear all three sounds of -ed."
+    }
+  },
+  {
+    "lesson_id": "L5-M47-02",
+    "module_id": 47,
+    "number": 2,
+    "title": "More Practice",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Practise identifying /t/, /d/ and /id/ across more -ed words.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More -ed listening practice, Detective!",
+      "teach": "Keep listening to the very end of each word — /t/, /d/ or /id/?",
+      "model": "Listen. Does the -ed say /t/, /d/ or /id/?",
+      "transition": "Your turn! Keep listening closely.",
+      "close": "Fantastic listening! You're an -ed sound expert now."
+    }
+  },
+  {
+    "lesson_id": "L5-M47-03",
+    "module_id": 47,
+    "number": 3,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build -ed words, spelling the ending the same way regardless of its sound.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some -ed words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — -ed always gets its own single tile, no matter how it sounds.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! -ed is spelled the same every time."
+    }
+  },
+  {
+    "lesson_id": "L5-M47-04",
+    "module_id": 47,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "word_building",
+    "objective": "Build more -ed words from dictation.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More building practice — keep an ear out for how each -ed sounds while you spell it the same way every time!",
+      "teach": "Listen to the whole word, then tap the tiles in order.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Excellent spelling! -ed never changes, no matter the sound."
+    }
+  },
+  {
+    "lesson_id": "L5-M47-05",
+    "module_id": 47,
+    "number": 5,
+    "title": "The Three Sounds of -ed Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of /t/, /d/ and /id/ across listening and building.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about the three sounds of -ed.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the three sounds of -ed."
+    }
   }
 ]

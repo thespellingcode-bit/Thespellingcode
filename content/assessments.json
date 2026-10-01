@@ -19348,5 +19348,371 @@
     "retry_feedback": "Sound out the letters — remember this word's own spelling.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-01-1",
+    "lesson_id": "L5-M47-01",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "t",
+    "audio_asset": "say:watched",
+    "edSound": true,
+    "feedback": "Yes! watched ends with -ed, saying the /t/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-01-2",
+    "lesson_id": "L5-M47-01",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "d",
+    "audio_asset": "say:hugged",
+    "edSound": true,
+    "feedback": "Yes! hugged ends with -ed, saying the /d/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-01-3",
+    "lesson_id": "L5-M47-01",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "id",
+    "audio_asset": "say:painted",
+    "edSound": true,
+    "feedback": "Yes! painted ends with -ed, saying the /id/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-02-1",
+    "lesson_id": "L5-M47-02",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "d",
+    "audio_asset": "say:smiled",
+    "edSound": true,
+    "feedback": "Yes! smiled ends with -ed, saying the /d/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-02-2",
+    "lesson_id": "L5-M47-02",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "t",
+    "audio_asset": "say:missed",
+    "edSound": true,
+    "feedback": "Yes! missed ends with -ed, saying the /t/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-03-1",
+    "lesson_id": "L5-M47-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:hugged",
+    "letters": [
+      "h",
+      "u",
+      "gg",
+      "ed"
+    ],
+    "answer_tiles": [
+      "h",
+      "u",
+      "gg",
+      "ed"
+    ],
+    "correct_answer": "hugged",
+    "feedback": "Yes! You built hugged.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-03-2",
+    "lesson_id": "L5-M47-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:painted",
+    "letters": [
+      "p",
+      "ai",
+      "n",
+      "t",
+      "ed"
+    ],
+    "answer_tiles": [
+      "p",
+      "ai",
+      "n",
+      "t",
+      "ed"
+    ],
+    "correct_answer": "painted",
+    "feedback": "Yes! You built painted.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-04-1",
+    "lesson_id": "L5-M47-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:started",
+    "letters": [
+      "s",
+      "t",
+      "a",
+      "r",
+      "t",
+      "ed"
+    ],
+    "answer_tiles": [
+      "s",
+      "t",
+      "a",
+      "r",
+      "t",
+      "ed"
+    ],
+    "correct_answer": "started",
+    "feedback": "Yes! You built started.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-04-2",
+    "lesson_id": "L5-M47-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:smiled",
+    "letters": [
+      "s",
+      "m",
+      "i",
+      "l",
+      "ed"
+    ],
+    "answer_tiles": [
+      "s",
+      "m",
+      "i",
+      "l",
+      "ed"
+    ],
+    "correct_answer": "smiled",
+    "feedback": "Yes! You built smiled.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-05-1",
+    "lesson_id": "L5-M47-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "t",
+    "audio_asset": "say:walked",
+    "edSound": true,
+    "feedback": "Yes! walked ends with -ed, saying the /t/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-05-2",
+    "lesson_id": "L5-M47-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "d",
+    "audio_asset": "say:played",
+    "edSound": true,
+    "feedback": "Yes! played ends with -ed, saying the /d/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-05-3",
+    "lesson_id": "L5-M47-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "id",
+    "audio_asset": "say:wanted",
+    "edSound": true,
+    "feedback": "Yes! wanted ends with -ed, saying the /id/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-05-4",
+    "lesson_id": "L5-M47-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "d",
+    "audio_asset": "say:hugged",
+    "edSound": true,
+    "feedback": "Yes! hugged ends with -ed, saying the /d/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-05-5",
+    "lesson_id": "L5-M47-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jumped",
+    "letters": [
+      "j",
+      "u",
+      "m",
+      "p",
+      "ed"
+    ],
+    "answer_tiles": [
+      "j",
+      "u",
+      "m",
+      "p",
+      "ed"
+    ],
+    "correct_answer": "jumped",
+    "feedback": "Yes! You built jumped.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-05-6",
+    "lesson_id": "L5-M47-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:called",
+    "letters": [
+      "c",
+      "a",
+      "ll",
+      "ed"
+    ],
+    "answer_tiles": [
+      "c",
+      "a",
+      "ll",
+      "ed"
+    ],
+    "correct_answer": "called",
+    "feedback": "Yes! You built called.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-05-7",
+    "lesson_id": "L5-M47-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:watched",
+    "letters": [
+      "w",
+      "a",
+      "tch",
+      "ed"
+    ],
+    "answer_tiles": [
+      "w",
+      "a",
+      "tch",
+      "ed"
+    ],
+    "correct_answer": "watched",
+    "feedback": "Yes! You built watched.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M47-05-8",
+    "lesson_id": "L5-M47-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:landed",
+    "letters": [
+      "l",
+      "a",
+      "n",
+      "d",
+      "ed"
+    ],
+    "answer_tiles": [
+      "l",
+      "a",
+      "n",
+      "d",
+      "ed"
+    ],
+    "correct_answer": "landed",
+    "feedback": "Yes! You built landed.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

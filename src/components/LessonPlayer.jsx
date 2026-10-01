@@ -111,6 +111,11 @@ function modelCaptionFor(item) {
       // not a grapheme at all — the generic "starts/ends with" fallback
       // would be nonsensical here ("happy ends with the letter e").
       if (item.yVowel) return `${word} ends with y, saying long ${answer}!`;
+      // Module 47's "three sounds of -ed" items also reuse letter_sound_match,
+      // with correct_answer being "t"/"d"/"id" (which sound -ed makes) — the
+      // spelling is always -ed, so a grapheme-position fallback would be both
+      // wrong and beside the point; this is purely an auditory task.
+      if (item.edSound) return `${word} ends with -ed, saying the /${answer}/ sound!`;
       if (kind === "ending") return word ? `${word} ends with ${answer}!` : `That's the ending ${answer}!`;
       if (kind === "qu") return word ? `${word} starts with qu!` : `That's qu!`;
       if (kind === "digraph") {
@@ -229,6 +234,7 @@ function modelHeadingFor(lesson, item) {
     const kind = graphemeKindFor(item.correct_answer);
     if (item.silent && word) return `Listen. Which letter is silent in ${capitalize(word)}?`;
     if (item.yVowel && word) return `Listen. Does the y in ${capitalize(word)} say long e or long i?`;
+    if (item.edSound && word) return `Listen. Does the -ed in ${capitalize(word)} say /t/, /d/ or /id/?`;
     if (word && kind === "ending") return `Listen. ${capitalize(word)} ends with ${item.correct_answer}.`;
     if (word && kind === "qu") return `Listen. ${capitalize(word)} starts with qu.`;
     if (word && kind === "digraph") {

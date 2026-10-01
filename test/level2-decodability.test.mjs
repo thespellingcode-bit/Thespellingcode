@@ -72,6 +72,7 @@ const GRAPHEMES_BY_MODULE = {
   44: ["igh", "ie"], // Long-I Choices — two genuinely new graphemes, added to questionTypes.js's VOWEL_TEAMS set.
   45: [], // Long-O Choices — oa/ow were already taught receptively in Level 3 Module 22; this module makes them a graded choice, no new grapheme tile.
   46: ["ue", "ew", "oo"], // Long-U Choices — three genuinely new graphemes, added to questionTypes.js's VOWEL_TEAMS set.
+  47: [], // The Three Sounds of -ed — auditory-only (the spelling is always -ed); every word used is already decodable from single known letters, no new grapheme tile needed (same reasoning as Module 34's -ing/-ed suffix tiles).
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

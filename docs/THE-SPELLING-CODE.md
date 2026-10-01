@@ -32,7 +32,7 @@
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
-| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–46 built (through Long-U Choices — all long-vowel spelling choices now complete) |
+| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–47 built (through The Three Sounds of -ed — first genuinely-new Level 5 morphology content) |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
@@ -47,7 +47,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
-| Level 5 “Word Builder Pro”, Modules 41–46 (through Long-U Choices) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content (ai/ay, ee/ea, igh/ie, oa/ow, ue/ew/oo). Reuses Level 4's `spelling_choice`/`word_build` mechanics with no new component code throughout. |
+| Level 5 “Word Builder Pro”, Modules 41–47 (through The Three Sounds of -ed) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Module 47 begins the genuinely-new blueprint-Level-5 morphology content. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -111,7 +111,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 39, Prefixes & Suffixes — back to build-focused, closer to Level 2's sentence-building shape than a phonics-choice module, per the plan.** un-/re- at the start mean "not"/"again"; -ful/-less at the end mean "full of"/"without" (genuine antonym minimal pairs — careful/careless, hopeful/hopeless, harmful/harmless — the same "real word either way, audio is the only tell" shape Module 34 used for hop/hope); -ly just adds on. No new mechanic: `spelling_choice` reused for all three "Meet" recognition lessons (un-, re-, -ful/-less) with real un-/re- word pairs (unwrap/rewrap, undo/redo, untie/retie, unload/reload, unfold/refold) as the audio-driven choice, and `word_build` reused for Blend & Build/Spell the Words with the prefix or suffix tiled as its own single tile (e.g. quickly → `[qu, i, ck, ly]`, composing the new suffix tile with already-known qu/ck graphemes). Added a new remediation tag, `PREFIX_SUFFIX_CONFUSION` (REM-18) — distinct from `SPELLING_CHOICE_CONFUSION` since the confusion here is about a word PART's meaning, not a sound's spelling. No new word pictures — same reasoning as Module 34 (a still image can't distinguish "unwrap" from "rewrap" or "careful" from "careless"), so no Read the Words lesson. **Two real bugs caught before shipping, neither live-only this time:** every assessment item was first written with the `activity_id` field instead of the required `assessment_id` (functionally needed — `LessonPlayer` uses it as a React key and for `questionId`), caught by re-reading the generated content before testing; and Lessons 1–2's assessment banks first exactly reused their own practice lessons' audio+answer pairs (unwrap/undo/untie/unload/unfold, redo/reload/retie), caught live by `npm test`'s transfer-to-new-example check — fixed by swapping in three fresh un-/re- pairs (unseal/reseal, uncap/recap, unpack/repack) the practice lessons never used. Live-verified the Watch-stage spelling_choice narration, the Practice-stage two-option buttons, and the word_build tiling for both a simple word (unwrap) and the most composed one (quickly).
 - **Module 40, Review & Assessment — closes out Level 4, same closing shape as every earlier level (Modules 7/8, 17, 27).** Five lessons cumulatively sampling all 12 earlier modules' rules rather than teaching anything new: Mixed Retrieval (`spelling_choice` — c/k, ck/k, g/j, ge/dge, ch/tch, FLOSS doubling), Read & Build (`word_build`, no decoy, one word per several modules — duck, orange, watch, hopping, knee, boxes), Plurals & Word Parts Review (`spelling_choice` — plurals plus un-/re-/-ful/-less), Dictation (`word_build` with a decoy tile, mixing choice-type rules across modules), and the Level 4 Challenge (`assessment`, 14 items freely mixing `spelling_choice`, `word_build`, `letter_sound_match` and `read_word` — the broadest single-lesson type mix of any module this level). Added `BADGE-10` ("Level 4 Spelling Detective", tied to `module_id: 40`, same pattern as every earlier level's closing badge) — purely data-driven, no code changes needed since badge-earning already derives from `isModuleComplete(state, badge.module_id)`. GRAPHEMES_BY_MODULE[40] stays `[]`, same reasoning as Level 2/3's own closing review modules — pure review teaches no new grapheme. All 22 tests passed on the first run (the assessment_id field-name bug from Module 39 was written correctly here from the start). Live-verified the Mixed Retrieval lesson's all 5 Watch-stage examples (cat, sock, jam, bridge, catch) sampling every Level 4 letter/ending-choice rule in one lesson.
 
-### Level 5 curriculum design (Modules 41–46 built — all long-vowel/soft-C content complete; Modules 47–51 planned, not yet built)
+### Level 5 curriculum design (Modules 41–47 built; Modules 48–51 planned, not yet built)
 - **Scope note:** see the roadmap section above for why Level 5's module list doesn't match the blueprint's Level 5 list — it absorbs the blueprint's missing Level-4 long-vowel/soft-C content and skips the blueprint-Level-5 modules already covered by app-Modules 34/37/39. Full reasoning in `docs/plans/level-5.md`.
 - **Module 41, The Many Spellings of /s/ — same shape as Level 4's spelling-choice modules, no new mechanic.** /s/ can be spelled s (sun), ss (miss, already familiar from FLOSS doubling), soft c before e/i/y (city, pencil) or -ce at a word's end (ice, dance). "ce" is treated as a single fused ending tile, the same symmetry call Module 31 made for "ge" alongside "dge"; mid-word soft c needs no new tile at all since "c" is already a known single letter — only its *sound* is new, not its spelling. **A real picture collision was caught and fixed before shipping, not live this time:** "pencil" was the natural third Read-the-Words picture for mid-word soft c, but `"pencil".includes("pen")` would have matched the existing Level 1 "pen" sound-icon key first, silently showing the wrong picture — caught by checking `Icon.jsx`'s `WORD_KEYS` array before wiring in the new SVG (the same check the file's own word-library.md recommends but easy to skip). Dropped "pencil" as a picture word entirely (word_build/spelling_choice content keeps using it fine, since those lesson types never render an icon) and substituted "sun"/"bus" — both already-illustrated, zero collision risk — for the plain-s picture examples instead. Added 2 new word pictures (ice, city). Live-verified the Read the Words lesson renders sun/ice/city correctly.
 - **Module 42, Long-A Choices — the first Level 5 module with a genuine, reliable positional rule, same confidence level as Level 4's c/k.** ai sits in the middle of a word (rain, train), ay sits at the end (day, play) — both were already taught receptively in Level 3 Module 20, so this module's real job is turning that recognition into a graded choice, reusing the exact same word list (rain, train, mail, sail, paint, day, play, stay, tray, gain) rather than inventing a new one. No new grapheme tile (ai/ay already existed), no new word pictures — Read the Words reuses Level 3's existing train/rain/mail/sail pictures outright, since ay-ending words (day, play, stay, tray) don't have a clean concrete-noun picture pool; that gap is stated plainly in the content rather than forcing in a weak picture. `word_build`'s decoy-tile mechanic again needed zero code changes — a tray for "rain" offers "ay" as the decoy, a tray for "day" offers "ai", exactly mirroring Level 4's ge/dge and ch/tch "explains both directions" pattern. Live-verified both directions of the Spell the Words decoy live (rain/ay-decoy, day/ai-decoy).
@@ -119,6 +119,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 44, Long-I Choices — igh and ie, two genuinely NEW graphemes (unlike Modules 42/43, which reused patterns Level 3 already taught receptively).** Both added to `questionTypes.js`'s `VOWEL_TEAMS` set. igh is the more common spelling (often before a final t: night, light, fight; or standalone: high); ie is a smaller set, usually at a word's end (pie, tie) or before an ending (fries) — another pattern/frequency call like Module 43's, not a positional rule. Thinnest picture pool of the level so far: only pie, tie and light have clean, unambiguous Noto emoji (a lightbulb for "light" — accepted as reasonably clear for this age band, same judgment call as Module 38's bar-chart-for-"graph"). Read the Words' assessment bank reuses a practice word with an honest `review_flag` explanation rather than forcing in a weak fourth picture, the same precedent Module 30 set. **A real duplicate-content bug was caught by `npm test`, not live:** Lesson 1's assessment bank first reused "light" as both a fresh item AND one of its own practice words (a copy-paste slip while writing the content script) — fixed by swapping in "right" instead. Also flagged a latent, not-yet-triggered risk in `Icon.jsx`: "tie" as a picture key means a future read_word lesson for "untie"/"retie" would need a different picture or careful key ordering, since `"untie".includes("tie")` is true (today those words only appear in `word_build`/`spelling_choice` content, which never renders an icon, so no actual bug yet).
 - **Module 45, Long-O Choices — back to a genuine positional rule (oa middle, ow end), same shape as Module 42's ai/ay.** Deliberately excluded "bowl" from the word list even though it was already illustrated from Level 3 Module 22 — ow is followed by l in "bowl" (owl-shape), not truly word-final, which would have muddied the clean "ow at the end" rule this module teaches; kept the word list to oa/ow words that fit the rule cleanly (boat, road, soap, goat vs snow, grow, slow). Reuses Level 3 Module 22's word list and pictures (boat, road, soap, goat, coat, snow) entirely — no new grapheme, no new assets. 22/22 tests passed on the first run. Live-verified both directions of the Spell the Words decoy (boat/ow-decoy, snow/oa-decoy).
 - **Module 46, Long-U Choices — the most complex module in this run of five, three competing spellings (ue, ew, oo) instead of two, closing out the blueprint's missing long-vowel-choice content.** All three new graphemes, added to `VOWEL_TEAMS`. oo is the common default (moon, spoon, food); ue and ew are smaller memorized sets, each usually at a word's end (true, glue; new, few) — same pattern/frequency framing as Modules 43/44, not a positional rule. Got a sixth lesson ("More Spellings," a second `spelling_choice` round) per the plan's own call for extra practice given the added complexity. **Two real-word collisions were checked and avoided before writing any content, not caught live:** "blue" was dropped from the word list because its only ew-substitution decoy is "blew," a real, correctly-spelled different word (same homophone trap Module 43 hit with meat/meet); "due" was dropped because its ew-substitution is "dew," also real. "clew" (an obscure nautical term, used as a decoy for "clue") was accepted as safe per the project's standing precedent for low-frequency real-word decoys (Module 34's "teem," Module 30's "get"). Thinnest picture pool of any module this level — only moon, spoon and broom — with "book" deliberately NOT reused despite already being illustrated, since its oo makes the short oo sound (book/look), a different sound from this module's long-oo focus; the Teach narration names this dual-sound fact honestly rather than glossing over it. 22/22 on the first run. Live-verified the Watch-stage decoy narration ("true" tiles as tr-ue with an "ew" decoy called out) and the moon picture in Read the Words.
+- **Module 47, The Three Sounds of -ed — the first genuinely-new Level 5 content (not a Level-4 gap-fill), and a different KIND of skill than any `spelling_choice` module: auditory discrimination, since the spelling is always "-ed" regardless of which sound it makes.** /t/ after an unvoiced consonant (walked), /d/ after a voiced sound (played), /id/ after t/d (wanted) — same "hear the sound" shape as Level 1's phonemic-awareness modules, not a spelling task at all. Reused `letter_sound_match` with a new `edSound: true` content field (`correct_answer` is "t"/"d"/"id", not a grapheme), following the exact precedent Module 35's `silent` and Module 36's `yVowel` fields established — added the matching narration branches in both `modelCaptionFor` and `modelHeadingFor` proactively, before any content was written, rather than discovering the generic-fallback bug live as Module 35 originally did. No new remediation tag reused — added `ED_SOUND_CONFUSION` (REM-19) since this is neither a spelling choice nor a letter-sound-correspondence confusion in the usual sense. No decoy-tile "Spell the Words" lesson — since the spelling never changes, a second `word_build` lesson (Lesson 4) just gives more building reps on fresh words instead of a genuine decoy choice; no Read the Words either, same "can't picture a verb tense" reasoning as Modules 34/39. Live-verified all three Watch-stage narration branches (walked→/t/, wanted→/id/, called→/d/) and the three-button Practice-stage layout (t/d/id).
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -217,6 +218,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 5 Module 44 (Long-I Choices) — igh/ie, two genuinely new graphemes (added to VOWEL_TEAMS). Caught a duplicate-content bug via npm test (Lesson 1's assessment reused a practice word, fixed by swapping to "right") and flagged a latent future icon-collision risk ("tie" vs "untie"/"retie") before it could ever bite. Thinnest picture pool so far (pie, tie, light only) — assessment reuses a practice picture with an honest review_flag, same as Module 30's precedent.
 - Built Level 5 Module 45 (Long-O Choices) — oa (middle) vs ow (end), a genuine positional rule, same confidence as Module 42's ai/ay. Deliberately excluded "bowl" (ow+l isn't truly word-final) to keep the rule honest. Reuses Level 3 Module 22's word list and pictures entirely — no new grapheme, no new assets. 22/22 on the first run.
 - Built Level 5 Module 46 (Long-U Choices) — ue/ew/oo, three new graphemes, the most complex module yet (got a sixth lesson for the added practice). Avoided two real-word decoy collisions before writing content ("blue"→"blew", "due"→"dew", both real words) by dropping those words from the list. Thinnest picture pool so far (moon/spoon/broom); deliberately did not reuse the existing "book" picture since its oo is a different (short) sound. **This closes out all five long-vowel-choice modules (42-46) — the blueprint's missing Level-4 flagship content is now fully built.** 22/22 on the first run.
+- Built Level 5 Module 47 (The Three Sounds of -ed) — first genuinely-new Level 5 content, auditory-only (spelling is always -ed, sound varies: /t/, /d/, /id/). Added a new edSound content field with narration branches written proactively (not caught live), following Module 35/36's established field-flag pattern. Added remediation tag ED_SOUND_CONFUSION (REM-19). No Spell/Read lessons — no spelling choice to decoy, and action-verb words don't picture cleanly.
 
 ---
 
@@ -622,6 +624,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 44 | Long-I Choices | **Live** | 5 | 18 | 16 |
 | 45 | Long-O Choices | **Live** | 5 | 18 | 16 |
 | 46 | Long-U Choices | **Live** | 6 | 24 | 18 |
+| 47 | The Three Sounds of -ed | **Live** | 5 | 20 | 17 |
 
 ## Curriculum in full
 
@@ -7207,6 +7210,142 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M46-06-6 | hear “grew” → build \| tray gr ew \| answer **grew** |  |
 | AS-M46-06-7 | read “moon” → picture \| options moon, spoon, broom \| answer **moon** |  |
 | AS-M46-06-8 | read “spoon” → picture \| options spoon, moon, broom \| answer **spoon** |  |
+
+### Module 47 — The Three Sounds of -ed
+
+*Goal:* Hear that -ed is always spelled the same way, but can sound like /t/, /d/ or /id/ depending on the sound before it.
+
+#### Lesson 1: Meet the Sound (`L5-M47-01`)
+
+- **Objective:** Hear that -ed can say /t/, /d/ or /id/ depending on the sound before it, even though the spelling never changes.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A listening case this time, Detective! -ed is always SPELLED the same way, but it doesn't always SOUND the same.
+- **Narration (teach):** walked ends with a /t/ sound. played ends with a /d/ sound. wanted ends with a whole new /id/ syllable! The spelling never changes — only your ears can tell which sound it makes.
+- **Narration (model):** Listen. Does the -ed say /t/, /d/ or /id/?
+- **Narration (transition):** Your turn, Detective! Listen closely to the very end of the word.
+- **Narration (close):** Case closed! You can hear all three sounds of -ed.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M47-01 | hear “walked” → letter \| options t d id \| answer **t** |
+| Q-M47-02 | hear “played” → letter \| options t d id \| answer **d** |
+| Q-M47-03 | hear “wanted” → letter \| options t d id \| answer **id** |
+| Q-M47-04 | hear “jumped” → letter \| options t d id \| answer **t** |
+| Q-M47-05 | hear “called” → letter \| options t d id \| answer **d** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M47-01-1 | hear “watched” → letter \| options t d id \| answer **t** |  |
+| AS-M47-01-2 | hear “hugged” → letter \| options t d id \| answer **d** |  |
+| AS-M47-01-3 | hear “painted” → letter \| options t d id \| answer **id** |  |
+
+#### Lesson 2: More Practice (`L5-M47-02`)
+
+- **Objective:** Practise identifying /t/, /d/ and /id/ across more -ed words.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More -ed listening practice, Detective!
+- **Narration (teach):** Keep listening to the very end of each word — /t/, /d/ or /id/?
+- **Narration (model):** Listen. Does the -ed say /t/, /d/ or /id/?
+- **Narration (transition):** Your turn! Keep listening closely.
+- **Narration (close):** Fantastic listening! You're an -ed sound expert now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M47-06 | hear “landed” → letter \| options t d id \| answer **id** |
+| Q-M47-07 | hear “cleaned” → letter \| options t d id \| answer **d** |
+| Q-M47-08 | hear “kicked” → letter \| options t d id \| answer **t** |
+| Q-M47-09 | hear “climbed” → letter \| options t d id \| answer **d** |
+| Q-M47-10 | hear “started” → letter \| options t d id \| answer **id** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M47-02-1 | hear “smiled” → letter \| options t d id \| answer **d** |  |
+| AS-M47-02-2 | hear “missed” → letter \| options t d id \| answer **t** |  |
+
+#### Lesson 3: Blend & Build (`L5-M47-03`)
+
+- **Objective:** Build -ed words, spelling the ending the same way regardless of its sound.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some -ed words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — -ed always gets its own single tile, no matter how it sounds.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! -ed is spelled the same every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M47-11 | hear “walked” → build \| tray w a l k ed \| answer **walked** |
+| Q-M47-12 | hear “played” → build \| tray p l ay ed \| answer **played** |
+| Q-M47-13 | hear “wanted” → build \| tray w a n t ed \| answer **wanted** |
+| Q-M47-14 | hear “jumped” → build \| tray j u m p ed \| answer **jumped** |
+| Q-M47-15 | hear “called” → build \| tray c a ll ed \| answer **called** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M47-03-1 | hear “hugged” → build \| tray h u gg ed \| answer **hugged** |  |
+| AS-M47-03-2 | hear “painted” → build \| tray p ai n t ed \| answer **painted** |  |
+
+#### Lesson 4: Spell the Words (`L5-M47-04`)
+
+- **Objective:** Build more -ed words from dictation.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More building practice — keep an ear out for how each -ed sounds while you spell it the same way every time!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Excellent spelling! -ed never changes, no matter the sound.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M47-16 | hear “watched” → build \| tray w a tch ed \| answer **watched** |
+| Q-M47-17 | hear “kicked” → build \| tray k i ck ed \| answer **kicked** |
+| Q-M47-18 | hear “landed” → build \| tray l a n d ed \| answer **landed** |
+| Q-M47-19 | hear “climbed” → build \| tray c l i m b ed \| answer **climbed** |
+| Q-M47-20 | hear “cleaned” → build \| tray c l ea n ed \| answer **cleaned** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M47-04-1 | hear “started” → build \| tray s t a r t ed \| answer **started** |  |
+| AS-M47-04-2 | hear “smiled” → build \| tray s m i l ed \| answer **smiled** |  |
+
+#### Lesson 5: The Three Sounds of -ed Challenge (`L5-M47-05`)
+
+- **Objective:** Demonstrate independent mastery of /t/, /d/ and /id/ across listening and building.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about the three sounds of -ed.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered the three sounds of -ed.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M47-05-1 | hear “walked” → letter \| options t d id \| answer **t** |  |
+| AS-M47-05-2 | hear “played” → letter \| options t d id \| answer **d** |  |
+| AS-M47-05-3 | hear “wanted” → letter \| options t d id \| answer **id** |  |
+| AS-M47-05-4 | hear “hugged” → letter \| options t d id \| answer **d** |  |
+| AS-M47-05-5 | hear “jumped” → build \| tray j u m p ed \| answer **jumped** |  |
+| AS-M47-05-6 | hear “called” → build \| tray c a ll ed \| answer **called** |  |
+| AS-M47-05-7 | hear “watched” → build \| tray w a tch ed \| answer **watched** |  |
+| AS-M47-05-8 | hear “landed” → build \| tray l a n d ed \| answer **landed** |  |
 
 ## Content library
 
