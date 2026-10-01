@@ -17611,5 +17611,379 @@
     "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-01",
+    "lesson_id": "L5-M43-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "tree",
+      "trea"
+    ],
+    "correct_answer": "tree",
+    "audio_asset": "say:tree",
+    "feedback": "Yes! It's tree.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-02",
+    "lesson_id": "L5-M43-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "leaf",
+      "leef"
+    ],
+    "correct_answer": "leaf",
+    "audio_asset": "say:leaf",
+    "feedback": "Yes! It's leaf.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-03",
+    "lesson_id": "L5-M43-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "seed",
+      "sead"
+    ],
+    "correct_answer": "seed",
+    "audio_asset": "say:seed",
+    "feedback": "Yes! It's seed.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-04",
+    "lesson_id": "L5-M43-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "sheep",
+      "sheap"
+    ],
+    "correct_answer": "sheep",
+    "audio_asset": "say:sheep",
+    "feedback": "Yes! It's sheep.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-05",
+    "lesson_id": "L5-M43-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "peach",
+      "peech"
+    ],
+    "correct_answer": "peach",
+    "audio_asset": "say:peach",
+    "feedback": "Yes! It's peach.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-06",
+    "lesson_id": "L5-M43-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tree",
+    "letters": [
+      "t",
+      "r",
+      "ee"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ee"
+    ],
+    "correct_answer": "tree",
+    "feedback": "Yes! You built tree.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-07",
+    "lesson_id": "L5-M43-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:leaf",
+    "letters": [
+      "l",
+      "ea",
+      "f"
+    ],
+    "answer_tiles": [
+      "l",
+      "ea",
+      "f"
+    ],
+    "correct_answer": "leaf",
+    "feedback": "Yes! You built leaf.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-08",
+    "lesson_id": "L5-M43-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:seed",
+    "letters": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "answer_tiles": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "correct_answer": "seed",
+    "feedback": "Yes! You built seed.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-09",
+    "lesson_id": "L5-M43-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bean",
+    "letters": [
+      "b",
+      "ea",
+      "n"
+    ],
+    "answer_tiles": [
+      "b",
+      "ea",
+      "n"
+    ],
+    "correct_answer": "bean",
+    "feedback": "Yes! You built bean.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-10",
+    "lesson_id": "L5-M43-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sheep",
+    "letters": [
+      "sh",
+      "ee",
+      "p"
+    ],
+    "answer_tiles": [
+      "sh",
+      "ee",
+      "p"
+    ],
+    "correct_answer": "sheep",
+    "feedback": "Yes! You built sheep.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-11",
+    "lesson_id": "L5-M43-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "tree",
+    "options": [
+      "tree",
+      "sheep",
+      "wheel"
+    ],
+    "correct_answer": "tree",
+    "feedback": "Yes! You read tree.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-12",
+    "lesson_id": "L5-M43-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bee",
+    "options": [
+      "bee",
+      "tree",
+      "leaf"
+    ],
+    "correct_answer": "bee",
+    "feedback": "Yes! You read bee.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-13",
+    "lesson_id": "L5-M43-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "leaf",
+    "options": [
+      "leaf",
+      "tree",
+      "bee"
+    ],
+    "correct_answer": "leaf",
+    "feedback": "Yes! You read leaf.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-14",
+    "lesson_id": "L5-M43-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tree",
+    "letters": [
+      "t",
+      "r",
+      "ee",
+      "ea"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "ee"
+    ],
+    "correct_answer": "tree",
+    "feedback": "Yes! You built tree.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-15",
+    "lesson_id": "L5-M43-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:leaf",
+    "letters": [
+      "l",
+      "ea",
+      "f",
+      "ee"
+    ],
+    "answer_tiles": [
+      "l",
+      "ea",
+      "f"
+    ],
+    "correct_answer": "leaf",
+    "feedback": "Yes! You built leaf.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-16",
+    "lesson_id": "L5-M43-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:seed",
+    "letters": [
+      "s",
+      "ee",
+      "d",
+      "ea"
+    ],
+    "answer_tiles": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "correct_answer": "seed",
+    "feedback": "Yes! You built seed.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-17",
+    "lesson_id": "L5-M43-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bean",
+    "letters": [
+      "b",
+      "ea",
+      "n",
+      "ee"
+    ],
+    "answer_tiles": [
+      "b",
+      "ea",
+      "n"
+    ],
+    "correct_answer": "bean",
+    "feedback": "Yes! You built bean.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M43-18",
+    "lesson_id": "L5-M43-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sheep",
+    "letters": [
+      "sh",
+      "ee",
+      "p",
+      "ea"
+    ],
+    "answer_tiles": [
+      "sh",
+      "ee",
+      "p"
+    ],
+    "correct_answer": "sheep",
+    "feedback": "Yes! You built sheep.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]

@@ -18106,5 +18106,308 @@
     "retry_feedback": "Sound out the letters — ai in the middle, ay at the end.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-01-1",
+    "lesson_id": "L5-M43-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "bee",
+      "bea"
+    ],
+    "correct_answer": "bee",
+    "audio_asset": "say:bee",
+    "feedback": "Yes! It's bee.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-01-2",
+    "lesson_id": "L5-M43-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "bean",
+      "bene"
+    ],
+    "correct_answer": "bean",
+    "audio_asset": "say:bean",
+    "feedback": "Yes! It's bean.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-01-3",
+    "lesson_id": "L5-M43-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "wheel",
+      "wheal"
+    ],
+    "correct_answer": "wheel",
+    "audio_asset": "say:wheel",
+    "feedback": "Yes! It's wheel.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-02-1",
+    "lesson_id": "L5-M43-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:team",
+    "letters": [
+      "t",
+      "ea",
+      "m"
+    ],
+    "answer_tiles": [
+      "t",
+      "ea",
+      "m"
+    ],
+    "correct_answer": "team",
+    "feedback": "Yes! You built team.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-02-2",
+    "lesson_id": "L5-M43-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:jeep",
+    "letters": [
+      "j",
+      "ee",
+      "p"
+    ],
+    "answer_tiles": [
+      "j",
+      "ee",
+      "p"
+    ],
+    "correct_answer": "jeep",
+    "feedback": "Yes! You built jeep.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-03-1",
+    "lesson_id": "L5-M43-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "sheep",
+    "options": [
+      "sheep",
+      "wheel",
+      "tree"
+    ],
+    "correct_answer": "sheep",
+    "feedback": "Yes! You read sheep.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-04-1",
+    "lesson_id": "L5-M43-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:peach",
+    "letters": [
+      "p",
+      "ea",
+      "ch",
+      "ee"
+    ],
+    "answer_tiles": [
+      "p",
+      "ea",
+      "ch"
+    ],
+    "correct_answer": "peach",
+    "feedback": "Yes! You built peach.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-04-2",
+    "lesson_id": "L5-M43-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:wheel",
+    "letters": [
+      "wh",
+      "ee",
+      "l",
+      "ea"
+    ],
+    "answer_tiles": [
+      "wh",
+      "ee",
+      "l"
+    ],
+    "correct_answer": "wheel",
+    "feedback": "Yes! You built wheel.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-05-1",
+    "lesson_id": "L5-M43-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "tree",
+      "trea"
+    ],
+    "correct_answer": "tree",
+    "audio_asset": "say:tree",
+    "feedback": "Yes! It's tree.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-05-2",
+    "lesson_id": "L5-M43-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "leaf",
+      "leef"
+    ],
+    "correct_answer": "leaf",
+    "audio_asset": "say:leaf",
+    "feedback": "Yes! It's leaf.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-05-3",
+    "lesson_id": "L5-M43-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "bean",
+      "bene"
+    ],
+    "correct_answer": "bean",
+    "audio_asset": "say:bean",
+    "feedback": "Yes! It's bean.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-05-4",
+    "lesson_id": "L5-M43-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sheep",
+    "letters": [
+      "sh",
+      "ee",
+      "p"
+    ],
+    "answer_tiles": [
+      "sh",
+      "ee",
+      "p"
+    ],
+    "correct_answer": "sheep",
+    "feedback": "Yes! You built sheep.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-05-5",
+    "lesson_id": "L5-M43-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:team",
+    "letters": [
+      "t",
+      "ea",
+      "m"
+    ],
+    "answer_tiles": [
+      "t",
+      "ea",
+      "m"
+    ],
+    "correct_answer": "team",
+    "feedback": "Yes! You built team.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-05-6",
+    "lesson_id": "L5-M43-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:seed",
+    "letters": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "answer_tiles": [
+      "s",
+      "ee",
+      "d"
+    ],
+    "correct_answer": "seed",
+    "feedback": "Yes! You built seed.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-05-7",
+    "lesson_id": "L5-M43-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "tree",
+    "options": [
+      "tree",
+      "sheep",
+      "bee"
+    ],
+    "correct_answer": "tree",
+    "feedback": "Yes! You read tree.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M43-05-8",
+    "lesson_id": "L5-M43-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "leaf",
+    "options": [
+      "leaf",
+      "tree",
+      "wheel"
+    ],
+    "correct_answer": "leaf",
+    "feedback": "Yes! You read leaf.",
+    "retry_feedback": "Sound out the letters — remember this word's own spelling.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

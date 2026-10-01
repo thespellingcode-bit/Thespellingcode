@@ -40,5 +40,6 @@
   { "module_id": 39, "level_id": 4, "module_name": "Prefixes & Suffixes", "module_goal": "Choose un-, re-, -ful, -less or -ly to change a known word's meaning without changing its own spelling.", "units": 6, "active": true },
   { "module_id": 40, "level_id": 4, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 4 mastery across every spelling choice learned.", "units": 5, "active": true },
   { "module_id": 41, "level_id": 5, "module_name": "The Many Spellings of /s/", "module_goal": "Choose s, ss, soft c or -ce for the /s/ sound, based on where it sits in the word.", "units": 5, "active": true },
-  { "module_id": 42, "level_id": 5, "module_name": "Long-A Choices", "module_goal": "Choose ai or ay for the long-A sound, based on whether it sits in the middle or at the end of the word.", "units": 5, "active": true }
+  { "module_id": 42, "level_id": 5, "module_name": "Long-A Choices", "module_goal": "Choose ai or ay for the long-A sound, based on whether it sits in the middle or at the end of the word.", "units": 5, "active": true },
+  { "module_id": 43, "level_id": 5, "module_name": "Long-E Choices", "module_goal": "Choose ee or ea for the long-E sound — ee is the more common spelling, ea is a specific set of common words to learn by heart.", "units": 5, "active": true }
 ]
