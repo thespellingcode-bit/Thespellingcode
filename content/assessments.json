@@ -22145,5 +22145,337 @@
     "retry_feedback": "Read the sentence again — what does it actually mean?",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-01-1",
+    "lesson_id": "L6-M55-01",
+    "type": "spelling_choice",
+    "prompt": "The new rule had a big ___ on students.",
+    "options": [
+      "effect",
+      "affect"
+    ],
+    "correct_answer": "effect",
+    "audio_asset": "say:effect",
+    "wordFamily": true,
+    "feedback": "Yes! \"effect\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-01-2",
+    "lesson_id": "L6-M55-01",
+    "type": "spelling_choice",
+    "prompt": "She will ___ the award happily.",
+    "options": [
+      "accept",
+      "except"
+    ],
+    "correct_answer": "accept",
+    "audio_asset": "say:accept",
+    "wordFamily": true,
+    "feedback": "Yes! \"accept\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-01-3",
+    "lesson_id": "L6-M55-01",
+    "type": "spelling_choice",
+    "prompt": "He eats everything ___ mushrooms.",
+    "options": [
+      "except",
+      "accept"
+    ],
+    "correct_answer": "except",
+    "audio_asset": "say:except",
+    "wordFamily": true,
+    "feedback": "Yes! \"except\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-02-1",
+    "lesson_id": "L6-M55-02",
+    "type": "spelling_choice",
+    "prompt": "He is older ___ me.",
+    "options": [
+      "than",
+      "then"
+    ],
+    "correct_answer": "than",
+    "audio_asset": "say:than",
+    "wordFamily": true,
+    "feedback": "Yes! \"than\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-02-2",
+    "lesson_id": "L6-M55-02",
+    "type": "spelling_choice",
+    "prompt": "The ___ welcomed the new students.",
+    "options": [
+      "principal",
+      "principle"
+    ],
+    "correct_answer": "principal",
+    "audio_asset": "say:principal",
+    "wordFamily": true,
+    "feedback": "Yes! \"principal\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-03-1",
+    "lesson_id": "L6-M55-03",
+    "type": "spelling_choice",
+    "prompt": "We ___ late for the bus.",
+    "options": [
+      "were",
+      "where"
+    ],
+    "correct_answer": "were",
+    "audio_asset": "say:were",
+    "wordFamily": true,
+    "feedback": "Yes! \"were\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-03-2",
+    "lesson_id": "L6-M55-03",
+    "type": "spelling_choice",
+    "prompt": "She didn't want to ___ the game.",
+    "options": [
+      "lose",
+      "loose"
+    ],
+    "correct_answer": "lose",
+    "audio_asset": "say:lose",
+    "wordFamily": true,
+    "feedback": "Yes! \"lose\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-04-1",
+    "lesson_id": "L6-M55-04",
+    "type": "spelling_choice",
+    "prompt": "Let me ___ you to be careful.",
+    "options": [
+      "advise",
+      "advice"
+    ],
+    "correct_answer": "advise",
+    "audio_asset": "say:advise",
+    "wordFamily": true,
+    "feedback": "Yes! \"advise\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-04-2",
+    "lesson_id": "L6-M55-04",
+    "type": "spelling_choice",
+    "prompt": "Ice cream is my favorite ___.",
+    "options": [
+      "dessert",
+      "desert"
+    ],
+    "correct_answer": "dessert",
+    "audio_asset": "say:dessert",
+    "wordFamily": true,
+    "feedback": "Yes! \"dessert\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M55-05-1",
+    "lesson_id": "L6-M55-05",
+    "type": "spelling_choice",
+    "prompt": "___ were you born?",
+    "options": [
+      "Where",
+      "Were"
+    ],
+    "correct_answer": "Where",
+    "audio_asset": "say:Where",
+    "wordFamily": true,
+    "feedback": "Yes! \"Where\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-05-2",
+    "lesson_id": "L6-M55-05",
+    "type": "spelling_choice",
+    "prompt": "His doctor will ___ plenty of rest.",
+    "options": [
+      "advise",
+      "advice"
+    ],
+    "correct_answer": "advise",
+    "audio_asset": "say:advise",
+    "wordFamily": true,
+    "feedback": "Yes! \"advise\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-06-1",
+    "lesson_id": "L6-M55-06",
+    "type": "spelling_choice",
+    "prompt": "The weather will ___ our plans.",
+    "options": [
+      "affect",
+      "effect"
+    ],
+    "correct_answer": "affect",
+    "audio_asset": "say:affect",
+    "wordFamily": true,
+    "feedback": "Yes! \"affect\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-06-2",
+    "lesson_id": "L6-M55-06",
+    "type": "spelling_choice",
+    "prompt": "Everyone came ___ Tom.",
+    "options": [
+      "except",
+      "accept"
+    ],
+    "correct_answer": "except",
+    "audio_asset": "say:except",
+    "wordFamily": true,
+    "feedback": "Yes! \"except\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-06-3",
+    "lesson_id": "L6-M55-06",
+    "type": "spelling_choice",
+    "prompt": "The school ___ gave a speech.",
+    "options": [
+      "principal",
+      "principle"
+    ],
+    "correct_answer": "principal",
+    "audio_asset": "say:principal",
+    "wordFamily": true,
+    "feedback": "Yes! \"principal\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-06-4",
+    "lesson_id": "L6-M55-06",
+    "type": "spelling_choice",
+    "prompt": "She is taller ___ her brother.",
+    "options": [
+      "than",
+      "then"
+    ],
+    "correct_answer": "than",
+    "audio_asset": "say:than",
+    "wordFamily": true,
+    "feedback": "Yes! \"than\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-06-5",
+    "lesson_id": "L6-M55-06",
+    "type": "spelling_choice",
+    "prompt": "They ___ happy yesterday.",
+    "options": [
+      "were",
+      "where"
+    ],
+    "correct_answer": "were",
+    "audio_asset": "say:were",
+    "wordFamily": true,
+    "feedback": "Yes! \"were\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-06-6",
+    "lesson_id": "L6-M55-06",
+    "type": "spelling_choice",
+    "prompt": "Don't ___ your keys.",
+    "options": [
+      "lose",
+      "loose"
+    ],
+    "correct_answer": "lose",
+    "audio_asset": "say:lose",
+    "wordFamily": true,
+    "feedback": "Yes! \"lose\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-06-7",
+    "lesson_id": "L6-M55-06",
+    "type": "spelling_choice",
+    "prompt": "She gave me good ___.",
+    "options": [
+      "advice",
+      "advise"
+    ],
+    "correct_answer": "advice",
+    "audio_asset": "say:advice",
+    "wordFamily": true,
+    "feedback": "Yes! \"advice\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M55-06-8",
+    "lesson_id": "L6-M55-06",
+    "type": "spelling_choice",
+    "prompt": "The camel crossed the ___.",
+    "options": [
+      "desert",
+      "dessert"
+    ],
+    "correct_answer": "desert",
+    "audio_asset": "say:desert",
+    "wordFamily": true,
+    "feedback": "Yes! \"desert\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
   }
 ]

@@ -5184,5 +5184,119 @@
       "transition": "",
       "close": "Case closed! You've mastered homophones."
     }
+  },
+  {
+    "lesson_id": "L6-M55-01",
+    "module_id": 55,
+    "number": 1,
+    "title": "Meet affect/effect & accept/except",
+    "skill": "spelling",
+    "objective": "Choose affect/effect and accept/except based on a sentence's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A new kind of case, Detective! Some word pairs aren't homophones — they just LOOK and sound similar, and get mixed up a lot.",
+      "teach": "affect is a verb — to change or influence something. effect is a noun — the result of a change. accept means to receive or agree to something. except means 'not including'.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn, Detective! Use the sentence's meaning as your clue.",
+      "close": "Case closed! You know affect/effect and accept/except."
+    }
+  },
+  {
+    "lesson_id": "L6-M55-02",
+    "module_id": 55,
+    "number": 2,
+    "title": "Meet principal/principle & than/then",
+    "skill": "spelling",
+    "objective": "Choose principal/principle and than/then based on a sentence's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two more confusable pairs, Detective! principal/principle and than/then.",
+      "teach": "The principal is the head of a school (remember: the princiPAL is your PAL). A principle is a rule or belief you follow. than compares two things. then is about time or what happens next.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the sentence's meaning as your clue.",
+      "close": "Case closed! Four pairs mastered so far."
+    }
+  },
+  {
+    "lesson_id": "L6-M55-03",
+    "module_id": 55,
+    "number": 3,
+    "title": "Meet where/were & lose/loose",
+    "skill": "spelling",
+    "objective": "Choose where/were and lose/loose based on a sentence's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two more pairs, Detective! where/were and lose/loose.",
+      "teach": "where asks about a place. were is the past tense of 'are'. lose means to not win, or to misplace something. loose means not tight — the opposite of tight.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the sentence's meaning as your clue.",
+      "close": "Case closed! Six pairs mastered now."
+    }
+  },
+  {
+    "lesson_id": "L6-M55-04",
+    "module_id": 55,
+    "number": 4,
+    "title": "Meet advice/advise & desert/dessert",
+    "skill": "spelling",
+    "objective": "Choose advice/advise and desert/dessert based on a sentence's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two final pairs, Detective! advice/advise and desert/dessert.",
+      "teach": "advice is a noun — a helpful suggestion. advise is a verb — to give that suggestion. A desert is a dry, sandy place. dessert is the sweet food you eat after a meal (remember: dessert has two s's, because you always want seconds!).",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the sentence's meaning as your clue.",
+      "close": "Case closed! All eight pairs mastered."
+    }
+  },
+  {
+    "lesson_id": "L6-M55-05",
+    "module_id": 55,
+    "number": 5,
+    "title": "More Practice",
+    "skill": "spelling",
+    "objective": "Practise all eight confusable pairs together across more sentences.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More practice, Detective — mixing every confusable pair together now!",
+      "teach": "Read each sentence carefully. The meaning always tells you which word is correct.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use everything you've learned.",
+      "close": "Fantastic! You're an expert at telling these words apart."
+    }
+  },
+  {
+    "lesson_id": "L6-M55-06",
+    "module_id": 55,
+    "number": 6,
+    "title": "Commonly Confused Words Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of choosing the correct word for a sentence from each confusable pair.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about commonly confused words.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered commonly confused words."
+    }
   }
 ]

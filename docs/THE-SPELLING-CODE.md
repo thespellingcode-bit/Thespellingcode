@@ -34,7 +34,7 @@
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
 | 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **Complete** — Modules 41–51 built and deployed |
-| 6 | Word Master | 11–15 | 10 (built as 5 — condensed, see scope note below) | **In progress** — Modules 52–54 built (through Homophones) |
+| 6 | Word Master | 11–15 | 10 (built as 5 — condensed, see scope note below) | **In progress** — Modules 52–55 built (through Commonly Confused Words) |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
 
@@ -51,7 +51,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Level 5 “Word Builder Pro”, all 11 modules (The Many Spellings of /s/, Long-A/E/I/O/U Choices, The Three Sounds of -ed, Change Y Before a Suffix, More Prefixes & Suffixes, Word Families, Review & Assessment) | **Complete — built and deployed.** Level 5 is finished; earns the new “Level 5 Word Builder Pro” badge on the Level 5 Challenge. See `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Modules 47–50 are genuinely-new blueprint-Level-5 morphology content. |
-| Level 6 “Word Master”, Modules 52–54 (through Homophones) | **Built** — see `docs/plans/level-6.md` and the Level 6 curriculum design note below. Condensed from the blueprint's 10 modules to 5 non-duplicate ones. |
+| Level 6 “Word Master”, Modules 52–55 (through Commonly Confused Words) | **Built** — see `docs/plans/level-6.md` and the Level 6 curriculum design note below. Condensed from the blueprint's 10 modules to 5 non-duplicate ones. Only Module 56 (Review & Assessment) remains. |
 | Digital certificate / certification record (blueprint §9) | Out of scope until the owner asks — the blueprint's Level 6 "Final Mastery & Certification" module is built as a standard Review & Assessment; the certificate-generation feature itself isn't built. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
@@ -130,11 +130,12 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 50, Word Families — a genuinely different skill from every earlier Level 5 module, and the first one with no spelling transformation at all.** act/action/active/actor, play/player/playful/playing and four more families (teach, help, read, build) are all *already correctly spelled* real words — the task is choosing which family member's grammatical JOB fits a sentence (noun vs verb vs adjective), not spelling anything. Reused `spelling_choice` again, but its existing caption ("Yes! It's spelled X") and heading ("Which spelling of X is correct?") would have been actively wrong here — nothing was misspelled, and there's no single target word, only a sentence. Added a `wordFamily: true` field with its own narration branches in both `modelCaptionFor` ("Yes! 'player' fits best here!") and `modelHeadingFor` (shows the item's own `prompt` — the fill-in-the-blank sentence — directly as the heading), written proactively before any content, same discipline as Module 47's `edSound`. `MultipleChoice.jsx` needed no changes at all — it already renders `question.prompt` as the on-screen text and auto-speaks it via TTS, so a sentence-with-blank prompt "just worked" once the narration branches existed. No `word_build` or `read_word` lessons anywhere in this module — every lesson is a `spelling_choice` round, an honest reflection that this skill has no building or picture-matching component. **One real bug caught by `npm test`, not live:** an assessment item first reused "builder" with the exact same sentence context as its own lesson's practice item (a copy-paste slip), fixed by swapping to "readers" (plural, genuinely untested elsewhere in that lesson). Live-verified the sentence renders as both the Watch-stage heading and the Practice-stage prompt, with both family-member options showing as separate buttons.
 - **Module 51, Review & Assessment — closes out Level 5, same closing shape as every earlier level (Modules 7/8, 17, 27, 40), with one new wrinkle: Level 5 has four genuinely different mechanics to review (spelling_choice, word_build, letter_sound_match/edSound, spelling_choice/wordFamily), and a practice lesson can only use ONE `activity_type`.** Five lessons: Mixed Retrieval (`spelling_choice` sampling Modules 41–46's long-vowel/soft-C choices), Read & Build (`word_build`, no decoy, Modules 46/48/49's words), Dictation (`word_build` with a decoy, mixing choice-type rules across Modules 41/44/45/46/48/49), a dedicated "The Sounds of -ed Review" (`letter_sound_match`/`edSound`, since that skill couldn't be folded into the other review lessons without breaking the one-type-per-lesson rule), and the Level 5 Challenge (`assessment`, 14 items — the only lesson freely mixing all four mechanics including two `wordFamily` sentence items, since assessment-stage items have never had the single-type restriction). Added `BADGE-11` ("Level 5 Word Builder Pro", `module_id: 51`), same purely data-driven pattern as every earlier level's closing badge. 22/22 tests passed on the first run. **Level 5 total: 58 lessons, matching `docs/plans/level-5.md`'s own estimate exactly.** Live-verified the Level 5 badge appears (locked) on the home screen immediately after the module shipped, and the -ed sounds review narration renders correctly reused from Module 47.
 
-### Level 6 curriculum design (Modules 52–54 built; Module 55 planned, not yet built)
+### Level 6 curriculum design (Modules 52–55 built; Module 56 planned, not yet built)
 - **Scope note:** see the roadmap section above for why Level 6's module list is condensed from the blueprint's 10 to 5 — "Silent Letters" and "Word Families & Derivation" both duplicate already-built app content (Modules 35 and 50). Full reasoning in `docs/plans/level-6.md`.
 - **Module 52, Greek & Latin Roots — reuses Module 50's `wordFamily` mechanic for a genuinely different purpose: a definition-style meaning clue instead of a fill-in-the-blank sentence.** Both are the same underlying shape (a `prompt`, two real-word options, one correct), so zero new code was needed — only the *content* changed from "She wants to ___ in the school play" (sentence context) to "bio (life) + graphy (writing) = the written story of someone's life" (definition context). Eight roots across three "Meet" lessons (bio/tele/graph, then photo/scope/port, then dict/spect), each item deliberately pairing two words that share a surface resemblance (biography vs biology, both bio-; telephone vs telegraph, both tele-) so the choice genuinely tests which SPECIFIC root-meaning combination fits, not just vocabulary recognition in general. No new grapheme, no new remediation tag (reused `PREFIX_SUFFIX_CONFUSION`, matching the plan's own reasoning that this is the same *kind* of confusion as Module 50's). Live-verified both the Watch-stage definition-clue narration and the Practice-stage two-option layout render correctly with no code changes.
 - **Module 53, Advanced Vowel Patterns — back to the full Level-4/5-style `spelling_choice`+`word_build` shape, since (unlike Modules 52/54's meaning-based choices) this module is a genuine spelling skill.** Four new graphemes: `eigh`/`augh`/`ough` added to `VOWEL_TEAMS`, and `ear` (for the /er/ sound in "learn"/"earth") added to `R_CONTROLLED` — the first r-controlled grapheme that's three letters instead of two, but structurally the same "vowel swallowed by r" shape, so no new `graphemeKindFor()` category was needed. Taught honestly as pure memorization, not a rule: these four patterns don't follow a reliable position or frequency story the way Modules 42/45 (ai/ay, oa/ow) did — "though," "through," "cough" and "tough" all use ough and don't even rhyme with each other. No decoy-tile choice mechanic in the building lessons (unlike Modules 42–46) — since eigh/augh/ough aren't genuine alternate spellings competing for the SAME sound the way ai/ay or ue/ew/oo were, forcing a "pick the right one of two options" decoy would have been artificial; both building lessons are just more tile-building reps instead. Live-verified `word_build` tiles both new grapheme categories correctly: "eight" → eigh-t, "learn" → l-ear-n.
 - **Module 54, Homophones — the module this entire level's scope note promised back in Module 43 (where "meat"/"meet" was deliberately dropped as belonging to "a later dedicated homophones module, not this one's decoy mechanic").** Reuses Module 50/52's `wordFamily` sentence-context mechanic exactly — same shape, now applied to true homophones (identical SOUND, different spelling and meaning) rather than grammatical word-family forms or root-based definitions. **A real thin-pool test failure surfaced here for the first time this level, and for a structural reason unique to homophones:** every earlier `wordFamily` module (50, 52) could always reach into a large vocabulary to keep practice and assessment items using different words, but a homophone GROUP is a small closed set — there/their/they're is exactly 3 words, period, so a 5-item practice lesson plus a 3-item assessment bank cannot avoid reusing a word's exact (audio, answer) pair at least once. Fixed with 8 `review_flag` annotations (not a code change) explaining this honestly, the same established pattern Modules 30/44 used for thin picture pools — the key insight being that the *transfer* here is a fresh sentence context, not a fresh word, which is the correct kind of transfer for a closed-set skill like this. Live-verified the full lesson flow end to end (Watch's 3 deduplicated worked examples, a 2-item Warm-up, then a 3-item Solo mission — 5 total practice reps, confirming the Watch stage's dedup-by-identical-pair is a display nicety, not a missing-content bug).
+- **Module 55, Commonly Confused Words — same `wordFamily` mechanic again, this time for pairs that aren't homophones at all (different sounds — affect/effect, accept/except), just frequently mixed up.** Each pair gets a plain-language distinguishing rule in the Teach narration rather than just examples — "the princiPAL is your PAL," "dessert has two s's because you always want seconds" — small mnemonics genuinely used to teach these exact pairs, included because they're accurate and age-appropriate for an 11–15 audience, not filler. **Hit the identical thin-pool test failure Module 54 did, for the identical reason:** a 2-word confusable pair (e.g. just affect/effect) can't supply enough distinct words for both a practice bank and a fresh assessment bank in the same lesson. Fixed with the same `review_flag` pattern, 9 items this time. This confirms the thin-pool issue isn't a one-off — it's a structural property of any module built from closed 2–3-word sets, worth remembering if Level 6 (or a future level) adds more modules in this shape.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -242,6 +243,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 6 Module 52 (Greek & Latin Roots) — bio/tele/graph/photo/scope/port/dict/spect as meaning clues. Reused Module 50's wordFamily mechanic with definition-style prompts instead of sentences — zero new code. 22/22 on the first run.
 - Built Level 6 Module 53 (Advanced Vowel Patterns) — eigh/augh/ough/ear, four new graphemes (ear added to R_CONTROLLED as a 3-letter exception). Taught as pure memorization (no reliable rule), no decoy mechanic since these aren't real alternate-spelling competitors. 22/22 on the first run.
 - Built Level 6 Module 54 (Homophones) — there/their/they're, to/too/two, your/you're, write/right, know/no, meet/meat, hour/our. Reused Module 50/52's wordFamily mechanic again, zero new code. First real thin-pool test failure this level (homophone groups are closed sets, can't avoid word reuse) — fixed with 8 honest review_flag annotations, same precedent as Modules 30/44.
+- Built Level 6 Module 55 (Commonly Confused Words) — affect/effect, accept/except, principal/principle, than/then, where/were, lose/loose, advice/advise, desert/dessert. Same wordFamily mechanic, same thin-pool issue as Module 54 (9 more review_flags). Added accurate mnemonics to the Teach narration for each pair.
 
 ---
 
@@ -718,6 +720,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 52 | Greek & Latin Roots | **Live** | 5 | 20 | 17 |
 | 53 | Advanced Vowel Patterns | **Live** | 5 | 20 | 17 |
 | 54 | Homophones | **Live** | 6 | 25 | 19 |
+| 55 | Commonly Confused Words | **Live** | 6 | 25 | 19 |
 
 ## Curriculum in full
 
@@ -8481,6 +8484,169 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M54-06-6 | sound: no \| options no, know \| answer **no** |  |
 | AS-M54-06-7 | sound: meet \| options meet, meat \| answer **meet** |  |
 | AS-M54-06-8 | sound: hour \| options hour, our \| answer **hour** |  |
+
+### Module 55 — Commonly Confused Words
+
+*Goal:* Choose between frequently mixed-up word pairs (affect/effect, accept/except, principal/principle...) based on what the sentence means.
+
+#### Lesson 1: Meet affect/effect & accept/except (`L6-M55-01`)
+
+- **Objective:** Choose affect/effect and accept/except based on a sentence's meaning.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A new kind of case, Detective! Some word pairs aren't homophones — they just LOOK and sound similar, and get mixed up a lot.
+- **Narration (teach):** affect is a verb — to change or influence something. effect is a noun — the result of a change. accept means to receive or agree to something. except means 'not including'.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn, Detective! Use the sentence's meaning as your clue.
+- **Narration (close):** Case closed! You know affect/effect and accept/except.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M55-01 | sound: affect \| options affect, effect \| answer **affect** |
+| Q-M55-02 | sound: effect \| options effect, affect \| answer **effect** |
+| Q-M55-03 | sound: accept \| options accept, except \| answer **accept** |
+| Q-M55-04 | sound: except \| options except, accept \| answer **except** |
+| Q-M55-05 | sound: affect \| options affect, effect \| answer **affect** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M55-01-1 | sound: effect \| options effect, affect \| answer **effect** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+| AS-M55-01-2 | sound: accept \| options accept, except \| answer **accept** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+| AS-M55-01-3 | sound: except \| options except, accept \| answer **except** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+
+#### Lesson 2: Meet principal/principle & than/then (`L6-M55-02`)
+
+- **Objective:** Choose principal/principle and than/then based on a sentence's meaning.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two more confusable pairs, Detective! principal/principle and than/then.
+- **Narration (teach):** The principal is the head of a school (remember: the princiPAL is your PAL). A principle is a rule or belief you follow. than compares two things. then is about time or what happens next.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use the sentence's meaning as your clue.
+- **Narration (close):** Case closed! Four pairs mastered so far.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M55-06 | sound: principal \| options principal, principle \| answer **principal** |
+| Q-M55-07 | sound: principle \| options principle, principal \| answer **principle** |
+| Q-M55-08 | sound: than \| options than, then \| answer **than** |
+| Q-M55-09 | sound: then \| options then, than \| answer **then** |
+| Q-M55-10 | sound: principle \| options principle, principal \| answer **principle** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M55-02-1 | sound: than \| options than, then \| answer **than** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+| AS-M55-02-2 | sound: principal \| options principal, principle \| answer **principal** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+
+#### Lesson 3: Meet where/were & lose/loose (`L6-M55-03`)
+
+- **Objective:** Choose where/were and lose/loose based on a sentence's meaning.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two more pairs, Detective! where/were and lose/loose.
+- **Narration (teach):** where asks about a place. were is the past tense of 'are'. lose means to not win, or to misplace something. loose means not tight — the opposite of tight.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use the sentence's meaning as your clue.
+- **Narration (close):** Case closed! Six pairs mastered now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M55-11 | sound: Where \| options Where, Were \| answer **Where** |
+| Q-M55-12 | sound: were \| options were, where \| answer **were** |
+| Q-M55-13 | sound: lose \| options lose, loose \| answer **lose** |
+| Q-M55-14 | sound: loose \| options loose, lose \| answer **loose** |
+| Q-M55-15 | sound: Where \| options Where, Were \| answer **Where** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M55-03-1 | sound: were \| options were, where \| answer **were** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+| AS-M55-03-2 | sound: lose \| options lose, loose \| answer **lose** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+
+#### Lesson 4: Meet advice/advise & desert/dessert (`L6-M55-04`)
+
+- **Objective:** Choose advice/advise and desert/dessert based on a sentence's meaning.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two final pairs, Detective! advice/advise and desert/dessert.
+- **Narration (teach):** advice is a noun — a helpful suggestion. advise is a verb — to give that suggestion. A desert is a dry, sandy place. dessert is the sweet food you eat after a meal (remember: dessert has two s's, because you always want seconds!).
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use the sentence's meaning as your clue.
+- **Narration (close):** Case closed! All eight pairs mastered.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M55-16 | sound: advice \| options advice, advise \| answer **advice** |
+| Q-M55-17 | sound: advise \| options advise, advice \| answer **advise** |
+| Q-M55-18 | sound: desert \| options desert, dessert \| answer **desert** |
+| Q-M55-19 | sound: dessert \| options dessert, desert \| answer **dessert** |
+| Q-M55-20 | sound: advice \| options advice, advise \| answer **advice** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M55-04-1 | sound: advise \| options advise, advice \| answer **advise** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+| AS-M55-04-2 | sound: dessert \| options dessert, desert \| answer **dessert** | Each confusable pair in this module is a closed set of just 2 words — unlike modules with a larger vocabulary, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word. |
+
+#### Lesson 5: More Practice (`L6-M55-05`)
+
+- **Objective:** Practise all eight confusable pairs together across more sentences.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More practice, Detective — mixing every confusable pair together now!
+- **Narration (teach):** Read each sentence carefully. The meaning always tells you which word is correct.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use everything you've learned.
+- **Narration (close):** Fantastic! You're an expert at telling these words apart.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M55-21 | sound: affect \| options affect, effect \| answer **affect** |
+| Q-M55-22 | sound: except \| options except, accept \| answer **except** |
+| Q-M55-23 | sound: then \| options then, than \| answer **then** |
+| Q-M55-24 | sound: than \| options than, then \| answer **than** |
+| Q-M55-25 | sound: loose \| options loose, lose \| answer **loose** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M55-05-1 | sound: Where \| options Where, Were \| answer **Where** |  |
+| AS-M55-05-2 | sound: advise \| options advise, advice \| answer **advise** |  |
+
+#### Lesson 6: Commonly Confused Words Challenge (`L6-M55-06`)
+
+- **Objective:** Demonstrate independent mastery of choosing the correct word for a sentence from each confusable pair.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about commonly confused words.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered commonly confused words.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M55-06-1 | sound: affect \| options affect, effect \| answer **affect** |  |
+| AS-M55-06-2 | sound: except \| options except, accept \| answer **except** |  |
+| AS-M55-06-3 | sound: principal \| options principal, principle \| answer **principal** |  |
+| AS-M55-06-4 | sound: than \| options than, then \| answer **than** |  |
+| AS-M55-06-5 | sound: were \| options were, where \| answer **were** |  |
+| AS-M55-06-6 | sound: lose \| options lose, loose \| answer **lose** |  |
+| AS-M55-06-7 | sound: advice \| options advice, advise \| answer **advice** |  |
+| AS-M55-06-8 | sound: desert \| options desert, dessert \| answer **desert** |  |
 
 ## Content library
 
