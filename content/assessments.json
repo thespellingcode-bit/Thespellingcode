@@ -20098,5 +20098,381 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "spelling",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-01-1",
+    "lesson_id": "L5-M49-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "mislead",
+      "dislead"
+    ],
+    "correct_answer": "mislead",
+    "audio_asset": "say:mislead",
+    "feedback": "Yes! It's mislead.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-01-2",
+    "lesson_id": "L5-M49-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pretest",
+      "mistest"
+    ],
+    "correct_answer": "pretest",
+    "audio_asset": "say:pretest",
+    "feedback": "Yes! It's pretest.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-01-3",
+    "lesson_id": "L5-M49-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "distrust",
+      "pretrust"
+    ],
+    "correct_answer": "distrust",
+    "audio_asset": "say:distrust",
+    "feedback": "Yes! It's distrust.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-02-1",
+    "lesson_id": "L5-M49-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "softness",
+      "softment"
+    ],
+    "correct_answer": "softness",
+    "audio_asset": "say:softness",
+    "feedback": "Yes! It's softness.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-02-2",
+    "lesson_id": "L5-M49-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "treatment",
+      "treatness"
+    ],
+    "correct_answer": "treatment",
+    "audio_asset": "say:treatment",
+    "feedback": "Yes! It's treatment.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-03-1",
+    "lesson_id": "L5-M49-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:prepay",
+    "letters": [
+      "pre",
+      "p",
+      "ay"
+    ],
+    "answer_tiles": [
+      "pre",
+      "p",
+      "ay"
+    ],
+    "correct_answer": "prepay",
+    "feedback": "Yes! You built prepay.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-03-2",
+    "lesson_id": "L5-M49-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:mislead",
+    "letters": [
+      "mis",
+      "l",
+      "ea",
+      "d"
+    ],
+    "answer_tiles": [
+      "mis",
+      "l",
+      "ea",
+      "d"
+    ],
+    "correct_answer": "mislead",
+    "feedback": "Yes! You built mislead.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-04-1",
+    "lesson_id": "L5-M49-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:shipment",
+    "letters": [
+      "sh",
+      "i",
+      "p",
+      "ment",
+      "ness"
+    ],
+    "answer_tiles": [
+      "sh",
+      "i",
+      "p",
+      "ment"
+    ],
+    "correct_answer": "shipment",
+    "feedback": "Yes! You built shipment.",
+    "retry_feedback": "Listen again and pick the right word part — leave the extra tile behind.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-04-2",
+    "lesson_id": "L5-M49-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sadness",
+    "letters": [
+      "s",
+      "a",
+      "d",
+      "ness",
+      "ment"
+    ],
+    "answer_tiles": [
+      "s",
+      "a",
+      "d",
+      "ness"
+    ],
+    "correct_answer": "sadness",
+    "feedback": "Yes! You built sadness.",
+    "retry_feedback": "Listen again and pick the right word part — leave the extra tile behind.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-05-1",
+    "lesson_id": "L5-M49-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "statement",
+      "stateness"
+    ],
+    "correct_answer": "statement",
+    "audio_asset": "say:statement",
+    "feedback": "Yes! It's statement.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-05-2",
+    "lesson_id": "L5-M49-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "fairness",
+      "fairment"
+    ],
+    "correct_answer": "fairness",
+    "audio_asset": "say:fairness",
+    "feedback": "Yes! It's fairness.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-06-1",
+    "lesson_id": "L5-M49-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "dislike",
+      "prelike"
+    ],
+    "correct_answer": "dislike",
+    "audio_asset": "say:dislike",
+    "feedback": "Yes! It's dislike.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-06-2",
+    "lesson_id": "L5-M49-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "mistake",
+      "distake"
+    ],
+    "correct_answer": "mistake",
+    "audio_asset": "say:mistake",
+    "feedback": "Yes! It's mistake.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-06-3",
+    "lesson_id": "L5-M49-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "kindness",
+      "kindment"
+    ],
+    "correct_answer": "kindness",
+    "audio_asset": "say:kindness",
+    "feedback": "Yes! It's kindness.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-06-4",
+    "lesson_id": "L5-M49-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:disagree",
+    "letters": [
+      "dis",
+      "a",
+      "g",
+      "r",
+      "ee"
+    ],
+    "answer_tiles": [
+      "dis",
+      "a",
+      "g",
+      "r",
+      "ee"
+    ],
+    "correct_answer": "disagree",
+    "feedback": "Yes! You built disagree.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-06-5",
+    "lesson_id": "L5-M49-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:payment",
+    "letters": [
+      "p",
+      "ay",
+      "ment"
+    ],
+    "answer_tiles": [
+      "p",
+      "ay",
+      "ment"
+    ],
+    "correct_answer": "payment",
+    "feedback": "Yes! You built payment.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-06-6",
+    "lesson_id": "L5-M49-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:misread",
+    "letters": [
+      "mis",
+      "r",
+      "ea",
+      "d"
+    ],
+    "answer_tiles": [
+      "mis",
+      "r",
+      "ea",
+      "d"
+    ],
+    "correct_answer": "misread",
+    "feedback": "Yes! You built misread.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-06-7",
+    "lesson_id": "L5-M49-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:preheat",
+    "letters": [
+      "pre",
+      "h",
+      "ea",
+      "t"
+    ],
+    "answer_tiles": [
+      "pre",
+      "h",
+      "ea",
+      "t"
+    ],
+    "correct_answer": "preheat",
+    "feedback": "Yes! You built preheat.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M49-06-8",
+    "lesson_id": "L5-M49-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:shipment",
+    "letters": [
+      "sh",
+      "i",
+      "p",
+      "ment"
+    ],
+    "answer_tiles": [
+      "sh",
+      "i",
+      "p",
+      "ment"
+    ],
+    "correct_answer": "shipment",
+    "feedback": "Yes! You built shipment.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

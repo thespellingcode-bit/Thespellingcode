@@ -4576,5 +4576,119 @@
       "transition": "",
       "close": "Case closed! You've mastered changing y before a suffix."
     }
+  },
+  {
+    "lesson_id": "L5-M49-01",
+    "module_id": 49,
+    "number": 1,
+    "title": "Meet dis-, pre- and mis-",
+    "skill": "spelling",
+    "objective": "Recognise dis- ('not'), pre- ('before') and mis- ('wrongly') at the start of a word.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Three more prefixes, Detective! dis- means 'not' or 'the opposite of', pre- means 'before', and mis- means 'wrongly' or 'badly'.",
+      "teach": "dislike means not liking. preview means to view before. mistake means to get something wrong. Listen, then pick the word that matches what you hear.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Pick the word that matches what you hear.",
+      "close": "Case closed! You know dis-, pre- and mis-."
+    }
+  },
+  {
+    "lesson_id": "L5-M49-02",
+    "module_id": 49,
+    "number": 2,
+    "title": "Meet -ness and -ment",
+    "skill": "spelling",
+    "objective": "Recognise -ness and -ment at the end of a word.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two more suffixes, Detective! -ness turns a describing word into a thing (kind -> kindness), and -ment turns an action word into a thing (pay -> payment).",
+      "teach": "kindness is the state of being kind. payment is the act of paying. Listen, then pick the word that matches what you hear.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Pick the word that matches what you hear.",
+      "close": "Case closed! You know -ness and -ment too."
+    }
+  },
+  {
+    "lesson_id": "L5-M49-03",
+    "module_id": 49,
+    "number": 3,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build whole prefixed or suffixed words, with the word part as a single tile.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some whole words — prefix or suffix and all!",
+      "teach": "Listen to the whole word, then tap the tiles in order. The word part gets its own single tile — the rest of the word keeps its own spelling.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! The base word's spelling never changed."
+    }
+  },
+  {
+    "lesson_id": "L5-M49-04",
+    "module_id": 49,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated word by choosing the correct prefix or suffix from a tray that includes one decoy.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — pick the right word part!",
+      "teach": "Listen to the word, then build it — choose the correct prefix or suffix, and leave out the one that doesn't belong.",
+      "model": "Listen. Pick the right tiles — the correct word part included — and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully, and leave out the word part that doesn't belong.",
+      "close": "Excellent spelling! You always picked the right word part."
+    }
+  },
+  {
+    "lesson_id": "L5-M49-05",
+    "module_id": 49,
+    "number": 5,
+    "title": "More Practice",
+    "skill": "spelling",
+    "objective": "Practise all five word parts together across more words.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More practice, Detective — mixing every word part together now!",
+      "teach": "Remember what each word part means, and listen for the one this word actually uses.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn! Use everything you've learned.",
+      "close": "Fantastic! You know all five word parts now."
+    }
+  },
+  {
+    "lesson_id": "L5-M49-06",
+    "module_id": 49,
+    "number": 6,
+    "title": "More Prefixes & Suffixes Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of dis-, pre-, mis-, -ness and -ment.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about dis-, pre-, mis-, -ness and -ment.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered more prefixes and suffixes."
+    }
   }
 ]

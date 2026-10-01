@@ -32,7 +32,7 @@
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
-| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–48 built (through Change Y Before a Suffix) |
+| 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **In progress** — Modules 41–49 built (through More Prefixes & Suffixes) |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
@@ -47,7 +47,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
-| Level 5 “Word Builder Pro”, Modules 41–48 (through Change Y Before a Suffix) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Modules 47–48 are genuinely-new blueprint-Level-5 morphology content. |
+| Level 5 “Word Builder Pro”, Modules 41–49 (through More Prefixes & Suffixes) | **Built** — see `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Modules 47–49 are genuinely-new blueprint-Level-5 morphology content. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -111,7 +111,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 39, Prefixes & Suffixes — back to build-focused, closer to Level 2's sentence-building shape than a phonics-choice module, per the plan.** un-/re- at the start mean "not"/"again"; -ful/-less at the end mean "full of"/"without" (genuine antonym minimal pairs — careful/careless, hopeful/hopeless, harmful/harmless — the same "real word either way, audio is the only tell" shape Module 34 used for hop/hope); -ly just adds on. No new mechanic: `spelling_choice` reused for all three "Meet" recognition lessons (un-, re-, -ful/-less) with real un-/re- word pairs (unwrap/rewrap, undo/redo, untie/retie, unload/reload, unfold/refold) as the audio-driven choice, and `word_build` reused for Blend & Build/Spell the Words with the prefix or suffix tiled as its own single tile (e.g. quickly → `[qu, i, ck, ly]`, composing the new suffix tile with already-known qu/ck graphemes). Added a new remediation tag, `PREFIX_SUFFIX_CONFUSION` (REM-18) — distinct from `SPELLING_CHOICE_CONFUSION` since the confusion here is about a word PART's meaning, not a sound's spelling. No new word pictures — same reasoning as Module 34 (a still image can't distinguish "unwrap" from "rewrap" or "careful" from "careless"), so no Read the Words lesson. **Two real bugs caught before shipping, neither live-only this time:** every assessment item was first written with the `activity_id` field instead of the required `assessment_id` (functionally needed — `LessonPlayer` uses it as a React key and for `questionId`), caught by re-reading the generated content before testing; and Lessons 1–2's assessment banks first exactly reused their own practice lessons' audio+answer pairs (unwrap/undo/untie/unload/unfold, redo/reload/retie), caught live by `npm test`'s transfer-to-new-example check — fixed by swapping in three fresh un-/re- pairs (unseal/reseal, uncap/recap, unpack/repack) the practice lessons never used. Live-verified the Watch-stage spelling_choice narration, the Practice-stage two-option buttons, and the word_build tiling for both a simple word (unwrap) and the most composed one (quickly).
 - **Module 40, Review & Assessment — closes out Level 4, same closing shape as every earlier level (Modules 7/8, 17, 27).** Five lessons cumulatively sampling all 12 earlier modules' rules rather than teaching anything new: Mixed Retrieval (`spelling_choice` — c/k, ck/k, g/j, ge/dge, ch/tch, FLOSS doubling), Read & Build (`word_build`, no decoy, one word per several modules — duck, orange, watch, hopping, knee, boxes), Plurals & Word Parts Review (`spelling_choice` — plurals plus un-/re-/-ful/-less), Dictation (`word_build` with a decoy tile, mixing choice-type rules across modules), and the Level 4 Challenge (`assessment`, 14 items freely mixing `spelling_choice`, `word_build`, `letter_sound_match` and `read_word` — the broadest single-lesson type mix of any module this level). Added `BADGE-10` ("Level 4 Spelling Detective", tied to `module_id: 40`, same pattern as every earlier level's closing badge) — purely data-driven, no code changes needed since badge-earning already derives from `isModuleComplete(state, badge.module_id)`. GRAPHEMES_BY_MODULE[40] stays `[]`, same reasoning as Level 2/3's own closing review modules — pure review teaches no new grapheme. All 22 tests passed on the first run (the assessment_id field-name bug from Module 39 was written correctly here from the start). Live-verified the Mixed Retrieval lesson's all 5 Watch-stage examples (cat, sock, jam, bridge, catch) sampling every Level 4 letter/ending-choice rule in one lesson.
 
-### Level 5 curriculum design (Modules 41–48 built; Modules 49–51 planned, not yet built)
+### Level 5 curriculum design (Modules 41–49 built; Modules 50–51 planned, not yet built)
 - **Scope note:** see the roadmap section above for why Level 5's module list doesn't match the blueprint's Level 5 list — it absorbs the blueprint's missing Level-4 long-vowel/soft-C content and skips the blueprint-Level-5 modules already covered by app-Modules 34/37/39. Full reasoning in `docs/plans/level-5.md`.
 - **Module 41, The Many Spellings of /s/ — same shape as Level 4's spelling-choice modules, no new mechanic.** /s/ can be spelled s (sun), ss (miss, already familiar from FLOSS doubling), soft c before e/i/y (city, pencil) or -ce at a word's end (ice, dance). "ce" is treated as a single fused ending tile, the same symmetry call Module 31 made for "ge" alongside "dge"; mid-word soft c needs no new tile at all since "c" is already a known single letter — only its *sound* is new, not its spelling. **A real picture collision was caught and fixed before shipping, not live this time:** "pencil" was the natural third Read-the-Words picture for mid-word soft c, but `"pencil".includes("pen")` would have matched the existing Level 1 "pen" sound-icon key first, silently showing the wrong picture — caught by checking `Icon.jsx`'s `WORD_KEYS` array before wiring in the new SVG (the same check the file's own word-library.md recommends but easy to skip). Dropped "pencil" as a picture word entirely (word_build/spelling_choice content keeps using it fine, since those lesson types never render an icon) and substituted "sun"/"bus" — both already-illustrated, zero collision risk — for the plain-s picture examples instead. Added 2 new word pictures (ice, city). Live-verified the Read the Words lesson renders sun/ice/city correctly.
 - **Module 42, Long-A Choices — the first Level 5 module with a genuine, reliable positional rule, same confidence level as Level 4's c/k.** ai sits in the middle of a word (rain, train), ay sits at the end (day, play) — both were already taught receptively in Level 3 Module 20, so this module's real job is turning that recognition into a graded choice, reusing the exact same word list (rain, train, mail, sail, paint, day, play, stay, tray, gain) rather than inventing a new one. No new grapheme tile (ai/ay already existed), no new word pictures — Read the Words reuses Level 3's existing train/rain/mail/sail pictures outright, since ay-ending words (day, play, stay, tray) don't have a clean concrete-noun picture pool; that gap is stated plainly in the content rather than forcing in a weak picture. `word_build`'s decoy-tile mechanic again needed zero code changes — a tray for "rain" offers "ay" as the decoy, a tray for "day" offers "ai", exactly mirroring Level 4's ge/dge and ch/tch "explains both directions" pattern. Live-verified both directions of the Spell the Words decoy live (rain/ay-decoy, day/ai-decoy).
@@ -121,6 +121,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 46, Long-U Choices — the most complex module in this run of five, three competing spellings (ue, ew, oo) instead of two, closing out the blueprint's missing long-vowel-choice content.** All three new graphemes, added to `VOWEL_TEAMS`. oo is the common default (moon, spoon, food); ue and ew are smaller memorized sets, each usually at a word's end (true, glue; new, few) — same pattern/frequency framing as Modules 43/44, not a positional rule. Got a sixth lesson ("More Spellings," a second `spelling_choice` round) per the plan's own call for extra practice given the added complexity. **Two real-word collisions were checked and avoided before writing any content, not caught live:** "blue" was dropped from the word list because its only ew-substitution decoy is "blew," a real, correctly-spelled different word (same homophone trap Module 43 hit with meat/meet); "due" was dropped because its ew-substitution is "dew," also real. "clew" (an obscure nautical term, used as a decoy for "clue") was accepted as safe per the project's standing precedent for low-frequency real-word decoys (Module 34's "teem," Module 30's "get"). Thinnest picture pool of any module this level — only moon, spoon and broom — with "book" deliberately NOT reused despite already being illustrated, since its oo makes the short oo sound (book/look), a different sound from this module's long-oo focus; the Teach narration names this dual-sound fact honestly rather than glossing over it. 22/22 on the first run. Live-verified the Watch-stage decoy narration ("true" tiles as tr-ue with an "ew" decoy called out) and the moon picture in Read the Words.
 - **Module 47, The Three Sounds of -ed — the first genuinely-new Level 5 content (not a Level-4 gap-fill), and a different KIND of skill than any `spelling_choice` module: auditory discrimination, since the spelling is always "-ed" regardless of which sound it makes.** /t/ after an unvoiced consonant (walked), /d/ after a voiced sound (played), /id/ after t/d (wanted) — same "hear the sound" shape as Level 1's phonemic-awareness modules, not a spelling task at all. Reused `letter_sound_match` with a new `edSound: true` content field (`correct_answer` is "t"/"d"/"id", not a grapheme), following the exact precedent Module 35's `silent` and Module 36's `yVowel` fields established — added the matching narration branches in both `modelCaptionFor` and `modelHeadingFor` proactively, before any content was written, rather than discovering the generic-fallback bug live as Module 35 originally did. No new remediation tag reused — added `ED_SOUND_CONFUSION` (REM-19) since this is neither a spelling choice nor a letter-sound-correspondence confusion in the usual sense. No decoy-tile "Spell the Words" lesson — since the spelling never changes, a second `word_build` lesson (Lesson 4) just gives more building reps on fresh words instead of a genuine decoy choice; no Read the Words either, same "can't picture a verb tense" reasoning as Modules 34/39. Live-verified all three Watch-stage narration branches (walked→/t/, wanted→/id/, called→/d/) and the three-button Practice-stage layout (t/d/id).
 - **Module 48, Change Y Before a Suffix — back to a genuine spelling rule (like Module 34's doubling/drop-e), with one clean exception.** A word ending in consonant+y swaps y for i before most suffixes (happy→happier, cry→cried) but keeps the y before -ing specifically (crying, never criing) — taught as two separate "Meet the Rule" lessons (Change Y, then the -ing exception) before merging them in a "More Practice" lesson, mirroring Module 34's three-separate-then-combined structure. `word_build`'s decoy mechanic reused exactly as Module 34 did for its stray-e decoy — a stray "y" tile for words that changed to i, a stray "i" tile for words that kept y. No new grapheme tiles (`-er`/`-est`/`-ly`/`-ness` all decompose to already-known single letters, same reasoning as Modules 34/47's suffix tiles). Live-verified both directions of the Spell the Words decoy (happiest/y-decoy, flying/i-decoy).
+- **Module 49, More Prefixes & Suffixes — extends Module 39 rather than repeating it: dis-, pre-, mis- at the start, -ness and -ment at the end, no overlap with Module 39's un-/re-/-ful/-less/-ly.** Same shape throughout: `spelling_choice` for recognition (two "Meet" lessons — prefixes, then suffixes — plus a combined "More Practice" round mirroring Module 48's structure), `word_build` with the prefix/suffix as its own tile for building. One word (`"preview"`) was deliberately kept recognition-only and never used in `word_build` — "view" contains an irregular vowel pattern (v-i-e-w) that doesn't decompose cleanly into this app's taught graphemes, so it's fine for a fixed audio+spelling pair but not for tile-level decomposition. Also avoided a real-word decoy collision: "distrust" and "mistrust" are both genuine, nearly-synonymous English words, so "mistrust" could never be used as a *wrong* decoy for "distrust" (unlike the nonsense decoys everywhere else) — used "pretrust" (nonsense) instead. Reused the existing `PREFIX_SUFFIX_CONFUSION` tag from Module 39, no new remediation entry needed. Live-verified both the prefix decoy (distrust/mis-decoy) and a second prefix pair (pretest/mis-decoy) in Spell the Words.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -221,6 +222,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 5 Module 46 (Long-U Choices) — ue/ew/oo, three new graphemes, the most complex module yet (got a sixth lesson for the added practice). Avoided two real-word decoy collisions before writing content ("blue"→"blew", "due"→"dew", both real words) by dropping those words from the list. Thinnest picture pool so far (moon/spoon/broom); deliberately did not reuse the existing "book" picture since its oo is a different (short) sound. **This closes out all five long-vowel-choice modules (42-46) — the blueprint's missing Level-4 flagship content is now fully built.** 22/22 on the first run.
 - Built Level 5 Module 47 (The Three Sounds of -ed) — first genuinely-new Level 5 content, auditory-only (spelling is always -ed, sound varies: /t/, /d/, /id/). Added a new edSound content field with narration branches written proactively (not caught live), following Module 35/36's established field-flag pattern. Added remediation tag ED_SOUND_CONFUSION (REM-19). No Spell/Read lessons — no spelling choice to decoy, and action-verb words don't picture cleanly.
 - Built Level 5 Module 48 (Change Y Before a Suffix) — y changes to i before most suffixes (happy->happier) but stays before -ing (crying, not criing). Same shape as Module 34's doubling/drop-e rule: two "Meet the Rule" lessons then a combined practice round. No new graphemes. 22/22 on the first run.
+- Built Level 5 Module 49 (More Prefixes & Suffixes) — dis-/pre-/mis-/-ness/-ment, extending Module 39 (no overlap with un-/re-/-ful/-less/-ly). Kept "preview" recognition-only (its "iew" pattern doesn't tile cleanly) and avoided a real-word decoy collision (distrust/mistrust are both genuine words, so "mistrust" could never be a wrong-decoy for "distrust"). Reused Module 39's PREFIX_SUFFIX_CONFUSION tag. 22/22 on the first run.
 
 ---
 
@@ -628,6 +630,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 46 | Long-U Choices | **Live** | 6 | 24 | 18 |
 | 47 | The Three Sounds of -ed | **Live** | 5 | 20 | 17 |
 | 48 | Change Y Before a Suffix | **Live** | 6 | 25 | 19 |
+| 49 | More Prefixes & Suffixes | **Live** | 6 | 25 | 19 |
 
 ## Curriculum in full
 
@@ -7512,6 +7515,169 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M48-06-6 | hear “trying” → build \| tray t r y ing \| answer **trying** |  |
 | AS-M48-06-7 | hear “carried” → build \| tray c a rr i ed \| answer **carried** |  |
 | AS-M48-06-8 | hear “studying” → build \| tray s t u d y ing \| answer **studying** |  |
+
+### Module 49 — More Prefixes & Suffixes
+
+*Goal:* Recognise and spell words with dis-, pre- or mis- at the start, and -ness or -ment at the end, extending Module 39's un-/re-/-ful/-less/-ly.
+
+#### Lesson 1: Meet dis-, pre- and mis- (`L5-M49-01`)
+
+- **Objective:** Recognise dis- ('not'), pre- ('before') and mis- ('wrongly') at the start of a word.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Three more prefixes, Detective! dis- means 'not' or 'the opposite of', pre- means 'before', and mis- means 'wrongly' or 'badly'.
+- **Narration (teach):** dislike means not liking. preview means to view before. mistake means to get something wrong. Listen, then pick the word that matches what you hear.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Pick the word that matches what you hear.
+- **Narration (close):** Case closed! You know dis-, pre- and mis-.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M49-01 | sound: dislike \| options dislike, prelike \| answer **dislike** |
+| Q-M49-02 | sound: preview \| options preview, misview \| answer **preview** |
+| Q-M49-03 | sound: mistake \| options mistake, distake \| answer **mistake** |
+| Q-M49-04 | sound: disagree \| options disagree, misagree \| answer **disagree** |
+| Q-M49-05 | sound: prepay \| options prepay, dispay \| answer **prepay** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M49-01-1 | sound: mislead \| options mislead, dislead \| answer **mislead** |  |
+| AS-M49-01-2 | sound: pretest \| options pretest, mistest \| answer **pretest** |  |
+| AS-M49-01-3 | sound: distrust \| options distrust, pretrust \| answer **distrust** |  |
+
+#### Lesson 2: Meet -ness and -ment (`L5-M49-02`)
+
+- **Objective:** Recognise -ness and -ment at the end of a word.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two more suffixes, Detective! -ness turns a describing word into a thing (kind -> kindness), and -ment turns an action word into a thing (pay -> payment).
+- **Narration (teach):** kindness is the state of being kind. payment is the act of paying. Listen, then pick the word that matches what you hear.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Pick the word that matches what you hear.
+- **Narration (close):** Case closed! You know -ness and -ment too.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M49-06 | sound: kindness \| options kindness, kindment \| answer **kindness** |
+| Q-M49-07 | sound: payment \| options payment, payness \| answer **payment** |
+| Q-M49-08 | sound: sadness \| options sadness, sadment \| answer **sadness** |
+| Q-M49-09 | sound: shipment \| options shipment, shipness \| answer **shipment** |
+| Q-M49-10 | sound: darkness \| options darkness, darkment \| answer **darkness** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M49-02-1 | sound: softness \| options softness, softment \| answer **softness** |  |
+| AS-M49-02-2 | sound: treatment \| options treatment, treatness \| answer **treatment** |  |
+
+#### Lesson 3: Blend & Build (`L5-M49-03`)
+
+- **Objective:** Build whole prefixed or suffixed words, with the word part as a single tile.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some whole words — prefix or suffix and all!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order. The word part gets its own single tile — the rest of the word keeps its own spelling.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! The base word's spelling never changed.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M49-11 | hear “dislike” → build \| tray dis l i k e \| answer **dislike** |
+| Q-M49-12 | hear “mistake” → build \| tray mis t a k e \| answer **mistake** |
+| Q-M49-13 | hear “preheat” → build \| tray pre h ea t \| answer **preheat** |
+| Q-M49-14 | hear “disagree” → build \| tray dis a g r ee \| answer **disagree** |
+| Q-M49-15 | hear “misread” → build \| tray mis r ea d \| answer **misread** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M49-03-1 | hear “prepay” → build \| tray pre p ay \| answer **prepay** |  |
+| AS-M49-03-2 | hear “mislead” → build \| tray mis l ea d \| answer **mislead** |  |
+
+#### Lesson 4: Spell the Words (`L5-M49-04`)
+
+- **Objective:** Spell a dictated word by choosing the correct prefix or suffix from a tray that includes one decoy.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — pick the right word part!
+- **Narration (teach):** Listen to the word, then build it — choose the correct prefix or suffix, and leave out the one that doesn't belong.
+- **Narration (model):** Listen. Pick the right tiles — the correct word part included — and leave the extra one behind!
+- **Narration (transition):** Your turn! Listen carefully, and leave out the word part that doesn't belong.
+- **Narration (close):** Excellent spelling! You always picked the right word part.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M49-16 | hear “distrust” → build \| tray dis t r u s t mis \| answer **distrust** |
+| Q-M49-17 | hear “misplace” → build \| tray mis pl a ce dis \| answer **misplace** |
+| Q-M49-18 | hear “pretest” → build \| tray pre t e s t mis \| answer **pretest** |
+| Q-M49-19 | hear “kindness” → build \| tray k i n d ness ment \| answer **kindness** |
+| Q-M49-20 | hear “payment” → build \| tray p ay ment ness \| answer **payment** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M49-04-1 | hear “shipment” → build \| tray sh i p ment ness \| answer **shipment** |  |
+| AS-M49-04-2 | hear “sadness” → build \| tray s a d ness ment \| answer **sadness** |  |
+
+#### Lesson 5: More Practice (`L5-M49-05`)
+
+- **Objective:** Practise all five word parts together across more words.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More practice, Detective — mixing every word part together now!
+- **Narration (teach):** Remember what each word part means, and listen for the one this word actually uses.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn! Use everything you've learned.
+- **Narration (close):** Fantastic! You know all five word parts now.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M49-21 | sound: preschool \| options preschool, dischool \| answer **preschool** |
+| Q-M49-22 | sound: displease \| options displease, misplease \| answer **displease** |
+| Q-M49-23 | sound: mistrust \| options mistrust, pretrust \| answer **mistrust** |
+| Q-M49-24 | sound: darkness \| options darkness, darkment \| answer **darkness** |
+| Q-M49-25 | sound: movement \| options movement, moveness \| answer **movement** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M49-05-1 | sound: statement \| options statement, stateness \| answer **statement** |  |
+| AS-M49-05-2 | sound: fairness \| options fairness, fairment \| answer **fairness** |  |
+
+#### Lesson 6: More Prefixes & Suffixes Challenge (`L5-M49-06`)
+
+- **Objective:** Demonstrate independent mastery of dis-, pre-, mis-, -ness and -ment.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about dis-, pre-, mis-, -ness and -ment.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered more prefixes and suffixes.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M49-06-1 | sound: dislike \| options dislike, prelike \| answer **dislike** |  |
+| AS-M49-06-2 | sound: mistake \| options mistake, distake \| answer **mistake** |  |
+| AS-M49-06-3 | sound: kindness \| options kindness, kindment \| answer **kindness** |  |
+| AS-M49-06-4 | hear “disagree” → build \| tray dis a g r ee \| answer **disagree** |  |
+| AS-M49-06-5 | hear “payment” → build \| tray p ay ment \| answer **payment** |  |
+| AS-M49-06-6 | hear “misread” → build \| tray mis r ea d \| answer **misread** |  |
+| AS-M49-06-7 | hear “preheat” → build \| tray pre h ea t \| answer **preheat** |  |
+| AS-M49-06-8 | hear “shipment” → build \| tray sh i p ment \| answer **shipment** |  |
 
 ## Content library
 

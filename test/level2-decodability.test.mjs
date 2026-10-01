@@ -74,6 +74,7 @@ const GRAPHEMES_BY_MODULE = {
   46: ["ue", "ew", "oo"], // Long-U Choices — three genuinely new graphemes, added to questionTypes.js's VOWEL_TEAMS set.
   47: [], // The Three Sounds of -ed — auditory-only (the spelling is always -ed); every word used is already decodable from single known letters, no new grapheme tile needed (same reasoning as Module 34's -ing/-ed suffix tiles).
   48: [], // Change Y Before a Suffix — -er/-est/-ly/-ness/-ing suffix tiles all decompose to already-known single letters, same reasoning as Module 34/47's suffix tiles; no new grapheme.
+  49: [], // More Prefixes & Suffixes — dis-/pre-/mis-/-ness/-ment all decompose to already-known single letters, same reasoning as Module 39; no new grapheme.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same
