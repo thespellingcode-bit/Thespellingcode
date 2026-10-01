@@ -16620,5 +16620,413 @@
     "retry_feedback": "Sound out the letters — remember ph says /f/.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-01-1",
+    "lesson_id": "L4-M39-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "unseal",
+      "reseal"
+    ],
+    "correct_answer": "unseal",
+    "audio_asset": "say:unseal",
+    "feedback": "Yes! It's unseal.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-01-2",
+    "lesson_id": "L4-M39-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "uncap",
+      "recap"
+    ],
+    "correct_answer": "uncap",
+    "audio_asset": "say:uncap",
+    "feedback": "Yes! It's uncap.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-01-3",
+    "lesson_id": "L4-M39-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "unpack",
+      "repack"
+    ],
+    "correct_answer": "unpack",
+    "audio_asset": "say:unpack",
+    "feedback": "Yes! It's unpack.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-02-1",
+    "lesson_id": "L4-M39-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "reseal",
+      "unseal"
+    ],
+    "correct_answer": "reseal",
+    "audio_asset": "say:reseal",
+    "feedback": "Yes! It's reseal.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-02-2",
+    "lesson_id": "L4-M39-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "recap",
+      "uncap"
+    ],
+    "correct_answer": "recap",
+    "audio_asset": "say:recap",
+    "feedback": "Yes! It's recap.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-02-3",
+    "lesson_id": "L4-M39-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "repack",
+      "unpack"
+    ],
+    "correct_answer": "repack",
+    "audio_asset": "say:repack",
+    "feedback": "Yes! It's repack.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-03-1",
+    "lesson_id": "L4-M39-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "careless",
+      "careful"
+    ],
+    "correct_answer": "careless",
+    "audio_asset": "say:careless",
+    "feedback": "Yes! It's careless.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-03-2",
+    "lesson_id": "L4-M39-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "hopeless",
+      "hopeful"
+    ],
+    "correct_answer": "hopeless",
+    "audio_asset": "say:hopeless",
+    "feedback": "Yes! It's hopeless.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-03-3",
+    "lesson_id": "L4-M39-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "harmful",
+      "harmless"
+    ],
+    "correct_answer": "harmful",
+    "audio_asset": "say:harmful",
+    "feedback": "Yes! It's harmful.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-04-1",
+    "lesson_id": "L4-M39-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:undo",
+    "letters": [
+      "un",
+      "d",
+      "o"
+    ],
+    "answer_tiles": [
+      "un",
+      "d",
+      "o"
+    ],
+    "correct_answer": "undo",
+    "feedback": "Yes! You built undo.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-04-2",
+    "lesson_id": "L4-M39-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:painful",
+    "letters": [
+      "p",
+      "a",
+      "i",
+      "n",
+      "ful"
+    ],
+    "answer_tiles": [
+      "p",
+      "a",
+      "i",
+      "n",
+      "ful"
+    ],
+    "correct_answer": "painful",
+    "feedback": "Yes! You built painful.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-05-1",
+    "lesson_id": "L4-M39-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:redo",
+    "letters": [
+      "re",
+      "d",
+      "o",
+      "un"
+    ],
+    "answer_tiles": [
+      "re",
+      "d",
+      "o"
+    ],
+    "correct_answer": "redo",
+    "feedback": "Yes! You built redo.",
+    "retry_feedback": "Listen again and pick the right word part — leave the extra tile behind.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-05-2",
+    "lesson_id": "L4-M39-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:helpless",
+    "letters": [
+      "h",
+      "e",
+      "l",
+      "p",
+      "less",
+      "ful"
+    ],
+    "answer_tiles": [
+      "h",
+      "e",
+      "l",
+      "p",
+      "less"
+    ],
+    "correct_answer": "helpless",
+    "feedback": "Yes! You built helpless.",
+    "retry_feedback": "Listen again and pick the right word part — leave the extra tile behind.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-06-1",
+    "lesson_id": "L4-M39-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "unload",
+      "reload"
+    ],
+    "correct_answer": "unload",
+    "audio_asset": "say:unload",
+    "feedback": "Yes! It's unload.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-06-2",
+    "lesson_id": "L4-M39-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "retie",
+      "untie"
+    ],
+    "correct_answer": "retie",
+    "audio_asset": "say:retie",
+    "feedback": "Yes! It's retie.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-06-3",
+    "lesson_id": "L4-M39-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "careless",
+      "careful"
+    ],
+    "correct_answer": "careless",
+    "audio_asset": "say:careless",
+    "feedback": "Yes! It's careless.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-06-4",
+    "lesson_id": "L4-M39-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "painless",
+      "painful"
+    ],
+    "correct_answer": "painless",
+    "audio_asset": "say:painless",
+    "feedback": "Yes! It's painless.",
+    "retry_feedback": "Listen again to the whole word, and think about what it means.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-06-5",
+    "lesson_id": "L4-M39-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:unwrap",
+    "letters": [
+      "un",
+      "w",
+      "r",
+      "a",
+      "p"
+    ],
+    "answer_tiles": [
+      "un",
+      "w",
+      "r",
+      "a",
+      "p"
+    ],
+    "correct_answer": "unwrap",
+    "feedback": "Yes! You built unwrap.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-06-6",
+    "lesson_id": "L4-M39-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:reload",
+    "letters": [
+      "re",
+      "l",
+      "o",
+      "a",
+      "d"
+    ],
+    "answer_tiles": [
+      "re",
+      "l",
+      "o",
+      "a",
+      "d"
+    ],
+    "correct_answer": "reload",
+    "feedback": "Yes! You built reload.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-06-7",
+    "lesson_id": "L4-M39-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:helpless",
+    "letters": [
+      "h",
+      "e",
+      "l",
+      "p",
+      "less"
+    ],
+    "answer_tiles": [
+      "h",
+      "e",
+      "l",
+      "p",
+      "less"
+    ],
+    "correct_answer": "helpless",
+    "feedback": "Yes! You built helpless.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M39-06-8",
+    "lesson_id": "L4-M39-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:quickly",
+    "letters": [
+      "qu",
+      "i",
+      "ck",
+      "ly"
+    ],
+    "answer_tiles": [
+      "qu",
+      "i",
+      "ck",
+      "ly"
+    ],
+    "correct_answer": "quickly",
+    "feedback": "Yes! You built quickly.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

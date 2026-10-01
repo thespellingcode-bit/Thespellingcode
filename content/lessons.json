@@ -3569,5 +3569,119 @@
       "transition": "",
       "close": "Case closed! You've mastered ph for /f/."
     }
+  },
+  {
+    "lesson_id": "L4-M39-01",
+    "module_id": 39,
+    "number": 1,
+    "title": "Meet un-",
+    "skill": "spelling",
+    "objective": "Recognise un- at the start of a word as meaning 'not' or 'the opposite of'.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A new word trick, Detective! The letters un- at the start of a word mean 'not' or 'do the opposite'.",
+      "teach": "unwrap means the opposite of wrap. undo means the opposite of do. un- never changes the spelling of the word it joins — it just joins on the front.",
+      "model": "Listen. Which spelling matches the word you heard?",
+      "transition": "Your turn, Detective! Pick the word that matches what you hear.",
+      "close": "Case closed! You know what un- means."
+    }
+  },
+  {
+    "lesson_id": "L4-M39-02",
+    "module_id": 39,
+    "number": 2,
+    "title": "Meet re-",
+    "skill": "spelling",
+    "objective": "Recognise re- at the start of a word as meaning 'again'.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Another word trick! The letters re- at the start of a word mean 'again'.",
+      "teach": "redo means do again. reload means load again. re- never changes the spelling of the word it joins either — just joins on the front.",
+      "model": "Listen. Which spelling matches the word you heard?",
+      "transition": "Your turn, Detective! Pick the word that matches what you hear.",
+      "close": "Case closed! You know what re- means."
+    }
+  },
+  {
+    "lesson_id": "L4-M39-03",
+    "module_id": 39,
+    "number": 3,
+    "title": "Meet -ful and -less",
+    "skill": "spelling",
+    "objective": "Recognise -ful as 'full of' and -less as 'without' at the end of a word — opposite meanings.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two tricky endings, Detective! -ful means 'full of', and -less means 'without'.",
+      "teach": "careful means full of care. careless means without care — the exact opposite! Listen carefully, because these two endings can sound similar but mean opposite things.",
+      "model": "Listen. Which spelling matches the word you heard?",
+      "transition": "Your turn, Detective! Listen carefully — -ful and -less mean opposite things.",
+      "close": "Case closed! You can tell -ful and -less apart."
+    }
+  },
+  {
+    "lesson_id": "L4-M39-04",
+    "module_id": 39,
+    "number": 4,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build whole prefixed or suffixed words, with the word part as a single tile.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some whole words — prefix or suffix and all!",
+      "teach": "Listen to the whole word, then tap the tiles in order. The word part (un-, re-, -ful, -less or -ly) gets its own single tile — the rest of the word keeps its own spelling.",
+      "model": "Listen. Watch how the tiles build the word, word part included.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! The base word's spelling never changed."
+    }
+  },
+  {
+    "lesson_id": "L4-M39-05",
+    "module_id": 39,
+    "number": 5,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated word by choosing the correct prefix or suffix from a tray that includes one decoy.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — pick the right word part!",
+      "teach": "Listen to the word, then build it — choose the correct prefix or suffix, and leave out the one that doesn't belong.",
+      "model": "Listen. Pick the right tiles — the correct word part included — and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully, and leave out the word part that doesn't belong.",
+      "close": "Excellent spelling! You always picked the right word part."
+    }
+  },
+  {
+    "lesson_id": "L4-M39-06",
+    "module_id": 39,
+    "number": 6,
+    "title": "Prefixes & Suffixes Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of un-, re-, -ful, -less and -ly across recognition and building.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about un-, re-, -ful, -less and -ly.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered prefixes and suffixes."
+    }
   }
 ]

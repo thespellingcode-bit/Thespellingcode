@@ -64,6 +64,7 @@ const GRAPHEMES_BY_MODULE = {
   36: [], // Y as a Vowel — y itself is already a known letter (Level 2 Module 14); this module teaches a new ROLE for it, not a new grapheme string.
   37: [], // Plurals — s/es/ies endings are built from already-known single letters; no new grapheme tile.
   38: ["ph"], // ph for /f/ — a genuine new digraph tile (added to questionTypes.js's DIGRAPHS set too).
+  39: [], // Prefixes & Suffixes — un-, re-, -ful, -less, -ly are all spelled from already-known single letters; no new grapheme tile.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same
