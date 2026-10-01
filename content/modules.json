@@ -51,5 +51,6 @@
   { "module_id": 50, "level_id": 5, "module_name": "Word Families", "module_goal": "Choose which member of a word family (e.g. act/action/active/actor) fits a sentence, using the root's job in the sentence as the clue.", "units": 5, "active": true },
   { "module_id": 51, "level_id": 5, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 5 mastery across every spelling choice and morphology skill learned.", "units": 5, "active": true },
   { "module_id": 52, "level_id": 6, "module_name": "Greek & Latin Roots", "module_goal": "Use common Greek and Latin roots (bio, tele, graph, photo, scope, port, dict, spect) as a clue to a word's meaning and spelling.", "units": 5, "active": true },
-  { "module_id": 53, "level_id": 6, "module_name": "Advanced Vowel Patterns", "module_goal": "Recognise and spell rarer long-vowel patterns — eigh, augh, ough and ear for /er/ — as a set of words to learn by heart.", "units": 5, "active": true }
+  { "module_id": 53, "level_id": 6, "module_name": "Advanced Vowel Patterns", "module_goal": "Recognise and spell rarer long-vowel patterns — eigh, augh, ough and ear for /er/ — as a set of words to learn by heart.", "units": 5, "active": true },
+  { "module_id": 54, "level_id": 6, "module_name": "Homophones", "module_goal": "Choose the correct homophone (same sound, different spelling and meaning) based on what the sentence means.", "units": 6, "active": true }
 ]

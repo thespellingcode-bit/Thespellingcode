@@ -21814,5 +21814,336 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-01-1",
+    "lesson_id": "L6-M54-01",
+    "type": "spelling_choice",
+    "prompt": "___ not ready yet.",
+    "options": [
+      "They're",
+      "Their"
+    ],
+    "correct_answer": "They're",
+    "audio_asset": "say:They're",
+    "wordFamily": true,
+    "feedback": "Yes! \"They're\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Homophone sets are a small closed group (there/their/they're is only 3 words total) — unlike other modules, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M54-01-2",
+    "lesson_id": "L6-M54-01",
+    "type": "spelling_choice",
+    "prompt": "Is that ___ car?",
+    "options": [
+      "their",
+      "there"
+    ],
+    "correct_answer": "their",
+    "audio_asset": "say:their",
+    "wordFamily": true,
+    "feedback": "Yes! \"their\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Homophone sets are a small closed group (there/their/they're is only 3 words total) — unlike other modules, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M54-01-3",
+    "lesson_id": "L6-M54-01",
+    "type": "spelling_choice",
+    "prompt": "Sit ___, please.",
+    "options": [
+      "there",
+      "they're"
+    ],
+    "correct_answer": "there",
+    "audio_asset": "say:there",
+    "wordFamily": true,
+    "feedback": "Yes! \"there\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Homophone sets are a small closed group (there/their/they're is only 3 words total) — unlike other modules, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M54-02-1",
+    "lesson_id": "L6-M54-02",
+    "type": "spelling_choice",
+    "prompt": "He has ___ cats and one dog.",
+    "options": [
+      "two",
+      "to"
+    ],
+    "correct_answer": "two",
+    "audio_asset": "say:two",
+    "wordFamily": true,
+    "feedback": "Yes! \"two\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Homophone sets are a small closed group (there/their/they're is only 3 words total) — unlike other modules, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M54-02-2",
+    "lesson_id": "L6-M54-02",
+    "type": "spelling_choice",
+    "prompt": "This cake is ___ sweet.",
+    "options": [
+      "too",
+      "two"
+    ],
+    "correct_answer": "too",
+    "audio_asset": "say:too",
+    "wordFamily": true,
+    "feedback": "Yes! \"too\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Homophone sets are a small closed group (there/their/they're is only 3 words total) — unlike other modules, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M54-03-1",
+    "lesson_id": "L6-M54-03",
+    "type": "spelling_choice",
+    "prompt": "I like ___ shoes.",
+    "options": [
+      "your",
+      "you're"
+    ],
+    "correct_answer": "your",
+    "audio_asset": "say:your",
+    "wordFamily": true,
+    "feedback": "Yes! \"your\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Homophone sets are a small closed group (there/their/they're is only 3 words total) — unlike other modules, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M54-03-2",
+    "lesson_id": "L6-M54-03",
+    "type": "spelling_choice",
+    "prompt": "That answer is ___.",
+    "options": [
+      "right",
+      "write"
+    ],
+    "correct_answer": "right",
+    "audio_asset": "say:right",
+    "wordFamily": true,
+    "feedback": "Yes! \"right\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Homophone sets are a small closed group (there/their/they're is only 3 words total) — unlike other modules, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M54-04-1",
+    "lesson_id": "L6-M54-04",
+    "type": "spelling_choice",
+    "prompt": "This is ___ house.",
+    "options": [
+      "our",
+      "hour"
+    ],
+    "correct_answer": "our",
+    "audio_asset": "say:our",
+    "wordFamily": true,
+    "feedback": "Yes! \"our\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-04-2",
+    "lesson_id": "L6-M54-04",
+    "type": "spelling_choice",
+    "prompt": "Did you ___ my new friend?",
+    "options": [
+      "meet",
+      "meat"
+    ],
+    "correct_answer": "meet",
+    "audio_asset": "say:meet",
+    "wordFamily": true,
+    "feedback": "Yes! \"meet\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION",
+    "review_flag": "Homophone sets are a small closed group (there/their/they're is only 3 words total) — unlike other modules, this assessment can't avoid reusing a practice word in a fresh sentence context; the transfer is in the NEW sentence, not a new word."
+  },
+  {
+    "assessment_id": "AS-M54-05-1",
+    "lesson_id": "L6-M54-05",
+    "type": "spelling_choice",
+    "prompt": "___ coming to the party.",
+    "options": [
+      "They're",
+      "Their"
+    ],
+    "correct_answer": "They're",
+    "audio_asset": "say:They're",
+    "wordFamily": true,
+    "feedback": "Yes! \"They're\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-05-2",
+    "lesson_id": "L6-M54-05",
+    "type": "spelling_choice",
+    "prompt": "I need ___ finish my homework.",
+    "options": [
+      "to",
+      "too"
+    ],
+    "correct_answer": "to",
+    "audio_asset": "say:to",
+    "wordFamily": true,
+    "feedback": "Yes! \"to\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-06-1",
+    "lesson_id": "L6-M54-06",
+    "type": "spelling_choice",
+    "prompt": "___ going to the park.",
+    "options": [
+      "They're",
+      "There"
+    ],
+    "correct_answer": "They're",
+    "audio_asset": "say:They're",
+    "wordFamily": true,
+    "feedback": "Yes! \"They're\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-06-2",
+    "lesson_id": "L6-M54-06",
+    "type": "spelling_choice",
+    "prompt": "I want ___ go home.",
+    "options": [
+      "to",
+      "too"
+    ],
+    "correct_answer": "to",
+    "audio_asset": "say:to",
+    "wordFamily": true,
+    "feedback": "Yes! \"to\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-06-3",
+    "lesson_id": "L6-M54-06",
+    "type": "spelling_choice",
+    "prompt": "I have ___ dogs.",
+    "options": [
+      "two",
+      "too"
+    ],
+    "correct_answer": "two",
+    "audio_asset": "say:two",
+    "wordFamily": true,
+    "feedback": "Yes! \"two\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-06-4",
+    "lesson_id": "L6-M54-06",
+    "type": "spelling_choice",
+    "prompt": "Is this ___ bag?",
+    "options": [
+      "your",
+      "you're"
+    ],
+    "correct_answer": "your",
+    "audio_asset": "say:your",
+    "wordFamily": true,
+    "feedback": "Yes! \"your\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-06-5",
+    "lesson_id": "L6-M54-06",
+    "type": "spelling_choice",
+    "prompt": "Please ___ your name here.",
+    "options": [
+      "write",
+      "right"
+    ],
+    "correct_answer": "write",
+    "audio_asset": "say:write",
+    "wordFamily": true,
+    "feedback": "Yes! \"write\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-06-6",
+    "lesson_id": "L6-M54-06",
+    "type": "spelling_choice",
+    "prompt": "There is ___ time left.",
+    "options": [
+      "no",
+      "know"
+    ],
+    "correct_answer": "no",
+    "audio_asset": "say:no",
+    "wordFamily": true,
+    "feedback": "Yes! \"no\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-06-7",
+    "lesson_id": "L6-M54-06",
+    "type": "spelling_choice",
+    "prompt": "Let's ___ at the library.",
+    "options": [
+      "meet",
+      "meat"
+    ],
+    "correct_answer": "meet",
+    "audio_asset": "say:meet",
+    "wordFamily": true,
+    "feedback": "Yes! \"meet\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M54-06-8",
+    "lesson_id": "L6-M54-06",
+    "type": "spelling_choice",
+    "prompt": "It took an ___ to finish.",
+    "options": [
+      "hour",
+      "our"
+    ],
+    "correct_answer": "hour",
+    "audio_asset": "say:hour",
+    "wordFamily": true,
+    "feedback": "Yes! \"hour\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
   }
 ]

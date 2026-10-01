@@ -79,6 +79,7 @@ const GRAPHEMES_BY_MODULE = {
   51: [], // Review & Assessment — cumulative review, no new grapheme.
   52: [], // Greek & Latin Roots — every word used is an ordinary already-spellable real word built from already-known graphemes (ph, ea, oa...); no new grapheme, and this module's skill is meaning-based word choice, not decoding a new pattern.
   53: ["eigh", "augh", "ough", "ear"], // Advanced Vowel Patterns — four genuinely new graphemes (eigh/augh/ough added to VOWEL_TEAMS, ear added to R_CONTROLLED since it's the same "vowel swallowed by r" shape, just three letters instead of two).
+  54: [], // Homophones — every word is an ordinary already-spellable real word (there, their, they're, to, too, two...); no new grapheme, and the sentence context lives in the item's prompt field, which this test doesn't scan (same as Module 50's wordFamily items).
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

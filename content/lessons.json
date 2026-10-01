@@ -5070,5 +5070,119 @@
       "transition": "",
       "close": "Case closed! You've mastered these advanced vowel patterns."
     }
+  },
+  {
+    "lesson_id": "L6-M54-01",
+    "module_id": 54,
+    "number": 1,
+    "title": "Meet there, their & they're",
+    "skill": "spelling",
+    "objective": "Choose there, their or they're based on a sentence's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Homophones, Detective! Words that SOUND exactly the same but are spelled differently and mean different things.",
+      "teach": "there is a place. their means belonging to them. they're is short for 'they are'. They all sound the same — only meaning tells you which to use.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn, Detective! Use the sentence's meaning as your clue.",
+      "close": "Case closed! You know there, their and they're."
+    }
+  },
+  {
+    "lesson_id": "L6-M54-02",
+    "module_id": 54,
+    "number": 2,
+    "title": "Meet to, too & two",
+    "skill": "spelling",
+    "objective": "Choose to, too or two based on a sentence's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Three more homophones, Detective! to, too and two all sound the same.",
+      "teach": "to points somewhere ('go to school'). too means 'also' or 'very' ('me too', 'too loud'). two is the number 2.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the sentence's meaning as your clue.",
+      "close": "Case closed! You know to, too and two."
+    }
+  },
+  {
+    "lesson_id": "L6-M54-03",
+    "module_id": 54,
+    "number": 3,
+    "title": "Meet your/you're & write/right",
+    "skill": "spelling",
+    "objective": "Choose your/you're and write/right based on a sentence's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Four more homophones, Detective! your/you're and write/right.",
+      "teach": "your means belonging to you. you're is short for 'you are'. write means to put words on paper. right means correct, or a direction.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the sentence's meaning as your clue.",
+      "close": "Case closed! You know your, you're, write and right."
+    }
+  },
+  {
+    "lesson_id": "L6-M54-04",
+    "module_id": 54,
+    "number": 4,
+    "title": "Meet know/no, meet/meat & hour/our",
+    "skill": "spelling",
+    "objective": "Choose know/no, meet/meat and hour/our based on a sentence's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Three more homophone pairs, Detective! know/no, meet/meat and hour/our.",
+      "teach": "know means to understand something. no is the opposite of yes. meet means to come together with someone. meat is food from an animal. hour is a unit of time. our means belonging to us.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the sentence's meaning as your clue.",
+      "close": "Case closed! All of today's homophones mastered."
+    }
+  },
+  {
+    "lesson_id": "L6-M54-05",
+    "module_id": 54,
+    "number": 5,
+    "title": "More Practice",
+    "skill": "spelling",
+    "objective": "Practise all eight homophone pairs together across more sentences.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More practice, Detective — mixing every homophone together now!",
+      "teach": "Read each sentence carefully. The meaning always tells you which spelling is correct.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use everything you've learned.",
+      "close": "Fantastic! You're a homophone expert."
+    }
+  },
+  {
+    "lesson_id": "L6-M54-06",
+    "module_id": 54,
+    "number": 6,
+    "title": "Homophones Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of choosing the correct homophone for a sentence.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about homophones.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered homophones."
+    }
   }
 ]

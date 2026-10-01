@@ -22300,5 +22300,455 @@
     "retry_feedback": "Listen again and place the tiles in order.",
     "skill": "word_building",
     "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-01",
+    "lesson_id": "L6-M54-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "___ going to the park.",
+    "options": [
+      "They're",
+      "There"
+    ],
+    "correct_answer": "They're",
+    "audio_asset": "say:They're",
+    "wordFamily": true,
+    "feedback": "Yes! \"They're\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-02",
+    "lesson_id": "L6-M54-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Put the book over ___.",
+    "options": [
+      "there",
+      "their"
+    ],
+    "correct_answer": "there",
+    "audio_asset": "say:there",
+    "wordFamily": true,
+    "feedback": "Yes! \"there\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-03",
+    "lesson_id": "L6-M54-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "That is ___ house.",
+    "options": [
+      "their",
+      "there"
+    ],
+    "correct_answer": "their",
+    "audio_asset": "say:their",
+    "wordFamily": true,
+    "feedback": "Yes! \"their\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-04",
+    "lesson_id": "L6-M54-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "___ my best friends.",
+    "options": [
+      "They're",
+      "Their"
+    ],
+    "correct_answer": "They're",
+    "audio_asset": "say:They're",
+    "wordFamily": true,
+    "feedback": "Yes! \"They're\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-05",
+    "lesson_id": "L6-M54-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "I left my keys over ___.",
+    "options": [
+      "there",
+      "they're"
+    ],
+    "correct_answer": "there",
+    "audio_asset": "say:there",
+    "wordFamily": true,
+    "feedback": "Yes! \"there\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-06",
+    "lesson_id": "L6-M54-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "I want ___ go home.",
+    "options": [
+      "to",
+      "too"
+    ],
+    "correct_answer": "to",
+    "audio_asset": "say:to",
+    "wordFamily": true,
+    "feedback": "Yes! \"to\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-07",
+    "lesson_id": "L6-M54-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "She is ___ tired to walk.",
+    "options": [
+      "too",
+      "to"
+    ],
+    "correct_answer": "too",
+    "audio_asset": "say:too",
+    "wordFamily": true,
+    "feedback": "Yes! \"too\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-08",
+    "lesson_id": "L6-M54-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "I have ___ dogs.",
+    "options": [
+      "two",
+      "too"
+    ],
+    "correct_answer": "two",
+    "audio_asset": "say:two",
+    "wordFamily": true,
+    "feedback": "Yes! \"two\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-09",
+    "lesson_id": "L6-M54-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Can you come ___ my house?",
+    "options": [
+      "to",
+      "two"
+    ],
+    "correct_answer": "to",
+    "audio_asset": "say:to",
+    "wordFamily": true,
+    "feedback": "Yes! \"to\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-10",
+    "lesson_id": "L6-M54-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Me ___!",
+    "options": [
+      "too",
+      "to"
+    ],
+    "correct_answer": "too",
+    "audio_asset": "say:too",
+    "wordFamily": true,
+    "feedback": "Yes! \"too\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-11",
+    "lesson_id": "L6-M54-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "___ late for school!",
+    "options": [
+      "You're",
+      "Your"
+    ],
+    "correct_answer": "You're",
+    "audio_asset": "say:You're",
+    "wordFamily": true,
+    "feedback": "Yes! \"You're\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-12",
+    "lesson_id": "L6-M54-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Is this ___ bag?",
+    "options": [
+      "your",
+      "you're"
+    ],
+    "correct_answer": "your",
+    "audio_asset": "say:your",
+    "wordFamily": true,
+    "feedback": "Yes! \"your\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-13",
+    "lesson_id": "L6-M54-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Please ___ your name here.",
+    "options": [
+      "write",
+      "right"
+    ],
+    "correct_answer": "write",
+    "audio_asset": "say:write",
+    "wordFamily": true,
+    "feedback": "Yes! \"write\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-14",
+    "lesson_id": "L6-M54-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Turn ___ at the corner.",
+    "options": [
+      "right",
+      "write"
+    ],
+    "correct_answer": "right",
+    "audio_asset": "say:right",
+    "wordFamily": true,
+    "feedback": "Yes! \"right\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-15",
+    "lesson_id": "L6-M54-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "___ going to love this!",
+    "options": [
+      "You're",
+      "Your"
+    ],
+    "correct_answer": "You're",
+    "audio_asset": "say:You're",
+    "wordFamily": true,
+    "feedback": "Yes! \"You're\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-16",
+    "lesson_id": "L6-M54-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "I don't ___ the answer.",
+    "options": [
+      "know",
+      "no"
+    ],
+    "correct_answer": "know",
+    "audio_asset": "say:know",
+    "wordFamily": true,
+    "feedback": "Yes! \"know\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-17",
+    "lesson_id": "L6-M54-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "There is ___ time left.",
+    "options": [
+      "no",
+      "know"
+    ],
+    "correct_answer": "no",
+    "audio_asset": "say:no",
+    "wordFamily": true,
+    "feedback": "Yes! \"no\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-18",
+    "lesson_id": "L6-M54-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Let's ___ at the library.",
+    "options": [
+      "meet",
+      "meat"
+    ],
+    "correct_answer": "meet",
+    "audio_asset": "say:meet",
+    "wordFamily": true,
+    "feedback": "Yes! \"meet\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-19",
+    "lesson_id": "L6-M54-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "She doesn't eat ___.",
+    "options": [
+      "meat",
+      "meet"
+    ],
+    "correct_answer": "meat",
+    "audio_asset": "say:meat",
+    "wordFamily": true,
+    "feedback": "Yes! \"meat\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-20",
+    "lesson_id": "L6-M54-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "It took an ___ to finish.",
+    "options": [
+      "hour",
+      "our"
+    ],
+    "correct_answer": "hour",
+    "audio_asset": "say:hour",
+    "wordFamily": true,
+    "feedback": "Yes! \"hour\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-21",
+    "lesson_id": "L6-M54-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "I ___ how to swim.",
+    "options": [
+      "know",
+      "no"
+    ],
+    "correct_answer": "know",
+    "audio_asset": "say:know",
+    "wordFamily": true,
+    "feedback": "Yes! \"know\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-22",
+    "lesson_id": "L6-M54-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "We waited for an ___.",
+    "options": [
+      "hour",
+      "our"
+    ],
+    "correct_answer": "hour",
+    "audio_asset": "say:hour",
+    "wordFamily": true,
+    "feedback": "Yes! \"hour\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-23",
+    "lesson_id": "L6-M54-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Can I have ___ apples?",
+    "options": [
+      "two",
+      "too"
+    ],
+    "correct_answer": "two",
+    "audio_asset": "say:two",
+    "wordFamily": true,
+    "feedback": "Yes! \"two\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-24",
+    "lesson_id": "L6-M54-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "___ shoes are by the door.",
+    "options": [
+      "Your",
+      "You're"
+    ],
+    "correct_answer": "Your",
+    "audio_asset": "say:Your",
+    "wordFamily": true,
+    "feedback": "Yes! \"Your\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M54-25",
+    "lesson_id": "L6-M54-05",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Please stand over ___.",
+    "options": [
+      "there",
+      "their"
+    ],
+    "correct_answer": "there",
+    "audio_asset": "say:there",
+    "wordFamily": true,
+    "feedback": "Yes! \"there\" fits best here.",
+    "retry_feedback": "Read the sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
   }
 ]
