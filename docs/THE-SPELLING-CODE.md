@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–30 (C or K?, K or CK?, G or J?) built |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–31 (C or K?, K or CK?, G or J?, GE or DGE?) built |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,7 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
-| Level 4 “Spelling Detective”, Modules 28–30 (C or K?, K or CK?, G or J?) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
+| Level 4 “Spelling Detective”, Modules 28–31 (C or K?, K or CK?, G or J?, GE or DGE?) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -89,13 +89,16 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Level 4 curriculum design (Modules 28–30 built; Modules 31–40 planned, not yet built)
+### Level 4 curriculum design (Modules 28–31 built; Modules 32–40 planned, not yet built)
 - **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
 - **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
 - **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
 - **Module 28, C or K?** — the first module, and the one the design problem above was written for. C before a/o/u, k before e/i/y. Needed no new word pictures at all — cat, cup, kid and cab were all already illustrated from Level 1/2, so Read the Words reuses them directly.
 - **Module 29, K or CK?** — same shape, applied to the end of a word instead of the start: ck directly after a short vowel, plain k after anything else (a consonant, a long vowel, or a vowel team). Word choice deliberately stayed away from silent-e words like "bike"/"cake" — this module's generic content-authoring helpers (`wrongOf()`, `wb()`) assume the target word ends literally in "k" or "ck" with nothing after it, and a CVCe word's final letter is the silent "e", not "k"; rather than special-case that shape now, the word list simply used only words ending directly in the sound (milk, pink, book, desk...). Confirmed live that the word_build demo correctly explains *both* directions of the choice (ck-is-right-here vs k-is-right-here), not just one. Added 2 new word pictures (sock, book).
-- **Module 30, G or J? — simplified deliberately.** The full g/j ambiguity before e/i/y (gem, giant vs jet, jig — English is genuinely irregular here, both spellings are common) is NOT what this module tests; it teaches the one clean, reliable rule instead — word-initial /j/ is *almost always* j (jam, jog, jump), regardless of the vowel that follows, unlike Modules 28/29's a/o/u-vs-e/i/y split. The wrong option in each `spelling_choice`/`word_build` item is always the g-swapped form (jet → get, jam → gam); a few of these happen to collide with unrelated real words ("get" is a real word, just not what was spoken) — left as-is rather than avoided, since the mechanic still correctly tests "does this spelling match the sound you heard," and precedent throughout this project has been to accept minor imperfections like this rather than over-engineer around them. Thinnest picture pool yet (jug, jet — both already existed from Level 1/2) — Read the Words reuses them for both practice and assessment. (free vs paid) — business decision made 2026-09-30, not yet built
+- **Module 30, G or J? — simplified deliberately.** The full g/j ambiguity before e/i/y (gem, giant vs jet, jig — English is genuinely irregular here, both spellings are common) is NOT what this module tests; it teaches the one clean, reliable rule instead — word-initial /j/ is *almost always* j (jam, jog, jump), regardless of the vowel that follows, unlike Modules 28/29's a/o/u-vs-e/i/y split. The wrong option in each `spelling_choice`/`word_build` item is always the g-swapped form (jet → get, jam → gam); a few of these happen to collide with unrelated real words ("get" is a real word, just not what was spoken) — left as-is rather than avoided, since the mechanic still correctly tests "does this spelling match the sound you heard," and precedent throughout this project has been to accept minor imperfections like this rather than over-engineer around them. Thinnest picture pool yet (jug, jet — both already existed from Level 1/2) — Read the Words reuses them for both practice and assessment.
+- **Module 31, GE or DGE?** — same shape as Module 29's k/ck, applied to /j/ instead of /k/: dge directly after a short vowel (bridge, badge), plain ge after anything else — a consonant, or the ordinary silent-e long-vowel pattern (cage, orange, sponge). "ge" is treated as a single ending tile for symmetry with "dge" (the same simplification Module 29 made for CVCe k-words), even though a plain "cage" could in principle just use separate g/e letter tiles like Module 19's silent-e words — keeping it as one 2-letter tile is what makes "which ending, ge or dge" a clean, directly comparable choice. Confirmed live that the word_build demo explains both directions correctly (bridge → dge is right, ge is the decoy; cage → ge is right, dge is the decoy). Added 2 new word pictures (orange, sponge); dropped "stage" — its emoji is drama masks, which reads as "masks"/"drama," not clearly "stage."
+
+### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
 - Every module still unlocks only after the previous one is fully mastered (`moduleUnlocked` in `ChildHome.jsx`) — that gating is unchanged; what's new is a *payment* gate still to be added at the Level 1 → Level 2 boundary specifically.
 - **Not yet implemented:** there is no paywall in the app yet. Level 2 (Modules 9–14, all built) is currently reachable the same way Level 1 is, gated only by mastery — building the actual Level 2 payment gate is on hold until the payment gateway and pricing are decided (see “Monetisation” below).
@@ -175,6 +178,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Owner asked to build Level 4. Drafted `docs/plans/level-4.md` (Spelling Detective, 13 modules) and built Module 28 (C or K?) — the first module in the app to grade a spelling *choice*, via a new `spelling_choice` activity type and `word_build`'s decoy tiles repurposed to hold the competing spelling rather than a random letter. Live-verified both mechanics end to end.
 - Built Level 4 Module 29 (K or CK?), the same choice-grading shape applied to the end of a word. Added 2 new word pictures (sock, book).
 - Built Level 4 Module 30 (G or J?) — deliberately scoped to the one reliable rule (word-initial /j/ is almost always j) rather than the full, genuinely irregular g/j-before-e/i/y ambiguity. Needed no new word pictures — jug and jet were already illustrated.
+- Built Level 4 Module 31 (GE or DGE?) — the same k/ck choice shape applied to /j/. Added 2 new word pictures (orange, sponge).
 
 ---
 
@@ -488,6 +492,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 28 | C or K? | **Live** | 5 | 20 | 21 |
 | 29 | K or CK? | **Live** | 5 | 21 | 21 |
 | 30 | G or J? | **Live** | 5 | 18 | 21 |
+| 31 | GE or DGE? | **Live** | 5 | 19 | 21 |
 
 ## Curriculum in full
 
@@ -4787,12 +4792,151 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M30-05-7 | read “jug” → picture \| options jug, shell, bus \| answer **jug** |  |
 | AS-M30-05-8 | read “jet” → picture \| options jet, duck, fish \| answer **jet** |  |
 
+### Module 31 — GE or DGE?
+
+*Goal:* Choose ge or dge for the /j/ sound at the end of a word, based on whether a short vowel comes directly before it.
+
+#### Lesson 1: Meet the Choice (`L4-M31-01`)
+
+- **Objective:** Choose ge or dge for the /j/ sound at the end of a word, based on whether a short vowel comes directly before it.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** New case, Detective! Today: ge or dge at the end of a word?
+- **Narration (teach):** Right after a short vowel, /j/ is spelled dge — bridge, badge, edge. When something else comes before /j/ — a consonant, or a silent-e long vowel — it's just ge — cage, orange, sponge.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Listen for what comes right before the /j/ sound.
+- **Narration (close):** Case closed! You know when to use ge and when to use dge.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M31-01 | sound: bridge \| options bridge, brige \| answer **bridge** |
+| Q-M31-02 | sound: edge \| options edge, ege \| answer **edge** |
+| Q-M31-03 | sound: badge \| options badge, bage \| answer **badge** |
+| Q-M31-04 | sound: cage \| options cage, cadge \| answer **cage** |
+| Q-M31-05 | sound: huge \| options huge, hudge \| answer **huge** |
+| Q-M31-06 | sound: orange \| options orange, orandge \| answer **orange** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M31-01-1 | sound: ridge \| options ridge, rige \| answer **ridge** |  |
+| AS-M31-01-2 | sound: lodge \| options lodge, loge \| answer **lodge** |  |
+| AS-M31-01-3 | sound: sponge \| options sponge, spondge \| answer **sponge** |  |
+| AS-M31-01-4 | sound: large \| options large, lardge \| answer **large** |  |
+
+#### Lesson 2: Blend & Build (`L4-M31-02`)
+
+- **Objective:** Build ge/dge words, choosing the correct ending from a tray offering both.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Building mission — the tray has both ge and dge. Pick the right ending!
+- **Narration (teach):** Listen to the word, then build it — only one ending belongs.
+- **Narration (model):** Listen. Watch which ending gets picked, and why.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! You chose the right ending every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M31-07 | hear “bridge” → build \| tray b r i dge ge \| answer **bridge** |
+| Q-M31-08 | hear “badge” → build \| tray b a dge ge \| answer **badge** |
+| Q-M31-09 | hear “cage” → build \| tray c a ge dge \| answer **cage** |
+| Q-M31-10 | hear “page” → build \| tray p a ge dge \| answer **page** |
+| Q-M31-11 | hear “fudge” → build \| tray f u dge ge \| answer **fudge** |
+| Q-M31-12 | hear “change” → build \| tray c h a n ge dge \| answer **change** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M31-02-1 | hear “dodge” → build \| tray d o dge ge \| answer **dodge** |  |
+| AS-M31-02-2 | hear “judge” → build \| tray j u dge ge \| answer **judge** |  |
+| AS-M31-02-3 | hear “huge” → build \| tray h u ge dge \| answer **huge** |  |
+| AS-M31-02-4 | hear “strange” → build \| tray s t r a n ge dge \| answer **strange** |  |
+
+#### Lesson 3: Read the Words (`L4-M31-03`)
+
+- **Objective:** Read a ge/dge word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! Both endings show up today.
+- **Narration (teach):** Read the word, then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You read every ge and dge word correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M31-13 | read “bridge” → picture \| options bridge, bus, hen \| answer **bridge** |
+| Q-M31-14 | read “orange” → picture \| options orange, fish, pig \| answer **orange** |
+| Q-M31-15 | read “sponge” → picture \| options sponge, frog, hen \| answer **sponge** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M31-03-1 | read “orange” → picture \| options orange, shell, bus \| answer **orange** | true |
+| AS-M31-03-2 | read “bridge” → picture \| options bridge, duck, fish \| answer **bridge** | true |
+
+#### Lesson 4: Spell the Words (`L4-M31-04`)
+
+- **Objective:** Spell a dictated ge/dge word, choosing the correct ending from a tray offering both.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — solve the ge-or-dge case for each word!
+- **Narration (teach):** Listen to the word, then spell it — remember, a short vowel right before /j/ means dge.
+- **Narration (model):** Listen. Pick the right ending.
+- **Narration (transition):** Your turn! Listen carefully and choose ge or dge.
+- **Narration (close):** Excellent spelling! You solved every ge-or-dge case.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M31-16 | hear “ridge” → build \| tray r i dge ge \| answer **ridge** |
+| Q-M31-17 | hear “stage” → build \| tray s t a ge dge \| answer **stage** |
+| Q-M31-18 | hear “lodge” → build \| tray l o dge ge \| answer **lodge** |
+| Q-M31-19 | hear “large” → build \| tray l a r ge dge \| answer **large** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M31-04-1 | hear “edge” → build \| tray e dge ge \| answer **edge** |  |
+| AS-M31-04-2 | hear “page” → build \| tray p a ge dge \| answer **page** |  |
+| AS-M31-04-3 | hear “fudge” → build \| tray f u dge ge \| answer **fudge** |  |
+
+#### Lesson 5: GE or DGE? Challenge (`L4-M31-05`)
+
+- **Objective:** Demonstrate independent mastery of the ge/dge spelling choice across listening, building, reading and spelling.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Solve every ge-or-dge case.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered the ge/dge spelling choice.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M31-05-1 | sound: bridge \| options bridge, brige \| answer **bridge** |  |
+| AS-M31-05-2 | sound: cage \| options cage, cadge \| answer **cage** |  |
+| AS-M31-05-3 | sound: badge \| options badge, bage \| answer **badge** |  |
+| AS-M31-05-4 | sound: huge \| options huge, hudge \| answer **huge** |  |
+| AS-M31-05-5 | hear “orange” → build \| tray o r a n ge dge \| answer **orange** |  |
+| AS-M31-05-6 | hear “sponge” → build \| tray s p o n ge dge \| answer **sponge** |  |
+| AS-M31-05-7 | read “bridge” → picture \| options bridge, shell, bus \| answer **bridge** |  |
+| AS-M31-05-8 | read “sponge” → picture \| options sponge, duck, fish \| answer **sponge** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (66, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (68, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

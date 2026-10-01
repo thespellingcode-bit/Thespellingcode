@@ -135,6 +135,10 @@ const WORD_KEYS = [
   "car", "star", "corn", "bird", "shirt", "purse",
   // Level 4 Module 29 (K or CK?).
   "sock", "book",
+  // Level 4 Module 31 (GE or DGE?). "bridge" already exists (Level 2
+  // Module 12); "stage" deliberately excluded — its emoji is drama masks,
+  // which reads as "masks" or "drama", not clearly "stage".
+  "orange", "sponge",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

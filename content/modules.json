@@ -28,5 +28,6 @@
   { "module_id": 27, "level_id": 3, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 3 mastery across every pattern learned.", "units": 5, "active": true },
   { "module_id": 28, "level_id": 4, "module_name": "C or K?", "module_goal": "Choose c or k for the /k/ sound at the start of a word, based on the vowel that follows — the first graded spelling choice in the app.", "units": 5, "active": true },
   { "module_id": 29, "level_id": 4, "module_name": "K or CK?", "module_goal": "Choose k or ck for the /k/ sound at the end of a word, based on whether a short vowel comes directly before it.", "units": 5, "active": true },
-  { "module_id": 30, "level_id": 4, "module_name": "G or J?", "module_goal": "Choose j (not g) for the /j/ sound at the start of a word.", "units": 5, "active": true }
+  { "module_id": 30, "level_id": 4, "module_name": "G or J?", "module_goal": "Choose j (not g) for the /j/ sound at the start of a word.", "units": 5, "active": true },
+  { "module_id": 31, "level_id": 4, "module_name": "GE or DGE?", "module_goal": "Choose ge or dge for the /j/ sound at the end of a word, based on whether a short vowel comes directly before it.", "units": 5, "active": true }
 ]

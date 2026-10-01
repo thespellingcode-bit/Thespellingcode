@@ -13161,5 +13161,422 @@
     "retry_feedback": "Sound out each letter, then blend them together.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-01-1",
+    "lesson_id": "L4-M31-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "ridge",
+      "rige"
+    ],
+    "correct_answer": "ridge",
+    "audio_asset": "say:ridge",
+    "feedback": "Yes! ridge uses dge — a short vowel comes right before /j/.",
+    "retry_feedback": "Listen again: dge follows a short vowel directly; ge follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-01-2",
+    "lesson_id": "L4-M31-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "lodge",
+      "loge"
+    ],
+    "correct_answer": "lodge",
+    "audio_asset": "say:lodge",
+    "feedback": "Yes! lodge uses dge — a short vowel comes right before /j/.",
+    "retry_feedback": "Listen again: dge follows a short vowel directly; ge follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-01-3",
+    "lesson_id": "L4-M31-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "sponge",
+      "spondge"
+    ],
+    "correct_answer": "sponge",
+    "audio_asset": "say:sponge",
+    "feedback": "Yes! sponge uses just ge — not a bare short vowel right before /j/.",
+    "retry_feedback": "Listen again: dge follows a short vowel directly; ge follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-01-4",
+    "lesson_id": "L4-M31-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "large",
+      "lardge"
+    ],
+    "correct_answer": "large",
+    "audio_asset": "say:large",
+    "feedback": "Yes! large uses just ge — not a bare short vowel right before /j/.",
+    "retry_feedback": "Listen again: dge follows a short vowel directly; ge follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-02-1",
+    "lesson_id": "L4-M31-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dodge",
+    "letters": [
+      "d",
+      "o",
+      "dge",
+      "ge"
+    ],
+    "answer_tiles": [
+      "d",
+      "o",
+      "dge"
+    ],
+    "correct_answer": "dodge",
+    "feedback": "Yes! You built dodge with dge.",
+    "retry_feedback": "Listen again — a short vowel right before /j/ needs dge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-02-2",
+    "lesson_id": "L4-M31-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:judge",
+    "letters": [
+      "j",
+      "u",
+      "dge",
+      "ge"
+    ],
+    "answer_tiles": [
+      "j",
+      "u",
+      "dge"
+    ],
+    "correct_answer": "judge",
+    "feedback": "Yes! You built judge with dge.",
+    "retry_feedback": "Listen again — a short vowel right before /j/ needs dge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-02-3",
+    "lesson_id": "L4-M31-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:huge",
+    "letters": [
+      "h",
+      "u",
+      "ge",
+      "dge"
+    ],
+    "answer_tiles": [
+      "h",
+      "u",
+      "ge"
+    ],
+    "correct_answer": "huge",
+    "feedback": "Yes! You built huge with ge.",
+    "retry_feedback": "Listen again — this doesn't need dge, just ge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-02-4",
+    "lesson_id": "L4-M31-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:strange",
+    "letters": [
+      "s",
+      "t",
+      "r",
+      "a",
+      "n",
+      "ge",
+      "dge"
+    ],
+    "answer_tiles": [
+      "s",
+      "t",
+      "r",
+      "a",
+      "n",
+      "ge"
+    ],
+    "correct_answer": "strange",
+    "feedback": "Yes! You built strange with ge.",
+    "retry_feedback": "Listen again — this doesn't need dge, just ge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-03-1",
+    "lesson_id": "L4-M31-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "orange",
+    "options": [
+      "orange",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "orange",
+    "feedback": "Yes! You read orange.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M31-03-2",
+    "lesson_id": "L4-M31-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bridge",
+    "options": [
+      "bridge",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "bridge",
+    "feedback": "Yes! You read bridge.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION",
+    "review_flag": true
+  },
+  {
+    "assessment_id": "AS-M31-04-1",
+    "lesson_id": "L4-M31-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:edge",
+    "letters": [
+      "e",
+      "dge",
+      "ge"
+    ],
+    "answer_tiles": [
+      "e",
+      "dge"
+    ],
+    "correct_answer": "edge",
+    "feedback": "Yes! You built edge with dge.",
+    "retry_feedback": "Listen again — a short vowel right before /j/ needs dge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-04-2",
+    "lesson_id": "L4-M31-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:page",
+    "letters": [
+      "p",
+      "a",
+      "ge",
+      "dge"
+    ],
+    "answer_tiles": [
+      "p",
+      "a",
+      "ge"
+    ],
+    "correct_answer": "page",
+    "feedback": "Yes! You built page with ge.",
+    "retry_feedback": "Listen again — this doesn't need dge, just ge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-04-3",
+    "lesson_id": "L4-M31-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fudge",
+    "letters": [
+      "f",
+      "u",
+      "dge",
+      "ge"
+    ],
+    "answer_tiles": [
+      "f",
+      "u",
+      "dge"
+    ],
+    "correct_answer": "fudge",
+    "feedback": "Yes! You built fudge with dge.",
+    "retry_feedback": "Listen again — a short vowel right before /j/ needs dge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-05-1",
+    "lesson_id": "L4-M31-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "bridge",
+      "brige"
+    ],
+    "correct_answer": "bridge",
+    "audio_asset": "say:bridge",
+    "feedback": "Yes! bridge uses dge — a short vowel comes right before /j/.",
+    "retry_feedback": "Listen again: dge follows a short vowel directly; ge follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-05-2",
+    "lesson_id": "L4-M31-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cage",
+      "cadge"
+    ],
+    "correct_answer": "cage",
+    "audio_asset": "say:cage",
+    "feedback": "Yes! cage uses just ge — not a bare short vowel right before /j/.",
+    "retry_feedback": "Listen again: dge follows a short vowel directly; ge follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-05-3",
+    "lesson_id": "L4-M31-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "badge",
+      "bage"
+    ],
+    "correct_answer": "badge",
+    "audio_asset": "say:badge",
+    "feedback": "Yes! badge uses dge — a short vowel comes right before /j/.",
+    "retry_feedback": "Listen again: dge follows a short vowel directly; ge follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-05-4",
+    "lesson_id": "L4-M31-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "huge",
+      "hudge"
+    ],
+    "correct_answer": "huge",
+    "audio_asset": "say:huge",
+    "feedback": "Yes! huge uses just ge — not a bare short vowel right before /j/.",
+    "retry_feedback": "Listen again: dge follows a short vowel directly; ge follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-05-5",
+    "lesson_id": "L4-M31-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:orange",
+    "letters": [
+      "o",
+      "r",
+      "a",
+      "n",
+      "ge",
+      "dge"
+    ],
+    "answer_tiles": [
+      "o",
+      "r",
+      "a",
+      "n",
+      "ge"
+    ],
+    "correct_answer": "orange",
+    "feedback": "Yes! You built orange with ge.",
+    "retry_feedback": "Listen again — this doesn't need dge, just ge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-05-6",
+    "lesson_id": "L4-M31-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:sponge",
+    "letters": [
+      "s",
+      "p",
+      "o",
+      "n",
+      "ge",
+      "dge"
+    ],
+    "answer_tiles": [
+      "s",
+      "p",
+      "o",
+      "n",
+      "ge"
+    ],
+    "correct_answer": "sponge",
+    "feedback": "Yes! You built sponge with ge.",
+    "retry_feedback": "Listen again — this doesn't need dge, just ge.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-05-7",
+    "lesson_id": "L4-M31-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "bridge",
+    "options": [
+      "bridge",
+      "shell",
+      "bus"
+    ],
+    "correct_answer": "bridge",
+    "feedback": "Yes! You read bridge.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M31-05-8",
+    "lesson_id": "L4-M31-05",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "sponge",
+    "options": [
+      "sponge",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "sponge",
+    "feedback": "Yes! You read sponge.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

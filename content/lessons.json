@@ -2790,5 +2790,100 @@
       "transition": "",
       "close": "Case closed! You've mastered the word-initial g/j spelling choice."
     }
+  },
+  {
+    "lesson_id": "L4-M31-01",
+    "module_id": 31,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Choose ge or dge for the /j/ sound at the end of a word, based on whether a short vowel comes directly before it.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "New case, Detective! Today: ge or dge at the end of a word?",
+      "teach": "Right after a short vowel, /j/ is spelled dge — bridge, badge, edge. When something else comes before /j/ — a consonant, or a silent-e long vowel — it's just ge — cage, orange, sponge.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for what comes right before the /j/ sound.",
+      "close": "Case closed! You know when to use ge and when to use dge."
+    }
+  },
+  {
+    "lesson_id": "L4-M31-02",
+    "module_id": 31,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "spelling",
+    "objective": "Build ge/dge words, choosing the correct ending from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — the tray has both ge and dge. Pick the right ending!",
+      "teach": "Listen to the word, then build it — only one ending belongs.",
+      "model": "Listen. Watch which ending gets picked, and why.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! You chose the right ending every time."
+    }
+  },
+  {
+    "lesson_id": "L4-M31-03",
+    "module_id": 31,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a ge/dge word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Both endings show up today.",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every ge and dge word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M31-04",
+    "module_id": 31,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated ge/dge word, choosing the correct ending from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — solve the ge-or-dge case for each word!",
+      "teach": "Listen to the word, then spell it — remember, a short vowel right before /j/ means dge.",
+      "model": "Listen. Pick the right ending.",
+      "transition": "Your turn! Listen carefully and choose ge or dge.",
+      "close": "Excellent spelling! You solved every ge-or-dge case."
+    }
+  },
+  {
+    "lesson_id": "L4-M31-05",
+    "module_id": 31,
+    "number": 5,
+    "title": "GE or DGE? Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of the ge/dge spelling choice across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Solve every ge-or-dge case.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the ge/dge spelling choice."
+    }
   }
 ]
