@@ -3075,5 +3075,119 @@
       "transition": "",
       "close": "Case closed! You've mastered the FLOSS doubling rule."
     }
+  },
+  {
+    "lesson_id": "L4-M34-01",
+    "module_id": 34,
+    "number": 1,
+    "title": "Meet CVC Doubling",
+    "skill": "spelling",
+    "objective": "Double the final consonant before adding -ing/-ed when a short vowel sits right before it (hop -> hopping).",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "New case, Detective! Adding endings to words.",
+      "teach": "hop has a short vowel right before the final letter, so before adding -ing, double it: hopping. Listen closely — hop and hope sound different, and so do hopping and hoping!",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for the short vowel.",
+      "close": "Case closed! You know when to double before adding an ending."
+    }
+  },
+  {
+    "lesson_id": "L4-M34-02",
+    "module_id": 34,
+    "number": 2,
+    "title": "Meet Silent-E Drop",
+    "skill": "spelling",
+    "objective": "Drop the silent e before adding -ing/-ed (hope -> hoping).",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "The opposite case today — words with a silent e.",
+      "teach": "hope ends in a silent e. Before adding -ing, drop the e: hoping — never hopeing, never hopping! Listen closely for the long vowel sound.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for the long vowel.",
+      "close": "Case closed! You know to drop the silent e before adding an ending."
+    }
+  },
+  {
+    "lesson_id": "L4-M34-03",
+    "module_id": 34,
+    "number": 3,
+    "title": "Meet Just Add",
+    "skill": "spelling",
+    "objective": "Recognise when a word needs no change at all before adding -ing/-ed (jump -> jumping).",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A third case, Detective — sometimes nothing changes at all!",
+      "teach": "jump doesn't end in a silent e, and it doesn't end in just one consonant after a short vowel — it already ends in two consonants. So you just add the ending: jumping. No doubling, no dropping.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Some words need no changes.",
+      "close": "Case closed! You know when a word just needs the ending added."
+    }
+  },
+  {
+    "lesson_id": "L4-M34-04",
+    "module_id": 34,
+    "number": 4,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build words with -ing added, choosing correctly between doubling, dropping the e, or just adding.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — all three rules in one lesson!",
+      "teach": "Listen to the whole word, then build it. Double, drop, or just add — listen carefully to tell which.",
+      "model": "Listen. Watch which rule gets used.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! You used all three rules correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M34-05",
+    "module_id": 34,
+    "number": 5,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell dictated -ing/-ed words, choosing correctly between doubling, dropping the e, or just adding.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — the biggest test of all three rules!",
+      "teach": "Listen to the word, then spell it. Remember: double after a short vowel, drop the silent e, or just add the ending.",
+      "model": "Listen. Pick the right ending.",
+      "transition": "Your turn! Listen carefully and choose the right rule.",
+      "close": "Excellent spelling! You've mastered all three ending rules."
+    }
+  },
+  {
+    "lesson_id": "L4-M34-06",
+    "module_id": 34,
+    "number": 6,
+    "title": "Doubling Before Suffixes Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of all three suffix rules — doubling, dropping the silent e, and just adding.",
+    "activity_type": "assessment",
+    "estimated_time": "7–9 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show every rule you've learned.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered adding endings to words."
+    }
   }
 ]

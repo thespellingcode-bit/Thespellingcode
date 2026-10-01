@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–33 (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling) built |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–34 built (through Doubling Before Suffixes) |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,7 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
-| Level 4 “Spelling Detective”, Modules 28–33 (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
+| Level 4 “Spelling Detective”, Modules 28–34 (through Doubling Before Suffixes) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -89,7 +89,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Level 4 curriculum design (Modules 28–33 built; Modules 34–40 planned, not yet built)
+### Level 4 curriculum design (Modules 28–34 built; Modules 35–40 planned, not yet built)
 - **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
 - **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
 - **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
@@ -99,6 +99,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 31, GE or DGE?** — same shape as Module 29's k/ck, applied to /j/ instead of /k/: dge directly after a short vowel (bridge, badge), plain ge after anything else — a consonant, or the ordinary silent-e long-vowel pattern (cage, orange, sponge). "ge" is treated as a single ending tile for symmetry with "dge" (the same simplification Module 29 made for CVCe k-words), even though a plain "cage" could in principle just use separate g/e letter tiles like Module 19's silent-e words — keeping it as one 2-letter tile is what makes "which ending, ge or dge" a clean, directly comparable choice. Confirmed live that the word_build demo explains both directions correctly (bridge → dge is right, ge is the decoy; cage → ge is right, dge is the decoy). Added 2 new word pictures (orange, sponge); dropped "stage" — its emoji is drama masks, which reads as "masks"/"drama," not clearly "stage."
 - **Module 32, CH or TCH?** — same shape again, applied to /ch/: tch directly after a short vowel (catch, pitch, watch), plain ch after anything else (peach, lunch, bench). Deliberately excludes the genuine short-vowel-but-ch exceptions (much, such, which) from graded content — the same simplification Module 30 made for g/j's full irregularity, rather than teaching an exception list alongside the rule. Dropped "torch" as a picture word — its flashlight-shaped emoji reads as "flashlight" to most users, not clearly "torch." Added 2 new word pictures (watch, peach).
 - **Module 33, FLOSS Doubling — the first module where the choice isn't between two different letters, just a doubled vs single ending.** f, l, s and sometimes z double after a short vowel in a one-syllable word (bell, off, pass, buzz). Unlike Modules 28-32, every word in this module's content follows the rule (there's no "sometimes you don't double" branch within the word list), so `wrongOf()`/`wb()` simplified to a single generic transform (strip the last letter / tray offers the doubled pair plus one copy) rather than branching on word shape. "bell" and "shell" reuse existing pictures from Level 1/2 (same real objects, not collisions); added 1 new word picture (doll).
+- **Module 34, Doubling Before Suffixes — the first module needing a genuinely new word shape: a base word plus a suffix (-ing/-ed), not just an ending choice on an already-whole word.** Three rules, each a full lesson: double the final consonant after a short vowel (hop → hopping), drop a silent e (hope → hoping), or just add the suffix when neither applies (jump → jumping). The `word_build` helper generalizes cleanly across all three — `letters`/`answer_tiles` built from `[...stem, extra, suffix]` with the decoy being either a stray "e" (doubling words) or the stem's own final consonant (drop-e words), confirmed live for all three modes without any new component. The `spelling_choice` recognition lessons lean on genuine minimal pairs wherever English has them (hop/hope, tap/tape, win/wine, plan/plane, grip/gripe, star/stare) — the SAME two words really do exist with different meanings, so the audio itself (short vs long vowel) is the only way to tell which spelling is correct, directly extending Level 3's short/long vowel discrimination skill. No picture-matching lesson — a still image can't clearly distinguish "running" from "run," so this module leans on its six lessons for the skill progression instead of forcing in weak picture content.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -183,6 +184,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 4 Module 31 (GE or DGE?) — the same k/ck choice shape applied to /j/. Added 2 new word pictures (orange, sponge).
 - Built Level 4 Module 32 (CH or TCH?) — same shape applied to /ch/, deliberately excluding the much/such/which exceptions from graded content. Added 2 new word pictures (watch, peach).
 - Built Level 4 Module 33 (FLOSS Doubling) — the first module where the choice is doubled-vs-single rather than two different letters. Added 1 new word picture (doll); bell and shell reused existing Level 1/2 pictures.
+- Built Level 4 Module 34 (Doubling Before Suffixes) — the first module needing a base-word-plus-suffix shape rather than an ending choice; live-verified all three rules (double, drop-e, just-add) render and score correctly. No new pictures — action words don't picture cleanly, so this module skipped a Read-the-Words lesson rather than forcing in ambiguous ones.
 
 ---
 
@@ -499,6 +501,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 31 | GE or DGE? | **Live** | 5 | 19 | 21 |
 | 32 | CH or TCH? | **Live** | 5 | 18 | 21 |
 | 33 | FLOSS Doubling | **Live** | 5 | 19 | 21 |
+| 34 | Doubling Before Suffixes | **Live** | 6 | 28 | 26 |
 
 ## Curriculum in full
 
@@ -5213,6 +5216,179 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M33-05-6 | hear “shell” → build \| tray s h e ll l \| answer **shell** |  |
 | AS-M33-05-7 | read “bell” → picture \| options bell, shell, bus \| answer **bell** |  |
 | AS-M33-05-8 | read “shell” → picture \| options shell, duck, fish \| answer **shell** |  |
+
+### Module 34 — Doubling Before Suffixes
+
+*Goal:* Add -ing/-ed to a word correctly: double the final consonant, drop a silent e, or just add the ending, depending on the base word's shape.
+
+#### Lesson 1: Meet CVC Doubling (`L4-M34-01`)
+
+- **Objective:** Double the final consonant before adding -ing/-ed when a short vowel sits right before it (hop -> hopping).
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** New case, Detective! Adding endings to words.
+- **Narration (teach):** hop has a short vowel right before the final letter, so before adding -ing, double it: hopping. Listen closely — hop and hope sound different, and so do hopping and hoping!
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Listen for the short vowel.
+- **Narration (close):** Case closed! You know when to double before adding an ending.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M34-01 | sound: hopping \| options hopping, hoping \| answer **hopping** |
+| Q-M34-02 | sound: tapping \| options tapping, taping \| answer **tapping** |
+| Q-M34-03 | sound: winning \| options winning, wining \| answer **winning** |
+| Q-M34-04 | sound: planning \| options planning, planing \| answer **planning** |
+| Q-M34-05 | sound: gripping \| options gripping, griping \| answer **gripping** |
+| Q-M34-06 | sound: rubbing \| options rubbing, rubing \| answer **rubbing** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M34-01-1 | sound: starring \| options starring, staring \| answer **starring** |  |
+| AS-M34-01-2 | sound: sitting \| options sitting, siting \| answer **sitting** |  |
+| AS-M34-01-3 | sound: stopping \| options stopping, stoping \| answer **stopping** |  |
+| AS-M34-01-4 | sound: patting \| options patting, pating \| answer **patting** |  |
+
+#### Lesson 2: Meet Silent-E Drop (`L4-M34-02`)
+
+- **Objective:** Drop the silent e before adding -ing/-ed (hope -> hoping).
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** The opposite case today — words with a silent e.
+- **Narration (teach):** hope ends in a silent e. Before adding -ing, drop the e: hoping — never hopeing, never hopping! Listen closely for the long vowel sound.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Listen for the long vowel.
+- **Narration (close):** Case closed! You know to drop the silent e before adding an ending.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M34-07 | sound: hoping \| options hoping, hopping \| answer **hoping** |
+| Q-M34-08 | sound: taping \| options taping, tapping \| answer **taping** |
+| Q-M34-09 | sound: wining \| options wining, winning \| answer **wining** |
+| Q-M34-10 | sound: planing \| options planing, planning \| answer **planing** |
+| Q-M34-11 | sound: griping \| options griping, gripping \| answer **griping** |
+| Q-M34-12 | sound: staring \| options staring, starring \| answer **staring** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M34-02-1 | sound: raking \| options raking, rakking \| answer **raking** |  |
+| AS-M34-02-2 | sound: smiling \| options smiling, smilling \| answer **smiling** |  |
+| AS-M34-02-3 | sound: hiking \| options hiking, hikking \| answer **hiking** |  |
+| AS-M34-02-4 | sound: driving \| options driving, drivving \| answer **driving** |  |
+
+#### Lesson 3: Meet Just Add (`L4-M34-03`)
+
+- **Objective:** Recognise when a word needs no change at all before adding -ing/-ed (jump -> jumping).
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A third case, Detective — sometimes nothing changes at all!
+- **Narration (teach):** jump doesn't end in a silent e, and it doesn't end in just one consonant after a short vowel — it already ends in two consonants. So you just add the ending: jumping. No doubling, no dropping.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Some words need no changes.
+- **Narration (close):** Case closed! You know when a word just needs the ending added.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M34-13 | sound: jumping \| options jumping, jumpping \| answer **jumping** |
+| Q-M34-14 | sound: looking \| options looking, lookking \| answer **looking** |
+| Q-M34-15 | sound: reading \| options reading, readding \| answer **reading** |
+| Q-M34-16 | sound: helping \| options helping, helpping \| answer **helping** |
+| Q-M34-17 | sound: washing \| options washing, washhing \| answer **washing** |
+| Q-M34-18 | sound: painting \| options painting, paintting \| answer **painting** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M34-03-1 | sound: singing \| options singing, singging \| answer **singing** |  |
+| AS-M34-03-2 | sound: fishing \| options fishing, fishhing \| answer **fishing** |  |
+| AS-M34-03-3 | sound: landing \| options landing, landding \| answer **landing** |  |
+| AS-M34-03-4 | sound: sleeping \| options sleeping, sleepping \| answer **sleeping** |  |
+
+#### Lesson 4: Blend & Build (`L4-M34-04`)
+
+- **Objective:** Build words with -ing added, choosing correctly between doubling, dropping the e, or just adding.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Building mission — all three rules in one lesson!
+- **Narration (teach):** Listen to the whole word, then build it. Double, drop, or just add — listen carefully to tell which.
+- **Narration (model):** Listen. Watch which rule gets used.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! You used all three rules correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M34-19 | hear “hopping” → build \| tray h o p p ing e \| answer **hopping** |
+| Q-M34-20 | hear “hoping” → build \| tray h o p ing p \| answer **hoping** |
+| Q-M34-21 | hear “jumping” → build \| tray j u m p ing \| answer **jumping** |
+| Q-M34-22 | hear “tapping” → build \| tray t a p p ing e \| answer **tapping** |
+| Q-M34-23 | hear “baking” → build \| tray b a k ing k \| answer **baking** |
+| Q-M34-24 | hear “looking” → build \| tray l o o k ing \| answer **looking** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M34-04-1 | hear “winning” → build \| tray w i n n ing e \| answer **winning** |  |
+| AS-M34-04-2 | hear “smiling” → build \| tray s m i l ing l \| answer **smiling** |  |
+| AS-M34-04-3 | hear “raining” → build \| tray r a i n ing \| answer **raining** |  |
+| AS-M34-04-4 | hear “gripping” → build \| tray g r i p p ing e \| answer **gripping** |  |
+
+#### Lesson 5: Spell the Words (`L4-M34-05`)
+
+- **Objective:** Spell dictated -ing/-ed words, choosing correctly between doubling, dropping the e, or just adding.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — the biggest test of all three rules!
+- **Narration (teach):** Listen to the word, then spell it. Remember: double after a short vowel, drop the silent e, or just add the ending.
+- **Narration (model):** Listen. Pick the right ending.
+- **Narration (transition):** Your turn! Listen carefully and choose the right rule.
+- **Narration (close):** Excellent spelling! You've mastered all three ending rules.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M34-25 | hear “planned” → build \| tray p l a n n ed e \| answer **planned** |
+| Q-M34-26 | hear “naming” → build \| tray n a m ing m \| answer **naming** |
+| Q-M34-27 | hear “helped” → build \| tray h e l p ed \| answer **helped** |
+| Q-M34-28 | hear “rubbed” → build \| tray r u b b ed e \| answer **rubbed** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M34-05-1 | hear “skipping” → build \| tray s k i p p ing e \| answer **skipping** |  |
+| AS-M34-05-2 | hear “riding” → build \| tray r i d ing d \| answer **riding** |  |
+| AS-M34-05-3 | hear “painted” → build \| tray p a i n t ed \| answer **painted** |  |
+
+#### Lesson 6: Doubling Before Suffixes Challenge (`L4-M34-06`)
+
+- **Objective:** Demonstrate independent mastery of all three suffix rules — doubling, dropping the silent e, and just adding.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 7–9 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show every rule you've learned.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered adding endings to words.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M34-06-1 | sound: tapping \| options tapping, taping \| answer **tapping** |  |
+| AS-M34-06-2 | sound: taping \| options taping, tapping \| answer **taping** |  |
+| AS-M34-06-3 | sound: jumping \| options jumping, jumpping \| answer **jumping** |  |
+| AS-M34-06-4 | sound: winning \| options winning, wining \| answer **winning** |  |
+| AS-M34-06-5 | hear “hopping” → build \| tray h o p p ing e \| answer **hopping** |  |
+| AS-M34-06-6 | hear “hoping” → build \| tray h o p ing p \| answer **hoping** |  |
+| AS-M34-06-7 | hear “looking” → build \| tray l o o k ing \| answer **looking** |  |
 
 ## Content library
 

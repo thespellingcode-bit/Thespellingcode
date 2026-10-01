@@ -31,5 +31,6 @@
   { "module_id": 30, "level_id": 4, "module_name": "G or J?", "module_goal": "Choose j (not g) for the /j/ sound at the start of a word.", "units": 5, "active": true },
   { "module_id": 31, "level_id": 4, "module_name": "GE or DGE?", "module_goal": "Choose ge or dge for the /j/ sound at the end of a word, based on whether a short vowel comes directly before it.", "units": 5, "active": true },
   { "module_id": 32, "level_id": 4, "module_name": "CH or TCH?", "module_goal": "Choose ch or tch for the /ch/ sound at the end of a word, based on whether a short vowel comes directly before it.", "units": 5, "active": true },
-  { "module_id": 33, "level_id": 4, "module_name": "FLOSS Doubling", "module_goal": "Choose a doubled or single ending letter — f, l, s and sometimes z double after a short vowel at the end of a one-syllable word.", "units": 5, "active": true }
+  { "module_id": 33, "level_id": 4, "module_name": "FLOSS Doubling", "module_goal": "Choose a doubled or single ending letter — f, l, s and sometimes z double after a short vowel at the end of a one-syllable word.", "units": 5, "active": true },
+  { "module_id": 34, "level_id": 4, "module_name": "Doubling Before Suffixes", "module_goal": "Add -ing/-ed to a word correctly: double the final consonant, drop a silent e, or just add the ending, depending on the base word's shape.", "units": 6, "active": true }
 ]

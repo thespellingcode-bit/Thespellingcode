@@ -14408,5 +14408,530 @@
     "retry_feedback": "Sound out each part, then blend them together.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-01-1",
+    "lesson_id": "L4-M34-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "starring",
+      "staring"
+    ],
+    "correct_answer": "starring",
+    "audio_asset": "say:starring",
+    "feedback": "Yes! starring doubles the final letter — a short vowel sits right before it.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-01-2",
+    "lesson_id": "L4-M34-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "sitting",
+      "siting"
+    ],
+    "correct_answer": "sitting",
+    "audio_asset": "say:sitting",
+    "feedback": "Yes! sitting doubles the final letter — a short vowel sits right before it.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-01-3",
+    "lesson_id": "L4-M34-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "stopping",
+      "stoping"
+    ],
+    "correct_answer": "stopping",
+    "audio_asset": "say:stopping",
+    "feedback": "Yes! stopping doubles the final letter — a short vowel sits right before it.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-01-4",
+    "lesson_id": "L4-M34-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "patting",
+      "pating"
+    ],
+    "correct_answer": "patting",
+    "audio_asset": "say:patting",
+    "feedback": "Yes! patting doubles the final letter — a short vowel sits right before it.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-02-1",
+    "lesson_id": "L4-M34-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "raking",
+      "rakking"
+    ],
+    "correct_answer": "raking",
+    "audio_asset": "say:raking",
+    "feedback": "Yes! raking drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-02-2",
+    "lesson_id": "L4-M34-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "smiling",
+      "smilling"
+    ],
+    "correct_answer": "smiling",
+    "audio_asset": "say:smiling",
+    "feedback": "Yes! smiling drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-02-3",
+    "lesson_id": "L4-M34-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "hiking",
+      "hikking"
+    ],
+    "correct_answer": "hiking",
+    "audio_asset": "say:hiking",
+    "feedback": "Yes! hiking drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-02-4",
+    "lesson_id": "L4-M34-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "driving",
+      "drivving"
+    ],
+    "correct_answer": "driving",
+    "audio_asset": "say:driving",
+    "feedback": "Yes! driving drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-03-1",
+    "lesson_id": "L4-M34-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "singing",
+      "singging"
+    ],
+    "correct_answer": "singing",
+    "audio_asset": "say:singing",
+    "feedback": "Yes! singing drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-03-2",
+    "lesson_id": "L4-M34-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "fishing",
+      "fishhing"
+    ],
+    "correct_answer": "fishing",
+    "audio_asset": "say:fishing",
+    "feedback": "Yes! fishing drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-03-3",
+    "lesson_id": "L4-M34-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "landing",
+      "landding"
+    ],
+    "correct_answer": "landing",
+    "audio_asset": "say:landing",
+    "feedback": "Yes! landing drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-03-4",
+    "lesson_id": "L4-M34-03",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "sleeping",
+      "sleepping"
+    ],
+    "correct_answer": "sleeping",
+    "audio_asset": "say:sleeping",
+    "feedback": "Yes! sleeping drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-04-1",
+    "lesson_id": "L4-M34-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:winning",
+    "letters": [
+      "w",
+      "i",
+      "n",
+      "n",
+      "ing",
+      "e"
+    ],
+    "answer_tiles": [
+      "w",
+      "i",
+      "n",
+      "n",
+      "ing"
+    ],
+    "correct_answer": "winning",
+    "feedback": "Yes! win doubles the n before adding ing.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-04-2",
+    "lesson_id": "L4-M34-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:smiling",
+    "letters": [
+      "s",
+      "m",
+      "i",
+      "l",
+      "ing",
+      "l"
+    ],
+    "answer_tiles": [
+      "s",
+      "m",
+      "i",
+      "l",
+      "ing"
+    ],
+    "correct_answer": "smiling",
+    "feedback": "Yes! smile drops the silent e before adding ing.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-04-3",
+    "lesson_id": "L4-M34-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:raining",
+    "letters": [
+      "r",
+      "a",
+      "i",
+      "n",
+      "ing"
+    ],
+    "answer_tiles": [
+      "r",
+      "a",
+      "i",
+      "n",
+      "ing"
+    ],
+    "correct_answer": "raining",
+    "feedback": "Yes! rain just adds ing — no change needed.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-04-4",
+    "lesson_id": "L4-M34-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:gripping",
+    "letters": [
+      "g",
+      "r",
+      "i",
+      "p",
+      "p",
+      "ing",
+      "e"
+    ],
+    "answer_tiles": [
+      "g",
+      "r",
+      "i",
+      "p",
+      "p",
+      "ing"
+    ],
+    "correct_answer": "gripping",
+    "feedback": "Yes! grip doubles the p before adding ing.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-05-1",
+    "lesson_id": "L4-M34-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:skipping",
+    "letters": [
+      "s",
+      "k",
+      "i",
+      "p",
+      "p",
+      "ing",
+      "e"
+    ],
+    "answer_tiles": [
+      "s",
+      "k",
+      "i",
+      "p",
+      "p",
+      "ing"
+    ],
+    "correct_answer": "skipping",
+    "feedback": "Yes! skip doubles the p before adding ing.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-05-2",
+    "lesson_id": "L4-M34-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:riding",
+    "letters": [
+      "r",
+      "i",
+      "d",
+      "ing",
+      "d"
+    ],
+    "answer_tiles": [
+      "r",
+      "i",
+      "d",
+      "ing"
+    ],
+    "correct_answer": "riding",
+    "feedback": "Yes! ride drops the silent e before adding ing.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-05-3",
+    "lesson_id": "L4-M34-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:painted",
+    "letters": [
+      "p",
+      "a",
+      "i",
+      "n",
+      "t",
+      "ed"
+    ],
+    "answer_tiles": [
+      "p",
+      "a",
+      "i",
+      "n",
+      "t",
+      "ed"
+    ],
+    "correct_answer": "painted",
+    "feedback": "Yes! paint just adds ed — no change needed.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-06-1",
+    "lesson_id": "L4-M34-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "tapping",
+      "taping"
+    ],
+    "correct_answer": "tapping",
+    "audio_asset": "say:tapping",
+    "feedback": "Yes! tapping doubles the final letter — a short vowel sits right before it.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-06-2",
+    "lesson_id": "L4-M34-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "taping",
+      "tapping"
+    ],
+    "correct_answer": "taping",
+    "audio_asset": "say:taping",
+    "feedback": "Yes! taping drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-06-3",
+    "lesson_id": "L4-M34-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "jumping",
+      "jumpping"
+    ],
+    "correct_answer": "jumping",
+    "audio_asset": "say:jumping",
+    "feedback": "Yes! jumping drops the silent e before adding the ending.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-06-4",
+    "lesson_id": "L4-M34-06",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "winning",
+      "wining"
+    ],
+    "correct_answer": "winning",
+    "audio_asset": "say:winning",
+    "feedback": "Yes! winning doubles the final letter — a short vowel sits right before it.",
+    "retry_feedback": "Listen for a short or long vowel sound — that tells you whether to double the consonant or drop the e.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-06-5",
+    "lesson_id": "L4-M34-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:hopping",
+    "letters": [
+      "h",
+      "o",
+      "p",
+      "p",
+      "ing",
+      "e"
+    ],
+    "answer_tiles": [
+      "h",
+      "o",
+      "p",
+      "p",
+      "ing"
+    ],
+    "correct_answer": "hopping",
+    "feedback": "Yes! hop doubles the p before adding ing.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-06-6",
+    "lesson_id": "L4-M34-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:hoping",
+    "letters": [
+      "h",
+      "o",
+      "p",
+      "ing",
+      "p"
+    ],
+    "answer_tiles": [
+      "h",
+      "o",
+      "p",
+      "ing"
+    ],
+    "correct_answer": "hoping",
+    "feedback": "Yes! hope drops the silent e before adding ing.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M34-06-7",
+    "lesson_id": "L4-M34-06",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:looking",
+    "letters": [
+      "l",
+      "o",
+      "o",
+      "k",
+      "ing"
+    ],
+    "answer_tiles": [
+      "l",
+      "o",
+      "o",
+      "k",
+      "ing"
+    ],
+    "correct_answer": "looking",
+    "feedback": "Yes! look just adds ing — no change needed.",
+    "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]
