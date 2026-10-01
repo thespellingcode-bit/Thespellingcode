@@ -139,6 +139,9 @@ const WORD_KEYS = [
   // Module 12); "stage" deliberately excluded — its emoji is drama masks,
   // which reads as "masks" or "drama", not clearly "stage".
   "orange", "sponge",
+  // Level 4 Module 32 (CH or TCH?). "torch" deliberately excluded — its
+  // emoji commonly reads as "flashlight" to most users, not clearly "torch".
+  "watch", "peach",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

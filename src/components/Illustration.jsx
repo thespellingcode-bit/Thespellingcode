@@ -516,6 +516,7 @@ const IMAGE_BG = {
   star: "#FFF3D6", corn: "#FDE9D2", bird: "#DCEBFF", shirt: "#DCEEF6", purse: "#FBD9D2",
   sock: "#DCEBFF", book: "#F1E3D3",
   orange: "#FDE9D2", sponge: "#FFF3D6",
+  watch: "#DCEEF6", peach: "#FBD9D2",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {

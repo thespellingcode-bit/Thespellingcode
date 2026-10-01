@@ -2885,5 +2885,100 @@
       "transition": "",
       "close": "Case closed! You've mastered the ge/dge spelling choice."
     }
+  },
+  {
+    "lesson_id": "L4-M32-01",
+    "module_id": 32,
+    "number": 1,
+    "title": "Meet the Choice",
+    "skill": "spelling",
+    "objective": "Choose ch or tch for the /ch/ sound at the end of a word, based on whether a short vowel comes directly before it.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "New case, Detective! Today: ch or tch at the end of a word?",
+      "teach": "Right after a short vowel, /ch/ is spelled tch — catch, pitch, watch. When something else comes before /ch/ — a consonant, or a long vowel or vowel team — it's just ch — peach, lunch, bench.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Listen for what comes right before the /ch/ sound.",
+      "close": "Case closed! You know when to use ch and when to use tch."
+    }
+  },
+  {
+    "lesson_id": "L4-M32-02",
+    "module_id": 32,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "spelling",
+    "objective": "Build ch/tch words, choosing the correct ending from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Building mission — the tray has both ch and tch. Pick the right ending!",
+      "teach": "Listen to the word, then build it — only one ending belongs.",
+      "model": "Listen. Watch which ending gets picked, and why.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Great building! You chose the right ending every time."
+    }
+  },
+  {
+    "lesson_id": "L4-M32-03",
+    "module_id": 32,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a ch/tch word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Both endings show up today.",
+      "teach": "Read the word, then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every ch and tch word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M32-04",
+    "module_id": 32,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated ch/tch word, choosing the correct ending from a tray offering both.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — solve the ch-or-tch case for each word!",
+      "teach": "Listen to the word, then spell it — remember, a short vowel right before /ch/ means tch.",
+      "model": "Listen. Pick the right ending.",
+      "transition": "Your turn! Listen carefully and choose ch or tch.",
+      "close": "Excellent spelling! You solved every ch-or-tch case."
+    }
+  },
+  {
+    "lesson_id": "L4-M32-05",
+    "module_id": 32,
+    "number": 5,
+    "title": "CH or TCH? Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of the ch/tch spelling choice across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Solve every ch-or-tch case.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered the ch/tch spelling choice."
+    }
   }
 ]

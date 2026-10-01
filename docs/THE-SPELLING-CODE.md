@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–31 (C or K?, K or CK?, G or J?, GE or DGE?) built |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–32 (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?) built |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,7 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
-| Level 4 “Spelling Detective”, Modules 28–31 (C or K?, K or CK?, G or J?, GE or DGE?) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
+| Level 4 “Spelling Detective”, Modules 28–32 (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -89,7 +89,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Level 4 curriculum design (Modules 28–31 built; Modules 32–40 planned, not yet built)
+### Level 4 curriculum design (Modules 28–32 built; Modules 33–40 planned, not yet built)
 - **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
 - **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
 - **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
@@ -97,6 +97,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 29, K or CK?** — same shape, applied to the end of a word instead of the start: ck directly after a short vowel, plain k after anything else (a consonant, a long vowel, or a vowel team). Word choice deliberately stayed away from silent-e words like "bike"/"cake" — this module's generic content-authoring helpers (`wrongOf()`, `wb()`) assume the target word ends literally in "k" or "ck" with nothing after it, and a CVCe word's final letter is the silent "e", not "k"; rather than special-case that shape now, the word list simply used only words ending directly in the sound (milk, pink, book, desk...). Confirmed live that the word_build demo correctly explains *both* directions of the choice (ck-is-right-here vs k-is-right-here), not just one. Added 2 new word pictures (sock, book).
 - **Module 30, G or J? — simplified deliberately.** The full g/j ambiguity before e/i/y (gem, giant vs jet, jig — English is genuinely irregular here, both spellings are common) is NOT what this module tests; it teaches the one clean, reliable rule instead — word-initial /j/ is *almost always* j (jam, jog, jump), regardless of the vowel that follows, unlike Modules 28/29's a/o/u-vs-e/i/y split. The wrong option in each `spelling_choice`/`word_build` item is always the g-swapped form (jet → get, jam → gam); a few of these happen to collide with unrelated real words ("get" is a real word, just not what was spoken) — left as-is rather than avoided, since the mechanic still correctly tests "does this spelling match the sound you heard," and precedent throughout this project has been to accept minor imperfections like this rather than over-engineer around them. Thinnest picture pool yet (jug, jet — both already existed from Level 1/2) — Read the Words reuses them for both practice and assessment.
 - **Module 31, GE or DGE?** — same shape as Module 29's k/ck, applied to /j/ instead of /k/: dge directly after a short vowel (bridge, badge), plain ge after anything else — a consonant, or the ordinary silent-e long-vowel pattern (cage, orange, sponge). "ge" is treated as a single ending tile for symmetry with "dge" (the same simplification Module 29 made for CVCe k-words), even though a plain "cage" could in principle just use separate g/e letter tiles like Module 19's silent-e words — keeping it as one 2-letter tile is what makes "which ending, ge or dge" a clean, directly comparable choice. Confirmed live that the word_build demo explains both directions correctly (bridge → dge is right, ge is the decoy; cage → ge is right, dge is the decoy). Added 2 new word pictures (orange, sponge); dropped "stage" — its emoji is drama masks, which reads as "masks"/"drama," not clearly "stage."
+- **Module 32, CH or TCH?** — same shape again, applied to /ch/: tch directly after a short vowel (catch, pitch, watch), plain ch after anything else (peach, lunch, bench). Deliberately excludes the genuine short-vowel-but-ch exceptions (much, such, which) from graded content — the same simplification Module 30 made for g/j's full irregularity, rather than teaching an exception list alongside the rule. Dropped "torch" as a picture word — its flashlight-shaped emoji reads as "flashlight" to most users, not clearly "torch." Added 2 new word pictures (watch, peach).
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -179,6 +180,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 4 Module 29 (K or CK?), the same choice-grading shape applied to the end of a word. Added 2 new word pictures (sock, book).
 - Built Level 4 Module 30 (G or J?) — deliberately scoped to the one reliable rule (word-initial /j/ is almost always j) rather than the full, genuinely irregular g/j-before-e/i/y ambiguity. Needed no new word pictures — jug and jet were already illustrated.
 - Built Level 4 Module 31 (GE or DGE?) — the same k/ck choice shape applied to /j/. Added 2 new word pictures (orange, sponge).
+- Built Level 4 Module 32 (CH or TCH?) — same shape applied to /ch/, deliberately excluding the much/such/which exceptions from graded content. Added 2 new word pictures (watch, peach).
 
 ---
 
@@ -493,6 +495,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 29 | K or CK? | **Live** | 5 | 21 | 21 |
 | 30 | G or J? | **Live** | 5 | 18 | 21 |
 | 31 | GE or DGE? | **Live** | 5 | 19 | 21 |
+| 32 | CH or TCH? | **Live** | 5 | 18 | 21 |
 
 ## Curriculum in full
 
@@ -4931,12 +4934,150 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M31-05-7 | read “bridge” → picture \| options bridge, shell, bus \| answer **bridge** |  |
 | AS-M31-05-8 | read “sponge” → picture \| options sponge, duck, fish \| answer **sponge** |  |
 
+### Module 32 — CH or TCH?
+
+*Goal:* Choose ch or tch for the /ch/ sound at the end of a word, based on whether a short vowel comes directly before it.
+
+#### Lesson 1: Meet the Choice (`L4-M32-01`)
+
+- **Objective:** Choose ch or tch for the /ch/ sound at the end of a word, based on whether a short vowel comes directly before it.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** New case, Detective! Today: ch or tch at the end of a word?
+- **Narration (teach):** Right after a short vowel, /ch/ is spelled tch — catch, pitch, watch. When something else comes before /ch/ — a consonant, or a long vowel or vowel team — it's just ch — peach, lunch, bench.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Listen for what comes right before the /ch/ sound.
+- **Narration (close):** Case closed! You know when to use ch and when to use tch.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M32-01 | sound: catch \| options catch, cach \| answer **catch** |
+| Q-M32-02 | sound: pitch \| options pitch, pich \| answer **pitch** |
+| Q-M32-03 | sound: watch \| options watch, wach \| answer **watch** |
+| Q-M32-04 | sound: peach \| options peach, peatch \| answer **peach** |
+| Q-M32-05 | sound: lunch \| options lunch, luntch \| answer **lunch** |
+| Q-M32-06 | sound: reach \| options reach, reatch \| answer **reach** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M32-01-1 | sound: witch \| options witch, wich \| answer **witch** |  |
+| AS-M32-01-2 | sound: fetch \| options fetch, fech \| answer **fetch** |  |
+| AS-M32-01-3 | sound: bench \| options bench, bentch \| answer **bench** |  |
+| AS-M32-01-4 | sound: beach \| options beach, beatch \| answer **beach** |  |
+
+#### Lesson 2: Blend & Build (`L4-M32-02`)
+
+- **Objective:** Build ch/tch words, choosing the correct ending from a tray offering both.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Building mission — the tray has both ch and tch. Pick the right ending!
+- **Narration (teach):** Listen to the word, then build it — only one ending belongs.
+- **Narration (model):** Listen. Watch which ending gets picked, and why.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Great building! You chose the right ending every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M32-07 | hear “match” → build \| tray m a tch ch \| answer **match** |
+| Q-M32-08 | hear “watch” → build \| tray w a tch ch \| answer **watch** |
+| Q-M32-09 | hear “peach” → build \| tray p e a ch tch \| answer **peach** |
+| Q-M32-10 | hear “lunch” → build \| tray l u n ch tch \| answer **lunch** |
+| Q-M32-11 | hear “bench” → build \| tray b e n ch tch \| answer **bench** |
+| Q-M32-12 | hear “porch” → build \| tray p o r ch tch \| answer **porch** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M32-02-1 | hear “catch” → build \| tray c a tch ch \| answer **catch** |  |
+| AS-M32-02-2 | hear “pitch” → build \| tray p i tch ch \| answer **pitch** |  |
+| AS-M32-02-3 | hear “beach” → build \| tray b e a ch tch \| answer **beach** |  |
+| AS-M32-02-4 | hear “reach” → build \| tray r e a ch tch \| answer **reach** |  |
+
+#### Lesson 3: Read the Words (`L4-M32-03`)
+
+- **Objective:** Read a ch/tch word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! Both endings show up today.
+- **Narration (teach):** Read the word, then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You read every ch and tch word correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M32-13 | read “watch” → picture \| options watch, bus, hen \| answer **watch** |
+| Q-M32-14 | read “peach” → picture \| options peach, fish, pig \| answer **peach** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M32-03-1 | read “watch” → picture \| options watch, shell, bus \| answer **watch** | true |
+| AS-M32-03-2 | read “peach” → picture \| options peach, duck, fish \| answer **peach** | true |
+
+#### Lesson 4: Spell the Words (`L4-M32-04`)
+
+- **Objective:** Spell a dictated ch/tch word, choosing the correct ending from a tray offering both.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — solve the ch-or-tch case for each word!
+- **Narration (teach):** Listen to the word, then spell it — remember, a short vowel right before /ch/ means tch.
+- **Narration (model):** Listen. Pick the right ending.
+- **Narration (transition):** Your turn! Listen carefully and choose ch or tch.
+- **Narration (close):** Excellent spelling! You solved every ch-or-tch case.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M32-15 | hear “witch” → build \| tray w i tch ch \| answer **witch** |
+| Q-M32-16 | hear “fetch” → build \| tray f e tch ch \| answer **fetch** |
+| Q-M32-17 | hear “porch” → build \| tray p o r ch tch \| answer **porch** |
+| Q-M32-18 | hear “beach” → build \| tray b e a ch tch \| answer **beach** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M32-04-1 | hear “stitch” → build \| tray s t i tch ch \| answer **stitch** |  |
+| AS-M32-04-2 | hear “hatch” → build \| tray h a tch ch \| answer **hatch** |  |
+| AS-M32-04-3 | hear “bench” → build \| tray b e n ch tch \| answer **bench** |  |
+
+#### Lesson 5: CH or TCH? Challenge (`L4-M32-05`)
+
+- **Objective:** Demonstrate independent mastery of the ch/tch spelling choice across listening, building, reading and spelling.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Solve every ch-or-tch case.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered the ch/tch spelling choice.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M32-05-1 | sound: catch \| options catch, cach \| answer **catch** |  |
+| AS-M32-05-2 | sound: lunch \| options lunch, luntch \| answer **lunch** |  |
+| AS-M32-05-3 | sound: pitch \| options pitch, pich \| answer **pitch** |  |
+| AS-M32-05-4 | sound: reach \| options reach, reatch \| answer **reach** |  |
+| AS-M32-05-5 | hear “watch” → build \| tray w a tch ch \| answer **watch** |  |
+| AS-M32-05-6 | hear “peach” → build \| tray p e a ch tch \| answer **peach** |  |
+| AS-M32-05-7 | read “watch” → picture \| options watch, shell, bus \| answer **watch** |  |
+| AS-M32-05-8 | read “peach” → picture \| options peach, duck, fish \| answer **peach** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (68, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (70, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

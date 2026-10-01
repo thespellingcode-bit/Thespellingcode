@@ -12731,5 +12731,395 @@
     "retry_feedback": "Listen again — this doesn't need dge, just ge.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-01",
+    "lesson_id": "L4-M32-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "catch",
+      "cach"
+    ],
+    "correct_answer": "catch",
+    "audio_asset": "say:catch",
+    "feedback": "Yes! catch uses tch — a short vowel comes right before /ch/.",
+    "retry_feedback": "Listen again: tch follows a short vowel directly; ch follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-02",
+    "lesson_id": "L4-M32-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "pitch",
+      "pich"
+    ],
+    "correct_answer": "pitch",
+    "audio_asset": "say:pitch",
+    "feedback": "Yes! pitch uses tch — a short vowel comes right before /ch/.",
+    "retry_feedback": "Listen again: tch follows a short vowel directly; ch follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-03",
+    "lesson_id": "L4-M32-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "watch",
+      "wach"
+    ],
+    "correct_answer": "watch",
+    "audio_asset": "say:watch",
+    "feedback": "Yes! watch uses tch — a short vowel comes right before /ch/.",
+    "retry_feedback": "Listen again: tch follows a short vowel directly; ch follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-04",
+    "lesson_id": "L4-M32-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "peach",
+      "peatch"
+    ],
+    "correct_answer": "peach",
+    "audio_asset": "say:peach",
+    "feedback": "Yes! peach uses just ch — not a bare short vowel right before /ch/.",
+    "retry_feedback": "Listen again: tch follows a short vowel directly; ch follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-05",
+    "lesson_id": "L4-M32-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "lunch",
+      "luntch"
+    ],
+    "correct_answer": "lunch",
+    "audio_asset": "say:lunch",
+    "feedback": "Yes! lunch uses just ch — not a bare short vowel right before /ch/.",
+    "retry_feedback": "Listen again: tch follows a short vowel directly; ch follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-06",
+    "lesson_id": "L4-M32-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "reach",
+      "reatch"
+    ],
+    "correct_answer": "reach",
+    "audio_asset": "say:reach",
+    "feedback": "Yes! reach uses just ch — not a bare short vowel right before /ch/.",
+    "retry_feedback": "Listen again: tch follows a short vowel directly; ch follows anything else.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-07",
+    "lesson_id": "L4-M32-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:match",
+    "letters": [
+      "m",
+      "a",
+      "tch",
+      "ch"
+    ],
+    "answer_tiles": [
+      "m",
+      "a",
+      "tch"
+    ],
+    "correct_answer": "match",
+    "feedback": "Yes! You built match with tch.",
+    "retry_feedback": "Listen again — a short vowel right before /ch/ needs tch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-08",
+    "lesson_id": "L4-M32-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:watch",
+    "letters": [
+      "w",
+      "a",
+      "tch",
+      "ch"
+    ],
+    "answer_tiles": [
+      "w",
+      "a",
+      "tch"
+    ],
+    "correct_answer": "watch",
+    "feedback": "Yes! You built watch with tch.",
+    "retry_feedback": "Listen again — a short vowel right before /ch/ needs tch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-09",
+    "lesson_id": "L4-M32-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:peach",
+    "letters": [
+      "p",
+      "e",
+      "a",
+      "ch",
+      "tch"
+    ],
+    "answer_tiles": [
+      "p",
+      "e",
+      "a",
+      "ch"
+    ],
+    "correct_answer": "peach",
+    "feedback": "Yes! You built peach with ch.",
+    "retry_feedback": "Listen again — this doesn't need tch, just ch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-10",
+    "lesson_id": "L4-M32-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:lunch",
+    "letters": [
+      "l",
+      "u",
+      "n",
+      "ch",
+      "tch"
+    ],
+    "answer_tiles": [
+      "l",
+      "u",
+      "n",
+      "ch"
+    ],
+    "correct_answer": "lunch",
+    "feedback": "Yes! You built lunch with ch.",
+    "retry_feedback": "Listen again — this doesn't need tch, just ch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-11",
+    "lesson_id": "L4-M32-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:bench",
+    "letters": [
+      "b",
+      "e",
+      "n",
+      "ch",
+      "tch"
+    ],
+    "answer_tiles": [
+      "b",
+      "e",
+      "n",
+      "ch"
+    ],
+    "correct_answer": "bench",
+    "feedback": "Yes! You built bench with ch.",
+    "retry_feedback": "Listen again — this doesn't need tch, just ch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-12",
+    "lesson_id": "L4-M32-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:porch",
+    "letters": [
+      "p",
+      "o",
+      "r",
+      "ch",
+      "tch"
+    ],
+    "answer_tiles": [
+      "p",
+      "o",
+      "r",
+      "ch"
+    ],
+    "correct_answer": "porch",
+    "feedback": "Yes! You built porch with ch.",
+    "retry_feedback": "Listen again — this doesn't need tch, just ch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-13",
+    "lesson_id": "L4-M32-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "watch",
+    "options": [
+      "watch",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "watch",
+    "feedback": "Yes! You read watch.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-14",
+    "lesson_id": "L4-M32-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "peach",
+    "options": [
+      "peach",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "peach",
+    "feedback": "Yes! You read peach.",
+    "retry_feedback": "Sound out each part, then blend them together.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-15",
+    "lesson_id": "L4-M32-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:witch",
+    "letters": [
+      "w",
+      "i",
+      "tch",
+      "ch"
+    ],
+    "answer_tiles": [
+      "w",
+      "i",
+      "tch"
+    ],
+    "correct_answer": "witch",
+    "feedback": "Yes! You built witch with tch.",
+    "retry_feedback": "Listen again — a short vowel right before /ch/ needs tch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-16",
+    "lesson_id": "L4-M32-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:fetch",
+    "letters": [
+      "f",
+      "e",
+      "tch",
+      "ch"
+    ],
+    "answer_tiles": [
+      "f",
+      "e",
+      "tch"
+    ],
+    "correct_answer": "fetch",
+    "feedback": "Yes! You built fetch with tch.",
+    "retry_feedback": "Listen again — a short vowel right before /ch/ needs tch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-17",
+    "lesson_id": "L4-M32-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:porch",
+    "letters": [
+      "p",
+      "o",
+      "r",
+      "ch",
+      "tch"
+    ],
+    "answer_tiles": [
+      "p",
+      "o",
+      "r",
+      "ch"
+    ],
+    "correct_answer": "porch",
+    "feedback": "Yes! You built porch with ch.",
+    "retry_feedback": "Listen again — this doesn't need tch, just ch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M32-18",
+    "lesson_id": "L4-M32-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:beach",
+    "letters": [
+      "b",
+      "e",
+      "a",
+      "ch",
+      "tch"
+    ],
+    "answer_tiles": [
+      "b",
+      "e",
+      "a",
+      "ch"
+    ],
+    "correct_answer": "beach",
+    "feedback": "Yes! You built beach with ch.",
+    "retry_feedback": "Listen again — this doesn't need tch, just ch.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
   }
 ]
