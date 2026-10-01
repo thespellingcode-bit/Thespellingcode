@@ -5,6 +5,7 @@ import { Icon } from "../components/Icon";
 import { Btn } from "../components/Btn";
 import { Badge } from "../components/Badge";
 import { ProgressBar } from "../components/ProgressBar";
+import { LevelTrain } from "../components/LevelTrain";
 import { getLessonsByModule, getActiveModules, getActiveBadges, getBadges, getLevel } from "../services/contentService";
 import { statusOfLesson } from "../services/progressService";
 
@@ -100,40 +101,11 @@ export function ChildHome({ profile, state, onOpenLesson, moduleId }) {
         {masteredCount === 0 ? "Start your first mission!" : moduleComplete ? "Replay a mission" : "Continue your mission"}
       </Btn>
 
-      {/* Level switcher — a short row even with many levels, since it's
-          levels (at most a handful, ever) not modules (dozens). Picking a
+      {/* Level switcher — a chugging train, one car per level. Picking a
           level swaps which level's own module accordion shows below;
           nothing about a level's modules renders until it's selected. */}
       {levelIds.length > 1 && (
-        <div style={{ display: "flex", gap: 8, overflowX: "auto", marginBottom: 18, paddingBottom: 2 }}>
-          {levelSummaries.map((lv) => {
-            const isSelected = lv.id === selectedLevel;
-            return (
-              <button
-                key={lv.id}
-                disabled={!lv.unlocked}
-                onClick={() => lv.unlocked && setSelectedLevel(lv.id)}
-                style={{
-                  flex: "0 0 auto", display: "flex", alignItems: "center", gap: 8,
-                  padding: "10px 16px", borderRadius: 999, cursor: lv.unlocked ? "pointer" : "not-allowed",
-                  border: `1.5px solid ${isSelected ? T.gold : T.line}`,
-                  background: isSelected ? "#FFFBEF" : "#fff",
-                  opacity: lv.unlocked ? 1 : 0.55,
-                }}
-              >
-                {!lv.unlocked && <Icon name="lock" size={13} color={T.textMute} />}
-                <span style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 700, fontSize: 13.5, color: isSelected ? T.ink : T.textMute, whiteSpace: "nowrap" }}>
-                  Level {lv.id}{lv.info?.level_name ? ` · ${lv.info.level_name}` : ""}
-                </span>
-                {lv.unlocked && (
-                  <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, color: lv.complete ? "#2C7A3C" : T.textMute, fontWeight: 600 }}>
-                    {lv.complete ? "✓" : `${lv.mastered}/${lv.total}`}
-                  </span>
-                )}
-              </button>
-            );
-          })}
-        </div>
+        <LevelTrain levelSummaries={levelSummaries} selectedLevel={selectedLevel} onSelect={setSelectedLevel} />
       )}
 
       <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 34 }}>

@@ -47,6 +47,24 @@ export function useGlobalAnimations() {
       0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
       100% { transform: translate(var(--dx), 160px) rotate(var(--rot)); opacity: 0; }
     }
+    @keyframes scd-wheel-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes scd-train-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @keyframes scd-smoke {
+      0% { transform: translate(0, 0) scale(0.4); opacity: 0; }
+      15% { opacity: 0.8; }
+      100% { transform: translate(var(--sx, 4px), -26px) scale(1.4); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [style*="scd-wheel-spin"], [style*="scd-train-bob"], [style*="scd-smoke"] {
+        animation: none !important;
+      }
+    }
   `;
   document.head.appendChild(style);
 }

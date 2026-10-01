@@ -8896,6 +8896,7 @@ The full source is in the GitHub repository; this map says what every file is fo
 | `src/components/Illustration.jsx` | Bigger, full-color "hero" pictures — distinct from Icon.jsx's small single-stroke outlines. Icon.jsx stays monochrome on purpose (its color prop signals correct/wrong state on answer buttons); these illustrations own their own palette and are used wherever ... |
 | `src/components/LessonPlayer.jsx` |  |
 | `src/components/LetterTile.jsx` | A single letter, big and bold in a rounded tile — the visual unit for Module 8 (Letter-Sound Connections) onward. Deliberately NOT hand-drawn SVG art like Illustration.jsx: a letter doesn't need to be illustrated, just shown clearly and consistently, the wa... |
+| `src/components/LevelTrain.jsx` | Replaces the plain pill-row level switcher with a chugging train — one car per level, a locomotive up front, continuous wheel-spin/bob/smoke animation (all disabled under prefers-reduced-motion, see theme.js's useGlobalAnimations). Click behavior is identic... |
 | `src/components/Mascot.jsx` | A single recurring character (a fox detective, tying into the "Sound Detective" / "Letter Detective" narration voice already used throughout the lesson content) for the app's biggest emotional moment — the end-of-lesson result screen. Deliberately NOT a new... |
 | `src/components/NarrationScreen.jsx` |  |
 | `src/components/Onboarding.jsx` |  |
