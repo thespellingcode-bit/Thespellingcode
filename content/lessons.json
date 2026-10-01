@@ -4975,5 +4975,100 @@
       "transition": "",
       "close": "Case closed! You've mastered your first Level 6 roots."
     }
+  },
+  {
+    "lesson_id": "L6-M53-01",
+    "module_id": 53,
+    "number": 1,
+    "title": "Meet eigh & augh",
+    "skill": "spelling",
+    "objective": "Recognise eigh and augh as rare spellings to learn by heart.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time for the rarest spellings yet, Detective! eigh and augh are two unusual ways to spell long vowel sounds.",
+      "teach": "eight, weigh and neighbor all use eigh for long A. caught, taught and daughter all use augh for a short-O-like sound. These are words to learn by heart, not a rule to apply.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! These are tricky — listen carefully.",
+      "close": "Case closed! You know eigh and augh."
+    }
+  },
+  {
+    "lesson_id": "L6-M53-02",
+    "module_id": 53,
+    "number": 2,
+    "title": "Meet ough & ear",
+    "skill": "spelling",
+    "objective": "Recognise ough and ear (for /er/) as rare spellings to learn by heart.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two more unusual patterns, Detective! ough can spell several different sounds, and ear can spell /er/.",
+      "teach": "through, enough, cough and though all use ough — but they don't even rhyme with each other! learn and earth use ear for the /er/ sound, the same sound as er in 'her'.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Learn each word's own spelling.",
+      "close": "Case closed! You know ough and ear too."
+    }
+  },
+  {
+    "lesson_id": "L6-M53-03",
+    "module_id": 53,
+    "number": 3,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build words using eigh, augh, ough and ear.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some advanced-pattern words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — eigh, augh, ough and ear each get their own single tile.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You used the right spelling for each word."
+    }
+  },
+  {
+    "lesson_id": "L6-M53-04",
+    "module_id": 53,
+    "number": 4,
+    "title": "More Building",
+    "skill": "word_building",
+    "objective": "Build more words using eigh, augh, ough and ear.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More building practice, Detective!",
+      "teach": "Listen to the whole word, then tap the tiles in order.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Excellent! You're getting faster at these tricky words."
+    }
+  },
+  {
+    "lesson_id": "L6-M53-05",
+    "module_id": 53,
+    "number": 5,
+    "title": "Advanced Vowel Patterns Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of eigh, augh, ough and ear.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about eigh, augh, ough and ear.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered these advanced vowel patterns."
+    }
   }
 ]

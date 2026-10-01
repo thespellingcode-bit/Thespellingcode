@@ -21908,5 +21908,397 @@
     "retry_feedback": "Think about what each root means, and look for it in the word.",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-01",
+    "lesson_id": "L6-M53-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "eight",
+      "eigt"
+    ],
+    "correct_answer": "eight",
+    "audio_asset": "say:eight",
+    "feedback": "Yes! It's eight.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-02",
+    "lesson_id": "L6-M53-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "weigh",
+      "wegh"
+    ],
+    "correct_answer": "weigh",
+    "audio_asset": "say:weigh",
+    "feedback": "Yes! It's weigh.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-03",
+    "lesson_id": "L6-M53-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "caught",
+      "cawt"
+    ],
+    "correct_answer": "caught",
+    "audio_asset": "say:caught",
+    "feedback": "Yes! It's caught.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-04",
+    "lesson_id": "L6-M53-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "taught",
+      "tawt"
+    ],
+    "correct_answer": "taught",
+    "audio_asset": "say:taught",
+    "feedback": "Yes! It's taught.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-05",
+    "lesson_id": "L6-M53-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "daughter",
+      "dawter"
+    ],
+    "correct_answer": "daughter",
+    "audio_asset": "say:daughter",
+    "feedback": "Yes! It's daughter.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-06",
+    "lesson_id": "L6-M53-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "through",
+      "throu"
+    ],
+    "correct_answer": "through",
+    "audio_asset": "say:through",
+    "feedback": "Yes! It's through.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-07",
+    "lesson_id": "L6-M53-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "enough",
+      "enuff"
+    ],
+    "correct_answer": "enough",
+    "audio_asset": "say:enough",
+    "feedback": "Yes! It's enough.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-08",
+    "lesson_id": "L6-M53-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "cough",
+      "coff"
+    ],
+    "correct_answer": "cough",
+    "audio_asset": "say:cough",
+    "feedback": "Yes! It's cough.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-09",
+    "lesson_id": "L6-M53-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "though",
+      "thoe"
+    ],
+    "correct_answer": "though",
+    "audio_asset": "say:though",
+    "feedback": "Yes! It's though.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-10",
+    "lesson_id": "L6-M53-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "learn",
+      "lern"
+    ],
+    "correct_answer": "learn",
+    "audio_asset": "say:learn",
+    "feedback": "Yes! It's learn.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-11",
+    "lesson_id": "L6-M53-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:eight",
+    "letters": [
+      "eigh",
+      "t"
+    ],
+    "answer_tiles": [
+      "eigh",
+      "t"
+    ],
+    "correct_answer": "eight",
+    "feedback": "Yes! You built eight.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-12",
+    "lesson_id": "L6-M53-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:weigh",
+    "letters": [
+      "w",
+      "eigh"
+    ],
+    "answer_tiles": [
+      "w",
+      "eigh"
+    ],
+    "correct_answer": "weigh",
+    "feedback": "Yes! You built weigh.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-13",
+    "lesson_id": "L6-M53-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:caught",
+    "letters": [
+      "c",
+      "augh",
+      "t"
+    ],
+    "answer_tiles": [
+      "c",
+      "augh",
+      "t"
+    ],
+    "correct_answer": "caught",
+    "feedback": "Yes! You built caught.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-14",
+    "lesson_id": "L6-M53-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:through",
+    "letters": [
+      "thr",
+      "ough"
+    ],
+    "answer_tiles": [
+      "thr",
+      "ough"
+    ],
+    "correct_answer": "through",
+    "feedback": "Yes! You built through.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-15",
+    "lesson_id": "L6-M53-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:learn",
+    "letters": [
+      "l",
+      "ear",
+      "n"
+    ],
+    "answer_tiles": [
+      "l",
+      "ear",
+      "n"
+    ],
+    "correct_answer": "learn",
+    "feedback": "Yes! You built learn.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-16",
+    "lesson_id": "L6-M53-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:daughter",
+    "letters": [
+      "d",
+      "augh",
+      "t",
+      "er"
+    ],
+    "answer_tiles": [
+      "d",
+      "augh",
+      "t",
+      "er"
+    ],
+    "correct_answer": "daughter",
+    "feedback": "Yes! You built daughter.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-17",
+    "lesson_id": "L6-M53-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:enough",
+    "letters": [
+      "e",
+      "n",
+      "ough"
+    ],
+    "answer_tiles": [
+      "e",
+      "n",
+      "ough"
+    ],
+    "correct_answer": "enough",
+    "feedback": "Yes! You built enough.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-18",
+    "lesson_id": "L6-M53-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:though",
+    "letters": [
+      "th",
+      "ough"
+    ],
+    "answer_tiles": [
+      "th",
+      "ough"
+    ],
+    "correct_answer": "though",
+    "feedback": "Yes! You built though.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-19",
+    "lesson_id": "L6-M53-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:earth",
+    "letters": [
+      "ear",
+      "th"
+    ],
+    "answer_tiles": [
+      "ear",
+      "th"
+    ],
+    "correct_answer": "earth",
+    "feedback": "Yes! You built earth.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M53-20",
+    "lesson_id": "L6-M53-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:search",
+    "letters": [
+      "s",
+      "ear",
+      "ch"
+    ],
+    "answer_tiles": [
+      "s",
+      "ear",
+      "ch"
+    ],
+    "correct_answer": "search",
+    "feedback": "Yes! You built search.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

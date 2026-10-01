@@ -21500,5 +21500,319 @@
     "retry_feedback": "Think about what each root means, and look for it in the word.",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-01-1",
+    "lesson_id": "L6-M53-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "neighbor",
+      "nieghbor"
+    ],
+    "correct_answer": "neighbor",
+    "audio_asset": "say:neighbor",
+    "feedback": "Yes! It's neighbor.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-01-2",
+    "lesson_id": "L6-M53-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "sleigh",
+      "sligh"
+    ],
+    "correct_answer": "sleigh",
+    "audio_asset": "say:sleigh",
+    "feedback": "Yes! It's sleigh.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-01-3",
+    "lesson_id": "L6-M53-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "naughty",
+      "nawty"
+    ],
+    "correct_answer": "naughty",
+    "audio_asset": "say:naughty",
+    "feedback": "Yes! It's naughty.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-02-1",
+    "lesson_id": "L6-M53-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "earth",
+      "erth"
+    ],
+    "correct_answer": "earth",
+    "audio_asset": "say:earth",
+    "feedback": "Yes! It's earth.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-02-2",
+    "lesson_id": "L6-M53-02",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "tough",
+      "tuff"
+    ],
+    "correct_answer": "tough",
+    "audio_asset": "say:tough",
+    "feedback": "Yes! It's tough.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-03-1",
+    "lesson_id": "L6-M53-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:taught",
+    "letters": [
+      "t",
+      "augh",
+      "t"
+    ],
+    "answer_tiles": [
+      "t",
+      "augh",
+      "t"
+    ],
+    "correct_answer": "taught",
+    "feedback": "Yes! You built taught.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-03-2",
+    "lesson_id": "L6-M53-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cough",
+    "letters": [
+      "c",
+      "ough"
+    ],
+    "answer_tiles": [
+      "c",
+      "ough"
+    ],
+    "correct_answer": "cough",
+    "feedback": "Yes! You built cough.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-04-1",
+    "lesson_id": "L6-M53-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:neighbor",
+    "letters": [
+      "n",
+      "eigh",
+      "b",
+      "or"
+    ],
+    "answer_tiles": [
+      "n",
+      "eigh",
+      "b",
+      "or"
+    ],
+    "correct_answer": "neighbor",
+    "feedback": "Yes! You built neighbor.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-04-2",
+    "lesson_id": "L6-M53-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tough",
+    "letters": [
+      "t",
+      "ough"
+    ],
+    "answer_tiles": [
+      "t",
+      "ough"
+    ],
+    "correct_answer": "tough",
+    "feedback": "Yes! You built tough.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-05-1",
+    "lesson_id": "L6-M53-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "eight",
+      "eigt"
+    ],
+    "correct_answer": "eight",
+    "audio_asset": "say:eight",
+    "feedback": "Yes! It's eight.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-05-2",
+    "lesson_id": "L6-M53-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "caught",
+      "cawt"
+    ],
+    "correct_answer": "caught",
+    "audio_asset": "say:caught",
+    "feedback": "Yes! It's caught.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-05-3",
+    "lesson_id": "L6-M53-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "through",
+      "throu"
+    ],
+    "correct_answer": "through",
+    "audio_asset": "say:through",
+    "feedback": "Yes! It's through.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-05-4",
+    "lesson_id": "L6-M53-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "learn",
+      "lern"
+    ],
+    "correct_answer": "learn",
+    "audio_asset": "say:learn",
+    "feedback": "Yes! It's learn.",
+    "retry_feedback": "Listen again — remember this word's own correct spelling.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-05-5",
+    "lesson_id": "L6-M53-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:weigh",
+    "letters": [
+      "w",
+      "eigh"
+    ],
+    "answer_tiles": [
+      "w",
+      "eigh"
+    ],
+    "correct_answer": "weigh",
+    "feedback": "Yes! You built weigh.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-05-6",
+    "lesson_id": "L6-M53-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:taught",
+    "letters": [
+      "t",
+      "augh",
+      "t"
+    ],
+    "answer_tiles": [
+      "t",
+      "augh",
+      "t"
+    ],
+    "correct_answer": "taught",
+    "feedback": "Yes! You built taught.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-05-7",
+    "lesson_id": "L6-M53-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:earth",
+    "letters": [
+      "ear",
+      "th"
+    ],
+    "answer_tiles": [
+      "ear",
+      "th"
+    ],
+    "correct_answer": "earth",
+    "feedback": "Yes! You built earth.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M53-05-8",
+    "lesson_id": "L6-M53-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:enough",
+    "letters": [
+      "e",
+      "n",
+      "ough"
+    ],
+    "answer_tiles": [
+      "e",
+      "n",
+      "ough"
+    ],
+    "correct_answer": "enough",
+    "feedback": "Yes! You built enough.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

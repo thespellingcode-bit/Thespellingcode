@@ -34,7 +34,7 @@
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
 | 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **Complete** — Modules 41–51 built and deployed |
-| 6 | Word Master | 11–15 | 10 (built as 5 — condensed, see scope note below) | **In progress** — Module 52 built (Greek & Latin Roots) |
+| 6 | Word Master | 11–15 | 10 (built as 5 — condensed, see scope note below) | **In progress** — Modules 52–53 built (through Advanced Vowel Patterns) |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
 
@@ -51,7 +51,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Level 5 “Word Builder Pro”, all 11 modules (The Many Spellings of /s/, Long-A/E/I/O/U Choices, The Three Sounds of -ed, Change Y Before a Suffix, More Prefixes & Suffixes, Word Families, Review & Assessment) | **Complete — built and deployed.** Level 5 is finished; earns the new “Level 5 Word Builder Pro” badge on the Level 5 Challenge. See `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Modules 47–50 are genuinely-new blueprint-Level-5 morphology content. |
-| Level 6 “Word Master”, Module 52 (Greek & Latin Roots) | **Built** — see `docs/plans/level-6.md` and the Level 6 curriculum design note below. Condensed from the blueprint's 10 modules to 5 non-duplicate ones; builds on Module 50's `wordFamily` sentence-context mechanic, reused here for definition-based root clues instead of fill-in-the-blank sentences — zero new code. |
+| Level 6 “Word Master”, Modules 52–53 (through Advanced Vowel Patterns) | **Built** — see `docs/plans/level-6.md` and the Level 6 curriculum design note below. Condensed from the blueprint's 10 modules to 5 non-duplicate ones. |
 | Digital certificate / certification record (blueprint §9) | Out of scope until the owner asks — the blueprint's Level 6 "Final Mastery & Certification" module is built as a standard Review & Assessment; the certificate-generation feature itself isn't built. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
@@ -130,9 +130,10 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 50, Word Families — a genuinely different skill from every earlier Level 5 module, and the first one with no spelling transformation at all.** act/action/active/actor, play/player/playful/playing and four more families (teach, help, read, build) are all *already correctly spelled* real words — the task is choosing which family member's grammatical JOB fits a sentence (noun vs verb vs adjective), not spelling anything. Reused `spelling_choice` again, but its existing caption ("Yes! It's spelled X") and heading ("Which spelling of X is correct?") would have been actively wrong here — nothing was misspelled, and there's no single target word, only a sentence. Added a `wordFamily: true` field with its own narration branches in both `modelCaptionFor` ("Yes! 'player' fits best here!") and `modelHeadingFor` (shows the item's own `prompt` — the fill-in-the-blank sentence — directly as the heading), written proactively before any content, same discipline as Module 47's `edSound`. `MultipleChoice.jsx` needed no changes at all — it already renders `question.prompt` as the on-screen text and auto-speaks it via TTS, so a sentence-with-blank prompt "just worked" once the narration branches existed. No `word_build` or `read_word` lessons anywhere in this module — every lesson is a `spelling_choice` round, an honest reflection that this skill has no building or picture-matching component. **One real bug caught by `npm test`, not live:** an assessment item first reused "builder" with the exact same sentence context as its own lesson's practice item (a copy-paste slip), fixed by swapping to "readers" (plural, genuinely untested elsewhere in that lesson). Live-verified the sentence renders as both the Watch-stage heading and the Practice-stage prompt, with both family-member options showing as separate buttons.
 - **Module 51, Review & Assessment — closes out Level 5, same closing shape as every earlier level (Modules 7/8, 17, 27, 40), with one new wrinkle: Level 5 has four genuinely different mechanics to review (spelling_choice, word_build, letter_sound_match/edSound, spelling_choice/wordFamily), and a practice lesson can only use ONE `activity_type`.** Five lessons: Mixed Retrieval (`spelling_choice` sampling Modules 41–46's long-vowel/soft-C choices), Read & Build (`word_build`, no decoy, Modules 46/48/49's words), Dictation (`word_build` with a decoy, mixing choice-type rules across Modules 41/44/45/46/48/49), a dedicated "The Sounds of -ed Review" (`letter_sound_match`/`edSound`, since that skill couldn't be folded into the other review lessons without breaking the one-type-per-lesson rule), and the Level 5 Challenge (`assessment`, 14 items — the only lesson freely mixing all four mechanics including two `wordFamily` sentence items, since assessment-stage items have never had the single-type restriction). Added `BADGE-11` ("Level 5 Word Builder Pro", `module_id: 51`), same purely data-driven pattern as every earlier level's closing badge. 22/22 tests passed on the first run. **Level 5 total: 58 lessons, matching `docs/plans/level-5.md`'s own estimate exactly.** Live-verified the Level 5 badge appears (locked) on the home screen immediately after the module shipped, and the -ed sounds review narration renders correctly reused from Module 47.
 
-### Level 6 curriculum design (Module 52 built; Modules 53–56 planned, not yet built)
+### Level 6 curriculum design (Modules 52–53 built; Modules 54–56 planned, not yet built)
 - **Scope note:** see the roadmap section above for why Level 6's module list is condensed from the blueprint's 10 to 5 — "Silent Letters" and "Word Families & Derivation" both duplicate already-built app content (Modules 35 and 50). Full reasoning in `docs/plans/level-6.md`.
 - **Module 52, Greek & Latin Roots — reuses Module 50's `wordFamily` mechanic for a genuinely different purpose: a definition-style meaning clue instead of a fill-in-the-blank sentence.** Both are the same underlying shape (a `prompt`, two real-word options, one correct), so zero new code was needed — only the *content* changed from "She wants to ___ in the school play" (sentence context) to "bio (life) + graphy (writing) = the written story of someone's life" (definition context). Eight roots across three "Meet" lessons (bio/tele/graph, then photo/scope/port, then dict/spect), each item deliberately pairing two words that share a surface resemblance (biography vs biology, both bio-; telephone vs telegraph, both tele-) so the choice genuinely tests which SPECIFIC root-meaning combination fits, not just vocabulary recognition in general. No new grapheme, no new remediation tag (reused `PREFIX_SUFFIX_CONFUSION`, matching the plan's own reasoning that this is the same *kind* of confusion as Module 50's). Live-verified both the Watch-stage definition-clue narration and the Practice-stage two-option layout render correctly with no code changes.
+- **Module 53, Advanced Vowel Patterns — back to the full Level-4/5-style `spelling_choice`+`word_build` shape, since (unlike Modules 52/54's meaning-based choices) this module is a genuine spelling skill.** Four new graphemes: `eigh`/`augh`/`ough` added to `VOWEL_TEAMS`, and `ear` (for the /er/ sound in "learn"/"earth") added to `R_CONTROLLED` — the first r-controlled grapheme that's three letters instead of two, but structurally the same "vowel swallowed by r" shape, so no new `graphemeKindFor()` category was needed. Taught honestly as pure memorization, not a rule: these four patterns don't follow a reliable position or frequency story the way Modules 42/45 (ai/ay, oa/ow) did — "though," "through," "cough" and "tough" all use ough and don't even rhyme with each other. No decoy-tile choice mechanic in the building lessons (unlike Modules 42–46) — since eigh/augh/ough aren't genuine alternate spellings competing for the SAME sound the way ai/ay or ue/ew/oo were, forcing a "pick the right one of two options" decoy would have been artificial; both building lessons are just more tile-building reps instead. Live-verified `word_build` tiles both new grapheme categories correctly: "eight" → eigh-t, "learn" → l-ear-n.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -238,6 +239,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 5 Module 51 (Review & Assessment) — cumulative review across all 10 earlier Level 5 modules, including a dedicated lesson for the -ed sounds skill since it needed its own activity_type. Added BADGE-11 (Level 5 Word Builder Pro), purely data-driven. **Level 5 is now complete — 11 modules, 58 lessons, built and deployed, matching the plan's own lesson estimate exactly.**
 - Condensed and planned Level 6 (Word Master): blueprint's 10 modules judged down to 5 non-duplicate ones ("Silent Letters" and "Word Families & Derivation" both duplicate already-built app content). Wrote `docs/plans/level-6.md`.
 - Built Level 6 Module 52 (Greek & Latin Roots) — bio/tele/graph/photo/scope/port/dict/spect as meaning clues. Reused Module 50's wordFamily mechanic with definition-style prompts instead of sentences — zero new code. 22/22 on the first run.
+- Built Level 6 Module 53 (Advanced Vowel Patterns) — eigh/augh/ough/ear, four new graphemes (ear added to R_CONTROLLED as a 3-letter exception). Taught as pure memorization (no reliable rule), no decoy mechanic since these aren't real alternate-spelling competitors. 22/22 on the first run.
 
 ---
 
@@ -712,6 +714,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 50 | Word Families | **Live** | 5 | 20 | 17 |
 | 51 | Review & Assessment | **Live** | 5 | 23 | 23 |
 | 52 | Greek & Latin Roots | **Live** | 5 | 20 | 17 |
+| 53 | Advanced Vowel Patterns | **Live** | 5 | 20 | 17 |
 
 ## Curriculum in full
 
@@ -8176,6 +8179,142 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M52-05-6 | sound: predict \| options predict, contradict \| answer **predict** |  |
 | AS-M52-05-7 | sound: dictionary \| options dictionary, spectator \| answer **dictionary** |  |
 | AS-M52-05-8 | sound: inspect \| options inspect, respect \| answer **inspect** |  |
+
+### Module 53 — Advanced Vowel Patterns
+
+*Goal:* Recognise and spell rarer long-vowel patterns — eigh, augh, ough and ear for /er/ — as a set of words to learn by heart.
+
+#### Lesson 1: Meet eigh & augh (`L6-M53-01`)
+
+- **Objective:** Recognise eigh and augh as rare spellings to learn by heart.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time for the rarest spellings yet, Detective! eigh and augh are two unusual ways to spell long vowel sounds.
+- **Narration (teach):** eight, weigh and neighbor all use eigh for long A. caught, taught and daughter all use augh for a short-O-like sound. These are words to learn by heart, not a rule to apply.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! These are tricky — listen carefully.
+- **Narration (close):** Case closed! You know eigh and augh.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M53-01 | sound: eight \| options eight, eigt \| answer **eight** |
+| Q-M53-02 | sound: weigh \| options weigh, wegh \| answer **weigh** |
+| Q-M53-03 | sound: caught \| options caught, cawt \| answer **caught** |
+| Q-M53-04 | sound: taught \| options taught, tawt \| answer **taught** |
+| Q-M53-05 | sound: daughter \| options daughter, dawter \| answer **daughter** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M53-01-1 | sound: neighbor \| options neighbor, nieghbor \| answer **neighbor** |  |
+| AS-M53-01-2 | sound: sleigh \| options sleigh, sligh \| answer **sleigh** |  |
+| AS-M53-01-3 | sound: naughty \| options naughty, nawty \| answer **naughty** |  |
+
+#### Lesson 2: Meet ough & ear (`L6-M53-02`)
+
+- **Objective:** Recognise ough and ear (for /er/) as rare spellings to learn by heart.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two more unusual patterns, Detective! ough can spell several different sounds, and ear can spell /er/.
+- **Narration (teach):** through, enough, cough and though all use ough — but they don't even rhyme with each other! learn and earth use ear for the /er/ sound, the same sound as er in 'her'.
+- **Narration (model):** Listen. Which spelling is correct?
+- **Narration (transition):** Your turn, Detective! Learn each word's own spelling.
+- **Narration (close):** Case closed! You know ough and ear too.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M53-06 | sound: through \| options through, throu \| answer **through** |
+| Q-M53-07 | sound: enough \| options enough, enuff \| answer **enough** |
+| Q-M53-08 | sound: cough \| options cough, coff \| answer **cough** |
+| Q-M53-09 | sound: though \| options though, thoe \| answer **though** |
+| Q-M53-10 | sound: learn \| options learn, lern \| answer **learn** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M53-02-1 | sound: earth \| options earth, erth \| answer **earth** |  |
+| AS-M53-02-2 | sound: tough \| options tough, tuff \| answer **tough** |  |
+
+#### Lesson 3: Blend & Build (`L6-M53-03`)
+
+- **Objective:** Build words using eigh, augh, ough and ear.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some advanced-pattern words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — eigh, augh, ough and ear each get their own single tile.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! You used the right spelling for each word.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M53-11 | hear “eight” → build \| tray eigh t \| answer **eight** |
+| Q-M53-12 | hear “weigh” → build \| tray w eigh \| answer **weigh** |
+| Q-M53-13 | hear “caught” → build \| tray c augh t \| answer **caught** |
+| Q-M53-14 | hear “through” → build \| tray thr ough \| answer **through** |
+| Q-M53-15 | hear “learn” → build \| tray l ear n \| answer **learn** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M53-03-1 | hear “taught” → build \| tray t augh t \| answer **taught** |  |
+| AS-M53-03-2 | hear “cough” → build \| tray c ough \| answer **cough** |  |
+
+#### Lesson 4: More Building (`L6-M53-04`)
+
+- **Objective:** Build more words using eigh, augh, ough and ear.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More building practice, Detective!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order.
+- **Narration (model):** Listen. Watch how the tiles build the word.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Excellent! You're getting faster at these tricky words.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M53-16 | hear “daughter” → build \| tray d augh t er \| answer **daughter** |
+| Q-M53-17 | hear “enough” → build \| tray e n ough \| answer **enough** |
+| Q-M53-18 | hear “though” → build \| tray th ough \| answer **though** |
+| Q-M53-19 | hear “earth” → build \| tray ear th \| answer **earth** |
+| Q-M53-20 | hear “search” → build \| tray s ear ch \| answer **search** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M53-04-1 | hear “neighbor” → build \| tray n eigh b or \| answer **neighbor** |  |
+| AS-M53-04-2 | hear “tough” → build \| tray t ough \| answer **tough** |  |
+
+#### Lesson 5: Advanced Vowel Patterns Challenge (`L6-M53-05`)
+
+- **Objective:** Demonstrate independent mastery of eigh, augh, ough and ear.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about eigh, augh, ough and ear.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered these advanced vowel patterns.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M53-05-1 | sound: eight \| options eight, eigt \| answer **eight** |  |
+| AS-M53-05-2 | sound: caught \| options caught, cawt \| answer **caught** |  |
+| AS-M53-05-3 | sound: through \| options through, throu \| answer **through** |  |
+| AS-M53-05-4 | sound: learn \| options learn, lern \| answer **learn** |  |
+| AS-M53-05-5 | hear “weigh” → build \| tray w eigh \| answer **weigh** |  |
+| AS-M53-05-6 | hear “taught” → build \| tray t augh t \| answer **taught** |  |
+| AS-M53-05-7 | hear “earth” → build \| tray ear th \| answer **earth** |  |
+| AS-M53-05-8 | hear “enough” → build \| tray e n ough \| answer **enough** |  |
 
 ## Content library
 
