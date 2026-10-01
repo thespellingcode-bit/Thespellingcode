@@ -22477,5 +22477,431 @@
     "retry_feedback": "Read the sentence again — what does it actually mean?",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-01-1",
+    "lesson_id": "L6-M56-01",
+    "type": "spelling_choice",
+    "prompt": "in (into) + spect (look) = to look closely at something.",
+    "options": [
+      "inspect",
+      "respect"
+    ],
+    "correct_answer": "inspect",
+    "audio_asset": "say:inspect",
+    "wordFamily": true,
+    "feedback": "Yes! \"inspect\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-01-2",
+    "lesson_id": "L6-M56-01",
+    "type": "spelling_choice",
+    "prompt": "Don't ___ your keys.",
+    "options": [
+      "lose",
+      "loose"
+    ],
+    "correct_answer": "lose",
+    "audio_asset": "say:lose",
+    "wordFamily": true,
+    "feedback": "Yes! \"lose\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-01-3",
+    "lesson_id": "L6-M56-01",
+    "type": "spelling_choice",
+    "prompt": "Is this ___ bag?",
+    "options": [
+      "your",
+      "you're"
+    ],
+    "correct_answer": "your",
+    "audio_asset": "say:your",
+    "wordFamily": true,
+    "feedback": "Yes! \"your\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-02-1",
+    "lesson_id": "L6-M56-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:earth",
+    "letters": [
+      "ear",
+      "th"
+    ],
+    "answer_tiles": [
+      "ear",
+      "th"
+    ],
+    "correct_answer": "earth",
+    "feedback": "Yes! You built earth.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-02-2",
+    "lesson_id": "L6-M56-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:enough",
+    "letters": [
+      "e",
+      "n",
+      "ough"
+    ],
+    "answer_tiles": [
+      "e",
+      "n",
+      "ough"
+    ],
+    "correct_answer": "enough",
+    "feedback": "Yes! You built enough.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-03-1",
+    "lesson_id": "L6-M56-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:eight",
+    "letters": [
+      "eigh",
+      "t"
+    ],
+    "answer_tiles": [
+      "eigh",
+      "t"
+    ],
+    "correct_answer": "eight",
+    "feedback": "Yes! You built eight.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-03-2",
+    "lesson_id": "L6-M56-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:learn",
+    "letters": [
+      "l",
+      "ear",
+      "n"
+    ],
+    "answer_tiles": [
+      "l",
+      "ear",
+      "n"
+    ],
+    "correct_answer": "learn",
+    "feedback": "Yes! You built learn.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-04-1",
+    "lesson_id": "L6-M56-04",
+    "type": "spelling_choice",
+    "prompt": "Everyone came ___ Tom.",
+    "options": [
+      "except",
+      "accept"
+    ],
+    "correct_answer": "except",
+    "audio_asset": "say:except",
+    "wordFamily": true,
+    "feedback": "Yes! \"except\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-04-2",
+    "lesson_id": "L6-M56-04",
+    "type": "spelling_choice",
+    "prompt": "Turn ___ at the corner.",
+    "options": [
+      "right",
+      "write"
+    ],
+    "correct_answer": "right",
+    "audio_asset": "say:right",
+    "wordFamily": true,
+    "feedback": "Yes! \"right\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-1",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "bio (life) + graphy (writing) = the written story of someone's life.",
+    "options": [
+      "biography",
+      "biology"
+    ],
+    "correct_answer": "biography",
+    "audio_asset": "say:biography",
+    "wordFamily": true,
+    "feedback": "Yes! \"biography\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-2",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "tele (far) + scope (see) = a tool for seeing things far away.",
+    "options": [
+      "telescope",
+      "microscope"
+    ],
+    "correct_answer": "telescope",
+    "audio_asset": "say:telescope",
+    "wordFamily": true,
+    "feedback": "Yes! \"telescope\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-3",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "___ going to the park.",
+    "options": [
+      "They're",
+      "There"
+    ],
+    "correct_answer": "They're",
+    "audio_asset": "say:They're",
+    "wordFamily": true,
+    "feedback": "Yes! \"They're\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-4",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "I have ___ dogs.",
+    "options": [
+      "two",
+      "too"
+    ],
+    "correct_answer": "two",
+    "audio_asset": "say:two",
+    "wordFamily": true,
+    "feedback": "Yes! \"two\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-5",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "The weather will ___ our plans.",
+    "options": [
+      "affect",
+      "effect"
+    ],
+    "correct_answer": "affect",
+    "audio_asset": "say:affect",
+    "wordFamily": true,
+    "feedback": "Yes! \"affect\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-6",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "The school ___ gave a speech.",
+    "options": [
+      "principal",
+      "principle"
+    ],
+    "correct_answer": "principal",
+    "audio_asset": "say:principal",
+    "wordFamily": true,
+    "feedback": "Yes! \"principal\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-7",
+    "lesson_id": "L6-M56-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:eight",
+    "letters": [
+      "eigh",
+      "t"
+    ],
+    "answer_tiles": [
+      "eigh",
+      "t"
+    ],
+    "correct_answer": "eight",
+    "feedback": "Yes! You built eight.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-8",
+    "lesson_id": "L6-M56-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:learn",
+    "letters": [
+      "l",
+      "ear",
+      "n"
+    ],
+    "answer_tiles": [
+      "l",
+      "ear",
+      "n"
+    ],
+    "correct_answer": "learn",
+    "feedback": "Yes! You built learn.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-9",
+    "lesson_id": "L6-M56-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:caught",
+    "letters": [
+      "c",
+      "augh",
+      "t"
+    ],
+    "answer_tiles": [
+      "c",
+      "augh",
+      "t"
+    ],
+    "correct_answer": "caught",
+    "feedback": "Yes! You built caught.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-10",
+    "lesson_id": "L6-M56-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:through",
+    "letters": [
+      "thr",
+      "ough"
+    ],
+    "answer_tiles": [
+      "thr",
+      "ough"
+    ],
+    "correct_answer": "through",
+    "feedback": "Yes! You built through.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-11",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "Let's ___ at the library.",
+    "options": [
+      "meet",
+      "meat"
+    ],
+    "correct_answer": "meet",
+    "audio_asset": "say:meet",
+    "wordFamily": true,
+    "feedback": "Yes! \"meet\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-12",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "She will ___ the award happily.",
+    "options": [
+      "accept",
+      "except"
+    ],
+    "correct_answer": "accept",
+    "audio_asset": "say:accept",
+    "wordFamily": true,
+    "feedback": "Yes! \"accept\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-13",
+    "lesson_id": "L6-M56-05",
+    "type": "spelling_choice",
+    "prompt": "pre (before) + dict (say) = to say what will happen before it happens.",
+    "options": [
+      "predict",
+      "contradict"
+    ],
+    "correct_answer": "predict",
+    "audio_asset": "say:predict",
+    "wordFamily": true,
+    "feedback": "Yes! \"predict\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M56-05-14",
+    "lesson_id": "L6-M56-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:weigh",
+    "letters": [
+      "w",
+      "eigh"
+    ],
+    "answer_tiles": [
+      "w",
+      "eigh"
+    ],
+    "correct_answer": "weigh",
+    "feedback": "Yes! You built weigh.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

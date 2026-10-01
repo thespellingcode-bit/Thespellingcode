@@ -5298,5 +5298,100 @@
       "transition": "",
       "close": "Case closed! You've mastered commonly confused words."
     }
+  },
+  {
+    "lesson_id": "L6-M56-01",
+    "module_id": 56,
+    "number": 1,
+    "title": "Mixed Retrieval",
+    "skill": "spelling",
+    "objective": "Review roots, homophones and commonly confused words from across Level 6.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Review mission, Detective! Let's revisit roots, homophones and commonly confused words from across Level 6.",
+      "teach": "Use each clue the same way you learned it — a root's meaning, a sentence's meaning, or a word's own job in the sentence.",
+      "model": "Which word fits best in this clue or sentence?",
+      "transition": "Your turn, Detective! Use everything you've learned.",
+      "close": "Case closed! You remember every Level 6 word-choice skill."
+    }
+  },
+  {
+    "lesson_id": "L6-M56-02",
+    "module_id": 56,
+    "number": 2,
+    "title": "Advanced Vowel Patterns Review",
+    "skill": "word_building",
+    "objective": "Build words using eigh, augh, ough and ear.",
+    "activity_type": "word_build",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build words from the advanced vowel patterns!",
+      "teach": "Listen to the whole word, then tap the tiles in order.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You remember eigh, augh, ough and ear."
+    }
+  },
+  {
+    "lesson_id": "L6-M56-03",
+    "module_id": 56,
+    "number": 3,
+    "title": "More Building",
+    "skill": "word_building",
+    "objective": "Build more words using eigh, augh, ough and ear.",
+    "activity_type": "word_build",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More building practice, Detective!",
+      "teach": "Listen to the whole word, then tap the tiles in order.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Excellent! You're fast at these tricky words now."
+    }
+  },
+  {
+    "lesson_id": "L6-M56-04",
+    "module_id": 56,
+    "number": 4,
+    "title": "Dictation in Context",
+    "skill": "spelling",
+    "objective": "Choose the correct word for a sentence or meaning clue, mixing roots, homophones and confusable words.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Dictation in context, Detective — the final skill from the blueprint's own Level 6 list!",
+      "teach": "Read each sentence carefully. The meaning or the root's clue always tells you which word is correct.",
+      "model": "Which word fits best in this sentence or clue?",
+      "transition": "Your turn! Use the sentence as your clue.",
+      "close": "Case closed! You can spell advanced words in real context."
+    }
+  },
+  {
+    "lesson_id": "L6-M56-05",
+    "module_id": 56,
+    "number": 5,
+    "title": "Level 6 Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of every Level 6 skill — the final challenge of The Spelling Code.",
+    "activity_type": "assessment",
+    "estimated_time": "10–12 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "The Level 6 Challenge, Detective — the final challenge in the whole Spelling Code program! Show everything you've learned as a true Word Master.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered Level 6 — and completed The Spelling Code. You're a true Word Master!"
+    }
   }
 ]

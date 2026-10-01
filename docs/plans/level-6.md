@@ -1,6 +1,6 @@
 ## 6. Level 6 plan — Word Master
 
-*Status (2026-10-01): planning, nothing built yet. Source: the Master Curriculum Blueprint v0.1 (`The_Spelling_Code_Master_Curriculum_Blueprint_v0.1.docx`, found in Downloads — not in this repo), continuing the boundary rules fixed in Levels 1–5.*
+*Status (2026-10-01): complete — all 5 modules built and deployed. This closes out The Spelling Code's full 6-level curriculum. Source: the Master Curriculum Blueprint v0.1 (`The_Spelling_Code_Master_Curriculum_Blueprint_v0.1.docx`, found in Downloads — not in this repo), continuing the boundary rules fixed in Levels 1–5. See `docs/project-notes.md`'s Level 6 curriculum design section for how each module was actually built.*
 
 ### Why this level's module list is condensed from the blueprint's 10 to 5
 

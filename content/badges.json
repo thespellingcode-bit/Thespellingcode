@@ -9,5 +9,6 @@
   { "badge_id": "BADGE-08", "name": "Level 2 Word Builder", "criteria": "Pass the Level 2 Challenge", "type": "module", "module_id": 17, "active": true },
   { "badge_id": "BADGE-09", "name": "Level 3 Pattern Detective", "criteria": "Pass the Level 3 Challenge", "type": "module", "module_id": 27, "active": true },
   { "badge_id": "BADGE-10", "name": "Level 4 Spelling Detective", "criteria": "Pass the Level 4 Challenge", "type": "module", "module_id": 40, "active": true },
-  { "badge_id": "BADGE-11", "name": "Level 5 Word Builder Pro", "criteria": "Pass the Level 5 Challenge", "type": "module", "module_id": 51, "active": true }
+  { "badge_id": "BADGE-11", "name": "Level 5 Word Builder Pro", "criteria": "Pass the Level 5 Challenge", "type": "module", "module_id": 51, "active": true },
+  { "badge_id": "BADGE-12", "name": "Level 6 Word Master", "criteria": "Pass the Level 6 Challenge — completes The Spelling Code", "type": "module", "module_id": 56, "active": true }
 ]

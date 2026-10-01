@@ -23200,5 +23200,489 @@
     "retry_feedback": "Read the sentence again — what does it actually mean?",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-01",
+    "lesson_id": "L6-M56-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "bio (life) + graphy (writing) = the written story of someone's life.",
+    "options": [
+      "biography",
+      "biology"
+    ],
+    "correct_answer": "biography",
+    "audio_asset": "say:biography",
+    "wordFamily": true,
+    "feedback": "Yes! \"biography\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-02",
+    "lesson_id": "L6-M56-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "___ going to the park.",
+    "options": [
+      "They're",
+      "There"
+    ],
+    "correct_answer": "They're",
+    "audio_asset": "say:They're",
+    "wordFamily": true,
+    "feedback": "Yes! \"They're\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-03",
+    "lesson_id": "L6-M56-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "The weather will ___ our plans.",
+    "options": [
+      "affect",
+      "effect"
+    ],
+    "correct_answer": "affect",
+    "audio_asset": "say:affect",
+    "wordFamily": true,
+    "feedback": "Yes! \"affect\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-04",
+    "lesson_id": "L6-M56-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "tele (far) + scope (see) = a tool for seeing things far away.",
+    "options": [
+      "telescope",
+      "microscope"
+    ],
+    "correct_answer": "telescope",
+    "audio_asset": "say:telescope",
+    "wordFamily": true,
+    "feedback": "Yes! \"telescope\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-05",
+    "lesson_id": "L6-M56-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "I have ___ dogs.",
+    "options": [
+      "two",
+      "too"
+    ],
+    "correct_answer": "two",
+    "audio_asset": "say:two",
+    "wordFamily": true,
+    "feedback": "Yes! \"two\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-06",
+    "lesson_id": "L6-M56-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "The school ___ gave a speech.",
+    "options": [
+      "principal",
+      "principle"
+    ],
+    "correct_answer": "principal",
+    "audio_asset": "say:principal",
+    "wordFamily": true,
+    "feedback": "Yes! \"principal\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-07",
+    "lesson_id": "L6-M56-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:eight",
+    "letters": [
+      "eigh",
+      "t"
+    ],
+    "answer_tiles": [
+      "eigh",
+      "t"
+    ],
+    "correct_answer": "eight",
+    "feedback": "Yes! You built eight.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-08",
+    "lesson_id": "L6-M56-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:caught",
+    "letters": [
+      "c",
+      "augh",
+      "t"
+    ],
+    "answer_tiles": [
+      "c",
+      "augh",
+      "t"
+    ],
+    "correct_answer": "caught",
+    "feedback": "Yes! You built caught.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-09",
+    "lesson_id": "L6-M56-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:through",
+    "letters": [
+      "thr",
+      "ough"
+    ],
+    "answer_tiles": [
+      "thr",
+      "ough"
+    ],
+    "correct_answer": "through",
+    "feedback": "Yes! You built through.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-10",
+    "lesson_id": "L6-M56-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:learn",
+    "letters": [
+      "l",
+      "ear",
+      "n"
+    ],
+    "answer_tiles": [
+      "l",
+      "ear",
+      "n"
+    ],
+    "correct_answer": "learn",
+    "feedback": "Yes! You built learn.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-11",
+    "lesson_id": "L6-M56-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:weigh",
+    "letters": [
+      "w",
+      "eigh"
+    ],
+    "answer_tiles": [
+      "w",
+      "eigh"
+    ],
+    "correct_answer": "weigh",
+    "feedback": "Yes! You built weigh.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-12",
+    "lesson_id": "L6-M56-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:taught",
+    "letters": [
+      "t",
+      "augh",
+      "t"
+    ],
+    "answer_tiles": [
+      "t",
+      "augh",
+      "t"
+    ],
+    "correct_answer": "taught",
+    "feedback": "Yes! You built taught.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-13",
+    "lesson_id": "L6-M56-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:daughter",
+    "letters": [
+      "d",
+      "augh",
+      "t",
+      "er"
+    ],
+    "answer_tiles": [
+      "d",
+      "augh",
+      "t",
+      "er"
+    ],
+    "correct_answer": "daughter",
+    "feedback": "Yes! You built daughter.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-14",
+    "lesson_id": "L6-M56-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:though",
+    "letters": [
+      "th",
+      "ough"
+    ],
+    "answer_tiles": [
+      "th",
+      "ough"
+    ],
+    "correct_answer": "though",
+    "feedback": "Yes! You built though.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-15",
+    "lesson_id": "L6-M56-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:cough",
+    "letters": [
+      "c",
+      "ough"
+    ],
+    "answer_tiles": [
+      "c",
+      "ough"
+    ],
+    "correct_answer": "cough",
+    "feedback": "Yes! You built cough.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-16",
+    "lesson_id": "L6-M56-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:neighbor",
+    "letters": [
+      "n",
+      "eigh",
+      "b",
+      "or"
+    ],
+    "answer_tiles": [
+      "n",
+      "eigh",
+      "b",
+      "or"
+    ],
+    "correct_answer": "neighbor",
+    "feedback": "Yes! You built neighbor.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-17",
+    "lesson_id": "L6-M56-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:search",
+    "letters": [
+      "s",
+      "ear",
+      "ch"
+    ],
+    "answer_tiles": [
+      "s",
+      "ear",
+      "ch"
+    ],
+    "correct_answer": "search",
+    "feedback": "Yes! You built search.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-18",
+    "lesson_id": "L6-M56-03",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tough",
+    "letters": [
+      "t",
+      "ough"
+    ],
+    "answer_tiles": [
+      "t",
+      "ough"
+    ],
+    "correct_answer": "tough",
+    "feedback": "Yes! You built tough.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-19",
+    "lesson_id": "L6-M56-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "She doesn't eat ___.",
+    "options": [
+      "meat",
+      "meet"
+    ],
+    "correct_answer": "meat",
+    "audio_asset": "say:meat",
+    "wordFamily": true,
+    "feedback": "Yes! \"meat\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-20",
+    "lesson_id": "L6-M56-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Honesty is an important ___.",
+    "options": [
+      "principle",
+      "principal"
+    ],
+    "correct_answer": "principle",
+    "audio_asset": "say:principle",
+    "wordFamily": true,
+    "feedback": "Yes! \"principle\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-21",
+    "lesson_id": "L6-M56-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "auto (self) + graph (write) = a famous person's own signature.",
+    "options": [
+      "autograph",
+      "photograph"
+    ],
+    "correct_answer": "autograph",
+    "audio_asset": "say:autograph",
+    "wordFamily": true,
+    "feedback": "Yes! \"autograph\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-22",
+    "lesson_id": "L6-M56-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "It took an ___ to finish.",
+    "options": [
+      "hour",
+      "our"
+    ],
+    "correct_answer": "hour",
+    "audio_asset": "say:hour",
+    "wordFamily": true,
+    "feedback": "Yes! \"hour\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-23",
+    "lesson_id": "L6-M56-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "She will ___ the award happily.",
+    "options": [
+      "accept",
+      "except"
+    ],
+    "correct_answer": "accept",
+    "audio_asset": "say:accept",
+    "wordFamily": true,
+    "feedback": "Yes! \"accept\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M56-24",
+    "lesson_id": "L6-M56-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "trans (across) + port (carry) = carrying things from place to place.",
+    "options": [
+      "transport",
+      "import"
+    ],
+    "correct_answer": "transport",
+    "audio_asset": "say:transport",
+    "wordFamily": true,
+    "feedback": "Yes! \"transport\" fits best here.",
+    "retry_feedback": "Read the clue or sentence again — what does it actually mean?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
   }
 ]

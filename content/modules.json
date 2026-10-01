@@ -53,5 +53,6 @@
   { "module_id": 52, "level_id": 6, "module_name": "Greek & Latin Roots", "module_goal": "Use common Greek and Latin roots (bio, tele, graph, photo, scope, port, dict, spect) as a clue to a word's meaning and spelling.", "units": 5, "active": true },
   { "module_id": 53, "level_id": 6, "module_name": "Advanced Vowel Patterns", "module_goal": "Recognise and spell rarer long-vowel patterns — eigh, augh, ough and ear for /er/ — as a set of words to learn by heart.", "units": 5, "active": true },
   { "module_id": 54, "level_id": 6, "module_name": "Homophones", "module_goal": "Choose the correct homophone (same sound, different spelling and meaning) based on what the sentence means.", "units": 6, "active": true },
-  { "module_id": 55, "level_id": 6, "module_name": "Commonly Confused Words", "module_goal": "Choose between frequently mixed-up word pairs (affect/effect, accept/except, principal/principle...) based on what the sentence means.", "units": 6, "active": true }
+  { "module_id": 55, "level_id": 6, "module_name": "Commonly Confused Words", "module_goal": "Choose between frequently mixed-up word pairs (affect/effect, accept/except, principal/principle...) based on what the sentence means.", "units": 6, "active": true },
+  { "module_id": 56, "level_id": 6, "module_name": "Review & Assessment", "module_goal": "Demonstrate independent Level 6 mastery across roots, advanced vowel patterns, homophones and commonly confused words.", "units": 5, "active": true }
 ]

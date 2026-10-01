@@ -81,6 +81,7 @@ const GRAPHEMES_BY_MODULE = {
   53: ["eigh", "augh", "ough", "ear"], // Advanced Vowel Patterns — four genuinely new graphemes (eigh/augh/ough added to VOWEL_TEAMS, ear added to R_CONTROLLED since it's the same "vowel swallowed by r" shape, just three letters instead of two).
   54: [], // Homophones — every word is an ordinary already-spellable real word (there, their, they're, to, too, two...); no new grapheme, and the sentence context lives in the item's prompt field, which this test doesn't scan (same as Module 50's wordFamily items).
   55: [], // Commonly Confused Words — every word is an ordinary already-spellable real word (affect, effect, accept, except...); no new grapheme.
+  56: [], // Review & Assessment — cumulative review, no new grapheme.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same
