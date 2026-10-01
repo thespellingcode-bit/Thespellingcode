@@ -114,7 +114,9 @@ function modelCaptionFor(item) {
       if (kind === "ending") return word ? `${word} ends with ${answer}!` : `That's the ending ${answer}!`;
       if (kind === "qu") return word ? `${word} starts with qu!` : `That's qu!`;
       if (kind === "digraph") {
-        return word ? `${word} has the digraph ${answer} at the ${graphemePosition(word, answer)}!` : `That's the digraph ${answer}!`;
+        if (!word) return `That's the digraph ${answer}!`;
+        const pos = graphemePosition(word, answer);
+        return pos ? `${word} has the digraph ${answer} at the ${pos}!` : `${word} has the digraph ${answer} in it!`;
       }
       // A vowel team can sit at the start, middle or end of a word (the
       // "ai" in "rain" is neither — reusing graphemePosition's start/end
@@ -187,9 +189,15 @@ function decoyLettersFor(item) {
 // narration needs to say "starts with"/"ends with" instead of assuming.
 // Defaults to "start" for the (rare) case a grapheme is neither, or a
 // short word where prefix and suffix overlap (e.g. a 1-letter word).
+// Returns null (rather than guessing "start") when a digraph sits in the
+// middle of a word (e.g. ph in "dolphin"/"elephant") — callers fall back
+// to a position-free phrasing instead of claiming a wrong position, the
+// same shape of bug Module 35's silent-letter narration caught live.
 function graphemePosition(word, grapheme) {
-  if (word && word.endsWith(grapheme) && !word.startsWith(grapheme)) return "end";
-  return "start";
+  if (!word) return "start";
+  if (word.startsWith(grapheme)) return "start";
+  if (word.endsWith(grapheme)) return "end";
+  return null;
 }
 
 function capitalize(s) {
@@ -224,7 +232,10 @@ function modelHeadingFor(lesson, item) {
     if (word && kind === "ending") return `Listen. ${capitalize(word)} ends with ${item.correct_answer}.`;
     if (word && kind === "qu") return `Listen. ${capitalize(word)} starts with qu.`;
     if (word && kind === "digraph") {
-      return `Listen. ${capitalize(word)} has the digraph ${item.correct_answer} at the ${graphemePosition(word, item.correct_answer)}.`;
+      const pos = graphemePosition(word, item.correct_answer);
+      return pos
+        ? `Listen. ${capitalize(word)} has the digraph ${item.correct_answer} at the ${pos}.`
+        : `Listen. ${capitalize(word)} has the digraph ${item.correct_answer} in it.`;
     }
     if (word && kind === "vowel team") return `Listen. ${capitalize(word)} has the vowel team ${item.correct_answer} in it.`;
     if (word && kind === "r-controlled vowel") return `Listen. ${capitalize(word)} has the r-controlled vowel ${item.correct_answer} in it.`;

@@ -159,6 +159,11 @@ const WORD_KEYS = [
   // clearly "dish". bus/cat/dog/baby/fox already exist and cover this
   // module's -s/-es/-ies categories without any more new pictures.
   "box",
+  // Level 4 Module 38 (ph for /f/). "phone" already exists (Level 1 sound
+  // icon, hand-drawn — reused for the same real object, not a collision).
+  // "photo" deliberately excluded — its emoji is unambiguously a camera,
+  // which reads as "camera" not "photo".
+  "dolphin", "elephant", "trophy", "graph",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

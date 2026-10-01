@@ -63,6 +63,7 @@ const GRAPHEMES_BY_MODULE = {
   35: [], // Silent Letters — kn/wr/mb/gn are never tiled as fused 2-letter units (each letter, silent or not, is its own single-character tile, e.g. knee -> k,n,ee), so there's no new tile-worthy grapheme here.
   36: [], // Y as a Vowel — y itself is already a known letter (Level 2 Module 14); this module teaches a new ROLE for it, not a new grapheme string.
   37: [], // Plurals — s/es/ies endings are built from already-known single letters; no new grapheme tile.
+  38: ["ph"], // ph for /f/ — a genuine new digraph tile (added to questionTypes.js's DIGRAPHS set too).
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

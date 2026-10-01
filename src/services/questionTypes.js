@@ -39,7 +39,7 @@ export function answerTilesFor(item) {
 // position. Narration must never call one of these the wrong name, so
 // this is a real lookup, not just a "more than one character" check.
 // Extend these sets as later modules teach more graphemes.
-const DIGRAPHS = new Set(["sh", "ch", "th", "wh"]);
+const DIGRAPHS = new Set(["sh", "ch", "th", "wh", "ph"]);
 const ENDINGS = new Set(["ck", "tch", "dge", "ng", "nk"]);
 // Level 3: two letters making ONE long-vowel sound (ai, ay...) — the same
 // underlying definition as a digraph (two letters, one sound), but a vowel

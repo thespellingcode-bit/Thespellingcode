@@ -15538,5 +15538,284 @@
     "retry_feedback": "Listen again — most words just add s; a hissing ending adds es; a consonant plus y becomes ies.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-01",
+    "lesson_id": "L4-M38-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "sh",
+      "ch"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:phone",
+    "feedback": "Yes! phone has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-02",
+    "lesson_id": "L4-M38-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "wh",
+      "th"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:dolphin",
+    "feedback": "Yes! dolphin has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-03",
+    "lesson_id": "L4-M38-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "ch",
+      "sh"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:elephant",
+    "feedback": "Yes! elephant has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-04",
+    "lesson_id": "L4-M38-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "th",
+      "wh"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:graph",
+    "feedback": "Yes! graph has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-05",
+    "lesson_id": "L4-M38-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "sh",
+      "ch"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:trophy",
+    "feedback": "Yes! trophy has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-06",
+    "lesson_id": "L4-M38-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:phone",
+    "letters": [
+      "ph",
+      "o",
+      "n",
+      "e"
+    ],
+    "answer_tiles": [
+      "ph",
+      "o",
+      "n",
+      "e"
+    ],
+    "correct_answer": "phone",
+    "feedback": "Yes! You built phone.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-07",
+    "lesson_id": "L4-M38-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dolphin",
+    "letters": [
+      "d",
+      "o",
+      "l",
+      "ph",
+      "i",
+      "n"
+    ],
+    "answer_tiles": [
+      "d",
+      "o",
+      "l",
+      "ph",
+      "i",
+      "n"
+    ],
+    "correct_answer": "dolphin",
+    "feedback": "Yes! You built dolphin.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-08",
+    "lesson_id": "L4-M38-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:elephant",
+    "letters": [
+      "e",
+      "l",
+      "e",
+      "ph",
+      "a",
+      "n",
+      "t"
+    ],
+    "answer_tiles": [
+      "e",
+      "l",
+      "e",
+      "ph",
+      "a",
+      "n",
+      "t"
+    ],
+    "correct_answer": "elephant",
+    "feedback": "Yes! You built elephant.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-09",
+    "lesson_id": "L4-M38-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:graph",
+    "letters": [
+      "g",
+      "r",
+      "a",
+      "ph"
+    ],
+    "answer_tiles": [
+      "g",
+      "r",
+      "a",
+      "ph"
+    ],
+    "correct_answer": "graph",
+    "feedback": "Yes! You built graph.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-10",
+    "lesson_id": "L4-M38-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:photo",
+    "letters": [
+      "ph",
+      "o",
+      "t",
+      "o"
+    ],
+    "answer_tiles": [
+      "ph",
+      "o",
+      "t",
+      "o"
+    ],
+    "correct_answer": "photo",
+    "feedback": "Yes! You built photo.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-11",
+    "lesson_id": "L4-M38-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "phone",
+    "options": [
+      "phone",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "phone",
+    "feedback": "Yes! You read phone.",
+    "retry_feedback": "Sound out the letters — remember ph says /f/.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-12",
+    "lesson_id": "L4-M38-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "dolphin",
+    "options": [
+      "dolphin",
+      "duck",
+      "fish"
+    ],
+    "correct_answer": "dolphin",
+    "feedback": "Yes! You read dolphin.",
+    "retry_feedback": "Sound out the letters — remember ph says /f/.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M38-13",
+    "lesson_id": "L4-M38-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "elephant",
+    "options": [
+      "elephant",
+      "mouse",
+      "sheep"
+    ],
+    "correct_answer": "elephant",
+    "feedback": "Yes! You read elephant.",
+    "retry_feedback": "Sound out the letters — remember ph says /f/.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

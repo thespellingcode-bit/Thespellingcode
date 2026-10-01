@@ -16301,5 +16301,324 @@
     "retry_feedback": "Sound out each part, then blend them together.",
     "skill": "decoding",
     "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-01-1",
+    "lesson_id": "L4-M38-01",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "wh",
+      "ch"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:photo",
+    "feedback": "Yes! photo has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-01-2",
+    "lesson_id": "L4-M38-01",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "sh",
+      "th"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:alphabet",
+    "feedback": "Yes! alphabet has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-01-3",
+    "lesson_id": "L4-M38-01",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "ch",
+      "wh"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:nephew",
+    "feedback": "Yes! nephew has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-01-4",
+    "lesson_id": "L4-M38-01",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "th",
+      "sh"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:gopher",
+    "feedback": "Yes! gopher has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-02-1",
+    "lesson_id": "L4-M38-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:trophy",
+    "letters": [
+      "t",
+      "r",
+      "o",
+      "ph",
+      "y"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "o",
+      "ph",
+      "y"
+    ],
+    "correct_answer": "trophy",
+    "feedback": "Yes! You built trophy.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-02-2",
+    "lesson_id": "L4-M38-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:alphabet",
+    "letters": [
+      "a",
+      "l",
+      "ph",
+      "a",
+      "b",
+      "e",
+      "t"
+    ],
+    "answer_tiles": [
+      "a",
+      "l",
+      "ph",
+      "a",
+      "b",
+      "e",
+      "t"
+    ],
+    "correct_answer": "alphabet",
+    "feedback": "Yes! You built alphabet.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-02-3",
+    "lesson_id": "L4-M38-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:nephew",
+    "letters": [
+      "n",
+      "e",
+      "ph",
+      "e",
+      "w"
+    ],
+    "answer_tiles": [
+      "n",
+      "e",
+      "ph",
+      "e",
+      "w"
+    ],
+    "correct_answer": "nephew",
+    "feedback": "Yes! You built nephew.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-03-1",
+    "lesson_id": "L4-M38-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "trophy",
+    "options": [
+      "trophy",
+      "doll",
+      "book"
+    ],
+    "correct_answer": "trophy",
+    "feedback": "Yes! You read trophy.",
+    "retry_feedback": "Sound out the letters — remember ph says /f/.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-03-2",
+    "lesson_id": "L4-M38-03",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "graph",
+    "options": [
+      "graph",
+      "box",
+      "sock"
+    ],
+    "correct_answer": "graph",
+    "feedback": "Yes! You read graph.",
+    "retry_feedback": "Sound out the letters — remember ph says /f/.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-04-1",
+    "lesson_id": "L4-M38-04",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "wh",
+      "sh"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:photo",
+    "feedback": "Yes! photo has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-04-2",
+    "lesson_id": "L4-M38-04",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "ch",
+      "th"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:gopher",
+    "feedback": "Yes! gopher has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-04-3",
+    "lesson_id": "L4-M38-04",
+    "type": "letter_sound_match",
+    "prompt": "Which two letters make the /f/ sound in this word?",
+    "options": [
+      "ph",
+      "sh",
+      "ch"
+    ],
+    "correct_answer": "ph",
+    "audio_asset": "say:alphabet",
+    "feedback": "Yes! alphabet has ph saying /f/.",
+    "retry_feedback": "Listen for two letters making the /f/ sound.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-04-4",
+    "lesson_id": "L4-M38-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:graph",
+    "letters": [
+      "g",
+      "r",
+      "a",
+      "ph"
+    ],
+    "answer_tiles": [
+      "g",
+      "r",
+      "a",
+      "ph"
+    ],
+    "correct_answer": "graph",
+    "feedback": "Yes! You built graph.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-04-5",
+    "lesson_id": "L4-M38-04",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:nephew",
+    "letters": [
+      "n",
+      "e",
+      "ph",
+      "e",
+      "w"
+    ],
+    "answer_tiles": [
+      "n",
+      "e",
+      "ph",
+      "e",
+      "w"
+    ],
+    "correct_answer": "nephew",
+    "feedback": "Yes! You built nephew.",
+    "retry_feedback": "Listen again and place the tiles in order — ph is a single tile.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-04-6",
+    "lesson_id": "L4-M38-04",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "dolphin",
+    "options": [
+      "dolphin",
+      "duck",
+      "bird"
+    ],
+    "correct_answer": "dolphin",
+    "feedback": "Yes! You read dolphin.",
+    "retry_feedback": "Sound out the letters — remember ph says /f/.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "AS-M38-04-7",
+    "lesson_id": "L4-M38-04",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "trophy",
+    "options": [
+      "trophy",
+      "box",
+      "sock"
+    ],
+    "correct_answer": "trophy",
+    "feedback": "Yes! You read trophy.",
+    "retry_feedback": "Sound out the letters — remember ph says /f/.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
   }
 ]

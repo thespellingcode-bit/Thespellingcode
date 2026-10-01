@@ -35,5 +35,6 @@
   { "module_id": 34, "level_id": 4, "module_name": "Doubling Before Suffixes", "module_goal": "Add -ing/-ed to a word correctly: double the final consonant, drop a silent e, or just add the ending, depending on the base word's shape.", "units": 6, "active": true },
   { "module_id": 35, "level_id": 4, "module_name": "Silent Letters", "module_goal": "Recognise kn, wr, mb and gn as spellings with a silent first or last letter — receptive only, a new pattern rather than a graded choice.", "units": 5, "active": true },
   { "module_id": 36, "level_id": 4, "module_name": "Y as a Vowel", "module_goal": "Recognise y as a vowel at the end of a word — long e in a longer word (happy), long i in a short word (cry).", "units": 5, "active": true },
-  { "module_id": 37, "level_id": 4, "module_name": "Plurals", "module_goal": "Choose -s, -es or y-to-ies to make a word plural, based on how the word ends.", "units": 6, "active": true }
+  { "module_id": 37, "level_id": 4, "module_name": "Plurals", "module_goal": "Choose -s, -es or y-to-ies to make a word plural, based on how the word ends.", "units": 6, "active": true },
+  { "module_id": 38, "level_id": 4, "module_name": "ph for /f/", "module_goal": "Recognise ph as a spelling for the /f/ sound.", "units": 4, "active": true }
 ]

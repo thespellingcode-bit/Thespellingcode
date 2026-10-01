@@ -3493,5 +3493,81 @@
       "transition": "",
       "close": "Case closed! You've mastered making words plural."
     }
+  },
+  {
+    "lesson_id": "L4-M38-01",
+    "module_id": 38,
+    "number": 1,
+    "title": "Meet the Sound",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise ph as a spelling for the /f/ sound.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A new spelling trick, Detective! Two letters can make the /f/ sound.",
+      "teach": "In phone, the letters p and h together say /f/ — just like elephant and dolphin. It looks like 'p-h' but it sounds like 'f'!",
+      "model": "Listen. Which two letters make the /f/ sound in this word?",
+      "transition": "Your turn, Detective! Find the ph.",
+      "close": "Case closed! You can spot ph hiding in a word."
+    }
+  },
+  {
+    "lesson_id": "L4-M38-02",
+    "module_id": 38,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build ph words letter by letter, with ph as a single tile.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some ph words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — ph gets its own single tile.",
+      "model": "Listen. Watch how the tiles build the word, ph included.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You spelled the /f/ sound with ph every time."
+    }
+  },
+  {
+    "lesson_id": "L4-M38-03",
+    "module_id": 38,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a ph word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Remember — ph says /f/.",
+      "teach": "Read the word, saying /f/ for ph. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every ph word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M38-04",
+    "module_id": 38,
+    "number": 4,
+    "title": "ph Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of ph for /f/ across listening, building and reading.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about ph.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered ph for /f/."
+    }
   }
 ]

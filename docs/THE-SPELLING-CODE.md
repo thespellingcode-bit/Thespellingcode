@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–37 built (through Plurals) |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–38 built (through ph for /f/) |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,7 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
-| Level 4 “Spelling Detective”, Modules 28–37 (through Plurals) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
+| Level 4 “Spelling Detective”, Modules 28–38 (through ph for /f/) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -89,7 +89,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Level 4 curriculum design (Modules 28–37 built; Modules 38–40 planned, not yet built)
+### Level 4 curriculum design (Modules 28–38 built; Modules 39–40 planned, not yet built)
 - **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
 - **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
 - **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
@@ -103,6 +103,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 35, Silent Letters — the first Level 4 module with no spelling choice at all, receptive only.** kn, wr, mb and gn are simply new patterns (no word is plausibly spelled two ways), so this module returns to the standard Level 1/2 five-lesson shape instead of `spelling_choice`/competing-tile decoys. Every silent letter is tiled as its own single-character tile, never fused into a 2-letter chunk like a digraph (knee → `[k, n, ee]`, not a "kn" tile) — there's no pronunciation reason to fuse them, since the "n" tile is identical whether a silent k precedes it or not; this also means no new `graphemeKindFor()` kind was needed. **A real narration bug was caught and fixed live before shipping:** reusing `letter_sound_match` with a bare single-letter `correct_answer` fell through to the generic "word starts with the letter X" narration — true, but missing the entire point (the letter is never actually said). Added a `silent: true` content field and a dedicated branch in both `modelCaptionFor` and `modelHeadingFor` ("knee has a silent k!" / "Which letter is silent in Knee?") rather than leaving the misleading default. Added 3 new word pictures (comb, knee, knife); "thumb" reused an existing Level 2 picture, and "sign" was dropped — its emoji is a construction barrier, not clearly "sign."
 - **Module 36, Y as a Vowel — same shape as Module 35 (receptive, standard five-lesson template), with the same narration-field trick applied proactively this time.** y at the end of a longer word says long e (happy, baby); at the end of a short word it says long i (cry, fly, my). `correct_answer` here is "e" or "i" — not a grapheme at all — so `letter_sound_match`'s generic fallback would have been nonsensical ("happy ends with the letter e"), the same shape of bug Module 35 caught live; this time a `yVowel: true` field and dedicated narration branch were added from the start rather than discovered after shipping. Added 3 new word pictures (baby, puppy, fly); dropped "candy" as a picture word — `"candy".includes("can")` would have matched the existing "can" picture first — and dropped "sky" — its sun-behind-cloud emoji reads as "weather," not clearly "sky."
 - **Module 37, Plurals — back to a genuine spelling choice, but between three endings instead of two letters.** Add -s for most words (cat → cats), -es after a word ending in a hissing/hushing sound — s, x, ch, sh (box → boxes, bus → buses), or swap final y for -ies after a consonant (baby → babies, puppy → puppies). The content-authoring helper `shape(base, mode)` generalizes the same three-way branch across every lesson, and this time `wb()` was written to separate `tiles` (the correct answer tiles, feeding `answer_tiles`) from `letters` (`[...tiles, wrongEnding]`, feeding the tray) from the very first line, rather than discovering the `answer_tiles`-includes-the-decoy bug live as happened in Modules 29/35/36 — all 22 tests passed on the first run. Unlike Modules 28–34's doubling/minimal-pair rules, plurals don't offer a natural minimal-pair pair for `spelling_choice` recognition (there's no real word that's ambiguously "either -s or -es"), so every `spelling_choice` item instead pairs the correct plural against the *wrong rule applied to the same base word* (boxs vs boxes, babys vs babies) — same "does this spelling match the rule" test as Modules 28–32, just without a genuine-minimal-pair option this time. Verified live that the Watch-stage word_build demo explains all three modes correctly across its 5 examples (cats/s, boxes/es, babies/ies, dogs/s, buses/es) and that Practice correctly advances after a correct build. Added 1 new word picture (box); dropped "dish" as a picture word — its emoji is a single plate, which reads as "plate," not clearly "dish" (and "box" already covers the -es example without it).
+- **Module 38, ph for /f/ — back to receptive-only (no spelling choice: ph vs f isn't a live ambiguity at this level), and 4 lessons instead of the usual 5 since the plan's own table calls for it.** `"ph"` was added to `questionTypes.js`'s `DIGRAPHS` set so `graphemeKindFor("ph")` correctly returns `"digraph"` instead of falling through to the generic "blend" narration. **A real narration bug was caught and fixed live before shipping**, this time by live-testing rather than anticipating it in content: `graphemePosition()` only ever returned `"start"` or `"end"` (defaulting to `"start"` for anything else), which was never wrong for Module 11's digraphs (sh/ch/th/wh only ever sat at a word's start or end in this app's word lists) but IS wrong for "dolphin"/"elephant", where ph sits in the middle — the narration said "dolphin has the digraph ph at the start!", which is false. Fixed by having `graphemePosition()` return `null` for a mid-word grapheme instead of guessing, and both narration call sites (`modelCaptionFor`/`modelHeadingFor`) fall back to a position-free "has the digraph ph in it!" phrasing, mirroring the pattern vowel teams already used for the same reason. Verified live after the fix across all 5 Watch-stage examples: phone ("at the start"), dolphin and elephant ("in it"), graph ("at the end"), trophy ("in it"). Added 3 new word pictures (dolphin, elephant, graph — a bar-chart emoji, which reads clearly as "graph"); sourced but rejected "photo" as a picture word — its Noto emoji is an unambiguous camera, which reads as "camera" not "photo", so "photo" stayed build/spell-only, the same treatment Module 12 gave "clock".
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -191,6 +192,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 4 Module 35 (Silent Letters) — receptive only, back to the standard Level 1/2 lesson shape. Caught and fixed a real narration bug live (reusing letter_sound_match's generic "starts with the letter X" phrasing for a silent letter is technically true but misses the point) by adding a `silent` content field and dedicated narration branch. Added 3 new word pictures (comb, knee, knife).
 - Built Level 4 Module 36 (Y as a Vowel) — same receptive shape, applied the same `yVowel` narration-field fix proactively from the start this time. Added 3 new word pictures (baby, puppy, fly); dropped "candy" (substring collision with "can") and "sky" (ambiguous emoji) as picture words.
 - Built Level 4 Module 37 (Plurals) — -s/-es/-ies, back to a graded spelling choice via the `shape()` content helper; separated `tiles` from `letters` in `wb()` from the start, so the recurring answer_tiles-includes-the-decoy bug didn't recur this time (22/22 on the first run). Live-verified all three plural modes in the Watch-stage word_build demo and a correct Practice-stage build. Added 1 new word picture (box); dropped "dish" (ambiguous plate emoji).
+- Built Level 4 Module 38 (ph for /f/) — receptive only, 4 lessons. Added "ph" to the DIGRAPHS set so it narrates correctly. Caught and fixed a real narration bug live: graphemePosition() defaulted to "start" for a mid-word digraph (wrong for dolphin/elephant), now returns null and both narration sites fall back to a position-free "has the digraph ph in it!" phrasing. Added 3 new word pictures (dolphin, elephant, graph); rejected "photo" as a picture (its emoji is unambiguously a camera).
 
 ---
 
@@ -511,6 +513,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 35 | Silent Letters | **Live** | 5 | 20 | 20 |
 | 36 | Y as a Vowel | **Live** | 5 | 19 | 20 |
 | 37 | Plurals | **Live** | 6 | 28 | 28 |
+| 38 | ph for /f/ | **Live** | 4 | 13 | 16 |
 
 ## Curriculum in full
 
@@ -5851,12 +5854,120 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M37-06-8 | read “box” → picture \| options box, shell, bus \| answer **box** |  |
 | AS-M37-06-9 | read “baby” → picture \| options baby, duck, fish \| answer **baby** |  |
 
+### Module 38 — ph for /f/
+
+*Goal:* Recognise ph as a spelling for the /f/ sound.
+
+#### Lesson 1: Meet the Sound (`L4-M38-01`)
+
+- **Objective:** Recognise ph as a spelling for the /f/ sound.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A new spelling trick, Detective! Two letters can make the /f/ sound.
+- **Narration (teach):** In phone, the letters p and h together say /f/ — just like elephant and dolphin. It looks like 'p-h' but it sounds like 'f'!
+- **Narration (model):** Listen. Which two letters make the /f/ sound in this word?
+- **Narration (transition):** Your turn, Detective! Find the ph.
+- **Narration (close):** Case closed! You can spot ph hiding in a word.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M38-01 | hear “phone” → letter \| options ph sh ch \| answer **ph** |
+| Q-M38-02 | hear “dolphin” → letter \| options ph wh th \| answer **ph** |
+| Q-M38-03 | hear “elephant” → letter \| options ph ch sh \| answer **ph** |
+| Q-M38-04 | hear “graph” → letter \| options ph th wh \| answer **ph** |
+| Q-M38-05 | hear “trophy” → letter \| options ph sh ch \| answer **ph** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| undefined | hear “photo” → letter \| options ph wh ch \| answer **ph** |  |
+| undefined | hear “alphabet” → letter \| options ph sh th \| answer **ph** |  |
+| undefined | hear “nephew” → letter \| options ph ch wh \| answer **ph** |  |
+| undefined | hear “gopher” → letter \| options ph th sh \| answer **ph** |  |
+
+#### Lesson 2: Blend & Build (`L4-M38-02`)
+
+- **Objective:** Build ph words letter by letter, with ph as a single tile.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some ph words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — ph gets its own single tile.
+- **Narration (model):** Listen. Watch how the tiles build the word, ph included.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! You spelled the /f/ sound with ph every time.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M38-06 | hear “phone” → build \| tray ph o n e \| answer **phone** |
+| Q-M38-07 | hear “dolphin” → build \| tray d o l ph i n \| answer **dolphin** |
+| Q-M38-08 | hear “elephant” → build \| tray e l e ph a n t \| answer **elephant** |
+| Q-M38-09 | hear “graph” → build \| tray g r a ph \| answer **graph** |
+| Q-M38-10 | hear “photo” → build \| tray ph o t o \| answer **photo** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| undefined | hear “trophy” → build \| tray t r o ph y \| answer **trophy** |  |
+| undefined | hear “alphabet” → build \| tray a l ph a b e t \| answer **alphabet** |  |
+| undefined | hear “nephew” → build \| tray n e ph e w \| answer **nephew** |  |
+
+#### Lesson 3: Read the Words (`L4-M38-03`)
+
+- **Objective:** Read a ph word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! Remember — ph says /f/.
+- **Narration (teach):** Read the word, saying /f/ for ph. Then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You read every ph word correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M38-11 | read “phone” → picture \| options phone, bus, hen \| answer **phone** |
+| Q-M38-12 | read “dolphin” → picture \| options dolphin, duck, fish \| answer **dolphin** |
+| Q-M38-13 | read “elephant” → picture \| options elephant, mouse, sheep \| answer **elephant** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| undefined | read “trophy” → picture \| options trophy, doll, book \| answer **trophy** |  |
+| undefined | read “graph” → picture \| options graph, box, sock \| answer **graph** |  |
+
+#### Lesson 4: ph Challenge (`L4-M38-04`)
+
+- **Objective:** Demonstrate independent mastery of ph for /f/ across listening, building and reading.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about ph.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered ph for /f/.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| undefined | hear “photo” → letter \| options ph wh sh \| answer **ph** |  |
+| undefined | hear “gopher” → letter \| options ph ch th \| answer **ph** |  |
+| undefined | hear “alphabet” → letter \| options ph sh ch \| answer **ph** |  |
+| undefined | hear “graph” → build \| tray g r a ph \| answer **graph** |  |
+| undefined | hear “nephew” → build \| tray n e ph e w \| answer **nephew** |  |
+| undefined | read “dolphin” → picture \| options dolphin, duck, bird \| answer **dolphin** |  |
+| undefined | read “trophy” → picture \| options trophy, box, sock \| answer **trophy** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (78, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach, doll, comb, knee, knife, baby, puppy, fly, box — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (82, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach, doll, comb, knee, knife, baby, puppy, fly, box, dolphin, elephant, trophy, graph — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

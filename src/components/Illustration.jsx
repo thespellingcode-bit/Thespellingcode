@@ -521,6 +521,10 @@ const IMAGE_BG = {
   comb: "#E4E1EA", knee: "#FDE9D2", knife: "#DCEEF6",
   baby: "#FDE9D2", puppy: "#F1E3D3", fly: "#E4E1EA",
   box: "#F1E3D3",
+  // "phone" deliberately omitted — it already renders via the hand-drawn
+  // PICTURES.phone entry (the existing Level 1 phone sound icon), which
+  // Illustration() falls back to whenever IMAGE_BG has no entry for a name.
+  dolphin: "#DCEBFF", elephant: "#E4E1EA", trophy: "#FFF3D6", graph: "#F1E3D3",
 };
 
 export function Illustration({ name = "pattern", size = 96 }) {
