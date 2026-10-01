@@ -60,6 +60,7 @@ const GRAPHEMES_BY_MODULE = {
   32: [], // CH or TCH? — ch and tch were both already taught receptively in Level 2 (Module 11's digraph, Module 12's ending); this module is about which known ending to choose, not a new tile.
   33: [], // FLOSS Doubling — ff/ll/ss/zz are already in ALWAYS_ALLOWED_DOUBLES below, handled generically rather than per-module.
   34: [], // Doubling Before Suffixes — "ng" (part of every -ing word) is already known from Level 2 Module 12; no new grapheme.
+  35: [], // Silent Letters — kn/wr/mb/gn are never tiled as fused 2-letter units (each letter, silent or not, is its own single-character tile, e.g. knee -> k,n,ee), so there's no new tile-worthy grapheme here.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same

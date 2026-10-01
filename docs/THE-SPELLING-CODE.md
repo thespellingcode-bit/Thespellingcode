@@ -30,7 +30,7 @@
 | 1 | Sound Explorer | 4–5 | 10 | **Modules 1–7 built** (structure redesigned into letter clusters) |
 | 2 | Word Builder | 5–6 | 8 (built as 9) | **Complete** — Modules 9–17 built and deployed |
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
-| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–34 built (through Doubling Before Suffixes) |
+| 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **In progress** — Modules 28–35 built (through Silent Letters) |
 | 5 | Word Builder Pro | 9–11 | 10 | Not started |
 | 6 | Word Master | 11–15 | 10 | Not started |
 
@@ -43,7 +43,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 1 Module 8 (Master Assessment) | **Built** — one cumulative 16-item test across every Level 1 skill; earns the “Level 1 Sound Explorer” badge |
 | Level 2 “Word Builder”, all 9 modules (CVC Review, Consonant Blends, Digraphs, Common Endings, Qu & Patterns, Letter Cluster 5, Tricky Words, Sentence Spelling, Review & Assessment) | **Complete — built and deployed.** Level 2 is finished. |
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
-| Level 4 “Spelling Detective”, Modules 28–34 (through Doubling Before Suffixes) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
+| Level 4 “Spelling Detective”, Modules 28–35 (through Silent Letters) | **Built** — see `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -89,7 +89,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Home screen decluttering.** Built ahead of Level 3's content: `ChildHome.jsx` got a horizontally-scrollable level-pill switcher (one row per level, defaulting to whichever level contains the child's current unlock frontier) so the module accordion only ever shows one level's modules at a time — the owner's explicit requirement when asking to build every remaining level ("make sure the first screen does not clutter").
 - **Old score-gated unlock mechanic removed.** The per-module "free unlock at 85%" celebration screen (superseded by the flat Level 1 free / Level 2+ paid decision — see "Access rules" below) was fully deleted from `ResultScreen.jsx` and `ChildHome.jsx`, not just disabled, since it no longer has any code path that can trigger it.
 
-### Level 4 curriculum design (Modules 28–34 built; Modules 35–40 planned, not yet built)
+### Level 4 curriculum design (Modules 28–35 built; Modules 36–40 planned, not yet built)
 - **Full plan:** `docs/plans/level-4.md` — big goal, module-by-module table, and the design shift every earlier level's boundary was protecting against: Level 4 is where the child is finally graded on *choosing* the correct spelling, not just recognising or reproducing one already given. No owner sign-off was sought on the phonics rules themselves (c-before-a/o/u vs k-before-e/i/y, the FLOSS doubling rule, etc.) since they're fixed linguistic facts, not design judgment calls — only Level 3's genuine ambiguity (receptive vs graded vowel teams) needed that.
 - **A new activity type, `spelling_choice`** — a thin `MultipleChoice` wrapper exactly like `fix_sentence` (added to `NO_ICON_OPTION_TYPES` for the same reason: a wrong-spelling option like "kat" must never get a picture icon). Given a spoken word, the child picks the correctly spelled option from two plain-text choices; the wrong option is always a genuine misapplication of the real rule being taught (e.g. "kat" for "cat" swaps the letter the rule says is wrong), never an arbitrary typo.
 - **`word_build`'s existing decoy-tile mechanic got a new *purpose*, not a new mechanic** — the decoy tile is now deliberately the *other* member of the spelling-choice pair (a tray for "cat" holds both c and k, and the child must pick the one the rule calls for) rather than a random unrelated letter. Confirmed live this needed zero code changes — the same tray/answer_tiles/narration machinery that handled Level 2 and 3's decoys handles this without modification.
@@ -100,6 +100,7 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 32, CH or TCH?** — same shape again, applied to /ch/: tch directly after a short vowel (catch, pitch, watch), plain ch after anything else (peach, lunch, bench). Deliberately excludes the genuine short-vowel-but-ch exceptions (much, such, which) from graded content — the same simplification Module 30 made for g/j's full irregularity, rather than teaching an exception list alongside the rule. Dropped "torch" as a picture word — its flashlight-shaped emoji reads as "flashlight" to most users, not clearly "torch." Added 2 new word pictures (watch, peach).
 - **Module 33, FLOSS Doubling — the first module where the choice isn't between two different letters, just a doubled vs single ending.** f, l, s and sometimes z double after a short vowel in a one-syllable word (bell, off, pass, buzz). Unlike Modules 28-32, every word in this module's content follows the rule (there's no "sometimes you don't double" branch within the word list), so `wrongOf()`/`wb()` simplified to a single generic transform (strip the last letter / tray offers the doubled pair plus one copy) rather than branching on word shape. "bell" and "shell" reuse existing pictures from Level 1/2 (same real objects, not collisions); added 1 new word picture (doll).
 - **Module 34, Doubling Before Suffixes — the first module needing a genuinely new word shape: a base word plus a suffix (-ing/-ed), not just an ending choice on an already-whole word.** Three rules, each a full lesson: double the final consonant after a short vowel (hop → hopping), drop a silent e (hope → hoping), or just add the suffix when neither applies (jump → jumping). The `word_build` helper generalizes cleanly across all three — `letters`/`answer_tiles` built from `[...stem, extra, suffix]` with the decoy being either a stray "e" (doubling words) or the stem's own final consonant (drop-e words), confirmed live for all three modes without any new component. The `spelling_choice` recognition lessons lean on genuine minimal pairs wherever English has them (hop/hope, tap/tape, win/wine, plan/plane, grip/gripe, star/stare) — the SAME two words really do exist with different meanings, so the audio itself (short vs long vowel) is the only way to tell which spelling is correct, directly extending Level 3's short/long vowel discrimination skill. No picture-matching lesson — a still image can't clearly distinguish "running" from "run," so this module leans on its six lessons for the skill progression instead of forcing in weak picture content.
+- **Module 35, Silent Letters — the first Level 4 module with no spelling choice at all, receptive only.** kn, wr, mb and gn are simply new patterns (no word is plausibly spelled two ways), so this module returns to the standard Level 1/2 five-lesson shape instead of `spelling_choice`/competing-tile decoys. Every silent letter is tiled as its own single-character tile, never fused into a 2-letter chunk like a digraph (knee → `[k, n, ee]`, not a "kn" tile) — there's no pronunciation reason to fuse them, since the "n" tile is identical whether a silent k precedes it or not; this also means no new `graphemeKindFor()` kind was needed. **A real narration bug was caught and fixed live before shipping:** reusing `letter_sound_match` with a bare single-letter `correct_answer` fell through to the generic "word starts with the letter X" narration — true, but missing the entire point (the letter is never actually said). Added a `silent: true` content field and a dedicated branch in both `modelCaptionFor` and `modelHeadingFor` ("knee has a silent k!" / "Which letter is silent in Knee?") rather than leaving the misleading default. Added 3 new word pictures (comb, knee, knife); "thumb" reused an existing Level 2 picture, and "sign" was dropped — its emoji is a construction barrier, not clearly "sign."
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -185,6 +186,7 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 4 Module 32 (CH or TCH?) — same shape applied to /ch/, deliberately excluding the much/such/which exceptions from graded content. Added 2 new word pictures (watch, peach).
 - Built Level 4 Module 33 (FLOSS Doubling) — the first module where the choice is doubled-vs-single rather than two different letters. Added 1 new word picture (doll); bell and shell reused existing Level 1/2 pictures.
 - Built Level 4 Module 34 (Doubling Before Suffixes) — the first module needing a base-word-plus-suffix shape rather than an ending choice; live-verified all three rules (double, drop-e, just-add) render and score correctly. No new pictures — action words don't picture cleanly, so this module skipped a Read-the-Words lesson rather than forcing in ambiguous ones.
+- Built Level 4 Module 35 (Silent Letters) — receptive only, back to the standard Level 1/2 lesson shape. Caught and fixed a real narration bug live (reusing letter_sound_match's generic "starts with the letter X" phrasing for a silent letter is technically true but misses the point) by adding a `silent` content field and dedicated narration branch. Added 3 new word pictures (comb, knee, knife).
 
 ---
 
@@ -502,6 +504,7 @@ Per the owner's confirmed Level 3 pacing ("keep building level after level witho
 | 32 | CH or TCH? | **Live** | 5 | 18 | 21 |
 | 33 | FLOSS Doubling | **Live** | 5 | 19 | 21 |
 | 34 | Doubling Before Suffixes | **Live** | 6 | 28 | 26 |
+| 35 | Silent Letters | **Live** | 5 | 20 | 20 |
 
 ## Curriculum in full
 
@@ -5390,12 +5393,151 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M34-06-6 | hear “hoping” → build \| tray h o p ing p \| answer **hoping** |  |
 | AS-M34-06-7 | hear “looking” → build \| tray l o o k ing \| answer **looking** |  |
 
+### Module 35 — Silent Letters
+
+*Goal:* Recognise kn, wr, mb and gn as spellings with a silent first or last letter — receptive only, a new pattern rather than a graded choice.
+
+#### Lesson 1: Meet the Letters (`L4-M35-01`)
+
+- **Objective:** Recognise kn, wr, mb and gn as spellings with a silent first or last letter.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** letter_sound_match · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** A strange new case, Detective! Some letters hide completely silent.
+- **Narration (teach):** In knee, the k is silent — you only hear 'nee'. In write, the w is silent. In thumb, the b is silent. In gnat, the g is silent. Spelled, but never said!
+- **Narration (model):** Listen. Which letter is silent in this word?
+- **Narration (transition):** Your turn, Detective! Find the silent letter.
+- **Narration (close):** Case closed! You can spot a silent letter hiding in a word.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M35-01 | hear “knee” → letter \| options k w b \| answer **k** |
+| Q-M35-02 | hear “write” → letter \| options w k g \| answer **w** |
+| Q-M35-03 | hear “thumb” → letter \| options b k w \| answer **b** |
+| Q-M35-04 | hear “knit” → letter \| options k w g \| answer **k** |
+| Q-M35-05 | hear “wrap” → letter \| options w k b \| answer **w** |
+| Q-M35-06 | hear “comb” → letter \| options b w g \| answer **b** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M35-01-1 | hear “know” → letter \| options k w g \| answer **k** |  |
+| AS-M35-01-2 | hear “wrist” → letter \| options w k b \| answer **w** |  |
+| AS-M35-01-3 | hear “climb” → letter \| options b k w \| answer **b** |  |
+| AS-M35-01-4 | hear “gnat” → letter \| options g k w \| answer **g** |  |
+
+#### Lesson 2: Blend & Build (`L4-M35-02`)
+
+- **Objective:** Build silent-letter words letter by letter, including the silent letter.
+- **Skill:** word_building · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Time to build some silent-letter words!
+- **Narration (teach):** Listen to the whole word, then tap the tiles in order — even the silent letter gets its own tile.
+- **Narration (model):** Listen. Watch how the tiles build the word, silent letter included.
+- **Narration (transition):** Your turn! Listen, then build each word.
+- **Narration (close):** Fantastic building! You included every silent letter.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M35-07 | hear “knee” → build \| tray k n ee \| answer **knee** |
+| Q-M35-08 | hear “write” → build \| tray w r i t e \| answer **write** |
+| Q-M35-09 | hear “thumb” → build \| tray th u m b \| answer **thumb** |
+| Q-M35-10 | hear “comb” → build \| tray c o m b \| answer **comb** |
+| Q-M35-11 | hear “knot” → build \| tray k n o t \| answer **knot** |
+| Q-M35-12 | hear “wrong” → build \| tray w r o ng \| answer **wrong** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M35-02-1 | hear “gnat” → build \| tray g n a t \| answer **gnat** |  |
+| AS-M35-02-2 | hear “lamb” → build \| tray l a m b \| answer **lamb** |  |
+| AS-M35-02-3 | hear “wreck” → build \| tray w r e ck \| answer **wreck** |  |
+
+#### Lesson 3: Read the Words (`L4-M35-03`)
+
+- **Objective:** Read a silent-letter word and match it to its picture.
+- **Skill:** decoding · **Activity:** read_word · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Reading mission! Remember — don't say the silent letter.
+- **Narration (teach):** Read the word, skipping the silent letter's sound. Then find its picture.
+- **Narration (model):** Read. Then find the matching picture.
+- **Narration (transition):** Your turn! Read carefully, then pick the picture.
+- **Narration (close):** Wonderful reading! You read every silent-letter word correctly.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M35-13 | read “knee” → picture \| options knee, bus, hen \| answer **knee** |
+| Q-M35-14 | read “knife” → picture \| options knife, fish, pig \| answer **knife** |
+| Q-M35-15 | read “comb” → picture \| options comb, frog, duck \| answer **comb** |
+| Q-M35-16 | read “thumb” → picture \| options thumb, crab, shell \| answer **thumb** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M35-03-1 | read “knee” → picture \| options knee, shell, bus \| answer **knee** | true |
+| AS-M35-03-2 | read “comb” → picture \| options comb, duck, fish \| answer **comb** | true |
+
+#### Lesson 4: Spell the Words (`L4-M35-04`)
+
+- **Objective:** Spell a dictated silent-letter word from a tray that includes one decoy letter.
+- **Skill:** spelling · **Activity:** word_build · **Time:** 5–7 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Spelling mission — don't forget the silent letter!
+- **Narration (teach):** Listen to the word, then build it — remember the silent letter, and leave out the extra tile that doesn't belong.
+- **Narration (model):** Listen. Pick the right tiles — silent letter included — and leave the extra one behind!
+- **Narration (transition):** Your turn! Listen carefully, include the silent letter, and leave out the extra one.
+- **Narration (close):** Excellent spelling! You never forgot a silent letter.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M35-17 | hear “knit” → build \| tray k n i t w \| answer **knit** |
+| Q-M35-18 | hear “wrap” → build \| tray w r a p k \| answer **wrap** |
+| Q-M35-19 | hear “climb” → build \| tray c l i m b g \| answer **climb** |
+| Q-M35-20 | hear “gnome” → build \| tray g n o m e k \| answer **gnome** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M35-04-1 | hear “knock” → build \| tray k n o ck w \| answer **knock** |  |
+| AS-M35-04-2 | hear “wrist” → build \| tray w r i s t k \| answer **wrist** |  |
+| AS-M35-04-3 | hear “bomb” → build \| tray b o m b g \| answer **bomb** |  |
+
+#### Lesson 5: Silent Letters Challenge (`L4-M35-05`)
+
+- **Objective:** Demonstrate independent mastery of kn, wr, mb and gn silent-letter words across listening, building, reading and spelling.
+- **Skill:** grapheme_phoneme_correspondence · **Activity:** assessment · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Spot every silent letter.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered silent letters.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M35-05-1 | hear “knee” → letter \| options k w b \| answer **k** |  |
+| AS-M35-05-2 | hear “wrong” → letter \| options w k g \| answer **w** |  |
+| AS-M35-05-3 | hear “lamb” → letter \| options b k w \| answer **b** |  |
+| AS-M35-05-4 | hear “gnat” → letter \| options g k w \| answer **g** |  |
+| AS-M35-05-5 | hear “knot” → build \| tray k n o t \| answer **knot** |  |
+| AS-M35-05-6 | hear “comb” → build \| tray c o m b \| answer **comb** |  |
+| AS-M35-05-7 | read “knife” → picture \| options knife, shell, bus \| answer **knife** |  |
+| AS-M35-05-8 | read “thumb” → picture \| options thumb, duck, fish \| answer **thumb** |  |
+
 ## Content library
 
 ### Pictures
 
 - **Hand-drawn (inline SVG, 58):** bell, clock, car, rain, clap, tap, drum, whisper, finger, same, different, fast, slow, magnifier, cat, hat, mat, bat, can, man, fan, pan, dog, log, hen, pen, cap, map, nap, phone, wind, siren, thunder, birds, drip, bag, tag, rag, net, jet, vet, fig, wig, mop, pop, top, sun, sit, sad, kid, run, lip, dad, gum, cup, bus, sip, pin
-- **Image files (71, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach, doll — Google Noto Emoji; license and credits stored alongside the files.
+- **Image files (74, `public/img/words/`):** pig, bug, bed, rat, nut, leg, cab, fog, bin, tub, hut, jug, flag, crab, frog, drum, plug, ship, shell, fish, thumb, duck, bridge, ring, tent, lamp, milk, fox, cake, bike, kite, rose, wave, train, rain, mail, sail, paint, tree, bee, sheep, wheel, leaf, seal, goat, coat, soap, road, snow, bowl, coin, boy, toy, oyster, mouth, cow, owl, house, mouse, star, corn, bird, shirt, purse, sock, book, orange, sponge, watch, peach, doll, comb, knee, knife — Google Noto Emoji; license and credits stored alongside the files.
 
 ### Audio
 

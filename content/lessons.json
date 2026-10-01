@@ -3189,5 +3189,100 @@
       "transition": "",
       "close": "Case closed! You've mastered adding endings to words."
     }
+  },
+  {
+    "lesson_id": "L4-M35-01",
+    "module_id": 35,
+    "number": 1,
+    "title": "Meet the Letters",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Recognise kn, wr, mb and gn as spellings with a silent first or last letter.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "A strange new case, Detective! Some letters hide completely silent.",
+      "teach": "In knee, the k is silent — you only hear 'nee'. In write, the w is silent. In thumb, the b is silent. In gnat, the g is silent. Spelled, but never said!",
+      "model": "Listen. Which letter is silent in this word?",
+      "transition": "Your turn, Detective! Find the silent letter.",
+      "close": "Case closed! You can spot a silent letter hiding in a word."
+    }
+  },
+  {
+    "lesson_id": "L4-M35-02",
+    "module_id": 35,
+    "number": 2,
+    "title": "Blend & Build",
+    "skill": "word_building",
+    "objective": "Build silent-letter words letter by letter, including the silent letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build some silent-letter words!",
+      "teach": "Listen to the whole word, then tap the tiles in order — even the silent letter gets its own tile.",
+      "model": "Listen. Watch how the tiles build the word, silent letter included.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You included every silent letter."
+    }
+  },
+  {
+    "lesson_id": "L4-M35-03",
+    "module_id": 35,
+    "number": 3,
+    "title": "Read the Words",
+    "skill": "decoding",
+    "objective": "Read a silent-letter word and match it to its picture.",
+    "activity_type": "read_word",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Reading mission! Remember — don't say the silent letter.",
+      "teach": "Read the word, skipping the silent letter's sound. Then find its picture.",
+      "model": "Read. Then find the matching picture.",
+      "transition": "Your turn! Read carefully, then pick the picture.",
+      "close": "Wonderful reading! You read every silent-letter word correctly."
+    }
+  },
+  {
+    "lesson_id": "L4-M35-04",
+    "module_id": 35,
+    "number": 4,
+    "title": "Spell the Words",
+    "skill": "spelling",
+    "objective": "Spell a dictated silent-letter word from a tray that includes one decoy letter.",
+    "activity_type": "word_build",
+    "estimated_time": "5–7 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Spelling mission — don't forget the silent letter!",
+      "teach": "Listen to the word, then build it — remember the silent letter, and leave out the extra tile that doesn't belong.",
+      "model": "Listen. Pick the right tiles — silent letter included — and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully, include the silent letter, and leave out the extra one.",
+      "close": "Excellent spelling! You never forgot a silent letter."
+    }
+  },
+  {
+    "lesson_id": "L4-M35-05",
+    "module_id": 35,
+    "number": 5,
+    "title": "Silent Letters Challenge",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Demonstrate independent mastery of kn, wr, mb and gn silent-letter words across listening, building, reading and spelling.",
+    "activity_type": "assessment",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Spot every silent letter.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered silent letters."
+    }
   }
 ]

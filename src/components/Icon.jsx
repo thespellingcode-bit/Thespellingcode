@@ -145,6 +145,10 @@ const WORD_KEYS = [
   // Level 4 Module 33 (FLOSS Doubling). "bell" already exists (Level 1
   // sound icon, reused for the same real object, not a collision).
   "doll",
+  // Level 4 Module 35 (Silent Letters). "thumb" already exists (Level 2
+  // digraph word, reused for the same real object). "sign" deliberately
+  // excluded — its emoji is a construction barrier, not clearly "sign".
+  "comb", "knee", "knife",
 ];
 
 // Maps a media asset_id (from content/media.json) to an icon key. Strips

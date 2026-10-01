@@ -14108,5 +14108,449 @@
     "retry_feedback": "Listen again — a short vowel before one consonant means double it; a silent e gets dropped; anything else just adds the ending.",
     "skill": "spelling",
     "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-01",
+    "lesson_id": "L4-M35-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which letter is silent in this word?",
+    "options": [
+      "k",
+      "w",
+      "b"
+    ],
+    "correct_answer": "k",
+    "audio_asset": "say:knee",
+    "feedback": "Yes! knee has a silent k.",
+    "retry_feedback": "Listen again — one letter in this word is never said out loud.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION",
+    "silent": true
+  },
+  {
+    "activity_id": "Q-M35-02",
+    "lesson_id": "L4-M35-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which letter is silent in this word?",
+    "options": [
+      "w",
+      "k",
+      "g"
+    ],
+    "correct_answer": "w",
+    "audio_asset": "say:write",
+    "feedback": "Yes! write has a silent w.",
+    "retry_feedback": "Listen again — one letter in this word is never said out loud.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION",
+    "silent": true
+  },
+  {
+    "activity_id": "Q-M35-03",
+    "lesson_id": "L4-M35-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which letter is silent in this word?",
+    "options": [
+      "b",
+      "k",
+      "w"
+    ],
+    "correct_answer": "b",
+    "audio_asset": "say:thumb",
+    "feedback": "Yes! thumb has a silent b.",
+    "retry_feedback": "Listen again — one letter in this word is never said out loud.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION",
+    "silent": true
+  },
+  {
+    "activity_id": "Q-M35-04",
+    "lesson_id": "L4-M35-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which letter is silent in this word?",
+    "options": [
+      "k",
+      "w",
+      "g"
+    ],
+    "correct_answer": "k",
+    "audio_asset": "say:knit",
+    "feedback": "Yes! knit has a silent k.",
+    "retry_feedback": "Listen again — one letter in this word is never said out loud.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION",
+    "silent": true
+  },
+  {
+    "activity_id": "Q-M35-05",
+    "lesson_id": "L4-M35-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which letter is silent in this word?",
+    "options": [
+      "w",
+      "k",
+      "b"
+    ],
+    "correct_answer": "w",
+    "audio_asset": "say:wrap",
+    "feedback": "Yes! wrap has a silent w.",
+    "retry_feedback": "Listen again — one letter in this word is never said out loud.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION",
+    "silent": true
+  },
+  {
+    "activity_id": "Q-M35-06",
+    "lesson_id": "L4-M35-01",
+    "stage": "practice",
+    "type": "letter_sound_match",
+    "prompt": "Which letter is silent in this word?",
+    "options": [
+      "b",
+      "w",
+      "g"
+    ],
+    "correct_answer": "b",
+    "audio_asset": "say:comb",
+    "feedback": "Yes! comb has a silent b.",
+    "retry_feedback": "Listen again — one letter in this word is never said out loud.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "LETTER_SOUND_CONFUSION",
+    "silent": true
+  },
+  {
+    "activity_id": "Q-M35-07",
+    "lesson_id": "L4-M35-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:knee",
+    "letters": [
+      "k",
+      "n",
+      "ee"
+    ],
+    "answer_tiles": [
+      "k",
+      "n",
+      "ee"
+    ],
+    "correct_answer": "knee",
+    "feedback": "Yes! You built knee.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-08",
+    "lesson_id": "L4-M35-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:write",
+    "letters": [
+      "w",
+      "r",
+      "i",
+      "t",
+      "e"
+    ],
+    "answer_tiles": [
+      "w",
+      "r",
+      "i",
+      "t",
+      "e"
+    ],
+    "correct_answer": "write",
+    "feedback": "Yes! You built write.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-09",
+    "lesson_id": "L4-M35-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:thumb",
+    "letters": [
+      "th",
+      "u",
+      "m",
+      "b"
+    ],
+    "answer_tiles": [
+      "th",
+      "u",
+      "m",
+      "b"
+    ],
+    "correct_answer": "thumb",
+    "feedback": "Yes! You built thumb.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-10",
+    "lesson_id": "L4-M35-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:comb",
+    "letters": [
+      "c",
+      "o",
+      "m",
+      "b"
+    ],
+    "answer_tiles": [
+      "c",
+      "o",
+      "m",
+      "b"
+    ],
+    "correct_answer": "comb",
+    "feedback": "Yes! You built comb.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-11",
+    "lesson_id": "L4-M35-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:knot",
+    "letters": [
+      "k",
+      "n",
+      "o",
+      "t"
+    ],
+    "answer_tiles": [
+      "k",
+      "n",
+      "o",
+      "t"
+    ],
+    "correct_answer": "knot",
+    "feedback": "Yes! You built knot.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-12",
+    "lesson_id": "L4-M35-02",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:wrong",
+    "letters": [
+      "w",
+      "r",
+      "o",
+      "ng"
+    ],
+    "answer_tiles": [
+      "w",
+      "r",
+      "o",
+      "ng"
+    ],
+    "correct_answer": "wrong",
+    "feedback": "Yes! You built wrong.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-13",
+    "lesson_id": "L4-M35-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "knee",
+    "options": [
+      "knee",
+      "bus",
+      "hen"
+    ],
+    "correct_answer": "knee",
+    "feedback": "Yes! You read knee.",
+    "retry_feedback": "Sound out the letters you hear, remembering the silent one stays quiet.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-14",
+    "lesson_id": "L4-M35-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "knife",
+    "options": [
+      "knife",
+      "fish",
+      "pig"
+    ],
+    "correct_answer": "knife",
+    "feedback": "Yes! You read knife.",
+    "retry_feedback": "Sound out the letters you hear, remembering the silent one stays quiet.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-15",
+    "lesson_id": "L4-M35-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "comb",
+    "options": [
+      "comb",
+      "frog",
+      "duck"
+    ],
+    "correct_answer": "comb",
+    "feedback": "Yes! You read comb.",
+    "retry_feedback": "Sound out the letters you hear, remembering the silent one stays quiet.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-16",
+    "lesson_id": "L4-M35-03",
+    "stage": "practice",
+    "type": "read_word",
+    "prompt": "Read the word, then choose the matching picture.",
+    "written_word": "thumb",
+    "options": [
+      "thumb",
+      "crab",
+      "shell"
+    ],
+    "correct_answer": "thumb",
+    "feedback": "Yes! You read thumb.",
+    "retry_feedback": "Sound out the letters you hear, remembering the silent one stays quiet.",
+    "skill": "decoding",
+    "error_tag": "DECODING_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-17",
+    "lesson_id": "L4-M35-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:knit",
+    "letters": [
+      "k",
+      "n",
+      "i",
+      "t",
+      "w"
+    ],
+    "answer_tiles": [
+      "k",
+      "n",
+      "i",
+      "t"
+    ],
+    "correct_answer": "knit",
+    "feedback": "Yes! You built knit.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-18",
+    "lesson_id": "L4-M35-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:wrap",
+    "letters": [
+      "w",
+      "r",
+      "a",
+      "p",
+      "k"
+    ],
+    "answer_tiles": [
+      "w",
+      "r",
+      "a",
+      "p"
+    ],
+    "correct_answer": "wrap",
+    "feedback": "Yes! You built wrap.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-19",
+    "lesson_id": "L4-M35-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:climb",
+    "letters": [
+      "c",
+      "l",
+      "i",
+      "m",
+      "b",
+      "g"
+    ],
+    "answer_tiles": [
+      "c",
+      "l",
+      "i",
+      "m",
+      "b"
+    ],
+    "correct_answer": "climb",
+    "feedback": "Yes! You built climb.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M35-20",
+    "lesson_id": "L4-M35-04",
+    "stage": "practice",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:gnome",
+    "letters": [
+      "g",
+      "n",
+      "o",
+      "m",
+      "e",
+      "k"
+    ],
+    "answer_tiles": [
+      "g",
+      "n",
+      "o",
+      "m",
+      "e"
+    ],
+    "correct_answer": "gnome",
+    "feedback": "Yes! You built gnome.",
+    "retry_feedback": "Listen again and place the tiles in order — remember the silent letter.",
+    "skill": "word_building",
+    "error_tag": "WORD_BUILD_CONFUSION"
   }
 ]

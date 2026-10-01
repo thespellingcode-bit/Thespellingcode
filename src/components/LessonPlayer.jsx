@@ -100,6 +100,12 @@ function modelCaptionFor(item) {
       const kind = graphemeKindFor(answer); // "letter" | "blend" | "digraph" | "ending" | "qu"
       if (item.letter_prompt) return `${item.letter_prompt} makes the sound at the start of ${answer}!`;
       const word = item.audio_asset?.replace(/^say:/, "");
+      // Module 35's silent-letter items reuse letter_sound_match with a
+      // bare single-letter correct_answer — without this branch it falls
+      // to the generic "starts/ends with the letter X" narration below,
+      // which is true but misses the entire point (the letter is SILENT,
+      // never actually said), caught live before shipping.
+      if (item.silent && word) return `${word} has a silent ${answer}!`;
       if (kind === "ending") return word ? `${word} ends with ${answer}!` : `That's the ending ${answer}!`;
       if (kind === "qu") return word ? `${word} starts with qu!` : `That's qu!`;
       if (kind === "digraph") {
@@ -208,6 +214,7 @@ function modelHeadingFor(lesson, item) {
   if (item.type === "letter_sound_match") {
     const word = item.audio_asset?.replace(/^say:/, "");
     const kind = graphemeKindFor(item.correct_answer);
+    if (item.silent && word) return `Listen. Which letter is silent in ${capitalize(word)}?`;
     if (word && kind === "ending") return `Listen. ${capitalize(word)} ends with ${item.correct_answer}.`;
     if (word && kind === "qu") return `Listen. ${capitalize(word)} starts with qu.`;
     if (word && kind === "digraph") {
