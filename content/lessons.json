@@ -4785,5 +4785,100 @@
       "transition": "",
       "close": "Case closed! You've mastered word families."
     }
+  },
+  {
+    "lesson_id": "L5-M51-01",
+    "module_id": 51,
+    "number": 1,
+    "title": "Mixed Retrieval",
+    "skill": "spelling",
+    "objective": "Review the /s/, long-vowel and soft-C spelling choices from across Level 5.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Review mission, Detective! Let's revisit every spelling choice from Level 5.",
+      "teach": "s or ss or c or ce, ai or ay, ee or ea, igh or ie, oa or ow, ue or ew or oo — you've learned the rule or pattern for each one. Listen carefully and pick the spelling that matches.",
+      "model": "Listen. Which spelling is correct?",
+      "transition": "Your turn, Detective! Use everything you've learned.",
+      "close": "Case closed! You remember every Level 5 spelling choice."
+    }
+  },
+  {
+    "lesson_id": "L5-M51-02",
+    "module_id": 51,
+    "number": 2,
+    "title": "Read & Build",
+    "skill": "word_building",
+    "objective": "Build words using patterns from across every Level 5 module.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Time to build words from across all of Level 5!",
+      "teach": "Listen to the whole word, then tap the tiles in order.",
+      "model": "Listen. Watch how the tiles build the word.",
+      "transition": "Your turn! Listen, then build each word.",
+      "close": "Fantastic building! You built words using every Level 5 pattern."
+    }
+  },
+  {
+    "lesson_id": "L5-M51-03",
+    "module_id": 51,
+    "number": 3,
+    "title": "Dictation",
+    "skill": "spelling",
+    "objective": "Spell dictated words from across Level 5, choosing the correct tile and leaving out the decoy.",
+    "activity_type": "word_build",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Dictation mission — pick the right tiles and leave the extra one out!",
+      "teach": "Listen to the word, then build it, leaving out any tile that doesn't belong.",
+      "model": "Listen. Pick the right tiles and leave the extra one behind!",
+      "transition": "Your turn! Listen carefully, and leave out the tile that doesn't belong.",
+      "close": "Excellent spelling! You picked correctly every time."
+    }
+  },
+  {
+    "lesson_id": "L5-M51-04",
+    "module_id": 51,
+    "number": 4,
+    "title": "The Sounds of -ed Review",
+    "skill": "grapheme_phoneme_correspondence",
+    "objective": "Review hearing /t/, /d/ and /id/ across -ed words.",
+    "activity_type": "letter_sound_match",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "One more listening review, Detective — the three sounds of -ed!",
+      "teach": "Remember: -ed is always spelled the same way, but it can say /t/, /d/ or /id/.",
+      "model": "Listen. Does the -ed say /t/, /d/ or /id/?",
+      "transition": "Your turn! Listen closely to the very end of each word.",
+      "close": "Case closed! You remember all three sounds of -ed."
+    }
+  },
+  {
+    "lesson_id": "L5-M51-05",
+    "module_id": 51,
+    "number": 5,
+    "title": "Level 5 Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of every Level 5 spelling choice and morphology skill.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "The Level 5 Challenge, Detective! Show everything you've learned as a Word Builder Pro.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered Level 5 — you're a true Word Builder Pro!"
+    }
   }
 ]

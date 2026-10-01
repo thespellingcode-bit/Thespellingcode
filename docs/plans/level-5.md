@@ -1,6 +1,6 @@
 ## 5. Level 5 plan — Word Builder Pro
 
-*Status (2026-10-01): planning, nothing built yet. Source: the Master Curriculum Blueprint v0.1 (`The_Spelling_Code_Master_Curriculum_Blueprint_v0.1.docx`, found in Downloads — not in this repo, extracted for this plan), continuing the boundary rules fixed in Levels 1–4.*
+*Status (2026-10-01): complete — all 11 modules built and deployed. Source: the Master Curriculum Blueprint v0.1 (`The_Spelling_Code_Master_Curriculum_Blueprint_v0.1.docx`, found in Downloads — not in this repo, extracted for this plan), continuing the boundary rules fixed in Levels 1–4. See `docs/project-notes.md`'s Level 5 curriculum design section for how each module was actually built.*
 
 ### Why this level's module list doesn't match the blueprint's Level 5 list
 

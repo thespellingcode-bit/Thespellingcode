@@ -20763,5 +20763,453 @@
     "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-01-1",
+    "lesson_id": "L5-M51-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "city",
+      "sity"
+    ],
+    "correct_answer": "city",
+    "audio_asset": "say:city",
+    "feedback": "Yes! It's city.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-01-2",
+    "lesson_id": "L5-M51-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "day",
+      "dai"
+    ],
+    "correct_answer": "day",
+    "audio_asset": "say:day",
+    "feedback": "Yes! It's day.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-01-3",
+    "lesson_id": "L5-M51-01",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "leaf",
+      "leef"
+    ],
+    "correct_answer": "leaf",
+    "audio_asset": "say:leaf",
+    "feedback": "Yes! It's leaf.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-02-1",
+    "lesson_id": "L5-M51-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:tried",
+    "letters": [
+      "t",
+      "r",
+      "i",
+      "ed"
+    ],
+    "answer_tiles": [
+      "t",
+      "r",
+      "i",
+      "ed"
+    ],
+    "correct_answer": "tried",
+    "feedback": "Yes! You built tried.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-02-2",
+    "lesson_id": "L5-M51-02",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:payment",
+    "letters": [
+      "p",
+      "ay",
+      "ment"
+    ],
+    "answer_tiles": [
+      "p",
+      "ay",
+      "ment"
+    ],
+    "correct_answer": "payment",
+    "feedback": "Yes! You built payment.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-03-1",
+    "lesson_id": "L5-M51-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:flying",
+    "letters": [
+      "f",
+      "l",
+      "y",
+      "ing",
+      "i"
+    ],
+    "answer_tiles": [
+      "f",
+      "l",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "flying",
+    "feedback": "Yes! You built flying.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-03-2",
+    "lesson_id": "L5-M51-03",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:misread",
+    "letters": [
+      "mis",
+      "r",
+      "ea",
+      "d",
+      "dis"
+    ],
+    "answer_tiles": [
+      "mis",
+      "r",
+      "ea",
+      "d"
+    ],
+    "correct_answer": "misread",
+    "feedback": "Yes! You built misread.",
+    "retry_feedback": "Listen again and leave out the tile that doesn't belong.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-04-1",
+    "lesson_id": "L5-M51-04",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "d",
+    "audio_asset": "say:hugged",
+    "edSound": true,
+    "feedback": "Yes! hugged ends with -ed, saying the /d/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-04-2",
+    "lesson_id": "L5-M51-04",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "id",
+    "audio_asset": "say:painted",
+    "edSound": true,
+    "feedback": "Yes! painted ends with -ed, saying the /id/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-1",
+    "lesson_id": "L5-M51-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "miss",
+      "mis"
+    ],
+    "correct_answer": "miss",
+    "audio_asset": "say:miss",
+    "feedback": "Yes! It's miss.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-2",
+    "lesson_id": "L5-M51-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "rain",
+      "rayn"
+    ],
+    "correct_answer": "rain",
+    "audio_asset": "say:rain",
+    "feedback": "Yes! It's rain.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-3",
+    "lesson_id": "L5-M51-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "boat",
+      "bowt"
+    ],
+    "correct_answer": "boat",
+    "audio_asset": "say:boat",
+    "feedback": "Yes! It's boat.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-4",
+    "lesson_id": "L5-M51-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "moon",
+      "mewn"
+    ],
+    "correct_answer": "moon",
+    "audio_asset": "say:moon",
+    "feedback": "Yes! It's moon.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-5",
+    "lesson_id": "L5-M51-05",
+    "type": "spelling_choice",
+    "prompt": "Which spelling is correct?",
+    "options": [
+      "night",
+      "niet"
+    ],
+    "correct_answer": "night",
+    "audio_asset": "say:night",
+    "feedback": "Yes! It's night.",
+    "retry_feedback": "Listen again and think about the rule.",
+    "skill": "spelling",
+    "error_tag": "SPELLING_CHOICE_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-6",
+    "lesson_id": "L5-M51-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:crying",
+    "letters": [
+      "c",
+      "r",
+      "y",
+      "ing"
+    ],
+    "answer_tiles": [
+      "c",
+      "r",
+      "y",
+      "ing"
+    ],
+    "correct_answer": "crying",
+    "feedback": "Yes! You built crying.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-7",
+    "lesson_id": "L5-M51-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:dislike",
+    "letters": [
+      "dis",
+      "l",
+      "i",
+      "k",
+      "e"
+    ],
+    "answer_tiles": [
+      "dis",
+      "l",
+      "i",
+      "k",
+      "e"
+    ],
+    "correct_answer": "dislike",
+    "feedback": "Yes! You built dislike.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-8",
+    "lesson_id": "L5-M51-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:true",
+    "letters": [
+      "tr",
+      "ue"
+    ],
+    "answer_tiles": [
+      "tr",
+      "ue"
+    ],
+    "correct_answer": "true",
+    "feedback": "Yes! You built true.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-9",
+    "lesson_id": "L5-M51-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:kindness",
+    "letters": [
+      "k",
+      "i",
+      "n",
+      "d",
+      "ness"
+    ],
+    "answer_tiles": [
+      "k",
+      "i",
+      "n",
+      "d",
+      "ness"
+    ],
+    "correct_answer": "kindness",
+    "feedback": "Yes! You built kindness.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-10",
+    "lesson_id": "L5-M51-05",
+    "type": "word_build",
+    "prompt": "Listen, then build the word.",
+    "audio_asset": "say:spoon",
+    "letters": [
+      "sp",
+      "oo",
+      "n"
+    ],
+    "answer_tiles": [
+      "sp",
+      "oo",
+      "n"
+    ],
+    "correct_answer": "spoon",
+    "feedback": "Yes! You built spoon.",
+    "retry_feedback": "Listen again and place the tiles in order.",
+    "skill": "spelling",
+    "error_tag": "WORD_BUILD_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-11",
+    "lesson_id": "L5-M51-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "t",
+    "audio_asset": "say:walked",
+    "edSound": true,
+    "feedback": "Yes! walked ends with -ed, saying the /t/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-12",
+    "lesson_id": "L5-M51-05",
+    "type": "letter_sound_match",
+    "prompt": "Does the -ed say /t/, /d/ or /id/?",
+    "options": [
+      "t",
+      "d",
+      "id"
+    ],
+    "correct_answer": "id",
+    "audio_asset": "say:wanted",
+    "edSound": true,
+    "feedback": "Yes! wanted ends with -ed, saying the /id/ sound.",
+    "retry_feedback": "Listen again to the very end of the word.",
+    "skill": "grapheme_phoneme_correspondence",
+    "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-13",
+    "lesson_id": "L5-M51-05",
+    "type": "spelling_choice",
+    "prompt": "She wants to ___ in the school play.",
+    "options": [
+      "act",
+      "action"
+    ],
+    "correct_answer": "act",
+    "audio_asset": "say:act",
+    "wordFamily": true,
+    "feedback": "Yes! \"act\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M51-05-14",
+    "lesson_id": "L5-M51-05",
+    "type": "spelling_choice",
+    "prompt": "He is the best ___ on the team.",
+    "options": [
+      "player",
+      "play"
+    ],
+    "correct_answer": "player",
+    "audio_asset": "say:player",
+    "wordFamily": true,
+    "feedback": "Yes! \"player\" fits best here.",
+    "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
   }
 ]
