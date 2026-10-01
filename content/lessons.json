@@ -4880,5 +4880,100 @@
       "transition": "",
       "close": "Case closed! You've mastered Level 5 — you're a true Word Builder Pro!"
     }
+  },
+  {
+    "lesson_id": "L6-M52-01",
+    "module_id": 52,
+    "number": 1,
+    "title": "Meet bio, tele & graph",
+    "skill": "spelling",
+    "objective": "Use the roots bio (life), tele (far) and graph (write) as clues to a word's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Welcome to Level 6, Word Master! Many English words are built from Greek and Latin roots that carry meaning.",
+      "teach": "bio means 'life'. tele means 'far'. graph means 'write' or 'drawing'. A biography is the written story of someone's LIFE. A telephone lets you talk FAR away. Read the clue, then pick the word it describes.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn, Detective! Use the root's meaning as your clue.",
+      "close": "Case closed! You know bio, tele and graph."
+    }
+  },
+  {
+    "lesson_id": "L6-M52-02",
+    "module_id": 52,
+    "number": 2,
+    "title": "Meet photo, scope & port",
+    "skill": "spelling",
+    "objective": "Use the roots photo (light), scope (see) and port (carry) as clues to a word's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Three more roots, Detective! photo means 'light', scope means 'see', and port means 'carry'.",
+      "teach": "A photograph is a picture made with LIGHT. A telescope helps you SEE far away. To transport something is to CARRY it from place to place.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the root's meaning as your clue.",
+      "close": "Case closed! Six roots mastered so far."
+    }
+  },
+  {
+    "lesson_id": "L6-M52-03",
+    "module_id": 52,
+    "number": 3,
+    "title": "Meet dict & spect",
+    "skill": "spelling",
+    "objective": "Use the roots dict (say) and spect (look) as clues to a word's meaning.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Two more roots, Detective! dict means 'say', and spect means 'look'.",
+      "teach": "To predict is to SAY what will happen before it does. To inspect is to LOOK closely at something.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use the root's meaning as your clue.",
+      "close": "Case closed! All eight roots mastered."
+    }
+  },
+  {
+    "lesson_id": "L6-M52-04",
+    "module_id": 52,
+    "number": 4,
+    "title": "More Practice",
+    "skill": "spelling",
+    "objective": "Practise all eight roots together across more words.",
+    "activity_type": "spelling_choice",
+    "estimated_time": "6–8 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "More practice, Detective — mixing every root together now!",
+      "teach": "Remember each root's meaning, and use it as your clue.",
+      "model": "Which word fits best in this sentence?",
+      "transition": "Your turn! Use everything you've learned.",
+      "close": "Fantastic! You're a root-spotting expert."
+    }
+  },
+  {
+    "lesson_id": "L6-M52-05",
+    "module_id": 52,
+    "number": 5,
+    "title": "Greek & Latin Roots Challenge",
+    "skill": "spelling",
+    "objective": "Demonstrate independent mastery of using roots as a meaning and spelling clue.",
+    "activity_type": "assessment",
+    "estimated_time": "8–10 min",
+    "masteryThreshold": 0.8,
+    "status": "active",
+    "narration": {
+      "welcome": "Challenge time, Detective! Show what you know about Greek and Latin roots.",
+      "teach": "",
+      "model": "",
+      "transition": "",
+      "close": "Case closed! You've mastered your first Level 6 roots."
+    }
   }
 ]

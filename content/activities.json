@@ -21548,5 +21548,365 @@
     "retry_feedback": "Listen again to the very end of the word.",
     "skill": "grapheme_phoneme_correspondence",
     "error_tag": "ED_SOUND_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-01",
+    "lesson_id": "L6-M52-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "bio (life) + graphy (writing) = the written story of someone's life.",
+    "options": [
+      "biography",
+      "biology"
+    ],
+    "correct_answer": "biography",
+    "audio_asset": "say:biography",
+    "wordFamily": true,
+    "feedback": "Yes! \"biography\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-02",
+    "lesson_id": "L6-M52-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "tele (far) + phone (sound) = talking to someone far away.",
+    "options": [
+      "telephone",
+      "telegraph"
+    ],
+    "correct_answer": "telephone",
+    "audio_asset": "say:telephone",
+    "wordFamily": true,
+    "feedback": "Yes! \"telephone\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-03",
+    "lesson_id": "L6-M52-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "auto (self) + graph (write) = a famous person's own signature.",
+    "options": [
+      "autograph",
+      "photograph"
+    ],
+    "correct_answer": "autograph",
+    "audio_asset": "say:autograph",
+    "wordFamily": true,
+    "feedback": "Yes! \"autograph\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-04",
+    "lesson_id": "L6-M52-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "photo (light) + graph (write) = a picture made with light.",
+    "options": [
+      "photograph",
+      "telegraph"
+    ],
+    "correct_answer": "photograph",
+    "audio_asset": "say:photograph",
+    "wordFamily": true,
+    "feedback": "Yes! \"photograph\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-05",
+    "lesson_id": "L6-M52-01",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "A section of writing, usually a few sentences long.",
+    "options": [
+      "paragraph",
+      "photograph"
+    ],
+    "correct_answer": "paragraph",
+    "audio_asset": "say:paragraph",
+    "wordFamily": true,
+    "feedback": "Yes! \"paragraph\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-06",
+    "lesson_id": "L6-M52-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "photo (light) + copy (reproduce) = an exact copy made with a light-scanning machine.",
+    "options": [
+      "photocopy",
+      "photograph"
+    ],
+    "correct_answer": "photocopy",
+    "audio_asset": "say:photocopy",
+    "wordFamily": true,
+    "feedback": "Yes! \"photocopy\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-07",
+    "lesson_id": "L6-M52-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "tele (far) + scope (see) = a tool for seeing things far away, like stars.",
+    "options": [
+      "telescope",
+      "microscope"
+    ],
+    "correct_answer": "telescope",
+    "audio_asset": "say:telescope",
+    "wordFamily": true,
+    "feedback": "Yes! \"telescope\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-08",
+    "lesson_id": "L6-M52-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "micro (small) + scope (see) = a tool for seeing things too small to see with just your eyes.",
+    "options": [
+      "microscope",
+      "telescope"
+    ],
+    "correct_answer": "microscope",
+    "audio_asset": "say:microscope",
+    "wordFamily": true,
+    "feedback": "Yes! \"microscope\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-09",
+    "lesson_id": "L6-M52-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "trans (across) + port (carry) = carrying people or things from place to place.",
+    "options": [
+      "transport",
+      "import"
+    ],
+    "correct_answer": "transport",
+    "audio_asset": "say:transport",
+    "wordFamily": true,
+    "feedback": "Yes! \"transport\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-10",
+    "lesson_id": "L6-M52-02",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "A picture made with light, captured by a camera.",
+    "options": [
+      "photograph",
+      "photocopy"
+    ],
+    "correct_answer": "photograph",
+    "audio_asset": "say:photograph",
+    "wordFamily": true,
+    "feedback": "Yes! \"photograph\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-11",
+    "lesson_id": "L6-M52-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "pre (before) + dict (say) = to say what will happen before it happens.",
+    "options": [
+      "predict",
+      "contradict"
+    ],
+    "correct_answer": "predict",
+    "audio_asset": "say:predict",
+    "wordFamily": true,
+    "feedback": "Yes! \"predict\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-12",
+    "lesson_id": "L6-M52-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "contra (against) + dict (say) = to say the opposite of what someone else said.",
+    "options": [
+      "contradict",
+      "predict"
+    ],
+    "correct_answer": "contradict",
+    "audio_asset": "say:contradict",
+    "wordFamily": true,
+    "feedback": "Yes! \"contradict\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-13",
+    "lesson_id": "L6-M52-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "A book that lists words along with their meanings.",
+    "options": [
+      "dictionary",
+      "spectator"
+    ],
+    "correct_answer": "dictionary",
+    "audio_asset": "say:dictionary",
+    "wordFamily": true,
+    "feedback": "Yes! \"dictionary\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-14",
+    "lesson_id": "L6-M52-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "in (into) + spect (look) = to look closely at something to check it.",
+    "options": [
+      "inspect",
+      "respect"
+    ],
+    "correct_answer": "inspect",
+    "audio_asset": "say:inspect",
+    "wordFamily": true,
+    "feedback": "Yes! \"inspect\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-15",
+    "lesson_id": "L6-M52-03",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Someone who watches an event, like a sports game, without taking part.",
+    "options": [
+      "spectator",
+      "inspector"
+    ],
+    "correct_answer": "spectator",
+    "audio_asset": "say:spectator",
+    "wordFamily": true,
+    "feedback": "Yes! \"spectator\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-16",
+    "lesson_id": "L6-M52-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "A device that shows moving pictures from far away, broadcast into your home.",
+    "options": [
+      "television",
+      "telephone"
+    ],
+    "correct_answer": "television",
+    "audio_asset": "say:television",
+    "wordFamily": true,
+    "feedback": "Yes! \"television\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-17",
+    "lesson_id": "L6-M52-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "auto (self) + biography = the story of your OWN life, written by you.",
+    "options": [
+      "autobiography",
+      "biography"
+    ],
+    "correct_answer": "autobiography",
+    "audio_asset": "say:autobiography",
+    "wordFamily": true,
+    "feedback": "Yes! \"autobiography\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-18",
+    "lesson_id": "L6-M52-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Able to be carried easily from place to place.",
+    "options": [
+      "portable",
+      "transport"
+    ],
+    "correct_answer": "portable",
+    "audio_asset": "say:portable",
+    "wordFamily": true,
+    "feedback": "Yes! \"portable\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-19",
+    "lesson_id": "L6-M52-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Words spoken aloud for someone else to write down.",
+    "options": [
+      "dictation",
+      "dictionary"
+    ],
+    "correct_answer": "dictation",
+    "audio_asset": "say:dictation",
+    "wordFamily": true,
+    "feedback": "Yes! \"dictation\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "activity_id": "Q-M52-20",
+    "lesson_id": "L6-M52-04",
+    "stage": "practice",
+    "type": "spelling_choice",
+    "prompt": "Something impressive or unusual to look at.",
+    "options": [
+      "spectacle",
+      "spectator"
+    ],
+    "correct_answer": "spectacle",
+    "audio_asset": "say:spectacle",
+    "wordFamily": true,
+    "feedback": "Yes! \"spectacle\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
   }
 ]

@@ -21211,5 +21211,294 @@
     "retry_feedback": "Read the sentence again — what job does the missing word need to do?",
     "skill": "spelling",
     "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-01-1",
+    "lesson_id": "L6-M52-01",
+    "type": "spelling_choice",
+    "prompt": "bio (life) + logy (study) = the study of living things.",
+    "options": [
+      "biology",
+      "biography"
+    ],
+    "correct_answer": "biology",
+    "audio_asset": "say:biology",
+    "wordFamily": true,
+    "feedback": "Yes! \"biology\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-01-2",
+    "lesson_id": "L6-M52-01",
+    "type": "spelling_choice",
+    "prompt": "tele (far) + graph (write) = a system for sending coded messages over wires, long ago.",
+    "options": [
+      "telegraph",
+      "telephone"
+    ],
+    "correct_answer": "telegraph",
+    "audio_asset": "say:telegraph",
+    "wordFamily": true,
+    "feedback": "Yes! \"telegraph\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-01-3",
+    "lesson_id": "L6-M52-01",
+    "type": "spelling_choice",
+    "prompt": "Relating to drawing or visual art.",
+    "options": [
+      "graphic",
+      "photograph"
+    ],
+    "correct_answer": "graphic",
+    "audio_asset": "say:graphic",
+    "wordFamily": true,
+    "feedback": "Yes! \"graphic\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-02-1",
+    "lesson_id": "L6-M52-02",
+    "type": "spelling_choice",
+    "prompt": "in (into) + port (carry) = bringing goods into a country from abroad.",
+    "options": [
+      "import",
+      "export"
+    ],
+    "correct_answer": "import",
+    "audio_asset": "say:import",
+    "wordFamily": true,
+    "feedback": "Yes! \"import\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-02-2",
+    "lesson_id": "L6-M52-02",
+    "type": "spelling_choice",
+    "prompt": "ex (out) + port (carry) = sending goods out to another country.",
+    "options": [
+      "export",
+      "import"
+    ],
+    "correct_answer": "export",
+    "audio_asset": "say:export",
+    "wordFamily": true,
+    "feedback": "Yes! \"export\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-03-1",
+    "lesson_id": "L6-M52-03",
+    "type": "spelling_choice",
+    "prompt": "re (again) + spect (look) = a feeling of admiration for someone.",
+    "options": [
+      "respect",
+      "inspect"
+    ],
+    "correct_answer": "respect",
+    "audio_asset": "say:respect",
+    "wordFamily": true,
+    "feedback": "Yes! \"respect\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-03-2",
+    "lesson_id": "L6-M52-03",
+    "type": "spelling_choice",
+    "prompt": "A person whose job is to examine something closely and carefully.",
+    "options": [
+      "inspector",
+      "spectator"
+    ],
+    "correct_answer": "inspector",
+    "audio_asset": "say:inspector",
+    "wordFamily": true,
+    "feedback": "Yes! \"inspector\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-04-1",
+    "lesson_id": "L6-M52-04",
+    "type": "spelling_choice",
+    "prompt": "Relating to drawing or art, in a vivid and detailed way.",
+    "options": [
+      "graphic",
+      "autograph"
+    ],
+    "correct_answer": "graphic",
+    "audio_asset": "say:graphic",
+    "wordFamily": true,
+    "feedback": "Yes! \"graphic\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-04-2",
+    "lesson_id": "L6-M52-04",
+    "type": "spelling_choice",
+    "prompt": "A statement about what will happen in the future, based on evidence.",
+    "options": [
+      "prediction",
+      "dictionary"
+    ],
+    "correct_answer": "prediction",
+    "audio_asset": "say:prediction",
+    "wordFamily": true,
+    "feedback": "Yes! \"prediction\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-05-1",
+    "lesson_id": "L6-M52-05",
+    "type": "spelling_choice",
+    "prompt": "bio (life) + graphy (writing) = the written story of someone's life.",
+    "options": [
+      "biography",
+      "biology"
+    ],
+    "correct_answer": "biography",
+    "audio_asset": "say:biography",
+    "wordFamily": true,
+    "feedback": "Yes! \"biography\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-05-2",
+    "lesson_id": "L6-M52-05",
+    "type": "spelling_choice",
+    "prompt": "tele (far) + phone (sound) = talking to someone far away.",
+    "options": [
+      "telephone",
+      "telegraph"
+    ],
+    "correct_answer": "telephone",
+    "audio_asset": "say:telephone",
+    "wordFamily": true,
+    "feedback": "Yes! \"telephone\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-05-3",
+    "lesson_id": "L6-M52-05",
+    "type": "spelling_choice",
+    "prompt": "auto (self) + graph (write) = a famous person's own signature.",
+    "options": [
+      "autograph",
+      "photograph"
+    ],
+    "correct_answer": "autograph",
+    "audio_asset": "say:autograph",
+    "wordFamily": true,
+    "feedback": "Yes! \"autograph\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-05-4",
+    "lesson_id": "L6-M52-05",
+    "type": "spelling_choice",
+    "prompt": "tele (far) + scope (see) = a tool for seeing things far away, like stars.",
+    "options": [
+      "telescope",
+      "microscope"
+    ],
+    "correct_answer": "telescope",
+    "audio_asset": "say:telescope",
+    "wordFamily": true,
+    "feedback": "Yes! \"telescope\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-05-5",
+    "lesson_id": "L6-M52-05",
+    "type": "spelling_choice",
+    "prompt": "trans (across) + port (carry) = carrying people or things from place to place.",
+    "options": [
+      "transport",
+      "import"
+    ],
+    "correct_answer": "transport",
+    "audio_asset": "say:transport",
+    "wordFamily": true,
+    "feedback": "Yes! \"transport\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-05-6",
+    "lesson_id": "L6-M52-05",
+    "type": "spelling_choice",
+    "prompt": "pre (before) + dict (say) = to say what will happen before it happens.",
+    "options": [
+      "predict",
+      "contradict"
+    ],
+    "correct_answer": "predict",
+    "audio_asset": "say:predict",
+    "wordFamily": true,
+    "feedback": "Yes! \"predict\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-05-7",
+    "lesson_id": "L6-M52-05",
+    "type": "spelling_choice",
+    "prompt": "A book that lists words along with their meanings.",
+    "options": [
+      "dictionary",
+      "spectator"
+    ],
+    "correct_answer": "dictionary",
+    "audio_asset": "say:dictionary",
+    "wordFamily": true,
+    "feedback": "Yes! \"dictionary\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
+  },
+  {
+    "assessment_id": "AS-M52-05-8",
+    "lesson_id": "L6-M52-05",
+    "type": "spelling_choice",
+    "prompt": "in (into) + spect (look) = to look closely at something to check it.",
+    "options": [
+      "inspect",
+      "respect"
+    ],
+    "correct_answer": "inspect",
+    "audio_asset": "say:inspect",
+    "wordFamily": true,
+    "feedback": "Yes! \"inspect\" fits best here.",
+    "retry_feedback": "Think about what each root means, and look for it in the word.",
+    "skill": "spelling",
+    "error_tag": "PREFIX_SUFFIX_CONFUSION"
   }
 ]

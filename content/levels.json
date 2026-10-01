@@ -33,5 +33,12 @@
     "description": "Choosing between long-vowel spellings (ai/ay, ee/ea, igh/ie, oa/ow, ue/ew/oo) and the many spellings of /s/, plus morphology: the three sounds of -ed, changing y before a suffix, more prefixes and suffixes, and word families.",
     "approx_age": "9–11",
     "total_units": 58
+  },
+  {
+    "level_id": 6,
+    "level_name": "Word Master",
+    "description": "Using word origin and meaning as spelling tools: Greek and Latin roots, advanced vowel patterns (eigh, augh, ough), homophones, and commonly confused words.",
+    "approx_age": "11–15",
+    "total_units": 29
   }
 ]

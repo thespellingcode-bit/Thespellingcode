@@ -8,10 +8,11 @@
 3. Plan: Level 3 plan — Pattern Detective (draft for owner review)
 4. Plan: Level 4 plan — Spelling Detective (draft for owner review)
 5. Plan: Level 5 plan — Word Builder Pro
-6. Curriculum at a glance
-7. Curriculum in full (every module, lesson and question)
-8. Content library (pictures, audio, badges)
-9. Code map
+6. Plan: Level 6 plan — Word Master
+7. Curriculum at a glance
+8. Curriculum in full (every module, lesson and question)
+9. Content library (pictures, audio, badges)
+10. Code map
 
 ---
 
@@ -33,11 +34,13 @@
 | 3 | Pattern Detective | 6–7 | 10 (planned as 10) | **Complete** — Modules 18–27 built and deployed |
 | 4 | Spelling Detective | 7–9 | 13 (planned as 13) | **Complete** — Modules 28–40 built and deployed |
 | 5 | Word Builder Pro | 9–11 | 10 (built as 11 — see scope note below) | **Complete** — Modules 41–51 built and deployed |
-| 6 | Word Master | 11–15 | 10 | Not started |
+| 6 | Word Master | 11–15 | 10 (built as 5 — condensed, see scope note below) | **In progress** — Module 52 built (Greek & Latin Roots) |
 
 The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesigned (with the owner's approval) into letter-cluster modules, so its module list no longer matches the blueprint's.
 
 **Scope note on Levels 4 and 5 (discovered and resolved 2026-10-01):** re-reading the blueprint while planning Level 5 surfaced that app-Level-4 doesn't actually match blueprint-Level-4 — it built blueprint-Level-5/6 content (doubling, silent letters, plurals, prefixes/suffixes) instead of blueprint-Level-4's own flagship long-vowel spelling-choice modules (ai/ay, ee/ea, igh/ie, oa/ow, ue/ew/oo) and soft-C. Flagged to the owner directly; the owner had no preference, so the resolution taken is: app-Level-4 stays as shipped (real, tested, deployed, has its own badge — not worth redoing), and app-Level-5 absorbs the blueprint's missing Level-4 long-vowel/soft-C content plus only the blueprint-Level-5 modules that aren't already duplicates of app-Modules 34/37/39 (Plurals, Adding -ing, Doubling Consonants, Drop the E, and the un-/re-/-ful/-less/-ly half of Prefixes/Suffixes are all skipped as already built). See `docs/plans/level-5.md` for the full reasoning and the resulting 11-module list.
+
+**Scope note on Level 6 (judged directly, 2026-10-01):** the same overlap pattern recurred on a smaller scale — blueprint-Level-6's "Silent Letters" (kn/wr/gn/mb) duplicates app-Module 35, and "Word Families & Derivation" duplicates app-Module 50's exact mechanic. Also folded three thin, closely-related blueprint modules (French/Latin/Greek Influences, Etymology as a Clue, Advanced Dictation) into their natural homes (Roots, Review & Assessment) rather than building them as separate thin modules. This time judged directly rather than asked — same reasoning already validated for Level 4→5, with much lower stakes (2 of 10 modules overlap, not most of a level). See `docs/plans/level-6.md` for the full reasoning and the resulting 5-module list.
 
 ### Where the build stands
 | Piece | State |
@@ -48,6 +51,8 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 | Level 3 “Pattern Detective”, all 10 modules (Short vs Long Vowels, Silent E, ai/ay, ee/ea, oa/ow, oi/oy, ou/ow, R-Controlled Vowels, Alternative Spellings, Review & Assessment) | **Complete — built and deployed.** Level 3 is finished; earns the new “Level 3 Pattern Detective” badge on the Level 3 Challenge. |
 | Level 4 “Spelling Detective”, all 13 modules (C or K?, K or CK?, G or J?, GE or DGE?, CH or TCH?, FLOSS Doubling, Doubling Before Suffixes, Silent Letters, Y as a Vowel, Plurals, ph for /f/, Prefixes & Suffixes, Review & Assessment) | **Complete — built and deployed.** Level 4 is finished; earns the new “Level 4 Spelling Detective” badge on the Level 4 Challenge. See `docs/plans/level-4.md` and the Level 4 curriculum design note below. The first modules to grade a spelling *choice* rather than just recognise or reproduce an already-given spelling. |
 | Level 5 “Word Builder Pro”, all 11 modules (The Many Spellings of /s/, Long-A/E/I/O/U Choices, The Three Sounds of -ed, Change Y Before a Suffix, More Prefixes & Suffixes, Word Families, Review & Assessment) | **Complete — built and deployed.** Level 5 is finished; earns the new “Level 5 Word Builder Pro” badge on the Level 5 Challenge. See `docs/plans/level-5.md` and the Level 5 curriculum design note below. Modules 42–46 close out the blueprint's missing Level-4 long-vowel-choice content; Modules 47–50 are genuinely-new blueprint-Level-5 morphology content. |
+| Level 6 “Word Master”, Module 52 (Greek & Latin Roots) | **Built** — see `docs/plans/level-6.md` and the Level 6 curriculum design note below. Condensed from the blueprint's 10 modules to 5 non-duplicate ones; builds on Module 50's `wordFamily` sentence-context mechanic, reused here for definition-based root clues instead of fill-in-the-blank sentences — zero new code. |
+| Digital certificate / certification record (blueprint §9) | Out of scope until the owner asks — the blueprint's Level 6 "Final Mastery & Certification" module is built as a standard Review & Assessment; the certificate-generation feature itself isn't built. |
 | Payments, accounts, teacher/school features, AI tutor, analytics, CMS, placement test | Out of scope until the owner asks |
 
 **Launch plan:** 7 modules for ages roughly 4–6; add Module 8 (My First Sentences) if many 7-year-olds are in the audience. Modules 1–2 may be easy for confident 7-year-olds; “unlock all” in the Parent Dashboard lets a parent skip ahead.
@@ -124,6 +129,10 @@ The blueprint's Level 1 has 10 one-skill modules; the app's Level 1 was redesign
 - **Module 49, More Prefixes & Suffixes — extends Module 39 rather than repeating it: dis-, pre-, mis- at the start, -ness and -ment at the end, no overlap with Module 39's un-/re-/-ful/-less/-ly.** Same shape throughout: `spelling_choice` for recognition (two "Meet" lessons — prefixes, then suffixes — plus a combined "More Practice" round mirroring Module 48's structure), `word_build` with the prefix/suffix as its own tile for building. One word (`"preview"`) was deliberately kept recognition-only and never used in `word_build` — "view" contains an irregular vowel pattern (v-i-e-w) that doesn't decompose cleanly into this app's taught graphemes, so it's fine for a fixed audio+spelling pair but not for tile-level decomposition. Also avoided a real-word decoy collision: "distrust" and "mistrust" are both genuine, nearly-synonymous English words, so "mistrust" could never be used as a *wrong* decoy for "distrust" (unlike the nonsense decoys everywhere else) — used "pretrust" (nonsense) instead. Reused the existing `PREFIX_SUFFIX_CONFUSION` tag from Module 39, no new remediation entry needed. Live-verified both the prefix decoy (distrust/mis-decoy) and a second prefix pair (pretest/mis-decoy) in Spell the Words.
 - **Module 50, Word Families — a genuinely different skill from every earlier Level 5 module, and the first one with no spelling transformation at all.** act/action/active/actor, play/player/playful/playing and four more families (teach, help, read, build) are all *already correctly spelled* real words — the task is choosing which family member's grammatical JOB fits a sentence (noun vs verb vs adjective), not spelling anything. Reused `spelling_choice` again, but its existing caption ("Yes! It's spelled X") and heading ("Which spelling of X is correct?") would have been actively wrong here — nothing was misspelled, and there's no single target word, only a sentence. Added a `wordFamily: true` field with its own narration branches in both `modelCaptionFor` ("Yes! 'player' fits best here!") and `modelHeadingFor` (shows the item's own `prompt` — the fill-in-the-blank sentence — directly as the heading), written proactively before any content, same discipline as Module 47's `edSound`. `MultipleChoice.jsx` needed no changes at all — it already renders `question.prompt` as the on-screen text and auto-speaks it via TTS, so a sentence-with-blank prompt "just worked" once the narration branches existed. No `word_build` or `read_word` lessons anywhere in this module — every lesson is a `spelling_choice` round, an honest reflection that this skill has no building or picture-matching component. **One real bug caught by `npm test`, not live:** an assessment item first reused "builder" with the exact same sentence context as its own lesson's practice item (a copy-paste slip), fixed by swapping to "readers" (plural, genuinely untested elsewhere in that lesson). Live-verified the sentence renders as both the Watch-stage heading and the Practice-stage prompt, with both family-member options showing as separate buttons.
 - **Module 51, Review & Assessment — closes out Level 5, same closing shape as every earlier level (Modules 7/8, 17, 27, 40), with one new wrinkle: Level 5 has four genuinely different mechanics to review (spelling_choice, word_build, letter_sound_match/edSound, spelling_choice/wordFamily), and a practice lesson can only use ONE `activity_type`.** Five lessons: Mixed Retrieval (`spelling_choice` sampling Modules 41–46's long-vowel/soft-C choices), Read & Build (`word_build`, no decoy, Modules 46/48/49's words), Dictation (`word_build` with a decoy, mixing choice-type rules across Modules 41/44/45/46/48/49), a dedicated "The Sounds of -ed Review" (`letter_sound_match`/`edSound`, since that skill couldn't be folded into the other review lessons without breaking the one-type-per-lesson rule), and the Level 5 Challenge (`assessment`, 14 items — the only lesson freely mixing all four mechanics including two `wordFamily` sentence items, since assessment-stage items have never had the single-type restriction). Added `BADGE-11` ("Level 5 Word Builder Pro", `module_id: 51`), same purely data-driven pattern as every earlier level's closing badge. 22/22 tests passed on the first run. **Level 5 total: 58 lessons, matching `docs/plans/level-5.md`'s own estimate exactly.** Live-verified the Level 5 badge appears (locked) on the home screen immediately after the module shipped, and the -ed sounds review narration renders correctly reused from Module 47.
+
+### Level 6 curriculum design (Module 52 built; Modules 53–56 planned, not yet built)
+- **Scope note:** see the roadmap section above for why Level 6's module list is condensed from the blueprint's 10 to 5 — "Silent Letters" and "Word Families & Derivation" both duplicate already-built app content (Modules 35 and 50). Full reasoning in `docs/plans/level-6.md`.
+- **Module 52, Greek & Latin Roots — reuses Module 50's `wordFamily` mechanic for a genuinely different purpose: a definition-style meaning clue instead of a fill-in-the-blank sentence.** Both are the same underlying shape (a `prompt`, two real-word options, one correct), so zero new code was needed — only the *content* changed from "She wants to ___ in the school play" (sentence context) to "bio (life) + graphy (writing) = the written story of someone's life" (definition context). Eight roots across three "Meet" lessons (bio/tele/graph, then photo/scope/port, then dict/spect), each item deliberately pairing two words that share a surface resemblance (biography vs biology, both bio-; telephone vs telegraph, both tele-) so the choice genuinely tests which SPECIFIC root-meaning combination fits, not just vocabulary recognition in general. No new grapheme, no new remediation tag (reused `PREFIX_SUFFIX_CONFUSION`, matching the plan's own reasoning that this is the same *kind* of confusion as Module 50's). Live-verified both the Watch-stage definition-clue narration and the Practice-stage two-option layout render correctly with no code changes.
 
 ### Access rules (free vs paid) — business decision made 2026-09-30, not yet built
 - **All of Level 1 (Modules 1–8) is free**, no exceptions. **Level 2 onward is paid.** This replaces an earlier score-gated shortcut (Module 1 → 2 unlocked free at an 85% score) that only applied to one boundary — removed as redundant once the owner decided all of Level 1 would be free outright.
@@ -227,6 +236,8 @@ Netlify hosting is on the paid Personal plan. If a Netlify project ever shows a 
 - Built Level 5 Module 49 (More Prefixes & Suffixes) — dis-/pre-/mis-/-ness/-ment, extending Module 39 (no overlap with un-/re-/-ful/-less/-ly). Kept "preview" recognition-only (its "iew" pattern doesn't tile cleanly) and avoided a real-word decoy collision (distrust/mistrust are both genuine words, so "mistrust" could never be a wrong-decoy for "distrust"). Reused Module 39's PREFIX_SUFFIX_CONFUSION tag. 22/22 on the first run.
 - Built Level 5 Module 50 (Word Families) — act/action/active/actor and 5 more families, choosing the right grammatical form for a sentence (no spelling transformation at all, a first for this level). Added a new wordFamily narration field (proactively, not live) since spelling_choice's existing "It's spelled X" caption would have been wrong here. Caught a duplicate-content bug via npm test (an assessment item reused "builder" exactly, fixed by swapping to "readers"). Every lesson is spelling_choice — no word_build/read_word, an honest reflection of this module's actual skill.
 - Built Level 5 Module 51 (Review & Assessment) — cumulative review across all 10 earlier Level 5 modules, including a dedicated lesson for the -ed sounds skill since it needed its own activity_type. Added BADGE-11 (Level 5 Word Builder Pro), purely data-driven. **Level 5 is now complete — 11 modules, 58 lessons, built and deployed, matching the plan's own lesson estimate exactly.**
+- Condensed and planned Level 6 (Word Master): blueprint's 10 modules judged down to 5 non-duplicate ones ("Silent Letters" and "Word Families & Derivation" both duplicate already-built app content). Wrote `docs/plans/level-6.md`.
+- Built Level 6 Module 52 (Greek & Latin Roots) — bio/tele/graph/photo/scope/port/dict/spect as meaning clues. Reused Module 50's wordFamily mechanic with definition-style prompts instead of sentences — zero new code. 22/22 on the first run.
 
 ---
 
@@ -576,6 +587,68 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 
 ---
 
+## 6. Level 6 plan — Word Master
+
+*Status (2026-10-01): planning, nothing built yet. Source: the Master Curriculum Blueprint v0.1 (`The_Spelling_Code_Master_Curriculum_Blueprint_v0.1.docx`, found in Downloads — not in this repo), continuing the boundary rules fixed in Levels 1–5.*
+
+### Why this level's module list is condensed from the blueprint's 10 to 5
+
+Re-reading the blueprint's Level 6 list against what's already built surfaced the same kind of overlap Level 4→5 had, on a smaller scale:
+- **Blueprint Module 3, Silent Letters (kn, wr, gn, mb, gh)** is a near-exact duplicate of **app-Module 35** (Level 4), which already taught kn/wr/mb/gn with the identical mechanic (receptive `letter_sound_match`, `silent: true` field). Only "gh" (as in "ghost," "ghastly") is genuinely new, and it's a thin, low-frequency pattern on its own — not worth a whole module.
+- **Blueprint Module 7, Word Families & Derivation (nation/national/nationality)** is mechanically identical to **app-Module 50** (Level 5) — same "choose the family member that fits a sentence" skill, just with longer/fancier words. Rebuilding the same mechanic a second time under a new name would be busywork, not new learning.
+- **Blueprint Module 2 (French/Latin/Greek Influences)** and **Module 8 (Etymology as a Clue)** are both really the same underlying idea as **Module 1 (Greek & Latin Roots)** — word origin as a spelling/meaning clue — and the blueprint's own text treats them as closely related. Folded into one Roots module rather than three thin ones.
+- **Blueprint Module 9 (Advanced Dictation)** is "apply everything learned in a dictation context" — exactly what every earlier level's closing Review & Assessment module already does. Folded into Module 5 (Review & Assessment) rather than a separate module.
+- **Blueprint Module 10 (Final Mastery & Certification)** is the closing Review & Assessment module under a different name. This plan keeps the mastery/transfer assessment; the "digital certificate" idea from the blueprint's §9 Certification Framework is a real but separate product feature (PDF generation, a certificate record) that hasn't been built or asked for — flagged here, not built, same treatment as payments/accounts/CMS in the "Where the build stands" table.
+
+Net result: **5 genuinely non-duplicate modules** instead of 10. This was judged directly rather than asked, since it's the same class of decision already resolved for Level 4→5 (the owner had no preference there, and the reasoning — don't rebuild an identical mechanic under a new name — applies just as cleanly here, with much less at stake than the Level 4/5 case).
+
+### Big goal
+"I can use where a word comes from, and what it's commonly confused with, to spell and use advanced vocabulary correctly." The first level where meaning and word history — not just sound-to-letter mapping — become the main spelling tool.
+
+### The learning path
+
+```mermaid
+flowchart TD
+    L5["Level 5 complete<br/>long-vowel choices,<br/>-ed sounds, y-change,<br/>more prefixes/suffixes,<br/>word families"]
+    M1["M1 Greek & Latin Roots<br/>bio, tele, graph, photo,<br/>scope, port, dict, spect"]
+    M2["M2 Advanced Vowel Patterns<br/>eigh, augh, ough, ear"]
+    M3["M3 Homophones<br/>there/their/they're"]
+    M4["M4 Commonly Confused Words<br/>affect/effect, accept/except"]
+    M5["M5 Review & Assessment"]
+    Done["Program complete"]
+
+    L5 --> M1 --> M2 --> M3 --> M4 --> M5 --> Done
+```
+
+### Design notes — one new content shape, otherwise full reuse
+- **Roots, Homophones, and Commonly Confused Words all reuse Module 50's exact `spelling_choice` + `wordFamily: true` sentence-context mechanic** — no new code. For roots, the "sentence" is a definition-style clue ("Which word means 'to write about your own life'? autobiography / photograph") rather than a fill-in-the-blank, but it's the same shape: a prompt, two real-word options, one correct answer, the `wordFamily` narration ("Yes! 'autobiography' fits best here!") reads naturally for all three uses.
+- **Advanced Vowel Patterns reuses the plain `spelling_choice` word-pair mechanic** from Level 5's long-vowel modules (audio word, two spellings, pick the correct one) — these patterns (eigh, augh, ough) are genuinely new graphemes, added to `VOWEL_TEAMS`.
+- **No new remediation tags needed** — `SPELLING_CHOICE_CONFUSION` covers Module 2; `PREFIX_SUFFIX_CONFUSION` (despite its name) already covers Module 50's family/meaning-choice confusion and extends naturally to roots/homophones/confusables, which are the same *kind* of error (picking a plausible-but-wrong word for the context). Reusing it rather than minting three near-identical new tags.
+- **No new word pictures** — every module this level is built from abstract vocabulary (roots, grammar words, confusable pairs) that doesn't picture cleanly, same reasoning Modules 34/39/47/50 already established.
+
+### Module by module
+
+| # | Module | The skill being taught | Sample words | Lessons |
+|---|---|---|---|---|
+| 1 | Greek & Latin Roots | A root carries meaning across many words — bio (life), tele (far), graph (write), photo (light), scope (see), port (carry), dict (say), spect (look) | biology, telephone, autograph, photograph, telescope, transport, predict, spectator | 6 |
+| 2 | Advanced Vowel Patterns | Rarer, often irregular long-vowel spellings not yet covered: eigh (eight, weigh), augh/ough (caught, through, enough, cough — genuinely inconsistent, taught as memorized exceptions), ear for /er/ (learn, earth) | eight, weigh, caught, through, enough, cough, learn, earth | 6 |
+| 3 | Homophones | Same sound, different spelling, different meaning — choose the one that fits the sentence | there/their/they're, to/too/two, your/you're, write/right, know/no, meet/meat, hour/our | 6 |
+| 4 | Commonly Confused Words | Not homophones (different sounds), but frequently mixed up — choose the one that fits the meaning | affect/effect, accept/except, principal/principle, than/then, where/were, lose/loose, advice/advise | 6 |
+| 5 | Review & Assessment | Cumulative mixed practice and challenge across every Level 6 skill, plus dictation in sentence context (absorbing the blueprint's separate "Advanced Dictation" module) | — | 5 |
+
+**Estimated: about 29 lessons** — the smallest level yet, by design: this level is deliberately condensed (5 non-duplicate modules instead of the blueprint's 10), and each module's skill (definition/context-based word choice) needs fewer mechanical variations than the earlier levels' many spelling-choice permutations.
+
+### Lesson shape
+Modules 1, 3, 4 (Roots, Homophones, Confused Words) use a `spelling_choice`/`wordFamily` five-or-six-lesson shape: 2-3 "Meet" recognition lessons (grouping related roots/pairs), a "More Practice" lesson mixing everything, and a Challenge. Same shape Module 50 proved out — no `word_build`/`read_word` lessons, since the skill is choosing the right real word for a meaning/context, not spelling or picture-matching. Module 2 (Advanced Vowel Patterns) returns to the full Level-4/5-style five-lesson shape with `word_build` (Blend & Build, Spell the Words with a decoy) alongside `spelling_choice`, since these words, unlike Modules 1/3/4's, genuinely need letter-tile spelling practice. Module 5 mirrors every earlier level's closing Review & Assessment, plus the final "Level 6 Word Master" badge — the last badge in the six-level roadmap.
+
+### Build order
+Same rhythm as every level so far: one module at a time — content → `npm test` → live browser check → regenerate `docs/THE-SPELLING-CODE.md` → commit → push → deploy. Start with **Module 1 (Greek & Latin Roots)** since it validates the roots-as-`wordFamily` reuse immediately.
+
+### Decisions
+Per the owner's confirmed pacing ("keep building level after level without pausing"), this plan proceeds straight to building without a review pause. The module-condensation decision above was judged directly (same reasoning already validated for Level 4→5, lower stakes here), and the phonics/vocabulary content is standard reference material, so no further owner sign-off is sought before building.
+
+---
+
 ## Curriculum at a glance
 
 - **Level 1** — Sound Explorer — Listening → phonemic awareness → letter sounds → CVC reading → CVC spelling.
@@ -583,6 +656,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 - **Level 3** — Pattern Detective — Long vowels: silent e, vowel teams (ai/ay, ee/ea, oa/ow, oi/oy, ou/ow) and r-controlled vowels.
 - **Level 4** — Spelling Detective — Choosing the right spelling when more than one is plausible: c/k, g/j, doubling, silent letters, y as a vowel, plurals, prefixes and suffixes.
 - **Level 5** — Word Builder Pro — Choosing between long-vowel spellings (ai/ay, ee/ea, igh/ie, oa/ow, ue/ew/oo) and the many spellings of /s/, plus morphology: the three sounds of -ed, changing y before a suffix, more prefixes and suffixes, and word families.
+- **Level 6** — Word Master — Using word origin and meaning as spelling tools: Greek and Latin roots, advanced vowel patterns (eigh, augh, ough), homophones, and commonly confused words.
 
 | Module | Name | Status | Lessons | Practice items | Assessment items |
 |---|---|---|---|---|---|
@@ -637,6 +711,7 @@ Per the owner's confirmed pacing ("keep building level after level without pausi
 | 49 | More Prefixes & Suffixes | **Live** | 6 | 25 | 19 |
 | 50 | Word Families | **Live** | 5 | 20 | 17 |
 | 51 | Review & Assessment | **Live** | 5 | 23 | 23 |
+| 52 | Greek & Latin Roots | **Live** | 5 | 20 | 17 |
 
 ## Curriculum in full
 
@@ -7965,6 +8040,142 @@ Read it as: what the child hears or sees → what they choose or build → the c
 | AS-M51-05-12 | hear “wanted” → letter \| options t d id \| answer **id** |  |
 | AS-M51-05-13 | sound: act \| options act, action \| answer **act** |  |
 | AS-M51-05-14 | sound: player \| options player, play \| answer **player** |  |
+
+### Module 52 — Greek & Latin Roots
+
+*Goal:* Use common Greek and Latin roots (bio, tele, graph, photo, scope, port, dict, spect) as a clue to a word's meaning and spelling.
+
+#### Lesson 1: Meet bio, tele & graph (`L6-M52-01`)
+
+- **Objective:** Use the roots bio (life), tele (far) and graph (write) as clues to a word's meaning.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Welcome to Level 6, Word Master! Many English words are built from Greek and Latin roots that carry meaning.
+- **Narration (teach):** bio means 'life'. tele means 'far'. graph means 'write' or 'drawing'. A biography is the written story of someone's LIFE. A telephone lets you talk FAR away. Read the clue, then pick the word it describes.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn, Detective! Use the root's meaning as your clue.
+- **Narration (close):** Case closed! You know bio, tele and graph.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M52-01 | sound: biography \| options biography, biology \| answer **biography** |
+| Q-M52-02 | sound: telephone \| options telephone, telegraph \| answer **telephone** |
+| Q-M52-03 | sound: autograph \| options autograph, photograph \| answer **autograph** |
+| Q-M52-04 | sound: photograph \| options photograph, telegraph \| answer **photograph** |
+| Q-M52-05 | sound: paragraph \| options paragraph, photograph \| answer **paragraph** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M52-01-1 | sound: biology \| options biology, biography \| answer **biology** |  |
+| AS-M52-01-2 | sound: telegraph \| options telegraph, telephone \| answer **telegraph** |  |
+| AS-M52-01-3 | sound: graphic \| options graphic, photograph \| answer **graphic** |  |
+
+#### Lesson 2: Meet photo, scope & port (`L6-M52-02`)
+
+- **Objective:** Use the roots photo (light), scope (see) and port (carry) as clues to a word's meaning.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Three more roots, Detective! photo means 'light', scope means 'see', and port means 'carry'.
+- **Narration (teach):** A photograph is a picture made with LIGHT. A telescope helps you SEE far away. To transport something is to CARRY it from place to place.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use the root's meaning as your clue.
+- **Narration (close):** Case closed! Six roots mastered so far.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M52-06 | sound: photocopy \| options photocopy, photograph \| answer **photocopy** |
+| Q-M52-07 | sound: telescope \| options telescope, microscope \| answer **telescope** |
+| Q-M52-08 | sound: microscope \| options microscope, telescope \| answer **microscope** |
+| Q-M52-09 | sound: transport \| options transport, import \| answer **transport** |
+| Q-M52-10 | sound: photograph \| options photograph, photocopy \| answer **photograph** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M52-02-1 | sound: import \| options import, export \| answer **import** |  |
+| AS-M52-02-2 | sound: export \| options export, import \| answer **export** |  |
+
+#### Lesson 3: Meet dict & spect (`L6-M52-03`)
+
+- **Objective:** Use the roots dict (say) and spect (look) as clues to a word's meaning.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Two more roots, Detective! dict means 'say', and spect means 'look'.
+- **Narration (teach):** To predict is to SAY what will happen before it does. To inspect is to LOOK closely at something.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use the root's meaning as your clue.
+- **Narration (close):** Case closed! All eight roots mastered.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M52-11 | sound: predict \| options predict, contradict \| answer **predict** |
+| Q-M52-12 | sound: contradict \| options contradict, predict \| answer **contradict** |
+| Q-M52-13 | sound: dictionary \| options dictionary, spectator \| answer **dictionary** |
+| Q-M52-14 | sound: inspect \| options inspect, respect \| answer **inspect** |
+| Q-M52-15 | sound: spectator \| options spectator, inspector \| answer **spectator** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M52-03-1 | sound: respect \| options respect, inspect \| answer **respect** |  |
+| AS-M52-03-2 | sound: inspector \| options inspector, spectator \| answer **inspector** |  |
+
+#### Lesson 4: More Practice (`L6-M52-04`)
+
+- **Objective:** Practise all eight roots together across more words.
+- **Skill:** spelling · **Activity:** spelling_choice · **Time:** 6–8 min · **Mastery threshold:** 80%
+- **Narration (welcome):** More practice, Detective — mixing every root together now!
+- **Narration (teach):** Remember each root's meaning, and use it as your clue.
+- **Narration (model):** Which word fits best in this sentence?
+- **Narration (transition):** Your turn! Use everything you've learned.
+- **Narration (close):** Fantastic! You're a root-spotting expert.
+
+**Practice**
+
+| ID | Item |
+|---|---|
+| Q-M52-16 | sound: television \| options television, telephone \| answer **television** |
+| Q-M52-17 | sound: autobiography \| options autobiography, biography \| answer **autobiography** |
+| Q-M52-18 | sound: portable \| options portable, transport \| answer **portable** |
+| Q-M52-19 | sound: dictation \| options dictation, dictionary \| answer **dictation** |
+| Q-M52-20 | sound: spectacle \| options spectacle, spectator \| answer **spectacle** |
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M52-04-1 | sound: graphic \| options graphic, autograph \| answer **graphic** |  |
+| AS-M52-04-2 | sound: prediction \| options prediction, dictionary \| answer **prediction** |  |
+
+#### Lesson 5: Greek & Latin Roots Challenge (`L6-M52-05`)
+
+- **Objective:** Demonstrate independent mastery of using roots as a meaning and spelling clue.
+- **Skill:** spelling · **Activity:** assessment · **Time:** 8–10 min · **Mastery threshold:** 80%
+- **Narration (welcome):** Challenge time, Detective! Show what you know about Greek and Latin roots.
+- **Narration (teach):** 
+- **Narration (model):** 
+- **Narration (transition):** 
+- **Narration (close):** Case closed! You've mastered your first Level 6 roots.
+
+**Assessment**
+
+| ID | Item | Review flag |
+|---|---|---|
+| AS-M52-05-1 | sound: biography \| options biography, biology \| answer **biography** |  |
+| AS-M52-05-2 | sound: telephone \| options telephone, telegraph \| answer **telephone** |  |
+| AS-M52-05-3 | sound: autograph \| options autograph, photograph \| answer **autograph** |  |
+| AS-M52-05-4 | sound: telescope \| options telescope, microscope \| answer **telescope** |  |
+| AS-M52-05-5 | sound: transport \| options transport, import \| answer **transport** |  |
+| AS-M52-05-6 | sound: predict \| options predict, contradict \| answer **predict** |  |
+| AS-M52-05-7 | sound: dictionary \| options dictionary, spectator \| answer **dictionary** |  |
+| AS-M52-05-8 | sound: inspect \| options inspect, respect \| answer **inspect** |  |
 
 ## Content library
 

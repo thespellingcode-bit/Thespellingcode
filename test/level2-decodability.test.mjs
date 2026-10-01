@@ -77,6 +77,7 @@ const GRAPHEMES_BY_MODULE = {
   49: [], // More Prefixes & Suffixes — dis-/pre-/mis-/-ness/-ment all decompose to already-known single letters, same reasoning as Module 39; no new grapheme.
   50: [], // Word Families — every word family member is an ordinary already-spellable real word (act, action, teacher, builder...); no new grapheme, and this module's skill is choosing the right word for a sentence, not decoding a new pattern.
   51: [], // Review & Assessment — cumulative review, no new grapheme.
+  52: [], // Greek & Latin Roots — every word used is an ordinary already-spellable real word built from already-known graphemes (ph, ea, oa...); no new grapheme, and this module's skill is meaning-based word choice, not decoding a new pattern.
 };
 
 // Every module from Level 2 on (module_id 9+) participates in this same
